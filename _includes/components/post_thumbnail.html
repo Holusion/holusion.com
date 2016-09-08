@@ -1,0 +1,26 @@
+{% if include.content %}
+  {% assign content = include.content %}
+{% else %}
+  {% assign content = include %}
+{% endif %}
+{% include utils/base.html %}
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumbnail-cell">
+  <div class="thumbnail">
+    <a href = "{{content.url}}">
+        {% if content.image %}
+            <img src="{{content.image}}"
+              {% if content.image2x %} srcset="{{content.image2x}} 2x, {{content.image}}" {% endif %} alt="{{content.title}}">
+        {% else %}
+          <img src="/static/img/posts/default.jpg" alt="{{content.title}}">
+        {% endif %}
+          <div class="caption">
+              <h3 class="caption-title"> {{content.title}}</h3>
+              <span class="caption-text">
+                {{content.abstract}}
+              </span>
+          </div>
+    </a>
+  </div>
+</div>

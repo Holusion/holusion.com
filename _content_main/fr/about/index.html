@@ -1,0 +1,130 @@
+---
+layout: front_page
+---
+
+{% include components/section_title.html title="L'entreprise" %}
+<div class="img-responsive" style="width:100%;height:300px;background:url('/static/img/front/bandeau_entreprise_1.jpg') left/cover;"></div>
+
+{% include ariane.html %}
+<section id="lentreprise">
+  <div class="container" id="content">
+    <h1 align="center" style="padding-bottom: 20px">Notre expertise</h1>
+
+    <div class="row" style="padding-bottom: 20 px">
+      <div class="col-md-6" style="padding-top: 30px">
+        <h2>Spécialiste de l'affichage digital innovant</h2>
+        <p>Holusion conçoit, développe et commercialise des <a href="/fr/products">solutions d’affichages innovantes</a> basées sur les technologies de la <b>vitrine transparente</b> et de <b>l’holographie numérique</b>, une illusion communément appelée <a href="https://fr.wikipedia.org/wiki/Fant%C3%B4me_de_Pepper" title="Pepper's Ghost" target="_blank">Pepper's Ghost</a>.</p>
+        <p>Nous proposons ces outils et supports inédits aux organisations qui veulent interagir différemment avec leurs clients, partenaires ou collaborateurs. Cela leur permet d’améliorer la valorisation de leur produit, de leur marque ou de leur <a href="/fr/uses">usage</a>.</p>
+      </div>
+        <div class="col-md-6">
+          <div align="center" class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://player.vimeo.com/video/98730069?color=2fafe6&title=0&byline=0&portrait=0"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 30px">
+      <div class="col-md-6" style="padding: 20px 0px 0px 50px">
+        <img class="img-responsive" class="rtecenter" src="/static/img/front/accompagnement_fr.jpg" alt="accompagnement personnalisé" width="400" height="300">
+      </div>
+      <div class="col-md-6">
+          <h2>Un accompagnement personnalisé</h2>
+          <p>Vous voulez monter un projet innovant pour valoriser votre activité mais vous n'avez pas encore d'idée précise ? Nous sommes là pour vous conseiller et vous guider dans le choix de <a href="/fr/products">votre solution</a> ainsi que dans la création de produits sur-mesure !</p>
+          <p>Déjà expert de l'hologramme ? Notre site de <a href="dev.holusion.com">ressources techniques</a> va vous permettre d'aller encore plus loin !</p>
+
+          <h2>Un positionnement innovant</h2>
+          <p>Holusion a une vision <b>industrielle</b> de son activité : son ambition est de démocratiser les solutions holographiques. Mais Holusion développe de plus en plus une dimension de <b>conseil</b>. La société accompagne ses clients et prescipteurs pour développer un projet adapté et réussi.</p>
+        </div>
+    </div>
+
+
+    <h1 align="center" style="padding: 30px 0px 20px 0px">Notre histoire</h1>
+    <img class="img-responsive" src="/static/img/front/frise_historique_1.jpg" alt="historique de l'entreprise">
+
+      <div class="row" style="padding-top: 30px">
+        <div class="col-md-4">
+          <div class="rtecenter"><strong>Mai 2012</strong></div>
+          <h5 class="rtecenter">Création de l'hologramme Holusion</h5>
+          <div class="rtecenter">L'équipe se forme dans le Nord-Pas de Calais</div>
+        </div>
+        <div class="col-md-4">
+          <div class="rtecenter"><strong>Juin 2013</strong></div>
+          <h5 class="rtecenter">Concours National pour la création d'entreprises innovantes</h5>
+          <div class="rtecenter">Le projet Holusion est detecté comme étant une expertise technologique</div>
+        </div>
+        <div class="col-md-4">
+          <div class="rtecenter"><strong>Septembre 2013</strong></div>
+          <h5 class="rtecenter">Première vente</h5>
+          <div class="rtecenter">Première confrontation au marché et detection des segments intéressés par l'hologramme</div>
+        </div>
+      </div>
+      <div class="row" style="padding-top: 30px">
+        <div class="col-md-4">
+          <div class="rtecenter"><strong>Janvier 2014</strong></div>
+          <h5 class="rtecenter">LMI Innovation</h5>
+          <div class="rtecenter">Recommandation d'Holusion dans le monde de l'innovation</div>
+        </div>
+        <div class="col-md-4">
+          <div class="rtecenter"><strong>Août 2014</strong></div>
+          <h5 class="rtecenter">Plaine Images</h5>
+          <div class="rtecenter">La pépinière d'entreprises met Holusion en relation avec de nombreux acteurs de l'innovation et de la créativité digitale</div>
+        </div>
+        <div class="col-md-4">
+          <div class="rtecenter"><strong>Début 2015</strong></div>
+          <h5 class="rtecenter">Labellisations</h5>
+          <div class="rtecenter">Cap Digital - Pictanovo - Picom</div>
+        </div>
+      </div>
+      <div class="row" style="padding: 30px 0px 30px 0px">
+        <div class="col-md-4">
+          <div align="center"><strong>2018</strong></div>
+          <h5 align="center">Levée de fonds et innovations</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-equipe" class="section section-equipe" style="padding:30px 0px 50px 0px;background-color:#eeeeee;">
+    <div class="container">
+      <div class="row">
+        <h1 align="center" style="padding-bottom: 20px">L'équipe</h1>
+        <div class="content view-team" align="center">
+          {% include components/team_member_portrait.html
+            img="/static/img/front/portraits/tguillaumont.jpg"
+            name="Thibault Guillaumont"
+            title="Fondateur"
+            %}
+            {% include components/team_member_portrait.html
+              img="/static/img/front/portraits/sdumetz.png"
+              name="Sebastien Dumetz"
+              title="Fondateur"
+              %}
+              {% include components/team_member_portrait.html
+                img="/static/img/front/portraits/sduhamel.jpg"
+                name="Ségolène Duhamel"
+                title="Responsable communication"
+                %}
+                {% include components/team_member_portrait.html
+                  img="/static/img/front/portraits/pbonneel.jpg"
+                  name="Paul Bonneel"
+                  title="Responsable production"
+                  %}
+
+                </div>
+              </div>
+            </div>
+
+    </section>
+  <section id="section-clients">
+        <div class="container">
+          <h1 align="center" style="padding-bottom: 20px"> Nos Partenaires</h1>
+            <div class="row">
+                {% include components/sponsor_portrait.html img="/static/img/front/sponsors/cap-digital.jpg" alt="Cap Digital Paris" url="http://capdigital.com" %}
+                {% include components/sponsor_portrait.html img="/static/img/front/sponsors/picom.jpg" alt="PICOM" url="http://www.picom.fr" %}
+                {% include components/sponsor_portrait.html img="/static/img/front/sponsors/plaine-image.gif" alt="Plaine Images" url="http://www.plaine-images.fr" %}
+                {% include components/sponsor_portrait.html img="/static/img/front/sponsors/tonic.jpg" alt="Tonic Incubation" url="http://www.tonic-incubation.com/" %}
+                {% include components/sponsor_portrait.html img="/static/img/front/sponsors/BPI.png" alt="BPI France" url="http://www.bpifrance.fr/" %}
+                {% include components/sponsor_portrait.html img="/static/img/front/sponsors/LMI.png" alt="Lille Métropole Investissement Innovation" url="http://www.lmi-innovation-creation.fr/" %}
+            </div>
+    </div>
+  </section>

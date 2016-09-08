@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% include utils/lang.html %}
+
+{% include head.html %}
+    <!-- Jumbotron Header -->
+    {%include layout/main_navbar_top.html%}
+    {% if page.title %}
+      {% include components/section_title.html title=page.title %}
+    {%endif %}
+    {% include ariane.html %}
+  <!-- Page Content -->
+  <div class="container" id="content">
+    {{ content }}
+  </div>
+<!-- Footer -->
+{% include layout/main_navbar_bottom.html %}
+{% include footer.html %}

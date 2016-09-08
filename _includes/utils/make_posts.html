@@ -1,0 +1,10 @@
+{% include utils/lang.html %}
+
+{% unless posts %}
+  {% assign posts = "" | split: ""  %}
+  {% for c in site.content_main|sort: "url" %}
+    {% if c.lang == lang and c.url contains "posts/2" %}
+      {% assign posts = posts |unshift:c %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}

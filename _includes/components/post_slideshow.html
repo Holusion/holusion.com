@@ -1,0 +1,92 @@
+{% assign contents = include.contents %}
+
+<div id="slider" class="{{include.classes}}"
+  {% if include.height %}
+  style="padding-bottom:200px;height:{{include.height}}px;"
+  {% endif %}
+>
+  <div id="slides-shortcuts">
+    <div class="scrollable" >
+        {% for post in contents  %}
+            <input class="slide-shortcut" type="radio" name="slide-radio" id="{{forloop.index0}}">
+            <label for="{{forloop.index0}}">
+              <img src="{{post.image}}">
+            </label>
+        {% endfor %}
+      </div>
+  </div>
+  <div id="slides">
+    {% for post in contents %}
+      <div class="slide"><a href="{{post.url}}">
+        {% if post.title %}
+          <div class="slide-text">
+            <h3>{{post.title}}</h3>
+            {{post.abstract}}
+          </div>
+        {% else %}
+          <div class="slide-padding">
+          </div>
+        {% endif %}
+        <div class="slide-image">
+          <img class="img-responsive"
+            {% if post.image2x %}
+              src="{{post.image2x}}"
+            {% else %}
+              src="{{post.image}}"
+            {% endif %}
+          />
+        </div>
+      </a></div>
+    {% endfor %}
+  </div>
+  {% unless has_slideshow %}
+  {% assign has_slideshow=true %}
+  <script>
+  (function(){
+    var shortcuts = document.querySelectorAll('input[type="radio"].slide-shortcut');
+    var slider = document.querySelector("#slider");
+    var scroll = document.getElementsByClassName( "scrollable")[0];
+    var slides = document.querySelector("#slides");
+    var slideList = document.querySelectorAll("#slides .slide");
+    for(var i=0;i<slideList.length;i++){
+      slideList[i].style.left = i*100+"%";
+    }
+    var time;
+    var current;
+
+    /* Slider update */
+    function setNext(index){
+      if(slides ) slides.style.left = -index*100+"%";
+      time = setTimeout(function(){
+        index++;
+        if(shortcuts.length <= index ){
+          index =0;
+        }else if(index < 0){
+          index = shortcuts.length-1;
+        }
+        setNext(index);
+        for(var i=0;i < shortcuts.length;i++){
+          shortcuts[i].checked = (i == index)?true:false;
+        }
+      },3000);
+    }
+    function handleInputClick(index){
+      clearTimeout(time);
+      setNext(index);
+    }
+    setNext(0);
+    var scrollScript = document.createElement("SCRIPT");
+    scrollScript.onload = function(){
+      scroll.style.height = slider.clientHeight-20+"px";
+      addCustomHTMLScroll( scroll );
+    }
+    scrollScript.src="/vendor/customhtmlscroll/customhtmlscroll.min.js";
+    document.body.appendChild(scrollScript);
+    for(var i=0;i<shortcuts.length;i++){
+      shortcuts[i].onclick = handleInputClick.bind(this,i);
+    }
+  })();
+
+  </script>
+  {% endunless %}
+</div>

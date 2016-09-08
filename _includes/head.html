@@ -1,0 +1,47 @@
+{% include utils/lang.html %}
+{% include utils/domain.html %}
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Holusion">
+  <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
+  {% if page.title %}
+    <title>{{page.title}} - {{site.data.strings.site-title[lang]}}</title>
+  {% else %}
+    <title>{{site.data.strings.site-title[lang]}}</title>
+  {% endif %}
+  {% if page.abstract %}
+    <meta name="description" content="{{ page.abstract|truncatewords:155 }}" />
+    <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297}}"/>
+  {% else %}
+    <meta name="description" content="Global index of ressources for holusion" />
+  {% endif %}
+  {% if page.image %}
+    {% if page.image2x %}
+      <meta property="og:image" content="{{site.url}}{{page.image2x}}"/>
+    {% else %}
+      <meta property="og:image" content="{{site.url}}{{page.image}}"/>
+    {% endif %}
+    <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
+  {% endif %}
+  {% if page.layout == "post" %}
+    <meta property="og:type" content="article"/>
+  {%endif %}
+  {% if page.lang %}
+    <meta property="og:locale" content="{{page.lang}}"/>
+  {% endif %}
+  {% include favicons.html url="/static/img/icons/favicons" %}
+  <!-- CSS Loading -->
+  <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+  <!-- jquery is only used as a bootstrap dependency. Please avoid binding the site to it -->
+  <script defer="" src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="canonical" href="{{page.url |canonical}}">
+  {% include utils/make_pages.html %}
+  {% include components/analytics_privacy.html %}
+</head>
+<body>

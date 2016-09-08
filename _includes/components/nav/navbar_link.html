@@ -1,0 +1,19 @@
+
+{% include utils/lang.html %}
+{% include utils/base.html %}
+{% capture href %}{{base}}/{{include.url}}/{% endcapture %}
+{% if include.title[lang] %}
+  {% assign title = include.title[lang] %}
+{% else %}
+  {% assign title = include.title %}
+{% endif %}
+
+{% if page.url contains include.url or include.url == page.menu %}
+  <li class="active">
+    <a href="{{href}}">{{title}}</a><span class="sr-only">(current)</span>
+  </li>
+{% else %}
+  <li>
+    <a href="{{href}}">{{title}}</a>
+  </li>
+{% endif %}

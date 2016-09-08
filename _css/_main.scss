@@ -1,0 +1,27 @@
+@import "colors";
+@import "fonts";
+@import "titles";
+@import "thumbnails";
+@import "navbars";
+@import "buttons";
+@import "magnify";
+@import "headers";
+@import "cookieconsent";
+@import "social";
+@import "ariane";
+@import "video";
+@import "slideshow";
+body{
+  font-family: 'open_sansregular', sans-serif;
+  color: $black;
+  padding-top: 50px;
+}
+#content.container p, .rtejustify {
+  text-align: justify;
+}
+.rtecenter{
+  text-align:center;
+}
+a{
+  color:$blue;
+}

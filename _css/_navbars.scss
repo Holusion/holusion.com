@@ -1,0 +1,126 @@
+@import "colors";
+#navbar-top{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  @media screen and (max-width: $break-small) {
+    position:absolute;
+  }
+  a#home-logo{
+    padding: 25px 120px 20px 50px;
+    background-image:url("/static/img/logo.png");
+    background-repeat:no-repeat;
+    background-position:10px 10px;
+    background-size: 150px auto;
+
+  }
+
+  .navbar-brand{
+    color:$light-blue;
+  }
+  .page-sections > li > a:hover {
+    color:$light-blue;
+  }
+  .navbar-nav > li {
+    a{
+      font-size: 20px;
+      font-weight:600;
+      margin: 0;
+      padding: 9 0px;
+      text-transform: lowercase;
+      font-family: 'open_sansregular', sans-serif;
+      color:$dark-blue;
+      transition: all 0.5s ease-in-out;
+    }
+    a:hover{
+      color:$blue;
+    }
+  }
+}
+
+#navbar-bottom{
+  margin-top:50px;
+  padding: 0;
+
+  .bottom-nav-center div{
+    text-align:center;
+    border-right:1px solid $light-blue;
+    border-left:1px solid $light-blue;
+  }
+  .bottom-nav-center div:first-child{
+    border-left: 0;
+  }
+  .bottom-nav-center div:last-child{
+    border-right: 0;
+  }
+  .bottom-nav-center a, #navbar-bottom .dropup>a {
+    color:$white;
+    transition: all 200ms;
+  }
+  .bottom-nav-center a:hover, #navbar-bottom .dropup>a:hover {
+    color:$light-blue;
+  }
+}
+#navbar-bottom #contact-bottom{
+  background: $light-blue;
+}
+#navbar-bottom #contact-bottom{
+  height:84px;
+  line-height:84px;
+  color:white;
+  font-size:30px;
+  vertical-align:middle;
+  text-align:center;
+  font-family: open_sanslight, sans-serif;
+
+}
+#navbar-bottom #contact-bottom a, #navbar-bottom #contact-bottom a:active{
+  font-weight:bold;
+  text-decoration:none;
+  color:white;
+}
+#bottom-index{
+  padding-bottom:20px;
+  padding-top:20px;
+}
+#section-bottom{
+  background-color: $dark-blue;
+  color:$white;
+  ul{
+    list-style: none;
+    padding-left:0;
+  }
+  a{
+    color:$white;
+  }
+  a:hover{
+    color:$white;
+    text-decoration: underline;
+  }
+}
+.navbar-default .navbar-brand {
+  font-size: 2em;
+  font-weight:800;
+}
+.language-picker{
+  min-width: 80px;
+}
+.language-picker a{
+  color:$black !important;
+  text-align:right;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+  background:$light-blue !important;
+  color:$white !important;
+}
+.flag {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+#mc_embed_signup{
+  #mc_submit{
+    cursor:pointer;
+    :hover{
+      color:#2fafe6;
+    }
+  }
+}

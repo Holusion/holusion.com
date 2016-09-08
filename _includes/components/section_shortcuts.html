@@ -1,0 +1,10 @@
+{% include utils/lang.html %}
+{% assign item = site.data.sections[include.section] %}
+{% capture path %}/{{lang}}/{{include.section}}{% endcapture %}
+<div class="row">
+  <div class="col-md-12">
+    <h3>
+      <a id="{{ item.short[lang] }}" href="{{path}}">{{ item.long[lang] }}</a>
+    </h3>
+  </div>
+</div>

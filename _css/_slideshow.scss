@@ -1,0 +1,116 @@
+#slider{
+  position:relative;
+  width:100%;
+  margin:auto;
+  overflow:hidden;
+}
+#slider .slide{
+  position:absolute;
+  top:0;
+  width:100%;
+}
+#slider .slide:first-of-type{
+  position:initial;
+  width:100%;
+}
+#slider .slide>a{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+}
+.slide .slide-text, .slide .slide-padding{
+  background: $deep-blue;
+  flex-grow:0;
+  flex-shrink:0;
+  flex-wrap: wrap;
+  padding:20px 20px 20px 100px;
+  color:white;
+  text-align:center;
+  font-style: italic;
+  color:$light-blue;
+}
+.slide .slide-padding{
+  width:0px;
+}
+.slide .slide-text{
+  width:400px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+.slide .slide-text h3{
+  color:white;
+  padding:25px 0 25px 0;
+}
+
+.slide .slide-image{
+  flex-grow:1;
+}
+#slides{
+  width: 100%;
+  left:0px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+
+#slides-shortcuts{
+  position:absolute;
+  z-index:1;
+  width:100px;
+  top:10px;
+  bottom:0px;
+  left:10px;
+}
+.scrollable{
+  height:280px;
+}
+.scrollBar{
+  z-index:1;
+  width:10px; /* Set the width of the scrollbar */
+  border-radius:5px; /* Remove if you want square corners*/
+  background-color: $light-blue; /* Set the scrollbar color*/
+  transition: opacity 0.3s linear; /* Mouseover delay */
+}
+#slides-shortcuts ul{
+  list-style-type: none;
+}
+#slides-shortcuts li{
+  float: left;
+}
+#slides-shortcuts a{
+  text-decoration:none;
+  display: block;
+  padding: 10px;
+  clear:both;
+}
+input[type="radio"].slide-shortcut {
+  display: none;
+}
+.slide-shortcut+ label {
+  cursor: pointer;
+  color: #555;
+  width: 80px;
+  height:45px;
+}
+.slide-shortcut+ label img{
+  display: block;
+  height:auto;
+  width:80px;
+  border-radius: 2px;
+  border: 1px solid white;
+}
+.slide-shortcut+label:hover img {
+  border-color:$light-blue;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+label .radio-hover{
+  opacity:0;
+}
+label:hover .radio-hover{
+  opacity:0.6;
+}
+input[type="radio"].slide-shortcut:checked + label .radio{
+  fill:$light-blue;
+}

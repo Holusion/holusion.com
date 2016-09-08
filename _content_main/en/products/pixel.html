@@ -1,0 +1,181 @@
+---
+layout: post
+title: Pixel
+image2x: /build/img/products/goodies_banner_2x.jpg
+image: /build/img/products/goodies_banner.jpg
+abstract: Mini pyramid for smartphones and shelves
+rank: 4
+tags: pixel
+slides:
+  -
+    image: /static/img/products/pixel_rentree.jpg
+  -
+    image: /static/img/products/pixel_meduse.jpg
+  -
+    image: /static/img/products/pixel_fleur_2.jpg
+  -
+    image: /static/img/products/pixel_fleur.jpg
+  -
+    image: /static/img/products/pixel_danseurs.jpg
+  -
+    image: /static/img/products/pixel_minion.jpg
+
+---
+
+<div class="row" />
+<div class="col-lg-6 col-md-12">
+{% include components/post_slideshow.html contents=page.slides height=250 %}
+</div>
+<div class="col-lg-6 col-md-12" align="center">
+<img style="padding-top: 30px" alt="Picto Pixel" class="img-responsive" src="/static/img/products/picto_pixel.jpg"/>
+<h1 align="center">Smartphone hologram</h1>
+<h3 align="center">Order from 100 units</h3>
+  <div align="center"><font size="1pt">*Find the prices' simulator below.</font>
+  </div>
+ </div>
+</div>
+
+
+
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <h2 style="padding-top: 30px">Holographics goodies</h2>
+      <p>Petit plus dans votre <b>présentation produit</b>, cet hologramme de poche vous accompagne dans votre quotidien.</p>
+      <p>Posez <b>votre smartphone</b> sur ou sous la pyramide Pixel, démarez <a href="https://www.youtube.com/playlist?list=PLUHVztX-fSBD--mzjF8-RMH4wn-J0UN8r">YouTube</a> et la magie peut commencer.</p>
+      <p>Attirant, intrigant et inédit, ce mini hologramme <b>transporte vos clients</b> dans un imaginaire et valorise votre image de marque.</p>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+      <div style="padding-top: 40px">
+      <div align="center" class="embed-responsive embed-responsive-16by9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ChXqPq8Bynw" frameborder="0" allowfullscreen></iframe>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <div style="padding-top: 30px"><img alt="Schéma de Pixel" class="img-responsive" src="/static/img/products/goodies_schema.jpg" style="padding-top: 40px; padding-bottom: 10px;" />
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+      <div align="center" style="padding: 160px 0px 60px 0px">
+      {% svg src/pictos/produits/Picto__360.svg size=56 %}
+      {% svg src/pictos/produits/Picto__Smartphone.svg size=56 %}
+      {% svg src/pictos/produits/Picto__Stickage-logo.svg size=56 %}
+      {% svg src/pictos/produits/Picto__Packing-carton-box.svg size=56 %}
+    </div>
+    </div>
+</div>
+
+<div align="center">
+<h2 align="center" style="padding: 50px 0px 20px 0px">Prices simulator</h2>
+<div align="center" style="padding-bottom:20px">Le simulateur est proposé uniquement à titre indicatif et les prix réels peuvent différer. Veuillez nous contacter pour plus d'informations.</div>
+</div>
+
+<div id="price-sim">
+  <div class="sim-content">
+    <div id="products" class="sim-row">
+      <a id="1" class="product-picker" onclick="select_product(this)">
+        <img width="100px" class="img-responsive" src="/build/img/products/goodies_meduse.png"/>
+      </a>
+      <a id="2" class="product-picker" onclick="select_product(this)">
+        <img width="100px" class="img-responsive" src="/build/img/products/goodies_meduse.png"/>
+      </a>
+    </div>
+    <div class="sim-row">
+      <input type="number" class="form-control" min="0" id="quantity" placeholder ="Quantity" onchange="select_quantity(this)">
+    </div>
+    <div class="sim-row">
+      <span>Unit Price (excl VAT) :&nbsp;</span><span id="pu">0</span><span>&nbsp;€</span>
+    </div>
+    <div class="sim-row">
+      <b><span>TOTAL (excl VAT):&nbsp;</span><span id="price">0</span><span>&nbsp;€</span></b>
+    </div>
+  </div>
+</div>
+
+<script>
+  var state = {
+    triggers:[1,50,100,400,1000],
+    prices:[
+      [12, 6, 4.5, 3, 2.1],
+      [18, 18, 9, 6, 4.8]
+    ]
+  };
+
+  var simulator = document.getElementById("price-sim");
+  function select_product(elem){
+    var oldSelection = document.querySelector(".product-picker.active");
+    if(oldSelection){
+      oldSelection.classList.remove("active");
+    }
+    elem.classList.add("active");
+    state.product = parseInt(elem.id);
+    render();
+  }
+  function select_quantity(q){
+    state.quantity = q.value;
+    render();
+  }
+
+  function render(){
+    var index = state.triggers.reduce(function(last,trigger,i){
+      if ( trigger <= state.quantity){
+        return i;
+      }else{
+        return last;
+      }
+    },0);
+    if(state.quantity && state.product){
+      document.getElementById("price").innerHTML = state.prices[state.product][index]*state.quantity;
+      document.getElementById("pu").innerHTML = state.prices[state.product][index];
+    }else{
+      document.getElementById("price").innerHTML = "0";
+      document.getElementById("pu").innerHTML = "0";
+    }
+  }
+</script>
+<style>
+  #price-sim{
+    display:flex;
+    justify-content:center;
+  }
+  #price-sim .sim-content {
+    display:flex;
+    flex-grow:0;
+    min-width:300px;
+    flex-direction:column;
+    justify-content:center;
+    align-self:center;
+  }
+  #price-sim .sim-row{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+  }
+  #price-sim .sim-row .product-picker{
+    align-self:center;
+    margin:5px;
+    flex-grow:0;
+    padding:5px;
+    border: 1px solid #ddd;
+    outline: 0;
+    border-radius: 4px;
+    cursor:pointer;
+  }
+  .product-picker.active{
+    background-color: #337ab7;
+  }
+
+</style>
+
+<div align="center">
+  <h2 align="center" style="padding: 50px 0px 20px 0px">Make the test now :</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUHVztX-fSBD--mzjF8-RMH4wn-J0UN8r" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+
+  <h2 align="center" id="main-title-1" style="padding-top: 30px">Some stories about Pixel...</h2>

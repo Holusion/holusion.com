@@ -1,0 +1,37 @@
+site-title: #titre utilisé en meta "title" du site
+  fr: Ressources de développement Holusion
+  en: Holusion Developper Network
+
+lang: #mot à utiliser pour le choix de langue
+  fr: Langue
+  en: Language
+home: #designation de la "home page"
+  fr: Acceuil
+  en: Home
+copyright: #copyright notice (coin bas-droite)
+  fr: holusion.com, Holusion © 2015 - 2016
+  en: holusion.com, Holusion © 2015 - 2016
+holusion-com: #désignation du site commercial
+  fr: www.holusion.com
+  en: Commercial Website
+about: #désignation de la page about.html
+  fr: A propos
+  en: About
+products: #désignation des fiches produits
+  fr: Fiches Produits
+  en: Products Datasheets
+social-links: #entête des "social link"
+  fr: Nous Suivre
+  en: Follow Us
+emailexample: #placeholder email
+  fr: saisissez votre email
+  en: type your email
+newsletter: #titre du formulaire de newsletter
+  fr: inscrivez-vous à la newsletter
+  en: subscribe to the newletter
+need-help:
+  fr: Envie d'en savoir plus
+  en: Need help
+contact-us:
+  fr: Contactez-nous
+  en: Contact us

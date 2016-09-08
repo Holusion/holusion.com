@@ -1,0 +1,17 @@
+Options +FollowSymLinks
+
+ErrorDocument 404 /404.html
+
+# Set the default handler.
+DirectoryIndex index.html index.htm
+
+RedirectMatch 301 ^/?$ /fr/
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  #rewrite dev.holusion.com requests
+  RewriteCond %{HTTP_HOST} dev2.holusion.com
+  RewriteCond %{REQUEST_URI} ^/fr [OR]
+  RewriteCond %{REQUEST_URI} ^/en
+  RewriteRule ^(.*) /dev/$1 [L]
+</IfModule>

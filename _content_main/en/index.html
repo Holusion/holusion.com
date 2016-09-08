@@ -1,0 +1,135 @@
+---
+  layout: front_page
+  title: home
+  lang: en
+---
+<section class="section section-video">
+  <div id="video-wrapper">
+    {% include components/video.html
+      name="Video_home_page"
+      image="/build/img/products/hpop_couloir.jpg"
+      autoplay=true preload=true loop=true
+    %}
+  </div>
+  <script>
+    function handle_video_click(){
+      var height = document.getElementById("video-wrapper").clientHeight;
+      if(typeof window.requestAnimationFrame === "function"){
+        var x =window.scrollX;
+        var y = window.scrollY;
+        var scroll = function(){
+          if(y < height){
+            y += 50
+            window.scrollTo(x,y);
+            window.requestAnimationFrame(scroll);
+          }
+
+        }
+        scroll();
+      }else{
+        window.scrollTo(window.scrollX,600);
+      }
+
+    }
+  </script>
+  <div class="video-overlay" style="">
+        <div class="video-overlay-text">
+          Create digital user experiences
+        </div>
+        <a  onclick="handle_video_click()" class="video-overlay-icon">
+          <svg fill="#ffffff" height="80" viewBox="0 0 24 24" width="80">
+            <use class="hover-circle" xlink:href="/static/icons-combined.svg#circle"></use>
+            <use xlink:href="/static/icons-combined.svg#icon-down"></use>
+        </svg>
+      </a>
+  </div>
+</section>
+<section id="section-produits" >
+  <div class="container">
+    <h1 align="center" id="main-title-1" >Our products</h1>
+      <div class="row">
+        {% include utils/make_products.html %}
+        {% for product in products limit:4 %}
+        {% include components/post_thumbnail.html content=product %}
+        {% endfor %}
+      </div>
+    <div align="right">
+      <a href="/fr/offer/">More products > </a>
+    </div>
+  </div>
+</section>
+
+<section id="section-usages" >
+  <div class="container">
+    <h1 align="center" id="main-title-1" >Use Cases</h1>
+
+    <a href="usages#apprendre"><div style="background: url('/static/img/usages/focus_interactif_formation.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
+         <font size="6pt"><h3 style="color:white;">LEARN</h3></font>
+    </div></a>
+
+    <a href="usages#percevoir"><div style="background: url('/static/img/usages/prism_interactif_catalogue.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
+      <font size="6pt"><h3 style="color:white;">PERCEIVE</h3></font>
+    </div></a>
+
+    <a href="usages#transformer"><div style="background: url('/static/img/usages/prism_interactif_transformer.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
+      <font size="6pt"><h3 style="color:white;">TRANSFORM</h3></font>
+    </div></a>
+    <div align="right">
+      <a href="/fr/usages/">More use cases > </a>
+    </div>
+  </div>
+</section>
+
+<section id="section-accompagnement" >
+  <div class="container">
+    <h1 align="center" id="main-title-1" style="padding: 30px 0px 10px 0px">A company, an individual support</h1>
+    <p align="center"><a href="/en/about/"><img alt="Individual support Holusion" class="img-responsive" src="/static/img/front/accompagnement_en.jpg" width="800" height="700" style="padding: 20px 0px 10px 0px;" /></a></p>
+    <div align="right">
+      <a href="/fr/about/">Discover the company > </a>
+    </div>
+  </div>
+</section>
+
+<section id="section-stories">
+  <div class="container">
+    <h1 align="center" id="main-title-1" >Dive in the stories of our clients</h1>
+    {% include utils/make_posts.html %}
+    {% for post in  posts offset: 0 limit: 4 %}
+      {% include components/post_thumbnail.html content=post %}
+    {% endfor %}
+    <div align="right">
+      <a href="/fr/posts/">More stories > </a>
+    </div>
+  </div>
+</section>
+<section id="section-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h3>Our Adress</h3>
+        {% include components/maps_api.html %}
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h3>Contact Us</h3>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+            +33 (0)9 72 42 44 51
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            99A Bvd Constantin Descat, 59200 Tourcoing - France
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            <a href="admin [at] example.com" target="_blank" rel="nofollow" onclick="this.href='mailto:' + 'contact' + '@' + 'holusion.com'">Contact Mail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
