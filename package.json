@@ -1,0 +1,20 @@
+{
+  "name": "holusion-doc",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "preinstall":"rvm $(cat .ruby-version)@$(cat .ruby-gemset) do bundle install",
+    "start": "rvm $(cat .ruby-version)@$(cat .ruby-gemset) do jekyll serve --drafts",
+    "update": "bower update",
+    "test":"rvm $(cat .ruby-version)@$(cat .ruby-gemset) do scss-lint _css/ --config .scss_lint.yml -e _css/_highlight.scss"
+  },
+  "os": [
+    "linux"
+  ],
+  "dependencies": {
+    "bower":"*"
+  },
+  "devDependencies": {
+  }
+}

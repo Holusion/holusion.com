@@ -1,0 +1,20 @@
+{% include utils/lang.html %}
+{% include utils/domain.html %}
+<div class="container ariane">
+  {% assign levels = page.url|split: "/" |shift:2%}
+  {% capture ln %}{{domain}}/{{lang}}{% endcapture %}
+  <a href="{{ln}}">{{site.data.sections.home[lang]}}</a>
+  {% for level in levels %}
+    {% assign cleanedLevel = level | split: "." |first %}
+    {% capture ln %}{{ln}}/{{cleanedLevel}}/{% endcapture %}
+    {% unless cleanedLevel == "index" %}
+      <a href="{{ln}}">
+        {% if site.data.sections[cleanedLevel] %}
+          {{site.data.sections[cleanedLevel][lang]}}
+        {% else %}
+          {{cleanedLevel}}
+        {% endif %}
+      </a>
+    {% endunless %}
+  {% endfor %}
+</div>

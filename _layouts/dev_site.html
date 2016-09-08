@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% include utils/lang.html %}
+{% if site.data.sections[page.title] %}
+  {% assign head = site.data.sections[page.title].long[lang] %}
+{% elsif page.title %}
+  {% assign head=page.title %}
+{% else %}
+  {% assign head = site.data.sections.s1[lang] %}
+{% endif %}
+
+{% include head.html %}
+    <!-- Jumbotron Header -->
+    {%include layout/dev_navbar_top.html %}
+  <!-- Page Content -->
+  <section class="title">
+    <div class="container">
+      <h1>
+        {{ head }}
+      </h1>
+    </div>
+  </section>
+  <div class="container">
+    {{ content }}
+  </div>
+<!-- Footer -->
+{% include layout/dev_navbar_bottom.html %}
+<script async src="/static/js/index.js"></script>
+<script async src="/static/js/Search.js"></script>
+{% include footer.html %}

@@ -1,0 +1,25 @@
+---
+layout: front_page
+---
+
+{% include utils/make_posts.html %}
+<section class="title">
+  <div class="container">
+    <h1>
+      Our stories
+    </h1>
+  </div>
+</section>
+{% include ariane.html %}
+<div class="container">
+  {% include components/post_slideshow.html contents=posts classes="hidden-sm hidden-xs"%}
+</div>
+<div class="container">
+  <h2 id="main-title-1" >Tell us your story with holograms</h2>
+  You will find below some of the pretty stories we wrote with our customers, from very different backgrounds ans discover all the possibillities offered by the holographic devices Holusion.
+</div>
+<div class="container">
+{% for post in posts %}
+  {% include components/post_thumbnail.html content=post %}
+{% endfor %}
+</div>

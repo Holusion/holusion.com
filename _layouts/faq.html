@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% include head.html %}
+
+  <!-- Title -->
+  {% include layout/dev_navbar_top.html %}
+  <section class="title">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </section>
+  {% if page.image %}
+  <section class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-4">
+          <img src="/static/img/posts/{{page.image}}" class="img-reponsive" alt="{{page.title}}">
+        </div>
+      </div>
+    </div>
+  </section>
+  {% else %}
+  {% endif %}
+  <div id="content" class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Page Content -->
+        {{ page.content }}
+      </div>
+    </div>
+  </div>  <!-- /.container -->
+<!-- Footer -->
+{% include layout/dev_navbar_bottom.html %}
+{% include footer.html %}

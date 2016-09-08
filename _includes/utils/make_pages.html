@@ -1,0 +1,9 @@
+{% include utils/lang.html %}
+{% unless pages %}
+  {% assign pages = "" | split: ""  %}
+  {% for c in site.content_dev|sort: "title"|sort: "rank" %}
+    {% if c.lang == lang %}
+      {% assign pages = pages |push:c %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}

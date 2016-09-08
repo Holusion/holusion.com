@@ -1,0 +1,13 @@
+@import "colors";
+
+.cc_banner{
+  background-color: $deep-blue;
+}
+
+.cc_btn{
+  background-color: $light-blue!important;
+  color: $white!important;
+}
+.cc_btn:hover{
+  color: $black!important;
+}

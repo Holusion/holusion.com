@@ -1,0 +1,11 @@
+{% unless lang %}
+  {% if page.lang %}
+    {% assign lang = page.lang %}
+  {% elsif page.url contains "/fr" %}
+    {% assign lang = "fr" %}
+  {% elsif page.url contains "/en" %}
+    {% assign lang = "en" %}
+  {% else %}
+    {% assign lang = "fr" %}
+  {% endif %}
+{% endunless %}

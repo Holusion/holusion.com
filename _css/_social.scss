@@ -1,0 +1,36 @@
+.rs {
+  display:inline-block;
+}
+
+.rs div{
+  background-repeat: no-repeat;
+  background-size: 24px 48px;
+  background-position: 0px 0px;
+  transition: 200ms;
+  transition-timing-function: ease-out;
+  width:24px;
+  height:24px;
+  display:inline-block;
+  float:left;
+  margin-right: 3px;
+
+}
+.rs div:hover{
+  background-position: 0px -24px;
+}
+
+.rs div.facebook{
+  background-image: url("/static/img/icons/sprite-facebook.png");
+}
+.rs div.twitter{
+  background-image: url("/static/img/icons/sprite-twitter.png");
+}
+.rs div.youtube{
+  background-image: url("/static/img/icons/sprite-youtube.png");
+}
+.rs div.pinterest{
+  background-image: url("/static/img/icons/sprite-pinterest.png");
+}
+.rs div.linkedin{
+  background-image: url("/static/img/icons/sprite-linkedin.png");
+}

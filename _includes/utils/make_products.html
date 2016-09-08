@@ -1,0 +1,10 @@
+{% include utils/lang.html %}
+{% unless products %}
+  {% assign products = "" | split: ""  %}
+  {% for c in site.content_main %}
+    {% if c.lang == lang and c.url contains "products" and c.image %}
+      {% assign products = products |push:c %}
+    {% endif %}
+  {% endfor %}
+  {% assign products = products |sort: "title"|sort: "rank" %}
+{% endunless %}

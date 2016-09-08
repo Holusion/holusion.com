@@ -1,0 +1,39 @@
+---
+title: 404 - Not found
+---
+
+<h2 id="404-title">Sorry this page does not exist.</h2>
+<p>
+<div id="404-long">
+  Maybe it has been moved. You can signal us a dead link.
+</div>
+</p>
+<p>
+<center>
+  <button class="btn btn-default"><a id="404-home" href="/">Go to Home</a></button>
+  <button class="btn btn-default"><a id="404-signal" href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">Signal a dead link</a></button>
+</center>
+</p>
+<h2 id="404-search">Similar content</h2>
+<div id="search-results">
+
+</div>
+
+<script>
+  var lang = location.pathname.split('/')[1].toLowerCase();
+  var strings = [
+    {name:"404-title",fr:"La page demandée n'existe pas"}
+  , {name:"404-long",fr:"Peut-être a-t-elle été déplacée? N'hésitez pas à nous signaler si vous avez suivi un lien mort."}
+  , {name:"404-signal",fr:"Signaler un lien mort"}
+  , {name:"404-home",fr:"Retour à l'Acceuil"}
+  , {name:"404-search",fr:"Pages similaires :"}
+  ]
+  strings.forEach(function(str){
+    if(typeof str[lang] === "string"){
+      document.getElementById(str.name).innerHTML = str[lang];
+    }
+  });
+  if(!location.search &&location.pathname.split('/')[2] &&location.pathname.split('/')[2].length >3){
+    location.search = "?query="+location.pathname.split('/')[2];
+  }
+</script>

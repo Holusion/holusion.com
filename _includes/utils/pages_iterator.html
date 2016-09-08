@@ -1,0 +1,6 @@
+{% include utils/make_pages.html %}
+{% for content in pages %}
+  {% if content.menu == include.path %}
+    {% include {{include.format}} content=content %}
+  {% endif %}
+{% endfor %}
