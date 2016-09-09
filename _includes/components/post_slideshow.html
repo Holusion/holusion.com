@@ -1,10 +1,6 @@
 {% assign contents = include.contents %}
 
-<div id="slider" class="{{include.classes}}"
-  {% if include.height %}
-  style="padding-bottom:200px;height:{{include.height}}px;"
-  {% endif %}
->
+<div id="slider" class="{{include.classes}}">
   <div id="slides-shortcuts">
     <div class="scrollable" >
         {% for post in contents  %}
@@ -41,6 +37,17 @@
   </div>
   {% unless has_slideshow %}
   {% assign has_slideshow=true %}
+  <style>
+    #slider{
+      height: {{include.height}}px;
+    }
+    @media (max-width: 768px) {
+      #slider{
+        height: 150px;
+      }
+    }
+
+  </style>
   <script>
   (function(){
     var shortcuts = document.querySelectorAll('input[type="radio"].slide-shortcut');
