@@ -8,9 +8,9 @@ module Jekyll
         #it's a relative link
       end
       if(/^\/?dev\//.match(str))
-        str = str.sub(/^\/dev\//,"http://dev.holusion.com/")
+        str = str.sub(/^\/dev\//,"https://dev.holusion.com/")
       else
-        str = str.prepend("http://holusion.com")
+        str = str.prepend("https://holusion.com")
       end
       return str
     end
