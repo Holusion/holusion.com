@@ -14,7 +14,7 @@ tags: evenementiel, formation, focus
 
 <div class="row">
   <div class="col-md-4 col-xs-12 rtecenter">
-    <p class="rteleft" style="padding-top:20px"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></p>
+    <div style="padding-top:20px"><p class="rteleft"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></p></div>
   </div>
 
   <div class="col-md-8 col-xs-12">
@@ -43,6 +43,6 @@ tags: evenementiel, formation, focus
     <p class="rtejustify"><img alt="Logo Cap Digital" src="/static/img/posts/futur-en-seine/cap-digital-logo1.jpg" style="width: 200px; height: 72px;" /></p>
   </div>
 
-  <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 500px; height: 313px; margin-top: 10px; margin-bottom: 10px;" /></div>
+  <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 60%; height: 60%; margin-top: 10px; margin-bottom: 10px;" /></div>
 </div>
 <h4 class="rtecenter">Découvrir aussi...</h4>
