@@ -14,7 +14,7 @@ tags: evenementiel, formation, focus
 
 <div class="row">
   <div class="col-md-4 col-xs-12 rtecenter">
-    <div style="padding:30px 0px 0px 40px"><p class="rteleft"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></p></div>
+    <div style="padding:30px 0px 0px 40px"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></div>
   </div>
 
   <div class="col-md-8 col-xs-12">
