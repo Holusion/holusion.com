@@ -14,11 +14,11 @@ tags: evenementiel, formation, focus
 
 <div class="row">
   <div class="col-md-4 col-xs-12 rtecenter">
-    <p class="rteleft"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></p>
+    <p class="rteleft" style="padding-top:20px"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></p>
   </div>
 
   <div class="col-md-8 col-xs-12">
-    <h3 class="rtejustify">Une mission de sauvegarde</h3>
+    <h2 class="rtejustify">Une mission de sauvegarde</h2>
 
     <p class="rtejustify">Le projet Bagdad 3D part de l'envie de conserver une trace indestructicle du patrimoine irakien. Sa numérisation a pour objectif de conserver les détails et les formes pour toujours afin de <strong>protéger</strong> des oeuvres pouvant être détruites.</p>
 
@@ -32,7 +32,7 @@ tags: evenementiel, formation, focus
 
 <div class="row">
   <div class="col-md-6 col-xs-12">
-    <h3>Les hologrammes au service de la culture</h3>
+    <h2>Les hologrammes au service de la culture</h2>
 
     <p class="rtejustify">Sceau ou encore écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="http://holusion.com/fr/solution/focus">Focus</a> permettait au visiteur de visualiser les images innovantes à 360°.</p>
 
@@ -43,6 +43,6 @@ tags: evenementiel, formation, focus
     <p class="rtejustify"><img alt="Logo Cap Digital" src="/static/img/posts/futur-en-seine/cap-digital-logo1.jpg" style="width: 200px; height: 72px;" /></p>
   </div>
 
-  <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5536.jpg" style="width: 500px; height: 313px; margin-top: 10px; margin-bottom: 10px;" /></div>
+  <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 500px; height: 313px; margin-top: 10px; margin-bottom: 10px;" /></div>
 </div>
 <h4 class="rtecenter">Découvrir aussi...</h4>
