@@ -1,8 +1,10 @@
 <footer><div id="navbar-bottom" role="navigation" class="container-fluid">
+
+  {% include components/contact_form.html %}
   <section id="contact-bottom">
     <div class="container">
         {{site.data.strings["need-help"][lang]}}&nbsp;?
-        <a href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">{{site.data.strings["contact-us"][lang]}}</a>
+        <a style="cursor:pointer" onclick='document.getElementById("section-contactform").display()'>{{site.data.strings["contact-us"][lang]}}</a>
     </div>
   </section>
   <div class="container-fluid" id="section-bottom">
