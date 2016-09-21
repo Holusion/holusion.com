@@ -135,7 +135,8 @@ while IFS= read -r -d '' file; do
     # your code here
 done < <(find src/img/ -type f -print0)
 
-${make_site} && bundle exec jekyll build
+${make_site} &&
+bundle exec jekyll build --config _config.yml,_deploy.yml
 ${make_check} && bundle exec htmlproofer _site \
   --assume-extension \
   --disable-external \
