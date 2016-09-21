@@ -110,10 +110,12 @@ build_srcset(){
   fi
   if ${make_force} || [ ! -f "${out}.jpg" ] || [ "${out}.jpg" -ot "$1" ] ;then
     echo "Processing $file "
-    if [ $extension == "xcf" ] ;then
-      xcf2png $1 -o ${out}_uc2x.png
-    elif [ $extension == "psd" ] ; then
+    if [ "$extension" == "xcf" ] ;then
+      xcf2png "$1" -o "${out}_uc2x.png"
+    elif [ "$extension" == "psd" ] ; then
       convert "${1}[0]"  "${out}_uc2x.png"
+    elif [ "$extension" == "png" ] ; then
+      cp "$1" "${out}_uc2x.png"
     else
       echo "invalid file : $1"
       return
