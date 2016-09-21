@@ -51,25 +51,35 @@
   <script>
   (function(){
     var shortcuts = document.querySelectorAll('input[type="radio"].slide-shortcut');
+
     var slider = document.querySelector("#slider");
     var scroll = document.getElementsByClassName( "scrollable")[0];
     var slides = document.querySelector("#slides");
     var slideList = document.querySelectorAll("#slides .slide");
     for(var i=0;i<slideList.length;i++){
-      slideList[i].style.left = i*100+"%";
+      slideList[i].style.left = (i+1)*100+"%";
     }
+    //lastSlideDuplicate is used to loop cleanly in setNext().
+    var lastSlideDuplicate = slideList[slideList.length-1].cloneNode(true);
+    lastSlideDuplicate.style.left = "0";
+    slides.insertBefore(lastSlideDuplicate, slides.firstChild);
     var time;
     var current;
 
     /* Slider update */
     function setNext(index){
-      if(slides ) slides.style.left = -index*100+"%";
+      if(slides ) slides.style.left = -(index+1)*100+"%";
       time = setTimeout(function(){
         index++;
         if(shortcuts.length <= index ){
+          //Disable transition
+          slides.style.transition= "none";
+          slides.style.left= "0%";
+          slides.offsetHeight;//Triggers a DOM reflow
+          slides.style.transition= "";
+          slides.offsetHeight;
           index =0;
-        }else if(index < 0){
-          index = shortcuts.length-1;
+          console.log("0")
         }
         setNext(index);
         for(var i=0;i < shortcuts.length;i++){
