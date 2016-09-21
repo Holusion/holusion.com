@@ -1,0 +1,15 @@
+firstname:
+  fr: Prenom
+  en: First Name
+lastname:
+  fr: Nom
+  en: Last Name
+phone:
+  fr: Téléphone
+  en: Phone Number
+comments:
+  fr: Commentaires
+  en: Comments
+mail:
+  fr: Adresse Mail
+  en: Email Address
