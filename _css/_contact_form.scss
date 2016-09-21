@@ -20,7 +20,7 @@
   left:0;
   right:0;
   bottom:0;
-  background:rgba(0,0,0,0.2);
+  background:rgba(0,0,0,0.4);
   z-index:3;
 }
 #section-contactform form{
@@ -29,4 +29,13 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
   padding: 40px;
   border-radius:2px;
+}
+
+#section-contactform #contactform-close{
+  position:relative;
+  float:right;
+  align-self:right;
+  top:-20px;
+  right:-20px;
+  cursor: pointer;
 }
