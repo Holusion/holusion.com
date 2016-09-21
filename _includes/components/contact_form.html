@@ -7,7 +7,8 @@
   -->
   <div id="contactform-overlay">
   </div>
-    <form id="contactform-form" name="contactform" class="form-horizontal" method="post" action="/contact.php">
+    <form name="contactform" class="form-horizontal" method="post" action="/contact.php">
+      <span id="contactform-close" class="glyphicon glyphicon-remove"></span>
 
       <div class="form-group">
         <label for="first_name">{{contact_strings["firstname"][lang]}}</label>
@@ -55,6 +56,9 @@
           },2500);
         }
         document.getElementById("contactform-overlay").onclick = function(){
+          contactform.classList.remove("active");
+        }
+        document.getElementById("contactform-close").onclick = function(){
           contactform.classList.remove("active");
         }
         contactform.display = function(){
