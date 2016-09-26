@@ -69,6 +69,114 @@ slides:
     </div>
     </div>
 </div>
+<div align="center">
+<h2 align="center" style="padding: 50px 0px 20px 0px">Simulateur de prix</h2>
+<div align="center" style="padding-bottom:20px">Le simulateur est proposé uniquement à titre indicatif et les prix réels peuvent différer. Veuillez nous contacter pour plus d'informations.</div>
+</div>
+
+<div id="price-sim">
+<div class="sim-content">
+<div id="products" class="sim-row">
+<a id="0" class="product-picker" onclick="select_product(this)">
+<img width="100px" class="img-responsive" src="/build/img/products/goodies_meduse.png"/>
+</a>
+<a id="1" class="product-picker" onclick="select_product(this)">
+<img width="100px" class="img-responsive" src="/static/img/products/pixel_fleur_2.jpg"/>
+</a>
+</div>
+<div class="sim-row">
+<input type="number" class="form-control" min="0" id="quantity" placeholder ="Quantity" onchange="select_quantity(this)" onkeyup="select_quantity(this)">
+</div>
+<div class="sim-row">
+<span>Prix Unitaire (HT) :&nbsp;</span><span id="pu">0</span><span>&nbsp;€</span>
+</div>
+<div class="sim-row">
+<b><span>TOTAL (HT):&nbsp;</span><span id="price">0</span><span>&nbsp;€</span></b>
+</div>
+</div>
+</div>
+
+<script>
+var state = {
+triggers:[1,50,100,400,1000],
+prices:[
+[12, 6, 4.5, 3, 2.1],
+[18, 18, 9, 6, 4.8]
+]
+};
+//init
+(function init(){
+var firstElement = document.querySelector(".product-picker");
+firstElement.classList.add("active");
+state.product = parseInt(firstElement.id);
+render();
+})();
+
+var simulator = document.getElementById("price-sim");
+function select_product(elem){
+var oldSelection = document.querySelector(".product-picker.active");
+if(oldSelection){
+oldSelection.classList.remove("active");
+}
+elem.classList.add("active");
+state.product = parseInt(elem.id);
+render();
+}
+function select_quantity(q){
+state.quantity = q.value;
+render();
+}
+
+function render(){
+var index = state.triggers.reduce(function(last,trigger,i){
+if ( trigger <= state.quantity){
+return i;
+}else{
+return last;
+}
+},0);
+if(state.quantity && typeof state.product != "undefined"){
+document.getElementById("price").innerHTML = state.prices[state.product][index]*state.quantity;
+document.getElementById("pu").innerHTML = state.prices[state.product][index];
+}else{
+document.getElementById("price").innerHTML = "0";
+document.getElementById("pu").innerHTML = "0";
+}
+}
+</script>
+<style>
+#price-sim{
+display:flex;
+justify-content:center;
+}
+#price-sim .sim-content {
+display:flex;
+flex-grow:0;
+min-width:300px;
+flex-direction:column;
+justify-content:center;
+align-self:center;
+}
+#price-sim .sim-row{
+display:flex;
+flex-direction:row;
+justify-content:center;
+}
+#price-sim .sim-row .product-picker{
+align-self:center;
+margin:5px;
+flex-grow:0;
+padding:5px;
+border: 1px solid #ddd;
+outline: 0;
+border-radius: 4px;
+cursor:pointer;
+}
+.product-picker.active{
+background-color: #337ab7;
+}
+
+</style>
 
 <div align="center">
   <h2 align="center" style="padding: 50px 0px 20px 0px">Faites le test maintenant :</h2>
