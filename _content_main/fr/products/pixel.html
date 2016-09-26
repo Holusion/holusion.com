@@ -75,25 +75,25 @@ slides:
 </div>
 
 <div id="price-sim">
-<div class="sim-content">
-<div id="products" class="sim-row">
-<a id="0" class="product-picker" onclick="select_product(this)">
-<img width="100px" class="img-responsive" src="/build/img/products/goodies_meduse.png"/>
-</a>
-<a id="1" class="product-picker" onclick="select_product(this)">
-<img width="100px" class="img-responsive" src="/static/img/products/pixel_fleur_2.jpg"/>
-</a>
-</div>
-<div class="sim-row">
-<input type="number" class="form-control" min="0" id="quantity" placeholder ="Quantity" onchange="select_quantity(this)" onkeyup="select_quantity(this)">
-</div>
-<div class="sim-row">
-<span>Prix Unitaire (HT) :&nbsp;</span><span id="pu">0</span><span>&nbsp;€</span>
-</div>
-<div class="sim-row">
-<b><span>TOTAL (HT):&nbsp;</span><span id="price">0</span><span>&nbsp;€</span></b>
-</div>
-</div>
+  <div class="sim-content">
+    <div id="products" class="sim-row">
+      <a id="0" class="product-picker" onclick="select_product(this)">
+        <img width="100px" class="img-responsive" src="/static/img/products/pixel_fleur_2.jpg"/>
+      </a>
+      <a id="1" class="product-picker" onclick="select_product(this)">
+        <img width="100px" class="img-responsive" src="/build/img/products/goodies_meduse.png"/>
+      </a>
+    </div>
+    <div class="sim-row">
+      <input type="number" class="form-control" min="0" id="quantity" placeholder ="Quantity" onchange="select_quantity(this)" onkeyup="select_quantity(this)">
+    </div>
+    <div class="sim-row">
+      <span>Prix Unitaire (HT) :&nbsp;</span><span id="pu">0</span><span>&nbsp;€</span>
+    </div>
+    <div class="sim-row">
+      <b><span>TOTAL (HT):&nbsp;</span><span id="price">0</span><span>&nbsp;€</span></b>
+    </div>
+  </div>
 </div>
 
 <script>
