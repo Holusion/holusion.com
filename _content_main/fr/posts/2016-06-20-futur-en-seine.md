@@ -24,7 +24,7 @@ tags: evenementiel, formation, focus
 
     <p class="rtejustify">L'utilisation des nouvelles technologies (hologrammes, réalité virtuelle, scan ou photogramétrie) permet aussi de faire connaître et <strong>partager</strong> la culture irakienne aux occidentaux. Le projet sera notamment diffusé sur la chaîne Arte pour un maximum de visibilité.</p>
 
-    <p class="rtejustify">Pour que le projet puisse <strong>continuer</strong> et perdurer dans le temps une formation à la numérisation sera donnée. Depuis avril dernier, prodiges du numérique, archéologues et autres militants de la culture se regroupent sur le terrain irakien pour immortaliser en 3D et donner à vivre au monde entier les vestiges de ce qu’on nomme, civilisation.</p>
+    <p class="rtejustify">Pour que le projet puisse <strong>continuer</strong> et perdurer dans le temps une formation à la numérisation sera donnée. Depuis avril dernier, prodiges du numérique, archéologues et autres militants de la culture se regroupent sur le territoire irakien pour immortaliser en 3D et donner à vivre au monde entier les vestiges de ce que l'on nomme, civilisation.</p>
 
     <p class="rtejustify">&nbsp;</p>
   </div>
@@ -34,9 +34,9 @@ tags: evenementiel, formation, focus
   <div class="col-md-6 col-xs-12">
     <h2>Les hologrammes au service de la culture</h2>
 
-    <p class="rtejustify">Sceau ou encore écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="http://holusion.com/fr/solution/focus">Focus</a> permettait au visiteur de visualiser les images innovantes à 360°.</p>
+    <p class="rtejustify">Sceau et écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="http://holusion.com/fr/solution/focus">Focus</a> a permis au visiteur de visualiser les images innovantes à 360°.</p>
 
-    <p class="rtejustify">Ce dernier a surtout pu apprécier le lien existant entre le contenu et la technologie. En effet, ce lien, porteur de sens, a permis à chacun de s'imerger dans l'univers de Bagdad. Le partenariat entre Bagdad 3D et Holusion a donc contribué à donner vie à un contenu passionnant.</p>
+    <p class="rtejustify">Ce dernier a surtout pu donné du sens et faire le lien entre le contenu et la technologie de l'hologramme. En prenant tout son sens, l'hologramme a permis à chacun de s'immerger dans l'univers de Bagdad. Le partenariat entre Bagdad 3D et Holusion a donc contribué à donner vie à un contenu passionnant.</p>
 
     <p class="rtejustify">&nbsp;</p>
 
