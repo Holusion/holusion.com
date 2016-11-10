@@ -135,12 +135,18 @@ while IFS= read -r -d '' file; do
     # your code here
 done < <(find src/img/ -type f -print0)
 
-${make_site} &&
-bundle exec jekyll build --config _config.yml,_deploy.yml
-${make_check} && bundle exec htmlproofer _site \
+if ${make_site} ;then
+  if test -f _deploy.yml ;then
+    j_conf="--config _config.yml,_deploy.yml"
+  else
+    j_conf="--config _config.yml"
+  fi
+  bundle exec jekyll build $j_conf
+
+  ${make_check} && bundle exec htmlproofer _site \
   --assume-extension \
   --disable-external \
   --checks-to-ignore ScriptCheck \
   --file-ignore "/vendor/"
-
+fi
 cd $OLD_PWD #go back to initial directory
