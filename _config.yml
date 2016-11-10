@@ -12,7 +12,7 @@ sass:
   sass_dir: _css
   style: :compressed
   sourcemap: :true
-
+snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 collections:
   content_dev:
     permalink: /dev/:path
