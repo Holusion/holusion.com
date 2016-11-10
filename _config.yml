@@ -4,6 +4,7 @@ exclude:
   - node_modules
   - src
 highlighter: rouge
+incremental: true
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
