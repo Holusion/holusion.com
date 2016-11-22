@@ -34,6 +34,9 @@
           console.log(event.target.statusText);
           if(event.target.status == 200){
             logInfo('alert-success','Message Sent to Holusion.');
+            setTimeout(function(){
+              window.location = window.location;
+            },2000);
           }else {
             var txt;
             try{
