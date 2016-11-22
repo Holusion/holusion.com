@@ -35,7 +35,12 @@
           if(event.target.status == 200){
             logInfo('alert-success','Message Sent to Holusion.');
           }else {
-            logInfo("alert-danger","An error happened : "+event.target.statusText);
+            var txt;
+            try{
+              txt = JSON.parse(event.target.responseText).message;
+            }catch(e){/* Ignore errors */}
+            txt = txt ||event.target.statusText
+            logInfo("alert-danger","An error happened : "+txt);
           }
 
         });
