@@ -33,7 +33,7 @@ if(isset($_POST['email'])) {
   $comments = $_POST['comments']; // required
   //Recaptcha vars
   //One liner to get client IP.
-  $ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDE‌​D_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
+  $ip = isset($_SERVER['HTTP_CLIENT_IP'])?$_SERVER['HTTP_CLIENT_IP']:(isset($_SERVER['HTTP_X_FORWARDE‌​D_FOR'])?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
   $captcha = $_POST['g-recaptcha-response'];
 
   //STRING validation
@@ -61,18 +61,13 @@ if(isset($_POST['email'])) {
     died($error_message);
   }
   // POST to google's recaptcha service to verify validity
-  $url = 'https://www.google.com/recaptcha/api/siteverify';
-  $ch = curl_init($url);
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"secret\": \"6LdWrgwUAAAAAC1UrproS846GfExJdz_5qa4HViP\", \"response\":\"".$captcha."\",\"remoteip\":\"".$ip."\"}");
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $secretKey = "6LdWrgwUAAAAAC1UrproS846GfExJdz_5qa4HViP";
+  $response = file_get_contents( "https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
 
-  $response = curl_exec($ch);
-  curl_close($ch);
   $r = json_decode($response,true);
-  if( ! $r["success"] ){
-    died("Captcha error : ".$response);
+  if( intval($r["success"]) !== 1 ){
+    error_log($response);
+    died("Invalid Captcha. Please try again");
   }
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");
@@ -94,11 +89,10 @@ if(isset($_POST['email'])) {
   'X-Mailer: PHP/' . phpversion();
 
   @mail($email_to, $email_subject, $email_message, $headers);
+  //Success message here
 ?>
-<!-- include your own success html here -->
-
 Thank you for contacting us. We will be in touch with you very soon.
-
 <?php
+  //End of success message
 }
 ?>
