@@ -20,7 +20,7 @@ if(isset($_POST['email'])) {
       !isset($_POST['last_name']) ||
       !isset($_POST['email']) ||
       !isset($_POST['telephone']) ||
-      !isset($_POST['comments']) 
+      !isset($_POST['comments'])
   ) {
       died('We are sorry, but there appears to be a problem with the form you submitted.');
   }
@@ -30,6 +30,9 @@ if(isset($_POST['email'])) {
   $email_from = $_POST['email']; // required
   $telephone = $_POST['telephone']; // not required
   $comments = $_POST['comments']; // required
+  //Recaptcha vars
+  //One liner to get client IP.
+  $ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDE‌​D_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
   $captcha = $_POST['g-recaptcha-response'];
 
   //STRING validation
@@ -56,8 +59,17 @@ if(isset($_POST['email'])) {
   if(strlen($error_message) > 0) {
     died($error_message);
   }
+  // POST to google's recaptcha service to verify validity
+  $url = 'https://www.google.com/recaptcha/api/siteverify';
+  $ch = curl_init($url);
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"secret\": \"6LdWrgwUAAAAAC1UrproS846GfExJdz_5qa4HViP\", \"response\":\"".$captcha."\",\"remoteip\":\"".$ip."\"}");
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-
+  $response = curl_exec($ch);
+  curl_close($ch);
+  
 
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");
