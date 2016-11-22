@@ -20,7 +20,8 @@ if(isset($_POST['email'])) {
       !isset($_POST['last_name']) ||
       !isset($_POST['email']) ||
       !isset($_POST['telephone']) ||
-      !isset($_POST['comments'])
+      !isset($_POST['comments']) ||
+      !isset($_POST['g-recaptcha-response'])
   ) {
       died('We are sorry, but there appears to be a problem with the form you submitted.');
   }
@@ -69,9 +70,9 @@ if(isset($_POST['email'])) {
 
   $response = curl_exec($ch);
   curl_close($ch);
-  $r = json_decode($response,true)
-  if(!r["success"]){
-    died("Captcha error : ".$response)
+  $r = json_decode($response,true);
+  if( ! $r["success"] ){
+    died("Captcha error : ".$response);
   }
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");

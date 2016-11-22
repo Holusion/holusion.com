@@ -54,8 +54,6 @@
     var script = document.createElement("SCRIPT");
     script.async = "1";
     script.onload = setupForm();
-    script.src = "https://www.google.com/recaptcha/api.js"
-
-
-
+    script.src = "https://www.google.com/recaptcha/api.js";
+    document.head.appendChild(script);
   })()

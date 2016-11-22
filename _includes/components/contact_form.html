@@ -30,6 +30,7 @@
         <label for="comments">{{contact_strings["comments"][lang]}}</label>
         <textarea  name="comments" class="form-control"  maxlength="1000" cols="25" rows="6"></textarea>
       </div>
+      <div class="g-recaptcha" data-sitekey="6LdWrgwUAAAAAGbQM39EciTf3d2QEynV2Yb4s8o9"></div>
       <div class="form-group">
         <button type="submit" class="form-control" class="btn btn-default">Submit</button>
       </div>
@@ -37,7 +38,7 @@
         <div id="contactform-logger" class="form-control alert" role="alert" style="display:none">...</div>
       </div>
     </form>
-    <div class="g-recaptcha" data-sitekey="6LdWrgwUAAAAAGbQM39EciTf3d2QEynV2Yb4s8o9"></div>
+
     <script async defer src="/static/js/contact.js"></script>
 </section>
 {% endunless %}
