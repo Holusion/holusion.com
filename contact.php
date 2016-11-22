@@ -69,8 +69,10 @@ if(isset($_POST['email'])) {
 
   $response = curl_exec($ch);
   curl_close($ch);
-  
-
+  $r = json_decode($response,true)
+  if(!r["success"]){
+    died("Captcha error : ".$response)
+  }
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");
     return str_replace($bad,"",$string);
