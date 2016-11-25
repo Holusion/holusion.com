@@ -94,7 +94,8 @@
     setNext(0);
     var scrollScript = document.createElement("SCRIPT");
     scrollScript.onload = function(){
-      scroll.style.height = slider.clientHeight-20+"px";
+      console.log("Computed height:",slider.querySelector(".slide-image").clientHeight);
+      scroll.style.height = (slider.querySelector(".slide-image").clientHeight ||slider.clientHeight)-20+"px";
       addCustomHTMLScroll( scroll );
     }
     scrollScript.src="/vendor/customhtmlscroll/customhtmlscroll.min.js";
