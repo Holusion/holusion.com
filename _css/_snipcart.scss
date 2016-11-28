@@ -1,5 +1,8 @@
 @import "colors";
 .snip-layout{
+  #snipcart-close.snip-layout__close .snip-ico.snip-ico--close{
+    color:#f10;
+  }
   #snipcart-header{
     background: $white;
   }
