@@ -49,4 +49,31 @@
   li.snip-step__item.js-active{
     color: $blue;
   }
+
+  /* billing form styles */
+  p.snip-form__error{
+    background:$orange
+  }
+  .snip-form__container{
+    label[for="snip-name"]:after,
+    label[for="snip-address1"]:after,
+    label[for="snip-city"]:after,
+    label[for="snip-postalCode"]:after,
+    label[for="snip-email"]:after{
+      content:"*";
+      padding-left:2px;
+    }
+  }
+  .snip-form__container:hover{
+    label[for="snip-name"]:after,
+    label[for="snip-address1"]:after,
+    label[for="snip-city"]:after,
+    label[for="snip-postalCode"]:after,
+    label[for="snip-email"]:after{
+      content:"(required)";
+      padding-left:4px;
+      vertical-align: top;
+      font-size: 8px;
+    }
+  }
 } /*End of .snip-layout selector */
