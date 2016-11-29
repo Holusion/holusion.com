@@ -12,6 +12,7 @@ sass:
   sass_dir: _css
   style: :compressed
   sourcemap: :true
+#This is the test api key and can be played with consequence-free
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 collections:
   content_dev:
