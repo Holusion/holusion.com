@@ -1,12 +1,12 @@
 # Introduction
 
-Developper website for holusion. Access at : http://dev.holusion.com
+Developper website for holusion. Access at : https://holusion.com
 
 ##USAGE
 
 #### Fonctionnement
 
-cette documentation est exportée via [github-pages](https://pages.github.com/) sur [dev.holusion.com](http://dev.holusion.com) en utilisant le moteur de génération de sites [jekyll](http://jekyllrb.com/)
+cette documentation est exportée via [jekyll](http://jekyllrb.com/) sur [holusion.com](https://holusion.com) [dev.holusion.com](https://dev.holusion.com).
 Elle est séparée en deux catégories majeures :
 
 - Anglais (répertoire ```_content_main/en```)
