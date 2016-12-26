@@ -46,6 +46,10 @@
 
 .slide .slide-image{
   flex-grow:1;
+  max-width: 100%;
+}
+.slide .slide-image{
+  object-fit:cover;
 }
 #slides{
   width: 100%;
