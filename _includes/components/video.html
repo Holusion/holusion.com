@@ -1,8 +1,11 @@
 <div align="center" class="embed-responsive embed-responsive-16by9">
   <video
-    {%if include.loop %}loop=""{%endif %}
-    {%if include.autoplay %}autoplay=""{%endif %}
-    {%if include.preload %}preload=""{%endif %}
+    {%if include.loop %}loop{%endif %}
+    {%if include.autoplay %}autoplay{%endif %}
+    {%if include.preload %}preload{%endif %}
+    {%if include.muted %}muted{%endif %}
+    playsinline
+    webkit-playsinline
     poster="{{include.image}}">
     <source src="/build/videos/{{include.name}}.mp4" type="video/mp4" />
     <source src="/build/videos/{{include.name}}.webm" type="video/webm" />
