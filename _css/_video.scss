@@ -22,15 +22,21 @@
   background:rgba(0,0,0,0.6);
   max-width:800px;
   color:white;
-  font-size: 30px;
+  font-size: 25px;
   padding:15px;
   text-align:center;
 }
+
 .video-overlay-icon{
   opacity:0.6;
   animation: fadeIn .2s ease-in-out;
 }
 @media screen and (max-width: $break-small){
+  .video-overlay-text{
+    font-size: 100%;
+    padding:8px;
+    width:100%;
+  }
   .video-overlay-icon{
     display:none;
   }
