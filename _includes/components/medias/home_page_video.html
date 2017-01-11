@@ -1,0 +1,15 @@
+<div align="center" class="embed-responsive" style="padding-bottom:40%;">
+  <video loop autoplay preload muted playsinline webkit-playsinline
+    poster="{{include.image}}">
+    <source src="/build/videos/{{include.name}}.mp4" type="video/mp4" />
+    <source src="/build/videos/{{include.name}}.webm" type="video/webm" />
+    <source src="/build/videos/{{include.name}}.ogv" type="video/ogg" />
+    <object type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="640" height="360">
+      <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+      <param name="allowFullScreen" value="true" />
+      <param name="wmode" value="transparent" />
+      <param name="flashVars" value="config={'playlist':['{{include.image}}',{'url':'/build/videos/{{include.name}}.mp4','autoPlay':true}]}" />
+      <img class="img-responsive" width="100%" alt="{{include.alt}}" src="{{include.image}}"  title="No video playback capabilities" />
+    </object>
+  </video>
+</div>

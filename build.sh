@@ -1,5 +1,5 @@
 #!/bin/bash
-set -- -e
+set -e
 command -v convert >/dev/null 2>&1 || { echo >&2 "convert from imagemagick package is required but it's not installed.  Aborting."; exit 1; }
 command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
 command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
@@ -10,6 +10,7 @@ usageStr(){
   echo -e "Valid options :"
   echo -e "\t-t --test : Enable checks with html-proofer"
   echo -e "\t-f --force : Force assets rebuild"
+  echo -e "\t-w --watch : Use jekyll serve mode"
   echo -e "\t-e --exclude : Exclude some assets from rebuild. ex : --exclude site"
   echo -e "\t\tRecognized options : site"
 }
@@ -17,29 +18,32 @@ usageStr(){
 make_force=false
 make_check=false
 make_site=true
-
+make_watch=false
 while [[ $# -gt 0 ]]
 do
-key="$1"
-
-case $key in
-    -t|--test)
-    make_check=true
-    ;;
-    -f|--force)
-    make_force=true
-    ;;
-    -e|--exclude)
-      eval "make_$2=false"
-      shift
-    ;;
-    *)
-      echo "unknown opt"
-      usageStr $1
-      exit 1
-    ;;
-esac
-shift # past argument or value
+  key="$1"
+  case $key in
+      -t|--test)
+        make_check=true
+      ;;
+      -f|--force)
+        make_force=true
+      ;;
+      -w|--watch)
+        echo "make watch"
+        make_watch=true
+      ;;
+      -e|--exclude)
+        eval "make_$2=false"
+        shift
+      ;;
+      *)
+        echo "unknown opt"
+        usageStr $1
+        exit
+      ;;
+  esac
+  shift # past argument or value
 done
 
 
@@ -141,7 +145,11 @@ if ${make_site} ;then
   else
     j_conf="--config _config.yml"
   fi
-  bundle exec jekyll build $j_conf
+  if $make_watch ;then
+    bundle exec jekyll serve $j_conf
+  else
+    bundle exec jekyll build $j_conf
+  fi
 
   ${make_check} && bundle exec htmlproofer _site \
   --assume-extension \
@@ -149,4 +157,4 @@ if ${make_site} ;then
   --checks-to-ignore ScriptCheck \
   --file-ignore "/vendor/"
 fi
-cd $OLD_PWD #go back to initial directory
+cd "$OLD_PWD" #go back to initial directory
