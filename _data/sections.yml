@@ -13,6 +13,9 @@ products:
 home:
   fr: "Accueil"
   en: "Home"
+dev:
+  fr: "Développeurs"
+  en: "Documentation"
 s1:
   fr: "Holusion : Ressources Techniques"
   en: "Holusion : Developper Network"
