@@ -18,7 +18,7 @@ lang: fr
   </div>
 </section>
 <section id="section-promotion">
-  <h1 align="center" id="main-title-1" style="padding: 30px 0px 30px 0px">
+  <h1 align="center" id="main-title-1" >
     Achetez votre hologramme en ligne
   </h1>
   <div class="container">
@@ -42,7 +42,7 @@ lang: fr
 </section>
 <section id="section-produits" >
   <div class="container">
-    <h1 align="center" id="main-title-1" style="padding: 30px 0px 30px 0px">Nos produits</h1>
+    <h1 align="center" id="main-title-1" >Nos produits</h1>
     <div class="row">
       {% include utils/make_products.html %}
       {% for product in products limit:4 %}
@@ -57,7 +57,7 @@ lang: fr
 
 <section id="section-usages" >
   <div class="container">
-    <h1 align="center" id="main-title-1" style="padding: 30px 0px 20px 0px">Usages interactifs</h1>
+    <h1 align="center" id="main-title-1" >Usages interactifs</h1>
 
  <a href="usages#apprendre"><div style="background: url('/static/img/usages/focus_interactif_formation.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
       <font size="6pt"><h3 style="color:white;">APPRENDRE</h3></font>
@@ -79,7 +79,7 @@ lang: fr
 
 <section id="section-accompagnement" >
   <div class="container">
-    <h1 align="center" id="main-title-1" style="padding: 30px 0px 10px 0px">Une entreprise, un accompagnement</h1>
+    <h1 align="center" id="main-title-1">Une entreprise, un accompagnement</h1>
     <p align="center"><a href="/fr/about/"><img alt="Schéma notre accompagnement" class="img-responsive" src="/static/img/front/accompagnement_fr.jpg" width="800" height="700" style="padding: 20px 0px 10px 0px;" /></a></p>
     <div align="right">
       <a href="/fr/about/">Découvrir l'entreprise > </a>
@@ -89,7 +89,7 @@ lang: fr
 
 <section id="section-stories">
   <div class="container">
-    <h1 align="center" id="main-title-1" style="padding: 30px 0px 30px 0px">Plongez-vous dans nos histoires</h1>
+    <h1 align="center" id="main-title-1" >Plongez-vous dans nos histoires</h1>
     {% include utils/make_posts.html %}
     {% for post in  posts offset: 0 limit: 4 %}
     {% include components/post_thumbnail.html content=post %}
