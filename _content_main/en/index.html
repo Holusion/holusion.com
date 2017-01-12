@@ -7,40 +7,13 @@
   <div id="video-wrapper">
     {% include components/medias/home_page_video.html
       name="home_video"
-      image="/static/img/products/pixel_fleur_16-9.jpg"
+      image="/static/img/products/pixel_car.jpg"
       %}
   </div>
-  <script>
-    function handle_video_click(){
-      var height = document.getElementById("video-wrapper").clientHeight;
-      if(typeof window.requestAnimationFrame === "function"){
-        var x =window.scrollX;
-        var y = window.scrollY;
-        var scroll = function(){
-          if(y < height){
-            y += 50
-            window.scrollTo(x,y);
-            window.requestAnimationFrame(scroll);
-          }
-
-        }
-        scroll();
-      }else{
-        window.scrollTo(window.scrollX,600);
-      }
-
-    }
-  </script>
   <div class="video-overlay" style="">
         <div class="video-overlay-text">
           Create digital user experiences
         </div>
-        <a  onclick="handle_video_click()" class="video-overlay-icon">
-          <svg fill="#ffffff" height="80" viewBox="0 0 24 24" width="80">
-            <use class="hover-circle" xlink:href="#circle"></use>
-            <use xlink:href="#icon-down"></use>
-        </svg>
-      </a>
   </div>
 </section>
 <section id="section-produits" >
