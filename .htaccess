@@ -15,8 +15,4 @@ RedirectMatch 301 ^/?$ /fr/
   RewriteCond %{REQUEST_URI} ^/en
   RewriteRule ^(.*) /dev/$1 [L]
 
-  #rewrite http to https for pixel
-  RewriteCond %{HTTPS} off
-  # This checks to make sure the connection is not already HTTPS
-  RewriteRule (.*)/products/pixel https://%{HTTP_HOST}/$1/products/pixel [QSA,L,R=301]
 </IfModule>
