@@ -1,6 +1,6 @@
 ---
 title: Vitrine Holographique
-image: /build/img/posts/ralph_lauren/header.jpg
+image: /static/img/posts/ralph_lauren/header.jpg
 abstract: Comment Ralph Lauren a réalisé une installation holographique en vitrine
 tags: commerce, taille humaine, evenementiel
 ---
