@@ -8,4 +8,24 @@
   {% else %}
     {% assign lang = "fr" %}
   {% endif %}
+
+  {% comment %}
+  ### Determine alternate language        ###
+  ### Check if alternate page exists      ###
+  ### Set alt_url accordingly             ###
+  {% endcomment %}
+
+  {% if lang == "en" %}
+    {% assign alt_lang = "fr" %}
+  {% else %}
+    {% assign alt_lang = "en" %}
+  {% endif %}
+  {% assign pages_url_list = site.content_main|map: 'url' %}
+
+  {% assign alt_url = page.url | replace:/{{lang}}/,/{{alt_lang}}/ %}
+  {% unless pages_url_list contains {{alt_url}} %}
+    {% assign alt_url = "" %}
+  {% endunless %}
+
+
 {% endunless %}

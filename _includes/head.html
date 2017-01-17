@@ -32,7 +32,6 @@
   {% if page.lang %}
     <meta property="og:locale" content="{{page.lang}}"/>
   {% endif %}
-  {% include favicons.html url="/static/img/icons/favicons" %}
   <!-- CSS Loading -->
   <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
@@ -40,7 +39,16 @@
   <!-- jquery is only used as a bootstrap dependency. Please avoid binding the site to it -->
   <script defer="" src="/vendor/jquery/dist/jquery.min.js"></script>
   <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-  <link rel="canonical" href="{{page.url |canonical}}">
+  {% if site.url %}
+  <link rel="canonical" href="{{page.url | canonical }}">
+    {% if alt_url != "" %}
+    <link rel="alternate" hreflang="{{alt_lang}}" href="{{alt_url | canonical }}">
+    <link rel="alternate" hreflang="{{lang}}" href="{{page.url |canonical }}">
+    {% endif %}
+  {% endif %}
+
+
+  {% include favicons.html url="/static/img/icons/favicons" %}
   {% include utils/make_pages.html %}
   {% include scripts/analytics_privacy.html %}
 </head>
