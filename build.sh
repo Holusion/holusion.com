@@ -62,7 +62,7 @@ if [ ! -f ${pngcrush} ] ;then
   #download and build zopflipng
   wget -O - https://github.com/google/zopfli/archive/zopfli-1.0.1.tar.gz |tar -zxf -
   cd zopfli-zopfli-1.0.1 && make zopflipng && mv zopflipng ${pngcrush}
-  rm -rf zopfli-zopfli-1.0.1
+  rm -rf $DIR/zopfli-zopfli*
   cd ${DIR}
 fi
 
