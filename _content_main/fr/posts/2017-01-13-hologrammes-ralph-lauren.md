@@ -18,7 +18,7 @@ tags: commerce, taille humaine, evenementiel
     <p>
     Après un <a  href="http://www.lexpress.fr/styles/mode/defiles-fashion-week/defiles/video-ralph-lauren-organise-un-defile-holographique-a-central-park_1574611.html" >
       défilé holographique
-    </a> (vidéo <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o"> ici</a>) à central park en 2014, Ralph Lauren récidive : une réalisation de <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a> vous permet d'admirer des boxeurs en taille réelle dans la vitrine de la 5ème Avenue de New York.
+    </a> (vidéo <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o">ici</a>) à central park en 2014, Ralph Lauren récidive : une réalisation de <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a> vous permet d'admirer des boxeurs en taille réelle dans la vitrine de la 5ème Avenue de New York.
     </p>
     <p>
     L'installation offre un effet de profondeur saisissant, et pour cause : elle repose sur un assemblage astucieux de technologies bien connues, que nous vous proposons de décortiquer.
