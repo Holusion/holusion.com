@@ -30,16 +30,16 @@ tags: commerce, taille humaine, evenementiel
 
 <div align="center" style="padding : 20px 0px 20px 0px">
 <h2>L'installation complète :</h2>
+
+<p>On retrouve les éléments principaux de la scène : le sol lumineux, le premier plan avec le logo Polo Sport, qui servira à afficher les sportifs en mouvement, les cordes du ring, et les infobulles en arrière plan.</p>
+
 <img class="img-responsive" src="/static/img/posts/ralph_lauren/schema_ralphlauren.jpg" title="schema de l'installation" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
 </div>
 
-<center>
-On retrouve les éléments principaux de la scène : le sol lumineux, le premier plan avec le logo Polo Sport, qui servira à afficher les sportifs en mouvement, les cordes du ring, et les infobulles en arrière plan.
-</center>
 
-### Projection
+### Le boxeur au premier plan : une vidéo-projection
 
-Les boxeurs et le logo de l'enseigne sont affichés tout simplement sur un écran en vidéo-projection par l'arrière.
+Les boxeurs et le logo "Polo Sport" de l'enseigne sont affichés sur un écran en vidéo-projection par l'arrière (cf. schéma ci-dessus).
 
 <div class="row">
   <div class="col-md-6">
@@ -50,10 +50,10 @@ Les boxeurs et le logo de l'enseigne sont affichés tout simplement sur un écra
   <div class="col-md-6">
     <h4>Comment ça marche : sans les panneaux réfléchissants</h4>
     <p>
-    On a un "simple" écran de vidéoprojection sur lequel est projeté une image. Rien d'holographique pour le moment.
+    On a un "simple" écran de vidéo-projection (écran principal) sur lequel est projeté une image. Rien d'holographique pour le moment.
     </p>
     <p>
-    La vidéoprojection est la cause des quelques artefacts visuels que l'on peut voir, avec des "points chauds" sur les couleurs claires.
+    La vidéo-projection est la cause des quelques artefacts visuels que l'on peut voir, avec des "points chauds" sur les couleurs claires.
     </p>
     <p>
     Les sportifs en mouvement sont tous affichés de cette manière.
@@ -61,21 +61,21 @@ Les boxeurs et le logo de l'enseigne sont affichés tout simplement sur un écra
   </div>
 </div>
 
-### Pepper's ghost
+### Le boxeur en arrière plan : un hologramme pepper's ghost
 
-Comment faire apparaitre les cordes du ring **derrière** la projection ? Grâce à la magie du Pepper's Ghost, tout simplement !
+Comment faire apparaitre les cordes du ring **derrière** l'écran principal ? Grâce à la magie du Pepper's Ghost, tout simplement !
 
 Les 2 alcôves latérales sont fortement éclairées et contiennent :
 
 - les cordes du ring
 - le sol lumineux
 - le sac que l'on voit dans le coin inférieur droit
-- 2 écrans, dans le fond, qui affichent à tour de rôle :
+- 2 écrans (cf. schéma ci-dessus), dans le fond, qui affichent à tour de rôle :
   - le boxeur assis en  arrière plan
   - les infobulles flottant derrière les sportifs en exercice
   - les éclairages façon "stadium"
 
-Tous ces éléments sont reflétés dans les panneaux centraux inclinés à 45°.
+Tous ces éléments sont reflétés dans les deux panneaux réfléchissants centraux (cf. schéma ci-dessus) inclinés à 45°.
 
 <div class="row" style="padding: 20px 0px 20px 0px">
   <div class="col-md-6">
