@@ -1,8 +1,11 @@
 {% include utils/lang.html %}
+
+
 <li class="{{include.type}}">
+  {% if alt_url != "" %}
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">{{lang}}<span class="caret"></span></a>
   <ul class="dropdown-menu language-picker" role="menu">
-    <li><a href="{{ page.url | replace:'/en/','/fr/' }}" onclick="(function(){localStorage.setItem('userlanguage','fr')}())">FR <img alt="FR" class="flag" width="20px" height="20px" src="/static/img/flags/fr.jpg"></a></li>
-    <li><a href="{{ page.url | replace:'/fr/','/en/' }}" onclick="(function(){localStorage.setItem('userlanguage','en')}())">EN <img alt="EN" class="flag" width="20px" height="20px" src="/static/img/flags/en.jpg"></a></li>
+    <li><a href="{{alt_url}}" onclick="(function(){localStorage.setItem('userlanguage','fr')}())">{{alt_lang}}</a></li>
   </ul>
+  {% endif %}
 </li>
