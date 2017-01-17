@@ -11,13 +11,15 @@ usageStr(){
   echo -e "\t-t --test : Enable checks with html-proofer"
   echo -e "\t-f --force : Force assets rebuild"
   echo -e "\t-w --watch : Use jekyll serve mode"
-  echo -e "\t-e --exclude : Exclude some assets from rebuild. ex : --exclude site"
-  echo -e "\t\tRecognized options : site"
+  echo -e "\t-d --dev : makes dev.holusion.com instead of holusion.com"
+  echo "long option only : "
+  echo -e "\t--windows : apply Ms Mindows-specific settings"
 }
 
 make_force=false
 make_check=false
-make_site=true
+make_dev=false
+is_windows=false
 make_watch=false
 while [[ $# -gt 0 ]]
 do
@@ -33,9 +35,11 @@ do
         echo "make watch"
         make_watch=true
       ;;
-      -e|--exclude)
-        eval "make_$2=false"
-        shift
+      -d|--dev)
+        make_dev=true
+      ;;
+      --windows)
+        is_windows=true
       ;;
       *)
         echo "unknown opt"
@@ -140,17 +144,34 @@ while IFS= read -r -d '' file; do
 done < <(find src/img/ -type f -print0)
 
 if ${make_site} ;then
-  if test -f _deploy.yml ;then
-    j_conf="--config _config.yml,_deploy.yml"
-  else
-    j_conf="--config _config.yml"
+  s_conf="_config.yml"
+
+  # Make dev.holusion.com if specified
+  if $make_dev ;then
+    s_conf="$s_conf,_config.dev.yml"
   fi
-  if $make_watch ;then
-    bundle exec jekyll serve $j_conf
-  else
-    bundle exec jekyll build $j_conf
+  # deploy if _deploy.yml exists. it should not in dev environments.
+  # It's a shorthand to pass in build-time variables like site.url
+  if test -f _deploy.yml ;then
+    s_conf="$s_conf,_deploy.yml"
   fi
 
+  # Add winwows options if requested
+  if $is_windows ;then
+    add_opts="--force_polling"
+  fi
+  if $make_watch ;then
+    exec_cmd="serve"
+  else
+    exec_cmd="build"
+  fi
+
+  # final command
+  bundle exec jekyll $exec_cmd --config $s_conf $add_opts
+
+  #
+  # TEST target
+  #
   ${make_check} && bundle exec htmlproofer _site \
   --assume-extension \
   --disable-external \

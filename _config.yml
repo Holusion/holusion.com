@@ -15,9 +15,6 @@ sass:
 #This is the test api key and can be played with consequence-free
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 collections:
-  content_dev:
-    permalink: /dev/:path
-    output: true
   content_main:
     permalink: /:path
     output: true
@@ -28,46 +25,7 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "index"
-  -
-    scope:
-      path: ""
-      type: "content_dev"
-    values:
-      domain: "/dev"
-      layout: "dev_site"
-
-  #legacy lang set for old jekyll
-  -
-    scope:
-      path: "dev/fr"
-    values:
-      lang: "fr"
-  -
-    scope:
-      path: "dev/en"
-    values:
-      lang: "en"
-  -
-    scope:
-      path: "fr"
-    values:
-      lang: "fr"
-  -
-    scope:
-      path: "en"
-    values:
-      lang: "en"
 #new lang set for jekyll >3.1
-  -
-    scope:
-      path: "_content_dev/fr"
-    values:
-      lang: "fr"
-  -
-    scope:
-      path: "_content_dev/en"
-    values:
-      lang: "en"
   -
     scope:
       path: "_content_main/fr"

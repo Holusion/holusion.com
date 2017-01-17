@@ -1,8 +1,7 @@
 {% include utils/lang.html %}
-{% include utils/domain.html %}
 <div class="container ariane">
   {% assign levels = page.url|split: "/" |shift:2%}
-  {% capture ln %}{{domain}}/{{lang}}{% endcapture %}
+  {% capture ln %}/{{lang}}{% endcapture %}
   <a href="{{ln}}">{{site.data.sections.home[lang]}}</a>
   {% for level in levels %}
     {% assign cleanedLevel = level | split: "." |first %}

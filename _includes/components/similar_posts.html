@@ -3,7 +3,7 @@
 <div id="post-similar">
   <div class="row" >
     {% include utils/make_posts.html %}
-    {% include utils/domain.html %}
+
     {% assign similar_posts = "" | split: ""  %}
     {% for post in posts %}
       {% for tag in page.tags %}
@@ -17,7 +17,7 @@
     {% for post in similar_posts limit: 3 %}
       {% include components/post_thumbnail.html content=post %}
     {% endfor %}
-    {% capture stories_url %}{{domain}}/{{lang}}/posts{% endcapture %}
+    {% capture stories_url %}/{{lang}}/posts{% endcapture %}
     {% include components/post_thumbnail.html title="Plus d'histoires" image="/static/img/posts/default.jpg" abstract="découvrir d'autres réalisations" url=stories_url %}
   </div>
 </div>
