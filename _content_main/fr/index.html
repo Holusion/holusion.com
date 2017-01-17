@@ -106,7 +106,9 @@ lang: fr
 </section>
 <section id="section-contact" style="padding-top:25px;">
   <div class="container">
-    <div class="row">
+    <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
+      <meta itemprop="name" content="holusion" />
+      <meta itemprop="logo" url="https://holusion.com/static/img/logo.png" />
       <div class="col-md-6 col-sm-12">
         <h3>Venez nous rencontrer :</h3>
         {% include components/maps_api.html %}
@@ -116,19 +118,24 @@ lang: fr
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-            +33 (0)9 72 42 44 51
+            <span itemprop="telephone">+33 (0)9 72 42 44 51</span>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-            99A Boulevard Constantin Descat, 59200 Tourcoing, France
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>,
+              <span itemprop="postalCode">59200</span>
+              <span itemprop="addressLocality">Tourcoing</span>,
+              <span itemprop="addressCountry">France</span>
+            </span>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-            <a href="admin [at] example.com" target="_blank" rel="nofollow" onclick="this.href='mailto:' + 'contact' + '@' + 'holusion.com'">contact@holusion.com</a>
+            <a itemprop="email" href="admin [at] example.com" target="_blank" rel="nofollow" onclick="this.href='mailto:' + 'contact' + '@' + 'holusion.com'">contact@holusion.com</a>
           </div>
         </div>
       </div>
