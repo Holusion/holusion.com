@@ -25,6 +25,7 @@ RedirectMatch 301 ^/?$ /fr/
 	ExpiresByType application/xhtml+xml 	"access plus 1 day"
 	ExpiresByType application/javascript 	"access plus 1 day"
 	ExpiresByType application/x-javascript 	"access plus 1 day"
+  ExpiresByType application/x-font-woff   "access plus 1 year"
 </IfModule>
 
 <IfModule mod_rewrite.c>
