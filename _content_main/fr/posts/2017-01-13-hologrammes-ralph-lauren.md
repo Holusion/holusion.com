@@ -30,7 +30,7 @@ tags: commerce, taille humaine, evenementiel
 
 <div align="center" style="padding : 20px 0px 20px 0px">
 <h2>L'installation complète :</h2>
-<img class="img-responsive" src="/static/img/posts/ralph_lauren/ralph_lauren_full.jpg" title="schema de l'installation" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
+<img class="img-responsive" src="/static/img/posts/ralph_lauren/schema_ralphlauren.jpg" title="schema de l'installation" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
 </div>
 
 <center>
