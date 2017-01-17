@@ -43,8 +43,6 @@ Les boxeurs et le logo "Polo Sport" de l'enseigne sont affichés sur un écran e
 
 <div class="row">
   <div class="col-md-6">
-
-
   <img title="Vitrine sans miroirs" class="img-responsive" src="/static/img/posts/ralph_lauren/ralph_lauren_no_glass.jpg" alt="La vitrine holographique New Yorkaise Ralph Lauren sans ses miroirs réfléchissants">
   </div>
   <div class="col-md-6">
@@ -94,6 +92,6 @@ Tous ces éléments sont reflétés dans les deux panneaux réfléchissants cent
 
 ## Projection et profondeur : le combo gagnant
 
-Cette installation est une très bonne utilisation des techniques du Pepper's Ghost, qui utilise bien les atouts de cette technologie, en conjonction avec d'autres éléments, pour pallier à ses limites.
+Cette installation est une très bonne utilisation des techniques du Pepper's Ghost, qui utilise bien les atouts de cette technologie, en conjonction avec d'autres éléments, pour pallier à ses limites. L'innovation ici, consiste à utiliser une rétro-projection classique pour les images à taille humaine, moins adaptées à l'hologramme. L'hologramme est ainsi utilisé sur des éléments de décors, pour donner une forte impression de profondeur.
 
-L'innovation ici, consiste à utiliser une rétro-projection classique pour les images à taille humaine, moins adaptées à l'hologramme. L'hologramme est ainsi utilisé sur des éléments de décors, pour donner une forte impression de profondeur.
+<h4 class="rtecenter" style="padding-top: 20px">Découvrir aussi...</h4>
