@@ -14,9 +14,9 @@ tags: commerce, taille humaine, evenementiel
     <iframe src="https://player.vimeo.com/video/138104608?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" style="padding-top: 40px">
     <p>
-    Après un <a  href="http://www.lexpress.fr/styles/mode/defiles-fashion-week/defiles/video-ralph-lauren-organise-un-defile-holographique-a-central-park_1574611.html" >
+    Après un <a href="http://www.lexpress.fr/styles/mode/defiles-fashion-week/defiles/video-ralph-lauren-organise-un-defile-holographique-a-central-park_1574611.html" >
       défilé holographique
     </a> (vidéo <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o">ici</a>) à central park en 2014, Ralph Lauren récidive : une réalisation de <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a> vous permet d'admirer des boxeurs en taille réelle dans la vitrine de la 5ème Avenue de New York.
     </p>
@@ -28,10 +28,10 @@ tags: commerce, taille humaine, evenementiel
 
 
 
-<div align="center" style="padding : 20px 0px 20px 0px">
-<h2>L'installation complète :</h2>
+<div align="center" style="padding : 40px 0px 40px 0px">
+<h2>L'installation complète</h2>
 
-<p>On retrouve les éléments principaux de la scène : le sol lumineux, le premier plan avec le logo Polo Sport, qui servira à afficher les sportifs en mouvement, les cordes du ring, et les infobulles en arrière plan.</p>
+<center>On retrouve les éléments principaux de la scène : le sol lumineux, le premier plan avec le logo Polo Sport, qui servira à afficher les sportifs en mouvement, les cordes du ring, et les infobulles en arrière plan.</center>
 
 <img class="img-responsive" src="/static/img/posts/ralph_lauren/schema_ralphlauren.jpg" title="schema de l'installation" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
 </div>
@@ -41,7 +41,7 @@ tags: commerce, taille humaine, evenementiel
 
 Les boxeurs et le logo "Polo Sport" de l'enseigne sont affichés sur un écran en vidéo-projection par l'arrière (cf. schéma ci-dessus).
 
-<div class="row">
+<div class="row" style="padding:20px 0px 20px 0px">
   <div class="col-md-6">
   <img title="Vitrine sans miroirs" class="img-responsive" src="/static/img/posts/ralph_lauren/ralph_lauren_no_glass.jpg" alt="La vitrine holographique New Yorkaise Ralph Lauren sans ses miroirs réfléchissants">
   </div>
@@ -90,8 +90,8 @@ Tous ces éléments sont reflétés dans les deux panneaux réfléchissants cent
   </div>
 </div>
 
-## Projection et profondeur : le combo gagnant
+<h2 style="center">Projection et profondeur : le combo gagnant</h2>
 
-Cette installation est une très bonne utilisation des techniques du Pepper's Ghost, qui utilise bien les atouts de cette technologie, en conjonction avec d'autres éléments, pour pallier à ses limites. L'innovation ici, consiste à utiliser une rétro-projection classique pour les images à taille humaine, moins adaptées à l'hologramme. L'hologramme est ainsi utilisé sur des éléments de décors, pour donner une forte impression de profondeur.
+<center>Cette installation est une très bonne utilisation des techniques du Pepper's Ghost, qui utilise bien les atouts de cette technologie, en conjonction avec d'autres éléments, pour pallier à ses limites. L'innovation ici, consiste à utiliser une rétro-projection classique pour les images à taille humaine, moins adaptées à l'hologramme. L'hologramme est ainsi utilisé sur des éléments de décors, pour donner une forte impression de profondeur.</center>
 
 <h4 class="rtecenter" style="padding-top: 20px">Découvrir aussi...</h4>
