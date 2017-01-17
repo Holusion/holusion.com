@@ -9,11 +9,11 @@ home: #designation de la "home page"
   fr: Acceuil
   en: Home
 copyright: #copyright notice (coin bas-droite)
-  fr: holusion.com, Holusion © 2015 - 2016
-  en: holusion.com, Holusion © 2015 - 2016
+  fr: holusion.com, Holusion © 2015 - 2017
+  en: holusion.com, Holusion © 2015 - 2017
 holusion-com: #désignation du site commercial
-  fr: www.holusion.com
-  en: Commercial Website
+  fr: holusion.com
+  en: holusion.com
 about: #désignation de la page about.html
   fr: A propos
   en: About
