@@ -40,7 +40,6 @@ slides:
 
 
 ---
-{% include scripts/snipcart.html %}
 
 <div class="row"/>
   <div class="col-lg-6 col-md-12">
@@ -50,7 +49,9 @@ slides:
     <img style="padding-top: 10px" alt="Picto Pixel" class="img-responsive" src="/static/img/products/picto_pixel.png"/>
     <h1 align="center">Hologramme smartphone</h1>
     <h3 align="center">Commandez en ligne, à l'unité.</h3>
-    {% include shop/pixel.html description="Un hologramme pour smartphones qui vous accompagnera au quotidien" %}
+    <a style="margin:15px;display:inline-block;" class="button button-fab button-blue" href="{{site.url}}/fr/store/">
+      {% icon icon-add-cart size=40 style="padding-top:15px;" %}
+    </a>
  </div>
 </div>
 
@@ -82,9 +83,12 @@ slides:
  <div class="col-lg-6 col-md-12" style="padding-top: 20px">
    <h2>Pixel</h2>
    <p>Le Pixel diffuse un hologramme qui jaillit de votre smartphone. Compatible avec n'importe quel smartphone, emmenez-le partour avec vous pour impressionner vos proches et vos clients. Kiabi, PSA et Dentsu ont déjà tenté l'expérience pour mettre en avant leur marque, pourquoi pas vous ?</p>
-   <p>Commendez le Pixel sans plus attendre :</p>
-   <div style="padding-top: 10px">
-   {% include shop/pixel.html description="Un hologramme pour smartphones qui vous accompagnera au quotidien" %}
+
+   <p>Commandez le Pixel sans plus attendre :</p>
+   <div style="padding-top: 20px">
+     <a style="margin:15px;display:inline-block;" class="button button-fab button-blue" href="{{site.url}}/fr/store/">
+       {% icon icon-add-cart size=40 style="padding-top:15px;" %}
+     </a>
  </div>
   <div align="right">
    <a href="pixel.holusion.com"><p>Notice de construction ></p></a>

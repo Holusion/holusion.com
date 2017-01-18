@@ -1,0 +1,30 @@
+---
+title: Boutique en ligne
+layout: store
+pixel:
+  icons:
+    - Picto__Smartphone
+    - Picto__Smartphone
+  img: /static/img/products/picto_pixel.png
+  description: Un hologramme pour smartphone qui vous accompagnera au quotidien
+  url: /fr/products/pixel
+  properties:
+    - name: pixel
+    - id : 1
+    - price: 4.00
+    - quantity: 1
+    - weight: 10
+    - max-quantity: 100
+---
+
+<div class="row">
+  <div class="col-md-4">
+  {% include shop/pixel.html data=page.pixel %}
+  </div>
+  <div class="col-md-4">
+  {% include shop/pixel.html data=page.pixel %}
+  </div>
+  <div class="col-md-4">
+  {% include shop/pixel.html data=page.pixel %}
+  </div>
+</div>

@@ -13,12 +13,19 @@
 @import "slideshow";
 @import "contact_form";
 @import "snipcart";
-
+@import "store";
+html{
+  height:100%;
+}
 body{
+  position:absolute;
   font-family: 'open_sansregular', sans-serif;
   color: $black;
   padding-top: 50px;
+  min-height:100%;
+  min-width:100%;
 }
+
 #content.container p, .rtejustify {
   text-align: justify;
 }

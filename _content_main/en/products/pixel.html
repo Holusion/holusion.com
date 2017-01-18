@@ -21,7 +21,7 @@ slides:
     image: /static/img/products/pixel_minion.jpg
 
 ---
-{% include scripts/snipcart.html %}
+
 
 <div class="row" />
 <div class="col-lg-6 col-md-12">
@@ -31,7 +31,9 @@ slides:
   <img style="padding-top: 30px" alt="Picto Pixel" class="img-responsive" src="/static/img/products/picto_pixel.jpg"/>
   <h1 align="center">Smartphone hologram</h1>
   <h3 align="center">Order online</h3>
-  {% include shop/pixel.html description="A smartphone-sized hologram to go with you everywhere" %}
+  <a style="margin:15px;display:inline-block;" class="button button-fab button-blue" href="{{site.url}}/fr/store/">
+    {% icon icon-add-cart size=40 style="padding-top:15px;" %}
+  </a>
  </div>
 </div>
 
