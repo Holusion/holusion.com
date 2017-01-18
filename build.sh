@@ -130,6 +130,8 @@ build_srcset(){
       convert "${1}[0]"  "${out}_uc2x.png"
     elif [ "$extension" == "png" ] ; then
       cp "$1" "${out}_uc2x.png"
+    elif [ "$extension" == "ai" ] ;then
+      convert "ai:${1}" +antialias "${out}_uc2x.png"
     else
       echo "invalid file : $1"
       return
@@ -137,8 +139,8 @@ build_srcset(){
     ${pngcrush} -y "${out}_uc2x.png" "${out}_2x.png"
     convert -quality 1 -resize 50% "${out}_uc2x.png" "${out}_uc.png"
     ${pngcrush} -y "${out}_uc.png" "${out}.png"
-    convert -quality 80 "${out}_2x.png" "${out}_2x.jpg"
-    convert -resize 50% -quality 80 "${out}_2x.png" "${out}.jpg"
+    convert -quality 80 "${out}_2x.png" -flatten -background white "${out}_2x.jpg"
+    convert -resize 50% -quality 80 "${out}_2x.png" -flatten -background white "${out}.jpg"
     #remove uncompressed assets
     rm "${out}_uc"*
   fi
@@ -151,16 +153,17 @@ done < <(find src/img/ -type f -print0)
 
 # compress_jpg "in.jpg"
 compress_jpg(){
+  local dest_quality=80
   QUALITY=$(identify -format "%Q" "$1")
-  if test 80 -lt $QUALITY ;then
+  if test $dest_quality -lt $QUALITY ;then
     #fallback to copy if convert failed
-    mogrify  -quality 80 -strip "$1"
+    mogrify  -quality $dest_quality -strip "$1"
   fi
 }
 
 # compress_png "in.png"
 compress_png(){
-  mogrify -format png -quality 9 -strip "$1" 
+  mogrify -format png -quality 9 -strip "$1"
 }
 
 if ${make_site} ;then
