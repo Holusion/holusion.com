@@ -2,29 +2,59 @@
 title: Boutique en ligne
 layout: store
 pixel:
+  name: pixel
   icons:
     - Picto__Smartphone
-    - Picto__Smartphone
-  img: /static/img/products/picto_pixel.png
+    - Picto__Ventouse
+  img: /static/img/products/pixel_schema.jpg
   description: Un hologramme pour smartphone qui vous accompagnera au quotidien
   url: /fr/products/pixel
   properties:
-    - name: pixel
     - id : 1
     - price: 4.00
     - quantity: 1
     - weight: 10
     - max-quantity: 100
+pixelxl:
+  name: pixel XL
+  icons:
+    - Picto__Smartphone
+    - Picto__Ventouse
+  img: /static/img/products/pixelxl_schema.jpg
+  description: Un hologramme pour tablettes de 8" à 11"
+  url: /fr/products/pixel
+  properties:
+    - id : 2
+    - price: 6.00
+    - quantity: 1
+    - weight: 30
+    - max-quantity: 100
+pixelplus:
+  name: pixel +
+  icons:
+    - Picto__Smartphone
+    - Picto__Smartphone
+  img: /static/img/products/pixel_schema2.png
+  description: Un produit plus durable, blabla bla ble
+  url: /fr/products/pixel
+  properties:
+    - id : 3
+    - price: 7.00
+    - quantity: 1
+    - weight: 140
+    - max-quantity: 100
 ---
+
+
 
 <div class="row">
   <div class="col-md-4">
-  {% include shop/pixel.html data=page.pixel %}
+    {% include shop/product.html data=page.pixel %}
   </div>
   <div class="col-md-4">
-  {% include shop/pixel.html data=page.pixel %}
+  {% include shop/product.html data=page.pixelxl %}
   </div>
   <div class="col-md-4">
-  {% include shop/pixel.html data=page.pixel %}
+  {% include shop/product.html data=page.pixelplus %}
   </div>
 </div>
