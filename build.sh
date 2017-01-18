@@ -12,6 +12,7 @@ usageStr(){
   echo -e "\t-f --force : Force assets rebuild"
   echo -e "\t-w --watch : Use jekyll serve mode"
   echo -e "\t-d --dev : makes dev.holusion.com instead of holusion.com"
+  echo -e "\t-c --compress-static : compress static assets"
   echo "long option only : "
   echo -e "\t--windows : apply Ms Mindows-specific settings"
 }
@@ -21,6 +22,8 @@ make_check=false
 make_dev=false
 is_windows=false
 make_watch=false
+make_compress=false
+
 while [[ $# -gt 0 ]]
 do
   key="$1"
@@ -40,6 +43,9 @@ do
       ;;
       --windows)
         is_windows=true
+      ;;
+      -c|--compress-static)
+        make_compress=true
       ;;
       *)
         echo "unknown opt"
@@ -143,6 +149,21 @@ while IFS= read -r -d '' file; do
     # your code here
 done < <(find src/img/ -type f -print0)
 
+# compress_jpg "in.jpg"
+compress_jpg(){
+  QUALITY=$(identify -format "%Q" "$1")
+  if test 80 -lt $QUALITY ;then
+    echo "converting : $1"
+    #fallback to copy if convert failed
+    mogrify -format "jpg" "$1" -quality 80 -strip
+  fi
+}
+
+# compress_png "in.png"
+compress_png(){
+  mogrify -format png "$1" -quality 9 -strip
+}
+
 if ${make_site} ;then
   s_conf="_config.yml"
 
@@ -177,5 +198,16 @@ if ${make_site} ;then
   --disable-external \
   --checks-to-ignore ScriptCheck \
   --file-ignore "/vendor/"
+
+  if $make_compress ;then
+    #compress JPEG images
+    while IFS= read -r -d '' file; do
+        compress_jpg "$file"
+    done < <(find _site/static -type f -name *.jpg -print0)
+    #compress PNG images.
+    while IFS= read -r -d '' file; do
+        compress_png "$file"
+    done < <(find _site/static -type f -name *.png -print0)
+  fi
 fi
 cd "$OLD_PWD" #go back to initial directory
