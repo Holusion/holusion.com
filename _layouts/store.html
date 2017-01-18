@@ -1,0 +1,27 @@
+---
+layout: index
+---
+{% include utils/lang.html %}
+
+{% include scripts/snipcart.html %}
+<div id="open-cart" class="snipcart-summary">
+
+  <a class="button snipcart-checkout">
+    <span class="snipcart-total-items">0</span>
+    {% icon icon-cart size=20 style="display:inline-block;" %}
+  </a>
+</div>
+
+<h1>Bienvenue dans la boutique en ligne holusion</h1>
+
+<div id="store-content">
+{{content}}
+</div>
+
+<div id="open-cart" class="snipcart-summary" style="padding-top:20px;">
+
+  <a class="button snipcart-checkout">
+    <span class="snipcart-total-items">0</span>
+    {% icon icon-cart size=20 style="display:inline-block;" %}
+  </a>
+</div>
