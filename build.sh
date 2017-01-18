@@ -153,15 +153,14 @@ done < <(find src/img/ -type f -print0)
 compress_jpg(){
   QUALITY=$(identify -format "%Q" "$1")
   if test 80 -lt $QUALITY ;then
-    echo "converting : $1"
     #fallback to copy if convert failed
-    mogrify -format "jpg" "$1" -quality 80 -strip
+    mogrify  -quality 80 -strip "$1"
   fi
 }
 
 # compress_png "in.png"
 compress_png(){
-  mogrify -format png "$1" -quality 9 -strip
+  mogrify -format png -quality 9 -strip "$1" 
 }
 
 if ${make_site} ;then
@@ -200,11 +199,11 @@ if ${make_site} ;then
   --file-ignore "/vendor/"
 
   if $make_compress ;then
-    #compress JPEG images
+    echo "Compressing JPEG images"
     while IFS= read -r -d '' file; do
         compress_jpg "$file"
     done < <(find _site/static -type f -name *.jpg -print0)
-    #compress PNG images.
+    echo "Compressing PNG images"
     while IFS= read -r -d '' file; do
         compress_png "$file"
     done < <(find _site/static -type f -name *.png -print0)
