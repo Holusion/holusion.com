@@ -52,7 +52,8 @@ module Jekyll
       params.split("=")
     end
     def render(context)
-      svg_file = File.join(context.registers[ :site ].source, @svg)
+      svg_name = context[@svg] || @svg
+      svg_file = File.join(context.registers[ :site ].source, svg_name.strip)
       xml = File.open(svg_file, "rb")
       optimized = SvgOptimizer.optimize(xml.read,PLUGINS)
 	    "#{optimized.gsub("!!WIDTH!!","#{@width}px")}"
