@@ -19,7 +19,7 @@
 
   </div>
   <div class="product-price" style="min-width:30px;flex-grow:1;text-align:center;">
-    4€
+    {{p_data.price}}€
   </div>
   <div style="min-width:70px;flex-grow:1;text-align:center;">
     <a style="margin:15px;display:inline-block;" class="button button-fab button-blue snipcart-add-item"
@@ -27,6 +27,7 @@
     {% for prop in p_data.properties %}
       data-item-{{prop[0]}}="prop[1]"
     {% endfor %}
+    data-item-price="{{p_data.price}}"
     data-item-name="{{p_data.name}}"
     data-item-image="{{site.url}}/{{p_data.img}}"
     data-item-url="{{site.url}}/{{p_data.url}}"
