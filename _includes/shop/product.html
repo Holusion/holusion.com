@@ -1,12 +1,13 @@
-
+{% include utils/lang.html %}
 {% assign p_data = include.data %}
 <div class="product">
   <div style="width:100%"><h2>{{p_data.properties.name}}</h2></div>
   <div style='min-width:100px;height:120px;flex-grow:1;background:url("{{p_data.img}}") center/contain no-repeat'>
   </div>
-  <div style="min-width:250px;flex-grow:2;height:70px;padding:5px;">
+  <div style="min-width:250px;flex-grow:2;height:90px;padding:5px;position:relative;">
     <p>{{p_data.description}}</p>
-    <a style="float:right" href="{{p_data.url}}">Read more &gt;</a>
+    <a style="position:absolute;right:5px;bottom:0;" href="{{p_data.url}}">{{site.data.strings.read-more[lang]}} &gt;</a>
+
   </div>
   <div style="min-width:50px;flex-grow:1;display:flex;align-items:center;">
     <div style="max-width:120px">
