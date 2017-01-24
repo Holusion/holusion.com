@@ -1,8 +1,8 @@
 
   (function(){
     'use strict';
+    var contactform = document.getElementById("section-contactform")
     function setupForm(){
-      var contactform = document.getElementById("section-contactform")
       var submission = document.querySelector("#section-contactform>form");
       var logger = document.getElementById("contactform-logger");
       function logInfo(level,txt){
@@ -64,4 +64,10 @@
     script.onload = setupForm();
     script.src = "https://www.google.com/recaptcha/api.js";
     document.head.appendChild(script);
+    var links = document.querySelectorAll(".contact-link");
+    for(var i = 0; i< links.length; i++){
+      links[i].onclick = function(){
+        contactform.display();
+      }
+    }
   })()
