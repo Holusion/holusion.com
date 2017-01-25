@@ -184,7 +184,7 @@ if ${make_site} ;then
     add_opts="--force_polling"
   fi
   if $make_watch ;then
-    exec_cmd="serve"
+    exec_cmd="build --watch"
   else
     exec_cmd="build"
   fi
