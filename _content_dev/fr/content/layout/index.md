@@ -3,7 +3,7 @@ title: Format du contenu
 image: /static/img/posts/layout/layout.jpg
 abstract: Format d'image des produits pour créer un contenu sur mesure
 menu: content
-rank: 1
+rank: 2
 ---
 
 <script src="/static/js/product_switcher.js"></script>

@@ -4,7 +4,7 @@ image: /build/img/posts/banner_blender.jpg
 image2x: /build/img/posts/banner_blender_2x.jpg
 abstract: Modélisation d'hologrammes sur le logiciel libre de rendu 3D Blender
 menu: content
-rank: 2
+rank: 3
 ---
 
 

@@ -4,7 +4,7 @@ image: /build/img/posts/banner_after_effect.jpg
 image2x: /build/img/posts/banner_after_effect_2x.jpg
 abstract: Projet After Effect visant à simplifier la réalisation de contenu vidéo
 menu: content
-rank: 3
+rank: 4
 ---
 
 <style>

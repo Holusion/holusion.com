@@ -4,7 +4,7 @@ image: /build/img/posts/banner_natron.jpg
 image2x: /build/img/posts/banner_natron_2x.jpg
 abstract: Création de vidéos holographiques en utilisant le logiciel de création gratuit "Natron"
 menu: content
-rank: 2
+rank: 5
 ---
 
 Natron est un logiciel libre de création et composition de vidéo extrêmement performant et sous licence libre. Il peut être utilisé sur MacOSX, Windows et Linux.
