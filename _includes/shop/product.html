@@ -1,7 +1,7 @@
 {% include utils/lang.html %}
 {% assign p_data = include.data %}
 <div class="product">
-  <div style="width:100%"><h2>{{p_data.properties.name}}</h2></div>
+  <div style="width:100%"><h2>{{p_data.name}}</h2></div>
   <div style='min-width:100px;height:120px;flex-grow:1;background:url("{{p_data.img}}") center/contain no-repeat'>
   </div>
   <div style="min-width:250px;flex-grow:2;height:90px;padding:5px;position:relative;">
@@ -25,8 +25,10 @@
   <div style="min-width:70px;flex-grow:1;text-align:center;">
     <a style="margin:15px;display:inline-block;" class="button button-fab button-blue snipcart-add-item"
     {%comment%}prop[0] contains the key, props[1] the value{%endcomment%}
-    {% for prop in p_data.properties %}
-      data-item-{{prop[0]}}="prop[1]"
+    {% for prop_hash in p_data.properties %}
+      {% for prop in prop_hash %}
+      data-item-{{ prop[0] }}="{{ prop[1] }}"
+      {% endfor %}
     {% endfor %}
     data-item-price="{{p_data.price}}"
     data-item-name="{{p_data.name}}"
