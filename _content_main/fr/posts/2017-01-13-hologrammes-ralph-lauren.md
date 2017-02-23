@@ -23,6 +23,7 @@ tags: commerce, taille humaine, evenementiel
     <p>
     L'installation offre un effet de profondeur saisissant, avec des plans multiples, des accessoires mis en valeur et un message marketing bien efficace. Elle repose sur une création artistique audacieuse et sur un assemblage astucieux de technologies. Celles-ci sont en réalité facilement accessibles et nous vous proposons d'en analyser les détails.
     </p>
+    <p>C'est peut être l'opportunité d'imaginer la même chose chez vous ? </p>
   </div>
 </div>
 
@@ -31,8 +32,12 @@ tags: commerce, taille humaine, evenementiel
 <div align="center" style="padding : 40px 0px 40px 0px">
 <h2>L'installation complète</h2>
 
-<p>Sur ce premier schéma, nous avons représenté la vitrine, vue de haut pour comprendre tous ses élements. La scène se compose d'un sol lumineux, d'un premier plan avec le logo Polo Sport, qui servira également à afficher les sportifs en mouvement, d'accessoires bien rééls comme les cordes du ring, et enfin, d'écrans pour les infobulles en arrière plan.</p>
-
+<p>Sur ce premier schéma, nous avons représenté la vitrine, vue de haut pour comprendre tous ses élements. La scène se compose d'un premier plan avec le logo Polo Sport. Il servira à afficher les sportifs en mouvement.
+</p>
+<p>Des accessoires bien rééls comme les cordes du ring, le sol et ses lumières, le sac de sport. Le but est d'ancrer l'hologramme dans un cadre réel, tangible, qui va donner tout le relief et la crédibilité de l'installation.
+</p>
+<p>
+Enfin, des écrans au fond des alcoves,  gauche et à droit, pour les infobulles en arrière plan et les personnages en bordure du ring</p>
 <p>Le point le plus importance de cette installation, ce sont les deux miroirs centraux. Ceux-ci sont semi-tranparents et permettent donc de superposer les élements des alcoves à droite et à gauche, à l'image centrale diffusée par l'écran.</p>
 
 <img class="img-responsive;" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren.jpg" title="schema de l'installation" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
