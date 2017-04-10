@@ -34,6 +34,11 @@ Avant tout, il est nécessaire d'être connecté au produit.Ils sont par défaut
 
 Si vous bénéficiez d'une installation sur mesure, la méthode d'accès au produit devra vous avori été transmise à l'installation. Dans la suite de ce document, nous utiliserons en exemple l'IP par défaut `10.0.0.1` pour accéder au produit.
 
+Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un cable Ethernet :
+
+- Sur votre [réseau local](net-discovery)
+- Directement sur votre [poste de travail](local-dhcp)
+
 ## Découverte
 
 L'API dispose d'une documentation interactive complète à l'adresse : `http://10.0.0.1/doc`. Les requêtes peuvent y être testées en situation réelle directement sur le produit.
