@@ -26,6 +26,11 @@ Les produits sont par défaut configurés pour émettre un réseau wifi :
 
 Par exemple, si vous possédez le prism N°1, il faudra trouver un réseau appellé `prism-01`. Si votre produit a reçu une configuration spécifique, veuillez vous réferer aux informations qui vous ont alors été communiquées.
 
+Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un cable Ethernet :
+
+- Sur votre [réseau local](net-discovery)
+- Directement sur votre [poste de travail](local-dhcp)
+
 Une fois connecté, naviguer à l'adresse `10.0.0.1`. Vous devriez voir apparaitre la zone de chargement de fichiers :
 <center>
   <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_upload.png"/>
@@ -66,7 +71,9 @@ Cliquer sur le bouton `Upload` pour lancer le transfert.
 
 ## Archives
 
-Les archives sont acceptées par le système et sont le moyen idéal pour tranférer des applications complètes, souvent difficiles à packager en un seul fichier. Par exemple, les applications Unity.
+**Note** : Utilisateurs avancés.
+
+Les archives sont acceptées par le système et sont le moyen idéal pour tranférer des applications complètes, souvent difficiles à packager en un seul fichier. Par exemple, les applications [Unity3D](https://unity3d.com/fr).
 
 Les formats de compression supportés sont : **.tar, .tar.gz, .zip**.
 

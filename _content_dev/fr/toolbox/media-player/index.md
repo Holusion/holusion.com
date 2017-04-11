@@ -36,8 +36,8 @@ Si vous bénéficiez d'une installation sur mesure, la méthode d'accès au prod
 
 Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un cable Ethernet :
 
-- Sur votre [réseau local](net-discovery)
-- Directement sur votre [poste de travail](local-dhcp)
+- Sur votre [réseau local](/fr/toolbox/packaging/net-discovery)
+- Directement sur votre [poste de travail](/fr/toolbox/packaging/local-dhcp)
 
 ## Découverte
 

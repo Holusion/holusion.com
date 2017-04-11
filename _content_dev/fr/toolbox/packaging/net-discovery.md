@@ -1,6 +1,7 @@
 ---
 title: trouver un produit holusion sur le réseau
-image: /static/img/posts/media-player/header2.png
+image: /build/img/posts/banner_packaging.jpg
+image2x: /build/img/posts/banner_packaging_2x.jpg
 abstract: Localisez un produit holusion sur votre réseau
 ---
 
@@ -14,7 +15,7 @@ On reconnait le produit par ses caractéristiques :
 Le plus simple est d'utiliser l'interface de votre routeur (section **DHCP**) :
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/media-player/dhcp_ip.png" alt="l'adresse IP du produit dans l'interface du routeur">
+  <img class="img-responsive" src="/static/img/posts/packaging/dhcp_ip.png" alt="l'adresse IP du produit dans l'interface du routeur">
 </center>
 
 Une autre solution est de scanner le réseau avec une commande telle que **nmap** :
@@ -32,7 +33,7 @@ ici on scanne les membres du réseau ayant un port 3000 ouvert.
 Reste ensuite à taper l'adresse du produit trouvé dans votre navigateur web :
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/media-player/browser-URL.png" alt="taper l'IP dans la barre d'adresse du navigateur">
+  <img class="img-responsive" src="/static/img/posts/packaging/browser-URL.png" alt="taper l'IP dans la barre d'adresse du navigateur">
 </center>
 
 Vous pouvez maintenant utiliser l'interface d'administration de votre produit [normalement](index).
