@@ -39,6 +39,8 @@ Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas é
 - Sur votre [réseau local](/fr/toolbox/packaging/net-discovery)
 - Directement sur votre [poste de travail](/fr/toolbox/packaging/local-dhcp)
 
+Dans le cas des produits démontables (focus, iris...), assurez-vous de connecter au moins un écran à l'ordinateur. Le service d'administration ne démarre pas quand aucun affichage n'est détecté.
+
 ## Découverte
 
 L'API dispose d'une documentation interactive complète à l'adresse : `http://10.0.0.1/doc`. Les requêtes peuvent y être testées en situation réelle directement sur le produit.
