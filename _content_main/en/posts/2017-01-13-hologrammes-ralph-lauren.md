@@ -5,7 +5,9 @@ abstract: How Ralph Lauren designed its hologram on 5th Avenue
 tags: marketing, real size, event
 ---
 <center>
+
 <h1>A perfect boxer</h1>
+
 </center>
 
 <div class="row">
@@ -18,7 +20,7 @@ tags: marketing, real size, event
     <p>
     After it's <a href="http://www.lexpress.fr/styles/mode/defiles-fashion-week/defiles/video-ralph-lauren-organise-un-defile-holographique-a-central-park_1574611.html" >
       holographic fashion show
-    </a> (vidéo <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o">ici</a>) in Central Park in 2014, Ralph Lauren uses holograms again with <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a>. This time, it's to display a boxing show right in its flagship store on New York's 5th Avenue.
+    </a> (video right <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o">here</a>) in Central Park in 2014, Ralph Lauren uses holograms again with <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a>. This time, it's to display a boxing show right in its flagship store on New York's 5th Avenue.
     </p>
     <p>
     The setup produce an incredible perspective, with multiple focus points, smart use of props and a powerful marketing message. It relies on a bold artisitic choice and a quite smart association of technologies.</p>
@@ -29,11 +31,11 @@ tags: marketing, real size, event
 
 
 
-<div align="center" style="padding : 40px 0px 40px 0px">
+<div style="padding : 40px 0px 40px 0px">
 <h2>The installation</h2>
 
 <p>
-Let's get started. On this first drawing, the display is represented from a top perpspective so we can analyse all of its elements.
+Let's get started. On this first drawing, the display is represented from a top perspective so we can analyse all of its elements.
 The foreground is a screen with the "Polo Sport" logo. It will be the main display for the moving boxers.
 </p>
 <p>
@@ -43,7 +45,7 @@ Real props and accessories, such as the cords, ground decorations and lights, sp
 Finaly, inside the corners, on the right and on the left, two screens, for informations and characters outside the ring</p>
 <p>The most important point to understand this installation, is the couple of glass panels. They behave simultanously as mirror and as glass in order to blend images from the central screen and from the corners</p>
 
-<img class="img-responsive;" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren.jpg" title="installation drawings" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
+<img class="img-responsive;" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren_en.jpg" title="installation drawings" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
 </div>
 <p>This solution is very optimized for shallow spaces. All the depth is suggested by the central mirrors.</p>
 
@@ -86,12 +88,12 @@ All of this elements are reflected by the glass pannels,
 
 <div class="row" style="padding: 20px 0px 20px 0px">
   <div class="col-md-6">
-    <h4>Withou main screen</h4>
+    <h4>Without main screen</h4>
     <p>
     If you could see directly into the corners, you would find all of the elements you can see in the central holograms.
    </p>
     <p>
-    Several <b>depth details</b> are scattered to improved the hologram impact : a sport bag, lights on the sides, light spots on the ground pulsing with video, etc. Ineed, as Pepper's Ghost keeps the perspective, any element helps the observer to see the perspective of the scene.
+    Several <b>depth details</b> are scattered around to improved the hologram impact : a sport bag, lights on the sides, light spots on the ground pulsing with video, etc. Ineed, as Pepper's Ghost keeps the perspective, any element helps the observer to see the perspective of the scene.
     </p>
   </div>
   <div class="col-md-6">

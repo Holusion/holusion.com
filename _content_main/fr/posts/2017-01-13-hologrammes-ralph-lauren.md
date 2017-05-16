@@ -21,7 +21,7 @@ tags: commerce, taille humaine, evenementiel
     </a> (vidéo <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o">ici</a>) à Central Park en 2014, Ralph Lauren récidive avec une réalisation de <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a>. Celle-ci mets en scène des boxeurs en taille réelle dans la vitrine de la 5ème Avenue de New York .
     </p>
     <p>
-    L'installation offre un effet de profondeur saisissant, avec des plans multiples, des accessoires mis en valeur et un message marketing bien efficace. Elle repose sur une création artistique audacieuse et sur un assemblage astucieux de technologies. Celles-ci sont en réalité facilement accessibles et nous vous proposons d'en analyser les détails.
+    L'installation offre un effet de profondeur saisissant, avec des plans multiples, des accessoires mis en valeur et un message marketing efficace. Elle repose sur une création artistique audacieuse et sur un assemblage astucieux de technologies. Celles-ci sont en réalité facilement accessibles et nous vous proposons d'en analyser les détails.
     </p>
     <p>C'est peut être l'opportunité d'imaginer la même chose chez vous ? </p>
   </div>
