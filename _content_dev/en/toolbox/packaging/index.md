@@ -12,20 +12,36 @@ menu: toolbox
 
 ## Introduction
 
+This page aim to describe as precisely as possible any information you'll need to upload new content to your product : Connexion methods, file transfer, etc...
+
 The holusion software is using simple yet extensive rules to classify files and apps.
 
-Any file not following those rules will be automatically rejected. Transfer method is very simple and is explained in the [transfer](#transfer) section.
+##Connect
+
+As a default, products are configured to be accessible via their access-point wifi network, identified as :
+
+SSID : <product>-<serial_number>
+key  : holusionadmin
+
+If your product doesn't support wifi or you want a faster connexion, you can connect it to your LAN with an USB-ethernet adapter, then access it through it's local IP.
+
+
+If you're connected through wifi, the product's IP should be `10.0.0.1`.
+
+Once connected to the product, use a web browser to navigate to [http://10.0.0.1:3000](http://10.0.0.1:3000). If it doesn't load, please verify you're well connected to your product. Reboot it if need be.
+
 
 <center>
-  <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_error.jpg"/>
-  <p>Example : trying to upload a <b>pdf</b></p>
+  <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_upload.png"/>
 </center>
+
+### Content
 
 Supported file formats are:
 
 -  **video** files
   - .mov, .avi, .mp4, .flv, .mkv
-- **executables* files
+- **executables** files
   - without a required extension, of  [mime type](https://fr.wikipedia.org/wiki/Type_MIME) ```application/```
 - Archvie folders [respecting those conditions](#archives)
   - .tar.gz (best), .tar, .zip
@@ -33,7 +49,6 @@ Supported file formats are:
 
 ## Transfer
 
-Once connected to the product, use a web browser to navigate to [http://10.0.0.1:3000](http://10.0.0.1:3000). If it doesn't load, please verify you're well connected to your product. Reboot it if need be.
 
 Use the **"Upload"** bar to find your file and send it.
 
