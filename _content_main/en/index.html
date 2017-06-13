@@ -1,6 +1,6 @@
 ---
   layout: front_page
-  title: home
+  title: Holusion - Home
   lang: en
 ---
 <section class="section section-video">
@@ -16,6 +16,33 @@
         </div>
   </div>
 </section>
+
+<section id="section-promotion">
+  <h1 align="center" id="main-title-1" >
+    Buy your hologram online
+  </h1>
+  <div class="container" align="center">
+    <p>
+      Holusion is creating new experiences for your brand and your products. Innovative and creative display solutions, such as the hologram, make you discover concepts, products and projects in a playful way.
+  </div>
+  <div class="container">
+
+    <div class="row" style="padding-top: 30px">
+      <div class="col-md-6" align="center">
+        <a href="/fr/products/pixel"><img alt="Pixel papillon" class="img-responsive" src="/static/img/products/pixel_papillon2.jpg"></a>
+      </div>
+      <div class="col-md-6" >
+        <h3>The handheld holograms</h3>
+        <p>The <a href="/fr/products/pixel">PIXEL</a> allows you to display floating pictures above your smartphone. Take it everywhere to impress people around you. Buy it right online :</p>
+
+        <p align="center" style="padding-top: 20px"><a class="button-fab button-blue" href="https://holusion.com/fr/store/">
+          {% icon icon-add-cart size=40 style="padding-top:15px" %}
+        </a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="section-produits" >
   <div class="container">
     <h1 align="center" id="main-title-1" >Our products</h1>
@@ -64,7 +91,7 @@
 
 <section id="section-stories">
   <div class="container">
-    <h1 align="center" id="main-title-1" >Dive in the stories of our clients</h1>
+    <h1 align="center" id="main-title-1" >Dive in our clients' stories</h1>
     {% include utils/make_posts.html %}
     {% for post in  posts offset: 0 limit: 4 %}
       {% include components/post_thumbnail.html content=post %}
@@ -98,7 +125,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-            <a class="contact-link">Contact Mail</a>
+            <a class="contact-link">contact@holusion.com</a>
           </div>
         </div>
       </div>
