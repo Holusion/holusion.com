@@ -1,0 +1,62 @@
+---
+title: Online Store
+layout: store
+pixel:
+  name: Pixel
+  url: ../products/pixel#pixel
+  price: 4.00
+  icons:
+    - Picto__Smartphone
+    - Picto__Ventouse
+  img: /static/img/products/pixel.jpg
+  description: Transform your smartphone into a holographic display that will be by your side everytime
+  properties:
+    - id : 1
+    - quantity: 1
+    - weight: 10
+    - max-quantity: 100
+pixelxl:
+  name: Pixel XL
+  url: ../products/pixel#pixelxl
+  price: 6.00
+  icons:
+    - Picto__Smartphone
+    - Picto__Ventouse
+  img: /static/img/products/pixelxl_schema.jpg
+  description: Display holograms out of your tablet. Sized for 8" to 11" models
+  url: fr/store/index.html
+  properties:
+    - id : 2
+    - quantity: 1
+    - weight: 30
+    - max-quantity: 100
+pixelplus:
+  name: Pixel +
+  url: ../products/pixel#pixel+
+  price: 7.00
+  icons:
+    - Picto__Smartphone
+    - Picto__Smartphone
+  img: /static/img/products/pixel+.jpg
+  description: Make appear a hologram in this clean designed case. For 4" to 6" smartphones
+  url: fr/store/index.html
+  properties:
+    - id : 3
+    - quantity: 1
+    - weight: 140
+    - max-quantity: 100
+---
+
+
+
+<div class="row">
+  <div class="col-md-4">
+    {% include shop/product.html data=page.pixel %}
+  </div>
+  <div class="col-md-4">
+  {% include shop/product.html data=page.pixelxl %}
+  </div>
+  <div class="col-md-4">
+  {% include shop/product.html data=page.pixelplus %}
+  </div>
+</div>
