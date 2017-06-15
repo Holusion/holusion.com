@@ -20,7 +20,7 @@ tags: evenementiel, formation, focus
   <div class="col-md-8 col-xs-12">
     <h2 class="rtejustify">Une mission de sauvegarde</h2>
 
-    <p class="rtejustify">Le projet Bagdad 3D part de l'envie de conserver une trace indestructicle du patrimoine irakien. Sa numérisation a pour objectif de conserver les détails et les formes pour toujours afin de <strong>protéger</strong> des oeuvres pouvant être détruites.</p>
+    <p class="rtejustify">Le projet Bagdad 3D part de l'envie de conserver une trace indestructible du patrimoine irakien. Sa numérisation a pour objectif de conserver les détails et les formes pour toujours afin de <strong>protéger</strong> des oeuvres pouvant être détruites.</p>
 
     <p class="rtejustify">L'utilisation des nouvelles technologies (hologrammes, réalité virtuelle, scan ou photogramétrie) permet aussi de faire connaître et <strong>partager</strong> la culture irakienne aux occidentaux. Le projet sera notamment diffusé sur la chaîne Arte pour un maximum de visibilité.</p>
 
