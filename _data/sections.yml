@@ -16,6 +16,9 @@ home:
 dev:
   fr: "Développeurs"
   en: "Documentation"
+cgv:
+  fr: "Conditions générales de vente"
+  en: "Terms and conditions"
 s1:
   fr: "Holusion : Ressources Techniques"
   en: "Holusion : Developper Network"
