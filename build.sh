@@ -79,19 +79,19 @@ fi
 build_webm(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
     echo "CONVERT $1 to $2"
-    avconv -y -i $1 -c:v libvpx -c:a libvorbis -qmin 20 -qmax 30 -threads 2 $2
+    avconv  -i "$1" -y -c:v libvpx -c:a libvorbis -qmin 20 -qmax 30 -threads 0 "$2" </dev/null
   fi
 }
 build_mpeg4(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
     echo "CONVERT $1 to $2"
-    avconv -y -i $1 -c:v h264 -c:a copy $2
+    avconv -i "$1" -y -c:v h264 -profile:v main -level 31 -c:a copy "$2" </dev/null
   fi
 }
 build_ogg(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
     echo "CONVERT $1 to $2"
-    avconv -y -i $1  -c:v libtheora -qscale:v 7 -c:a libvorbis -qscale:a 5 $2
+    avconv -i "$1" -y -c:v libtheora -qscale:v 7 -c:a libvorbis -qscale:a 5 -threads 0 "$2" </dev/null
   fi
 }
 convert_video(){
@@ -101,8 +101,8 @@ convert_video(){
   local extension="${filename##*.}"
   local name="${filename%.*}"
   local out="build/videos/$d/${name}"
-  build_ogg   "$1" "${out}.ogv"
   build_mpeg4 "$1" "${out}.mp4"
+  build_ogg   "$1" "${out}.ogv"
   build_webm  "$1" "${out}.webm"
 }
 while IFS= read -r -d '' file; do
