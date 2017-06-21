@@ -60,19 +60,19 @@ Open the test .blend scene for your setup :
 * [Prisme](/static/files/BLENDER_PRISME.zip)
 * Focus (WIP)
 
-Use Import scene to add your model. If it's coming from another Blender scene, textures and lighting should be imported smoothly.
+Use Import scene to add your model. If it is coming from another Blender scene, textures and lighting should be imported smoothly.
 
 Scale, animate, light, and test some render for the quality of your scene trough the eyes of the camera. Subject should never leave or overflow the camera frame.
 
 > **Advanced user** : you can change the camera options if standard setup is not good for your work. Camera is tracking the empty object in the center. You can use it for camera motion. Consider a circle and a track constraint for turning camera around your subject.
 
-When all your scene is ready, go for "Animation" in render panel. Don't forget to check :
+When your scene is ready, go for "Animation" in render panel. Don't forget to check :
 
 
 * Compositing is checked
 * Make **random render** trough your animation to check you don't overflow your camera frame
-* sampling is correctly set (for Cycle render)
-* Output files is set
+* Sampling is correctly set (for Cycle render)
+* Output files are set
 
 ##Advanced user
 
