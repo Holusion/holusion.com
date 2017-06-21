@@ -1,15 +1,25 @@
 {% include utils/lang.html %}
-{% assign p_data = include.data %}
-<div class="product">
+
+{% for p_data in include.data %}
+<div class="col-lg-4 col-sm-6">
+<div class="shop-product">
   <div style="width:100%"><h2>{{p_data.name}}</h2></div>
-  <div style='min-width:100px;height:120px;flex-grow:1;background:url("{{p_data.img}}") center/contain no-repeat'>
+  <div class="product-img" style='
+    min-width:214px;
+    height:120px;
+    flex-grow:1;
+    background:url("{{p_data.img}}") center/contain no-repeat'>
   </div>
-  <div style="min-width:250px;flex-grow:2;height:90px;padding:5px;position:relative;">
-    <p>{{p_data.description}}</p>
-     <a style="position:absolute;right:5px;bottom:0;" href="{{p_data.url}}">{{site.data.strings.read-more[lang]}} &gt;</a>
+  <div class="product-descript" style="width:50%;min-width:250px;
+    flex-grow:2;
+    height:90px;
+    padding:0;
+    position:relative;">
+    {{p_data.description[lang] | markdownify }}
 
   </div>
-  <div style="min-width:50px;flex-grow:1;display:flex;align-items:center;">
+  <a class="product-read-more" style="width:100%;text-align:right;" href="{{p_data.url}}">{{site.data.strings.read-more[lang]}} &gt;</a>
+  <div class="product-icons" style="min-width:50px;flex-grow:1;display:flex;align-items:center;">
     <div style="max-width:120px">
       {% for icon in p_data.icons %}
         {% assign icon_name="" %}
@@ -19,7 +29,7 @@
     </div>
 
   </div>
-  <div class="product-price" style="min-width:30px;flex-grow:1;text-align:center;">
+  <div class="product-price" style="padding:10px;font-size:30px;min-width:30px;flex-grow:1;text-align:center;height:100%;">
     {{p_data.price}}€
   </div>
   <div style="min-width:70px;flex-grow:1;text-align:center;">
@@ -33,10 +43,12 @@
     data-item-price="{{p_data.price}}"
     data-item-name="{{p_data.name}}"
     data-item-image="{{site.url}}/{{p_data.img}}"
-    data-item-url="{{site.url}}/{{p_data.url}}"
-    data-item-description="{{p_data.description}}"
+    data-item-url="{{site.url}}/{{lang}}/{{p_data.url}}"
+    data-item-description="{{p_data.description[lang]}}"
     >
       {% icon icon-add-cart size=40 style="padding-top:15px;" %}
     </a>
   </div>
 </div>
+</div>
+{% endfor %}
