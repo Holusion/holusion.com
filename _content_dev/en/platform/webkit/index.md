@@ -27,16 +27,15 @@ These applications are taking advantages of all the power of modern navigators. 
 
 # Introduction
 
-Un lecteur de pages HTML est intégré à tous les produits holusion à partir de la version 1.0.0. La page peut intégrer toutes sortes de ressources javascript ou CSS, intégrées directement au fichier HTML, ou fournies sous forme [d'archive](/fr/toolbox/packaging/).
+A HTML page since the 1.0.0 version. The page can integrate all types of resources, Javascript or CSS, directly integrated into the HTML file, or given under the [archive](/fr/toolbox/packaging/) format.
 
-Pour faciliter le développement, Holusion fournit des "layouts" pour chaque produit. Ils donnent une indication de positionnement et de taille pour créer dynamiquement du contenu adapté.
+In order to facilitate the development, Holusion gives "layouts" for each product. They gives position and scale indications to create a dynamic adapted content.
 
-Ce tutoriel permettra donc de réaliser un exemple portable sur tous les produits de la gamme holusion.
-
+This tutorial will teach you how to make an example that will be adapted for all Holusion's products.
 
 # Hello world
 
-Nous allons d'abord créer l'exemple le plus simple :
+We will create the simplest example :
 
     <html>
     <head>
@@ -55,13 +54,13 @@ Nous allons d'abord créer l'exemple le plus simple :
 
 
 
-Transférez le fichier ```hello.html``` sur un produit holusion. Vous devriez voir un texte statique "hello world" s'afficher sur chaque face.
+Transfere the ```hello.html``` file on the Holusion product. You should see a static text "hello world" being displayed on each face of your product.
 
 # live Tweet
 
-En utilisant l'API twitter, on peut par exemple créer un live-tweet :
+By using the twitter API, we can for example create a tweet-live :
 
-Créer un fichier ```twitter.html``` :
+Create a file named ```twitter.html``` :
 
     <html>
     <head>
@@ -86,31 +85,31 @@ Créer un fichier ```twitter.html``` :
     </body>
     </html>
 
-En utilisant les widgets twitter, cette page très simple affiche les dernières actualités twitter pour le compte **Holusion**.
+By using the twitter widgets, this page uses the last twitter news for the  **Holusion** account.
 
-Avec cette base, il est possible de construire toutes sortes d'applications.
+With this base, it is possible to create all types of applications.
 
 
-# Aller plus loin.
+# Going further.
 
-### Mise en forme manuelle
+### Manual shaping
 
-Le module `layout` fourni permet une mise en forme rapide et efficace pour débuter. Si il ne remplit pas sa fonction, il est possible de mettre en forme manuellement le contenu. Pour cela, créer des `<div>` positionnées de façon absolue dans le document, suivant le format de votre [produit](http://dev.holusion.com/fr/content/layout/index).
+The given `layout` module allows a fast and efficient shaping to begin. If it doesn't fulfil its fonction, it is possible to manually shape the content. To do this, create some `<div>` placed in an absolute way, following your [product](http://dev.holusion.com/fr/content/layout/index) format.
 
-### Applications complexes
+### Complex applications
 
-Nous conseillons d'utiliser un bundler comme [webpack](https://webpack.github.io/) pour présenter votre application finale sous la forme d'un seul fichier `.html` contenant toutes vos ressources.
+We advise you to use a bundler as [webpack](https://webpack.github.io/) to present your finale application under a one `.html` file format, containing all your resources.
 
-Si votre application ne peut pas se packager sous cette forme, par exemple si elle inclus des médias lourds (vidéos, etc...) reportez-vous au [guide](/fr/toolbox/packaging) de packaging d'applications pour en faire une archive Zip compatible.
+If your application cannot be packaged with this format, for example if it contains heavy files (videos, etc...) you can consult this application packaging [guide](/en/toolbox/packaging) to make it a compatible Zip archive.
 
-### Support ESNext, CSS3, HTML5
+### ESNext, CSS3, HTML5 support
 
-Le navigateur utilisé repose sur [electron](http://electron.atom.io/). Votre application a donc accès à tous les modules standard de [nodejs](https://nodejs.org/api/), ainsi qu'aux modules spécifiques d'electron [V0.34.0](http://electron.atom.io/docs/v0.34.0/).
+The navigator is using [electron](http://electron.atom.io/). Your application has access to all the standard [nodejs](https://nodejs.org/api/) modules, as well as the specific electron's [V0.34.0](http://electron.atom.io/docs/v0.34.0/) modules.
 
-Le support ES2015,CSS3 et HTML5 est tiré de la version de Chrome incluse. Actuellement Chrome 51. On peut trouver leur statut dans la  [documentation](https://www.chromestatus.com/features) du projet, ou un résumé [ici](http://kangax.github.io/compat-table/es6/#chrome49).
+The ES2015,CSS3 and HTML5 support is taken from the Chrome included version. Currently Chrome 51. We can find their status in the project's  [documentation](https://www.chromestatus.com/features), or a summary [here](http://kangax.github.io/compat-table/es6/#chrome49).
 
-Pour vérifier la version de chrome utilisée, on peut utiliser la propriété `navigator.userAgent`. Vous obtiendrez un texte de type :
+To verify the used Chrome version, we can use the `navigator.userAgent` command. You will see this kind of answer :
 
     Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Electron/1.2.2 Safari/537.36
 
-Duquel on déduit que nous utilisons la version `51.0.2704.84` de chrome, pour Electron `1.2.2`. Si votre système est plus ancien, il se peut qu'il utilise encore la version 49 de Chrome.
+With this we can understand that we are using the `51.0.2704.84` version of Chrome, for Electron `1.2.2`. If you have a older system, it probably uses the version 49 of Chrome.
