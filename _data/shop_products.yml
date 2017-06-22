@@ -62,7 +62,7 @@
 
 - name: Opal H
   url : store/index.html
-  url_info: http://holusion.com/fr/holusion.com/fr/products/opal
+  url_info: http://holusion.com/fr/products/opal
   price: 190.00
   icons:
     - Picto__1_face
