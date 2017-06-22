@@ -42,10 +42,10 @@ Once copied this ID can be added to a media's configuration panel by clicking on
 
 **Note** : "nfc" must be written in lower case. Don't forget to click on <span class="glyphicon glyphicon-floppy-saved"></span> to save changes.
 
-**How it works **
+**How it works**
 
 When a card is on the reader :
-- medias assigned to it's tag are enabled
+- medias assigned to its tag are enabled
 - All other medias are disabled
 
 When no card is detected :
