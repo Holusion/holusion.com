@@ -57,7 +57,7 @@
     - max-quantity: 100
 
 
-- name: Opal
+- name: Opal H
   url: products/opal
   price: 190.00
   icons:
@@ -66,7 +66,25 @@
   img: /static/img/products/opal-h_schema.jpg
   description:
     fr: |
-      En format portrait ou paysage, observez l'hologramme projeté par votre tablette tactile sur une face en verre traité.
+      Placé de façon horizontale, votre tablette tactile projette l'hologramme sur une face en verre traité.
+    en: |
+      Portrait or Landscape, use your tablet to make great holograms.
+  properties:
+    - id : 4
+    - quantity: 1
+    - weight: 3000
+    - max-quantity: 100
+
+- name: Opal V
+  url: products/opal
+  price: 190.00
+  icons:
+    - Picto__1_face
+    - Picto__Smartphone
+  img: /static/img/products/opal-v_schema.jpg
+  description:
+    fr: |
+      Placé de façon verticale, votre tablette tactile projette l'hologramme sur une face en verre traité.
     en: |
       Portrait or Landscape, use your tablet to make great holograms.
   properties:
