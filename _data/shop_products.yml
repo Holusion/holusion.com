@@ -1,5 +1,5 @@
 - name: Pixel
-  url: products/pixel#pixel
+  url: http://holusion.com/fr/products/pixel
   price: 4.00
   icons:
     - Picto__Smartphone
