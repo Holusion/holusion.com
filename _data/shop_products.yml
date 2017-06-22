@@ -1,5 +1,6 @@
 - name: Pixel
-  url: http://holusion.com/fr/products/pixel
+  url : store/index.html
+  url_info: http://holusion.com/fr/products/pixel
   price: 4.00
   icons:
     - Picto__Smartphone
@@ -20,7 +21,8 @@
 
 
 - name: Pixel XL
-  url: products/pixel#pixelxl
+  url : store/index.html
+  url_info: http://holusion.com/fr/products/pixel#pixelxl
   price: 6.00
   icons:
     - Picto__Smartphone
@@ -39,7 +41,8 @@
 
 
 - name: Pixel +
-  url: products/pixel#pixel+
+  url : store/index.html
+  url_info: http://holusion.com/fr/products/pixel#pixel+
   price: 7.00
   icons:
     - Picto__Smartphone
@@ -58,7 +61,8 @@
 
 
 - name: Opal H
-  url: holusion.com/fr/products/opal
+  url : store/index.html
+  url_info: http://holusion.com/fr/holusion.com/fr/products/opal
   price: 190.00
   icons:
     - Picto__1_face
@@ -77,7 +81,8 @@
 
 
 - name: Opal V
-  url: products/opal
+  url : store/index.html
+  url_info: http://holusion.com/fr/products/opal
   price: 190.00
   icons:
     - Picto__1_face
