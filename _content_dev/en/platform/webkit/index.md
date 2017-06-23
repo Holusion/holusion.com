@@ -112,4 +112,4 @@ To verify the used Chrome version, we can use the `navigator.userAgent` command.
 
     Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Electron/1.2.2 Safari/537.36
 
-With this we can understand that we are using the `51.0.2704.84` version of Chrome, for Electron `1.2.2`. If you have a older system, it probably uses the version 49 of Chrome.
+With that, we can understand that we are using the `51.0.2704.84` version of Chrome, for Electron `1.2.2`. If you have a older system, it probably uses the version 49 of Chrome.
