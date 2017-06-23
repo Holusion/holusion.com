@@ -88,4 +88,4 @@ This section is grouping all the identified problems that you could encounter wi
 <script>
 var faq = new Faq(document.getElementById("troubleshooting"));
 </script>
-<h4>Vous n'avez pas trouvé de réponse à vos questions? <a href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">Contact us</a>.</h4>
+<h4>You haven't found an answer to your question ? <a href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">Contact us</a>.</h4>
