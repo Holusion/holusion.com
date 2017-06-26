@@ -23,7 +23,7 @@ As a default, products are configured to be accessible via their access-point wi
     SSID : <product>-<serial_number>
     key  : holusionadmin
 
-If your product doesn't support wifi or you want a faster connexion, you can connect it to your LAN with an USB-ethernet adapter, then access it through it's local IP.
+If your product doesn't support wifi or you want a faster connexion, you can connect it to your LAN with an USB-ethernet adapter, then access it through it's local IP, on yout [local network](net-discovery) or on your work station.
 
 
 If you're connected through wifi, the product's IP should be `10.0.0.1`.
