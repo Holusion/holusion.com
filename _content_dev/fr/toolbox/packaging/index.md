@@ -31,7 +31,7 @@ Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas é
 - Sur votre [réseau local](net-discovery)
 - Directement sur votre [poste de travail](local-dhcp)
 
-Une fois connecté, naviguer à l'adresse `10.0.0.1`. Vous devriez voir apparaitre la zone de chargement de fichiers :
+Une fois connecté, naviguer à l'adresse `10.0.0.1`. Vous devriez voir apparaître la zone de chargement de fichiers :
 <center>
   <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_upload.png"/>
 </center>

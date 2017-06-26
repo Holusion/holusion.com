@@ -12,7 +12,7 @@ menu: toolbox
 
 ## Introduction
 
-This page aim to describe as precisely as possible any information you'll need to upload new content to your product : Connexion methods, file transfer, etc...
+This page aim to describe as precisely as possible any information you'll need to upload new content to your product : Connexion methods, file [transfer](#transfer), etc...
 
 The holusion software is using simple yet extensive rules to classify files and apps.
 
@@ -20,8 +20,8 @@ The holusion software is using simple yet extensive rules to classify files and 
 
 As a default, products are configured to be accessible via their access-point wifi network, identified as :
 
-SSID : <product>-<serial_number>
-key  : holusionadmin
+    SSID : <product>-<serial_number>
+    key  : holusionadmin
 
 If your product doesn't support wifi or you want a faster connexion, you can connect it to your LAN with an USB-ethernet adapter, then access it through it's local IP.
 
@@ -61,7 +61,7 @@ Use the **"Upload"** bar to find your file and send it.
 
 Archives are the best system to package full apps, often requiring multiple files to work with. For example, Unity apps. However they require slightly more attention than simple files.
 
-Suported formats are : **.tar, .tar.gz, .zip**.
+Supported formats are : **.tar, .tar.gz, .zip**.
 
 Archive content **mustùù be identified by one of the following methods for the upload to be valid :
 (once one element is valid, the following ones will be ignored)
