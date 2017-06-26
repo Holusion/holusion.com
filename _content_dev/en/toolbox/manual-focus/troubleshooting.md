@@ -60,4 +60,4 @@ The problem is coming from **DVI-D** cables that connect the screen to the Focus
 
 ### Naming of the parts
 Naming of the main parts of the Focus :
-<img class="img-responsive" src="/static/img/posts/manuel-focus/draw_focus_en.png" alt="Dessin technique du focus">
+<img class="img-responsive" src="/static/img/posts/manuel-focus/draw_focus_en.png" alt="Technical drawing of the Focus">
