@@ -66,12 +66,12 @@ Supported formats are : **.tar, .tar.gz, .zip**.
 Archive content **must be identified by one of the following methods for the upload to be valid :
 (once one element is valid, the following ones will be ignored)
 
-1. have a **package.json** file in root folder with:
+1. Have a **package.json** file in root folder with:
     1. a ```start``` field with the exec command.
     2. a ```script:start```  field with the exec command.
     3. a ```bin``` with a single file's path relative to package.json.
     4. a ```main``` field with a single file's path relative to package.json.
-3. have only one file in root folder. May also have subfolders.
+3. Have only one file in root folder. May also have subfolders.
 
 **file** requirements need to be binaries or scripts with a [shebang](https://fr.wikipedia.org/wiki/Shebang) header.
 minimal package.json file :
@@ -81,6 +81,6 @@ minimal package.json file :
   "start":"sh myscript.sh"
 }
 {% endhighlight %}
-Holusion is [npm](http://npmjs.org) compatible. fields are either of same use or of different names.
+Holusion is [npm](http://npmjs.org) compatible. Fields are either of same use or of different names.
 
 Archives created by those rules can be transfered to any Holusion products.
