@@ -50,58 +50,58 @@ The *routes* are grouped in 5 categories :
 <img class="img-responsive" src="/static/img/posts/media-player/list.png" alt="routes groups">
 </center>
 
-Pour montrer le fonctionnement de cette interface, nous utiliserons dans un premier temps les routes du groupe `playlist`. Cliquer sur la ligne correspondante pour lister les opérations possibles.
+To show how this interface is working, we will first use the routes of the group `playlist`. Click on the corresponding line to display the possible operations.
 
 <center>
   <img class="img-responsive" src="/static/img/posts/media-player/playlist_routes.png" alt="routes groups">
 </center>
 
-Nous utiliserons d'abord la première route disponible, qui permet de lister les éléments de la liste de lecture.
+We will use the first available route, wich permits to display the playlist's elements.
 
 <div class="row">
   <div class="col-md-6 col-sm-12">
     <p>
-    Le détail de `[GET] /playlist`.
+    The detail of the `[GET] /playlist`.
     </p>
     <img class="img-responsive" src="/static/img/posts/media-player/route_details.png" alt="route details">
   </div>
   <div class="col-md-6 col-sm-12">
     <p>
-    Exemple de réponse en cliquant sur **Try it out!**
+    An example of answer by clicking on **Try it out!**
     </p>
     <img class="img-responsive" src="/static/img/posts/media-player/route_response.png" alt="route details">
   </div>
 </div>
 
-Cette requête produit donc un tableau **JSON** comportant les identifiants des différents médias disponibles.
+This request produces a **JSON** array that is listing the different available medias IDs.
 
-On peut la réutiliser dans une application très simple. Par exemple, en python (exemple pour python v2.x):
+We can use it in a very simple application. For example, with Python (example for Python v2.x):
 
     import requests
     requests.get("http://10.0.0.1/playlist").text
 
-Renvoie la même séquence de texte que l'exemple de la documentation.
+Returns the same text sequence than the example of the guide.
 
-**Attention** : Les requêtes présentées agissent réellement sur le produit. Si vous testez par exemple la route `[DELETE] /medias/{name}`, le média ciblé sera définitivement supprimé de votre produit.
+**Caution** : The presented requests really have an impact on the product. If you try `[DELETE] /medias/{name}`, the targeted media will be definitely deleted from your product.
 
 
-## Première application
+## First application
 
-Afin de prendre en main l'API, nous allons réaliser en python une première application.
+In order to handle the API, we will develop our first Python application.
 
-**Note** : Tous les environnements modernes proposent des librairies similaires à la syntaxe proche.
+**Note** : All the modern environments are providing similar librairies to the close syntax .
 
-Nous utiliserons la librairie `requests`, qui permettra d'accéder à l'API.
+We will use the `requests` librairy, that will permit to access the API.
 
     #!/usr/bin/env python
     import requests
-    #On récupère les médias disponibles :
+    # we recover the available medias :
     medias = requests.get("http://10.0.0.1/playlist").json()
     print(medias[0].get("name"))
 
 
-L'idée générale est qu'en utilisant les requêtes standard et en se basant sur les réponses données par la documentation, on peut facilement et rapidement créer une interface complète permettant d'interagir avec les hologrammes.
+The general idea is that by using standard requests and by using the answers given by the guide, we can easily and quickly create a complete interface that permits to interact with the holograms.
 
-## Aller plus loin
+## Go further
 
 {% include_relative exemples.html %}
