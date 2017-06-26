@@ -1,14 +1,14 @@
 ---
-title: Contrôler l'affichage en python
-abstract: Utilisez l'API Holusion pour contrôler votre produit
+title: Control the display with Python
+abstract: Use  the Holusion API to control your product
 
 ---
-# Utiliser la playlist
-Nous allons réaliser un programme en python qui affichera la liste des médias et permettra de séléctionner un élément de la playlist pour le lire.
+# Use the playlist
+We will make a function in Python that will display the list of medias and will permit to select an element in the playlist to play it.
 
-## L'affichage
+## The display
 
-Tout d'abord, nous allons récupérer l'ensemble de la playlist et l'afficher avec la librairie ncurses :
+First of all, we will recover the whole playlist and display it with the ncurses librairy :
 
     #!/usr/bin/env python
     import curses
@@ -42,24 +42,24 @@ Tout d'abord, nous allons récupérer l'ensemble de la playlist et l'afficher av
     curses.echo()
     curses.endwin()
 
-Si l'on lance le programme, il affichera la liste des médias en différenciant ceux qui sont activés de ceux qui sont désactivés.
+If we run the programm, it will display the list of medias while making the difference between activated and desactivated medias.
 
-Nous allons ensuite utiliser une nouvelle route : `[PUT] /control/current/{name}`. Dans le [standard HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html), la péthode PUT correspond à une création de ressource. On envoie au serveur le nom du média qu'on souhaite afficher.
+Then we will use a new route : `[PUT] /control/current/{name}`. In the [HTTP standard](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html), the PUT method corresponds to a creation of resources. We send the name of the media we want to display to the server.
 
-La création d'une requête PUT est souvent un peu plus compliquée qu'un GET.
+The use of a PUT request is often more complex than with a GET.
 
-Avec la librairie requests :
+With the requests librairy :
 
     name= "my_media_name"
     req = requests.put('http://10.0.0.1/control/current/'+name)
     if req.status_code != 200:
-      print(req.text) # échec
+      print(req.text) # fail
     else:
-      print("OK") # succès
+      print("OK") # success
 
-Si l'on essaie ce code, la requête échoue : "my_media_name" n'est pas présent dans les médias disponibles.
+If we try this code, the request fails : "my_media_name" isn't present in the available medias.
 
-On peut à partir de ces 2 requêtes créer une application permettant de piloter les hologrammes à partir des flèches directionelles du clavier :
+From this 2 requests we can now create an application permitting to drive the holograms with the keyboard's arrows :
 
     #!/usr/bin/env python
     import curses
@@ -114,4 +114,4 @@ On peut à partir de ces 2 requêtes créer une application permettant de pilote
     curses.echo()
     curses.endwin()
 
-Pour aller plus loin, on peut désactiver le reste de la playlist pour jouer en boucle l'élément sélectionné : [Désactiver des élements](modify-elements)
+To go further, we can desactivate the rest of the playlist to loop on the selected element : [Desactivate the elements](modify-elements)
