@@ -63,7 +63,7 @@ Archives are the best system to package full apps, often requiring multiple file
 
 Supported formats are : **.tar, .tar.gz, .zip**.
 
-Archive content **mustùù be identified by one of the following methods for the upload to be valid :
+Archive content **must be identified by one of the following methods for the upload to be valid :
 (once one element is valid, the following ones will be ignored)
 
 1. have a **package.json** file in root folder with:
