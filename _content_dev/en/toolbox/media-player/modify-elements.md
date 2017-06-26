@@ -1,18 +1,18 @@
 ---
-title: Modifier la playlist
-abstract: Utilisez l'API Holusion pour contrôler votre produit
+title: Modify the playlist
+abstract: Use  the Holusion API to control your product
 ---
 
-Nous allons voir dans cet exemple la route `PUT /playlist`, qui permet de modifier **toutes** les propriétés des éléments de playlist. Elle est donc très importante et sera utilisée dans la plupart des applications.
+In this example we will see the route `PUT /playlist`, wich permits to modify **all** the properties of the elements of a playlist. It is a very important route and we are going to use it in most of the applications.
 
-Les commandes de ce tutoriel seront réalisées avec [curl](https://curl.haxx.se/).
+The commands in this tutorial are made with [curl](https://curl.haxx.se/).
 
-# Exemple
+# Example
 
-    PUT /playlist {"query":{"name":"<ELEMENT_A_MODIFIER>"},"modifier":{"$set":{"active": false }}}
+    PUT /playlist {"query":{"name":"<ELEMENT_TO_MODIFY>"},"modify":{"$set":{"active": false }}}
 
-Va modifier l'élément concerné pour le désactiver. On peut utiliser la négation pour inverser la commande :
+Will modify the concerned element to desactivate it. We can use the negation to do the exact inverse :
 
-    PUT /playlist {"query":{"$not":{"name":"<ELEMENT_A_MODIFIER>"}},"modifier":{"$set":{"active": false }}}
+    PUT /playlist {"query":{"$not":{"name":"<ELEMENT_TO_MODIFY>"}},"modify":{"$set":{"active": false }}}
 
-Va désactiver tous les éléments ne s'appellant pas comme le nom donné.
+Will desactivate all the element that don't have the given name.
