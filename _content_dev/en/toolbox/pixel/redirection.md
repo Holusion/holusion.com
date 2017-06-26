@@ -1,5 +1,5 @@
 ---
-title: Redirect to  pixel.holusion.com
+title: Redirect to pixel.holusion.com
 image: /build/img/posts/dns_redirect/header.jpg
 image2x: /build/img/posts/dns_redirect/header_2x.jpg
 abstract: Use your own domain name to distribute your pixel videos.
@@ -58,15 +58,14 @@ We will make your CNAME internally point to this address. Head to your DNS provi
     <code>pixel IN CNAME example.pixel.holusion.com.</code>
 
     <p>"pixel" here is the chosen subdomain of example.com we want to use.</p>
-    <p>DNS entries can have up to 24 hours of propagation time. You can verify the redirection with a DNS explorer like <a href="https://fr.wikipedia.org/wiki/Dig_(programme_informatique)">dig</a></p>
-    <p>La propagation peut prendre jusqu'à 24h pour être effective. Vous pouvez vérifier son état à l'aide d'un outil de débogage de DNS tel que <a href="https://en.wikipedia.org/wiki/Dig_(command)">dig</a>.</p>
+    <p>DNS entries can have up to 24 hours of propagation time. You can verify the redirection with a DNS explorer like <a  href="https://en.wikipedia.org/wiki/Dig_(command)">dig</a>.</p>
   </div>
   <div class="col-md-6">
     <img class="img-responsive" alt="dns zone edit CNAME" src="/static/img/posts/dns_redirect/dns_create.png">
   </div>
 </div>
 
-<p>Exemple :</p>
+<p>Example :</p>
 {% highlight shell%}
 $ dig pixel.example.com
 {% endhighlight %}
