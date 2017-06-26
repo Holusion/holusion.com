@@ -43,7 +43,7 @@ Content management is similar to all our products. Details can be found [here](/
 - Always turn off the product before doing any cleanup
 - The glass parts are best cleaned with any glass cleaner spray
 - One can use standard cleaning products on plastic and metal parts.
-- always take care not to damage any electronic components when cleaning the product.
+- Always take care not to damage any electronic components when cleaning the product.
 
 ## Nomenclature
 
