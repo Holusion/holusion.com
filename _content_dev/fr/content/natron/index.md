@@ -27,7 +27,7 @@ Ouvrir le projet téléchargé.
 
 ### Aperçu
 
-Le projet fourni contiens un certain nombre de transformations (en orange) et de masques (en Bleu) configurés pour produire l'hologramme final. Il a été configuré avec des paramètres par défaut permettant de réaliser un hologramme sans aucune connaissance des techniques de montage vidéo.
+Le projet fourni contient un certain nombre de transformations (en orange) et de masques (en Bleu) configurés pour produire l'hologramme final. Il a été configuré avec des paramètres par défaut permettant de réaliser un hologramme sans aucune connaissance des techniques de montage vidéo.
 
 Les éléments principaux visibles dans la partie "Node Graph" qui seront utilisés :
 
@@ -36,7 +36,7 @@ Les éléments principaux visibles dans la partie "Node Graph" qui seront utilis
 - **Position** : Réglage de taille et position de la vidéo source.
 
 ### importer une vidéo
-La première étape est d'importer votre vidéo source. Il faut créer un novueau *Node* dans la partie "Node graph" du logiciel. Soit simplement par un glisser-déposer de la vidéo dans cette zone.
+La première étape est d'importer votre vidéo source. Il faut créer un nouveau *Node* dans la partie "Node graph" du logiciel. Soit simplement par un glisser-déposer de la vidéo dans cette zone.
 
 <center>
   <img class="img-responsive" src="/static/img/posts/natron/natron_node_graph.png" alt="Le Node graph">
@@ -54,7 +54,7 @@ Cela devrait créer un "Reader node". Il faut ensuite le relier au node "Positio
 
 ### Optimiser le rendu
 
-Quelques réglages sont nécessaires pour obtenir un résultat optimal. Ceux-ci seront faits sur les **transform Nodes**. de la scène. Soit manuellement dans la prévisualisation, soit pour plus de précision dans l'outil de configuration de ces "Nodes".
+Quelques réglages sont nécessaires pour obtenir un résultat optimal. Ceux-ci seront faits sur les **transform Nodes** de la scène. Soit manuellement dans la prévisualisation, soit pour plus de précision dans l'outil de configuration de ces "Nodes".
 
 Activer le Noeud **Transform** en double cliquant dessus. Une icône de redimensionnement et déplacement devrait apparaitre dans la vue **Viewer2**.
 
@@ -63,7 +63,7 @@ Activer le Noeud **Transform** en double cliquant dessus. Une icône de redimens
   <span><b>Redimensionner l'objet pour qu'il ne dépasse pas du triangle noir.</b></span>
 </center>
 
-La vue **Viewer2** pour met en évidence le cache d'image. Votre vidéo doit entrer entièrement dans la partie noire. N'hésitez pas à avancer dans la vidéo pour vérifier que l'objet ne dépasse pas du cadre tout au long de l'animation.
+La vue **Viewer2** met en évidence le cache d'image. Votre vidéo doit entrer entièrement dans la partie noire. N'hésitez pas à avancer dans la vidéo pour vérifier que l'objet ne dépasse pas du cadre tout au long de l'animation.
 
 <div class="row">
   <div class="col-md-6"><center>
