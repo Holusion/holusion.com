@@ -13,12 +13,12 @@ menu: toolbox
   Par défaut, cette API est utilisable via l'interface web permettant de <a href="/fr/packaging">transférer des médias</a>, mais il est possible de l'utiliser directement à partir d'applications tierces.
   </p>
   <p>
-  On peut grâce à elle réaliser des systèmes complexes de gestion de contenu. L'ensemble desi nteractions possibles avec nos produits sont réalisables :
+  On peut grâce à elle réaliser des systèmes complexes de gestion de contenu. Parmis les interactions possibles avec nos produits, vous pouvez notamment retrouver :
   </p>
   <ul>
   <li>Ajout / suppression de médias</li>
-  <li>Lancement instantanné d'un média</li>
-  <li>Récupératyion des informations système (nom, version...)</li>
+  <li>Lancement instantané d'un média</li>
+  <li>Récupération des informations système (nom, version...)</li>
   <li> etc...</li>
   </ul>
   </div>
@@ -27,12 +27,12 @@ menu: toolbox
 
 ## Mise en place
 
-Avant tout, il est nécessaire d'être connecté au produit.Ils sont par défaut configurés pour émettre un réseau wifi :
+Avant tout, il est nécessaire d'être connecté au produit. Ils sont par défaut configurés pour émettre un réseau wifi :
 
     SSID : <produit>-<N° de série>
     Clé  : holusionadmin
 
-Si vous bénéficiez d'une installation sur mesure, la méthode d'accès au produit devra vous avori été transmise à l'installation. Dans la suite de ce document, nous utiliserons en exemple l'IP par défaut `10.0.0.1` pour accéder au produit.
+Si vous bénéficiez d'une installation sur mesure, la méthode d'accès au produit devra vous avoir été transmise à l'installation. Dans la suite de ce document, nous utiliserons en exemple l'IP par défaut `10.0.0.1` pour accéder au produit.
 
 Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un cable Ethernet :
 
@@ -87,7 +87,7 @@ Renvoie la même séquence de texte que l'exemple de la documentation.
 
 ## Première application
 
-Afin de prendre en main l'API, nous allons réaliser en python une première application.
+Afin de prendre en main l'API, nous allons réaliser une première application en python.
 
 **Note** : Tous les environnements modernes proposent des librairies similaires à la syntaxe proche.
 
