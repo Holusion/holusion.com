@@ -24,9 +24,9 @@ Les produits sont par défaut configurés pour émettre un réseau wifi :
     SSID : <produit>-<N° de série>
     Clé  : holusionadmin
 
-Par exemple, si vous possédez le prism N°1, il faudra trouver un réseau appellé `prism-01`. Si votre produit a reçu une configuration spécifique, veuillez vous réferer aux informations qui vous ont alors été communiquées.
+Par exemple, si vous possédez le Prism N°1, il faudra trouver un réseau appellé `prism-01`. Si votre produit a reçu une configuration spécifique, veuillez vous réferer aux informations qui vous ont alors été communiquées.
 
-Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un cable Ethernet :
+Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un câble Ethernet :
 
 - Sur votre [réseau local](net-discovery)
 - Directement sur votre [poste de travail](local-dhcp)
@@ -42,7 +42,7 @@ Les formats nativement supportés sont :
 
 **Les fichiers vidéo** : .mov, .avi, .mp4, .flv, .mkv
 
-**Les fichiers executables** : sans extension, de [type mime](https://fr.wikipedia.org/wiki/Type_MIME) ```application/```
+**Les fichiers exécutables** : sans extension, de [type mime](https://fr.wikipedia.org/wiki/Type_MIME) ```application/```
 
 **Les dossiers archivés [sous condition](#archives)** : .tar.gz (conseillé), .tar, .zip
 
@@ -81,11 +81,11 @@ Le contenu de l'archive doit être identifié d'une des manières suivantes pour
 (si un élément est trouvé, les suivants seront ignorés)
 
 1. avoir un fichier package.json à la racine, qui contient:
-    1. un champ ```start``` avec la commande à executer.
-    2. un champ ```script:start``` avec la commande à executer.
+    1. un champ ```start``` avec la commande à exécuter.
+    2. un champ ```script:start``` avec la commande à exécuter.
     3. un champ ```bin``` contenant un fichier binaire uniquement.
-    4. un champ ```main``` avec le fichier à executer. Ce fichier doit comporter un [en-tête "shebang"](https://fr.wikipedia.org/wiki/Shebang) si c'est un script.
-3. ne contenir à sa racine qu'un seul fichier, executable. Plus eventuellement un ou plusieurs sous dossiers.
+    4. un champ ```main``` avec le fichier à exécuter. Ce fichier doit comporter un [en-tête "shebang"](https://fr.wikipedia.org/wiki/Shebang) si c'est un script.
+3. ne contenir à sa racine qu'un seul fichier, exécutable. Plus éventuellement un ou plusieurs sous dossiers.
 
 Exemple de fichier package.json minimaliste:
 {% highlight json %}

@@ -59,7 +59,7 @@ Avec la librairie requests :
 
 Si l'on essaie ce code, la requête échoue : "my_media_name" n'est pas présent dans les médias disponibles.
 
-On peut à partir de ces 2 requêtes créer une application permettant de piloter les hologrammes à partir des flèches directionelles du clavier :
+On peut à partir de ces 2 requêtes créer une application permettant de piloter les hologrammes à partir des flèches directionnelles du clavier :
 
     #!/usr/bin/env python
     import curses
