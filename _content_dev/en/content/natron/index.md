@@ -100,7 +100,7 @@ Once you are happy with the positionning, you can see the final result by clicki
   <a class="button" href="/fr/toolbox/packaging">Media transfert guide</a>
   </div>
   <div class="col-md-6">
-      <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties"></img>
+      <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties">
       <center><span><b>Properties of the "render node"</b></span></center>
   </div>
 </div>
