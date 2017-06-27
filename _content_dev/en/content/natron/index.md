@@ -97,7 +97,7 @@ Once you are happy with the positionning, you can see the final result by clicki
     The rendering can take up to 10 min for a video, depending on the computer that you use.<br>
     You can then <a href="/fr/toolbox/packaging">transfere</a> the video on your product.
   </p>
-  <center><a class="button" href="/fr/toolbox/packaging">Media transfert guide</a></center>
+  <a class="button" href="/fr/toolbox/packaging">Media transfert guide</a>
   </div>
   <div class="col-md-6">
       <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties"></img>

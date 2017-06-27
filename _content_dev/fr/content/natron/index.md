@@ -98,7 +98,7 @@ Une fois que le placement est satisfaisant, on peut voir le résultat final avan
     Le rendu peut prendre jusqu'à 10 minutes par minute de vidéo à encoder, selon la puissance de l'ordinateur utilisé.<br>
     Vous pourrez ensuite <a href="/fr/toolbox/packaging">transférer</a> la vidéo sur votre produit.
   </p>
-  <center><a class="button" href="/fr/toolbox/packaging">Guide du transfert de médias</a></center>
+  <a class="button" href="/fr/toolbox/packaging">Guide du transfert de médias</a>
   </div>
   <div class="col-md-6">
       <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties"></img>
