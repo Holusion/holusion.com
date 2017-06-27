@@ -17,7 +17,7 @@ Lorsque vous utilisez le **Prism** d'Holusion, merci de suivre les instructions 
 - Lisez le manuel d'utilisation en entier avant de commencer à utiliser le produit
 - N'utilisez pas le produit sur une surface souple : cela pourrait obstruer les conduits de ventilation et provoquer une surchauffe.
 - Lorsque vous soulevez le produit, tenez-le toujours par la partie basse. Ne le portez pas par la partie haute.
-- Utilisez le produit dans des pièces sans condensation : l'humidité peut abîmer les composants électroniques.
+- Utilisez le produit dans des lieux sans condensation : l'humidité peut abîmer les composants électroniques.
 
 ## Guide d'utilisation
 
