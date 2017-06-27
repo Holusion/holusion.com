@@ -7,14 +7,15 @@ exclude:
   - "*.psd"
 highlighter: rouge
 incremental: true
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 sass:
   sass_dir: _css
   style: :compressed
   sourcemap: :true
-#This is the test api key and can be played with consequence-free
+#This is the public test api key and can be publicly shared consequence-free
+# It will be overriden by further "_deploy.yml" file during deployment.
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 collections:
   content_main:
