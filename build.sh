@@ -194,12 +194,14 @@ if ${make_site} ;then
 
   #
   # TEST target
+  # + static analysis of site's files.
   #
   ${make_check} && bundle exec htmlproofer _site \
   --assume-extension \
-  --disable-external \
+  --alt-ignore "/static\/img\/products\/.*/" \
+  --check-favicon \
   --checks-to-ignore ScriptCheck \
-  --file-ignore "/vendor/"
+  --file-ignore "/vendor/,/static\/fonts\/.*.html/"
 
   if $make_compress ;then
     echo "Compressing JPEG images"
