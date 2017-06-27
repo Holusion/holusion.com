@@ -101,7 +101,7 @@ Une fois que le placement est satisfaisant, on peut voir le résultat final avan
   <a class="button" href="/fr/toolbox/packaging">Guide du transfert de médias</a>
   </div>
   <div class="col-md-6">
-      <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties"></img>
+      <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties">
       <center><span><b>Les propriétés du "render node"</b></span></center>
   </div>
 </div>
