@@ -19,7 +19,7 @@ When using the holusion **prism**, please take the following precautions :
 - When moving the product around, always hold the bottom part of the product. Do not hold it by its top part.
 - Always use in non-condensing places : humidity can damage electronic components.
 
-## Usage Guide
+## User Guide
 
 ### Start the product
 
