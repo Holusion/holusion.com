@@ -92,7 +92,7 @@ Once you are happy with the positionning, you can see the final result by clicki
         <b>WriteVideo</b> will directly encode the video for you. The codecs that Natron uses are sometimes unstable, it is generally safer to use a second software that encodes better.
       </li>
   </ul>
-  <p> To sum up, WritePNG is preferable, unless you don't have access to any editing software.
+  <p> To sum up, WritePNG is preferable, unless you don't have access to any editing software.</p>
   <p>
     The rendering can take up to 10 min for a video, depending on the computer that you use.<br>
     You can then <a href="/fr/toolbox/packaging">transfere</a> the video on your product.
