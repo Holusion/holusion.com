@@ -9,7 +9,7 @@ menu: toolbox
 
 ## Introduction
 
-Il est possible de faire pointer un domaine personnalisé vers une vidéo holographique. Dans cet exemple, nous allons faire en sorte que les visiteurs se rendant sur `pixel.example.com` voient apparaitre la playlist *holusion*, qu'on peut normalement découvrir sur `pixel.holusion.com/holusion/view`.
+Il est possible de faire pointer un domaine personnalisé vers une vidéo holographique. Dans cet exemple, nous allons faire en sorte que les visiteurs se rendant sur `pixel.example.com` voient apparaître la playlist *holusion*, qu'on peut normalement découvrir sur `pixel.holusion.com/holusion/view`.
 
 <div class="row">
   <div class="col-md-3 col-md-offset-3 col-sm-6">
