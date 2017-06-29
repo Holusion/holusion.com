@@ -43,14 +43,7 @@ function is200(p, cb){
     cb(res.statusCode == 200);
   });
 }
-//Check for HTTP 200 and no error. Return only body
-function getBody(path, cb){
-  request({url:this.t(path)},function(err,res,body){
-    expect(err).to.be.null;
-    expect(res.statusCode).to.equal(200);
-    cb(body);
-  });
-}
+
 
 describe(`Integration tests on ${target} :`,function(){
   before(function(){
@@ -67,48 +60,54 @@ describe(`Integration tests on ${target} :`,function(){
 
   });
   ["fr","en"].forEach((lang)=>{
-    describe(`Snipcart [${lang.toUpperCase()}] store (HTTP)`,function(){
+    describe(`Snipcart ${httpPath(`/${lang}/store/`)}`,function(){
       this.t = httpPath;
       testStatusCode.bind(this, [`/${lang}/store/`,301])();
     })
-    describe(`Snipcart [${lang.toUpperCase()}] store (HTTPS)`,function(){
+    describe(`Snipcart ${httpsPath(`/${lang}/store/`)}`,function(){
       this.t = httpsPath;
-      before((done)=>{
-        getBody.bind(this)(`/${lang}/store/`, (body)=>{
-          this.dom = new JSDOM(body);
-          this.products = this.dom.window.document.querySelectorAll("DIV.shop-product");
-          this.add_buttons = this.dom.window.document.querySelectorAll("A.snipcart-add-item");
-          done();
+      this.dom = new Promise((resolve,reject)=>{
+        request({url:this.t(`/${lang}/store/`)},function(err,res,body){
+          if(err != null || res.statusCode != 200){
+            reject(err||new Error(`invalid status : ${res.statusCode}`))
+          }else{
+            resolve(new JSDOM(body));
+          }
         });
       })
-      //store page should yield 301 on http
-      it("export products",()=>{
-        expect(this.products).to.have.property("length").above(0);
-        expect(this.add_buttons).to.have.property("length").to.equal(this.products.length);
-      });
-      console.error("L1 eval");
-      it("dummy",()=>{
-        describe("properties",()=>{
-          console.error("L2 : ",this.add_buttons);
-          this.add_buttons.forEach((btn)=>{
-            let name = btn.getAttribute("data-item-name")||"unnamed";
-            it(`"${name}" export required`,function(){
-              let url = btn.getAttribute("data-item-url");
-              expect(url).to.match(new RegExp(`https://${target}/${lang}/store/`));
-              expect(btn.getAttribute("data-item-description")).to.be.ok;
-              expect(btn.getAttribute("data-item-name")).to.be.ok;
-            })
-            it(`"${name}" has a valid image`,(done)=>{
-              let img = btn.getAttribute("data-item-image");
-              expect(img).to.be.ok;
-              is200.call(this,img,function(found){
-                expect(found).to.be.ok;
-                done();
+      before(()=>{
+        return this.dom.then((dom)=>{
+          let add_buttons = dom.window.document.querySelectorAll("A.snipcart-add-item");
+          describe(`Snipcart ${httpsPath(`/${lang}/store/`)} products`,()=>{
+            add_buttons.forEach((btn)=>{
+              let name = btn.getAttribute("data-item-name")||"unnamed";
+              it(` ${name} export required`,function(){
+                let url = btn.getAttribute("data-item-url");
+                expect(url).to.match(new RegExp(`https://${target}/${lang}/store/`));
+                expect(btn.getAttribute("data-item-description")).to.be.ok;
+                expect(btn.getAttribute("data-item-name")).to.be.ok;
               })
-            }).slow(200);
+              it(` ${name} has a valid image`,(done)=>{
+                let img = btn.getAttribute("data-item-image");
+                expect(img).to.be.ok;
+                is200.call(this,img,function(found){
+                  expect(found).to.be.ok;
+                  done();
+                })
+              }).slow(200);
+            })
           })
         })
-      })
+      });
+      //store page should yield 301 on http
+      it("export products",()=>{
+        return this.dom.then(function(dom){
+          let products = dom.window.document.querySelectorAll("DIV.shop-product");
+          let add_buttons = dom.window.document.querySelectorAll("A.snipcart-add-item");
+          expect(products).to.have.property("length").above(0);
+          expect(add_buttons).to.have.property("length").to.equal(products.length);
+        });
+      });
 
     })
   })
