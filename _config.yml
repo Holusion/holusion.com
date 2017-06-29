@@ -5,6 +5,12 @@ exclude:
   - src
   - "*.ai"
   - "*.psd"
+  - "*.sh"
+  - "Gemfile*"
+  - "README.md"
+  - "bower.json"
+  - "package.json"
+  - "build/zopflipng"
 highlighter: rouge
 incremental: true
 plugins:
