@@ -4,17 +4,21 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "preinstall":"rvm $(cat .ruby-version)@$(cat .ruby-gemset) do bundle install",
+    "preinstall": "rvm $(cat .ruby-version)@$(cat .ruby-gemset) do bundle install",
     "start": "rvm $(cat .ruby-version)@$(cat .ruby-gemset) do jekyll serve --drafts",
     "update": "bower update",
-    "test":"rvm $(cat .ruby-version)@$(cat .ruby-gemset) do scss-lint _css/ --config .scss_lint.yml -e _css/_highlight.scss"
+    "test": "rvm $(cat .ruby-version)@$(cat .ruby-gemset) do scss-lint _css/ --config .scss_lint.yml -e _css/_highlight.scss"
   },
   "os": [
     "linux"
   ],
   "dependencies": {
-    "bower":"*"
+    "bower": "*"
   },
   "devDependencies": {
+    "chai": "^4.0.2",
+    "jsdom": "^11.0.0",
+    "mocha": "^3.4.2",
+    "request": "^2.81.0"
   }
 }
