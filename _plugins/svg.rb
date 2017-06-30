@@ -18,8 +18,6 @@ class RoundPoints < SvgOptimizer::Plugins::Base
     end
   end
 end
-#logger = Logger.new(STDOUT)
-#logger.level = Logger::INFO
 PLUGINS_BLACKLIST = [
   SvgOptimizer::Plugins::CleanupId,
 ]
@@ -33,32 +31,44 @@ PLUGINS = SvgOptimizer::DEFAULT_PLUGINS.delete_if {|plugin|
 
 #logger.info(PLUGINS)
 module Jekyll
-  class RenderSvg < Liquid::Tag
+  module Tags
+    class RenderSvg < Liquid::Tag
+      VARIABLE_SYNTAX = %r!
+        (?<variable>[^{]*(\{\{\s*[\w\-\.]+\s*(\|.*)?\}\}[^\s{}]*)+)
+        (?<params>.*)
+      !x
+      def initialize(tag_name, input, tokens)
+        super
 
-    def initialize(tag_name, input, tokens)
-      super
-      params = split_params(input)
-      @svg = params[0][0..params[0].rindex(" ")].strip
-      size = /size=(\d*)/.match(input)
-      if size && size[1]
-        @width=size[1]
-      else
-        @width=24
+        #@logger = Logger.new(STDOUT)
+        #@logger.level = Logger::INFO
+        matched = input.strip.match(VARIABLE_SYNTAX)
+        if matched
+          @svg = matched["variable"].strip
+          @params = matched["params"].strip
+        else
+          @svg, @params = input.strip.split(%r!\s+!, 2)
+        end
+        size = /size=(\d*)/.match(@params)
+        if size && size[1]
+          @width=size[1]
+        else
+          @width=24
+        end
+        #@logger.info(@svg +", "+@width)
       end
 
-    end
-
-    def split_params(params)
-      params.split("=")
-    end
-    def render(context)
-      svg_name = context[@svg] || @svg
-      svg_file = File.join(context.registers[ :site ].source, svg_name.strip)
-      xml = File.open(svg_file, "rb")
-      optimized = SvgOptimizer.optimize(xml.read,PLUGINS)
-	    "#{optimized.gsub("!!WIDTH!!","#{@width}px")}"
+      def render(context)
+        #global site variable
+        site = context.registers[:site]
+        #check if given name is a variable. Otherwise use it as a file name
+        svg_name = context[@svg] || @svg
+        svg_file = File.join(site.source, svg_name.strip)
+        xml = File.open(svg_file, "rb")
+        optimized = SvgOptimizer.optimize(xml.read,PLUGINS)
+  	    "#{optimized.gsub("!!WIDTH!!","#{@width}px")}"
+      end
     end
   end
 end
-
-Liquid::Template.register_tag('svg', Jekyll::RenderSvg)
+Liquid::Template.register_tag('svg', Jekyll::Tags::RenderSvg)
