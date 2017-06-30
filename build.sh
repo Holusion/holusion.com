@@ -17,6 +17,7 @@ usageStr(){
   echo "long option only : "
   echo -e "\t--windows : apply Ms Mindows-specific settings"
   echo -e "\t--no-build : disable site build"
+  echo -e "\t--profile : echo profiling info (cf. jekyll --profile)"
 }
 make_build=true
 make_force=false
@@ -25,6 +26,7 @@ make_dev=false
 is_windows=false
 make_watch=false
 make_compress=false
+make_profile=false
 integration_target=""
 while [[ $# -gt 0 ]]
 do
@@ -57,6 +59,9 @@ do
       ;;
       --no-build)
         make_build=false
+      ;;
+      --profile)
+        make_profile=true
       ;;
       *)
         echo "unknown opt"
@@ -122,7 +127,10 @@ if ${make_build} ;then
 
   # Add winwows options if requested
   if $is_windows ;then
-    add_opts="--force_polling"
+    add_opts="$add_opts --force_polling"
+  fi
+  if $make_profile ;then
+    add_opts="$add_opts --profile"
   fi
   if $make_watch ;then
     exec_cmd="serve"
@@ -137,7 +145,7 @@ if ${make_build} ;then
     echo "Compress static assets"
     #Use a tmp dir to atomically mv images afgter compression.
     # Prevent partial results on interrupted builds
-    time build_static "$DIR" 
+    time build_static "$DIR"
   fi
 fi
 
