@@ -133,28 +133,24 @@ if ${make_build} ;then
   # final command
   bundle exec jekyll $exec_cmd --config $s_conf $add_opts
 
-  #
-  # TEST target
-  # + static analysis of site's files.
-  #
-  ${make_check} && bundle exec htmlproofer _site \
-  --assume-extension \
-  --alt-ignore "/static\/img\/products\/.*/" \
-  --check-favicon \
-  --checks-to-ignore ScriptCheck \
-  --file-ignore "/vendor/,/static\/fonts\/.*.html/"
-
   if $make_compress ;then
-    echo "Compressing JPEG images"
-    while IFS= read -r -d '' file; do
-        compress_jpg "$file"
-    done < <(find _site/static -type f -name *.jpg -print0)
-    echo "Compressing PNG images"
-    while IFS= read -r -d '' file; do
-        compress_png "$file"
-    done < <(find _site/static -type f -name *.png -print0)
+    echo "Compress static assets"
+    #Use a tmp dir to atomically mv images afgter compression.
+    # Prevent partial results on interrupted builds
+    time build_static "$DIR" 
   fi
 fi
+
+#
+# TEST target
+# + static analysis of site's files.
+#
+${make_check} && bundle exec htmlproofer _site \
+--assume-extension \
+--alt-ignore "/static\/img\/products\/.*/" \
+--check-favicon \
+--checks-to-ignore ScriptCheck \
+--file-ignore "/vendor/,/static\/fonts\/.*.html/"
 
 if ! test -z "$integration_target" ;then
   echo "RUN integration tests on $integration_target"

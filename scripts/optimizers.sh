@@ -30,6 +30,15 @@ convert_video(){
   build_webm  "$1" "${out}.webm"
 }
 
+#Generic optimized compress image options
+# Use unquoted to generate those parameters
+compress_img_opts(){
+  echo '-filter Triangle -define filter:support=2 -unsharp 0.25x0.25+8+0.065 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB -strip'
+}
+# compress_img "input.png" "output.png"
+compress_img(){
+  convert $(compress_img_opts) "$1" "$2"
+}
 
 # compress_jpg "in.jpg"
 compress_jpg(){
@@ -44,6 +53,27 @@ compress_jpg(){
 # compress_png "in.png"
 compress_png(){
   mogrify -format png -quality 9 -strip "$1"
+}
+
+build_static(){
+  local DIR="$1"
+  local TMP_STORE="$(mktemp -d)"
+  [ -d "build/static" ] || mkdir -p "build/static"
+  while IFS= read -r -d '' file; do
+    #  $file path is relative to $DIR
+    ldir="$(dirname "$file")"
+    name="$(basename "$file")"
+    [ -d "_site/$ldir" ] || mkdir -p "_site/$ldir"
+    [ -d "build/$ldir" ] || mkdir -p "build/$ldir"
+    if ! test -f "build/$file" || test "build/$file" -ot "$file" ;then
+      echo "Compress $file"
+      compress_img "$file" "$TMP_STORE/$name"
+      mv "$TMP_STORE/$name" "$DIR/build/$file" #mv is atomic. No partial/failed file.
+      cp "$DIR/build/$file" "$DIR/_site/$file"
+    fi
+    cp "$DIR/build/$file" "$DIR/_site/$file"
+  done < <(find "static" -type f \( -iname "*.jpg" -o -iname "*.png" \) -print0)
+  rm -rf "$TMP_STORE"
 }
 
 build_srcset(){
@@ -73,8 +103,8 @@ build_srcset(){
     ${pngcrush} -y "${out}_uc2x.png" "${out}_2x.png"
     convert -quality 1 -resize 50% "${out}_uc2x.png" "${out}_uc.png"
     ${pngcrush} -y "${out}_uc.png" "${out}.png"
-    convert -quality 80 "${out}_2x.png" -flatten -background white "${out}_2x.jpg"
-    convert -resize 50% -quality 80 "${out}_2x.png" -flatten -background white "${out}.jpg"
+    convert $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}_2x.jpg"
+    convert -resize 50% $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}.jpg"
     #remove uncompressed assets
     rm "${out}_uc"*
   fi
