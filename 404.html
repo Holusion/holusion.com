@@ -1,6 +1,9 @@
 ---
 title: 404 - Not found
 ---
+{% comment %}
+This page's localization is handled with javascript because we do not know in which language it's gonna be beforehand.
+{% endcomment %}
 
 <h2 id="404-title">Sorry this page does not exist.</h2>
 <p>
@@ -14,10 +17,6 @@ title: 404 - Not found
   <button class="btn btn-default"><a id="404-signal" href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">Signal a dead link</a></button>
 </center>
 </p>
-<h2 id="404-search">Similar content</h2>
-<div id="search-results">
-
-</div>
 
 <script>
   var lang = location.pathname.split('/')[1].toLowerCase();
@@ -33,7 +32,5 @@ title: 404 - Not found
       document.getElementById(str.name).innerHTML = str[lang];
     }
   });
-  if(!location.search &&location.pathname.split('/')[2] &&location.pathname.split('/')[2].length >3){
-    location.search = "?query="+location.pathname.split('/')[2];
-  }
+
 </script>
