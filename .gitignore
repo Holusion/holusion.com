@@ -5,5 +5,4 @@ node_modules/
 build
 _site/
 .jekyll-metadata
-Gemfile.lock
 .sass-cache
