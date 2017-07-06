@@ -6,6 +6,9 @@ ErrorDocument 404 /404.html
 DirectoryIndex index.html index.htm
 
 RedirectMatch 301 ^/?$ /fr/
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^/(fr|en)/store(.*)$ https://holusion.com/$1/store$2 [R,L]
 
 <IfModule mod_expires.c>
 	ExpiresActive On

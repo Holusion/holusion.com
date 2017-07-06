@@ -39,10 +39,10 @@
   <script defer="" src="/vendor/jquery/dist/jquery.min.js"></script>
   <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
   {% if site.url %}
-  <link rel="canonical" href="{{page.url | canonical }}">
+  <link rel="canonical" href="{{page.url | absolute_url }}">
     {% if alt_url != "" %}
-    <link rel="alternate" hreflang="{{alt_lang}}" href="{{alt_url | canonical }}">
-    <link rel="alternate" hreflang="{{lang}}" href="{{page.url |canonical }}">
+    <link rel="alternate" hreflang="{{alt_lang}}" href="{{alt_url | absolute_url }}">
+    <link rel="alternate" hreflang="{{lang}}" href="{{page.url |absolute_url }}">
     {% endif %}
   {% endif %}
 

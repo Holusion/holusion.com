@@ -1,22 +1,21 @@
 ---
 title: 404 - Not found
 ---
-
-<h2 id="404-title">Sorry this page does not exist.</h2>
-<p>
-<div id="404-long">
-  Maybe it has been moved. You can signal us a dead link.
+{% comment %}
+This page's localization is handled with javascript because we do not know in which language it's gonna be beforehand.
+{% endcomment %}
+<div style="text-align:center; width:100%;padding-bottom:25px;">
+  <h2 id="404-title">Sorry this page does not exist.</h2>
+  <h1 style="font-size:5em;">404</h1>
+  <div id="404-long">
+    Maybe it has been moved. You can signal us a dead link.
+  </div>
 </div>
-</p>
-<p>
-<center>
-  <button class="btn btn-default"><a id="404-home" href="/">Go to Home</a></button>
-  <button class="btn btn-default"><a id="404-signal" href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">Signal a dead link</a></button>
-</center>
-</p>
-<h2 id="404-search">Similar content</h2>
-<div id="search-results">
-
+<div>
+  <center>
+    <button class="btn btn-default"><a id="404-home" href="/">Go to Home</a></button>
+    <button class="btn btn-default" style="cursor:pointer" onclick="document.getElementById(&quot;section-contactform&quot;).display()" ><a id="404-signal">Signal a dead link</a></button>
+  </center>
 </div>
 
 <script>
@@ -33,7 +32,5 @@ title: 404 - Not found
       document.getElementById(str.name).innerHTML = str[lang];
     }
   });
-  if(!location.search &&location.pathname.split('/')[2] &&location.pathname.split('/')[2].length >3){
-    location.search = "?query="+location.pathname.split('/')[2];
-  }
+
 </script>
