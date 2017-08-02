@@ -23,10 +23,24 @@ body{
   color: $black;
   padding-top: 50px;
   min-height:100%;
-  min-width:100%;
+  width:100%;
 }
-#content.container{
+#content{
   min-height:60vh;
+
+}
+/* make the whole content padding-less on small devices */
+@media screen and (max-width: $break-md){
+  #content, #content .container, #content .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .row-no-padding.col-md-12,
+  .row-no-padding.col-sm-12,
+  .row-no-padding.col-xs-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 #content.container p, .rtejustify {

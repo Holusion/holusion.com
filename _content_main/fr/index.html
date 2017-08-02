@@ -18,24 +18,25 @@ lang: fr
   </div>
 </section>
 <section id="section-promotion">
-  <h1 align="center" id="main-title-1" >
+  <h1 style="padding-top: 20px" align="center" id="main-title-1" >
     Achetez votre hologramme en ligne
   </h1>
   <div class="container" align="center">
     <p>
       Holusion crée des expériences inédites autour de vos marques et produits. Les solutions d'affichages innovantes et interactives, tels que l'hologramme, vous permettent de découvrir de façon ludique des concepts, des produits et des projets.
     </p>
+    <p><a href="/fr/about/">En découvrir plus sur l'entreprise > </a></p>
   </div>
   <div class="container">
 
-    <div class="row" style="padding-top: 30px">
+    <div class="row" style="padding-top: 40px">
       <div class="col-md-6" align="center">
         <a href="/fr/products/pixel"><img alt="Pixel papillon" class="img-responsive" src="/static/img/products/pixel_papillon2.jpg"></a>
       </div>
       <div class="col-md-6" >
-        <h3>Hologrammes de poche</h3>
-        <p>Le <a href="/fr/products/pixel">PIXEL</a> laisse apparaître des images en lévitation au dessus de votre smartphone. Emmenez-le partout avec vous pour impressionner votre entourage.
-        Achetez-le en ligne directement :</p>
+        <h3>Impressionnez vos proches, clients et collaborateurs</h3>
+        <p>Le <a href="/fr/products/pixel">PIXEL</a> laisse apparaître des images en lévitation au dessus de votre smartphone et de votre tablette. Emmenez-le partout avec vous pour impressionner votre entourage. L'<a href="/fr/products/opal">OPAL</a> est quant à lui notre nouvel hologramme une face pour tablettes. Vous pouvez placer des objets derrière sa surface inclinée et créer votre propre univers.
+        Trouvez-les en ligne directement :</p>
 
         <p align="center" style="padding-top: 20px"><a class="button-fab button-blue" href="{{site.url}}/fr/store/">
           {% icon icon-add-cart size=40 style="padding-top:15px" %}
@@ -47,7 +48,7 @@ lang: fr
 
 <section id="section-produits" >
   <div class="container">
-    <h1 align="center" id="main-title-1" >Nos produits</h1>
+    <h1 align="center" id="main-title-1" style="padding-top: 40px">Nos produits</h1>
     <div class="row">
       {% include utils/make_products.html %}
       {% for product in products limit:4 %}
@@ -62,7 +63,7 @@ lang: fr
 
 <section id="section-usages" >
   <div class="container">
-    <h1 align="center" id="main-title-1" >Usages interactifs</h1>
+    <h1 align="center" id="main-title-1" style="padding-top: 20px">Usages interactifs</h1>
 
  <a href="usages#apprendre"><div style="background: url('/static/img/usages/focus_interactif_formation.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
       <font size="6pt"><h3 style="color:white;">APPRENDRE</h3></font>
@@ -84,7 +85,7 @@ lang: fr
 
 <section id="section-accompagnement" >
   <div class="container">
-    <h1 align="center" id="main-title-1">Une entreprise, un accompagnement</h1>
+    <h1 align="center" id="main-title-1" style="padding-top: 20px">Une entreprise, un accompagnement</h1>
     <p align="center"><a href="/fr/about/"><img alt="Schéma notre accompagnement" class="img-responsive" src="/build/img/front/accompagnement_fr_2x.png" width="800" height="700" style="padding: 20px 0px 10px 0px;" /></a></p>
     <div align="right">
       <a href="/fr/about/">Découvrir l'entreprise > </a>
@@ -94,7 +95,7 @@ lang: fr
 
 <section id="section-stories">
   <div class="container">
-    <h1 align="center" id="main-title-1" >Plongez-vous dans nos histoires</h1>
+    <h1 align="center" id="main-title-1" style="padding-top: 20px">Plongez-vous dans nos histoires</h1>
     {% include utils/make_posts.html %}
     {% for post in  posts offset: 0 limit: 4 %}
     {% include components/post_thumbnail.html content=post %}
@@ -104,17 +105,17 @@ lang: fr
     </div>
   </div>
 </section>
-<section id="section-contact" style="padding-top:25px;">
+<section id="section-contact" style="padding-top:30px;">
   <div class="container">
     <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
       <meta itemprop="name" content="holusion" />
       <meta itemprop="logo" url="{{site.url}}/static/img/logo.png" />
       <div class="col-md-6 col-sm-12">
-        <h3>Venez nous rencontrer :</h3>
+        <h3 style="padding-bottom: 10px">Venez nous rencontrer :</h3>
         {% include components/maps_api.html %}
       </div>
       <div class="col-md-6 col-sm-12">
-        <h3>Contactez-nous :</h3>
+        <h3 style="padding-bottom: 10px">Contactez-nous :</h3>
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>

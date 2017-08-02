@@ -1,0 +1,32 @@
+.iis-thumb-nav {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	z-index: 15;
+	width: 90%;
+	text-align: center;
+	opacity: 0.4;
+	-webkit-transition: 0.3s ease-out;
+	   -moz-transition: 0.3s ease-out;
+		 -o-transition: 0.3s ease-out;
+			transition: 0.3s ease-out;
+}
+.iis-thumb-nav a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-position: center center;
+	background-size: cover;
+	text-indent: 9999px;
+	margin: 3px;
+	border: 3px solid rgba(0,0,0,0.5);
+	cursor: pointer;
+	-webkit-transition: 0.3s ease-out;
+	   -moz-transition: 0.3s ease-out;
+		 -o-transition: 0.3s ease-out;
+			transition: 0.3s ease-out;
+}
+.iis-thumb-nav a.iis-thumb-active,
+.iis-thumb-nav a:hover { border-color: rgba(255, 255, 255, .5); }
+.ideal-image-slider:hover .iis-thumb-nav { opacity: 0.7; }
+.ideal-image-slider:hover .iis-thumb-nav:hover { opacity: 1.0; }

@@ -4,24 +4,25 @@ layout: index
 {% include utils/lang.html %}
 
 {% include scripts/snipcart.html %}
-<div id="open-cart" class="snipcart-summary">
 
-  <a class="button snipcart-checkout">
-    <span class="snipcart-total-items">0</span>
-    {% icon icon-cart size=20 style="display:inline-block;" %}
-  </a>
+<div class="container-fluid cart-icon-line">
+  <div id="open-cart" class="snipcart-summary">
+    <a class="button snipcart-checkout">
+      <span class="snipcart-total-items">0</span>
+      {% icon icon-cart size=20 style="display:inline-block;" %}
+    </a>
+  </div>
 </div>
 
-<h1 align="center">{{site.data.strings.store-welcome[lang]}}</h1>
-
-<div id="store-content">
+<div id="content" class="container-fluid">
 {{content}}
 </div>
 
-<div id="open-cart" class="snipcart-summary" style="padding-top:20px;">
-
-  <a class="button snipcart-checkout">
-    <span class="snipcart-total-items">0</span>
-    {% icon icon-cart size=20 style="display:inline-block;" %}
-  </a>
+<div class="container-fluid cart-icon-line">
+  <div id="open-cart" class="snipcart-summary" style="padding-top:20px;">
+    <a class="button snipcart-checkout">
+      <span class="snipcart-total-items">0</span>
+      {% icon icon-cart size=20 style="display:inline-block;" %}
+    </a>
+  </div>
 </div>

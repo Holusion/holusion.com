@@ -10,40 +10,19 @@ slides:
   -
     image: /static/img/products/pixel_papillon.jpg
   -
-    image: /static/img/products/pixel_fleur.jpg
-  -
-    image: /static/img/products/pixel_minion.jpg
+    image: /static/img/products/pixelplus_dodo.jpg
   -
     image: /static/img/products/pixel_reinedesneiges.jpg
   -
-    image: /static/img/products/pixel_panda.jpg
-  -
-    image: /static/img/products/pixel_shiness.jpg
-  -
-    image: /static/img/products/pixel_mannequins_kiabi.jpg
-  -
-    image: /static/img/products/pixel_pankapu.jpg
-  -
     image: /static/img/products/pixel_dodo_3dduo.jpg
   -
-    image: /static/img/products/pixel_bougie_noel.jpg
-  -
-    image: /static/img/products/pixel_lapin.jpg
-  -
-    image: /static/img/products/pixel_sapin_noel.jpg
-  -
-    image: /static/img/products/pixel_rentree.jpg
-  -
     image: /static/img/products/pixel_peugeot.jpg
-  -
-    image: /static/img/products/pixel_danseurs.jpg
-
 
 ---
 
 <div class="row"/>
-  <div class="col-lg-6 col-md-12">
-  {% include components/post_slideshow.html contents=page.slides height=250 %}
+  <div class="col-lg-6 col-md-12 row-no-padding">
+  {% include components/slideshow.html contents=page.slides height=250 %}
   </div>
   <div class="col-lg-6 col-md-12" align="center">
     <img style="padding-top: 10px" alt="Picto Pixel" class="img-responsive" src="/static/img/products/picto_pixel.png"/>

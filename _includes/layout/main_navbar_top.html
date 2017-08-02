@@ -1,7 +1,5 @@
 
-{% capture links %}
 
-{% endcapture %}
 
 {% capture right_links %}
   <li>
@@ -11,7 +9,8 @@
   {% include components/nav/navbar_link.html url='products' title=site.data.sections.products %}
   {% include components/nav/navbar_link.html url='usages' title=site.data.sections.usages %}
   {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
+  {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
   {% include components/language_picker.html type="dropdown" %}
 {% endcapture %}
 
-{% include layout/common_navbar_top.html left_links=links right_links=right_links %}
+{% include layout/common_navbar_top.html right_links=right_links %}

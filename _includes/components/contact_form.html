@@ -12,23 +12,23 @@
 
       <div class="form-group">
         <label for="first_name">{{contact_strings["firstname"][lang]}}</label>
-        <input  type="text" class="form-control" name="first_name" maxlength="50" size="30" placeholder="{{contact_strings["firstname"][lang]}}">
+        <input  type="text" class="form-control" name="first_name" id="first_name" maxlength="50" size="30" placeholder="{{contact_strings["firstname"][lang]}}">
       </div>
       <div class="form-group">
         <label for="last_name">{{contact_strings["lastname"][lang]}}</label>
-        <input  type="text" class="form-control" name="last_name" maxlength="50" size="30" placeholder="{{contact_strings["lastname"][lang]}}">
+        <input  type="text" class="form-control" name="last_name" id="last_name" maxlength="50" size="30" placeholder="{{contact_strings["lastname"][lang]}}">
       </div>
       <div class="form-group">
         <label for="email">{{contact_strings["mail"][lang]}}</label>
-          <input  type="text" class="form-control" name="email" maxlength="80" size="30" placeholder="mail@example.com">
+          <input  type="text" class="form-control" name="email" id="email" maxlength="80" size="30" placeholder="mail@example.com">
       </div>
       <div class="form-group">
         <label for="telephone">{{contact_strings["phone"][lang]}}</label>
-        <input  type="text" class="form-control"  name="telephone" maxlength="30" size="30" placeholder="{{contact_strings["phone"][lang]}}">
+        <input  type="text" class="form-control"  name="telephone" id="telephone" maxlength="30" size="30" placeholder="{{contact_strings["phone"][lang]}}">
       </div>
       <div class="form-group">
         <label for="comments">{{contact_strings["comments"][lang]}}</label>
-        <textarea  name="comments" class="form-control"  maxlength="1000" cols="25" rows="6"></textarea>
+        <textarea role="textbox" name="comments" class="form-control" id="comments" maxlength="1000" cols="25" rows="6"></textarea>
       </div>
       <div class="g-recaptcha" data-sitekey="6LdWrgwUAAAAAGbQM39EciTf3d2QEynV2Yb4s8o9"></div>
       <div class="form-group">

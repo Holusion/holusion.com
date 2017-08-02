@@ -6,17 +6,17 @@ abstract: Développez votre créativité avec cette plateforme d'expérimentatio
 rank: 4
 slides:
   -
-    image: /static/img/products/chroma_1.jpg
+    image: /static/img/products/chroma_maquette.jpg
   -
-    image: /static/img/products/chroma_2.jpg
+    image: /static/img/products/chroma_1.jpg
   -
     image: /static/img/products/chroma_3.jpg
 
 tags: chroma
 ---
 <div class="row" />
-  <div class="col-lg-6 col-md-12">
-    {% include components/post_slideshow.html contents=page.slides height=250 %}
+  <div class="col-lg-6 col-md-12 row-no-padding">
+    {% include components/slideshow.html contents=page.slides height=250 %}
   </div>
   <div class="col-lg-6 col-md-12" align="center">
     <img style="padding-top: 30px" alt="Picto Focus" class="img-responsive" src="/static/img/products/chroma_picto.png"/>

@@ -1,5 +1,8 @@
 @import "colors";
 .snip-layout{
+  #snipcart-close.snip-layout__close{
+    width:24px;
+  }
   #snipcart-close.snip-layout__close .snip-ico.snip-ico--close{
     color:#f10;
   }

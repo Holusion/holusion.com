@@ -13,6 +13,9 @@ products:
 home:
   fr: "Accueil"
   en: "Home"
+store:
+  fr: "Store"
+  en: "Store"
 dev:
   fr: "Développeurs"
   en: "Documentation"

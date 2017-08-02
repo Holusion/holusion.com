@@ -1,0 +1,37 @@
+{% assign contents = include.contents %}
+<div id="slider" >
+  <div class="slides">
+    <img class="img-responsive" src="{{contents[0].image}}" {%if contents[0].image2x %} data-src-2x="{{contents[0].image2x}}"{%endif%}>
+    {% for post in contents | offset: 1 |limit: 11 %}
+      <img class="img-responsive" data-src="{{post.image}}" {%if post.image2x %}data-src-2x="{{post.image2x}}"{%endif%}>
+    {% endfor %}
+  </div>
+</div>
+{% unless has_slideshow %}
+{% assign has_slideshow=true %}
+<script defer>
+  //We're not in a hurry...
+  var loaded = 0;
+  function onload(){
+    if(++loaded !=2)return
+    iisThumbNav(IdealImageSlider); //initialize plugin
+    var slider = new IdealImageSlider.Slider({
+    	selector: '#slider>.slides',
+    	interval: 3000
+    });
+    slider.addThumbNav();
+    slider.start();
+  }
+  var iis = document.createElement("SCRIPT");
+  iis.src = "/vendor/ideal-image-slider/ideal-image-slider.min.js";
+  iis.async = iis.defer = true;
+  iis.onload = onload;
+  var plugin = document.createElement("SCRIPT");
+  plugin.src = "/static/js/iis-thumb-nav.js";
+  plugin.async = plugin.defer = true;
+  plugin.onload = onload;
+
+  document.head.appendChild(iis);
+  document.head.appendChild(plugin);
+</script>
+{% endunless %}
