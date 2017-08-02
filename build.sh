@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
-command -v convert >/dev/null 2>&1 || { echo >&2 "convert from imagemagick package is required but it's not installed.  Aborting."; exit 1; }
-command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
-command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
 
 usageStr(){
-  echo -e "invalid Option : $1"
+  if ! test -z "$1" ;then
+    echo -e "invalid Option : $1"
+  fi
   echo -e "Usage : build.sh [options]"
   echo -e "Valid options :"
   echo -e "\t-t --test : Enable checks with html-proofer"
-  echo -e "\t-i --integration : run integration tests on target (imply --no-build)"
+  echo -e "\t-i --integration \"target\" : run integration tests on target"
+  echo -e "\t\t(imply --no-build)"
   echo -e "\t-f --force : Force assets rebuild"
   echo -e "\t-w --watch : Use jekyll serve mode"
   echo -e "\t-d --dev : makes dev.holusion.com instead of holusion.com"
@@ -38,6 +38,11 @@ do
       -i|--integration)
         shift
         integration_target="$1"
+        if test -z "$integration_target" || test "$integration_target" == -* ;then
+          echo "integration testing required with no target argument"
+          usageStr
+          exit
+        fi
         #Integration runs on target and does not trigger a build
         make_build=false
       ;;
@@ -45,7 +50,6 @@ do
         make_force=true
       ;;
       -w|--watch)
-        echo "make watch"
         make_watch=true
       ;;
       -d|--dev)
@@ -81,17 +85,8 @@ cd $DIR
 source ./scripts/optimizers.sh
 
 
-[ -d build ] || mkdir -p build
-
-pngcrush="$DIR/build/zopflipng"
-if [ ! -f ${pngcrush} ] ;then
-  #download and build zopflipng
-  wget -O - https://github.com/google/zopfli/archive/zopfli-1.0.1.tar.gz |tar -zxf -
-  cd zopfli-zopfli-1.0.1 && make zopflipng && mv zopflipng ${pngcrush}
-  rm -rf $DIR/zopfli-zopfli*
-  cd ${DIR}
-fi
-
+[ -d "$DIR/build" ] || mkdir -p "$DIR/build"
+install_optimizers "$DIR/build"
 
 
 [ -d build/videos ] || mkdir -p build/videos
@@ -161,8 +156,10 @@ ${make_check} && bundle exec htmlproofer _site \
 --file-ignore "/vendor/,/static\/fonts\/.*.html/"
 
 if ! test -z "$integration_target" ;then
+  echo "INSTALL integration tests dependencies"
+  npm install
   echo "RUN integration tests on $integration_target"
-
+  TARGET="$integration_target" npm test
 fi
 
 cd "$OLD_PWD" #go back to initial directory

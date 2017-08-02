@@ -1,0 +1,48 @@
+---
+layout: store
+---
+{% include utils/lang.html %}
+{% include utils/make_store_items.html %}
+<div class="store-layout">
+  <div class="col-lg-9 col-md-12 col-lg-push-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-1 col-md-8 col-sm-6 col-xs-12 row-no-padding">
+          <img alt="{{page.title}}: {{page.abstract}}" class="img-responsive" src="{{page.image}}">
+       </div>
+
+       <div class="col-lg-6 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12 shop-product" id="{{p_data.name | uri_escape }}" >
+         <h2 class="product-head">{{page.title}}</h2>
+         <div class="product-icons" >
+           {% for icon in page.icons %}
+             {% assign icon_name="" %}
+             {% capture icon_name %}src/pictos/produits/{{icon}}.svg {%endcapture%}
+             {% svg icon_name size=50 %}
+           {% endfor %}
+         </div>
+         <div class="product-add-to-cart">
+           <span>
+             {{site.data.strings.store-unit-price[lang]}} :
+             <span class="product-price">{{page.price}}€</span>
+           </span>
+           {% include shop/link.html data=page %}
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" id="content">
+        {{content}}
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-12 col-lg-pull-9 row-no-padding"style="padding:9px">
+    <div class="container-fluid related-products">
+      <h3> Découvrez aussi : </h3>
+      <div class="row">
+      {% for item in store_items %}
+        {% include components/post_thumbnail.html content=item classes="col-lg-12 col-md-6 col-sm-6 col-xs-12" %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>

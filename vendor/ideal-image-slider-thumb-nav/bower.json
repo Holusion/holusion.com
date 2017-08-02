@@ -1,0 +1,14 @@
+{
+  "name": "ideal-image-slider-thumb-nav",
+  "homepage": "https://github.com/fourlabsldn/ideal-image-slider-thumb-nav",
+  "authors": [
+    "Four Labs <hello@fourlabs.co.uk>"
+  ],
+  "description": "Ideal Image Slider - Thumb Navigation Extension",
+  "main": "iis-thumb-nav.js",
+  "moduleType": [],
+  "license": "GNU GPL",
+  "dependencies": {
+    "ideal-image-slider": ">=1.2.0"
+  }
+}

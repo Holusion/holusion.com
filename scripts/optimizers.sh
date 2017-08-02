@@ -1,4 +1,27 @@
 #!/bin/bash
+pngcrush="$(pwd)/build/zopflipng" #default value
+
+#takes build directory as argument.
+install_optimizers(){
+  set -e
+  local build_dir="$1"
+  pngcrush="$1/zopflipng"
+
+  #check presence of system-wide commands
+  command -v convert >/dev/null 2>&1 || { echo >&2 "convert from imagemagick package is required but it's not installed.  Aborting."; exit 1; }
+  command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
+  command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
+
+  if [ ! -f ${pngcrush} ] ;then
+    #download and build zopflipng
+    local tmp=$(mktemp -d)
+    local zopfli_version="1.0.1"
+    curl -XGET -q https://github.com/google/zopfli/archive/zopfli-${zopfli_version}.tar.gz -o zopfli-$(zopfli_version).tar.gz
+    cd "$tmp" && tar -zxf zopfli-${zopfli_version}.tar.gz
+    cd "$tmp/zopfli-zopfli-${zopfli_version}" && make zopflipng && mv zopflipng ${pngcrush}
+    rm -rf "$tmp"
+  fi
+}
 
 build_webm(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
@@ -65,6 +88,7 @@ build_static(){
     name="$(basename "$file")"
     [ -d "_site/$ldir" ] || mkdir -p "_site/$ldir"
     [ -d "build/$ldir" ] || mkdir -p "build/$ldir"
+    #re-compress file only if it'sc older or doesn't exist
     if ! test -f "build/$file" || test "build/$file" -ot "$file" ;then
       echo "Compress $file"
       compress_img "$file" "$TMP_STORE/$name"

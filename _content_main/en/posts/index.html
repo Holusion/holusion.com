@@ -12,8 +12,10 @@ layout: front_page
   </div>
 </section>
 {% include ariane.html %}
-<div class="container">
-  {% include components/post_slideshow.html contents=posts classes="hidden-sm hidden-xs"%}
+<div style="width:100%;background:#e7e7e7">
+  <div style="max-width:800px;margin:auto;" class="container">
+  {% include components/slideshow.html contents=posts %}
+</div>
 </div>
 <div class="container">
   <h2 id="main-title-1" >Tell us your story with holograms</h2>

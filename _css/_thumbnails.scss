@@ -45,6 +45,7 @@
 
   text-decoration:none;
   color:$white;
+  background: $deep-blue;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   transition: all 0.2s ease-in;
@@ -53,14 +54,22 @@
 .thumbnail .caption >.caption-title{
   color:$white;
   margin-top:0;
+  display:flex;
+  justify-content: space-between;
 }
+
+.thumbnail .caption >.caption-title >.caption-title-price{
+  font-size: 14px;
+  font-weight:normal;
+}
+
 .thumbnail:hover .caption{
   opacity:0.8;
   height:100%;
   margin-top:0px;
   border-radius:2px;
-  padding-top:20px;
 }
+
 /*
 .thumbnail:nth-of-type(3n+0) .caption{
   background: $blue;
@@ -69,6 +78,3 @@
   background: $grey;
 }
 */
-.thumbnail .caption{
-  background: $deep-blue;
-}

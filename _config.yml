@@ -1,4 +1,5 @@
 lsi: false
+host: 0.0.0.0
 source: .
 exclude:
   - node_modules
@@ -11,6 +12,7 @@ exclude:
   - "bower.json"
   - "package.json"
   - "build/zopflipng"
+  - "build/phantomjs"
   - "build/static"
 highlighter: rouge
 incremental: true
@@ -57,3 +59,13 @@ defaults:
       path: "_content_main/en/posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: "_content_main/fr/store"
+    values:
+      layout: "store_item"
+  -
+    scope:
+      path: "_content_main/en/store"
+    values:
+      layout: "store_item"

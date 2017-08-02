@@ -22,7 +22,7 @@ module Jekyll
 
     def render(context)
       %(
-      <svg fill="#ffffff" height="#{@width}" viewBox="0 0 24 24" width="#{@width}" #{@style} xmlns="http://www.w3.org/2000/svg"
+      <svg aria-label="#{@name}" fill="#ffffff" height="#{@width}" viewBox="0 0 24 24" width="#{@width}" #{@style} xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
         <use xlink:href="##{@name}"></use>
       </svg>

@@ -5,12 +5,14 @@
     position:absolute;
   }
   a#home-logo{
-    padding: 25px 120px 20px 50px;
+    padding: 25px 170px 20px 0px;
     background-image:url("/static/img/logo.png");
     background-repeat:no-repeat;
     background-position:10px 10px;
     background-size: 150px auto;
-
+    @media screen and (max-width: $break-md){
+      padding-right: 45px;
+    }
   }
 
   .navbar-brand{
@@ -22,9 +24,8 @@
   .navbar-nav > li {
     a{
       font-size: 20px;
-      font-weight:600;
+      font-weight:400;
       margin: 0;
-      padding: 9 0px;
       text-transform: lowercase;
       font-family: 'open_sansregular', sans-serif;
       color:$dark-blue;
@@ -33,8 +34,12 @@
     a:hover{
       color:$blue;
     }
+    /* apply to dropdowns */
+    >ul >li >a{
+      padding:2px 8px;
+    }
   }
-}
+} /* end #navbar-top */
 
 #navbar-bottom{
   margin-top:50px;
@@ -103,11 +108,12 @@
   font-weight:800;
 }
 .language-picker{
-  min-width: 80px;
+  min-width: 30px;
+  width:100%;
 }
 .language-picker a{
   color:$black !important;
-  text-align:right;
+  text-align:left;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{

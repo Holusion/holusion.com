@@ -2,38 +2,17 @@
 
 {% for p_data in include.data %}
 <div class="col-lg-4 col-sm-6">
-<div class="shop-product">
-  <div style="width:100%"><h2>{{p_data.name}}</h2></div>
+<div class="shop-product" id="{{p_data.name  | uri_escape }}">
+  <div class="product-head"><h2>{{p_data.name}}</h2></div>
   <div class="product-img" style='
-    min-width:214px;
-    height:120px;
-    flex-grow:1;
     background:url("{{p_data.img}}") center/contain no-repeat'>
   </div>
-  <div class="product-descript" style="width:50%;min-width:250px;
-    flex-grow:2;
-    height:90px;
-    padding:0;
-    position:relative;">
-    {{p_data.description[lang] | markdownify }}
-
-  </div>
-  <a class="product-read-more" style="width:100%;text-align:right;" href="{{p_data.url_info}}">{{site.data.strings.read-more[lang]}} &gt;</a>
-  <div class="product-icons" style="min-width:50px;flex-grow:1;display:flex;align-items:center;">
-    <div style="max-width:120px">
-      {% for icon in p_data.icons %}
-        {% assign icon_name="" %}
-        {% capture icon_name %}src/pictos/produits/{{icon}}.svg {%endcapture%}
-        {% svg icon_name size=50 %}
-      {% endfor %}
-    </div>
-
-  </div>
-  <div class="product-price" style="padding:10px;font-size:30px;min-width:30px;flex-grow:1;text-align:center;height:100%;">
-    {{p_data.price}}€
-  </div>
-  <div style="min-width:70px;flex-grow:1;text-align:center;">
-    <a style="margin:15px;display:inline-block;" class="button button-fab button-blue snipcart-add-item"
+  <div class="product-add-to-cart">
+    <span>
+      {{site.data.strings.store-unit-price[lang]}} :
+      <span class="product-price">{{p_data.price}}€</span>
+    </span>
+    <a style="display:inline-block;" class="button button-blue snipcart-add-item"
     {%comment%}prop[0] contains the key, props[1] the value{%endcomment%}
     {% for prop_hash in p_data.properties %}
       {% for prop in prop_hash %}
@@ -46,9 +25,45 @@
     data-item-url="{{site.url}}/{{lang}}/{{p_data.url}}"
     data-item-description="{{p_data.description[lang]}}"
     >
-      {% icon icon-add-cart size=40 style="padding-top:15px;" %}
+      {% icon icon-add-cart size=24 %}
     </a>
   </div>
+  <div class="product-descript">
+    {{p_data.description[lang] | markdownify }}
+  </div>
+
+  <div class="product-icons" >
+    {% for icon in p_data.icons %}
+      {% assign icon_name="" %}
+      {% capture icon_name %}src/pictos/produits/{{icon}}.svg {%endcapture%}
+      {% svg icon_name size=50 %}
+    {% endfor %}
+  </div>
+
+  <div class="product-read-more">
+    <a style="float:right;height:100%;" onclick='activate.apply(this)'>
+      {{site.data.strings.read-more[lang]}} &gt;
+    </a>
+  </div>
+
 </div>
 </div>
 {% endfor %}
+<script defer>
+//No product will be dynamically added
+var products = document.querySelectorAll("DIV.shop-product");
+function activate(){
+  console.log(this);
+  var parent = this.parentNode.parentNode;
+  for(var i=0;i<products.length;i++){
+    if (products[i].id == parent.id){
+      products[i].classList.add("active");
+      products[i].parentNode.className = "col-md-12";
+    }else{
+      products[i].classList.remove("active");
+      products[i].parentNode.className = "col-lg-4 col-sm-6";
+    }
+  }
+
+}
+</script>

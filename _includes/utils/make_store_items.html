@@ -1,0 +1,11 @@
+{% include utils/lang.html %}
+{% unless store_items %}
+  {% assign should_match = lang |append: "/store" %}
+  {% assign store_items = "" | split: ""  %}
+  {% for c in site.content_main %}
+    {% if c.url contains should_match and c.image %}
+      {% assign store_items = store_items |push:c %}
+    {% endif %}
+  {% endfor %}
+  {% assign store_items = store_items |sort: "title"|sort: "rank" %}
+{% endunless %}

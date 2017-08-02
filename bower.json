@@ -21,6 +21,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.5",
-    "lunr.js":"*"
+    "lunr.js": "*",
+    "ideal-image-slider": "^1.5.1",
+    "ideal-image-slider-thumb-nav": "^1.0.0"
   }
 }

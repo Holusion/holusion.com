@@ -37,25 +37,19 @@
   </div>
   {% unless has_slideshow %}
   {% assign has_slideshow=true %}
-  <style>
-    #slider{
-      height: {{include.height}}px;
-    }
-    @media (max-width: 768px) {
-      #slider{
-        height: 150px;
-      }
-    }
-
-  </style>
   <script>
   (function(){
+    'use strict';
     var shortcuts = document.querySelectorAll('input[type="radio"].slide-shortcut');
 
     var slider = document.querySelector("#slider");
     var scroll = document.getElementsByClassName( "scrollable")[0];
     var slides = document.querySelector("#slides");
     var slideList = document.querySelectorAll("#slides .slide");
+
+    var width = slides.clientWidth-120;
+    slider.style.height = width*9/16+"px";
+
     for(var i=0;i<slideList.length;i++){
       slideList[i].style.left = (i+1)*100+"%";
     }
@@ -87,14 +81,24 @@
       },3000);
     }
     function handleInputClick(index){
+      console.log("click");
       clearTimeout(time);
       setNext(index);
     }
     setNext(0);
+
+    //Add custom scroll script
     var scrollScript = document.createElement("SCRIPT");
+    scrollScript.async = scrollScript.defer = true;
     scrollScript.onload = function(){
-      console.log("Computed height:",slider.querySelector(".slide-image").clientHeight);
-      scroll.style.height = (slider.querySelector(".slide-image").clientHeight ||slider.clientHeight)-20+"px";
+      console.log("Computed height:",slider.querySelector(".slide-image").clientHeight, width*9/16);
+      scroll.style.height = width*9/16+"px"
+      window.addEventListener("resize",function(){
+        console.log("resize");
+        width = slides.clientWidth-120;
+        slider.style.height = width*9/16+"px";
+        scroll.style.height = width*9/16+"px"
+      })
       addCustomHTMLScroll( scroll );
     }
     scrollScript.src="/vendor/customhtmlscroll/customhtmlscroll.min.js";

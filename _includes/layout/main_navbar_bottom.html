@@ -31,7 +31,7 @@
           <h4 class="block-title">{{site.data.sections.products[lang]}}</h4>
           {% include utils/make_products.html %}
           <ul>
-          {% for post in products limit: 3 %}
+          {% for post in products limit: 4 %}
             {% include components/nav/bottom_li.html content=post %}
           {% endfor %}
           </ul>
@@ -40,7 +40,7 @@
           <h4 class="block-title">{{site.data.sections.posts[lang]}}</h4>
           <ul>
             {% include utils/make_posts.html %}
-            {% for post in posts limit: 3 %}
+            {% for post in posts limit: 4 %}
               {% include components/nav/bottom_li.html content=post %}
             {% endfor %}
           </ul>
@@ -55,10 +55,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
-        {{ site.data.strings.copyright[page.lang]}} <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC. Attribution ShareAlike</a>
+      <div class="col-md-3 col-sm-2">
+        <span class="visible-lg">
+          {{ site.data.strings.copyright[page.lang]}}
+        </span>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+          <span class="visible-lg">CC. Attribution ShareAlike</span>
+          <span class="hidden-lg">CC.BySa</span>
+        </a>
       </div>
-      <div class="col-md-6 col-sm-6 col-sm-offset-3 col-md-offset-0 col-lg-offset-0">
+      <div class="col-md-6 col-sm-8">
         <div class="container-fluid">
           <div class="row-fluid bottom-nav-center">
             <div class="col-xs-4">
@@ -73,7 +79,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-2">
         <ul class="navbar-right">
             {% include components/language_picker.html type="dropup" %}
         </ul>
