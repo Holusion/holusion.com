@@ -96,7 +96,7 @@ describe(`Test : ${target}`, function(){
                 btn => btn.getAttribute("data-item-url")
                   .then((name)=>name.should.equal(pageLink)),
                 btn => btn.getAttribute("data-item-description")
-                  .then((name)=>name.should.be.a.string.of.length.above(20),
+                  .then((name)=>name.should.be.a.string.of.length.above(20)),
                ]);
              });
           });
