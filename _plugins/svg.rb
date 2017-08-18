@@ -2,9 +2,8 @@ require 'svg_optimizer'
 
 class RemoveSize < SvgOptimizer::Plugins::Base
   def process
-
     xml.root.remove_attribute("height")
-    xml.root.set_attribute("width","!!WIDTH!!")
+    xml.root.remove_attribute("width")
   end
 end
 class RoundPoints < SvgOptimizer::Plugins::Base
@@ -25,8 +24,7 @@ PLUGINS_BLACKLIST = [
 PLUGINS = SvgOptimizer::DEFAULT_PLUGINS.delete_if {|plugin|
   PLUGINS_BLACKLIST.include? plugin
 }+[
-  RemoveSize,
-  RoundPoints
+  RemoveSize
 ]
 
 #logger.info(PLUGINS)
@@ -49,12 +47,14 @@ module Jekyll
         else
           @svg, @params = input.strip.split(%r!\s+!, 2)
         end
-        size = /size=(\d*)/.match(@params)
-        if size && size[1]
-          @width=size[1]
-        else
-          @width=24
-        end
+        size = /size\s*=\s*(\d*)/.match(input)
+        @width = (size && size[1])? size[1] : 24
+
+        style =  /style\s*=\s*["']?(.+)(["']|$)/.match(input)
+        @style = (style && style[1]) ? %( style="#{style[1]}") : ""
+
+        fill = /fill\s*=\s*(#[0-9abcdefABCDEF]+)/.match(input)
+        @fill = (fill && fill[1]) ? %( fill=#{fill[1]}) : ""
         #@logger.info(@svg +", "+@width)
       end
 
@@ -65,8 +65,8 @@ module Jekyll
         svg_name = context[@svg] || @svg
         svg_file = File.join(site.source, svg_name.strip)
         xml = File.open(svg_file, "rb")
-        optimized = SvgOptimizer.optimize(xml.read,PLUGINS)
-  	    "#{optimized.gsub("!!WIDTH!!","#{@width}px")}"
+        optimized = SvgOptimizer.optimize(xml.read, PLUGINS)
+  	    "#{optimized.sub("<svg ","<svg width='#{@width}px'#{@fill}#{@style} ")}"
       end
     end
   end
