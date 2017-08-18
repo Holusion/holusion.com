@@ -17,7 +17,7 @@ layout: store
            {% for icon in page.icons %}
              {% assign icon_name="" %}
              {% capture icon_name %}src/pictos/produits/{{icon}}.svg {%endcapture%}
-             {% svg icon_name size=50 %}
+             {% svg icon_name width=50 %}
            {% endfor %}
          </div>
          <div class="product-add-to-cart">

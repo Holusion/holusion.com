@@ -47,15 +47,6 @@ module Jekyll
         else
           @svg, @params = input.strip.split(%r!\s+!, 2)
         end
-        size = /size\s*=\s*(\d*)/.match(input)
-        @width = (size && size[1])? size[1] : 24
-
-        style =  /style\s*=\s*["']?(.+)(["']|$)/.match(input)
-        @style = (style && style[1]) ? %( style="#{style[1]}") : ""
-
-        fill = /fill\s*=\s*(#[0-9abcdefABCDEF]+)/.match(input)
-        @fill = (fill && fill[1]) ? %( fill=#{fill[1]}) : ""
-        #@logger.info(@svg +", "+@width)
       end
 
       def render(context)
@@ -66,7 +57,7 @@ module Jekyll
         svg_file = File.join(site.source, svg_name.strip)
         xml = File.open(svg_file, "rb")
         optimized = SvgOptimizer.optimize(xml.read, PLUGINS)
-  	    "#{optimized.sub("<svg ","<svg width='#{@width}px'#{@fill}#{@style} ")}"
+  	    "#{optimized.sub("<svg ","<svg #{@params} ")}"
       end
     end
   end
