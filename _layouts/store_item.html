@@ -4,31 +4,44 @@ layout: store
 
 {% include utils/make_store_items.html %}
 <div class="store-layout">
-  <div class="col-lg-9 col-md-12 col-lg-push-3">
-    <div class="container-fluid">
+  <div class="col-lg-9 col-md-12 col-lg-push-3 row-no-padding">
+    <div  itemscope itemtype="http://schema.org/Product">
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-1 col-md-8 col-sm-6 col-xs-12 row-no-padding">
-          <img alt="{{page.title}}: {{page.abstract}}" class="img-responsive" src="{{page.image}}">
+        <div class="col-lg-4 col-lg-offset-1 col-md-6 col-sm-6 col-xs-12 row-no-padding">
+          <img  itemprop="image" alt="{{page.title}}: {{page.abstract}}" class="img-responsive" src="{{page.image}}">
        </div>
 
-       <div class="col-lg-6 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12 shop-product" id="{{p_data.name | uri_escape }}" >
-         <h2 class="product-head">{{page.title}}</h2>
+       <div class="col-lg-6 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12 shop-product" id="{{p_data.name | uri_escape }}" >
+         <h2 itemprop="name" class="product-head">{{page.title}}</h2>
          <div class="product-icons" >
            {% for icon in page.icons %}
              {% svg "src/pictos/produits/{{icon}}.svg" width=50 %}
            {% endfor %}
          </div>
-         <div class="product-add-to-cart">
-           <span>
-             {{site.data.strings.store-unit-price[page.lang]}} :
-             <span class="product-price">{{page.price}}€</span>
-           </span>
-           {% include shop/link.html data=page %}
+         <meta itemprop="description" content="{{page.abstract}}">
+         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+           <div class="product-stock">
+             <link itemprop="availability" href="http://schema.org/InStock" />
+             {{site.data.strings.store-stock[lang]}}
+           </div>
+           <div class="product-add-to-cart">
+
+             <span>
+               <span class="product-price">
+                 <span itemprop="price">{{page.price}}</span>
+                 <span itemprop="priceCurrency" content="EUR">€</span>
+               </span>
+               <span >{{ site.data.strings.store-vat[lang] }}</span>
+             </span>
+             <meta itemprop="sku" content="{{page.properties.id}}" />
+             <meta itemprop="url" content="{{page.url | absolute_url}}" />
+             {% include shop/link.html data=page %}
+           </div>
          </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid" id="content">
+    <div class="container-fluid product-datasheet" id="content">
         {{content}}
     </div>
   </div>
