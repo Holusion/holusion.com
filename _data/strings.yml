@@ -41,6 +41,12 @@ see-other-products:
 read-more:
   fr: en savoir plus
   en: read more
-store-unit-price:
-  fr: Prix unitaire (TTC)
-  en: Unit price (w. VAT)
+store-vat:
+  fr: (TTC)
+  en: (w. VAT)
+store-stock:
+  fr: en stock
+  en: in stock
+add-to-cart:
+  fr: Ajouter au panier
+  en: Add to cart
