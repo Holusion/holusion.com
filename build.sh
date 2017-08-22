@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+  command -v bundle >/dev/null 2>&1 || { echo >&2 "bundle command from bundler gem can not be found. run \"gem install bundler\"."; exit 1; }
 usageStr(){
   if ! test -z "$1" ;then
     echo -e "invalid Option : $1"
@@ -88,6 +88,8 @@ source ./scripts/optimizers.sh
 [ -d "$DIR/build" ] || mkdir -p "$DIR/build"
 install_optimizers "$DIR/build"
 
+#check gem dependencies and install if necessary
+bundle check >/dev/null || bundle install
 
 [ -d build/videos ] || mkdir -p build/videos
 

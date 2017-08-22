@@ -36,6 +36,9 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-inline-svg (0.0.1)
+      jekyll (~> 3.3)
+      svg_optimizer (= 0.1.0)
     jekyll-redirect-from (0.12.1)
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.0)
@@ -83,10 +86,10 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll (~> 3.4.0)
+  jekyll-inline-svg (~> 0.0.1)
   jekyll-redirect-from (>= 0.12.1)
   jekyll-sitemap (>= 1.1.1)
   scss_lint
-  svg_optimizer (= 0.1.0)
 
 BUNDLED WITH
-   1.13.7
+   1.15.4
