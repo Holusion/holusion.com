@@ -19,6 +19,7 @@ incremental: true
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-inline-svg
 sass:
   sass_dir: _css
   style: :compressed
