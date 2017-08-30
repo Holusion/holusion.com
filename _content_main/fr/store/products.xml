@@ -16,8 +16,8 @@ https://support.google.com/merchants/answer/7052112?visit_id=1-63639693003740593
     <g:id>{{product.id}}</g:id>
     <g:title>{{product.title}}</g:title>
     <g:description>{{product.description}}</g:description>
-    <g:link>{{product.url}}</g:link>
-    <g:image_link>{{product.image}}</g:image_link>
+    <g:link>{{product.url | absolute_url}}</g:link>
+    <g:image_link>{{product.image | absolute_url}}</g:image_link>
     <g:condition>new</g:condition>
     <g:availability>in stock</g:availability>
     <g:price>{{product.price}} EUR</g:price>
