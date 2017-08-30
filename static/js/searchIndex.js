@@ -2,7 +2,7 @@
 title: search
 layout:
 ---
-{% include utils/lang.html %}
+
 {% include utils/make_pages.html %}
 
 

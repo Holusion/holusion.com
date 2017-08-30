@@ -1,5 +1,5 @@
-{% include utils/lang.html %}
-<html lang="{{lang}}">
+
+<html lang="{{page.lang}}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,9 @@
   <meta name="author" content="Holusion">
   <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
   {% if page.title %}
-    <title>{{page.title}} - {{site.data.strings.site-title[lang]}}</title>
+    <title>{{page.title}} - {{site.data.strings.site-title[page.lang]}}</title>
   {% else %}
-    <title>{{site.data.strings.site-title[lang]}}</title>
+    <title>{{site.data.strings.site-title[page.lang]}}</title>
   {% endif %}
   {% if page.abstract %}
     <meta name="description" content="{{ page.abstract|truncatewords:155 }}" />
@@ -40,13 +40,13 @@
   <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
   {% if site.url %}
   <link rel="canonical" href="{{page.url | absolute_url }}">
-    {% if alt_url != "" %}
-    <link rel="alternate" hreflang="{{alt_lang}}" href="{{alt_url | absolute_url }}">
-    <link rel="alternate" hreflang="{{lang}}" href="{{page.url |absolute_url }}">
+    {% if page.alt_url %}
+    <link rel="alternate" hreflang="{{page.alt_lang}}" href="{{page.alt_url | absolute_url }}">
+    <link rel="alternate" hreflang="{{page.lang}}" href="{{page.url |absolute_url }}">
     {% endif %}
   {% endif %}
 
-  
+
 
   {% include favicons.html url="/static/img/icons/favicons" %}
   {% include utils/make_pages.html %}

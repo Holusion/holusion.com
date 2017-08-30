@@ -2,8 +2,8 @@
   <section class="title">
     <div class="container">
       <h1 style="text-align:center">
-        {{site.data.strings["need-help"][lang]}}?
-        <a href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">{{site.data.strings["contact-us"][lang]}}</a>
+        {{site.data.strings["need-help"][page.lang]}}?
+        <a href="mailto:contact@holusion.com?Subject=Support%20Technique" target="_blank">{{site.data.strings["contact-us"][page.lang]}}</a>
       </h1>
     </div>
   </section>
@@ -11,21 +11,21 @@
     <div class="container" id="bottom-index">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{ site.data.sections.content.short[lang] }}</h4>
+          <h4 class="block-title">{{ site.data.sections.content.short[page.lang] }}</h4>
           {% include toc/sections_list.html  section='content' %}
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{ site.data.sections.platform.short[lang] }}</h4>
+          <h4 class="block-title">{{ site.data.sections.platform.short[page.lang] }}</h4>
           {% include toc/sections_list.html  section='platform' %}
 
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{ site.data.sections.toolbox.short[lang] }}</h4>
+          <h4 class="block-title">{{ site.data.sections.toolbox.short[page.lang] }}</h4>
           {% include toc/sections_list.html  section='toolbox' %}
 
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{ site.data.strings.social-links[lang] }}</h4>
+          <h4 class="block-title">{{ site.data.strings.social-links[page.lang] }}</h4>
           {% include social_list.html %}
           <div class="newsletter">
             {% include components/mailchimp.html %}

@@ -1,5 +1,5 @@
 {% unless contact_strings %}
-{% include utils/lang.html %}
+
 {% assign contact_strings = site.data.contact_form_locale %}
 <section id="section-contactform" class="">
   <!-- USAGE
@@ -11,23 +11,23 @@
       <span id="contactform-close" class="glyphicon glyphicon-remove"></span>
 
       <div class="form-group">
-        <label for="first_name">{{contact_strings["firstname"][lang]}}</label>
-        <input  type="text" class="form-control" name="first_name" id="first_name" maxlength="50" size="30" placeholder="{{contact_strings["firstname"][lang]}}">
+        <label for="first_name">{{contact_strings["firstname"][page.lang]}}</label>
+        <input  type="text" class="form-control" name="first_name" id="first_name" maxlength="50" size="30" placeholder="{{contact_strings["firstname"][page.lang]}}">
       </div>
       <div class="form-group">
-        <label for="last_name">{{contact_strings["lastname"][lang]}}</label>
-        <input  type="text" class="form-control" name="last_name" id="last_name" maxlength="50" size="30" placeholder="{{contact_strings["lastname"][lang]}}">
+        <label for="last_name">{{contact_strings["lastname"][page.lang]}}</label>
+        <input  type="text" class="form-control" name="last_name" id="last_name" maxlength="50" size="30" placeholder="{{contact_strings["lastname"][page.lang]}}">
       </div>
       <div class="form-group">
-        <label for="email">{{contact_strings["mail"][lang]}}</label>
+        <label for="email">{{contact_strings["mail"][page.lang]}}</label>
           <input  type="text" class="form-control" name="email" id="email" maxlength="80" size="30" placeholder="mail@example.com">
       </div>
       <div class="form-group">
-        <label for="telephone">{{contact_strings["phone"][lang]}}</label>
-        <input  type="text" class="form-control"  name="telephone" id="telephone" maxlength="30" size="30" placeholder="{{contact_strings["phone"][lang]}}">
+        <label for="telephone">{{contact_strings["phone"][page.lang]}}</label>
+        <input  type="text" class="form-control"  name="telephone" id="telephone" maxlength="30" size="30" placeholder="{{contact_strings["phone"][page.lang]}}">
       </div>
       <div class="form-group">
-        <label for="comments">{{contact_strings["comments"][lang]}}</label>
+        <label for="comments">{{contact_strings["comments"][page.lang]}}</label>
         <textarea role="textbox" name="comments" class="form-control" id="comments" maxlength="1000" cols="25" rows="6"></textarea>
       </div>
       <div class="g-recaptcha" data-sitekey="6LdWrgwUAAAAAGbQM39EciTf3d2QEynV2Yb4s8o9"></div>
