@@ -3,8 +3,8 @@
   {% include components/contact_form.html %}
   <section id="contact-bottom">
     <div class="container">
-        {{site.data.strings["need-help"][lang]}} ?
-        <a style="cursor:pointer" onclick='document.getElementById("section-contactform").display()'>{{site.data.strings["contact-us"][lang]}}</a>
+        {{site.data.strings["need-help"][page.lang]}} ?
+        <a style="cursor:pointer" onclick='document.getElementById("section-contactform").display()'>{{site.data.strings["contact-us"][page.lang]}}</a>
     </div>
   </section>
   <div class="container-fluid" id="section-bottom">
@@ -13,22 +13,22 @@
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
           <h4 class="block-title">Holusion</h4>
           <ul>
-            <li><a href="{{domain}}/{{lang}}/about">
-              {{site.data.sections.about[lang]}}
+            <li><a href="{{domain}}/{{page.lang}}/about">
+              {{site.data.sections.about[page.lang]}}
             </a></li>
-            <li><a href="{{domain}}/{{lang}}/products">
-              {{site.data.sections.products[lang]}}
+            <li><a href="{{domain}}/{{page.lang}}/products">
+              {{site.data.sections.products[page.lang]}}
             </a></li>
             <li><a class="contact-link">
               Contact
             </a></li>
             <li><a href="/static/files/CGV_GENERAL_condensee.pdf">
-              {{site.data.sections.cgv[lang]}}
+              {{site.data.sections.cgv[page.lang]}}
             </a></li>
           </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{site.data.sections.products[lang]}}</h4>
+          <h4 class="block-title">{{site.data.sections.products[page.lang]}}</h4>
           {% include utils/make_products.html %}
           <ul>
           {% for post in products limit: 4 %}
@@ -37,7 +37,7 @@
           </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{site.data.sections.posts[lang]}}</h4>
+          <h4 class="block-title">{{site.data.sections.posts[page.lang]}}</h4>
           <ul>
             {% include utils/make_posts.html %}
             {% for post in posts limit: 4 %}
@@ -46,7 +46,7 @@
           </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-          <h4 class="block-title">{{ site.data.strings.social-links[lang] }}</h4>
+          <h4 class="block-title">{{ site.data.strings.social-links[page.lang] }}</h4>
           {% include social_list.html %}
           <div class="newsletter">
             {% include components/mailchimp.html %}

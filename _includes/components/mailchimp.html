@@ -1,13 +1,13 @@
-{% include utils/lang.html %}
+
 <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
   <form action="//holusion.us11.list-manage.com/subscribe/post?u=c6785854044537463915d581e&amp;id=e66b097734" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
     <div>
-      <label for="mce-EMAIL">{{site.data.strings.newsletter[lang]}}</label>
+      <label for="mce-EMAIL">{{site.data.strings.newsletter[page.lang]}}</label>
     </div>
     <div class="form-group mc-field-group newsletter-form">
       <div class='input-group'>
-        <input type="email" value="" placeholder="{{site.data.strings.emailexample[lang]}}" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+        <input type="email" value="" placeholder="{{site.data.strings.emailexample[page.lang]}}" name="EMAIL" class="required email form-control" id="mce-EMAIL">
         <div class="input-group-addon" id="mc_submit" onclick="document.getElementById('mc-embedded-subscribe-form').submit(); return false;"><span class="glyphicon glyphicon-envelope"></span></div>
       </div>
     </div>
