@@ -16,6 +16,7 @@ usageStr(){
   echo -e "\t-c --compress-static : compress static assets"
   echo "long option only : "
   echo -e "\t--windows : apply Ms Mindows-specific settings"
+  echo -e "\t--jenkins : apply JenkinsCI specific settings"
   echo -e "\t--no-build : disable site build"
   echo -e "\t--profile : echo profiling info (cf. jekyll --profile)"
 }
@@ -24,6 +25,7 @@ make_force=false
 make_check=false
 make_dev=false
 is_windows=false
+is_jenkins=false
 make_watch=false
 make_compress=false
 make_profile=false
@@ -60,6 +62,9 @@ do
       ;;
       --windows)
         is_windows=true
+      ;;
+      --jenkins)
+        is_jenkins=true
       ;;
       --no-build)
         make_build=false
@@ -161,7 +166,11 @@ if ! test -z "$integration_target" ;then
   echo "INSTALL integration tests dependencies"
   npm install
   echo "RUN integration tests on $integration_target"
-  TARGET="$integration_target" npm test
+  if $is_jenkins ;then
+    TARGET="$integration_target" npm run jenkins_test
+  else
+    TARGET="$integration_target" npm test
+  fi
 fi
 
 cd "$OLD_PWD" #go back to initial directory
