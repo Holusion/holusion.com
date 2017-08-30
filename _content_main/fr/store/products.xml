@@ -3,14 +3,18 @@ layout: atom
 title: products feed for google merchant center
 ---
 <?xml version="1.0"?>
-{% include utils/make_products.html %}
+{% comment %}
+Documentation available on :
+https://support.google.com/merchants/answer/7052112?visit_id=1-636396930037405938-3929619477&hl=fr&rd=1
+{% endcomment %}
+{% include utils/make_store_items.html %}
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
-	<title>Example - Online Store</title>
-	<link rel="self" href="http://www.example.com"/>
-  {% for product in products %}
+	<title>Holusion.com - Online Store</title>
+	<link rel="self" href="https://holusion.com"/>
+  {% for product in store_items %}
   <entry>
     <g:id>{{product.id}}</g:id>
-    <g:title>{{product.name}}</g:title>
+    <g:title>{{product.title}}</g:title>
     <g:description>{{product.description}}</g:description>
     <g:link>{{product.url}}</g:link>
     <g:image_link>{{product.image}}</g:image_link>
@@ -24,7 +28,7 @@ title: products feed for google merchant center
     </g:shipping>
 
     <g:brand>Holusion</g:brand>
-    <g:mpn>{{product.name | downcase}}</g:mpn>
+    <g:mpn>{{product.title| downcase |replace: ' ','_'}}{{lang |upcase}}</g:mpn>
 
     <g:google_product_category>5566</g:google_product_category>
   </entry>
