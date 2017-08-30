@@ -6,7 +6,7 @@ const expect = require("chai").expect;
 require("chai").should();
 const jsdom = require("jsdom");
 
-const url = require('url').Url;
+const url = require('url');
 
 var browser = process.env["BROWSER"]||"phantomjs";
 
@@ -26,16 +26,15 @@ describe(`Test : ${target}`, function(){
     driver.quit();
   });
   describe("HTTPS",()=>{
-    let l_target = new url("/");
+    let l_target = url.parse(target);
     l_target.protocol = "https";
-    l_target.hostname = target;
     let href = l_target.format();
     ["fr","en"].forEach((lang)=>{
       [
-        `${href}/${lang}/`,
-        `${href}/${lang}`,
-        `${href}/${lang}/index`,
-        `${href}/${lang}/index.html`
+        `${href}${lang}/`,
+        `${href}${lang}`,
+        `${href}${lang}/index`,
+        `${href}${lang}/index.html`
       ].forEach((l)=>{
         it(`GET ${l}`,()=>{
           return driver.get(`${l}`)
@@ -52,8 +51,8 @@ describe(`Test : ${target}`, function(){
         "opalv":{name:"Opal"},
         "opalh":{name:"Opal"}
       }
-      it(`GET ${href}/${lang}/store/`,()=>{
-        return driver.get(`${href}/${lang}/store/`)
+      it(`GET ${href}${lang}/store/`,()=>{
+        return driver.get(`${href}${lang}/store/`)
         .then(_=>driver.getTitle())
         .then((title)=> title.should.match(/(store|boutique)/i))
         .then(_=> driver.findElements(By.css(".thumbnail>a")))
@@ -74,7 +73,7 @@ describe(`Test : ${target}`, function(){
       });
 
       Object.keys(store_products).forEach((product)=>{
-        let pageLink = `${href}/${lang}/store/${product}`;
+        let pageLink = `${href}${lang}/store/${product}`;
         describe(`GET ${pageLink}`,()=>{
           let page;
           before(function(){
@@ -92,7 +91,7 @@ describe(`Test : ${target}`, function(){
                 btn => btn.getAttribute("data-item-name")
                   .then((name)=>name.should.be.a.string),
                 btn => btn.getAttribute("data-item-price")
-                  .then((name)=>name.should.match(/[0-9.]+/)),
+                  .then((name)=>name.should.match(/\d+\.\d{2}/)),
                 btn => btn.getAttribute("data-item-url")
                   .then((name)=>name.should.equal(pageLink)),
                 btn => btn.getAttribute("data-item-description")
