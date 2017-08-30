@@ -1,0 +1,32 @@
+---
+layout: atom
+title: products feed for google merchant center
+---
+<?xml version="1.0"?>
+{% include utils/make_products.html %}
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
+	<title>Example - Online Store</title>
+	<link rel="self" href="http://www.example.com"/>
+  {% for product in products %}
+  <entry>
+    <g:id>{{product.id}}</g:id>
+    <g:title>{{product.name}}</g:title>
+    <g:description>{{product.description}}</g:description>
+    <g:link>{{product.url}}</g:link>
+    <g:image_link>{{product.image}}</g:image_link>
+    <g:condition>new</g:condition>
+    <g:availability>in stock</g:availability>
+    <g:price>{{product.price}} EUR</g:price>
+    <g:shipping>
+      <g:country>FR</g:country>
+      <g:service>Standard</g:service>
+      <g:price>1.5 EUR</g:price>
+    </g:shipping>
+
+    <g:brand>Holusion</g:brand>
+    <g:mpn>{{product.name | downcase}}</g:mpn>
+
+    <g:google_product_category>5566</g:google_product_category>
+  </entry>
+  {% endfor %}
+</feed>
