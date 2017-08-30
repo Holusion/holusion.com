@@ -11,7 +11,7 @@ const url = require('url').Url;
 var browser = process.env["BROWSER"]||"phantomjs";
 
 let driver = new selenium.Builder().forBrowser(browser).build();
-let target = process.argv[3]||process.env["TARGET"];
+let target = process.env["TARGET"];
 
 
 
