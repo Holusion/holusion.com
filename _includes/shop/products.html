@@ -34,9 +34,7 @@
 
   <div class="product-icons" >
     {% for icon in p_data.icons %}
-      {% assign icon_name="" %}
-      {% capture icon_name %}src/pictos/produits/{{icon}}.svg {%endcapture%}
-      {% svg icon_name width=50 %}
+      {% svg "src/pictos/produits/{{icon}}.svg" width=50 %}
     {% endfor %}
   </div>
 
