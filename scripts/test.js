@@ -13,6 +13,30 @@ let driver = new selenium.Builder().forBrowser(browser).build();
 let href = process.env["TARGET"];
 let u = url.parse(href);
 
+function get_sizes(items){
+  return Promise.all([
+    Promise.all(items.map(t =>t.findElements(By.tagName("img")).then((els) => {
+      return Promise.all(els.map((el)=>{
+        return el.getAttribute("src");
+      }))
+    }))),
+    Promise.all(items.map(t =>t.getSize())),
+  ])
+  .then((a)=>{
+    let hrefs = a[0];
+    let sizes = a[1]
+    var ref = sizes[0];
+    var exp_height = ref.width*9/16;
+    expect(ref.height).to.be.within(exp_height-1,exp_height+1);
+    sizes.forEach((size, idx)=>{
+      expect( size.height,
+        `Every thumbnail should have the same height of ${ref.height}px. Got ${size.height}px on :
+        ${hrefs[idx]}`
+      ).to.equal(ref.height);
+    })
+  });
+}
+
 describe(`Test : ${href}`, function(){
   this.slow(2000);
   this.timeout(6000);
@@ -46,58 +70,83 @@ describe(`Test : ${href}`, function(){
         "opalv":{name:"Opal"},
         "opalh":{name:"Opal"}
       }
-      it(`GET ${href}/${lang}/store/`,()=>{
-        return driver.get(`${href}/${lang}/store/`)
-        .then(_=>driver.getTitle())
-        .then((title)=> title.should.match(/(store|boutique)/i))
-        .then(_=> driver.findElements(By.css(".thumbnail>a")))
-        .then((thumbs)=>{
-          expect(thumbs).to.have.property("length").above(0);
-          //We start an iteration on each shop page from shop index list
-          return Promise.all(thumbs.map(t=> t.getAttribute("href")))
+      describe(`GET ${href}/${lang}/store/`,()=>{
+        let page
+        before(()=>{
+          page =driver.get(`${href}/${lang}/store/`);
+          return page;
         })
-        .then((hrefs)=>{
-          //Ensure we don't get products list wrong
-          let match_names = Object.keys(store_products).join("|");
-          let r = new RegExp(`^${href}/${lang}/store/(${match_names})`);
-          hrefs.forEach((link)=>{
-            expect(link).to.match(r);
+        it("has a title",()=>{
+          return page.then(_=>driver.getTitle())
+          .then((title)=> title.should.match(/(store|boutique)/i))
+        })
+        it("has thumbnails",()=>{
+          return page.then(_=> driver.findElements(By.css(".thumbnail>a")))
+          .then((thumbs)=>{
+            expect(thumbs).to.have.property("length").above(0);
+            //We start an iteration on each shop page from shop index list
+            return Promise.all(thumbs.map(t=> t.getAttribute("href")))
+            .then((hrefs)=>{
+              //Ensure we don't get products list wrong
+              let match_names = Object.keys(store_products).join("|");
+              let r = new RegExp(`^${href}/${lang}/store/(${match_names})`);
+              hrefs.forEach((link)=>{
+                expect(link).to.match(r);
+              })
+              expect(hrefs).to.have.property("length",Object.keys(store_products).length);
+              return hrefs;
+            })
           })
-          expect(hrefs).to.have.property("length",Object.keys(store_products).length);
-          return hrefs;
         })
       });
       //Since we verified in previous test that "store_products" is acurate
       //We can base further store tests on it
-      Object.keys(store_products).forEach((product)=>{
-        let pageLink = `${href}/${lang}/store/${product}`;
-        describe(`GET ${pageLink}`,()=>{
-          let page;
-          before(function(){
-            page = driver.get(pageLink);
-            return page; //trigger wait until it's done.
-          })
-          it("Has product name in title",function(){
-            return page.then(_=>driver.getTitle())
-            .then((title)=>title.should.match(new RegExp(store_products[product].name,"i")))
-          })
-          it("Have snipcart properties",function(){
-            return page.then(_=>driver.findElement(By.css(".button.snipcart-add-item")))
-            .then((btn)=>{
-              return Promise.all([
-                btn => btn.getAttribute("data-item-name")
-                  .then((name)=>name.should.be.a.string),
-                btn => btn.getAttribute("data-item-price")
-                  .then((name)=>name.should.match(/\d+\.\d{2}/)),
-                btn => btn.getAttribute("data-item-url")
-                  .then((name)=>name.should.equal(pageLink)),
-                btn => btn.getAttribute("data-item-description")
-                  .then((name)=>name.should.be.a.string.of.length.above(20)),
-               ]);
-             });
+      describe("test store products",function(){
+        Object.keys(store_products).forEach((product)=>{
+          let pageLink = `${href}/${lang}/store/${product}`;
+          describe(`${store_products[product].name}`,()=>{
+            let page;
+            before(function(){
+              page = driver.get(pageLink);
+              return page; //trigger wait until it's done.
+            })
+            it("Has product name in title",function(){
+              return page.then(_=>driver.getTitle())
+              .then((title)=>title.should.match(new RegExp(store_products[product].name,"i")))
+            })
+            it("Have snipcart properties",function(){
+              return page.then(_=>driver.findElement(By.css(".button.snipcart-add-item")))
+              .then((btn)=>{
+                return Promise.all([
+                  btn => btn.getAttribute("data-item-name")
+                    .then((name)=>name.should.be.a.string),
+                  btn => btn.getAttribute("data-item-price")
+                    .then((name)=>name.should.match(/\d+\.\d{2}/)),
+                  btn => btn.getAttribute("data-item-url")
+                    .then((name)=>name.should.equal(pageLink)),
+                  btn => btn.getAttribute("data-item-description")
+                    .then((name)=>name.should.be.a.string.of.length.above(20)),
+                 ]);
+               });
+            });
           });
         });
-      });
+      })
+
+      /* Check thumbnails */
+      describe("check thumbnails size",function(){
+        [
+          `${href}/${lang}/products/`,
+          `${href}/${lang}/store/`,
+          `${href}/${lang}/posts/`,
+        ].forEach(function(link){
+          it(`on ${link}`,function(){
+            return driver.get(`${link}`)
+            .then(_=> driver.findElements(By.css(".thumbnail>a")))
+            .then((thumbs)=> get_sizes(thumbs))
+          })
+        })
+      })
     });
   });
 })
