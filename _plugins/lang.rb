@@ -1,6 +1,6 @@
 
 re = /^\/(?<lang>fr|en)\/(.*)$/
-Jekyll::Hooks.register :documents, :pre_render do |content, doc|
+Jekyll::Hooks.register :documents, :pre_render, priority: "high" do |content, doc|
   url = doc.page["url"]
   filepath = doc.page["relative_path"]
   if !  doc.page.key? "lang"

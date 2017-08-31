@@ -4,7 +4,7 @@ layout: store
 
 {% include utils/make_store_items.html %}
 <div class="store-layout">
-  <div class="col-lg-9 col-md-12 col-lg-push-3 row-no-padding">
+  <div class="col-lg-9 col-md-12 col-lg-push-3">
     <div  itemscope itemtype="http://schema.org/Product">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-1 col-md-6 col-sm-6 col-xs-12 row-no-padding">
@@ -22,7 +22,7 @@ layout: store
          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
            <div class="product-stock">
              <link itemprop="availability" href="http://schema.org/InStock" />
-             {{site.data.strings.store-stock[lang]}}
+             {{site.data.strings.store-stock[page.lang]}}
            </div>
            <div class="product-add-to-cart">
 
@@ -31,7 +31,7 @@ layout: store
                  <span itemprop="price">{{page.price}}</span>
                  <span itemprop="priceCurrency" content="EUR">€</span>
                </span>
-               <span >{{ site.data.strings.store-vat[lang] }}</span>
+               <span >{{ site.data.strings.store-vat[page.lang] }}</span>
              </span>
              <meta itemprop="sku" content="{{page.properties.id}}" />
              <meta itemprop="url" content="{{page.url | absolute_url}}" />
@@ -45,8 +45,8 @@ layout: store
         {{content}}
     </div>
   </div>
-  <div class="col-lg-3 col-md-12 col-lg-pull-9 row-no-padding"style="padding:9px">
-    <div class="container-fluid related-products">
+  <div class="col-lg-3 col-md-12 col-lg-pull-9" style="padding:9px">
+    <div class="container related-products">
       <h3> Découvrez aussi : </h3>
       <div class="row">
       {% for item in store_items %}

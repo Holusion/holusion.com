@@ -63,6 +63,7 @@
   color: $orange;
   font-weight: bold;
   width: 100%;
+  padding: 0 10px;
 }
 .shop-product .product-price {
   padding:6px;
@@ -116,4 +117,5 @@
     margin-left:auto;
     max-width:285px;
   }
+  overflow: hidden; /* or products overflow by 1px on small screens */
 }
