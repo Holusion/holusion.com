@@ -9,32 +9,27 @@ const jsdom = require("jsdom");
 const url = require('url');
 
 var browser = process.env["BROWSER"]||"phantomjs";
-
 let driver = new selenium.Builder().forBrowser(browser).build();
-let target = process.env["TARGET"];
+let href = process.env["TARGET"];
+let u = url.parse(href);
 
-
-
-
-describe(`Test : ${target}`, function(){
+describe(`Test : ${href}`, function(){
   this.slow(2000);
   this.timeout(6000);
   before(function(){
-    expect(target).to.be.ok;
+    expect(href).to.be.ok;
   });
   after(function(){
     driver.quit();
   });
-  describe("HTTPS",()=>{
-    let l_target = url.parse(target);
-    l_target.protocol = "https";
-    let href = l_target.format();
+  describe(u.protocol,()=>{
+
     ["fr","en"].forEach((lang)=>{
       [
-        `${href}${lang}/`,
-        `${href}${lang}`,
-        `${href}${lang}/index`,
-        `${href}${lang}/index.html`
+        `${href}/${lang}/`,
+        `${href}/${lang}`,
+        `${href}/${lang}/index`,
+        `${href}/${lang}/index.html`
       ].forEach((l)=>{
         it(`GET ${l}`,()=>{
           return driver.get(`${l}`)
@@ -51,8 +46,8 @@ describe(`Test : ${target}`, function(){
         "opalv":{name:"Opal"},
         "opalh":{name:"Opal"}
       }
-      it(`GET ${href}${lang}/store/`,()=>{
-        return driver.get(`${href}${lang}/store/`)
+      it(`GET ${href}/${lang}/store/`,()=>{
+        return driver.get(`${href}/${lang}/store/`)
         .then(_=>driver.getTitle())
         .then((title)=> title.should.match(/(store|boutique)/i))
         .then(_=> driver.findElements(By.css(".thumbnail>a")))
@@ -62,18 +57,18 @@ describe(`Test : ${target}`, function(){
           return Promise.all(thumbs.map(t=> t.getAttribute("href")))
         })
         .then((hrefs)=>{
-          Object.keys(store_products).forEach(function(p) {
-            expect(p).to.satisfy(function(p){
-              return hrefs.some(function(link){
-                return link.indexOf(`/${lang}/store/p`) != -1;
-              })
-            }, `expect every poroduct to be in store index. Missing "${p}"`)
+          //Ensure we don't get products list wrong
+          let r = new RegExp(`^${href}/${lang}/store/.*`)
+          hrefs.forEach((link)=>{
+            expect(link).to.match(r);
           })
+          expect(hrefs.length).to.be.above(4); //arbitrary "high enough" number
+          return hrefs;
         })
       });
 
       Object.keys(store_products).forEach((product)=>{
-        let pageLink = `${href}${lang}/store/${product}`;
+        let pageLink = `${href}/${lang}/store/${product}`;
         describe(`GET ${pageLink}`,()=>{
           let page;
           before(function(){
