@@ -58,15 +58,17 @@ describe(`Test : ${href}`, function(){
         })
         .then((hrefs)=>{
           //Ensure we don't get products list wrong
-          let r = new RegExp(`^${href}/${lang}/store/.*`)
+          let match_names = Object.keys(store_products).join("|");
+          let r = new RegExp(`^${href}/${lang}/store/(${match_names})`);
           hrefs.forEach((link)=>{
             expect(link).to.match(r);
           })
-          expect(hrefs.length).to.be.above(4); //arbitrary "high enough" number
+          expect(hrefs).to.have.property("length",Object.keys(store_products).length);
           return hrefs;
         })
       });
-
+      //Since we verified in previous test that "store_products" is acurate
+      //We can base further store tests on it
       Object.keys(store_products).forEach((product)=>{
         let pageLink = `${href}/${lang}/store/${product}`;
         describe(`GET ${pageLink}`,()=>{

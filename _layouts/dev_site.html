@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 {% if site.data.sections[page.title] %}
-  {% assign head = site.data.sections[page.title].long[lang] %}
+  {% assign head = site.data.sections[page.title].long[page.lang] %}
 {% elsif page.title %}
   {% assign head=page.title %}
 {% else %}
-  {% assign head = site.data.sections.s1[lang] %}
+  {% assign head = site.data.sections.s1[page.lang] %}
 {% endif %}
 
 {% include head.html %}
