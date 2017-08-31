@@ -1,6 +1,6 @@
 
 {% unless store_items %}
-  {% assign should_match = lang |append: "/store" %}
+  {% assign should_match = page.lang |append: "/store" %}
   {% assign store_items = "" | split: ""  %}
   {% for c in site.content_main %}
     {% if c.url contains should_match and c.image %}

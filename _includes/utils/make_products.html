@@ -2,7 +2,7 @@
 {% unless products %}
   {% assign products = "" | split: ""  %}
   {% for c in site.content_main %}
-    {% if c.lang == lang and c.url contains "products" and c.image %}
+    {% if c.lang == page.lang and c.url contains "products" and c.image %}
       {% assign products = products |push:c %}
     {% endif %}
   {% endfor %}
