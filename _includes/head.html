@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Holusion">
   <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
-  {% if page.title %}
+  {% if page.long_title %}
+    <title>{{page.long_title}} - {{site.data.strings.site-title[page.lang]}}</title>
+  {% elsif page.title %}
     <title>{{page.title}} - {{site.data.strings.site-title[page.lang]}}</title>
   {% else %}
     <title>{{site.data.strings.site-title[page.lang]}}</title>
@@ -27,17 +29,13 @@
   {% endif %}
   {% if page.layout == "post" %}
     <meta property="og:type" content="article"/>
+  {% else %}
+    <meta property="og:type" content="website"/>
   {%endif %}
   {% if page.lang %}
     <meta property="og:locale" content="{{page.lang}}"/>
   {% endif %}
-  <!-- CSS Loading -->
-  <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet">
 
-  <!-- jquery is only used as a bootstrap dependency. Please avoid binding the site to it -->
-  <script defer="" src="/vendor/jquery/dist/jquery.min.js"></script>
-  <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
   {% if site.url %}
   <link rel="canonical" href="{{page.url | absolute_url }}">
     {% if page.alt_url %}
@@ -46,7 +44,13 @@
     {% endif %}
   {% endif %}
 
+  <!-- CSS Loading -->
+  <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
+  <!-- jquery is only used as a bootstrap dependency. Please avoid binding the site to it -->
+  <script defer="" src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
   {% include favicons.html url="/static/img/icons/favicons" %}
   {% include utils/make_pages.html %}
