@@ -14,6 +14,13 @@ Elle est séparée en deux catégories majeures :
 
 Chacune de ces catégories contient les différentes parties du site.
 
+Le site utilise les plugins suivants :
+
+- [jekyll-inline-svg](https://github.com/sdumetz/jekyll-inline-svg) : Introduit le tag `svg` pour créer des icones.
+- [lang](https://github.com/Holusion/holusion.com/blob/master/_plugins/lang.rb) : crée la variable `page.lang`. Si une page existe dans la langue alternative, crée aussi `page.alt_lang` et `page.alt_url`.
+- [make_collections](https://github.com/Holusion/holusion.com/blob/master/_plugins/make_collections.rb) : crée les variables `page.posts_items`, `page.products_items` et `page.store_items`, filtrées selon langue active.
+
+
 #### Installation :
 
 **clone things & play around**
@@ -161,7 +168,15 @@ Ou la notation relative :
 
     ../<chemin_interne>
 
+#### Boutons et icônes
 
+Les boutons sont créés avec des balises `button` ou `a`, et la classe `button`, associée à `button-fab` (bouton rond), `button-blue` ou `button-white`.
+
+Le plugin [inline-svg](https://github.com/sdumetz/jekyll-inline-svg) permet de créer une icone facilement avec le tag `svg`:
+
+```
+{% svg "/src/icons/foo.svg" width=24 %}
+```
 
 #### Sous sections
 
