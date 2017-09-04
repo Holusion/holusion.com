@@ -2,7 +2,7 @@
 {% unless pages %}
   {% assign pages = "" | split: ""  %}
   {% for c in site.content_dev|sort: "title"|sort: "rank" %}
-    {% if c.lang == lang %}
+    {% if c.lang == page.lang %}
       {% assign pages = pages |push:c %}
     {% endif %}
   {% endfor %}
