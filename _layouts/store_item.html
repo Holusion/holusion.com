@@ -44,6 +44,15 @@ layout: store
     <div class="container-fluid product-datasheet" id="content">
         {{content}}
     </div>
+    <div class="container-fluid product-eua">
+      <h3>{{site.data.strings.return-policy[page.lang]}}</h3>
+      <p> {{site.data.strings.return-policy-text[page.lang]}}</p>
+      <p><center>
+        <button class="button button-white" style="cursor:pointer" onclick="document.getElementById(&quot;section-contactform&quot;).display()">
+          contactez-nous
+        </button>
+      </center></p>
+    </div>
   </div>
   <div class="col-lg-3 col-md-12 col-lg-pull-9" style="padding:9px">
     <div class="container related-products">
