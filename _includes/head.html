@@ -6,14 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Holusion">
   <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
-  {% if page.long_title %}
-    <title>{{page.long_title}} - {{site.data.strings.site-title[page.lang]}}</title>
-  {% elsif page.title %}
-    <title>{{page.title}} - {{site.data.strings.site-title[page.lang]}}</title>
+
+  {% if page.title %}
+    <title>{{page.title}} {{page.abstract }} - {{site.data.strings.site-title[page.lang]}}</title>
   {% else %}
     <title>{{site.data.strings.site-title[page.lang]}}</title>
   {% endif %}
-  {% if page.abstract %}
+  {% if page.description %}
+    <meta name="description" content="{{ page.description | strip_html | truncatewords:155 }}" />
+    <meta property="og:description" content="{{page.description | strip_html | truncatewords:297}}"/>
+  {% elsif page.abstract %}
     <meta name="description" content="{{ page.abstract|truncatewords:155 }}" />
     <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297}}"/>
   {% else %}
