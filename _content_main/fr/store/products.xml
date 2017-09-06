@@ -24,7 +24,6 @@ https://support.google.com/merchants/answer/7052112?visit_id=1-63639693003740593
     <g:shipping>
       <g:country>FR</g:country>
       <g:service>Standard</g:service>
-      <g:price>{{products.shipping_price | default: 1.50 }} EUR</g:price>
     </g:shipping>
 
     <g:brand>Holusion</g:brand>
