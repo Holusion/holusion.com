@@ -19,11 +19,12 @@ https://support.google.com/merchants/answer/7052112?visit_id=1-63639693003740593
     <g:link>{{product.url | absolute_url}}</g:link>
     <g:image_link>{{product.image | absolute_url}}</g:image_link>
     <g:condition>new</g:condition>
-    <g:availability>in stock</g:availability>
+    <g:availability>{{product.stock | default: "in stock"}}</g:availability>
     <g:price>{{product.price}} EUR</g:price>
     <g:shipping>
       <g:country>FR</g:country>
       <g:service>Standard</g:service>
+			<g:shipping_weight>{{product.weight}}</g:shipping_weight>
     </g:shipping>
 
     <g:brand>Holusion</g:brand>
