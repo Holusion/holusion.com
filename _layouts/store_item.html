@@ -24,15 +24,15 @@ layout: store
              {% if page.for %}
                 <li>{{site.data.strings.store-accessory-for[page.lang]}} : <span class="product-highlight">{{page.for}}</span></li>
              {%endif%}
-             {% if page.stock %}
-                {% if page.stock =="en stock" %}
-                <link itemprop="availability" href="http://schema.org/InStock" />
-                {% endif %}
-                <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight">{{page.stock}}</span></li>
+
+             {% if page.stock and page.stock !="en stock" %}
+               <link itemprop="availability" href="http://schema.org/OutOfStock" />
+               <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight highlight-orange">{{page.stock}}</span></li>
              {% else %}
                 <link itemprop="availability" href="http://schema.org/InStock" />
                 <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight">{{site.data.strings.store-stock[page.lang]}}</span></li>
              {% endif %}
+                <li>{{site.data.strings.store-weight[page.lang]}} : <span class="product-highlight">{{page.weight}}g</span></li>
              </ul>
            </div>
          </div>
