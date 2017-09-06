@@ -54,8 +54,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-3 col-sm-2">
+    <div class="bottom-nav-row">
+      <div >
         <span class="visible-lg">
           {{ site.data.strings.copyright[page.lang]}}
         </span>
@@ -64,22 +64,18 @@
           <span class="hidden-lg">CC.BySa</span>
         </a>
       </div>
-      <div class="col-md-6 col-sm-8">
-        <div class="container-fluid">
-          <div class="row-fluid bottom-nav-center">
-            <div class="col-xs-4">
-              <a href="/{{page.lang}}">{{site.data.strings.holusion-com[page.lang]}}</a>
-            </div>
-            <div class="col-xs-4">
-              <a href="/{{page.lang}}/products">{{site.data.strings.products[page.lang]}}</a>
-            </div>
-            <div class="col-xs-4">
-              <a href="/{{page.lang}}/about">{{site.data.strings.about[page.lang]}}</a>
-            </div>
-          </div>
+      <div class="row-fluid bottom-nav-center">
+        <div>
+          <a href="/{{page.lang}}">Holusion SAS</a>
+        </div>
+        <div>
+          +33 (0)9 72 42 44 51
+        </div>
+        <div>
+          99A bvd Descat, 59200 Tourcoing - France
         </div>
       </div>
-      <div class="col-md-3 col-sm-2">
+      <div>
         <ul class="navbar-right">
             {% include components/language_picker.html type="dropup" %}
         </ul>
