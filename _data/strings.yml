@@ -47,6 +47,18 @@ store-vat:
 store-stock:
   fr: en stock
   en: in stock
+store-weight:
+  fr: Poids
+  en: Weight
+store-accessory-for:
+  fr: "Accessoire pour"
+  en: "Accessory for"
+store-availability:
+  fr: Disponibilité
+  en: Availability
+store-not-provided:
+  fr: non fourni
+  en: not provided
 add-to-cart:
   fr: Ajouter au panier
   en: Add to cart
@@ -54,5 +66,17 @@ return-policy:
   fr: Politique de retour
   en: Return policy
 return-policy-text:
-  fr: "Politique de retour sur Holusion.com : Si vous n'êtes pas satisfait d'un produit que vous avez commandé auprès d'Holusion.com ou si celui-ci est défectueux ou endommagé, vous pouvez créer une demande de remplacement ou remboursement sous 30 jours suivant la date de livraison, en cliquant sur le bouton ci dessous. Pour plus d’informations, veuillez consulter les <a href='/static/files/CGV_GENERAL_condensee.pdf' >conditions générales de vente</a>."
+  fr: "Politique de retour sur Holusion.com : Si vous n'êtes pas satisfait d'un produit que vous avez commandé auprès d'Holusion.com ou si celui-ci est défectueux ou endommagé, vous pouvez créer une demande de remplacement ou remboursement dans les 30 jours suivant la date de livraison, en cliquant sur le bouton ci dessous. Pour plus d’informations, veuillez consulter les <a href='/static/files/CGV_GENERAL_condensee.pdf' >conditions générales de vente</a>."
   en: "Return policy on Holusion.com : If you are not satisfied with your product bought on Holusion.com, or if it's damaged or malfunctionning, you can request a refund or replacement by clicking on the button below. <br>Learn more about our <a href='/static/files/CGV_GENERAL_condensee.pdf' >conditions of use</a>."
+delivery-title:
+  fr: Frais et délais de livraison
+  en: Delivery conditions
+delivery-text:
+  fr: "Les frais de livraison applicables sont détaillés au moment de la validation de commande avant paiement. La livraison est assurée en 5 à 8 jours ouvrés. Le détail des frais de livraison est disponible dans le tableau suivant, et dépend du poids total de la commande :"
+  en: "You will have a chance to review delivery rates before validating your purchase. Delivery is guaranteed from 5 to 8 days following purchase if products are in-stock."
+delivery-price:
+  fr: Frais
+  en: Price
+delivery-weight-text:
+  fr: Le poids unitaire des produits est<br>indiqué sur la fiche produit
+  en: Products weight is available <br>in their store pages
