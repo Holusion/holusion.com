@@ -63,8 +63,10 @@
   align-items:center;
 }
 .shop-product .product-highlight{
-  color: $orange;
   font-weight: bold;
+}
+.shop-product .product-highlight.highlight-orange {
+  color: $orange;
 }
 .shop-product .product-price {
   padding:0 6px;
