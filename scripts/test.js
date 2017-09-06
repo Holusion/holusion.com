@@ -131,6 +131,8 @@ describe(`${href} :`, function(){
                   .then((name)=>name.should.be.a.string),
                 btn => btn.getAttribute("data-item-price")
                   .then((name)=>name.should.match(/\d+\.\d{2}/)),
+                btn => btn.getAttribute("data-item-weight")
+                  .then((name)=>name.should.match(/^\d+$/)),
                 btn => btn.getAttribute("data-item-url")
                   .then((name)=>name.should.equal(pageLink)),
                 btn => btn.getAttribute("data-item-description")
