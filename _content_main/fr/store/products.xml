@@ -24,7 +24,7 @@ https://support.google.com/merchants/answer/7052112?visit_id=1-63639693003740593
     <g:shipping>
       <g:country>FR</g:country>
       <g:service>Standard</g:service>
-			<g:shipping_weight>{{product.weight}}</g:shipping_weight>
+			<g:shipping_weight>{{product.weight}} g</g:shipping_weight>
     </g:shipping>
 
     <g:brand>Holusion</g:brand>
