@@ -43,7 +43,10 @@ Jekyll::Hooks.register :site, :post_read do |site|
   c["products"]["en"].sort! {|a,b|product_sort(a,b)}
   c["store"]["fr"].sort! {|a,b|product_sort(a,b)}
   c["store"]["en"].sort! {|a,b|product_sort(a,b)}
-
+  c["posts"]["fr"].sort! {|a,b| b.basename <=> a.basename}
+  c["posts"]["en"].sort! {|a,b| b.basename <=> a.basename }
+  #print c["posts"]["fr"].map {|p| p.basename}.join("\n")
+  #print "\n"
   c.each do |cat, val|
     site.config["#{cat}_items"] = val
   end
