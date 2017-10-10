@@ -70,7 +70,6 @@ Le site possède une structure classique imposée par Jekyll.
 - **_drafts** : pas utilisé pour le moment.
 - **_site_dev** : Le site de développement
 - **_site_main** : Le site principal
-- **stingray** : Le site vitrine de stingray (temporaire)
 - **_includes** : Morceaux de pages repris à travers le site. ```Exemples : navbar.html, header.html```
   - components : reproductible parts of a page (feedback button, page thumbnail...)
   - utils : utility function. does not output html, but make some computation (iterate over a section's list of pages)
