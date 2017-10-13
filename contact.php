@@ -14,6 +14,17 @@ if(isset($_POST['email'])) {
     die();
   }
 
+  function bad($error) {
+    http_response_code(400);
+    echo "{\"code\":400,\"message\":\"".$error."\"}";
+    exit(0);
+  }
+
+  function forbidden() {
+    http_response_code(403);
+    echo "{\"code\":403,\"message\":\"forbidden (captcha failed)\"}";
+    exit(0);
+  }
   // validation expected data exists
 
   if(!isset($_POST['first_name']) ||
@@ -58,7 +69,7 @@ if(isset($_POST['email'])) {
   }
 
   if(strlen($error_message) > 0) {
-    died($error_message);
+    bad($error_message);
   }
   // POST to google's recaptcha service to verify validity
   $secretKey = "6LdWrgwUAAAAAC1UrproS846GfExJdz_5qa4HViP";
@@ -67,7 +78,7 @@ if(isset($_POST['email'])) {
   $r = json_decode($response,true);
   if( intval($r["success"]) !== 1 ){
     error_log($response);
-    died("Invalid Captcha. Please try again");
+    forbidden();
   }
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");
@@ -91,7 +102,7 @@ if(isset($_POST['email'])) {
   @mail($email_to, $email_subject, $email_message, $headers);
   //Success message here
 ?>
-Thank you for contacting us. We will be in touch with you very soon.
+{"code":200,"message":"Thank you for contacting us. We will be in touch with you very soon"}
 <?php
   //End of success message
 }
