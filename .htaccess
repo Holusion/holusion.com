@@ -10,6 +10,9 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^/(fr|en)/store(.*)$ https://holusion.com/$1/store$2 [R,L]
 
+Redirect 301 ^/fr/nos-solutions-produits /fr/products/
+
+
 <IfModule mod_expires.c>
 	ExpiresActive On
 	ExpiresDefault "access plus 1 day"
