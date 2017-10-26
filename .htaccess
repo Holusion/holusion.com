@@ -12,6 +12,7 @@ RewriteRule ^/(fr|en)/store(.*)$ https://holusion.com/$1/store$2 [R,L]
 
 Redirect 301 ^/fr/nos-solutions-produits /fr/products/
 Redirect 301 ^/(fr|en)/histoire.* /$1/posts/
+Redirect 301 /fr/uses /fr/
 
 
 <IfModule mod_expires.c>
