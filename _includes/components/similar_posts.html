@@ -2,10 +2,10 @@
 
 <div id="post-similar">
   <div class="row" >
-    {% include utils/make_posts.html %}
+
 
     {% assign similar_posts = "" | split: ""  %}
-    {% for post in posts %}
+    {% for post in site.posts_items[page.lang] %}
       {% for tag in page.tags %}
         {% if post.tags contains tag %}
           {% unless post.url == page.url %}
