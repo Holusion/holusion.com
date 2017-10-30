@@ -21,6 +21,7 @@ Redirect 301 /fr/uses /fr/
 # Redirects for moved pages that should not happen too often
 
 Redirect 301 	/fr/posts/2016-12-08_kiabi_popupstore /fr/posts/2016-12-08-kiabi_popupstore
+Redirect 301 /fr/posts/2017-06-23-Salon_du_bourget_Thal%C3%A8s /fr/posts/2017-06-23-Salon_du_bourget_Thales
 
 <IfModule mod_expires.c>
 	ExpiresActive On
