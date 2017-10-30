@@ -9,18 +9,21 @@ if(isset($_POST['email'])) {
 
   function died($error) {
     // your error code can go here
+    error_log("Internal error : ".$error);
     http_response_code(500);
     echo "{\"code\":500,\"message\":\"".$error."\"} ";
     die();
   }
 
   function bad($error) {
+    error_log("Bad request : ".$error);
     http_response_code(400);
     echo "{\"code\":400,\"message\":\"".$error."\"}";
     exit(0);
   }
 
-  function forbidden() {
+  function forbidden($error) {
+    error_log("ReCAPTCHA error : ".$error);
     http_response_code(403);
     echo "{\"code\":403,\"message\":\"forbidden (captcha failed)\"}";
     exit(0);
@@ -77,8 +80,7 @@ if(isset($_POST['email'])) {
 
   $r = json_decode($response,true);
   if( intval($r["success"]) !== 1 ){
-    error_log($response);
-    forbidden();
+    forbidden(preg_replace( "/\r|\n/", "",$response));
   }
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");
