@@ -1,8 +1,8 @@
 ---
-title: Redirection vers pixel.holusion.com
+title: Redirection Pixel
 image: /build/img/posts/dns_redirect/header.jpg
 image2x: /build/img/posts/dns_redirect/header_2x.jpg
-abstract: Dirigez votre domaine vers votre vidéo holgoraphique
+abstract: Utilisez votre nom de domaine pour démarrer la playlist d'hologrammes Pixel
 rank: 2
 menu: toolbox
 ---

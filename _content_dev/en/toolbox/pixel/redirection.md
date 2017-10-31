@@ -1,5 +1,5 @@
 ---
-title: Redirect to pixel.holusion.com
+title: Redirect your Pixel
 image: /build/img/posts/dns_redirect/header.jpg
 image2x: /build/img/posts/dns_redirect/header_2x.jpg
 abstract: Use your own domain name to distribute your pixel videos.
