@@ -46,7 +46,7 @@ layout: store
                </span>
                <span >{{ site.data.strings.store-vat[page.lang] }}</span>
              </span>
-             <meta itemprop="sku" content="{{page.properties.id}}" />
+             <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
              <meta itemprop="url" content="{{page.url | absolute_url}}" />
              {% include shop/link.html data=page %}
            </div>
