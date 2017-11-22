@@ -4,7 +4,6 @@ const By = selenium.By;
 const until = selenium.until;
 const expect = require("chai").expect;
 require("chai").should();
-const jsdom = require("jsdom");
 
 const url = require('url');
 
@@ -68,8 +67,8 @@ describe(`${href} :`, function(){
       "pixel":{name:"Pixel"},
       "pixelxl":{name:"Pixel XL"},
       "pixelplus":{name:"Pixel +"},
-      "opalv":{name:"Opal"},
-      "opalh":{name:"Opal"}
+      "opalv":{name:"Opal V"},
+      "opalh":{name:"Opal H"}
     }
     describe(`GET ${href}/${lang}/store/`,()=>{
       let page
