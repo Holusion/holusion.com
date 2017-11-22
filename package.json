@@ -4,8 +4,8 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "test": "SELENIUM_PROMISE_MANAGER=0 mocha scripts/test.js",
-    "jenkins_test":"JUNIT_REPORT_PATH=report.xml SELENIUM_PROMISE_MANAGER=0 mocha scripts/test.js --reporter mocha-jenkins-reporter"
+    "test": "mocha --slow 1500 --timeout 8000 ./scripts/runner.js",
+    "jenkins_test": "JUNIT_REPORT_PATH=report.xml SELENIUM_PROMISE_MANAGER=0 mocha scripts/test.js --reporter mocha-jenkins-reporter"
   },
   "os": [
     "linux"
@@ -18,7 +18,7 @@
     "mocha": "^3.4.2",
     "mocha-jenkins-reporter": "0.3.9",
     "phantomjs-prebuilt": "^2.1.14",
-    "selenium-webdriver": "^3.5.0",
+    "puppeteer": "^0.13.0",
     "request": "^2.81.0"
   }
 }
