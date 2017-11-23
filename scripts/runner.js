@@ -1,5 +1,9 @@
 'use strict';
 const puppeteer = require('puppeteer');
+const serveStatic = require("serve-static");
+const finalhandler = require('finalhandler');
+const http = require('http');
+const path = require("path");
 const expect = require("chai").expect;
 const url = require('url');
 
@@ -7,24 +11,42 @@ const MIN_PRODUCTS_NUMBER = 4;
 const MAX_PRODUCTS_NUMBER = 10;
 
 
-const href = process.env["TARGET"];
-const u = url.parse(href);
+const target = process.env["TARGET"];
+const href = (target == "local")? "http://localhost:4005" : target;
 
 const options = {
   //headless:false,
   args:["--no-sandbox"]
 };
 
-describe(`${href}`,function(){
+describe(`${target}`,function(){
   let browser;
-  before(() => {
-    expect(href).to.be.ok;
-    return puppeteer.launch(options).then(async (b) => {
+  let server = null;
+  before(async() => {
+    expect(target).to.be.ok;
+    if (target == "local"){
+      let serve = serveStatic(path.resolve(__dirname,'../_site'), {
+        'index': ['index.html', 'index.htm'],
+        'extensions': ["html"]
+      });
+      server = http.createServer(function onRequest (req, res) {
+        serve(req, res, finalhandler(req, res))
+      });
+      await server.listen(4005);
+    }
+    return await puppeteer.launch(options).then(async (b) => {
       browser = b;
     });
   });
-  after(() => {
-    browser.close();
+  after(async () => {
+    let jobs = []
+    if (browser){
+      jobs.push(browser.close());
+    }
+    if (server){
+      jobs.push(server.close());
+    }
+    return await Promise.all(jobs);
   });
 
   it("initialize browser",()=>{
@@ -38,8 +60,8 @@ describe(`${href}`,function(){
         beforeEach(async function(){
           this.page = await browser.newPage();
         })
-        afterEach(function(){
-          this.page.close();
+        afterEach(async function(){
+          await this.page.close();
         });
         [
           `${lang}/`,
@@ -69,12 +91,11 @@ describe(`${href}`,function(){
             let handle = await a.getProperty("href");
             let link = await handle.jsonValue();
             await handle.dispose();
-
             return link;
           }));
         })
-        after(()=>{
-          storePage.close();
+        after(async ()=>{
+          await storePage.close();
         })
         it(`has a title with reasonable length`,async ()=>{
           const title = await storePage.$eval("TITLE",h => h.innerText);
@@ -105,7 +126,6 @@ describe(`${href}`,function(){
           expect(links.length).to.be.below(MAX_PRODUCTS_NUMBER,
             "Too much products. Increase MAX_PRODUCTS_NUMBER in runner.js if it's normal."
           );
-          console.log(links.length)
         })
         describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
 
@@ -118,9 +138,8 @@ describe(`${href}`,function(){
               await page.goto(`${link}`);
               const btn = await page.$(".button.snipcart-add-item");
               const id = await page.$eval(".button.snipcart-add-item", b=>b.getAttribute("data-item-id"));
-              console.log(id);
               expect(id).to.be.a("string");
-              expect(id).to.match(/^[\w+]+_(FR|EN)$/);
+              expect(id).to.match(/^[\w+_]+(FR|EN)$/);
               await page.close();
             });
           }
