@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha --slow 1500 --timeout 8000 ./scripts/runner.js",
-    "jenkins_test": "JUNIT_REPORT_PATH=report.xml SELENIUM_PROMISE_MANAGER=0 mocha scripts/test.js --reporter mocha-jenkins-reporter"
+    "jenkins_test": "JUNIT_REPORT_PATH=report.xml SELENIUM_PROMISE_MANAGER=0 mocha ./scripts/runner.js --reporter mocha-jenkins-reporter"
   },
   "os": [
     "linux"
