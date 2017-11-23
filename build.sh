@@ -162,9 +162,9 @@ ${make_check} && bundle exec htmlproofer _site \
 --checks-to-ignore ScriptCheck \
 --file-ignore "/vendor/,/static\/fonts\/.*.html/"
 
+# Integration End-To-End tests
+# if $integration_target=local, will start a local web server to test from `_site`
 if ! test -z "$integration_target" ;then
-  echo "INSTALL integration tests dependencies"
-  npm install
   echo "RUN integration tests on $integration_target"
   if $is_jenkins ;then
     TARGET="$integration_target" npm run jenkins_test
