@@ -27,7 +27,7 @@ async function blockMedias(page){
     || interceptedRequest.url.endsWith('.mp4')
     ){
       interceptedRequest.abort();
-      console.log("Aborted : ",interceptedRequest.url)
+      //console.log("Aborted : ",interceptedRequest.url)
     }else
       interceptedRequest.continue();
   });
