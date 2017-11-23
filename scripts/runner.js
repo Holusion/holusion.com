@@ -19,6 +19,20 @@ const options = {
   args:["--no-sandbox"]
 };
 
+async function blockMedias(page){
+  await page.setRequestInterception(true);
+  page.on('request', interceptedRequest => {
+    if (interceptedRequest.url.endsWith('.png')
+    || interceptedRequest.url.endsWith('.jpg')
+    || interceptedRequest.url.endsWith('.mp4')
+    ){
+      interceptedRequest.abort();
+      console.log("Aborted : ",interceptedRequest.url)
+    }else
+      interceptedRequest.continue();
+  });
+}
+
 describe(`${target}`,function(){
   let browser;
   let server = null;
@@ -59,6 +73,7 @@ describe(`${target}`,function(){
       describe("Can load index aliases",function(){
         beforeEach(async function(){
           this.page = await browser.newPage();
+          await blockMedias(this.page);
         })
         afterEach(async function(){
           await this.page.close();
@@ -70,7 +85,7 @@ describe(`${target}`,function(){
           `${lang}/index.html`
         ].forEach((l)=>{
           it(`GET ${href}/${l}`,async function(){
-            await this.page.goto(`${href}/${l}`,{timeout:1500});
+            await this.page.goto(`${href}/${l}`,{timeout:2000});
             const title = await this.page.$eval("TITLE",h => h.innerText);
             expect(title).to.be.a.string;
             expect(title).to.match(/holusion/i);
