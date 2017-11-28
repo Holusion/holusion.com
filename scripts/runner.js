@@ -85,7 +85,7 @@ describe(`${target}`,function(){
           `${lang}/index.html`
         ].forEach((l)=>{
           it(`GET ${href}/${l}`,async function(){
-            await this.page.goto(`${href}/${l}`,{timeout:2000});
+            await this.page.goto(`${href}/${l}`,{timeout:6000});
             const title = await this.page.$eval("TITLE",h => h.innerText);
             expect(title).to.be.a.string;
             expect(title).to.match(/holusion/i);
@@ -99,7 +99,7 @@ describe(`${target}`,function(){
         let links;
         before(async ()=>{
           storePage = await browser.newPage();
-          await storePage.goto(`${href}/${lang}/store/`,{timeout:1500});
+          await storePage.goto(`${href}/${lang}/store/`,{timeout:6000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
             let a = await cell.$("A");
