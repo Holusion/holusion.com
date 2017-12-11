@@ -37,7 +37,7 @@ Install [jekyll](http://jekyllrb.com/docs/installation/).
 
 **Pour voir en temps réel les changements**
 
-    bundle exec jekyll serve
+    ./build.sh --watch
 
 ### Mise à jour
 
