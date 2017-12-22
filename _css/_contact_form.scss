@@ -42,3 +42,14 @@
   right:-20px;
   cursor: pointer;
 }
+#logger {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  right: 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+#logger:empty{
+  display:none;
+}
