@@ -6,6 +6,7 @@ const http = require('http');
 const path = require("path");
 const expect = require("chai").expect;
 const url = require('url');
+const util = require('util');
 
 const MIN_PRODUCTS_NUMBER = 4;
 const MAX_PRODUCTS_NUMBER = 10;
@@ -19,17 +20,30 @@ const options = {
   args:["--no-sandbox"]
 };
 
-async function blockMedias(page){
+async function block(page, types){
   await page.setRequestInterception(true);
   page.on('request', interceptedRequest => {
-    if (interceptedRequest.url.endsWith('.png')
-    || interceptedRequest.url.endsWith('.jpg')
-    || interceptedRequest.url.endsWith('.mp4')
+    //console.log(interceptedRequest.url);
+    if(
+      (types.indexOf("images") != -1 &&(
+         interceptedRequest.url.endsWith('.png')
+      || interceptedRequest.url.endsWith('.jpg')
+    )) ||(types.indexOf("medias") != -1 &&(
+         interceptedRequest.url.endsWith('.mp4')
+      || interceptedRequest.url.endsWith('.ogv')
+      || interceptedRequest.url.endsWith('.webm')
+      || interceptedRequest.url.indexOf("youtube.com") != -1
+    )) || (types.indexOf("analytics") != -1 &&(
+      interceptedRequest.url.indexOf("google-analytics.com") != -1
+    ))|| (types.indexOf("captcha") != -1 &&(
+      interceptedRequest.url.indexOf("gstatic.com") != -1
+    ))
     ){
-      interceptedRequest.abort();
       //console.log("Aborted : ",interceptedRequest.url)
-    }else
+      interceptedRequest.respond("");
+    }else{
       interceptedRequest.continue();
+    }
   });
 }
 
@@ -46,7 +60,7 @@ describe(`${target}`,function(){
       server = http.createServer(function onRequest (req, res) {
         serve(req, res, finalhandler(req, res))
       });
-      await server.listen(4005);
+      await util.promisify(server.listen.bind(server))(4005);
     }
     return await puppeteer.launch(options).then(async (b) => {
       browser = b;
@@ -58,7 +72,7 @@ describe(`${target}`,function(){
       jobs.push(browser.close());
     }
     if (server){
-      jobs.push(server.close());
+      jobs.push(util.promisify(server.close.bind(server))());
     }
     return await Promise.all(jobs);
   });
@@ -73,7 +87,7 @@ describe(`${target}`,function(){
       describe("Can load index aliases",function(){
         beforeEach(async function(){
           this.page = await browser.newPage();
-          await blockMedias(this.page);
+          await block(this.page,["images", "medias", "analytics", "captcha"]);
         })
         afterEach(async function(){
           await this.page.close();
@@ -99,6 +113,7 @@ describe(`${target}`,function(){
         let links;
         before(async ()=>{
           storePage = await browser.newPage();
+          await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:6000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
@@ -150,6 +165,7 @@ describe(`${target}`,function(){
               if (links.length <= i) return Promise.resolve();
               let link = links[i];
               let page = await browser.newPage();
+              await block(page,["images", "medias", "analytics", "captcha"]);
               await page.goto(`${link}`);
               const btn = await page.$(".button.snipcart-add-item");
               const id = await page.$eval(".button.snipcart-add-item", b=>b.getAttribute("data-item-id"));

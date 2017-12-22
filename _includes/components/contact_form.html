@@ -3,42 +3,73 @@
 {% assign contact_strings = site.data.contact_form_locale %}
 <section id="section-contactform" class="">
   <!-- USAGE
-    document.getElementById("section-contactform").display();
+    displayContactForm();
   -->
   <div id="contactform-overlay">
   </div>
     <form name="contactform" class="form-horizontal" method="post" action="/contact.php">
       <span id="contactform-close" class="glyphicon glyphicon-remove"></span>
 
+      <input type="hidden" name="lang" value="{{page.lang}}">
       <div class="form-group">
-        <label for="first_name">{{contact_strings["firstname"][page.lang]}}</label>
-        <input  type="text" class="form-control" name="first_name" id="first_name" maxlength="50" size="30" placeholder="{{contact_strings["firstname"][page.lang]}}">
+        <label for="fname">{{contact_strings["firstname"][page.lang]}}</label>
+        <input
+          type="text" class="form-control"
+          name="fname" id="first_name"
+          maxlength="50" size="30"
+          placeholder="{{contact_strings["firstname"][page.lang]}}"
+          required
+          autocomplete="given-name">
       </div>
       <div class="form-group">
-        <label for="last_name">{{contact_strings["lastname"][page.lang]}}</label>
-        <input  type="text" class="form-control" name="last_name" id="last_name" maxlength="50" size="30" placeholder="{{contact_strings["lastname"][page.lang]}}">
+        <label for="lname">{{contact_strings["lastname"][page.lang]}}</label>
+        <input
+          type="text" class="form-control"
+          name="lname" id="last_name"
+          maxlength="50" size="30"
+          placeholder="{{contact_strings["lastname"][page.lang]}}"
+          required
+          autocomplete="family-name">
       </div>
       <div class="form-group">
         <label for="email">{{contact_strings["mail"][page.lang]}}</label>
-          <input  type="text" class="form-control" name="email" id="email" maxlength="80" size="30" placeholder="mail@example.com">
+        <input
+          type="text" class="form-control"
+          name="email" id="email"
+          maxlength="80" size="30"
+          placeholder="mail@example.com"
+          required
+          autocomplete="email">
       </div>
       <div class="form-group">
-        <label for="telephone">{{contact_strings["phone"][page.lang]}}</label>
-        <input  type="text" class="form-control"  name="telephone" id="telephone" maxlength="30" size="30" placeholder="{{contact_strings["phone"][page.lang]}}">
+        <label for="phone">{{contact_strings["phone"][page.lang]}}</label>
+        <input
+          type="text" class="form-control"
+          name="phone" id="telephone"
+          maxlength="30" size="30"
+          placeholder="{{contact_strings["phone"][page.lang]}}"
+          autocomplete="tel">
       </div>
       <div class="form-group">
         <label for="comments">{{contact_strings["comments"][page.lang]}}</label>
-        <textarea role="textbox" name="comments" class="form-control" id="comments" maxlength="1000" cols="25" rows="6"></textarea>
+        <textarea
+          role="textbox"
+          name="comments"
+          class="form-control" id="comments"
+          maxlength="1000" cols="25" rows="6"
+          required></textarea>
       </div>
-      <div class="g-recaptcha" data-sitekey="6LdWrgwUAAAAAGbQM39EciTf3d2QEynV2Yb4s8o9"></div>
       <div class="form-group">
-        <button type="submit" class="form-control" class="btn btn-default">Submit</button>
+        <button type="submit" class="form-control btn btn-default">Submit</button>
       </div>
-      <div class="form-group">
-        <div id="contactform-logger" class="form-control alert" role="alert" style="display:none">...</div>
+      <div class="g-recaptcha"
+        data-sitekey="{{site.recaptcha_public}}"
+        data-size="invisible"
+        data-badge="inline"
+        data-callback="onValidated">
       </div>
     </form>
-
     <script async defer src="/static/js/contact.js"></script>
 </section>
+<div id="logger"></div>
 {% endunless %}
