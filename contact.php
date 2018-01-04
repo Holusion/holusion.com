@@ -27,7 +27,7 @@ $locale_strings = [
     "einvcomment" => 'Comments must be at least 20 characters long',
   ],
 ];
-
+$strings = NULL;
 if ( !isset($_POST["lang"]) || $_POST["lang"] == "fr"){
   $strings = $locale_strings["fr"];
 }else{
