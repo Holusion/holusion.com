@@ -12,13 +12,13 @@ install_optimizers(){
   command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
   command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
 
-  if [ ! -f ${pngcrush} ] ;then
+  if [ ! -f "${pngcrush}" ] ;then
     #download and build zopflipng
     local tmp=$(mktemp -d)
     local zopfli_version="1.0.1"
-    curl -XGET -q https://github.com/google/zopfli/archive/zopfli-${zopfli_version}.tar.gz -o zopfli-$(zopfli_version).tar.gz
-    cd "$tmp" && tar -zxf zopfli-${zopfli_version}.tar.gz
-    cd "$tmp/zopfli-zopfli-${zopfli_version}" && make zopflipng && mv zopflipng ${pngcrush}
+    curl -XGET -L -q "https://github.com/google/zopfli/archive/zopfli-${zopfli_version}.tar.gz" -o "${tmp}/zopfli-${zopfli_version}.tar.gz"
+    cd "$tmp" && tar -zxf "zopfli-${zopfli_version}.tar.gz"
+    cd "$tmp/zopfli-zopfli-${zopfli_version}" && make zopflipng && mv zopflipng "${pngcrush}"
     rm -rf "$tmp"
   fi
 }
