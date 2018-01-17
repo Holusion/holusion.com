@@ -1,0 +1,135 @@
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200   1) #!/bin/bash
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   2) pngcrush="$(pwd)/build/zopflipng" #default value
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   3) 
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   4) #takes build directory as argument.
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   5) install_optimizers(){
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   6)   set -e
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   7)   local build_dir="$1"
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   8)   pngcrush="$1/zopflipng"
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200   9) 
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  10)   #check presence of system-wide commands
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  11)   command -v convert >/dev/null 2>&1 || { echo >&2 "convert from imagemagick package is required but it's not installed.  Aborting."; exit 1; }
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  12)   command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  13)   command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  14) 
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  15)   if [ ! -f ${pngcrush} ] ;then
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  16)     #download and build zopflipng
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  17)     local tmp=$(mktemp -d)
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  18)     local zopfli_version="1.0.1"
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  19)     curl -XGET -q https://github.com/google/zopfli/archive/zopfli-${zopfli_version}.tar.gz -o zopfli-$(zopfli_version).tar.gz
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  20)     cd "$tmp" && tar -zxf zopfli-${zopfli_version}.tar.gz
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  21)     cd "$tmp/zopfli-zopfli-${zopfli_version}" && make zopflipng && mv zopflipng ${pngcrush}
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  22)     rm -rf "$tmp"
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  23)   fi
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  24) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  25) 
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  26) build_webm(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  27)   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  28)     echo "CONVERT $1 to $2"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  29)     avconv  -i "$1" -y -c:v libvpx -c:a libvorbis -qmin 20 -qmax 30 -threads 0 "$2" </dev/null
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  30)   fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  31) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  32) build_mpeg4(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  33)   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  34)     echo "CONVERT $1 to $2"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  35)     avconv -i "$1" -y -c:v h264 -profile:v main -level 31 -c:a copy "$2" </dev/null
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  36)   fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  37) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  38) build_ogg(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  39)   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  40)     echo "CONVERT $1 to $2"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  41)     avconv -i "$1" -y -c:v libtheora -qscale:v 7 -c:a libvorbis -qscale:a 5 -threads 0 "$2" </dev/null
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  42)   fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  43) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  44) convert_video(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  45)   local f=$(echo "$1"|sed 's/src\/videos\///') #remove prefix
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  46)   local d=$(dirname "$f") #get subdir to create it if necessary
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  47)   local filename=$(basename "$f")
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  48)   local extension="${filename##*.}"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  49)   local name="${filename%.*}"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  50)   local out="build/videos/$d/${name}"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  51)   build_mpeg4 "$1" "${out}.mp4"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  52)   build_ogg   "$1" "${out}.ogv"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  53)   build_webm  "$1" "${out}.webm"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  54) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  55) 
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  56) #Generic optimized compress image options
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  57) # Use unquoted to generate those parameters
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  58) compress_img_opts(){
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  59)   echo '-filter Triangle -define filter:support=2 -unsharp 0.25x0.25+8+0.065 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB -strip'
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  60) }
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  61) # compress_img "input.png" "output.png"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  62) compress_img(){
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  63)   convert $(compress_img_opts) "$1" "$2"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  64) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  65) 
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  66) # compress_jpg "in.jpg"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  67) compress_jpg(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  68)   local dest_quality=80
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  69)   QUALITY=$(identify -format "%Q" "$1")
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  70)   if test $dest_quality -lt $QUALITY ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  71)     #fallback to copy if convert failed
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  72)     mogrify  -quality $dest_quality -strip "$1"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  73)   fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  74) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  75) 
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  76) # compress_png "in.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  77) compress_png(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  78)   mogrify -format png -quality 9 -strip "$1"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  79) }
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200  80) 
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  81) build_static(){
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  82)   local DIR="$1"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  83)   local TMP_STORE="$(mktemp -d)"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  84)   [ -d "build/static" ] || mkdir -p "build/static"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  85)   while IFS= read -r -d '' file; do
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  86)     #  $file path is relative to $DIR
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  87)     ldir="$(dirname "$file")"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  88)     name="$(basename "$file")"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  89)     [ -d "_site/$ldir" ] || mkdir -p "_site/$ldir"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  90)     [ -d "build/$ldir" ] || mkdir -p "build/$ldir"
+109dcd0d (segolenedhm      2017-08-02 16:07:16 +0200  91)     #re-compress file only if it'sc older or doesn't exist
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  92)     if ! test -f "build/$file" || test "build/$file" -ot "$file" ;then
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  93)       echo "Compress $file"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  94)       compress_img "$file" "$TMP_STORE/$name"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  95)       mv "$TMP_STORE/$name" "$DIR/build/$file" #mv is atomic. No partial/failed file.
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  96)       cp "$DIR/build/$file" "$DIR/_site/$file"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  97)     fi
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  98)     cp "$DIR/build/$file" "$DIR/_site/$file"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200  99)   done < <(find "static" -type f \( -iname "*.jpg" -o -iname "*.png" \) -print0)
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200 100)   rm -rf "$TMP_STORE"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200 101) }
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200 102) 
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 103) build_srcset(){
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 104)   local f=$(echo "$1"|sed 's/src\/img\///') #remove prefix
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 105)   local d=$(dirname "$f") #get subdir to create it if necessary
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 106)   local filename=$(basename "$f")
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 107)   local extension="${filename##*.}"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 108)   local name="${filename%.*}"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 109)   local out="build/img/$d/${name}"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 110)   if [ ! -d build/img/$d ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 111)     mkdir -p "build/img/$d"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 112)   fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 113)   if ${make_force} || [ ! -f "${out}.jpg" ] || [ "${out}.jpg" -ot "$1" ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 114)     echo "Processing $file "
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 115)     if [ "$extension" == "xcf" ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 116)       xcf2png "$1" -o "${out}_uc2x.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 117)     elif [ "$extension" == "psd" ] ; then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 118)       convert "${1}[0]"  "${out}_uc2x.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 119)     elif [ "$extension" == "png" ] ; then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 120)       cp "$1" "${out}_uc2x.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 121)     elif [ "$extension" == "ai" ] ;then
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 122)       convert "ai:${1}" +antialias "${out}_uc2x.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 123)     else
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 124)       echo "invalid file : $1"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 125)       return
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 126)     fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 127)     ${pngcrush} -y "${out}_uc2x.png" "${out}_2x.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 128)     convert -quality 1 -resize 50% "${out}_uc2x.png" "${out}_uc.png"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 129)     ${pngcrush} -y "${out}_uc.png" "${out}.png"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200 130)     convert $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}_2x.jpg"
+98c76517 (Sebastien Dumetz 2017-06-30 11:28:23 +0200 131)     convert -resize 50% $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}.jpg"
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 132)     #remove uncompressed assets
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 133)     rm "${out}_uc"*
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 134)   fi
+36eb7570 (Sebastien Dumetz 2017-06-29 17:15:55 +0200 135) }
