@@ -9,7 +9,7 @@ tags: evenementiel, formation, focus
 
 <p class="rtecenter"><img alt="Museohub 2016 avec les hologrammes" src="/static/img/posts/futur-en-seine/fens16_banniere_haut.jpg" style="width: 100%; height: 100%;" /></p>
 
-<p class="rtejustify"><a href="http://www.futur-en-seine.paris/" target="_blank">Futur en Seine</a> a encore une fois réuni de nombreuses marques innovantes du 09 au 19 juin 2016 à Paris. De nouveaux usages en réalité augmentée ou réalité virtuelle ont fait leur apparition lors de ce rendez-vous incontournable de l'innovation. Parmis eux, des usages culturels s'appuient sur les nouvelles technologies afin de préserver le patrimoine. Il s'agit de <a href="http://www.futur-en-seine.paris/programme/bagdad-3d/" target="_blank">Bagdad 3D</a>, un projet accompagné par Holusion durant cette semaine enrichissante.</p>
+<p class="rtejustify"><a href="https://www.futuresfestivals.com" target="_blank">Futur en Seine</a> a encore une fois réuni de nombreuses marques innovantes du 09 au 19 juin 2016 à Paris. De nouveaux usages en réalité augmentée ou réalité virtuelle ont fait leur apparition lors de ce rendez-vous incontournable de l'innovation. Parmis eux, des usages culturels s'appuient sur les nouvelles technologies afin de préserver le patrimoine. Il s'agit de Bagdad 3D, un projet accompagné par Holusion durant cette semaine enrichissante.</p>
 
 
 <div class="row">
@@ -34,7 +34,7 @@ tags: evenementiel, formation, focus
   <div class="col-md-6 col-xs-12">
     <h2>Les hologrammes au service de la culture</h2>
 
-    <p class="rtejustify">Sceau et écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="http://holusion.com/fr/solution/focus">Focus</a> a permis au visiteur de visualiser les images innovantes à 360°.</p>
+    <p class="rtejustify">Sceau et écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="/fr/products/focus">Focus</a> a permis au visiteur de visualiser les images innovantes à 360°.</p>
 
     <p class="rtejustify">Ce dernier a surtout pu donné du sens et faire le lien entre le contenu et la technologie de l'hologramme. En prenant tout son sens, l'hologramme a permis à chacun de s'immerger dans l'univers de Bagdad. Le partenariat entre Bagdad 3D et Holusion a donc contribué à donner vie à un contenu passionnant.</p>
 

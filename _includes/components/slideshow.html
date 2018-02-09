@@ -3,13 +3,13 @@
   <div class="slides">
     <img class="img-responsive" src="{{contents[0].image}}" {%if contents[0].image2x %} data-src-2x="{{contents[0].image2x}}"{%endif%}>
     {% for post in contents | offset: 1 |limit: 11 %}
-      <img class="img-responsive" data-src="{{post.image}}" {%if post.image2x %}data-src-2x="{{post.image2x}}"{%endif%}>
+      <img class="img-responsive" src="{{post.image}}" {%if post.image2x %}data-src-2x="{{post.image2x}}"{%endif%}>
     {% endfor %}
   </div>
 </div>
 {% unless has_slideshow %}
 {% assign has_slideshow=true %}
-<script defer>
+<script defer async>
   //We're not in a hurry...
   var loaded = 0;
   function onload(){

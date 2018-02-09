@@ -1,7 +1,6 @@
 
 
-{% include utils/base.html %}
-{% capture href %}{{base}}/{{include.url}}/{% endcapture %}
+{% capture href %}/{{page.lang}}/{{include.url}}/{% endcapture %}
 {% if include.title[page.lang] %}
   {% assign title = include.title[page.lang] %}
 {% else %}

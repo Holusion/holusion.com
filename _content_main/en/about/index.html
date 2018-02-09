@@ -32,8 +32,8 @@ layout: front_page
   </div>
   <div class="col-md-6">
       <h3>Personalised support</h3>
-      <p>You want to create an innovating project to enhance your business but you do not yet have a precise idea ? We are here to recommend you and to guide you in the choice of <a href="http://holusion.com/en/our-solutions-product">your solution</a> as well as in the creation of custom products !</p>
-      <p>All ready a hologram specialist ? Our <a href="http://dev.holusion.com/en/index">online technical resources</a> will make you go even further.</p>
+      <p>You want to create an innovating project to enhance your business but you do not yet have a precise idea ? We are here to recommend you and to guide you in the choice of <a href="/en/products">your solution</a> as well as in the creation of custom products !</p>
+      <p>All ready a hologram specialist ? Our <a href="https://dev.holusion.com/en/">online technical resources</a> will make you go even further.</p>
 
       <h3>Innovative positioning</h3>
       <p>Holusion has an <strong>industrial vision</strong> of its business : its ambition is to democratize holographic solutions. But Holusion develops more and more <strong>a strong consulting dimension</strong>. The company assists its clients and influencers to develop an adapted and successful project.</p>
@@ -92,55 +92,76 @@ layout: front_page
       </div>
 
     </div>
-  </section>
+</section>
 
-  <section id="section-equipe" class="section section-equipe" style="padding:30px 0px 50px 0px;background-color:#eeeeee;">
-  	<div class="container">
-  		<div class="row">
-        <h1 align="center" style="padding-bottom: 20px">The team</h1>
-        <div class="content view-team" align="center">
-          {% include components/team_member_portrait.html
-            img="/static/img/front/portraits/tguillaumont.jpg"
-            name="Thibault Guillaumont"
-            title="Founder and CEO"
-          %}
-          {% include components/team_member_portrait.html
-            img="/static/img/front/portraits/sdumetz.png"
-            name="Sebastien Dumetz"
-            title="Founder and CTO"
-          %}
-          {% include components/team_member_portrait.html
-            name="Aline Neznal"
-            title="Communication manager"
-          %}
-          {% include components/team_member_portrait.html
-            name="Yann Dubois"
-            title="Developper"
-          %}
-          {% include components/team_member_portrait.html
-            name="Mélissa Houyez"
-            title="3D Graphic Designer"
-          %}
+<section id="section-equipe" class="section section-equipe" style="padding:30px 0px 50px 0px;background-color:#eeeeee;">
+	<div class="container">
+		<div class="row">
+      <h1 align="center" style="padding-bottom: 20px">The team</h1>
+      <div class="content view-team" align="center">
+        {% include components/team_member_portrait.html
+          img="/static/img/front/portraits/tguillaumont.jpg"
+          name="Thibault Guillaumont"
+          title="Founder and CEO"
+        %}
+        {% include components/team_member_portrait.html
+          img="/static/img/front/portraits/sdumetz.png"
+          name="Sebastien Dumetz"
+          title="Founder and CTO"
+        %}
+        {% include components/team_member_portrait.html
+          name="Aline Neznal"
+          title="Communication manager"
+        %}
+        {% include components/team_member_portrait.html
+          name="Yann Dubois"
+          title="Developper"
+        %}
+        {% include components/team_member_portrait.html
+          name="Mélissa Houyez"
+          title="3D Graphic Designer"
+        %}
 
-        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section id="section-clients" align="center">
+  <h1 align="center" style="padding-bottom: 20px"> Our partners</h1>
+
+  <div class="container">
+    <div class="row" style="padding-bottom: 30px" align="center">
+      <div class="col-lg-3 col-md-6">
+        <img alt="Cap digital" class="img-responsive" src="/static/img/front/sponsors/cap-digital.jpg"/>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img alt="Picom" class="img-responsive" src="/static/img/front/sponsors/picom.jpg"/>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img alt="Plaine images" class="img-responsive" src="/static/img/front/sponsors/plaine-image.jpg"/>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img alt="Tonic incubation Lille" class="img-responsive" src="/static/img/front/sponsors/tonic.jpg"/>
       </div>
     </div>
 
-  </section>
-  <section id="section-clients">
-    <div class="container">
-      <h1 align="center" style="padding-bottom: 20px"> Our Partners</h1>
-        <div align="center">
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/cap-digital.jpg" alt="Cap Digital Paris" url="http://capdigital.com" %}
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/picom.jpg" alt="PICOM" url="http://www.picom.fr" %}
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/plaine-image.gif" alt="Plaine Images" url="http://www.plaine-images.fr" %}
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/tonic.jpg" alt="Tonic Incubation" url="http://www.tonic-incubation.com/" %}
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/BPI.png" alt="BPI France" url="http://www.bpifrance.fr/" %}
-        </div>
-        <div align="center" style="padding-top: 30px">
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/LMI.png" alt="Lille Métropole Investissement Innovation" url="http://www.lmi-innovation-creation.fr/" %}
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/jef.png" alt="Jef Label" url="http://jeflabel.com/" %}
-          {% include components/sponsor_portrait.html img="/static/img/front/sponsors/bizspark.jpg" alt="Jef Label" url="https://bizspark.microsoft.com/" %}
-        </div>
+
+    <div class="row" style="padding-bottom: 30px" align="center">
+      <div class="col-lg-3 col-md-6">
+        <img alt="BPI France" class="img-responsive" src="/static/img/front/sponsors/bpi.jpg"/>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img alt="LMI" class="img-responsive" src="/static/img/front/sponsors/lmi.jpg"/>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img alt="JEF label" class="img-responsive" src="/static/img/front/sponsors/jef.jpg"/>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img alt="Bizspark" class="img-responsive" src="/static/img/front/sponsors/bizspark.jpg"/>
+      </div>
+    </div>
+
   </div>
+
 </section>
