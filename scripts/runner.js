@@ -13,13 +13,17 @@ const MAX_PRODUCTS_NUMBER = 10;
 
 
 const target = process.env["TARGET"];
-const href = (target == "local")? "http://localhost:4005" : target;
 
 const options = {
   //headless:false,
   args:["--no-sandbox"]
 };
 
+/**
+ * Utility function to speed up tests
+ * Block selected resources by category
+ * Categories are : images, medias, analytics, captcha
+ */
 async function block(page, types){
   await page.setRequestInterception(true);
   page.on('request', interceptedRequest => {
@@ -50,7 +54,13 @@ async function block(page, types){
 describe(`${target}`,function(){
   let browser;
   let server = null;
-  before(async() => {
+  // We pre-set href because it's used to declare tests before "before()" is run.
+  // However the ad-hoc port is appended once the server is online.
+  // This allow us to use dynamic port numbers.
+  // Otherwise tests would crash when run concurrently on the same host
+  let href = (target == "local")? "http://localhost" : target;
+
+  before(async function(){
     expect(target).to.be.ok;
     if (target == "local"){
       let serve = serveStatic(path.resolve(__dirname,'../_site'), {
@@ -60,7 +70,9 @@ describe(`${target}`,function(){
       server = http.createServer(function onRequest (req, res) {
         serve(req, res, finalhandler(req, res))
       });
-      await util.promisify(server.listen.bind(server))(4005);
+      await util.promisify(server.listen.bind(server))(0);
+      href += ":"+ server.address().port;
+      console.log("listening on : ",href);
     }
     return await puppeteer.launch(options).then(async (b) => {
       browser = b;
