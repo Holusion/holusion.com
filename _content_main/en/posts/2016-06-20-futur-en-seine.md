@@ -9,7 +9,7 @@ tags: evenementiel, formation, focus
 
 <p class="rtecenter"><img alt="Museohub 2016 avec les hologrammes" src="/static/img/posts/futur-en-seine/fens16_banniere_haut.jpg" style="width: 100%; height: 100%;" /></p>
 
-<p class="rtejustify"><a href="http://www.futur-en-seine.paris/" target="_blank">Futur en Seine</a> brought once again innovative brands together from the 9th to the 19th of june 2016 in Paris. During this unavoidable innovation meeting, new uses of augmented and virtual reality have appeared. Among them, cultural uses are relying on new technologies in order to preserve heritage. It is <a href="http://www.futur-en-seine.paris/programme/bagdad-3d/" target="_blank">Bagdad 3D</a>, a project that Holusion supported during this fulfilling week.</p>
+<p class="rtejustify"><a href="https://www.futuresfestivals.com" target="_blank">Futur en Seine</a> brought once again innovative brands together from the 9th to the 19th of june 2016 in Paris. During this unavoidable innovation meeting, new uses of augmented and virtual reality have appeared. Among them, cultural uses are relying on new technologies in order to preserve heritage. It is Bagdad 3D, a project that Holusion supported during this fulfilling week.</p>
 
 
 <div class="row">
@@ -34,7 +34,7 @@ tags: evenementiel, formation, focus
   <div class="col-md-6 col-xs-12">
     <h2>Holograms serving the culture</h2>
 
-    <p class="rtejustify">Seal and wedge-shaped writing have appeared in hologram. The <a href="http://holusion.com/en/solution/focus">Focus</a> allowed the visitors to see the novative pictures in 360°.</p>
+    <p class="rtejustify">Seal and wedge-shaped writing have appeared in hologram. The <a href="/en/products/focus">Focus</a> allowed the visitors to see the novative pictures in 360°.</p>
 
     <p class="rtejustify">This device linked together the actual content and the hologram technology. The hologram took all its sense by allowing everyone to immerse in the Bagdad universe. The Bagdad 3D partnership with Holusion contribued to a very interesting content.</p>
 

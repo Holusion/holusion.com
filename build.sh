@@ -157,10 +157,12 @@ fi
 #
 ${make_check} && bundle exec htmlproofer _site \
 --assume-extension \
---alt-ignore "/static\/img\/products\/.*/" \
+--alt-ignore "/.*/" \
 --check-favicon \
 --checks-to-ignore ScriptCheck \
---file-ignore "/vendor/,/static\/fonts\/.*.html/"
+--url-ignore "/www.lavoixdunord.fr/,/www.louvrelens.fr/,/www.futuresfestivals.com/,/www.linkedin.com/,/videos.lesechos.fr/" \
+--file-ignore "/vendor/,/static\/fonts\/.*.html/,/posts\/index.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
+#we ignore posts/index.html because the slideshow is dynamically loaded and img elements have no src.
 
 # Integration End-To-End tests
 # if $integration_target=local, will start a local web server to test from `_site`
