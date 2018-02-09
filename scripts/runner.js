@@ -138,6 +138,9 @@ describe(`${target}`,function(){
         })
         after(async ()=>{
           await storePage.close();
+          for (let cell of thumb_cells){
+            cell.dispose();
+          }
         })
         it(`has a title with reasonable length`,async ()=>{
           const title = await storePage.$eval("TITLE",h => h.innerText);
@@ -187,7 +190,39 @@ describe(`${target}`,function(){
             });
           }
         })
+      }) //END of store tests
+      describe(`GET /${lang}/posts/`,()=>{
+        let storePage;
+        let thumb_cells;
+        before(async ()=>{
+          storePage = await browser.newPage();
+          await block(storePage, ["medias", "analytics", "captcha"]);
+          await storePage.goto(`${href}/${lang}/store/`,{timeout:6000});
+            thumb_cells = await storePage.$$(".thumbnail-cell");
+
+          });
+        after(async ()=>{
+          await storePage.close();
+          for (let cell of thumb_cells){
+            cell.dispose();
+          }
+        });
+        it(`has thumbnails`,()=>{
+          expect(thumb_cells).to.have.property("length").above(1);
+        })
+        it(`thumbnails have 16:9 aspect ratio`, async ()=>{
+          await Promise.all(thumb_cells.map(async (cell)=>{
+            const thumb = await cell.$("IMG");
+            const size = await thumb.boundingBox();
+            let expected_width = Math.floor(size.height*16/9);
+            expect(size.height).to.be.above(10); //Abritrary "acceptable" number
+            //Ignore rounding errors
+            expect(size.width).to.be.within(expected_width,expected_width+1);
+          }));
+        });
       })
     });
-  });
+
+  }); //END of localized tests
+
 });
