@@ -9,7 +9,9 @@ usageStr(){
   echo -e "Valid options :"
   echo -e "\t-t --test : Enable checks with html-proofer"
   echo -e "\t-i --integration \"target\" : run integration tests on target"
-  echo -e "\t\t(imply --no-build)"
+  echo -e "\t\tuse target \"local\" to test on ./_site/ files"
+  echo -e "\t\t(imply --no-build if target != local)"
+  echo -e "\t-e --extended : extended integration tests"
   echo -e "\t-f --force : Force assets rebuild"
   echo -e "\t-w --watch : Use jekyll serve mode"
   echo -e "\t-d --dev : makes dev.holusion.com instead of holusion.com"
@@ -46,7 +48,12 @@ do
           exit
         fi
         #Integration runs on target and does not trigger a build
-        make_build=false
+        if test "x$integration_target" != "xlocal" ;then
+          make_build=false
+        fi
+      ;;
+      -e|--extenbded)
+        RUN_EXTENDED_TESTS=1
       ;;
       -f|--force)
         make_force=true

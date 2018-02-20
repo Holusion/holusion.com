@@ -1,23 +1,31 @@
 'use strict';
-const puppeteer = require('puppeteer');
-const serveStatic = require("serve-static");
-const finalhandler = require('finalhandler');
 const http = require('http');
 const path = require("path");
-const expect = require("chai").expect;
 const url = require('url');
 const util = require('util');
+const fs = require("fs");
+
+const puppeteer = require('puppeteer');
+//Tools to serve the site locally
+const serveStatic = require("serve-static");
+const finalhandler = require('finalhandler');
+//XML parser for sitemap.xml test & analysis
+const parseString = require('xml-parser');
+const expect = require("chai").expect;
 
 const MIN_PRODUCTS_NUMBER = 4;
 const MAX_PRODUCTS_NUMBER = 10;
 
+const local_site_files = path.resolve(__dirname,'../_site');
 
 const target = process.env["TARGET"];
-
+const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
   //headless:false,
   args:["--no-sandbox"]
 };
+
+console.log("Extended tests : ", is_extended);
 
 /**
  * Utility function to speed up tests
@@ -63,7 +71,7 @@ describe(`${target}`,function(){
   before(async function(){
     expect(target).to.be.ok;
     if (target == "local"){
-      let serve = serveStatic(path.resolve(__dirname,'../_site'), {
+      let serve = serveStatic(local_site_files, {
         'index': ['index.html', 'index.htm'],
         'extensions': ["html"]
       });
@@ -224,5 +232,49 @@ describe(`${target}`,function(){
     });
 
   }); //END of localized tests
+  /**
+   * End of standard tests
+   */
+   if (!is_extended) return;
+  describe(`Extended tests`,function(){
+    const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
+    before(function(){
+      expect(sitemap.root).to.have.property("name", "urlset");
+      expect(sitemap.root).to.have.property("children").to.be.an("array").that.have.property("length").above(50);
+    });
+    let locations = sitemap.root.children.map((node)=>{
+      return node.children.find((child)=>{
+        return child.name == "loc";
+      }).content
 
+    })
+    .filter(n => n)
+    .filter((loc)=>{
+      //remove pdf files
+      return ! /\.(pdf|xml)$/.test(loc)
+    })
+    .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc)
+    for (let loc of locations){
+      describe(`${loc}`,function(){
+        let page;
+        let ln = loc;
+        before(async ()=>{
+          //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
+          ln = `${(target == "local")?href :""}${loc}`;
+          page = await browser.newPage();
+          await block(page,["images", "medias", "analytics", "captcha"]);
+          return await page.goto(`${ln}`);
+        });
+        after(async()=>{
+          return await page.close();
+        });
+        it("have correct canonical link",async ()=>{
+          let ln = `${(target == "local")?href :""}${loc}`;
+          let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
+          expect(c_link).to.equal(ln);
+          return c_link;
+        });
+      });
+    }
+  });
 });

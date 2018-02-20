@@ -20,6 +20,7 @@
     "mocha-jenkins-reporter": "0.3.9",
     "puppeteer": "^0.13.0",
     "request": "^2.81.0",
-    "serve-static": "^1.13.1"
+    "serve-static": "^1.13.1",
+    "xml-parser": "^1.2.1"
   }
 }
