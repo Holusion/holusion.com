@@ -1,5 +1,6 @@
 ---
 layout:
+sitemap: false
 ---
 <?php
 

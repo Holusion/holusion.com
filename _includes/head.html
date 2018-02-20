@@ -38,12 +38,10 @@
     <meta property="og:locale" content="{{page.lang}}"/>
   {% endif %}
 
-  {% if site.url %}
   <link rel="canonical" href="{{page.url | absolute_url }}">
-    {% if page.alt_url %}
-    <link rel="alternate" hreflang="{{page.alt_lang}}" href="{{page.alt_url | absolute_url }}">
-    <link rel="alternate" hreflang="{{page.lang}}" href="{{page.url |absolute_url }}">
-    {% endif %}
+  {% if page.alt_url %}
+  <link rel="alternate" hreflang="{{page.alt_lang}}" href="{{page.alt_url | absolute_url }}">
+  <link rel="alternate" hreflang="{{page.lang}}" href="{{page.url |absolute_url' }}">
   {% endif %}
 
   <!-- CSS Loading -->
