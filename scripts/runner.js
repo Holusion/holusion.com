@@ -45,6 +45,7 @@ async function block(page, types){
       || interceptedRequest.url.endsWith('.ogv')
       || interceptedRequest.url.endsWith('.webm')
       || interceptedRequest.url.indexOf("youtube.com") != -1
+      || interceptedRequest.url.indexOf("www.ultimedia.com") != -1
     )) || (types.indexOf("analytics") != -1 &&(
       interceptedRequest.url.indexOf("google-analytics.com") != -1
     ))|| (types.indexOf("captcha") != -1 &&(
@@ -260,7 +261,7 @@ describe(`${target}`,function(){
         let ln = loc;
         before(async ()=>{
           //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
-          ln = `${(target == "local")?href :""}${loc}`;
+          ln = path.join(href,loc);
           page = await browser.newPage();
           await block(page,["images", "medias", "analytics", "captcha"]);
           return await page.goto(`${ln}`);
@@ -269,9 +270,8 @@ describe(`${target}`,function(){
           return await page.close();
         });
         it("have correct canonical link",async ()=>{
-          let ln = `${(target == "local")?href :""}${loc}`;
           let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
-          expect(c_link).to.equal(ln);
+          expect(c_link.replace(/^https?:\/\/[^\/]+/, "")).to.equal(loc);
           return c_link;
         });
       });
