@@ -3,45 +3,14 @@ layout: front_page
 title: Home page
 lang: fr
 ---
-<section class="section section-video">
-  <div id="video-wrapper">
-    {% include components/medias/home_page_video.html
-      name="home_video"
-      image="/static/img/products/pixel_car.jpg"
-      %}
+<section class="section section-main-header">
+  <div id="main-header-wrapper">
+    <img src="/build/img/home_sections/cafe_design_2x.jpg">
   </div>
 
-  <div class="video-overlay" style="">
-    <div class="video-overlay-text">
+  <div class="main-header-overlay" style="">
+    <div class="main-header-overlay-text">
       Créateur d'expériences digitales innovantes
-    </div>
-  </div>
-</section>
-<section id="section-promotion">
-  <h1 style="padding-top: 20px" align="center" id="main-title-1" >
-    Achetez votre hologramme en ligne
-  </h1>
-  <div class="container" align="center">
-    <p>
-      Holusion crée des expériences inédites autour de vos marques et produits. Les solutions d'affichages innovantes et interactives, tels que l'hologramme, vous permettent de découvrir de façon ludique des concepts, des produits et des projets.
-    </p>
-    <p><a href="/fr/about/">En découvrir plus sur l'entreprise > </a></p>
-  </div>
-  <div class="container">
-
-    <div class="row" style="padding-top: 40px">
-      <div class="col-md-6" align="center">
-        <a href="/fr/products/pixel"><img alt="Pixel papillon" class="img-responsive" src="/static/img/products/pixel_papillon2.jpg"></a>
-      </div>
-      <div class="col-md-6" >
-        <h3>Impressionnez vos proches, clients et collaborateurs</h3>
-        <p>Le <a href="/fr/products/pixel">PIXEL</a> laisse apparaître des images en lévitation au dessus de votre smartphone et de votre tablette. Emmenez-le partout avec vous pour impressionner votre entourage. L'<a href="/fr/products/opal">OPAL</a> est quant à lui notre nouvel hologramme une face pour tablettes. Vous pouvez placer des objets derrière sa surface inclinée et créer votre propre univers.
-        Trouvez-les en ligne directement :</p>
-
-        <p align="center" style="padding-top: 20px">
-          {% include shop/store-fab.html %}
-        </p>
-      </div>
     </div>
   </div>
 </section>
@@ -61,35 +30,52 @@ lang: fr
   </div>
 </section>
 
-<section id="section-usages" >
-  <div class="container">
-    <h1 align="center" id="main-title-1" style="padding-top: 20px">Usages interactifs</h1>
-
- <a href="usages#apprendre"><div style="background: url('/static/img/usages/focus_interactif_formation.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
-      <font size="6pt"><h3 style="color:white;">APPRENDRE</h3></font>
- </div></a>
-
- <a href="usages#percevoir"><div style="background: url('/static/img/usages/prism_interactif_catalogue.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
-   <font size="6pt"><h3 style="color:white;">PERCEVOIR</h3></font>
- </div></a>
-
- <a href="usages#transformer"><div style="background: url('/static/img/usages/prism_interactif_transformer.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
-   <font size="6pt"><h3 style="color:white;">TRANSFORMER</h3></font>
- </div></a>
-
-    <div align="right">
-      <a href="/fr/usages/">Découvrir les usages > </a>
-    </div>
+<section id="section-gamme" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/opal_2x.jpg">
+  </div>
+  <div class="home-page-text">
+    <h3>En ligne ou sur mesure</h3>
+    <p>holusion propose une large gamme de produits en vente ou location.
+      Cette gamme, de l'holgoramme de poche à celui de 2 mètres de large permet de répondre au mieux à toutes les demandes
+    </p>
   </div>
 </section>
 
-<section id="section-accompagnement" >
-  <div class="container">
-    <h1 align="center" id="main-title-1" style="padding-top: 20px">Une entreprise, un accompagnement</h1>
-    <p align="center"><a href="/fr/about/"><img alt="Schéma notre accompagnement" class="img-responsive" src="/build/img/front/accompagnement_fr_2x.png" width="800" height="700" style="padding: 20px 0px 10px 0px;" /></a></p>
-    <div align="right">
-      <a href="/fr/about/">Découvrir l'entreprise > </a>
-    </div>
+<section id="section-interactive" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/design_2x.jpg">
+  </div>
+  <div class="home-page-text">
+    <h3>Interactivité</h3>
+    <p>holusion se démarque en proposant des solutions interactives. Reconnaissance gestuelle, capteurs sans contacts, interfaces tactiles.
+      Prenez les commandes de vos hologrammes en temps réel.
+    </p>
+  </div>
+</section>
+
+<section id="section-accompagnement" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/cafe_design.jpg">
+  </div>
+  <div class="home-page-text">
+    <h3> Accompagnement </h3>
+    <p>holusion c'est aussi un accompagnement du premier contact à la réalisation finale du projet.
+      Nous formons nos clients pour qu'ils puissent utiliser nos technologies en toute sérénité
+    </p>
+  </div>
+</section>
+
+<section id="section-production" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/prism_2x.jpg">
+  </div>
+  <div class="home-page-text">
+    <h3> Made in France</h3>
+    <p>holusion siège dans les hauts de france à Tourcoing.
+      Vous pouvez retrouver nos bureaux à la Plaine Images, un site dédié aux industries numériques et créatives.
+    </p>
+    <p>Holusion est labellisée French Tech depuis 2016</p>
   </div>
 </section>
 
