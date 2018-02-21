@@ -2,130 +2,124 @@
   layout: front_page
   title: Holusion - Home
   lang: en
+  image: /build/img/home_sections/cafe_design.jpg
+  image2x: /build/img/home_sections/cafe_design_2x.jpg
 ---
 <section class="section section-main-header">
   <div id="main-header-wrapper">
-    {% include components/medias/home_page_video.html
-      name="home_video"
-      image="/static/img/products/pixel_car.jpg"
-      %}
+    <img src="/build/img/home_sections/cafe_design.jpg" srcset="/build/img/home_sections/cafe_design.jpg 1920w, /build/img/home_sections/cafe_design_2x.jpg 3840w">
   </div>
-  <div class="video-overlay" style="">
-        <div class="video-overlay-text">
-          Create digital user experiences
-        </div>
-  </div>
-</section>
 
-<section id="section-promotion">
-  <h1 align="center" id="main-title-1" >
-    Buy your hologram online
-  </h1>
-  <div class="container" align="center">
-    <p>
-      Holusion is creating new experiences for your brand and your products. Innovative and creative display solutions, such as the hologram, make you discover concepts, products and projects in a playful way.
-  </div>
-  <div class="container">
-
-    <div class="row" style="padding-top: 30px">
-      <div class="col-md-6" align="center">
-        <a href="/fr/products/pixel"><img alt="Pixel papillon" class="img-responsive" src="/static/img/products/pixel_papillon2.jpg"></a>
-      </div>
-      <div class="col-md-6" >
-        <h3>The handheld holograms</h3>
-        <p>The <a href="/fr/products/pixel">PIXEL</a> allows you to display floating pictures above your smartphone. Take it everywhere to impress people around you. Buy it right online :</p>
-
-        <p align="center" style="padding-top: 20px">
-          {% include shop/store-fab.html %}
-        </p>
-      </div>
+  <div class="main-header-overlay" style="">
+    <div class="main-header-overlay-text">
+      Digital user experiences creator
     </div>
   </div>
 </section>
 
 <section id="section-produits" >
   <div class="container">
-    <h1 align="center" id="main-title-1" >Our products</h1>
-      <div class="row">
-        {% include utils/make_products.html %}
-        {% for product in products limit:4 %}
-        {% include components/post_thumbnail.html content=product %}
-        {% endfor %}
-      </div>
+    <h1 align="center" id="main-title-1" style="padding-top: 40px">Our products</h1>
+    <div class="row">
+      {% include utils/make_products.html %}
+      {% for product in products limit:4 %}
+      {% include components/post_thumbnail.html content=product %}
+      {% endfor %}
+    </div>
     <div align="right">
       <a href="/fr/products/">More products > </a>
     </div>
   </div>
 </section>
 
-<section id="section-usages" >
-  <div class="container">
-    <h1 align="center" id="main-title-1" >Use Cases</h1>
-
-    <a href="usages#apprendre"><div style="background: url('/static/img/usages/focus_interactif_formation.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
-         <font size="6pt"><h3 style="color:white;">LEARN</h3></font>
-    </div></a>
-
-    <a href="usages#percevoir"><div style="background: url('/static/img/usages/prism_interactif_catalogue.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
-      <font size="6pt"><h3 style="color:white;">PERCEIVE</h3></font>
-    </div></a>
-
-    <a href="usages#transformer"><div style="background: url('/static/img/usages/prism_interactif_transformer.jpg') center/cover;width:100%;height:240px;padding-top:90px;text-align:center;margin-bottom:20px;">
-      <font size="6pt"><h3 style="color:white;">TRANSFORM</h3></font>
-    </div></a>
-    <div align="right">
-      <a href="/fr/usages/">More use cases > </a>
-    </div>
+<section id="section-gamme" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+  </div>
+  <div class="home-page-text">
+    <h3>En ligne ou sur mesure</h3>
+    <p>holusion has a large offering of products to buy or rent. It ranges from pocket-sized to 2 meters wide holograms.
+    </p>
   </div>
 </section>
 
-<section id="section-accompagnement" >
-  <div class="container">
-    <h1 align="center" id="main-title-1" style="padding: 30px 0px 10px 0px">A company, an individual support</h1>
-    <p align="center"><a href="/en/about/"><img alt="Individual support Holusion" class="img-responsive" src="/build/img/front/accompagnement_en_2x.png" width="800" height="700" style="padding: 20px 0px 10px 0px;" /></a></p>
-    <div align="right">
-      <a href="/fr/about/">Discover the company > </a>
-    </div>
+<section id="section-interactive" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/design.jpg" srcset="/build/img/home_sections/design.jpg 960w, /build/img/home_sections/design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+  </div>
+  <div class="home-page-text">
+    <h3>Interactivité</h3>
+    <p>holusion is offering interactive solutions with motion control, near field communication or tactile interfaces. You can change and control your holograms in real time.
+    </p>
+  </div>
+</section>
+
+<section id="section-accompagnement" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/design.jpg" srcset="/build/img/home_sections/design.jpg 960w, /build/img/home_sections/design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+  </div>
+  <div class="home-page-text">
+    <h3> Accompagnement </h3>
+    <p>holusion will be helping you from first contact to final set-up of your projects. We teach our clients everythin g there is to know for daily use of our products.
+    </p>
+  </div>
+</section>
+
+<section id="section-production" class="home-page-section">
+  <div class="home-page-image">
+    <img class="img-responsive" src="/build/img/home_sections/prism.jpg" srcset="/build/img/home_sections/prism.jpg 960w, /build/img/home_sections/prism_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+  </div>
+  <div class="home-page-text">
+    <h3> Made in France</h3>
+    <p>holusion is based in north of France, in Plaine Images, a cluster dedicated to high technologies and creative industries</p>
+    <p>holusion is labelled as a <b>French tech</b> startup since 2016</p>
   </div>
 </section>
 
 <section id="section-stories">
   <div class="container">
-    <h1 align="center" id="main-title-1" >Dive in our clients' stories</h1>
+    <h1 align="center" id="main-title-1" style="padding-top: 20px">Discover our user stories</h1>
     {% include utils/make_posts.html %}
     {% for post in  posts offset: 0 limit: 4 %}
-      {% include components/post_thumbnail.html content=post %}
+    {% include components/post_thumbnail.html content=post %}
     {% endfor %}
     <div align="right">
-      <a href="/fr/posts/">More stories > </a>
+      <a href="/fr/posts/">View more > </a>
     </div>
   </div>
 </section>
-<section id="section-contact">
+<section id="section-contact" style="padding-top:30px;">
   <div class="container">
-    <div class="row">
+    <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
+      <meta itemprop="name" content="holusion" />
+      <meta itemprop="logo" url="{{site.url}}/static/img/logo.png" />
       <div class="col-md-6 col-sm-12">
-        <h3>Our Adress</h3>
+        <h3 style="padding-bottom: 10px">Come to meet us :</h3>
         {% include components/maps_api.html %}
       </div>
       <div class="col-md-6 col-sm-12">
-        <h3>Contact Us</h3>
+        <h3 style="padding-bottom: 10px">Contact us :</h3>
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-            +33 (0)9 72 42 44 51
+            <span itemprop="telephone">+33 (0)9 72 42 44 51</span>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-            99A Bvd Constantin Descat, 59200 Tourcoing - France
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>,
+              <span itemprop="postalCode">59200</span>
+              <span itemprop="addressLocality">Tourcoing</span>,
+              <span itemprop="addressCountry">France</span>
+            </span>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-            <a class="contact-link">contact@holusion.com</a>
+            <a itemprop="email" class="contact-link">contact@holusion.com</a>
           </div>
         </div>
       </div>
