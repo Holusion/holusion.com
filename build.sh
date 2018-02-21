@@ -167,7 +167,7 @@ ${make_check} && bundle exec htmlproofer _site \
 --alt-ignore "/.*/" \
 --check-favicon \
 --checks-to-ignore ScriptCheck \
---url-ignore "/www.lavoixdunord.fr/,/www.louvrelens.fr/,/www.futuresfestivals.com/,/www.linkedin.com/,/videos.lesechos.fr/,/lilleauxstartups.com/,/museomix.org/,/holusion.com" \
+--url-ignore "/www.lavoixdunord.fr/,/www.louvrelens.fr/,/www.futuresfestivals.com/,/www.linkedin.com/,/videos.lesechos.fr/,/lilleauxstartups.com/,/museomix.org/,/holusion.com/" \
 --file-ignore "/vendor/,/static\/fonts\/.*.html/,/posts\/index.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
 #we ignore posts/index.html because the slideshow is dynamically loaded and img elements have no src.
 #Absolute links to holusion.com are ignored
