@@ -52,8 +52,8 @@ do
           make_build=false
         fi
       ;;
-      -e|--extenbded)
-        RUN_EXTENDED_TESTS=1
+      -e|--extended)
+        export RUN_EXTENDED_TESTS=1
       ;;
       -f|--force)
         make_force=true
