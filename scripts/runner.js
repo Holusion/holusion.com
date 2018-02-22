@@ -63,6 +63,26 @@ async function block(page, types, filter){
     }
   });
 }
+//Take an array of {src, "prop"} objects and group them by "prop" value
+// Example usage : Make an array of image widths.
+//                  If result.length == 1, all ilmages have the same size
+//                  Otherwise, you know the faulty image
+function prettySet(slides, prop){
+  let s = new Set(slides.map(slide =>slide[prop]));
+  let map = []
+  for (let dim of s.values()) {
+    let srcs = slides.filter(slide => slide[prop] == dim).map(slide => slide.src);
+    map.push(`${dim} : ${srcs.join(", ")}`);
+  }
+  return map
+}
+
+async function getImgSize(img){
+  const src = await img.getProperty("src").then(v => v.jsonValue());
+  const width = await img.getProperty("naturalWidth").then(v => v.jsonValue());
+  const height = await img.getProperty("naturalHeight").then(v => v.jsonValue());
+  return { src, width, height};
+}
 
 describe(`${target}`,function(){
   let browser;
@@ -280,14 +300,11 @@ describe(`${target}`,function(){
           expect(thumb_cells).to.have.property("length").above(1);
         })
         it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          await Promise.all(thumb_cells.map(async (cell)=>{
-            const thumb = await cell.$("IMG");
-            const size = await thumb.boundingBox();
-            let expected_width = Math.floor(size.height*16/9);
-            expect(size.height).to.be.above(10); //Abritrary "acceptable" number
-            //Ignore rounding errors
-            expect(size.width).to.be.within(expected_width,expected_width+1);
+          let images = await Promise.all(thumb_cells.map(async (cell)=>{
+            return await getImgSize(await cell.$("IMG"));
           }));
+          let ratios = prettySet(images.map(img=> Object.assign(img,{ratio:img.width/img.height})), "ratio");
+          expect(ratios, `Have non-unique ratio : \n\t${ratios.join("\n\t")}`).to.have.property("length", 1);
         });
         describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
           //We don't know in advance the size of our array
@@ -341,17 +358,9 @@ describe(`${target}`,function(){
                 expect(slides,
                   `have unreasonable carousel length in ${links[i]}`
                 ).to.have.property("length").above(1).below(10);
-                function prettyMap(slides, prop){
-                  let s = new Set(slides.map(slide =>slide[prop]));
-                  let map = []
-                  for (let dim of s.values()) {
-                    let srcs = slides.filter(slide => slide[prop] == dim).map(slide => slide.src);
-                    map.push(`${dim} : ${srcs.join(", ")}`);
-                  }
-                  return map
-                }
-                let widths = prettyMap(slides,"width")
-                let heights = prettyMap(slides,"height")
+
+                let widths = prettySet(slides,"width")
+                let heights = prettySet(slides,"height")
                 expect(widths, `Have multiple different heights : \n\t${widths.join("\n\t")}`).to.have.property("length",1);
                 expect(heights, `Have multiple different heights : \n${heights.join("\n")}`).to.have.property("length",1);
 
