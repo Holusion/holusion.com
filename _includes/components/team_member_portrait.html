@@ -1,8 +1,9 @@
 {%capture image_url %}/build/img/portraits/{{include.img |default: "default" }}{%endcapture%}
 <div class="team-portrait">
   <div class="views-field views-field-field-image">
-    <div class="field-content" style="background: url({{image_url}}_Holo.jpg) center/cover no-repeat;">
-      <img typeof="foaf:Image" src="{{image_url}}.jpg" srcset="{{image_url}}_2x.jpg 2x, {{image_url}}.jpg" alt="{%if include.img %}{{include.name}}{%else%}default{%endif%} portrait" width="256" height="256" alt="">
+    <div class="field-content" style='background-image: url({{image_url}}_Holo.jpg);'>
+
+      <img typeof="foaf:Image" src="{{image_url}}.jpg" srcset="{{image_url}}_2x.jpg 512w, {{image_url}}.jpg 256w" alt="{%if include.img %}{{include.name}}{%else%}default{%endif%} portrait" width="256" height="256" sizes="256px" alt="">
       <i class="circle-border"></i>
     </div>
   </div>
