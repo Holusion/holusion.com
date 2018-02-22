@@ -31,9 +31,13 @@ console.log("Extended tests : ", is_extended);
  * Utility function to speed up tests
  * Block selected resources by category
  * Categories are : images, medias, analytics, captcha
+ * can also have an additional filter that return true on requests to be intercepted
  */
-async function block(page, types){
+async function block(page, types, filter){
   await page.setRequestInterception(true);
+  if(typeof filter !== "function"){
+    filter = _ => false;
+  }
   page.on('request', interceptedRequest => {
     //console.log(interceptedRequest.url);
     if(
@@ -50,7 +54,7 @@ async function block(page, types){
       interceptedRequest.url.indexOf("google-analytics.com") != -1
     ))|| (types.indexOf("captcha") != -1 &&(
       interceptedRequest.url.indexOf("gstatic.com") != -1
-    ))
+    )) || filter(interceptedRequest.url)
     ){
       //console.log("Aborted : ",interceptedRequest.url)
       interceptedRequest.respond("");
@@ -132,7 +136,8 @@ describe(`${target}`,function(){
         let storePage;
         let thumb_cells;
         let links;
-        before(async ()=>{
+        this.timeout(20000);
+        before(async function(){
           storePage = await browser.newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:6000});
@@ -144,6 +149,7 @@ describe(`${target}`,function(){
             await handle.dispose();
             return link;
           }));
+          return links;
         })
         after(async ()=>{
           await storePage.close();
@@ -185,17 +191,32 @@ describe(`${target}`,function(){
 
           //We don't know in advance the size of our array
           for(let i=0;i<MAX_PRODUCTS_NUMBER;i++){
-            it(`test link [${i}]`,async ()=>{
-              if (links.length <= i) return Promise.resolve();
-              let link = links[i];
-              let page = await browser.newPage();
-              await block(page,["images", "medias", "analytics", "captcha"]);
-              await page.goto(`${link}`);
-              const btn = await page.$(".button.snipcart-add-item");
-              const id = await page.$eval(".button.snipcart-add-item", b=>b.getAttribute("data-item-id"));
-              expect(id).to.be.a("string");
-              expect(id).to.match(/^[\w+_]+(FR|EN)$/);
-              await page.close();
+            describe(`test product [${i}]`,function(){
+              let page;
+              before(async function(){
+                if (links.length <= i) {
+                  this.skip();
+                  return Promise.resolve();
+                }
+                let link = links[i];
+                console.log(link);
+                page = await browser.newPage();
+                await block(page,["images", "medias", "analytics", "captcha"]);
+                return await page.goto(`${link}`);
+              })
+              after(async function(){
+                if (page){
+                  return await page.close();
+                }else{
+                  return Promise.resolve();
+                }
+
+              });
+              it("has snipcart buttons",async ()=>{
+                const id = await page.$eval(".button.snipcart-add-item", b=>b.getAttribute("data-item-id"));
+                expect(id).to.be.a("string");
+                expect(id).to.match(/^[\w+_]+(FR|EN)$/);
+              });
             });
           }
         })
@@ -229,6 +250,115 @@ describe(`${target}`,function(){
             expect(size.width).to.be.within(expected_width,expected_width+1);
           }));
         });
+      })
+      describe(`GET /${lang}/products/`,function(){
+        let storePage;
+        let thumb_cells;
+        let links;
+        this.timeout(20000);
+        before(async ()=>{
+          storePage = await browser.newPage();
+          await block(storePage, ["medias", "analytics", "captcha"]);
+          await storePage.goto(`${href}/${lang}/products/`,{timeout:6000});
+          thumb_cells = await storePage.$$(".thumbnail-cell");
+          links = await Promise.all(thumb_cells.map(async (cell)=>{
+            let a = await cell.$("A");
+            let handle = await a.getProperty("href");
+            let link = await handle.jsonValue();
+            await handle.dispose();
+            return link;
+          }));
+          return;
+        });
+        after(async ()=>{
+          for (let cell of thumb_cells){
+            cell.dispose();
+          }
+          return await storePage.close();
+        });
+        it(`has thumbnails`,()=>{
+          expect(thumb_cells).to.have.property("length").above(1);
+        })
+        it(`thumbnails have 16:9 aspect ratio`, async ()=>{
+          await Promise.all(thumb_cells.map(async (cell)=>{
+            const thumb = await cell.$("IMG");
+            const size = await thumb.boundingBox();
+            let expected_width = Math.floor(size.height*16/9);
+            expect(size.height).to.be.above(10); //Abritrary "acceptable" number
+            //Ignore rounding errors
+            expect(size.width).to.be.within(expected_width,expected_width+1);
+          }));
+        });
+        describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
+          //We don't know in advance the size of our array
+          for(let i=0;i<MAX_PRODUCTS_NUMBER;i++){
+            describe(`test product [${i}]`,function(){
+              let page;
+              before(async function(){
+                let link = links[i];
+                if (links.length <= i || /products\/$/.test(link)) {
+                  this.skip();
+                  return Promise.resolve();
+                }
+                console.log(link);
+                page = await browser.newPage();
+                await block(page,["medias", "analytics", "captcha"],function(url){
+                  return url == "/vendor/ideal-image-slider/ideal-image-slider.min.js";
+                });
+                return await page.goto(`${link}`);
+              })
+              after(async function(){
+                if (page){
+                  return await page.close();
+                }else{
+                  return Promise.resolve();
+                }
+              });
+              it("has carousel with all identical images",async ()=>{
+                const slides = await page.$$eval(".slides>A.iis-slide",(slides)=>{
+                  let res = [];
+                  for (let elem of slides){
+                    let src = elem.getAttribute("data-src");
+                    let width = parseInt(elem.getAttribute("data-actual-width"))
+                    let height = parseInt(elem.getAttribute("data-actual-height"))
+                    if (width && height){
+                      //Image has already been loaded
+                      res.push( Promise.resolve ({src, width, height}));
+                    }else{
+                      res.push(new Promise((resolve, reject)=>{
+                        let img = new Image();
+                        img.onload = ()=>{
+                          resolve({src: src, width: img.naturalWidth, height: img.naturalHeight});
+                        }
+                        img.src = src;
+                        document.body.appendChild(img); //Necessary?
+                      }));
+                    }
+                  }
+                  return Promise.all(res);
+                });
+
+                expect(slides,
+                  `have unreasonable carousel length in ${links[i]}`
+                ).to.have.property("length").above(1).below(10);
+                function prettyMap(slides, prop){
+                  let s = new Set(slides.map(slide =>slide[prop]));
+                  let map = []
+                  for (let dim of s.values()) {
+                    let srcs = slides.filter(slide => slide[prop] == dim).map(slide => slide.src);
+                    map.push(`${dim} : ${srcs.join(", ")}`);
+                  }
+                  return map
+                }
+                let widths = prettyMap(slides,"width")
+                let heights = prettyMap(slides,"height")
+                expect(widths, `Have multiple different heights : \n\t${widths.join("\n\t")}`).to.have.property("length",1);
+                expect(heights, `Have multiple different heights : \n${heights.join("\n")}`).to.have.property("length",1);
+
+              });
+            });
+          }
+        })
       })
     });
 
