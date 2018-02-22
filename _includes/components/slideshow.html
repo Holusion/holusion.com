@@ -1,9 +1,9 @@
 {% assign contents = include.contents %}
 <div id="slider" >
   <div class="slides">
-    <img class="img-responsive" src="{{contents[0].image}}" {%if contents[0].image2x %} data-src-2x="{{contents[0].image2x}}"{%endif%}>
+    <img class="img-responsive" src="{{contents[0].image}}" alt="{{contents[0].title}}" {%if contents[0].image2x %} data-src-2x="{{contents[0].image2x}}"{%endif%}>
     {% for post in contents | offset: 1 |limit: 11 %}
-      <img class="img-responsive" src="{{post.image}}" {%if post.image2x %}data-src-2x="{{post.image2x}}"{%endif%}>
+      <img class="img-responsive" alt="{{post.title}}" src="{{post.image}}" {%if post.image2x %}data-src-2x="{{post.image2x}}"{%endif%}>
     {% endfor %}
   </div>
 </div>
