@@ -66,7 +66,7 @@ a{
 .home-page-image {
   flex-grow: 1;
   width: 50%;
-  padding: 0 4%;
+  padding: 0 38px;
   max-height: 60vh;
   overflow: hidden;
   display:flex;
@@ -81,8 +81,11 @@ a{
 .home-page-text{
   flex-grow: 1;
   font-size: 2.5rem;
-  padding: 8%;
+  padding: 20px 8%;
   width:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-page-text h3{
@@ -90,7 +93,7 @@ a{
   font-size: 3.5rem;
   text-align: left;
   text-transform: uppercase;
-  margin: 20px 0;
+  margin: 20px 0 25px 0;
   font-weight: normal;
 }
 
@@ -110,6 +113,7 @@ a{
   .home-page-text{
     width: 80%;
     margin: auto;
+    font-size: 2rem;
   }
   .home-page-image{
     padding: 0;
@@ -120,6 +124,7 @@ a{
   .home-page-text{
     width: 100%;
     padding: 0 20px;
+    min-height:30vh;
   }
 }
 

@@ -14,7 +14,7 @@
     <a href = "{{content.url}}">
       {% if content.image %}
         <img src="{{content.image}}"
-          {% if content.image2x %} srcset="{{content.image2x}} 2x, {{content.image}}" {% endif %} alt="{{content.title}}">
+          {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{content.title}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
       {% else %}
         <img src="/static/img/posts/default.jpg" alt="{{content.title}}">
       {% endif %}
