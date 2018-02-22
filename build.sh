@@ -166,12 +166,16 @@ ${make_check} && bundle exec htmlproofer _site \
 --assume-extension \
 --alt-ignore "/.*/" \
 --check-favicon \
+--check-opengraph \
 --checks-to-ignore ScriptCheck \
---url-ignore "/www.lavoixdunord.fr/,/www.louvrelens.fr/,/www.futuresfestivals.com/,/www.linkedin.com/,/videos.lesechos.fr/,/lilleauxstartups.com/,/museomix.org/,/holusion.com/" \
---file-ignore "/vendor/,/static\/fonts\/.*.html/,/posts\/index.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
-#we ignore posts/index.html because the slideshow is dynamically loaded and img elements have no src.
-#Absolute links to holusion.com are ignored
-# otherwise, newly created pages get an error due to their canonical links
+--only-4xx \
+--disable-external \
+--internal-domains "holusion.com,test.holusion.com" \
+--file-ignore "/vendor/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
+
+${make_check} && test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
+--file-ignore "/vendor/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
+
 
 
 # Integration End-To-End tests
