@@ -7,7 +7,7 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
 ---
 <section class="section section-main-header">
   <div id="main-header-wrapper">
-    <img src="/build/img/home_sections/cafe_design.jpg" srcset="/build/img/home_sections/cafe_design.jpg 1920w, /build/img/home_sections/cafe_design_2x.jpg 3840w">
+    <img src="/build/img/home_sections/header.jpg" srcset="/build/img/home_sections/header.jpg 1920w, /build/img/home_sections/header_2x.jpg 3840w">
   </div>
 
   <div class="main-header-overlay" style="">
@@ -19,7 +19,7 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
 
 <section id="section-produits" >
   <div class="container-fluid">
-    <h1 align="center" id="main-title-1" style="padding-top: 40px">Nos produits</h1>
+    <h1 align="center" id="main-title-1" style="padding-top: 40px;text-transform: uppercase;">Nos produits</h1>
     <div class="row">
       {% include utils/make_products.html %}
       {% for product in products limit:4 %}
@@ -34,19 +34,19 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
 
 <section id="section-gamme" class="home-page-section">
   <div class="home-page-image">
-    <img class="img-responsive" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    <img class="img-responsive" src="/build/img/home_sections/prism.jpg" srcset="/build/img/home_sections/prism.jpg 960w, /build/img/home_sections/prism_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
   </div>
   <div class="home-page-text">
     <h3>En ligne ou sur mesure</h3>
     <p>holusion propose une large gamme de produits en vente ou location.
-      Cette gamme, de l'holgoramme de poche à celui de 2 mètres de large permet de répondre au mieux à toutes les demandes
+      Cette gamme, de l'hologramme de poche à celui de 2 mètres de large permet de répondre au mieux à toutes les demandes
     </p>
   </div>
 </section>
 
 <section id="section-interactive" class="home-page-section">
   <div class="home-page-image">
-    <img class="img-responsive" src="/build/img/home_sections/design.jpg" srcset="/build/img/home_sections/design.jpg 960w, /build/img/home_sections/design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    <img class="img-responsive" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
   </div>
   <div class="home-page-text">
     <h3>Interactivité</h3>
@@ -70,7 +70,7 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
 
 <section id="section-production" class="home-page-section">
   <div class="home-page-image">
-    <img class="img-responsive" src="/build/img/home_sections/prism.jpg" srcset="/build/img/home_sections/prism.jpg 960w, /build/img/home_sections/prism_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    <img class="img-responsive" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine images.jpg 960w, /build/img/home_sections/plaine images_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
   </div>
   <div class="home-page-text">
     <h3> Made in France</h3>
@@ -82,8 +82,8 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
 </section>
 
 <section id="section-stories">
-  <div class="container">
-    <h1 align="center" id="main-title-1" style="padding-top: 20px">Plongez-vous dans nos histoires</h1>
+  <div class="container-fluid">
+    <h1 align="center" id="main-title-2" style="padding-top: 20px;text-transform: uppercase;">Plongez-vous dans nos histoires</h1>
     {% include utils/make_posts.html %}
     {% for post in  posts offset: 0 limit: 4 %}
     {% include components/post_thumbnail.html content=post %}
@@ -94,7 +94,7 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
   </div>
 </section>
 <section id="section-contact" style="padding-top:30px;">
-  <div class="container">
+  <div class="container-fluid">
     <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
       <meta itemprop="name" content="holusion" />
       <meta itemprop="logo" url="{{site.url}}/static/img/logo.png" />
