@@ -1,26 +1,13 @@
 #!/bin/bash
-pngcrush="$(pwd)/build/zopflipng" #default value
+
 
 #takes build directory as argument.
 install_optimizers(){
   set -e
-  local build_dir="$1"
-  pngcrush="$1/zopflipng"
-
   #check presence of system-wide commands
   command -v convert >/dev/null 2>&1 || { echo >&2 "convert from imagemagick package is required but it's not installed.  Aborting."; exit 1; }
   command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
   command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
-
-  if [ ! -f "${pngcrush}" ] ;then
-    #download and build zopflipng
-    local tmp=$(mktemp -d)
-    local zopfli_version="1.0.1"
-    curl -XGET -L -q "https://github.com/google/zopfli/archive/zopfli-${zopfli_version}.tar.gz" -o "${tmp}/zopfli-${zopfli_version}.tar.gz"
-    cd "$tmp" && tar -zxf "zopfli-${zopfli_version}.tar.gz"
-    cd "$tmp/zopfli-zopfli-${zopfli_version}" && make zopflipng && mv zopflipng "${pngcrush}"
-    rm -rf "$tmp"
-  fi
 }
 
 build_webm(){
@@ -124,9 +111,9 @@ build_srcset(){
       echo "invalid file : $1"
       return
     fi
-    ${pngcrush} -y "${out}_uc2x.png" "${out}_2x.png"
+    compress_img "${out}_uc2x.png" "${out}_2x.png"
     convert -quality 1 -resize 50% "${out}_uc2x.png" "${out}_uc.png"
-    ${pngcrush} -y "${out}_uc.png" "${out}.png"
+    compress_img "${out}_uc.png" "${out}.png"
     convert $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}_2x.jpg"
     convert -resize 50% $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}.jpg"
     #remove uncompressed assets

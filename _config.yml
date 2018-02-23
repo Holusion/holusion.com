@@ -16,7 +16,7 @@ exclude:
   - "build/static"
 highlighter: rouge
 incremental: true
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-inline-svg
