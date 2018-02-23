@@ -1,5 +1,6 @@
 .rs {
   display:inline-block;
+  padding-right:3px;
 }
 
 .rs div{
@@ -12,10 +13,11 @@
   height:24px;
   display:inline-block;
   float:left;
-  margin-right: 3px;
-
 }
-.rs div:hover{
+.rs div, .rs div.invert:hover{
+  background-position: 0px 0px;
+}
+.rs div:hover, .rs div.invert{
   background-position: 0px -24px;
 }
 

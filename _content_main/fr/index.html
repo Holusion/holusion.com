@@ -6,14 +6,15 @@ image: /build/img/home_sections/cafe_design.jpg
 image2x: /build/img/home_sections/cafe_design_2x.jpg
 ---
 <section class="section section-main-header">
-  <div id="main-header-wrapper">
-    <img src="/build/img/home_sections/header.jpg" srcset="/build/img/home_sections/header.jpg 1920w, /build/img/home_sections/header_2x.jpg 3840w">
+  <div class="main-header-image-wrapper">
+    <img class="img-responsive" src="/build/img/home_sections/header.jpg" srcset="/build/img/home_sections/header.jpg 1920w, /build/img/home_sections/header_2x.jpg 3840w">
   </div>
 
-  <div class="main-header-overlay" style="">
-    <div class="main-header-overlay-text">
+  <div class="main-header-overlay">
+    <h1 class="main-header-overlay-text">
       Créateur d'expériences digitales innovantes
-    </div>
+    </h1>
+    {% include social_list.html %}
   </div>
 </section>
 
@@ -70,7 +71,7 @@ image2x: /build/img/home_sections/cafe_design_2x.jpg
 
 <section id="section-production" class="home-page-section">
   <div class="home-page-image">
-    <img class="img-responsive" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine images.jpg 960w, /build/img/home_sections/plaine images_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    <img class="img-responsive" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine%20image.jpg 960w, /build/img/home_sections/plaine%20image_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
   </div>
   <div class="home-page-text">
     <h3> Made in France</h3>
