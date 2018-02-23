@@ -130,6 +130,7 @@ describe(`${target}`,function(){
     describe(`${lang}`,function(){
 
       describe("Can load index aliases",function(){
+        this.timeout(6000);
         beforeEach(async function(){
           this.page = await browser.newPage();
           await block(this.page,["images", "medias", "analytics", "captcha"]);
