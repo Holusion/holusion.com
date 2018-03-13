@@ -41,11 +41,12 @@ convert_video(){
 }
 
 #Generic optimized compress image options
-# Use unquoted to generate those parameters
+# Use unquoted to generate those parameters, like $(compress_img_opts)
+# Can provide an optional "interlace" parameter
 compress_img_opts(){
-  echo '-filter Triangle -define filter:support=2 -unsharp 0.25x0.25+8+0.065 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB -strip'
+  echo '-filter Triangle -define filter:support=2 -unsharp 0.25x0.25+8+0.065 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace None -colorspace sRGB -strip'
 }
-# compress_img "input.png" "output.png"
+# compress_img "in.png" "out.(png|jpg)"
 compress_img(){
   convert $(compress_img_opts) "$1" "$2"
 }
@@ -111,11 +112,10 @@ build_srcset(){
       echo "invalid file : $1"
       return
     fi
-    compress_img "${out}_uc2x.png" "${out}_2x.png"
-    convert -quality 1 -resize 50% "${out}_uc2x.png" "${out}_uc.png"
-    compress_img "${out}_uc.png" "${out}.png"
-    convert $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}_2x.jpg"
-    convert -resize 50% $(compress_img_opts) "${out}_2x.png" -flatten -background white "${out}.jpg"
+    convert $(compress_img_opts) "${out}_uc2x.png" "${out}_2x.png"
+    convert -resize 50% $(compress_img_opts) "${out}_uc2x.png" "${out}.png"
+    convert $(compress_img_opts) -interlace Plane "${out}_uc2x.png" -flatten -background white "${out}_2x.jpg"
+    convert -resize 50% $(compress_img_opts) -interlace Plane "${out}_uc2x.png" -flatten -background white "${out}.jpg"
     #remove uncompressed assets
     rm "${out}_uc"*
   fi
