@@ -81,7 +81,8 @@ async function getImgSize(img){
   const src = await img.getProperty("src").then(v => v.jsonValue());
   const width = await img.getProperty("naturalWidth").then(v => v.jsonValue());
   const height = await img.getProperty("naturalHeight").then(v => v.jsonValue());
-  return { src, width, height};
+  const ok = Number.isInteger(width) && Number.isInteger(height) && 0 < width && 0 < height;
+  return { src, width, height, ok};
 }
 
 describe(`${target}`,function(){
@@ -304,6 +305,10 @@ describe(`${target}`,function(){
           let images = await Promise.all(thumb_cells.map(async (cell)=>{
             return await getImgSize(await cell.$("IMG"));
           }));
+          images.forEach((img)=>{
+            expect(img.ok, `${img.src} is not OK (probably: does not exists)`).to.be.true;
+          });
+          //console.log(images);
           let ratios = prettySet(images.map(img=> Object.assign(img,{ratio:img.width/img.height})), "ratio");
           expect(ratios, `Have non-unique ratio : \n\t${ratios.join("\n\t")}`).to.have.property("length", 1);
         });
