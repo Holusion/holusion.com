@@ -9,7 +9,11 @@
       console.info("Google analytics tracking rejected");
        window['ga-disable-'+tracking] = true;
     }
-    document.querySelector(".cc-banner").style.display = "none";
+    var banner =  document.querySelector(".cc-banner")
+    if (banner)
+      banner.style.display = "none";
+    else if (!this.hasConsented())
+      console.warn("No cookieconsent banner on this page");
   }
   var cc = document.createElement("SCRIPT");
   cc.src = '/vendor/cookieconsent/cookieconsent.3.0.3.min.js';
