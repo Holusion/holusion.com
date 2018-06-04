@@ -1,13 +1,46 @@
 @import "colors";
 
-.cc_banner{
-  background-color: $deep-blue;
+.cc-banner{
+  background: $deep-blue;
+  color: #fff;
+  font-size: 17px;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.cc_btn{
-  background-color: $light-blue!important;
-  color: $white!important;
+@media screen and (min-width: 768px){
+  .cc-banner {
+    padding: 15px 30px 15px;
+  }
 }
-.cc_btn:hover{
-  color: $black!important;
+
+.cc-banner.cc-static{
+  position:fixed;
+  bottom:0;
+  z-index: 1000;
+}
+
+.cc-compliance{
+  padding-left: 15px;
+}
+.cc-btn{
+  font-size: 32px;
+  line-height: 21px;
+  vertical-align: middle;
+  padding: 0 12px;
+  font-weight: bold;
+}
+.cc-btn.cc-deny{
+  color:$dark-blue;
+}
+.cc-btn:hover{
+  color: $white!important;
+  text-decoration: none;
+}
+
+.cc-invisible{
+  display: none;
 }

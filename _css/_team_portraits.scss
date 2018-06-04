@@ -26,6 +26,7 @@
 }
 .view-team .views-field-field-image img {
   opacity:0;
+  object-fit: none;
 }
 .view-team .views-field-field-image:hover img{
   opacity:1;

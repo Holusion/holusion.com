@@ -1,18 +1,43 @@
-{% if site.env == "production" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48469340-1"></script>
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script async type="text/javascript">
-    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-bottom"};
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-48469340-1', 'auto');
-    ga('send', 'pageview');
-
+<script defer type="text/javascript">
+  var tracking = 'UA-48469340-1';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function registerGa(status){
+    if(!this.hasConsented()){
+      console.info("Google analytics tracking rejected");
+       window['ga-disable-'+tracking] = true;
+    }
+    var banner =  document.querySelector(".cc-banner")
+    if (banner)
+      banner.style.display = "none";
+    else if (!this.hasConsented())
+      console.warn("No cookieconsent banner on this page");
+  }
+  var cc = document.createElement("SCRIPT");
+  cc.src = '/vendor/cookieconsent/cookieconsent.3.0.3.min.js';
+  cc.async = true;
+  cc.onload = function(){
+    console.log("cookieconsent loaded")
+    window.cookieconsent.initialise({
+      type: "opt-out",
+      container: document.body,
+      revokable: false,
+      static: true,
+      content:{
+        message: "{{site.data.strings.cookieconsent[page.lang]}}",
+        link: "{{site.data.strings.read-more[page.lang]}}",
+        href: 'http://cookiesandyou.com',
+        dismiss: "&#x2713;",
+        deny: "&times;",
+      },
+      onStatusChange: registerGa,
+      onInitialise: registerGa
+    });
+  }
+  document.head.appendChild(cc);
+  // Those will be ignored if ga-disable is set.
+  gtag('js', new Date());
+  gtag('config', tracking);
 </script>
-
-<script async type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-<!-- End Cookie Consent plugin -->
-{% endif %}
