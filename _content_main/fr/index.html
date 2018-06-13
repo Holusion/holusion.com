@@ -18,20 +18,22 @@ image2x: /build/img/home_sections/prism_2x.jpg
   </div>
 </section>
 
-<section id="section-produits" >
-  <div class="container-fluid">
+<section id="section-produits" class="hidden-xs">
+  <div class="container-fluid ">
     <h1 align="center" id="main-title-1" style="padding-top: 40px;text-transform: uppercase;"> <a href="/en/products/">Nos produits</a></h1>
     <div class="row">
       {% include utils/make_products.html %}
       {% for product in products limit:4 %}
-      {% include components/post_thumbnail.html content=product %}
+      {% include components/post_thumbnail.html content=product classes="col-md-3 col-sm-6" %}
       {% endfor %}
     </div>
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="/fr/products/">Plus de produits > </a>
     </div>
   </div>
 </section>
+
+<!-- begin tiles -->
 
 <section id="section-gamme" class="home-page-section">
   <div class="home-page-image">
@@ -42,7 +44,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
     <p>holusion propose une large gamme de produits, à la vente comme à la location.
       De l'hologramme de poche à celui de 2 mètres de large, nous pouvons répondre au mieux à toutes les demandes
     </p>
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="/fr/products/">Découvrir tous nos produits</a>
     </div>
   </div>
@@ -57,7 +59,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
     <p>holusion se démarque en proposant des solutions interactives. Reconnaissance gestuelle, capteurs sans contacts, interfaces tactiles.
       Prenez les commandes de vos hologrammes en temps réel.
     </p>
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="/fr/posts/">Regarder nos réalisations</a>
     </div>
   </div>
@@ -72,7 +74,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
     <p>holusion vous accompagne du premier contact à la réalisation finale dans tous vos projets de création.
     </p>
     <p>L'hologramme vous permettra de susciter l'émotion que vous recherchez et transmettre votre message de manière interactive et indélébile.</p>
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="/fr/usages/">Découvrir nos conseils</a>
     </div>
   </div>
@@ -87,7 +89,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
     <p>holusion vous donnera toutes les ressources nécessaires pour que vous puissiez utiliser et réutiliser nos technologies en toute sérénité
     </p>
     <p>Un écosystème ouvert vous permettra de faire évoluer votre produit au cours de son exploitation</p>
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="https://dev.holusion.com/fr/">Holusion pour les créateurs</a>
     </div>
   </div>
@@ -103,7 +105,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
       Vous pouvez retrouver nos bureaux à la Plaine Images, un site dédié aux industries numériques et créatives.
     </p>
     <p>Holusion est labellisée French Tech depuis 2016</p>
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="/fr/about/">En savoir plus</a>
     </div>
   </div>
@@ -116,11 +118,14 @@ image2x: /build/img/home_sections/prism_2x.jpg
     {% for post in  posts offset: 0 limit: 4 %}
     {% include components/post_thumbnail.html content=post %}
     {% endfor %}
-    <div align="right">
+    <div class="home-page-text-link">
       <a href="/fr/posts/">Découvrir plus d'histoires > </a>
     </div>
   </div>
 </section>
+
+<!-- end of tiled page -->
+
 <section id="section-contact" style="padding-top:30px;">
   <div class="container-fluid">
     <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
