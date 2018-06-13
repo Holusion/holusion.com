@@ -1,5 +1,5 @@
 {%capture image_url %}/build/img/portraits/{{include.img |default: "default" }}{%endcapture%}
-<div class="team-portrait">
+<a class="team-portrait" {%if include.url%} href="{{include.url}}"{% endif %}>
   <div class="views-field views-field-field-image">
     <div class="field-content" style='background-image: url({{image_url}}_Holo.jpg);'>
 
@@ -15,4 +15,4 @@
   <div class="views-field views-field-field-job-title">
     <div class="field-content">{{include.title}}</div>
   </div>
-</div>
+</a>
