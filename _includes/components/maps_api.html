@@ -1,35 +1,36 @@
 <div id="map" style="height:250px"></div>
     <script>
       function initMap() {
-        var mycoord = {lat: 50.7005965, lng: 3.1551021};
+        var markerCoord = {lat: 50.7005965, lng: 3.1551021};
+        var centerCoord = {lat: 50.4, lng:  markerCoord.lng};
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: mycoord,
+          center: centerCoord,
           scrollwheel: false,
-          zoom: 4
+          zoom: 6,
+          styles: [
+            {featureType: "water", stylers:[{color:"#005380"}]},
+            { featureType:"administrative.country", elementType:"geometry.stroke", stylers:[{color: "#337ab7"}]},
+            { featureType:"landscape.natural.terrain", stylers:[{color: "#dddddd"}]},
+            { featureType:"landscape.natural.landcover", stylers:[{color: "#eeeeee"}]},
+            { featureType:"landscape.man_made", stylers:[{color: "#cccccc"}]},
+            { featureType:"road", stylers:[{"visibility": "off"}]},
+            { featureType:"administrative", elementType: "labels.text.fill", stylers:[{color:"#103040"}]}
+          ]
         });
 
         var marker = new google.maps.Marker({
           map: map,
-          position: mycoord,
-          title: 'holusion, Plaine Images - Tourcoing (France)'
+          position: markerCoord,
+          title: 'holusion, Plaine Images - Tourcoing (France)',
+          icon: "{{site.url}}/static/img/icons/location_marker.svg"
         });
-        contentString = '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h5 id="firstHeading" class="firstHeading">Holusion</h5>'+
-          '<div id="bodyContent">'+
-            '<p><a href="plaine-images.fr"><b>Plaine Images</b></a>, 59200 TOURCOING (France)</p>'+
-          '</div>'+
-        '</div>';
-        var infowindow = new google.maps.InfoWindow({
-         content: contentString
-        });
+
         marker.addListener('click', function() {
-          infowindow.open(map, marker);
+          window.open("https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJX7_iud8ow0cRKwrMErNTtGA&destination={{"99A Bvd Constantin Descat 59200 Tourcoing"| uri_escape}}", "_blank");
         });
       }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIEL9m3FmbeHy_3vrwCCj4rAQK5pgIki4&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjUr9-qg7UJHp7FWKDgg-6iXpIE8kH3qo&callback=initMap"
     async defer></script>
