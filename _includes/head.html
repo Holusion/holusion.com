@@ -19,7 +19,7 @@
     <meta name="description" content="{{ page.abstract|truncatewords:155 }}" />
     <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297}}"/>
   {% else %}
-    <meta name="description" content="Global index of ressources for holusion" />
+    <meta name="description" content="{{site.data.strings.site-description[page.lang]}}" />
   {% endif %}
   {% if page.image %}
     {% if page.image2x %}
