@@ -62,12 +62,14 @@
       <div class="form-group">
         <button type="submit" class="form-control btn btn-default">Submit</button>
       </div>
+      {% if site.recaptcha_public %}
       <div class="g-recaptcha"
         data-sitekey="{{site.recaptcha_public}}"
         data-size="invisible"
         data-badge="inline"
         data-callback="onValidated">
       </div>
+      {%endif%}
     </form>
     <script async defer src="/static/js/contact.js"></script>
 </section>
