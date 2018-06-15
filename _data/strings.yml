@@ -1,7 +1,9 @@
 site-title: #titre utilisé en meta "title" du site
   fr: holusion.com
   en: holusion.com
-
+site-description:
+  fr: Découvrez les nouvelles générations d'hologrammes, simples et accessibles
+  en: Discover the new holograms, easy and accessible for everyone
 lang: #mot à utiliser pour le choix de langue
   fr: Langue
   en: Language
