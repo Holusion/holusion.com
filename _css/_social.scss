@@ -1,8 +1,13 @@
 .rs {
   display:inline-block;
-  padding-right:3px;
+  padding: 1px;
+  border-radius: 2px;
+  display: flex;
 }
 
+.rs >*{
+  margin:1px;
+}
 .rs div{
   background-repeat: no-repeat;
   background-size: 24px 48px;
