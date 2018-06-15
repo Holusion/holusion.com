@@ -132,13 +132,13 @@ a{
 }
 
 /* alternate right and left */
-.home-page-section:nth-of-type(2n+1){
+.home-page-section:nth-of-type(2n){
   flex-direction: row-reverse;
   .home-page-image{
     padding-left: 0px;
   }
 }
-.home-page-section:nth-of-type(2n){
+.home-page-section:nth-of-type(2n+1){
 
   .home-page-image{
     padding-right: 0px;
