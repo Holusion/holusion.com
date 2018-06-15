@@ -52,7 +52,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
 
   <section id="section-interactive" class="home-page-section">
     <div class="home-page-image">
-      <img class="img-responsive" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      <img class="img-responsive" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
     </div>
     <div class="home-page-text">
       <h3>Interactif</h3>
@@ -95,6 +95,26 @@ image2x: /build/img/home_sections/prism_2x.jpg
     </div>
   </section>
 
+  <section id="section-accessible" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-responsive" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Accessible</h3>
+      <p>
+        Transférez vos créations en quelques instants et administrez vos contenus sur nos produits
+      </p>
+      <div class="home-page-text-link">
+        <a href="https://github.com/Holusion/stargazer">Gérez vos produits avec <em>Stargazer</em></a>
+      </div>
+      <p>
+        Mettez en ligne vos créations sur notre plateforme pour les rendre visibles
+      </p>
+      <div class="home-page-text-link">
+        <a href="https://pixel.holusion.com">Découvrez notre plateforme mobile</a>
+      </div>
+    </div>
+  </section>
   <section id="section-production" class="home-page-section">
     <div class="home-page-image">
       <img class="img-responsive" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine%20image.jpg 960w, /build/img/home_sections/plaine%20image_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
@@ -113,7 +133,7 @@ image2x: /build/img/home_sections/prism_2x.jpg
 </main>
 <section id="section-stories">
   <div class="container-fluid">
-    <h1 align="center" id="main-title-2" style="padding-top: 20px;text-transform: uppercase;">Plongez-vous dans nos histoires</h1>
+    <h1 align="center" id="main-title-2" style="padding-top: 20px;text-transform: uppercase;">Découvrez nos cas clients</h1>
     {% include utils/make_posts.html %}
     {% for post in  posts offset: 0 limit: 4 %}
     {% include components/post_thumbnail.html content=post %}
