@@ -7,9 +7,7 @@
 .thumbnail-cell{
   padding:5px;
 }
-.thumbnail a>img{
-  min-height:155px;
-}
+
 .card, .thumbnail a{
   position:relative;
   display:block;
@@ -29,6 +27,10 @@
   text-decoration:none;
 }
 .thumbnail img{
+  object-fit: cover;
+  display:block;
+  width: 100%;
+  height:auto;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }

@@ -6,6 +6,7 @@ const util = require('util');
 const fs = require("fs");
 
 const puppeteer = require('puppeteer');
+const devices = require('puppeteer/DeviceDescriptors');
 //Tools to serve the site locally
 const serveStatic = require("serve-static");
 const finalhandler = require('finalhandler');
@@ -79,6 +80,7 @@ function prettySet(slides, prop){
   return map
 }
 
+
 async function getImgSize(img){
   const src = await img.getProperty("src").then(v => v.jsonValue());
   const width = await img.getProperty("naturalWidth").then(v => v.jsonValue());
@@ -87,11 +89,82 @@ async function getImgSize(img){
   return { src, width, height, ok};
 }
 
+async function force16by9(cells){
+  let images = await Promise.all(cells.map(async (cell)=>{
+    return await getImgSize(await cell.$("IMG"));
+  }));
+  //Catch dividebyzero errors
+  images.forEach((img)=>{
+    expect(img.ok, `${img.src} is not OK (probably: does not exists)`).to.be.true;
+  });
+  //console.log(images);
+  const ratios = prettySet(images.map(img=> {
+    let ratio = img.width/img.height;
+    ratio = Math.trunc(ratio*10)/10;
+    return Object.assign(img, { ratio })
+  }), "ratio");
+  // allow a length of 1.
+  expect(ratios, `Have non-unique ratio : \n\t${ratios.join("\n\t")}`).to.have.property("length", 1);
+  return images;
+}
+
+//Default : run only on small and large "dekstop"
+const target_devices = [
+  {
+    'name': 'small Desktop Chrome 66',
+    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'viewport': {
+      'width': 800,
+      'height': 600,
+      'deviceScaleFactor': 1,
+      'isMobile': false,
+      'hasTouch': false,
+      'isLandscape': true
+    }
+  }
+]
+if (is_extended){
+  target_devices.push({
+    'name': 'large Desktop Chrome 66',
+    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'viewport': {
+      'width': 1920,
+      'height': 1080,
+      'deviceScaleFactor': 1,
+      'isMobile': false,
+      'hasTouch': false,
+      'isLandscape': true
+    }
+  });
+  const mobile_devices = ([ //Device list : https://github.com/GoogleChrome/puppeteer/blob/master/DeviceDescriptors.js
+    'iPad',
+    'iPhone 5',
+    'iPhone X landscape'
+  ]).map( d =>{
+    let dev =  devices[d];
+    if (!dev) throw new Error("no device named : "+d);
+    return dev;
+  });
+  for (let d of mobile_devices){
+    target_devices.push(d);
+  }
+}
+// use :
+// target_devices.forEach(function(device){})
+// to run tests on multiple devices
 describe(`${target}`,function(){
-  // Retry all tests in this suite up to 4 times
+  // Retry all tests in this suite up to 3 times
   this.retries(3);
+
   let browser;
   let server = null;
+  async function newPage(device){
+    const page = await browser.newPage();
+    if(device){
+      await page.emulate(device);
+    }
+    return page;
+  }
   // We pre-set href because it's used to declare tests before "before()" is run.
   // However the ad-hoc port is appended once the server is online.
   // This allow us to use dynamic port numbers.
@@ -134,7 +207,7 @@ describe(`${target}`,function(){
 
       describe("Can load index aliases",function(){
         beforeEach(async function(){
-          this.page = await browser.newPage();
+          this.page = await newPage();
           await block(this.page,["images", "medias", "analytics", "captcha"]);
         })
         afterEach(async function(){
@@ -154,14 +227,13 @@ describe(`${target}`,function(){
           });
         });
       })
-
       describe(`GET /${lang}/store/`,function(){
         let storePage;
         let thumb_cells;
         let links;
         this.timeout(20000);
         before(async function(){
-          storePage = await browser.newPage();
+          storePage = await newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
@@ -190,14 +262,7 @@ describe(`${target}`,function(){
           expect(thumb_cells).to.have.property("length").above(MIN_PRODUCTS_NUMBER); //arbitrary "good" number
         });
         it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          await Promise.all(thumb_cells.map(async (cell)=>{
-            const thumb = await cell.$("IMG");
-            const size = await thumb.boundingBox();
-            let expected_width = Math.floor(size.height*16/9);
-            expect(size.height).to.be.above(10); //Abritrary "acceptable" number
-            //Ignore rounding errors
-            expect(size.width).to.be.within(expected_width,expected_width+1);
-          }));
+          return await force16by9(thumb_cells);
         });
         it("links to products are absolute",function(){
           expect(links).to.have.property("length").above(MIN_PRODUCTS_NUMBER);
@@ -223,7 +288,7 @@ describe(`${target}`,function(){
                 }
                 let link = links[i];
                 console.log(link);
-                page = await browser.newPage();
+                page = await newPage();
                 await block(page,["images", "medias", "analytics", "captcha"]);
                 return await page.goto(`${link}`);
               })
@@ -248,7 +313,7 @@ describe(`${target}`,function(){
         let storePage;
         let thumb_cells;
         before(async ()=>{
-          storePage = await browser.newPage();
+          storePage = await newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
             thumb_cells = await storePage.$$(".thumbnail-cell");
@@ -264,14 +329,7 @@ describe(`${target}`,function(){
           expect(thumb_cells).to.have.property("length").above(1);
         })
         it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          await Promise.all(thumb_cells.map(async (cell)=>{
-            const thumb = await cell.$("IMG");
-            const size = await thumb.boundingBox();
-            let expected_width = Math.floor(size.height*16/9);
-            expect(size.height).to.be.above(10); //Abritrary "acceptable" number
-            //Ignore rounding errors
-            expect(size.width).to.be.within(expected_width,expected_width+1);
-          }));
+          return await force16by9(thumb_cells);
         });
       })
       describe(`GET /${lang}/products/`,function(){
@@ -280,7 +338,7 @@ describe(`${target}`,function(){
         let links;
         this.timeout(20000);
         before(async ()=>{
-          storePage = await browser.newPage();
+          storePage = await newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/products/`,{timeout:10000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
@@ -303,15 +361,7 @@ describe(`${target}`,function(){
           expect(thumb_cells).to.have.property("length").above(1);
         })
         it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          let images = await Promise.all(thumb_cells.map(async (cell)=>{
-            return await getImgSize(await cell.$("IMG"));
-          }));
-          images.forEach((img)=>{
-            expect(img.ok, `${img.src} is not OK (probably: does not exists)`).to.be.true;
-          });
-          //console.log(images);
-          let ratios = prettySet(images.map(img=> Object.assign(img,{ratio:img.width/img.height})), "ratio");
-          expect(ratios, `Have non-unique ratio : \n\t${ratios.join("\n\t")}`).to.have.property("length", 1);
+          return await force16by9(thumb_cells)
         });
         describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
           //We don't know in advance the size of our array
@@ -325,7 +375,7 @@ describe(`${target}`,function(){
                   return Promise.resolve();
                 }
                 console.log(link);
-                page = await browser.newPage();
+                page = await newPage();
                 await block(page,["medias", "analytics", "captcha"],function(url){
                   return url == "/vendor/ideal-image-slider/ideal-image-slider.min.js";
                 });
@@ -383,44 +433,59 @@ describe(`${target}`,function(){
    * End of standard tests
    */
    if (!is_extended) return;
-  describe(`Extended tests`,function(){
-    const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
-    before(function(){
-      expect(sitemap.root).to.have.property("name", "urlset");
-      expect(sitemap.root).to.have.property("children").to.be.an("array").that.have.property("length").above(50);
-    });
-    let locations = sitemap.root.children.map((node)=>{
-      return node.children.find((child)=>{
-        return child.name == "loc";
-      }).content
 
-    })
-    .filter(n => n)
-    .filter((loc)=>{
-      //remove pdf files
-      return ! /\.(pdf|xml)$/.test(loc)
-    })
-    .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc)
-    for (let loc of locations){
-      describe(`${loc}`,function(){
-        let page;
-        let ln = loc;
-        before(async ()=>{
-          //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
-          ln = path.join(href,loc);
-          page = await browser.newPage();
-          await block(page,["images", "medias", "analytics", "captcha"]);
-          return await page.goto(`${ln}`);
-        });
-        after(async()=>{
-          return await page.close();
-        });
-        it("have correct canonical link",async ()=>{
-          let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
-          expect(c_link.replace(/^https?:\/\/[^\/]+/, "")).to.equal(loc);
-          return c_link;
-        });
-      });
-    }
-  });
+   /** EXTENDED TESTS **/
+   describe(`Verify full sitemap.xml`,function(){
+     const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
+     before(function(){
+       //Perform basic validation on sitemap
+       expect(sitemap.root).to.have.property("name", "urlset");
+       expect(sitemap.root).to.have.property("children").to.be.an("array").that.have.property("length").above(50);
+     });
+
+     let locations = sitemap.root.children.map((node)=>{
+       return node.children.find((child)=>{
+         return child.name == "loc";
+       }).content
+     })
+     .filter(n => n) //remove any undefined content
+     .filter((loc)=>{//remove pdf files
+       return ! /\.(pdf|xml)$/.test(loc)
+     })
+     //on local target, delete https://some_domain_name/ prefix from URL
+     .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc)
+     // Perform tests for EVERY location
+     for (let loc of locations){
+       describe(`Test ${loc}`,function(){
+         let page;
+         let ln = loc;
+         before(async ()=>{
+           //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
+           ln = path.join(href,loc);
+           page = await newPage();
+           await block(page,["medias", "analytics", "captcha"]);
+           return await page.goto(`${ln}`);
+         });
+         after(async()=>{
+           return await page.close();
+         });
+         it("have correct canonical link",async ()=>{
+           let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
+           expect(c_link.replace(/^https?:\/\/[^\/]+/, "")).to.equal(loc);
+           return c_link;
+         });
+
+         for (let device of target_devices){
+           it(`have only 16:9 thumbnails on ${device.name}`, async function() {
+             await page.emulate(device);
+             const thumb_cells = await page.$$(".thumbnail-cell");
+             if(thumb_cells.length == 0){
+               return;
+             }
+             return await force16by9(thumb_cells);
+           });
+         }
+       });
+     }
+   });
 });
