@@ -108,6 +108,15 @@ async function force16by9(cells){
   return images;
 }
 
+async function getThumbnailLinks(cells){
+  return await Promise.all(cells.map(async (cell)=>{
+    let a = await cell.$("A");
+    let handle = await a.getProperty("href");
+    let link = await handle.jsonValue();
+    await handle.dispose();
+    return link;
+  }));
+}
 //Default : run only on small and large "dekstop"
 const target_devices = [
   {
@@ -476,13 +485,18 @@ describe(`${target}`,function(){
          });
 
          for (let device of target_devices){
-           it(`have only 16:9 thumbnails on ${device.name}`, async function() {
+           it(`have only 16:9 unique thumbnails on ${device.name}`, async function() {
              await page.emulate(device);
              const thumb_cells = await page.$$(".thumbnail-cell");
              if(thumb_cells.length == 0){
                return;
              }
-             return await force16by9(thumb_cells);
+             await force16by9(thumb_cells);
+             const links = await getThumbnailLinks(thumb_cells);
+             const uniqueLinks = Array.from(new Set(links));
+             expect(uniqueLinks,
+               `Some duplicates in [\n\t${links.join(",\n\t")}\n]`
+             ).to.have.property("length", links.length);
            });
          }
        });
