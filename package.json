@@ -11,16 +11,16 @@
     "linux"
   ],
   "dependencies": {
-    "bower": "*"
+    "bower": "^1.8.4"
   },
   "devDependencies": {
-    "chai": "^4.0.2",
-    "finalhandler": "^1.1.0",
-    "mocha": "^3.4.2",
+    "chai": "^4.1.2",
+    "finalhandler": "^1.1.1",
+    "mocha": "^5.2.0",
     "mocha-jenkins-reporter": "0.3.9",
-    "puppeteer": "^0.13.0",
-    "request": "^2.81.0",
-    "serve-static": "^1.13.1",
+    "puppeteer": "^1.5.0",
+    "request": "^2.87.0",
+    "serve-static": "^1.13.2",
     "xml-parser": "^1.2.1"
   }
 }

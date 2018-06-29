@@ -39,22 +39,23 @@ async function block(page, types, filter){
     filter = _ => false;
   }
   page.on('request', interceptedRequest => {
+    let url = interceptedRequest.url();
     //console.log(interceptedRequest.url);
     if(
       (types.indexOf("images") != -1 &&(
-         interceptedRequest.url.endsWith('.png')
-      || interceptedRequest.url.endsWith('.jpg')
+         url.endsWith('.png')
+      || url.endsWith('.jpg')
     )) ||(types.indexOf("medias") != -1 &&(
-         interceptedRequest.url.endsWith('.mp4')
-      || interceptedRequest.url.endsWith('.ogv')
-      || interceptedRequest.url.endsWith('.webm')
-      || interceptedRequest.url.indexOf("youtube.com") != -1
-      || interceptedRequest.url.indexOf("www.ultimedia.com") != -1
+         url.endsWith('.mp4')
+      || url.endsWith('.ogv')
+      || url.endsWith('.webm')
+      || url.indexOf("youtube.com") != -1
+      || url.indexOf("www.ultimedia.com") != -1
     )) || (types.indexOf("analytics") != -1 &&(
-      interceptedRequest.url.indexOf("google-analytics.com") != -1
+      url.indexOf("google-analytics.com") != -1
     ))|| (types.indexOf("captcha") != -1 &&(
-      interceptedRequest.url.indexOf("gstatic.com") != -1
-    )) || filter(interceptedRequest.url)
+      url.indexOf("gstatic.com") != -1
+    )) || filter(url)
     ){
       //console.log("Aborted : ",interceptedRequest.url)
       interceptedRequest.respond("");
@@ -63,6 +64,7 @@ async function block(page, types, filter){
     }
   });
 }
+
 //Take an array of {src, "prop"} objects and group them by "prop" value
 // Example usage : Make an array of image widths.
 //                  If result.length == 1, all ilmages have the same size
@@ -86,6 +88,8 @@ async function getImgSize(img){
 }
 
 describe(`${target}`,function(){
+  // Retry all tests in this suite up to 4 times
+  this.retries(3);
   let browser;
   let server = null;
   // We pre-set href because it's used to declare tests before "before()" is run.
@@ -108,9 +112,7 @@ describe(`${target}`,function(){
       href += ":"+ server.address().port;
       console.log("listening on : ",href);
     }
-    return await puppeteer.launch(options).then(async (b) => {
-      browser = b;
-    });
+    browser = await puppeteer.launch(options);
   });
   after(async () => {
     let jobs = []
