@@ -1,27 +1,14 @@
 @import "colors";
+@import "cookieconsent.min.css";
 
-.cc-banner{
+.cc-banner, .cc-revoke{
   background: $deep-blue;
   color: #fff;
-  font-size: 17px;
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
   box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
-@media screen and (min-width: 768px){
-  .cc-banner {
-    padding: 15px 30px 15px;
-  }
-}
 
-.cc-banner.cc-static{
-  position:fixed;
-  bottom:0;
-  z-index: 1000;
-}
 
 .cc-compliance{
   padding-left: 15px;
@@ -30,7 +17,6 @@
   font-size: 32px;
   line-height: 21px;
   vertical-align: middle;
-  padding: 0 12px;
   font-weight: bold;
 }
 .cc-btn.cc-deny{
@@ -38,9 +24,5 @@
 }
 .cc-btn:hover{
   color: $white!important;
-  text-decoration: none;
-}
-
-.cc-invisible{
-  display: none;
+  text-decoration: none !important;
 }
