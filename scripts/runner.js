@@ -131,7 +131,6 @@ describe(`${target}`,function(){
     describe(`${lang}`,function(){
 
       describe("Can load index aliases",function(){
-        this.timeout(6000);
         beforeEach(async function(){
           this.page = await browser.newPage();
           await block(this.page,["images", "medias", "analytics", "captcha"]);
@@ -146,7 +145,7 @@ describe(`${target}`,function(){
           `${lang}/index.html`
         ].forEach((l)=>{
           it(`GET ${href}/${l}`,async function(){
-            await this.page.goto(`${href}/${l}`,{timeout:6000});
+            await this.page.goto(`${href}/${l}`,{timeout:10000});
             const title = await this.page.$eval("TITLE",h => h.innerText);
             expect(title).to.be.a.string;
             expect(title).to.match(/holusion/i);
@@ -162,7 +161,7 @@ describe(`${target}`,function(){
         before(async function(){
           storePage = await browser.newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
-          await storePage.goto(`${href}/${lang}/store/`,{timeout:6000});
+          await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
             let a = await cell.$("A");
@@ -249,7 +248,7 @@ describe(`${target}`,function(){
         before(async ()=>{
           storePage = await browser.newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
-          await storePage.goto(`${href}/${lang}/store/`,{timeout:6000});
+          await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
             thumb_cells = await storePage.$$(".thumbnail-cell");
 
           });
@@ -281,7 +280,7 @@ describe(`${target}`,function(){
         before(async ()=>{
           storePage = await browser.newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
-          await storePage.goto(`${href}/${lang}/products/`,{timeout:6000});
+          await storePage.goto(`${href}/${lang}/products/`,{timeout:10000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
             let a = await cell.$("A");
