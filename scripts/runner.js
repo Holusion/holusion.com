@@ -26,7 +26,7 @@ const options = {
   args:["--no-sandbox"]
 };
 
-console.log("Extended tests : ", is_extended);
+console.log("Extended tests : ", (is_extended?"yes":"no"));
 
 /**
  * Utility function to speed up tests
