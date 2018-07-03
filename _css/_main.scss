@@ -10,12 +10,13 @@
 @import "cookieconsent";
 @import "social";
 @import "ariane";
-@import "video";
+@import "homepage";
 @import "slideshow";
 @import "contact_form";
 @import "snipcart";
 @import "store";
 @import "team_portraits";
+@import "medias";
 html{
   height:100%;
 }
@@ -53,96 +54,4 @@ body{
 }
 a{
   color:$blue;
-}
-
-.home-page-section{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: stretch;
-}
-
-.home-page-image {
-  flex-grow: 1;
-  width: 50%;
-  padding: 0 38px;
-  max-height: 60vh;
-  overflow: hidden;
-  display:flex;
-}
-
-.home-page-image img{
-  object-fit: cover;
-  width:100%;
-  height:auto;
-}
-
-.home-page-text{
-  flex-grow: 1;
-  font-size: 2.5rem;
-  padding: 20px 8%;
-  width:50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.home-page-text h3{
-  color: $light-blue;
-  font-size: 3.5rem;
-  text-align: left;
-  text-transform: uppercase;
-  margin: 20px 0 25px 0;
-  font-weight: normal;
-}
-.home-page-text .home-page-text-link {
-  text-align:right;
-}
-@media screen and (max-width: 1650px){
-  .home-page-text{
-    padding: 20px;
-  }
-  .home-page-image{
-    padding:0;
-  }
-}
-
-@media screen and (max-width: $break-md){
-  .home-page-image, .home-page-text {
-    width:100%;
-  }
-  .home-page-text{
-    width: 80%;
-    margin: auto;
-    font-size: 2rem;
-  }
-  .home-page-image{
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: $break-sm){
-  .home-page-text{
-    width: 100%;
-    padding: 0 20px;
-    min-height:30vh;
-  }
-}
-
-/* alternate right and left */
-.home-page-section:nth-of-type(2n){
-  flex-direction: row-reverse;
-  .home-page-image{
-    padding-left: 0px;
-  }
-}
-.home-page-section:nth-of-type(2n+1){
-
-  .home-page-image{
-    padding-right: 0px;
-  }
-}
-.home-page-text p{
 }

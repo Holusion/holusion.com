@@ -1,0 +1,141 @@
+.section-main-header{
+  display:flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.main-header-image-wrapper{
+  min-width:30vh;
+  max-width: 50%;
+  max-height:800px;
+  max-height:60vh;
+  height:auto;
+  flex-grow: 0;
+  padding: 40px 40px 0 0;
+}
+.main-header-image-wrapper img{
+  object-fit: contain;
+}
+.main-header-overlay{
+  flex-grow: 1;
+  min-width:300px;
+  max-width: 50%;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-header-overlay .rs{
+  align-self: flex-end;
+}
+.main-header-overlay .rs>a{
+  display:inline-block;
+  background:$deep-blue;
+}
+
+.main-header-overlay-text{
+  font-size: 4rem;
+  color:$deep-blue;
+}
+
+@media screen and (max-width: $break-md){
+  .main-header-overlay, .main-header-overlay-text{
+    font-size: 2.5rem;
+    max-width:100%;
+  }
+  .main-header-image-wrapper{
+    max-width:100%;
+  }
+}
+
+
+.home-page-section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+}
+
+.home-page-image {
+  flex-grow: 1;
+  width: 50%;
+  padding: 0 38px;
+  max-height: 60vh;
+  overflow: hidden;
+  display:flex;
+}
+
+.home-page-image img{
+  object-fit: cover;
+  width:100%;
+  height:auto;
+}
+
+.home-page-text{
+  flex-grow: 1;
+  font-size: 2.5rem;
+  padding: 20px 8%;
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-page-text h3{
+  color: $light-blue;
+  font-size: 3.5rem;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 20px 0 25px 0;
+  font-weight: normal;
+}
+.home-page-text .home-page-text-link {
+  text-align:right;
+}
+@media screen and (max-width: 1650px){
+  .home-page-text{
+    padding: 20px;
+  }
+  .home-page-image{
+    padding:0;
+  }
+}
+
+@media screen and (max-width: $break-md){
+  .home-page-image, .home-page-text {
+    width:100%;
+  }
+  .home-page-text{
+    width: 80%;
+    margin: auto;
+    font-size: 2rem;
+  }
+  .home-page-image{
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: $break-sm){
+  .home-page-text{
+    width: 100%;
+    padding: 0 20px;
+    min-height:30vh;
+  }
+}
+
+/* alternate right and left */
+.home-page-section:nth-of-type(2n){
+  flex-direction: row-reverse;
+  .home-page-image{
+    padding-left: 0px;
+  }
+}
+.home-page-section:nth-of-type(2n+1){
+
+  .home-page-image{
+    padding-right: 0px;
+  }
+}

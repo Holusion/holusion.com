@@ -1,20 +1,33 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48469340-1"></script>
+
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script defer type="text/javascript">
+  //Being denied isn't the same as not-consented-yet
+  var is_consented = document.cookie.indexOf('cookieconsent_status=dismiss') != -1;
+  var is_denied = document.cookie.indexOf('cookieconsent_status=deny') != -1;
+
   var tracking = 'UA-48469340-1';
+  var disableString = 'ga-disable-'+tracking;
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  function registerGa(status){
-    if(!this.hasConsented()){
-      console.info("Google analytics tracking rejected");
-       window['ga-disable-'+tracking] = true;
-    }
-    var banner =  document.querySelector(".cc-banner")
-    if (banner)
-      banner.style.display = "none";
-    else if (!this.hasConsented())
-      console.warn("No cookieconsent banner on this page");
+
+  if (is_denied) {
+    console.log("disabling gtag because cookieconsent_status=deny is set");
+    window[disableString] = true;
+  }else if(is_consented){
+    gtag('js', new Date());
+    gtag('config', tracking);
   }
+
+  //cookieconsent does automatically store user response and call this callback
+  function registerGa(status){
+    // if cookie wasn't set we wait for consent to call gtag
+    if(!is_consented && this.hasConsented()){
+      is_consented = true;
+      gtag('js', new Date());
+      gtag('config', tracking);
+    }
+  }
+  //Always create cookieconsent to give revoke option
   var cc = document.createElement("SCRIPT");
   cc.src = '/vendor/cookieconsent/cookieconsent.3.0.3.min.js';
   cc.async = true;
@@ -23,8 +36,8 @@
     window.cookieconsent.initialise({
       type: "opt-out",
       container: document.body,
-      revokable: false,
-      static: true,
+      revokable: true,
+      dismissOnScroll: 500,
       content:{
         message: "{{site.data.strings.cookieconsent[page.lang]}}",
         link: "{{site.data.strings.read-more[page.lang]}}",
@@ -32,12 +45,15 @@
         dismiss: "&#x2713;",
         deny: "&times;",
       },
+      elements: {
+        dismiss: '<a aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">&#x2713;</a>',
+        deny: '<a aria-label="deny cookies" tabindex="0" class="cc-btn cc-deny">&times;</a>'
+      },
       onStatusChange: registerGa,
       onInitialise: registerGa
     });
   }
   document.head.appendChild(cc);
   // Those will be ignored if ga-disable is set.
-  gtag('js', new Date());
-  gtag('config', tracking);
 </script>
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-48469340-1"></script>

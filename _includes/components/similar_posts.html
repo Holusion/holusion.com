@@ -2,15 +2,15 @@
 
 <div id="post-similar">
   <div class="row" >
-
-
     {% assign similar_posts = "" | split: ""  %}
     {% for post in site.posts_items[page.lang] %}
       {% for tag in page.tags %}
         {% if post.tags contains tag %}
           {% unless post.url == page.url %}
             {% assign similar_posts = similar_posts |push:post %}
-            {% endunless %}
+            {%comment%}break once post is matched to prevent duplication{%endcomment%}
+            {% break %}
+          {% endunless %}
         {% endif %}
       {% endfor %}
     {% endfor %}
