@@ -1,0 +1,192 @@
+---
+layout: front_page
+title: Home page
+lang: fr
+image: /build/img/home_sections/prism.jpg
+image2x: /build/img/home_sections/prism_2x.jpg
+pagination:
+  enabled: true
+  category: fr
+  per_pages: 4
+  limit: 1
+---
+<section class="section section-main-header">
+  <div class="main-header-image-wrapper">
+    <img class="img-fluid" src="/build/img/home_sections/header.jpg" srcset="/build/img/home_sections/header.jpg 1920w, /build/img/home_sections/header_2x.jpg 3840w" alt="l'opal d'holusion en configuration horizontale présentant un hologramme de la dame de brassempuis">
+  </div>
+
+  <div class="main-header-overlay">
+    <h1 class="main-header-overlay-text">
+      Créateur d'expériences digitales innovantes
+    </h1>
+    {% include social_list.html style="background: #005380;"%}
+  </div>
+</section>
+
+<section id="section-produits" class="hidden-xs">
+  <div class="container-fluid ">
+    <h1 align="center" id="main-title-1" style="padding-top: 40px;text-transform: uppercase;"> <a href="/en/products/">Nos produits</a></h1>
+    <div class="row">
+      {% include utils/make_products.html %}
+      {% for product in products limit:4 %}
+      {% include components/post_thumbnail.html content=product classes="col-md-3 col-sm-6" %}
+      {% endfor %}
+    </div>
+    <div class="home-page-text-link">
+      <a href="/fr/products/">Plus de produits > </a>
+    </div>
+  </div>
+</section>
+
+<!-- begin tiles -->
+<main class="home-page-main">
+  <section id="section-gamme" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/prism.jpg" srcset="/build/img/home_sections/prism.jpg 960w, /build/img/home_sections/prism_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3>Adaptable</h3>
+      <p>holusion propose une large gamme de produits, à la vente comme à la location.
+        De l'hologramme de poche à celui de 2 mètres de large, nous pouvons répondre au mieux à toutes les demandes
+      </p>
+      <div class="home-page-text-link">
+        <a href="/fr/products/">Découvrir tous nos produits</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-interactive" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3>Interactif</h3>
+      <p>holusion se démarque en proposant des solutions interactives. Reconnaissance gestuelle, capteurs sans contacts, interfaces tactiles.
+        Prenez les commandes de vos hologrammes en temps réel.
+      </p>
+      <div class="home-page-text-link">
+        <a href="/fr/posts/">Regarder nos réalisations</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-accompagnement" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/design.jpg" srcset="/build/img/home_sections/design.jpg 960w, /build/img/home_sections/design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Personnalisé </h3>
+      <p>holusion vous accompagne du premier contact à la réalisation finale dans tous vos projets de création.
+      </p>
+      <p>L'hologramme vous permettra de susciter l'émotion que vous recherchez et transmettre votre message de manière interactive et indélébile.</p>
+      <div class="home-page-text-link">
+        <a href="/fr/usages/">Découvrir nos conseils</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-design" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/cafe_design.jpg" srcset="/build/img/home_sections/cafe_design.jpg 960w, /build/img/home_sections/cafe_design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Créatif</h3>
+      <p>holusion vous donnera toutes les ressources nécessaires pour que vous puissiez utiliser et réutiliser nos technologies en toute sérénité
+      </p>
+      <p>Un écosystème ouvert vous permettra de faire évoluer votre produit au cours de son exploitation</p>
+      <div class="home-page-text-link">
+        <a href="https://dev.holusion.com/fr/">Holusion pour les créateurs</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-accessible" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Accessible</h3>
+      <p>
+        Transférez vos créations en quelques instants et administrez vos contenus sur nos produits
+      </p>
+      <div class="home-page-text-link">
+        <a href="https://github.com/Holusion/stargazer">Gérez vos produits avec <em>Stargazer</em></a>
+      </div>
+      <p>
+        Mettez en ligne vos créations sur notre plateforme pour les rendre visibles
+      </p>
+      <div class="home-page-text-link">
+        <a href="https://pixel.holusion.com">Découvrez notre plateforme mobile</a>
+      </div>
+    </div>
+  </section>
+  <section id="section-production" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine%20image.jpg 960w, /build/img/home_sections/plaine%20image_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Made in France</h3>
+      <p>holusion est implanté dans les Hauts-de-France à Tourcoing.
+        Vous pouvez retrouver nos bureaux à la Plaine Images, un site dédié aux industries numériques et créatives.
+      </p>
+      <p>Nous sommes labellisés French Tech depuis 2016</p>
+      <div class="home-page-text-link">
+        <a href="/fr/about/">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+</main>
+<section id="section-stories">
+  <div class="container-fluid">
+    <h1 align="center" id="main-title-2" style="padding-top: 20px;text-transform: uppercase;">Découvrez nos cas clients</h1>
+    <div class="row">
+      {% for post in  paginator.posts offset: 0 limit: 4 %}
+      {% include components/post_thumbnail.html content=post %}
+      {% endfor %}
+    </div>
+    <div class="home-page-text-link">
+      <a href="/fr/posts/">Découvrir plus d'histoires > </a>
+    </div>
+  </div>
+</section>
+
+<!-- end of tiled page -->
+
+<section id="section-contact" style="padding-top:30px;">
+  <div class="container-fluid">
+    <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
+      <meta itemprop="name" content="holusion" />
+      <meta itemprop="logo" url="{{site.url}}/static/img/logo.png" />
+      <div class="col-md-6 col-sm-12">
+        <h3 style="padding-bottom: 10px">Venez nous rencontrer :</h3>
+        {% include components/maps_api.html %}
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h3 style="padding-bottom: 10px">Contactez-nous :</h3>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+            <span itemprop="telephone">+33 (0)9 72 42 44 51</span>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>,
+              <span itemprop="postalCode">59200</span>
+              <span itemprop="addressLocality">Tourcoing</span>,
+              <span itemprop="addressCountry">France</span>
+            </span>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            <a itemprop="email" class="contact-link">contact@holusion.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,8 +2,8 @@
 
 
 {% capture right_links %}
-  <li>
-    <a href="https://dev.holusion.com">{{site.data.sections.dev[page.lang]}}</a>
+  <li class="nav-item">
+    <a class="nav-link" href="https://dev.holusion.com">{{site.data.sections.dev[page.lang]}}</a>
   </li>
   {% include components/nav/navbar_link.html url='about' title=site.data.sections.about %}
   {% include components/nav/navbar_link.html url='products' title=site.data.sections.products %}
@@ -12,7 +12,7 @@
   {%endcomment%}
   {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
   {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
-  {% include components/language_picker.html type="dropdown" %}
+  {% include components/language_picker.html type="nav-item dropdown" %}
 {% endcapture %}
 
 {% include layout/common_navbar_top.html right_links=right_links %}

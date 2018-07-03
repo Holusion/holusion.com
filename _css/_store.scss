@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 #open-cart{
   display:flex;
@@ -106,12 +106,4 @@
   color: $orange;
   font-size: 18px;
   font-weight: 900;
-}
-
-.related-products{
-  @media screen and (min-width: $break-lg) {
-    margin-left:auto;
-    max-width:285px;
-  }
-  overflow: hidden; /* or products overflow by 1px on small screens */
 }

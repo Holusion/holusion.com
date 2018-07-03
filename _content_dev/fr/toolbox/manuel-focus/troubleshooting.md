@@ -34,7 +34,7 @@ Vérifier que l'écran est bien alimenté, que le cable DVI est bien en place.
 - Les écrans disposent d'un panneau de contrôle, côté habillage. La diode doit être allumée en vert ou orange.
 - Quand les écrans sont connectés au secteur, ils doivent brièvement s'allumer, afficher un écran bleu et marquer "DVI" dans un coin.
 
-<center><img class="img-responsive" width="300px" src="/static/img/posts/manuel-focus/screen_control/panel.svg" alt="panneau de contrôle de l'écran"/></center>
+<center><img class="img-fluid" width="300px" src="/static/img/posts/manuel-focus/screen_control/panel.svg" alt="panneau de contrôle de l'écran"/></center>
 
 ### Un écran n'est pas en mode "DVI"
 
@@ -60,4 +60,4 @@ Le problème provient des cables **DVI-D** qui connectent l'écran à l'ordinate
 
 ### Nomenclature des pièces
 Nomenclature des pièces principales du Focus :
-<img class="img-responsive" src="/static/img/posts/manuel-focus/draw_focus.png" alt="Dessin technique du focus">
+<img class="img-fluid" src="/static/img/posts/manuel-focus/draw_focus.png" alt="Dessin technique du focus">

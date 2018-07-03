@@ -6,7 +6,7 @@ rank: 1
 menu: toolbox
 ---
 <div class="row">
-  <div class="col-lg-6 col-md-12"><img class="img-responsive" src="/static/img/posts/media-player/header2.png"></div>
+  <div class="col-lg-6 col-md-12"><img class="img-fluid" src="/static/img/posts/media-player/header2.png"></div>
   <div class="col-lg-6 col-md-12">
   <p>Holusion fournit une API publique sur chacun de ses produits. Elle permet de controler l'activation, la désactivation, l'ajout ou la suppression, la lecture des médias.
   </p><p>
@@ -47,13 +47,13 @@ L'API dispose d'une documentation interactive complète à l'adresse : `http://1
 
 Les *routes* sont groupées en 5 catégories :
 <center>
-<img class="img-responsive" src="/static/img/posts/media-player/list.png" alt="routes groups">
+<img class="img-fluid" src="/static/img/posts/media-player/list.png" alt="routes groups">
 </center>
 
 Pour montrer le fonctionnement de cette interface, nous utiliserons dans un premier temps les routes du groupe `playlist`. Cliquer sur la ligne correspondante pour lister les opérations possibles.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/media-player/playlist_routes.png" alt="routes groups">
+  <img class="img-fluid" src="/static/img/posts/media-player/playlist_routes.png" alt="routes groups">
 </center>
 
 Nous utiliserons d'abord la première route disponible, qui permet de lister les éléments de la liste de lecture.
@@ -63,13 +63,13 @@ Nous utiliserons d'abord la première route disponible, qui permet de lister les
     <p>
     Le détail de `[GET] /playlist`.
     </p>
-    <img class="img-responsive" src="/static/img/posts/media-player/route_details.png" alt="route details">
+    <img class="img-fluid" src="/static/img/posts/media-player/route_details.png" alt="route details">
   </div>
   <div class="col-md-6 col-sm-12">
     <p>
     Exemple de réponse en cliquant sur **Try it out!**
     </p>
-    <img class="img-responsive" src="/static/img/posts/media-player/route_response.png" alt="route details">
+    <img class="img-fluid" src="/static/img/posts/media-player/route_response.png" alt="route details">
   </div>
 </div>
 

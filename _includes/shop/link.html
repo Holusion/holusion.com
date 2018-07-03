@@ -1,6 +1,6 @@
 
 {% assign p_data = include.data %}
-<a style="display:inline-block;" class="button button-blue snipcart-add-item"
+<button style="display:inline-block;" class="btn btn-primary shadow snipcart-add-item"
 {%comment%}prop[0] contains the key, props[1] the value{%endcomment%}
 {% for prop_hash in p_data.properties %}
   {% for prop in prop_hash %}
@@ -15,5 +15,5 @@ data-item-url="{{p_data.url | absolute_url  }}"
 data-item-description="{{p_data.abstract}}"
 data-item-id="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}"
 >
-  {% svg src/pictos/icons/icon-add-cart.svg width=24 fill="#ffffff" %}<span class="snipcart-add-item-text" >{{site.data.strings.add-to-cart[page.lang]}}</span>
-</a>
+  {% svg src/pictos/icons/icon-add-cart.svg width=24 %}<span class="snipcart-add-item-text" >{{site.data.strings.add-to-cart[page.lang]}}</span>
+</button>

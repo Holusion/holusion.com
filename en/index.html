@@ -1,0 +1,150 @@
+---
+  layout: front_page
+  title: Holusion - Home
+  lang: en
+  image: /build/img/home_sections/cafe_design.jpg
+  image2x: /build/img/home_sections/cafe_design_2x.jpg
+---
+<section class="section section-main-header">
+  <div class="main-header-image-wrapper">
+    <img class="img-fluid" src="/build/img/home_sections/header.jpg" srcset="/build/img/home_sections/header.jpg 1920w, /build/img/home_sections/header_2x.jpg 3840w" alt="Holusion Opal in horizontal configuration presenting an hologram">
+  </div>
+
+  <div class="main-header-overlay">
+    <h1 class="main-header-overlay-text">
+      Digital user experiences creator
+    </h1>
+    {% include social_list.html  style="background: #005380;"%}
+  </div>
+</section>
+
+
+<section id="section-produits" >
+  <div class="container-fluid">
+    <h1 align="center" id="main-title-1" style="padding-top: 40px"><a href="/en/products/">Our products</a></h1>
+    <div class="row">
+      {% include utils/make_products.html %}
+      {% for product in products limit:4 %}
+      {% include components/post_thumbnail.html content=product %}
+      {% endfor %}
+    </div>
+    <div align="right">
+      <a href="/en/products/">More products > </a>
+    </div>
+  </div>
+</section>
+<main>
+  <section id="section-gamme" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/prism.jpg" srcset="/build/img/home_sections/prism.jpg 960w, /build/img/home_sections/prism_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3>On the shelf or on demand</h3>
+      <p>holusion has a large offering of products to buy or rent. It ranges from pocket-sized to 2 meters wide holograms.
+      </p>
+    </div>
+  </section>
+
+  <section id="section-interactive" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3>Interactivity</h3>
+      <p>holusion is offering interactive solutions with motion control, near field communication or tactile interfaces. You can change and control your holograms in real time.
+      </p>
+    </div>
+  </section>
+
+  <section id="section-accompagnement" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/design.jpg" srcset="/build/img/home_sections/design.jpg 960w, /build/img/home_sections/design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Custom support </h3>
+      <p>holusion will be helping you from first contact to final set-up of your projects. We teach our clients everything there is to know for daily use of our products.
+      </p>
+    </div>
+  </section>
+  <section id="section-accessible" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Accessible</h3>
+      <p>
+        Display your creations in minutes and tune our products to your needs
+      </p>
+      <div class="home-page-text-link">
+        <a href="https://github.com/Holusion/stargazer">Modify your content with <em>Stargazer</em></a>
+      </div>
+      <p>
+        Upload your creations to our web services to make them publicly visible
+      </p>
+      <div class="home-page-text-link">
+        <a href="https://pixel.holusion.com">Discover our mobile web platform</a>
+      </div>
+    </div>
+  </section>
+  <section id="section-production" class="home-page-section">
+    <div class="home-page-image">
+      <img class="img-fluid" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine%20image.jpg 960w, /build/img/home_sections/plaine%20image_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    </div>
+    <div class="home-page-text">
+      <h3> Made in France</h3>
+      <p>holusion is based in north of France, in Plaine Images, a cluster dedicated to high technologies and creative industries</p>
+      <p>We are labelled as a <b>French tech</b> startup since 2016</p>
+    </div>
+  </section>
+</main>
+
+<section id="section-stories">
+  <div class="container-fluid">
+    <h1 align="center" id="main-title-1" style="padding-top: 20px">Discover our user stories</h1>
+    {% include utils/make_posts.html %}
+    {% for post in  posts offset: 0 limit: 4 %}
+    {% include components/post_thumbnail.html content=post %}
+    {% endfor %}
+    <div align="right">
+      <a href="/en/posts/">View more > </a>
+    </div>
+  </div>
+</section>
+<section id="section-contact" style="padding-top:30px;">
+  <div class="container">
+    <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
+      <meta itemprop="name" content="holusion" />
+      <meta itemprop="logo" url="{{site.url}}/static/img/logo.png" />
+      <div class="col-md-6 col-sm-12">
+        <h3 style="padding-bottom: 10px">Come to meet us :</h3>
+        {% include components/maps_api.html %}
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h3 style="padding-bottom: 10px">Contact us :</h3>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+            <span itemprop="telephone">+33 (0)9 72 42 44 51</span>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>,
+              <span itemprop="postalCode">59200</span>
+              <span itemprop="addressLocality">Tourcoing</span>,
+              <span itemprop="addressCountry">France</span>
+            </span>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            <a itemprop="email" class="contact-link">contact@holusion.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

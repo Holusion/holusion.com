@@ -1,0 +1,56 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-conten
+
+
+//COLORS
+//Built-in colors
+$black:#053241;
+$grey-600:#707070;
+$grey-100:#eeeeee;
+$transparent-grey:rgba(255,255,255,.3);
+
+// Custom colors
+$light-blue: #2fafe6;
+$blue: #00A1DC;
+$deep-blue: #005380;
+$dark-blue: #113a52;
+$orange: rgb(255, 153, 102);
+
+
+// THEMING
+$primary:       $blue;
+$secondary:     $orange;
+$info:          $light-blue;
+//$warning:       $yellow;
+//$danger:        $red;
+$light:         $grey-100;
+$dark:          $dark-blue;
+
+
+// BREAKPOINTS
+$break-sm:768px;
+$break-md: 992px;
+$break-lg: 1200px;
+
+// NAVBAR styles
+$navbar-light-active-color: $primary;
+$navbar-light-hover-color:  darken($primary, 10);
+$navbar-light-color: $black;
+$navbar-padding-y: 0.1rem;
+
+// FONTS
+$font-family-sans-serif: 'open_sansregular', sans-serif;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:            $font-family-sans-serif !default;
+
+// CAROUSEL
+$carousel-control-color:       $dark;
+$carousel-indicator-active-bg: $light;
+$carousel-control-opacity: .6;
+
+
+@import "../node_modules/bootstrap/scss/functions";
+// Keep this to the end as it sets most defaults
+@import "../node_modules/bootstrap/scss/variables";

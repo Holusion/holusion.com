@@ -22,6 +22,9 @@ Redirect 301 /fr/uses /fr/
 
 Redirect 301 	/fr/posts/2016-12-08_kiabi_popupstore /fr/posts/2016-12-08-kiabi_popupstore
 Redirect 301 /fr/posts/2017-06-23-Salon_du_bourget_Thal%C3%A8s /fr/posts/2017-06-23-Salon_du_bourget_Thales
+Redirect 301 /fr/posts/2018-06-04_Viva_Technology_2018 /fr/posts/2018-06-04-Viva_Technology_2018
+Redirect 301 /en/posts/2018-06-04_Viva_Technology_2018 /en/posts/2018-06-04-Viva_Technology_2018
+
 
 <IfModule mod_expires.c>
 	ExpiresActive On

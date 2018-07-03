@@ -14,15 +14,15 @@ rank: 2
 Each product have a definition and a positionning of the content of its own. This page presents how to place the elements you want to display for an optimal result.
 
 <div class="row">
-  <div class="col-lg-4 col-lg-offset-2 col-xs-6">
+  <div class="col-lg-4 offset-lg-2 col-xs-6">
     <a onclick="changeProduct('Prism')" style="text-align:center;cursor:pointer">
-      <img class="img-responsive" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
+      <img class="img-fluid" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
       <h2>Prism</h2>
     </a>
 	</div>
   <div class="col-lg-4 col-xs-6" >
     <a onclick="changeProduct('Focus')"  style="text-align:center;cursor:pointer">
-      <img class="img-responsive" height="100px" title="Prisme" src="/static/img/products/focus.jpg"/>
+      <img class="img-fluid" height="100px" title="Prisme" src="/static/img/products/focus.jpg"/>
       <h2>Focus</h2>
     </a>
 	</div>
