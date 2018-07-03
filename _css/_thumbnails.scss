@@ -7,16 +7,16 @@
 .thumbnail-cell{
   padding:5px;
 }
-.thumbnail a>img{
-  min-height:155px;
-}
+
 .card, .thumbnail a{
   position:relative;
   display:block;
   border-radius:2px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.2s ease-in-out;
+  padding-bottom: 56.25%;
 }
+
 .card:hover, .thumbnail a:hover{
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -28,7 +28,13 @@
   color:$white;
   text-decoration:none;
 }
-.thumbnail img{
+
+.thumbnail > a > img{
+  position: absolute;
+  object-fit: cover;
+  display:block;
+  width: 100%;
+  height:auto;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }
