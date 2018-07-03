@@ -1,11 +1,21 @@
 
 
-
+{% comment %} output nothing when no alt page is available {%endcomment%}
+{% if page.alt_url  %}
 <li class="{{include.type}}">
-  {% if page.alt_url  %}
-  <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">{{page.lang}}<span class="caret"></span></a>
-  <ul class="dropdown-menu language-picker" role="menu">
-    <li><a href="{{page.alt_url}}" onclick="(function(){localStorage.setItem('userlanguage','fr')}())">{{page.alt_lang}}</a></li>
-  </ul>
-  {% endif %}
+  <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+    {{page.lang}}
+    <span class="caret"></span>
+    <span class="sr-only">(change language)</span>
+  </a>
+  <div class="dropdown-menu language-picker" role="menu">
+    <a class="dropdown-item" href="{{page.url}}" onclick="(function(){localStorage.setItem('userlanguage','{{page.lang}}')}())" >
+      {{page.lang}}
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="{{page.alt_url}}" onclick="(function(){localStorage.setItem('userlanguage','{{page.alt_lang}}')}())">
+      {{page.alt_lang}}
+    </a>
+  </div>
 </li>
+{% endif %}

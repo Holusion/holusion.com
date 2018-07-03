@@ -24,8 +24,8 @@ New to Blender? Train yourself on tutorials at
 * [**Blenderguru** : community of Blender experts](http://www.blenderguru.com/)
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-<img src="/static/img/posts/blender/blender_screen.png" alt="Blender screen" class="img-responsive">
+  <div class="col-sm-6 offset-sm-3">
+<img src="/static/img/posts/blender/blender_screen.png" alt="Blender screen" class="img-fluid">
 </div>
 </div>
 
@@ -38,7 +38,7 @@ You can use our framework for **Prisme** or **Focus** which allow you to deal wi
 * No need for post-production
 * Ready for use scene for rendering
 
-<img src="/static/img/posts/blender/blender.jpg" alt="Blender framework" class="img-responsive">
+<img src="/static/img/posts/blender/blender.jpg" alt="Blender framework" class="img-fluid">
 
 ##How To
 Modeling: Blender can be used to create your own design of holograms. Or you could just use a ready-to-use scene with your model inside.
@@ -87,7 +87,7 @@ You can edit several parameters for more liberty through editing the node compos
 Do you like tanks ? Enjoy this ready to use scene of a free German Panzer III model for testing.
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <a href="/static/files/BLENDER_pzkfwg3.zip"><img class="img-responsive" alt="pzkfwg3" src="/static/img/posts/blender/PanzerIII.png"/></a>
+  <div class="col-sm-6 offset-sm-3">
+    <a href="/static/files/BLENDER_pzkfwg3.zip"><img class="img-fluid" alt="pzkfwg3" src="/static/img/posts/blender/PanzerIII.png"/></a>
   </div>
 </div>

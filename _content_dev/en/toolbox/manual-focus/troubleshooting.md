@@ -34,7 +34,7 @@ Make sure that the screen is properly supplied, that the DVI cable is plugged.
 - The screens have a control panel. The diode must be lighted in green or orange.
 - When the screens are connected to the server, they must briefly light up, display a blue screen and "DVI" in the corner.
 
-<center><img class="img-responsive" width="300px" src="/static/img/posts/manuel-focus/screen_control/panel.svg" alt="panneau de contrôle de l'écran"/></center>
+<center><img class="img-fluid" width="300px" src="/static/img/posts/manuel-focus/screen_control/panel.svg" alt="panneau de contrôle de l'écran"/></center>
 
 ### One of the screens is not in "DVI" mode
 
@@ -60,4 +60,4 @@ The problem is coming from **DVI-D** cables that connect the screen to the Focus
 
 ### Naming of the parts
 Naming of the main parts of the Focus :
-<img class="img-responsive" src="/static/img/posts/manuel-focus/draw_focus_en.png" alt="Technical drawing of the Focus">
+<img class="img-fluid" src="/static/img/posts/manuel-focus/draw_focus_en.png" alt="Technical drawing of the Focus">

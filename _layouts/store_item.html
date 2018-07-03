@@ -3,15 +3,15 @@ layout: store
 ---
 
 {% include utils/make_store_items.html %}
-<div class="store-layout">
-  <div class="col-lg-9 col-md-12 col-lg-push-3">
+<div class="store-layout row">
+  <div class="col-xl-9 col-lg-12 order-1 order-xl-2">
     <div  itemscope itemtype="http://schema.org/Product">
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-1 col-md-6 col-sm-6 col-xs-12 row-no-padding">
-          <img  itemprop="image" alt="{{page.title}}: {{page.abstract}}" class="img-responsive" src="{{page.image}}">
+        <div class="col-lg-4 offset-lg-1 col-md-6 col-sm-6 col-xs-12 row-no-padding">
+          <img  itemprop="image" alt="{{page.title}}: {{page.abstract}}" class="img-fluid" src="{{page.image}}">
        </div>
 
-       <div class="col-lg-6 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12 shop-product" id="{{p_data.name | uri_escape }}" >
+       <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12 shop-product" id="{{p_data.name | uri_escape }}" >
          <h2 itemprop="name" class="product-head">{{page.title}}</h2>
          <div class="product-icons" >
            {% for icon in page.icons %}
@@ -59,46 +59,24 @@ layout: store
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div id="product-eua" class="col-md-6">
-          <h3>{{site.data.strings.return-policy[page.lang]}}</h3>
+        <div id="product-eua" class="col-md-8 offset-md-2">
+          <h3 style="text-align:center">{{site.data.strings.return-policy[page.lang]}}</h3>
           <p> {{site.data.strings.return-policy-text[page.lang]}}</p>
           <p><center>
-            <button class="button button-white" style="cursor:pointer" onclick="displayContactForm()">
+            <button class="btn btn-outline-primary" style="cursor:pointer" onclick="displayContactForm()">
               {{site.data.strings.contact-us[page.lang]}}
             </button>
           </center></p>
         </div>
-        <div id="product-delivery-conditions" class="col-md-3" >
-          <h3>{{site.data.strings.delivery-title[page.lang]}}</h3>
-          <p>{{site.data.strings.delivery-text[page.lang]}}</p>
-        </div>
-        <div id="product-delivery-conditions" class="col-md-3" >
-          <table class="hover-table">
-            <thead>
-              <tr>
-                <th class="money">{{site.data.strings.delivery-price[page.lang]}}</th>
-                <th>{{site.data.strings.store-weight[page.lang]}}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="money">1€50</td><td>0-20g</td></tr>
-              <tr><td class="money">2€50</td><td>21-129g</td></tr>
-              <tr><td class="money">4€90</td><td>130-250g</td></tr>
-              <tr><td class="money">9€99</td><td>251-1000g</td></tr>
-              <tr><td class="money">13€00</td><td> > 1kg</td></tr>
-              <tr><td class="centered" colspan=2>{{site.data.strings.delivery-weight-text[page.lang]}}</td></tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-12 col-lg-pull-9" style="padding:9px">
+  <div class="col-xl-3 col-lg-12 order-2 order-xl-1" style="padding:9px">
     <div class="container related-products">
       <h3> Découvrez aussi : </h3>
       <div class="row">
       {% for item in store_items %}
-        {% include components/post_thumbnail.html content=item classes="col-lg-12 col-md-6 col-sm-6 col-xs-12" %}
+        {% include components/post_thumbnail.html content=item classes="col-xl-12 col-lg-3 col-md-4 col-sm-6 col-xs-12" %}
       {% endfor %}
       </div>
     </div>

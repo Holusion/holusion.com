@@ -33,7 +33,7 @@ Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas é
 
 Une fois connecté, naviguer à l'adresse `10.0.0.1`. Vous devriez voir apparaître la zone de chargement de fichiers :
 <center>
-  <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_upload.png"/>
+  <img alt="mime type error" class="img-fluid" src="/static/img/posts/packaging/remote_upload.png"/>
 </center>
 
 ## Contenu
@@ -49,7 +49,7 @@ Les formats nativement supportés sont :
 Le système holusion repose sur des règles simples mais extensibles pour classifier les fichiers et applications. Un fichier ne correspondant pas à ces règles sera automatiquement rejeté.
 
 <center>
-  <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_error.jpg"/>
+  <img alt="mime type error" class="img-fluid" src="/static/img/posts/packaging/remote_error.jpg"/>
   <p>Exemple : un fichier <b>pdf</b></p>
 </center>
 

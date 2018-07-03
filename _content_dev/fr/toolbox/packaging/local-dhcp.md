@@ -24,14 +24,14 @@ Télécharger et installer [OpenDHCPServer](https://sourceforge.net/projects/dhc
     Notez le répertoire utilisé par l'installeur. Décocher l'option <code class="highlighter-rouge">lancer le programme : Install as a service</code> : Nous lancerons le serveur manuellement quand nécessaire</p>
   </div>
   <div class="col-md-4 col-sm-6">
-    <img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_install.png" alt="capture d'écran de l'installation du serveur OpenDHCP">
+    <img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_install.png" alt="capture d'écran de l'installation du serveur OpenDHCP">
   </div>
 </div>
 
 
 Une fois l'installation terminée, Ce dossier devrait contenir les fichiers suivants :
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_files.png" alt="capture d'écran des fichiers composant le serveur OpenDHCP">
+<img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_files.png" alt="capture d'écran des fichiers composant le serveur OpenDHCP">
 </center>
 
 Remplacer le fichier de configuration par défaut par [celui-ci](/static/files/OpenDHCPServer.ini). Les 2 paramètres importants sont :
@@ -54,13 +54,13 @@ Si votre ordinateur ne dispose pas de port éthernet, cette étape fonctionne sa
 
 Ouvrir les paramètres "connexion réseau" de votre ordinateur
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/ethernet_config.png" alt="la fenêtre de configuration des connexions réseaux">
+<img class="img-fluid" src="/static/img/posts/packaging/ethernet_config.png" alt="la fenêtre de configuration des connexions réseaux">
 </center>
 **Note** : Selon les versions de Windows, le nom des menus pour y accéder change: "centre réseau et partage", "paramètres réseau", etc...
 
 Faire un clic droit et éditer les propriétés de votre port Ethernet (sur l'image, **Ethernet2**).
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/ip_params.png" alt="la fenêtre de configuration des connexions réseaux">
+<img class="img-fluid" src="/static/img/posts/packaging/ip_params.png" alt="la fenêtre de configuration des connexions réseaux">
 <p>à gauche, les propriétés de l'interface. A droite, les propriétés "TCP/IPv4"</p>
 </center>
 
@@ -83,7 +83,7 @@ Une fois les étapes précédentes correctement réalisées, il suffit de double
 
 <center>
 
-<img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_run_success.png" alt="la fenêtre commande du serveur DHCP">
+<img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_run_success.png" alt="la fenêtre commande du serveur DHCP">
 <p>"Listening On: 192.168.0.1" montre que l'interface réseau a bien été configurée.</p>
 </center>
 
@@ -92,7 +92,7 @@ Il est important de bien noter l'ensemble des informations données dans cette f
 A cette étape, il faut généralement redémarrer le produit Holusion tout en laissant le câble Ethernet branché pour qu'il détecte le changement de réseau.
 
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_alloc.png" alt="Allocation d'une IP par le serveur DHCP">
+<img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_alloc.png" alt="Allocation d'une IP par le serveur DHCP">
 <p>Une allocation d'IP réussie</p>
 </center>
 

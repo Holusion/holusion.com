@@ -24,14 +24,14 @@ Download and install [OpenDHCPServer](https://sourceforge.net/projects/dhcpserve
     Enter the used repertory. Unbox the option <code class="highlighter-rouge">Run the programm : Install as a service</code> : We will run the server when needed</p>
   </div>
   <div class="col-md-4 col-sm-6">
-    <img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_install.png" alt="screenshot of the installation of the OpenDHCP server">
+    <img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_install.png" alt="screenshot of the installation of the OpenDHCP server">
   </div>
 </div>
 
 
 Once the installation is finished, this folder should contain the following files :
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_files.png" alt="screenshot of the OpenDHCP server's files">
+<img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_files.png" alt="screenshot of the OpenDHCP server's files">
 </center>
 
 Replace the default configuration file by [this one](/static/files/OpenDHCPServer.ini). The 2 important parameters are :
@@ -54,13 +54,13 @@ If your computer has no ethernet port, this method works also with an [USB adapt
 
 Open the "network connection" settings of your computer
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/ethernet_config.png" alt="the network connection configuration window">
+<img class="img-fluid" src="/static/img/posts/packaging/ethernet_config.png" alt="the network connection configuration window">
 </center>
 **Note** : Depending on the Windows versions, the menus' name to access this setting change : "network and share center", "network settings", etc...
 
 Right click and edit the ethernet properties (on the picture, **Ethernet2**).
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/ip_params.png" alt="the network connections configuration window">
+<img class="img-fluid" src="/static/img/posts/packaging/ip_params.png" alt="the network connections configuration window">
 <p>On the left, the interface properties. On the right, the "TCP/IPv4" properties</p>
 </center>
 
@@ -83,7 +83,7 @@ Once the precedent steps are correctly done, all you have to do is double-click 
 
 <center>
 
-<img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_run_success.png" alt="the DHCP server's control window">
+<img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_run_success.png" alt="the DHCP server's control window">
 <p>"Listening On: 192.168.0.1" show that the interface was correctly configured.</p>
 </center>
 
@@ -92,7 +92,7 @@ It is important to write down all the informations that appear in this window if
 At this stage, you can in general restart the Holusion product with the ethernet cable plugged in to make it detect the network change.
 
 <center>
-<img class="img-responsive" src="/static/img/posts/packaging/OpenDHCPServer_alloc.png" alt="Assigning an IP by the DHCP server">
+<img class="img-fluid" src="/static/img/posts/packaging/OpenDHCPServer_alloc.png" alt="Assigning an IP by the DHCP server">
 <p>A successful IP assigning</p>
 </center>
 

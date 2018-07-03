@@ -10,7 +10,7 @@ menu: toolbox
 <div class="row">
 <div class="col-lg-4 col-md-6 col-xs-12">
 
-<img class="img-responsive" src="/static/img/posts/manuel-focus/dimensions.png">
+<img class="img-fluid" src="/static/img/posts/manuel-focus/dimensions.png">
 
 </div>
 <div class=" col-lg-8 col-md-6 col-xs-12">
@@ -23,7 +23,7 @@ This hologram displayer gives a spectacular dimension to your product and comes 
 <p>
 The result of many years of work, the Focus uses an exclusive breakthrough technology (spy pepper's ghost) allowing an optimization of the image for a better augmented reality experience.
 </p>
-<img class="img-responsive" src="/static/img/posts/manuel-focus/datasheet.png">
+<img class="img-fluid" src="/static/img/posts/manuel-focus/datasheet.png">
 </div>
 </div>
 

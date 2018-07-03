@@ -15,7 +15,7 @@ We recognize the product by its charaterstics :
 The most simple is to use your router interface (**DHCP** section) :
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/packaging/dhcp_ip.png" alt="the poduct's IP address in the router interface">
+  <img class="img-fluid" src="/static/img/posts/packaging/dhcp_ip.png" alt="the poduct's IP address in the router interface">
 </center>
 
 An other solution is to scan the network with a command such as **nmap** :
@@ -33,7 +33,7 @@ Here we are scanning the network members that have an opened 3000 port.
 You can now enter the found address on your internet navigator :
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/packaging/browser-URL.png" alt="enter the IP in your internet navigator">
+  <img class="img-fluid" src="/static/img/posts/packaging/browser-URL.png" alt="enter the IP in your internet navigator">
 </center>
 
 You can now use the administrator [interface](index).

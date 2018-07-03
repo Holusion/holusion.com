@@ -28,7 +28,7 @@ var changeProduct = function(p){
   var buttons = document.getElementsByClassName("product-button");
   for(i = 0; i<buttons.length;i++){
     if(buttons[i].innerHTML != p){
-      buttons[i].className = "btn btn-default product-button";
+      buttons[i].className = "btn btn-secondary product-button";
     }else{
       buttons[i].className = "btn btn-primary product-button";
     }

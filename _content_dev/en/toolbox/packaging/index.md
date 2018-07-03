@@ -32,7 +32,7 @@ Once connected to the product, use a web browser to navigate to [http://10.0.0.1
 
 
 <center>
-  <img alt="mime type error" class="img-responsive" src="/static/img/posts/packaging/remote_upload.png"/>
+  <img alt="mime type error" class="img-fluid" src="/static/img/posts/packaging/remote_upload.png"/>
 </center>
 
 ### Content

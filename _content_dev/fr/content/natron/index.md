@@ -19,7 +19,7 @@ On peut l'utiliser pour créer facilement et rapidement des vidéos en hologramm
 Ouvrir le projet téléchargé.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/natron_open.jpg" alt="natron openning screen">
+  <img class="img-fluid" src="/static/img/posts/natron/natron_open.jpg" alt="natron openning screen">
   <span><b>Projet "Prism" à l'ouverture</b></span>
 </center>
 
@@ -39,7 +39,7 @@ Les éléments principaux visibles dans la partie "Node Graph" qui seront utilis
 La première étape est d'importer votre vidéo source. Il faut créer un nouveau *Node* dans la partie "Node graph" du logiciel. Soit simplement par un glisser-déposer de la vidéo dans cette zone.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/natron_node_graph.png" alt="Le Node graph">
+  <img class="img-fluid" src="/static/img/posts/natron/natron_node_graph.png" alt="Le Node graph">
   <span><b>la zone "Node Graph"</b></span>
 </center>
 
@@ -48,7 +48,7 @@ vous pouvez aussi faire un clic droit dans cette zone, choisir **Reader** dans l
 Cela devrait créer un "Reader node". Il faut ensuite le relier au node "Position", qui permettra de configurer la vidéo.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/node_linking.gif" alt="reader node">
+  <img class="img-fluid" src="/static/img/posts/natron/node_linking.gif" alt="reader node">
   <span><b>Créer un lien entre 2 nodes</b></span>
 </center>
 
@@ -59,7 +59,7 @@ Quelques réglages sont nécessaires pour obtenir un résultat optimal. Ceux-ci 
 Activer le Noeud **Transform** en double cliquant dessus. Une icône de redimensionnement et déplacement devrait apparaitre dans la vue **Viewer2**.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/node_resize.jpg" alt="resize a node">
+  <img class="img-fluid" src="/static/img/posts/natron/node_resize.jpg" alt="resize a node">
   <span><b>Redimensionner l'objet pour qu'il ne dépasse pas du triangle noir.</b></span>
 </center>
 
@@ -67,11 +67,11 @@ La vue **Viewer2** met en évidence le cache d'image. Votre vidéo doit entrer e
 
 <div class="row">
   <div class="col-md-6"><center>
-    <img class="img-responsive" src="/static/img/posts/natron/move_transform.png" alt="natron previsualisation déplacer les transformations">
+    <img class="img-fluid" src="/static/img/posts/natron/move_transform.png" alt="natron previsualisation déplacer les transformations">
     <span><b>cliquer au centre de la croix pour déplacer, ou sur le cercle pour redimensionner</b></span>
   </center></div>
   <div class="col-md-6"><center>
-    <img class="img-responsive" src="/static/img/posts/natron/transform_properties.png" alt="propriétés d'une transformation">
+    <img class="img-fluid" src="/static/img/posts/natron/transform_properties.png" alt="propriétés d'une transformation">
     <span><b>utiliser la fonction translate X, Y pour déplacer l'objet, ou Scale pour le redimensionner</b></span>
   </center></div>
 </div>
@@ -101,7 +101,7 @@ Une fois que le placement est satisfaisant, on peut voir le résultat final avan
   <a class="button" href="/fr/toolbox/packaging">Guide du transfert de médias</a>
   </div>
   <div class="col-md-6">
-      <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties">
+      <img class="img-fluid" src="/static/img/posts/natron/render_node.png" alt="render node properties">
       <center><span><b>Les propriétés du "render node"</b></span></center>
   </div>
 </div>

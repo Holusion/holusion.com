@@ -10,7 +10,7 @@ module Jekyll
         return if lang.nil? || lang.length == 0
         path = url.split("/")
         path.shift(2)
-        path.pop() if path.last == "index"
+        path.pop() if (path.last == "index" or path.last == "index.html")
         cat_link="/#{lang}"
 
         #print "#{path}\n"

@@ -1,4 +1,15 @@
-@import "colors";
+@import "variables";
+
+.btn {
+  vertical-align: middle;
+  svg { //Ensure svgs are also aligned
+    vertical-align: middle;
+    path:not([fill]) { //Paths should follow currentColor unless fill is set
+      fill: currentColor;
+    }
+  }
+}
+
 #feedback {
   position: fixed;
   bottom:10%;

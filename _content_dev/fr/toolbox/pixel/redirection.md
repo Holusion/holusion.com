@@ -12,12 +12,12 @@ menu: toolbox
 Il est possible de faire pointer un domaine personnalisé vers une playlist holographique. Dans cet exemple, nous allons faire en sorte que les visiteurs se rendant sur `pixel.example.com` voient apparaître la playlist *holusion*, qu'on peut normalement découvrir sur `pixel.holusion.com/holusion/view`.
 
 <div class="row">
-  <div class="col-md-3 col-md-offset-3 col-sm-6">
-    <img class="img-responsive" src="/static/img/posts/dns_redirect/redirect_holusion.png" alt="URL originale avant redirection">
+  <div class="col-md-3 offset-md-3 col-sm-6">
+    <img class="img-fluid" src="/static/img/posts/dns_redirect/redirect_holusion.png" alt="URL originale avant redirection">
     <p align="center">Avant redirection</p>
   </div>
   <div class="col-md-3 col-sm-6">
-    <img class="img-responsive" src="/static/img/posts/dns_redirect/redirect_example.png" alt="URL de lap age après redirection">
+    <img class="img-fluid" src="/static/img/posts/dns_redirect/redirect_example.png" alt="URL de lap age après redirection">
     <p align="center">Après redirection</p>
   </div>
 </div>
@@ -40,7 +40,7 @@ Par exemple, `holusion.pixel.holusion.com` donne accès à la playlist du compte
 
 <div class="row">  
   <div class="col-md-6">
-    <img class="img-responsive" alt="dns zone add entry" src="/static/img/posts/dns_redirect/dns_zone.png">
+    <img class="img-fluid" alt="dns zone add entry" src="/static/img/posts/dns_redirect/dns_zone.png">
   </div>
   <div class="col-md-6">
     <p>Il faut mettre en place une redirection <b>CNAME</b> depuis votre domaine vers <code>holusion.pixel.holusion.com</code>.
@@ -60,7 +60,7 @@ Par exemple, `holusion.pixel.holusion.com` donne accès à la playlist du compte
     <p>La propagation peut prendre jusqu'à 24h pour être effective. Vous pouvez vérifier son état à l'aide d'un outil de débogage de DNS tel que <a href="https://fr.wikipedia.org/wiki/Dig_(programme_informatique)">dig</a>.</p>
   </div>
   <div class="col-md-6">
-    <img class="img-responsive" alt="dns zone edit CNAME" src="/static/img/posts/dns_redirect/dns_create.png">
+    <img class="img-fluid" alt="dns zone edit CNAME" src="/static/img/posts/dns_redirect/dns_create.png">
   </div>
 </div>
 

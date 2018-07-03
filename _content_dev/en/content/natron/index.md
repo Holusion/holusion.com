@@ -19,7 +19,7 @@ We can use it to create a video that can be displayed in hologram.
 Open the downloaded project.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/natron_open.jpg" alt="natron openning screen">
+  <img class="img-fluid" src="/static/img/posts/natron/natron_open.jpg" alt="natron openning screen">
   <span><b>"Prism" project once opened</b></span>
 </center>
 
@@ -39,7 +39,7 @@ The principal elements in the "Node Graph" part that will be used :
 The first step is to import a video. You have to create a new *Node* in the "Node graph" part. Just drag and drop a video in this zone.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/natron_node_graph.png" alt="Node graph">
+  <img class="img-fluid" src="/static/img/posts/natron/natron_node_graph.png" alt="Node graph">
   <span><b>The "Node Graph" zone</b></span>
 </center>
 
@@ -48,7 +48,7 @@ You can also right click, choose **Reader** in the section **image** (Shortcut :
 It creates a "Reader node". You must link it to the 'position' node in order to place the video correctly.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/node_linking.gif" alt="reader node">
+  <img class="img-fluid" src="/static/img/posts/natron/node_linking.gif" alt="reader node">
   <span><b>Create a link between 2 nodes</b></span>
 </center>
 
@@ -59,18 +59,18 @@ Some settings are necessary to have the best render. These settings are to be ma
 Activate the **Transform** node by clicking twice on it. A positionning and scaling icon should appear in the **Viewer2**.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/natron/node_resize.jpg" alt="resize a node">
+  <img class="img-fluid" src="/static/img/posts/natron/node_resize.jpg" alt="resize a node">
   <span><b>Scale the object for it doesn't go out of the black triangle.</b></span>
 </center>
 Use the **Viewer2** to better see the outlines. Your video must entirely be in the black part. Do not hesitate to play the video to verify that the object doesn't go out during the whole animation.
 
 <div class="row">
   <div class="col-md-6"><center>
-    <img class="img-responsive" src="/static/img/posts/natron/move_transform.png" alt="natron preview for transformations">
+    <img class="img-fluid" src="/static/img/posts/natron/move_transform.png" alt="natron preview for transformations">
     <span><b>Click on the center of the cross to move it, or on the circle to scale it</b></span>
   </center></div>
   <div class="col-md-6"><center>
-    <img class="img-responsive" src="/static/img/posts/natron/transform_properties.png" alt="transformations properties">
+    <img class="img-fluid" src="/static/img/posts/natron/transform_properties.png" alt="transformations properties">
     <span><b>Use the X, Y translate function to move it, or Scale to scale it</b></span>
   </center></div>
 </div>
@@ -100,7 +100,7 @@ Once you are happy with the positionning, you can see the final result by clicki
   <a class="button" href="/fr/toolbox/packaging">Media transfert guide</a>
   </div>
   <div class="col-md-6">
-      <img class="img-responsive" src="/static/img/posts/natron/render_node.png" alt="render node properties">
+      <img class="img-fluid" src="/static/img/posts/natron/render_node.png" alt="render node properties">
       <center><span><b>Properties of the "render node"</b></span></center>
   </div>
 </div>

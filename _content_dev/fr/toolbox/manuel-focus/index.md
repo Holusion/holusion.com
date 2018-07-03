@@ -10,7 +10,7 @@ menu: toolbox
 <div class="row">
 <div class="col-lg-4 col-md-6 col-xs-12">
 
-<img class="img-responsive" src="/static/img/posts/manuel-focus/dimensions.png">
+<img class="img-fluid" src="/static/img/posts/manuel-focus/dimensions.png">
 
 </div>
 <div class=" col-lg-8 col-md-6 col-xs-12">
@@ -23,7 +23,7 @@ Ce projecteur d'hologrammes apporte une dimension spectaculaire à votre produit
 <p>
 Fruit de plusieurs années de R&D, le Focus utilise une technologie de rupture exclusive (spy pepper's ghost) permettant une optimisation de l'image pour une meilleure experience de réalité augmentée.
 </p>
-<img class="img-responsive" src="/static/img/posts/manuel-focus/datasheet.png">
+<img class="img-fluid" src="/static/img/posts/manuel-focus/datasheet.png">
 </div>
 </div>
 

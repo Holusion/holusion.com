@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 h1,h2,h3,h4,h5,h6{
 	font-family: open_sanslight;
 	color: $light-blue;
@@ -82,7 +82,7 @@ h3:target{
   padding:200px 0px 0px 0px;
 }
 .header{
-  background-color:$light-grey;
+  background-color:$grey-100;
   background-repeat:no-repeat;
   background-size: 100% auto;
 }

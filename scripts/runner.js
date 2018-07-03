@@ -252,7 +252,8 @@ describe(`${target}`,function(){
             let link = await handle.jsonValue();
             await handle.dispose();
             return link;
-          }));
+          }))
+          links = links.filter(l => ! /.*.xml/.test(l))
           return links;
         })
         after(async ()=>{
@@ -284,11 +285,11 @@ describe(`${target}`,function(){
             "Too much products. Increase MAX_PRODUCTS_NUMBER in runner.js if it's normal."
           );
         })
-        describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
+        describe(`Verify store pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
 
           //We don't know in advance the size of our array
           for(let i=0;i<MAX_PRODUCTS_NUMBER;i++){
-            describe(`test product [${i}]`,function(){
+            describe(`test store page [${i}]`,function(){
               let page;
               before(async function(){
                 if (links.length <= i) {
@@ -310,7 +311,7 @@ describe(`${target}`,function(){
 
               });
               it("has snipcart buttons",async ()=>{
-                const id = await page.$eval(".button.snipcart-add-item", b=>b.getAttribute("data-item-id"));
+                const id = await page.$eval(".btn.snipcart-add-item", b=>b.getAttribute("data-item-id"));
                 expect(id).to.be.a("string");
                 expect(id).to.match(/^[\w+_]+(FR|EN)$/);
               });
@@ -326,7 +327,6 @@ describe(`${target}`,function(){
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
             thumb_cells = await storePage.$$(".thumbnail-cell");
-
           });
         after(async ()=>{
           await storePage.close();
@@ -385,9 +385,7 @@ describe(`${target}`,function(){
                 }
                 console.log(link);
                 page = await newPage();
-                await block(page,["medias", "analytics", "captcha"],function(url){
-                  return url == "/vendor/ideal-image-slider/ideal-image-slider.min.js";
-                });
+                await block(page,["medias", "analytics", "captcha"]);
                 return await page.goto(`${link}`);
               })
               after(async function(){
@@ -398,38 +396,11 @@ describe(`${target}`,function(){
                 }
               });
               it("has carousel with all identical images",async ()=>{
-                const slides = await page.$$eval(".slides>A.iis-slide",(slides)=>{
-                  let res = [];
-                  for (let elem of slides){
-                    let src = elem.getAttribute("data-src");
-                    let width = parseInt(elem.getAttribute("data-actual-width"))
-                    let height = parseInt(elem.getAttribute("data-actual-height"))
-                    if (width && height){
-                      //Image has already been loaded
-                      res.push( Promise.resolve ({src, width, height}));
-                    }else{
-                      res.push(new Promise((resolve, reject)=>{
-                        let img = new Image();
-                        img.onload = ()=>{
-                          resolve({src: src, width: img.naturalWidth, height: img.naturalHeight});
-                        }
-                        img.src = src;
-                        document.body.appendChild(img); //Necessary?
-                      }));
-                    }
-                  }
-                  return Promise.all(res);
-                });
-
+                const slides = await page.$$(".carousel-inner>.carousel-item");
                 expect(slides,
                   `have unreasonable carousel length in ${links[i]}`
                 ).to.have.property("length").above(1).below(10);
-
-                let widths = prettySet(slides,"width")
-                let heights = prettySet(slides,"height")
-                expect(widths, `Have multiple different heights : \n\t${widths.join("\n\t")}`).to.have.property("length",1);
-                expect(heights, `Have multiple different heights : \n${heights.join("\n")}`).to.have.property("length",1);
-
+                await force16by9(slides);
               });
             });
           }

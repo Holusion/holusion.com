@@ -2,7 +2,6 @@ lsi: false
 host: 0.0.0.0
 source: .
 exclude:
-  - node_modules
   - src
   - "*.ai"
   - "*.psd"
@@ -20,53 +19,49 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-inline-svg
+  - jekyll-paginate-v2
 sass:
-  sass_dir: _css
   style: :compressed
   sourcemap: :true
+  load_paths:
+    - _css
+    - node_modules
+pagination:
+  enabled: true
+  limit: 0
+  per_page: 16
+  sort_field: 'date'
+  sort_reverse: true
 #This is the public test api key and can be publicly shared consequence-free
 # It will be overriden by further "_deploy.yml" file during deployment.
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 collections:
-  content_main:
-    permalink: /:path
+  posts:
     output: true
+    permalink: /:categories/posts/:year-:month-:day-:title
 
 defaults:
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: "" # an empty string here means all files in the projec
+      type: "pages"
     values:
       layout: "index"
-#new lang set for jekyll >3.1
-  -
-    scope:
-      path: "_content_main/fr"
-    values:
-      lang: "fr"
-  -
-    scope:
-      path: "_content_main/en"
-    values:
-      lang: "en"
 # Posts layout
   -
     scope:
-      path: "_content_main/fr/posts"
+      path: ""
+      type: "posts"
     values:
       layout: "post"
   -
     scope:
-      path: "_content_main/en/posts"
-    values:
-      layout: "post"
-  -
-    scope:
-      path: "_content_main/fr/store"
+      path: "fr/store"
     values:
       layout: "store_item"
   -
     scope:
-      path: "_content_main/en/store"
+      path: "en/store"
     values:
       layout: "store_item"
+# most default config is made in make_collections plugin because this mechanism is too restrictive

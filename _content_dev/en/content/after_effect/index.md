@@ -58,15 +58,15 @@ To customize this guide, you can choose your target product in the list below.
 <div class="row">
 <div class="col-lg-4 col-xs-5" style="text-align:right;padding-right:0px;">
 <p>
-<button class="btn btn-default product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
+<button class="btn btn-secondary product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
 </p>
 <p>
 <button id="btnProductDefault" class="btn btn-primary product-button" onclick="changeProduct(this.innerHTML)" >Focus</button>
 </p>
 </div>
 <div class="col-xs-5 col-lg-4">
-<img class="product-show img-responsive" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
-<img class="product-show img-responsive" height="100px" title="Focus" src="/static/img/products/focus.jpg"/>
+<img class="product-show img-fluid" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
+<img class="product-show img-fluid" height="100px" title="Focus" src="/static/img/products/focus.jpg"/>
 </div>
 </div>
 
@@ -78,7 +78,7 @@ Open the **"Input"** composition.
 
 A colored frame indicates the final image's format. Anything beyond this frame will be cut during the render process. This frame will automatically be hidden on your output.
 
-<center><img class="img-responsive" src="/static/img/posts/after-effect/layouts_input_compared.jpg"/></center>
+<center><img class="img-fluid" src="/static/img/posts/after-effect/layouts_input_compared.jpg"/></center>
 
 Later instructions will be customized for the <span class="product-span">Focus</span> ([change it](#product-choice)).
 
@@ -101,8 +101,8 @@ In the left column, right click and select ```Import > File``` (shortcut Ctrl+I)
 Composition's duration must be changed in order to match your content's.
 Right click on the <b>"Input"</b> composition and select <b>Settings</b> then change the duration of the composition.
 </div>
-<div class="col-md-3 col-sm-offset-1 col-sm-4 col-xs-6 col-xs-offset-3">
-<img src="/static/img/posts/after-effect/settings.jpg" class="img-responsive magnify"/>
+<div class="col-md-3 offset-sm-1 col-sm-4 col-xs-6 offset-xs-3">
+<img src="/static/img/posts/after-effect/settings.jpg" class="img-fluid magnify"/>
 </div>
 </div>
 Do the same with the **"Render"** composition.
@@ -120,8 +120,8 @@ Right click on it and select ```Duplicate```.
 Change the output file to some place you like. Encoding options have been set to default options that should be OK most of the time.
 
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
-<img class="img-responsive magnify" src="/static/img/posts/after-effect/duplicate_render.jpg"/>
+<div class="col-md-6 offset-md-3">
+<img class="img-fluid magnify" src="/static/img/posts/after-effect/duplicate_render.jpg"/>
 </div>
 </div>
 
@@ -137,8 +137,8 @@ Content consisting of objects / subjects moving over a black background produces
 Example on the right will not look as good as the left one when in hologram.
 
 <div class="row">
-<div class="col-sm-6 col-sm-offset-3">
-<img class="img-responsive center-block" src="/static/img/posts/after-effect/background_example.jpg"/>
+<div class="col-sm-6 offset-sm-3">
+<img class="img-fluid center-block" src="/static/img/posts/after-effect/background_example.jpg"/>
 
 </div>
 </div>
@@ -153,7 +153,7 @@ If you have to display a black  or very dark object, one option would be to make
 
 Each product have a specific image format. Select your product to see the associated layout.
 
-<button class="btn btn-default product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
+<button class="btn btn-secondary product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
 <button class="btn btn-primary product-button" onclick="changeProduct(this.innerHTML)" >Focus</button>
 
 one have to take 2 steps to make an image "holographic" :
