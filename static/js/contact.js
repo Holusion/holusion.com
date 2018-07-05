@@ -52,6 +52,7 @@ function onValidated(){
   var submission = document.querySelector("#section-contactform>form");
   var XHR = new XMLHttpRequest();
   var FD  = new FormData(submission);
+  FD.append("source", window.location.pathname);
   var spinnerClose = logInfo("alert-info","Envoi en cours");
   XHR.addEventListener('load', function(res) {
     var txt;
