@@ -4,11 +4,7 @@ title: Home page
 lang: fr
 image: /build/img/home_sections/prism.jpg
 image2x: /build/img/home_sections/prism_2x.jpg
-pagination:
-  enabled: true
-  category: fr
-  per_pages: 4
-  limit: 1
+
 ---
 <section class="section section-main-header">
   <div class="main-header-image-wrapper">
@@ -140,7 +136,7 @@ pagination:
   <div class="container-fluid">
     <h1 align="center" id="main-title-2" style="padding-top: 20px;text-transform: uppercase;">Découvrez nos cas clients</h1>
     <div class="row">
-      {% for post in  paginator.posts offset: 0 limit: 4 %}
+      {% for post in  site.categories[page.lang] offset: 0 limit: 4 %}
       {% include components/post_thumbnail.html content=post %}
       {% endfor %}
     </div>

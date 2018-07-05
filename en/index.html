@@ -101,10 +101,11 @@
 <section id="section-stories">
   <div class="container-fluid">
     <h1 align="center" id="main-title-1" style="padding-top: 20px">Discover our user stories</h1>
-    {% include utils/make_posts.html %}
-    {% for post in  posts offset: 0 limit: 4 %}
-    {% include components/post_thumbnail.html content=post %}
-    {% endfor %}
+    <div class="row">
+      {% for post in  site.categories[page.lang] offset: 0 limit: 4 %}
+      {% include components/post_thumbnail.html content=post %}
+      {% endfor %}
+    </div>
     <div align="right">
       <a href="/en/posts/">View more > </a>
     </div>
