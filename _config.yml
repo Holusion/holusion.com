@@ -29,7 +29,7 @@ sass:
 pagination:
   enabled: true
   limit: 0
-  per_page: 16
+  per_page: 12
   sort_field: 'date'
   sort_reverse: true
 #This is the public test api key and can be publicly shared consequence-free
