@@ -111,7 +111,7 @@
   </div>
 </section>
 <section id="section-contact" style="padding-top:30px;">
-  <div class="container">
+  <div class="container-fluid">
     <div id="_contact-infos" class="row" itemscope itemtype="http://schema.org/Organization" >
       <meta itemprop="name" content="holusion" />
       <meta itemprop="logo" url="{{site.url}}/static/img/logo.png" />
@@ -121,28 +121,23 @@
       </div>
       <div class="col-md-6 col-sm-12">
         <h3 style="padding-bottom: 10px">Contact us :</h3>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">
             <span itemprop="telephone">+33 (0)9 72 42 44 51</span>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          </li>
+          <li class="list-group-item">
             <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
               <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>,
               <span itemprop="postalCode">59200</span>
               <span itemprop="addressLocality">Tourcoing</span>,
               <span itemprop="addressCountry">France</span>
             </span>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+          </li>
+          <li class="list-group-item">
             <a itemprop="email" class="contact-link">contact@holusion.com</a>
-          </div>
+          </li>
+        </ul>
         </div>
       </div>
     </div>
