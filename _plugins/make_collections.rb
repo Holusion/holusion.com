@@ -42,15 +42,19 @@ Jekyll::Hooks.register :site, :post_read do |site|
   end
   # merge data attributes once we got the whole site
   # it only work from french -> english and not otherwise
-  c["products"]["fr"].each do |p|
-    alt_url = p.data["alt_url"]
-    alt_p_index = site.pages.find_index {|item| item.url == alt_url}
-    next if not alt_p_index
-    alt_p = site.pages[alt_p_index]
-    p.data.keys.each do |k|
-      alt_p.data[k] = p.data[k] if ! alt_p.data.key? k
+  c.keys.each do |col|
+    c[col]["fr"].each do |p|
+      alt_url = p.data["alt_url"]
+      alt_p_index = site.pages.find_index {|item| item.url == alt_url}
+      next if not alt_p_index or not alt_url
+      alt_p = site.pages[alt_p_index]
+      p.data.keys.each do |k|
+        alt_p.data[k] = p.data[k] if ! alt_p.data.key? k
+      end
     end
+
   end
+
   # Sort collections
   c["products"]["fr"].sort! {|a,b|product_sort(a,b)}
   c["products"]["en"].sort! {|a,b|product_sort(a,b)}
