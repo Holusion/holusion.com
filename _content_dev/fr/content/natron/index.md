@@ -14,7 +14,7 @@ On peut l'utiliser pour créer facilement et rapidement des vidéos en hologramm
 ## Installation
 
 1. Suivre les instructions d'installation pour [Windows, MacOSX et Linux](http://natron.fr/download/).
-2. Télécharger le projet de base pour [prism](/static/files/natron_prism.zip) ou [focus](/static/files/natron_focus.zip)
+2. Télécharger le projet de base pour [prism](/static/files/natron_prism.zip) ou [focus](/static/files/natron_focus_v2.zip)
 
 Ouvrir le projet téléchargé.
 
