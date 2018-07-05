@@ -41,13 +41,15 @@ Jekyll::Hooks.register :site, :post_read do |site|
     end
   end
   # merge data attributes once we got the whole site
-  # it only work from french -> english and not otherwise
+  # it only work from french -> english and not the other way around
   c.keys.each do |col|
     c[col]["fr"].each do |p|
       alt_url = p.data["alt_url"]
       alt_p_index = site.pages.find_index {|item| item.url == alt_url}
-      next if not alt_p_index or not alt_url
+      next if not alt_url or not alt_p_index  # break if no alt page exists
+
       alt_p = site.pages[alt_p_index]
+      # copy keys (no overwrite)
       p.data.keys.each do |k|
         alt_p.data[k] = p.data[k] if ! alt_p.data.key? k
       end
