@@ -12,7 +12,10 @@
 
 {% if page.url contains include.url or include.url == page.menu %}
   <li class="{{include.type | default: "nav"}}-item active">
-    <a class=""{{include.type | default: "nav"}}-link" href="{{href}}">{{title}}</a><span class="sr-only">(current)</span>
+    <a class="{{include.type | default: "nav"}}-link" href="{{href}}" >
+      {{title}}
+    </a>
+    <span class="sr-only">(current)</span>
   </li>
 {% else %}
   <li class="{{include.type | default: "nav"}}-item">
