@@ -4,19 +4,56 @@
   {% assign content = include %}
 {% endif %}
 
+{%comment%}
+    Two types are provided :
+    - thumbnails
+    - cards
+
+    Thumbnails are compact 16:9 images with on-hover overlay effect designed to be used in bootstrap grid system
+
+    Cards are more flexible and meant to be included in a "card-group" or "card-deck" container
+    http://getbootstrap.com/docs/4.1/components/card/
+{%endcomment%}
+
 {%if include.classes %}
   {% assign classes = include.classes %}
 {% else %}
   {% assign classes = "col-lg-3 col-md-4 col-sm-6 col-xs-12" %}
 {% endif %}
+{%capture alt_text %}{%if content.abstract%}{{content.abstract}}{%else%}{{content.title}}{%endif%}{%endcapture%}
+
+{%if include.type == "card" %}
+<div class="{{classes}}">
+  <div class="card shadow-sm border-dark" style="min-height:100%">
+    {% if content.image %}
+      <img class="card-img-top" src="{{content.image}}"
+        {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+    {% else %}
+      <img class="card-img-top" src="/static/img/posts/default.jpg" alt="{{alt_text}}">
+    {%endif%}
+    <a href="{{content.url}}" class="card-header bg-dark text-light">
+        {{content.title}}
+    </a>
+    <div class="card-body text-left">
+      <p class="card-text">{{content.abstract}}</p>
+    </div>
+    <div class="card-footer text-right">
+      <a href="{{content.url}}" class="card-link text-secondary">
+        {{content.action| default:"read more"}}
+      </a>
+    </div>
+  </div>
+</div>
+{%else%}
+
 <div class="{{classes}} thumbnail-cell">
   <div class="thumbnail">
     <a href = "{{content.url}}">
       {% if content.image %}
         <img src="{{content.image}}"
-          {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{content.title}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+          {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
       {% else %}
-        <img src="/static/img/posts/default.jpg" alt="{{content.title}}">
+        <img src="/static/img/posts/default.jpg" alt="{{alt_text}}">
       {% endif %}
         <div class="caption">
           <h3 class="caption-title">
@@ -32,3 +69,4 @@
     </a>
   </div>
 </div>
+{%endif%}
