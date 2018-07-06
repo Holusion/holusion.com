@@ -18,11 +18,16 @@
   .navbar-nav > li {
     a{
       text-transform: lowercase;
-      font-family: 'open_sansregular', sans-serif;
       transition: all 0.5s ease-in-out;
     }
   }
 } /* end #navbar-top */
+
+#sidebar{
+  ul li{
+    font-size: 80%;
+  }
+}
 
 #navbar-bottom{
   margin-top:50px;

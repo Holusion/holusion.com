@@ -39,7 +39,9 @@ collections:
   posts:
     output: true
     permalink: /:categories/posts/:year-:month-:day-:title
-
+  content_dev:
+    permalink: /dev/:path
+    output: true
 defaults:
   -
     scope:
@@ -64,4 +66,23 @@ defaults:
       path: "en/store"
     values:
       layout: "store_item"
+  -
+    scope:
+      path: ""
+      type: "content_dev"
+    values:
+      domain: "/dev"
+      layout: "dev_page"
+#new lang set for jekyll >3.1
+  -
+    scope:
+      path: "_content_dev/fr"
+    values:
+      lang: "fr"
+  -
+    scope:
+      path: "_content_dev/en"
+    values:
+      lang: "en"
+
 # most default config is made in make_collections plugin because this mechanism is too restrictive
