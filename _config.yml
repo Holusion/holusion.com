@@ -21,8 +21,8 @@ plugins:
   - jekyll-inline-svg
   - jekyll-paginate-v2
 sass:
-  style: :compressed
-  sourcemap: :true
+  style: compressed
+  sourcemap: true
   load_paths:
     - _css
     - node_modules
