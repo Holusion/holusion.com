@@ -1,6 +1,7 @@
 require "sass"
 require "jekyll/utils"
-
+# this module, with scss.rb override, will simply allow to output source maps
+# It might break  anytime, just delete it if it's any trouble.
 module Jekyll
   class SourceMapFile < Jekyll::StaticFile
     def modified?
@@ -47,7 +48,7 @@ module Jekyll
         #FIXME file need to use this output
         file.content = css
         # Create destination directory if it doesn't exist yet. Otherwise, we cannot write our file there.
-        Dir::mkdir(mapdir) if !File.directory? mapdir
+        FileUtils.mkdir_p(mapdir) if !File.directory? mapdir
         File.open(File.join(mapdir, mapname), "w") {|mapfile|
 
           mapfile.write(map.to_json(:css_uri => "#{mapname}"))
