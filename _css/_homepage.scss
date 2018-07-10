@@ -45,20 +45,22 @@
   flex-wrap: wrap;
   align-self: stretch;
   flex-direction: row;
-  justify-content: center;
-  background-color: $deep-blue;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: $primary;
   color: $light;
 }
 .main-header-overlay .rs{
-  align-self: flex-end;
+  align-self: center;
 }
 .main-header-overlay .rs>a{
   display:inline-block;
 }
 
 .main-header-overlay-text{
-  font-size: 4rem;
   color: $white;
+  padding: 12px;
+  margin: 0;
 }
 
 @include media-breakpoint-down(md){
