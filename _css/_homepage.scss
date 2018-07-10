@@ -1,30 +1,44 @@
 .section-main-header{
+  position: relative;
   display:flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
+  height:70vh;
 }
+
 .main-header-image-wrapper{
-  min-width:30vh;
-  max-width: 50%;
-  max-height:800px;
-  max-height:60vh;
-  height:auto;
-  flex-grow: 0;
-  padding: 40px 40px 0 0;
+  position:absolute;
+  z-index: -1;
+  top: 0;
+  width:100%;
+  bottom:0;
+  padding: 40px 0;
+  clip: rect(0, 100vw, 60vh, 0);
+  clip-path: inset(0px 0px 0px 0px);
 }
 .main-header-image-wrapper img{
+  position:fixed;
+  z-index: -1;
+  margin: auto;
+  height:60vh;
+  top: 15px;
+  left: 0;
+  right: 0;
   object-fit: contain;
+  pointer-events: none;
 }
 .main-header-overlay{
-  flex-grow: 1;
-  min-width:300px;
-  max-width: 50%;
+  z-index: 0;
+  flex-grow: 0;
   display: flex;
+  flex-wrap: wrap;
   align-self: stretch;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  background-color: $deep-blue;
+  color: $light;
 }
 .main-header-overlay .rs{
   align-self: flex-end;
@@ -36,7 +50,7 @@
 
 .main-header-overlay-text{
   font-size: 4rem;
-  color:$deep-blue;
+  color: $white;
 }
 
 @media screen and (max-width: $break-md){
