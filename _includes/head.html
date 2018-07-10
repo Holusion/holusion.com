@@ -45,12 +45,12 @@
   {% endif %}
 
   <!-- CSS Loading -->
-  <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css{%if site.build_id%}?id={{site.build_id}}{%endif%}" rel="stylesheet">
 
   <!-- jquery is only used as a bootstrap dependency. Please avoid binding the site to it -->
-  <script defer="" src="/vendor/jquery/dist/jquery.min.js"></script>
-  <script defer="" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script defer="" src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script defer="" src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script defer="" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
   {% include favicons.html url="/static/img/icons/favicons" %}
   {% include utils/make_pages.html %}

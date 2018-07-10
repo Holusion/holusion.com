@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 .snip-layout{
   #snipcart-close.snip-layout__close{
     width:24px;
@@ -10,7 +10,7 @@
     background: $white;
   }
   #snipcart-header-total{
-    background: $light-grey;
+    background: $grey-100;
     color:$deep-blue;
   }
   #snipcart-header h2#snipcart-title{
@@ -23,7 +23,7 @@
     background-color:$blue;
   }
   a.snip-ico.snip-ico--close{
-    color:$grey;
+    color:$grey-600;
   }
 
   a.snip-btn{

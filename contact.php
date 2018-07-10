@@ -90,6 +90,7 @@ $last_name = $_POST['lname']; // required
 $email_from = $_POST['email']; // required
 $telephone = $_POST['phone']; // not required
 $comments = $_POST['comments']; // required
+$source = $_POST['source'];
 //Recaptcha vars
 //One liner to get client IP.
 $ip = isset($_SERVER['HTTP_CLIENT_IP'])?$_SERVER['HTTP_CLIENT_IP']:(isset($_SERVER['HTTP_X_FORWARDE‌​D_FOR'])?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
@@ -134,6 +135,7 @@ function clean_string($string) {
 }
 
 $email_message = "Form details below.\n\n";
+$email_message .= "Source: ".clean_string($source)."\n";
 $email_message .= "First Name: ".clean_string($first_name)."\n";
 $email_message .= "Last Name: ".clean_string($last_name)."\n";
 $email_message .= "Email: ".clean_string($email_from)."\n";
@@ -142,9 +144,7 @@ $email_message .= "Comments: ".clean_string($comments)."\n";
 
 // create email headers
 $headers = 'From: '.$email_from."\r\n".
-
 'Reply-To: '.$email_from."\r\n" .
-
 'X-Mailer: PHP/' . phpversion();
 ///////////////////////////////
 // Send MAIL

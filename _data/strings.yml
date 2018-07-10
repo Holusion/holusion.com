@@ -49,9 +49,21 @@ see-other-stories-2:
 read-more:
   fr: en savoir plus
   en: read more
+rent-only:
+  fr: Uniquement en location
+  en: Only available for rent
+rent-available:
+  fr: Dispobible en location
+  en: available for rent
+public-price:
+  fr: Prix public conseillé.
+  en: Recommended public price
 store-vat:
-  fr: (TTC)
-  en: (w. VAT)
+  fr: TTC
+  en: w. VAT
+store-no-vat:
+  fr: HT
+  en: ex. VAT
 store-stock:
   fr: en stock
   en: in stock

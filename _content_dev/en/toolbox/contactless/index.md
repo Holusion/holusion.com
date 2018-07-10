@@ -34,11 +34,11 @@ Product configuration to use contactless readers takes only a few seconds.
 
 When placing a card in range from the reader, the admin interface will display it's unique ID ("Options" tab).
 
-<center><img class="img-responsive" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/card_id.gif"/></center>
+<center><img class="img-fluid" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/card_id.gif"/></center>
 
 Once copied this ID can be added to a media's configuration panel by clicking on it's <span class="glyphicon glyphicon-plus"></span> icon.
 
-<center><img class="img-responsive" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/remote_config.jpg"/></center>
+<center><img class="img-fluid" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/remote_config.jpg"/></center>
 
 **Note** : "nfc" must be written in lower case. Don't forget to click on <span class="glyphicon glyphicon-floppy-saved"></span> to save changes.
 

@@ -1,0 +1,58 @@
+---
+layout: index
+---
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-12 navbar-expand-md navbar-light bg-light" >
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#sidebar"  aria-expanded="false" aria-controls="sidebar">
+        <span class="sr-only">Toggle navigation</span>
+        Show TOC
+      </button>
+      <nav class="collapse bg-faded navbar-collapse d-flex flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
+        {% include utils/make_pages.html %}
+        {% assign categories = "toolbox,platform,content" |split: "," %}
+        {% for category in categories %}
+        {% capture signature %}{{page.lang}}/{{category}}{% endcapture %}
+        {% if page.url contains signature %}
+          {% assign active=true %}
+        {% else %}
+          {% assign active=false %}
+        {%endif%}
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <button
+              class="btn btn-link text-secondary font-weight-bold" type="button" data-toggle="collapse"
+              data-target="#collapseCard{{forloop.index}}"
+              aria-expanded="{%if active%}true{%else%}false{%endif%}"
+              aria-controls="collapseCard{{forloop.index}}" >
+                {{category}}
+              </button>
+            </h5>
+          </div>
+          <div id="collapseCard{{forloop.index}}" class="collapse{%if active%} show{%endif%}"
+          aria-labelledby="collapseCard{{forloop.index}}"
+          data-parent="#sidebar"
+          aria-expanded="{%if active%}true{%else%}false{%endif%}">
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                {% for content in site.content_dev %}
+                  {% if content.url contains page.lang and content.url contains "toolbox" and content.abstract %}
+                    {% include components/nav/navbar_link.html type="list-group" title=content.title href=content.url %}
+                    {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </nav>
+    </div>
+    <div class="col">
+      <div class="container">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+
+</div>

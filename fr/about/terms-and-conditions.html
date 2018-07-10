@@ -1,0 +1,39 @@
+---
+title: Conditions générales de vente
+---
+
+<div class="container">
+  <div class="row">
+    <div id="product-eua" class="col-md-6">
+      <h3>{{site.data.strings.return-policy[page.lang]}}</h3>
+      <p> {{site.data.strings.return-policy-text[page.lang]}}</p>
+      <p><center>
+        <button class="button button-white" style="cursor:pointer" onclick="displayContactForm()">
+          {{site.data.strings.contact-us[page.lang]}}
+        </button>
+      </center></p>
+    </div>
+    <div id="product-delivery-conditions" class="col-md-3" >
+      <h3>{{site.data.strings.delivery-title[page.lang]}}</h3>
+      <p>{{site.data.strings.delivery-text[page.lang]}}</p>
+    </div>
+    <div id="product-delivery-conditions" class="col-md-3" >
+      <table class="hover-table">
+        <thead>
+          <tr>
+            <th class="money">{{site.data.strings.delivery-price[page.lang]}}</th>
+            <th>{{site.data.strings.store-weight[page.lang]}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="money">1€50</td><td>0-20g</td></tr>
+          <tr><td class="money">2€50</td><td>21-129g</td></tr>
+          <tr><td class="money">4€90</td><td>130-250g</td></tr>
+          <tr><td class="money">9€99</td><td>251-1000g</td></tr>
+          <tr><td class="money">13€00</td><td> > 1kg</td></tr>
+          <tr><td class="centered" colspan=2>{{site.data.strings.delivery-weight-text[page.lang]}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

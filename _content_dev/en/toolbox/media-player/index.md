@@ -6,7 +6,7 @@ rank: 1
 menu: toolbox
 ---
 <div class="row">
-  <div class="col-lg-6 col-md-12"><img class="img-responsive" src="/static/img/posts/media-player/header2.png"></div>
+  <div class="col-lg-6 col-md-12"><img class="img-fluid" src="/static/img/posts/media-player/header2.png"></div>
   <div class="col-lg-6 col-md-12">
   <p>Holusion is giving a free public API on each of its products. It permits to control the activation, desactivation, to add or delete medias, and to play the medias.
   </p><p>
@@ -47,13 +47,13 @@ The API has a complete interactive guide at this adress : `http://10.0.0.1/doc`.
 
 The *routes* are grouped in 5 categories :
 <center>
-<img class="img-responsive" src="/static/img/posts/media-player/list.png" alt="routes groups">
+<img class="img-fluid" src="/static/img/posts/media-player/list.png" alt="routes groups">
 </center>
 
 To show how this interface is working, we will first use the routes of the group `playlist`. Click on the corresponding line to display the possible operations.
 
 <center>
-  <img class="img-responsive" src="/static/img/posts/media-player/playlist_routes.png" alt="routes groups">
+  <img class="img-fluid" src="/static/img/posts/media-player/playlist_routes.png" alt="routes groups">
 </center>
 
 We will use the first available route, wich permits to display the playlist's elements.
@@ -63,13 +63,13 @@ We will use the first available route, wich permits to display the playlist's el
     <p>
     The detail of the `[GET] /playlist`.
     </p>
-    <img class="img-responsive" src="/static/img/posts/media-player/route_details.png" alt="route details">
+    <img class="img-fluid" src="/static/img/posts/media-player/route_details.png" alt="route details">
   </div>
   <div class="col-md-6 col-sm-12">
     <p>
     An example of answer by clicking on **Try it out!**
     </p>
-    <img class="img-responsive" src="/static/img/posts/media-player/route_response.png" alt="route details">
+    <img class="img-fluid" src="/static/img/posts/media-player/route_response.png" alt="route details">
   </div>
 </div>
 

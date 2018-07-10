@@ -30,8 +30,8 @@ La communauté est très active autour de Blender. Elle vous propose des tutorie
 
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-<img src="/static/img/posts/blender/blender_screen.png" srcset="/static/img/posts/blender/blender_screen2x.png 1200w, /static/img/posts/blender/blender_screen2x.png 600w" alt="Blender screen" class="img-responsive">
+  <div class="col-sm-6 offset-sm-3">
+<img src="/static/img/posts/blender/blender_screen.png" srcset="/static/img/posts/blender/blender_screen2x.png 1200w, /static/img/posts/blender/blender_screen2x.png 600w" alt="Blender screen" class="img-fluid">
 </div>
 </div>
 
@@ -43,7 +43,7 @@ Vous pouvez utiliser notre framework pour le **Prism** ou le **Focus**. Cela vou
 * De gérer automatiquement l'adaption de l'image aux écrans des projecteurs d'hologrammes ;
 * De disposer d'une scène "clé-en-main" pour vos rendus.
 
-<img src="/static/img/posts/blender/blender.jpg" srcset="/static/img/posts/blender/blender4x.jpg 1900w, /static/img/posts/blender/blender2x.jpg 1000w, /static/img/posts/blender/blender.jpg 500w" alt="Blender framework" class="img-responsive">
+<img src="/static/img/posts/blender/blender.jpg" srcset="/static/img/posts/blender/blender4x.jpg 1900w, /static/img/posts/blender/blender2x.jpg 1000w, /static/img/posts/blender/blender.jpg 500w" alt="Blender framework" class="img-fluid">
 
 ##How To
 
@@ -90,7 +90,7 @@ vous pouvez éditer de nouvelles fonctionnalités en modifiant le panneau de Nod
 Voici un modèle libre de Char d'assault Panzer III pour pouvoir faire vos tests sur le Prism :
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <a href="/static/files/BLENDER_pzkfwg3.zip"><img class="img-responsive" alt="pzkfwg3" src="/static/img/posts/blender/PanzerIII.png"/></a>
+  <div class="col-sm-6 offset-sm-3">
+    <a href="/static/files/BLENDER_pzkfwg3.zip"><img class="img-fluid" alt="pzkfwg3" src="/static/img/posts/blender/PanzerIII.png"/></a>
   </div>
 </div>

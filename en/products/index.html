@@ -1,0 +1,30 @@
+---
+title: Holusion - Products
+layout: front_page
+---
+
+{% include utils/make_products.html %}
+<section class="title">
+    <div class="container">
+      <h1>
+        Our solutions
+      </h1>
+    </div>
+  </section>
+{% ariane %}
+<div class="container">
+<h1 id="main-title-1" class="rtecenter" style="padding-bottom: 30px">The innovative digital display</h1>
+<p class="rtecenter" style="padding-bottom: 20px">Holusion designs and develops innovative display solutions. Manufactured in France, these augmented reality solutions take place in your world to enhance your products and business. Let yourself be seduced by the hologram and the transparent screen, two interactive expertises that will create a new experience around your brand.</p>
+</div>
+<div class="container-fluid">
+  <div class="row">
+  {% for product in products %}
+    {% include components/post_thumbnail.html content=product %}
+  {% endfor %}
+  {% include components/post_thumbnail.html
+    image="/static/img/posts/default.jpg"
+    title="Custom"
+    abstract="Discover our personalised consulting, that will help you setting up your innovation project"
+    %}
+  </div>
+</div>
