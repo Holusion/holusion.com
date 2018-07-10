@@ -11,10 +11,12 @@
   position:absolute;
   z-index: -1;
   top: 0;
+  left:0;
   width:100%;
   bottom:0;
   padding: 40px 0;
-  clip: rect(0, 100vw, 60vh, 0);
+  clip: rect(0, auto, auto, 0);
+  /*clip being deprecated, clip-path will take over it when it's disabled in the future */
   clip-path: inset(0px 0px 0px 0px);
 }
 .main-header-image-wrapper img{
