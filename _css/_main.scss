@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 @import "fonts";
 @import "titles";
 @import "tables";
@@ -11,20 +11,14 @@
 @import "social";
 @import "ariane";
 @import "homepage";
-@import "slideshow";
 @import "contact_form";
 @import "snipcart";
 @import "store";
 @import "team_portraits";
 @import "medias";
-html{
-  height:100%;
-}
+
 body{
-  position:absolute;
-  font-family: 'open_sansregular', sans-serif;
-  color: $black;
-  padding-top: 50px;
+  padding-top: 57px;
   min-height:100%;
   width:100%;
 }

@@ -58,15 +58,15 @@ Chaque projet contient deux scènes : **Input** et **Render**, qui seront utilis
 <div class="row">
   <div class="col-lg-4 col-xs-5" style="text-align:right;padding-right:0px;">
 	<p>
-     <button class="btn btn-default product-button" onclick="changeProduct(this.innerHTML)" style="margin-bottom:5px;">Prism</button>
+     <button class="btn btn-secondary product-button" onclick="changeProduct(this.innerHTML)" style="margin-bottom:5px;">Prism</button>
 	</p>
 	<p>
      <button id="btnProductDefault" class="btn btn-primary product-button" onclick="changeProduct(this.innerHTML)" >Focus</button>
 	</p>
   </div>
   <div class="col-xs-5 col-lg-4">
-    <img class="product-show img-responsive" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
-    <img class="product-show img-responsive" height="100px" title="Focus" src="/static/img/products/focus.jpg"/>
+    <img class="product-show img-fluid" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
+    <img class="product-show img-fluid" height="100px" title="Focus" src="/static/img/products/focus.jpg"/>
   </div>
 </div>
 
@@ -79,7 +79,7 @@ Ouvrir la composition  **"Input"**.
 Un cadre de couleur indique le cadrage requis pour que l'image ne soit pas tronquée au montage. Ce
 cadre sera caché au moment du rendu.
 
-<center><img class="img-responsive" src="/static/img/posts/after-effect/layouts_input_compared.jpg"/></center>
+<center><img class="img-fluid" src="/static/img/posts/after-effect/layouts_input_compared.jpg"/></center>
 
 
 Dans les exemples donnés par la suite, nous utiliserons le modèle <span class="product-span">Focus</span> ([changer de modèle](#choix-du-produit)). La procédure est
@@ -103,8 +103,8 @@ Il faut changer la durée de la composition en fonction de celle du contenu dés
 Par exemple, pour réaliser une vidéo d'une minute : cliquez droit sur la composition <b>"Input"</b> dans le
 volet "projet" ; puis sur <b>paramètres de composition</b>. Dans la fenêtre qui apparait, modifiez le champ <i>durée</i>.
 </div>
-<div class="col-md-3 col-sm-offset-1 col-sm-4 col-xs-6 col-xs-offset-3">
-<img src="/static/img/posts/after-effect/settings.jpg" class="img-responsive magnify"/>
+<div class="col-md-3 offset-sm-1 col-sm-4 col-xs-6 offset-xs-3">
+<img src="/static/img/posts/after-effect/settings.jpg" class="img-fluid magnify"/>
 </div>
 </div>
 
@@ -138,8 +138,8 @@ Changez le fichier de sortie à  votre convenance. Les paramètres d'encoda
 généralement.
 
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
-<img class="img-responsive magnify" src="/static/img/posts/after-effect/duplicate_render.jpg"/>
+<div class="col-md-6 offset-md-3">
+<img class="img-fluid magnify" src="/static/img/posts/after-effect/duplicate_render.jpg"/>
 </div>
 </div>
 
@@ -156,8 +156,8 @@ Les objets / sujets animés sur fond noir donneront toujours le meilleur effet.
 Par exemple, l'image de gauche rendra bien mieux que celle de droite :
 
 <div class="row">
-<div class="col-sm-6 col-sm-offset-3">
-<img class="img-responsive center-block" src="/static/img/posts/after-effect/background_example.jpg"/>
+<div class="col-sm-6 offset-sm-3">
+<img class="img-fluid center-block" src="/static/img/posts/after-effect/background_example.jpg"/>
 </div>
 </div>
 
@@ -171,7 +171,7 @@ cette partie est conseillée aux utilisateurs expérimentés disposant d'une bon
 
 Chaque produit requiert une mise en forme spécifique. Sélectionnez votre produit pour voir le masque de positionnement associé.
 
-<button class="btn btn-default product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
+<button class="btn btn-secondary product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
 <button class="btn btn-primary product-button" onclick="changeProduct(this.innerHTML)" >Focus</button>
 
 Il faut réaliser deux opérations pour pouvoir projeter un film dans un produit Holusion :

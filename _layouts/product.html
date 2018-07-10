@@ -1,0 +1,41 @@
+---
+layout: page
+---
+
+<div class="container" id="product-header">
+  <div class="row" />
+    <div class="col-lg-6 col-md-12 row-no-padding">
+      {% include components/slideshow.html contents=page.slides height=250 %}
+    </div>
+    <div class="col-lg-6 col-md-12" align="center">
+      <img style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid" src="{{page.picto}}"/>
+      <h1 align="center">{{page.header}}</h1>
+      {% if page.price %}
+        <h3 align="center">{{page.price}} € {{site.data.strings["store-no-vat"][page.lang]}}</h3>
+        <div align="center" style="font-size: 0.7rem">
+          {{site.data.strings[public-price][page.lang]}}.
+          {%unless page.location == false %}
+          {{site.data.strings[rent-available][page.lang]}}
+          {%endunless%}
+        </div>
+      {% else %}
+        <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
+      {% endif %}
+      {% if page.ecommerce %}
+        {% include shop/store-fab.html url=page.ecommerce %}
+      {% else %}
+        {% capture contact_us_string %}{{site.data.strings["contact-us"][page.lang]}}{%endcapture%}
+        {% include components/contact_button.html txt=contact_us_string %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div id="product-content">
+  {{content}}
+</div>
+{% include components/similar_posts.html %}
+<div id="goto-products" style="max-width:600px;margin:auto;padding-top:40px">
+  <a href="/{{page.lang}}/products"class="btn btn-primary btn-lg btn-block" >
+    {{ site.data.strings["see-other-products"][page.lang] }}
+  </a>
+</div>

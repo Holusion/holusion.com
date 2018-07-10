@@ -1,5 +1,7 @@
-@import "colors";
-.card, .thumbnail{
+@import "variables";
+$title-height: 42px;
+
+.thumbnail{
   border:none 0px;
   overflow: hidden;
   margin-bottom:0;
@@ -8,7 +10,7 @@
   padding:5px;
 }
 
-.card, .thumbnail a{
+.thumbnail a{
   position:relative;
   display:block;
   border-radius:2px;
@@ -17,13 +19,10 @@
   padding-bottom: 56.25%;
 }
 
-.card:hover, .thumbnail a:hover{
+.thumbnail a:hover{
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-.card>.card-title{
-  text-align:center;
-}
 .thumbnail a:hover{
   color:$white;
   text-decoration:none;
@@ -46,9 +45,8 @@
   top:auto;
   left:0;
   right:0;
-  height:42px;
+  height: $title-height;
   overflow:hidden;
-
   text-decoration:none;
   color:$white;
   background: $deep-blue;
@@ -58,10 +56,15 @@
 }
 
 .thumbnail .caption >.caption-title{
-  color:$white;
+  color: $white;
   margin-top:0;
   display:flex;
   justify-content: space-between;
+  line-height: $title-height;
+  height: $title-height;
+  padding: 0 8px;
+  vertical-align: middle;
+  text-overflow: ellipsis;
 }
 
 .thumbnail .caption >.caption-title >.caption-title-price{
@@ -81,6 +84,6 @@
   background: $blue;
 }
 .thumbnail:nth-of-type(3n+1) .caption{
-  background: $grey;
+  background: $grey-600;
 }
 */

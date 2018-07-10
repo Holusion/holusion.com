@@ -1,6 +1,9 @@
 
-
-{% capture href %}/{{page.lang}}/{{include.url}}/{% endcapture %}
+{% if include.href %}
+  {% assign href = include.href %}
+{% else %}
+  {% capture href %}/{{page.lang}}/{{include.url}}/{% endcapture %}
+{%endif%}
 {% if include.title[page.lang] %}
   {% assign title = include.title[page.lang] %}
 {% else %}
@@ -8,11 +11,14 @@
 {% endif %}
 
 {% if page.url contains include.url or include.url == page.menu %}
-  <li class="active">
-    <a href="{{href}}">{{title}}</a><span class="sr-only">(current)</span>
+  <li class="{{include.type | default: "nav"}}-item active">
+    <a class="{{include.type | default: "nav"}}-link" href="{{href}}" >
+      {{title}}
+    </a>
+    <span class="sr-only">(current)</span>
   </li>
 {% else %}
-  <li>
-    <a href="{{href}}">{{title}}</a>
+  <li class="{{include.type | default: "nav"}}-item">
+    <a class="{{include.type | default: "nav"}}-link" href="{{href}}">{{title}}</a>
   </li>
 {% endif %}

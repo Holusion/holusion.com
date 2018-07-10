@@ -1,5 +1,5 @@
 <div id="map" style="height:250px"></div>
-    <script>
+    <script defer>
       function initMap() {
         var markerCoord = {lat: 50.7005965, lng: 3.1551021};
         var centerCoord = {lat: 50.4, lng:  markerCoord.lng};
@@ -27,10 +27,9 @@
         });
 
         marker.addListener('click', function() {
-          window.open("https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJX7_iud8ow0cRKwrMErNTtGA&destination={{"99A Bvd Constantin Descat 59200 Tourcoing"| uri_escape}}", "_blank");
+          window.open('https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJX7_iud8ow0cRKwrMErNTtGA&destination={{"99A Bvd Constantin Descat 59200 Tourcoing"| uri_escape}}', "_blank");
         });
       }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjUr9-qg7UJHp7FWKDgg-6iXpIE8kH3qo&callback=initMap"
-    async defer></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjUr9-qg7UJHp7FWKDgg-6iXpIE8kH3qo&callback=initMap"></script>

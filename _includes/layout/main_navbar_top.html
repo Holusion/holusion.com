@@ -1,18 +1,31 @@
-
-
-
-{% capture right_links %}
-  <li>
-    <a href="https://dev.holusion.com">{{site.data.sections.dev[page.lang]}}</a>
-  </li>
-  {% include components/nav/navbar_link.html url='about' title=site.data.sections.about %}
-  {% include components/nav/navbar_link.html url='products' title=site.data.sections.products %}
-  {% comment %}
-  {% include components/nav/navbar_link.html url='usages' title=site.data.sections.usages %}
-  {%endcomment%}
-  {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
-  {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
-  {% include components/language_picker.html type="dropdown" %}
-{% endcapture %}
-
-{% include layout/common_navbar_top.html right_links=right_links %}
+<nav id="navbar-top" class="navbar navbar-expand-md fixed-top navbar-light bg-light" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-header">
+        <a href="/{{page.lang}}/" class="navbar-brand" id="home-logo" aria-label="Holusion logo"> </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav mr-auto" role="menu">
+          {% comment %} Links floating to the left come here {%endcomment %}
+        </ul>
+        <ul class="nav navbar-nav" role="menu">
+          <li class="nav-item">
+            <a class="nav-link" href="/dev/{{page.lang}}">{{site.data.sections.dev[page.lang]}}</a>
+          </li>
+          {% include components/nav/navbar_link.html url='about' title=site.data.sections.about %}
+          {% include components/nav/navbar_link.html url='products' title=site.data.sections.products %}
+          {% comment %}
+          {% include components/nav/navbar_link.html url='usages' title=site.data.sections.usages %}
+          {%endcomment%}
+          {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
+          {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
+          {% include components/language_picker.html type="nav-item dropdown" %}
+        </ul>
+      </div>
+    </div>
+    <!-- /.container -->
+</nav>

@@ -32,11 +32,11 @@ Contrôler votre produit via un capteur sans contact prend quelques secondes.
 
 En positionnant une carte à portée du capteur, l'interface d'administration affichera le numéro d'identifiant de celle-ci (Onglet *options*).
 
-<center><img class="img-responsive" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/card_id.gif"/></center>
+<center><img class="img-fluid" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/card_id.gif"/></center>
 
 Copier cet identifiant. Il faut ensuite l'ajouter à la configuration de votre média cible. Pour ce faire, cliquer sur l'icone <span class="glyphicon glyphicon-plus"></span> associée.
 
-<center><img class="img-responsive" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/remote_config.jpg"/></center>
+<center><img class="img-fluid" alt="holusion contactless tag recognition" src="/static/img/posts/contactless/remote_config.jpg"/></center>
 
 *Note : "nfc" doit impérativement être noté en lettres minuscules. N'oubliez pas de cliquer sur l'icone <span class="glyphicon glyphicon-floppy-saved"></span> pour enregistrer les modifications.*
 

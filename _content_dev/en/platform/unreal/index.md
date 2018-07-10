@@ -7,7 +7,7 @@ rank: 1
 menu: platform
 ---
 <div class="row">
-<img src="/static/img/posts/unreal/unreal_engine.jpg" alt="Unreal sreen" class="img-responsive">
+<img src="/static/img/posts/unreal/unreal_engine.jpg" alt="Unreal sreen" class="img-fluid">
 </div>
 
 ### Contact us to be the first to use a preview of an Unreal Engine capable holographic display.

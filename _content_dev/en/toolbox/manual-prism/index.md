@@ -49,4 +49,4 @@ Content management is similar to all our products. Details can be found [here](/
 
 If you need designation for some specific parts of the product, please always use the official nomenclature :
 
-<img class="img-responsive" src="/static/img/posts/prism/nomenclature_en.png" alt="nomenclature holusion prism">
+<img class="img-fluid" src="/static/img/posts/prism/nomenclature_en.png" alt="nomenclature holusion prism">

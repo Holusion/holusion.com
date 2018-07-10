@@ -10,7 +10,7 @@ menu: platform
 
 
 <div class="row">
-<img src="/static/img/posts/unreal/unreal_engine.jpg" alt="Unreal sreen" class="img-responsive">
+<img src="/static/img/posts/unreal/unreal_engine.jpg" alt="Unreal sreen" class="img-fluid">
 </div>
 
 ### Vous voudriez développer une application holographique sous Unreal Engine ? Contactez-nous !

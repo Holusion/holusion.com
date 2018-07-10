@@ -25,29 +25,47 @@ end
 
 Jekyll::Hooks.register :site, :post_read do |site|
   c = {
-    "posts" =>{ "fr" =>[], "en" => []},
     "products" => { "fr" =>[], "en" => []},
     "store" => { "fr" =>[], "en" => []},
   }
 
-  site.collections["content_main"].docs.each do |page|
-    match = /\/(?<lang>fr|en)\/(?<type>posts|products|store)\/(?!index)[^\/]+$/.match(page.url)
-
-    # Any product/store_item/post MUST have an image AND a title
-    if match and page.data["title"] and page.data["image"]
-      c["#{match["type"]}"][match["lang"]].push( page )
+  site.pages.each do |page|
+    match = /\/(?<lang>fr|en)\/(?<type>products|store)\/(?!index)[^\/]+$/.match(page.url)
+    next if ! match
+    c["#{match["type"]}"][match["lang"]].push( page )
+    # then assign defaults to categories
+    # we don't do it in _config.yml because it's buggy
+    case match["type"]
+    when "products"
+      page.data["layout"] = "product" unless page.data.key? "layout"
     end
   end
+  # merge data attributes once we got the whole site
+  # it only work from french -> english and not the other way around
+  c.keys.each do |col|
+    c[col]["fr"].each do |p|
+      alt_url = p.data["alt_url"]
+      alt_p_index = site.pages.find_index {|item| item.url == alt_url}
+      next if not alt_url or not alt_p_index  # break if no alt page exists
+
+      alt_p = site.pages[alt_p_index]
+      # copy keys (no overwrite)
+      p.data.keys.each do |k|
+        alt_p.data[k] = p.data[k] if ! alt_p.data.key? k
+      end
+    end
+
+  end
+
   # Sort collections
   c["products"]["fr"].sort! {|a,b|product_sort(a,b)}
   c["products"]["en"].sort! {|a,b|product_sort(a,b)}
   c["store"]["fr"].sort! {|a,b|product_sort(a,b)}
   c["store"]["en"].sort! {|a,b|product_sort(a,b)}
-  c["posts"]["fr"].sort! {|a,b| b.basename <=> a.basename}
-  c["posts"]["en"].sort! {|a,b| b.basename <=> a.basename }
   #print c["posts"]["fr"].map {|p| p.basename}.join("\n")
   #print "\n"
   c.each do |cat, val|
     site.config["#{cat}_items"] = val
   end
+
 end

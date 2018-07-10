@@ -9,7 +9,7 @@ menu: platform
 
 <div class="row">
 <div class="col-md-6">
-<img class="img-responsive" src="/static/img/posts/webkit/logos.jpg"/>
+<img class="img-fluid" src="/static/img/posts/webkit/logos.jpg"/>
 </div>
 <div class="col-md-6">
 <p>

@@ -49,4 +49,4 @@ La gestion du contenu est la même que sur tous nos produits. Retrouvez les dét
 
 Si vous avez besoin de renseignements pour certaines parties spécifiques du produit, merci d'utiliser la nomenclature suivante :
 
-<img class="img-responsive" src="/static/img/posts/prism/nomenclature.png" alt="nomenclature holusion prism">
+<img class="img-fluid" src="/static/img/posts/prism/nomenclature.png" alt="nomenclature holusion prism">

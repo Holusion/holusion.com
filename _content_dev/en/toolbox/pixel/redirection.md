@@ -14,12 +14,12 @@ It's easy -and free- to make your own domain provide direct access to your video
 You can set this up for your own account by replacing *example* and *example-domain* with your account name and domain name.
 
 <div class="row">
-  <div class="col-md-3 col-md-offset-3 col-sm-6">
-    <img class="img-responsive" src="/static/img/posts/dns_redirect/redirect_holusion.png" alt="Original content URL">
+  <div class="col-md-3 offset-md-3 col-sm-6">
+    <img class="img-fluid" src="/static/img/posts/dns_redirect/redirect_holusion.png" alt="Original content URL">
     <p align="center">Without redirect</p>
   </div>
   <div class="col-md-3 col-sm-6">
-    <img class="img-responsive" src="/static/img/posts/dns_redirect/redirect_example.png" alt="Redirected URL">
+    <img class="img-fluid" src="/static/img/posts/dns_redirect/redirect_example.png" alt="Redirected URL">
     <p align="center">With Redirect</p>
   </div>
 </div>
@@ -41,7 +41,7 @@ We will make your CNAME internally point to this address. Head to your DNS provi
 
 <div class="row">  
   <div class="col-md-6">
-    <img class="img-responsive" alt="dns zone add entry" src="/static/img/posts/dns_redirect/dns_zone.png">
+    <img class="img-fluid" alt="dns zone add entry" src="/static/img/posts/dns_redirect/dns_zone.png">
   </div>
   <div class="col-md-6">
     <p>You need to set up a <b>CNAME</b> invisible redirect from your domain to <code>example.pixel.holusion.com</code> (replace "example" with your account name).
@@ -61,7 +61,7 @@ We will make your CNAME internally point to this address. Head to your DNS provi
     <p>DNS entries can have up to 24 hours of propagation time. You can verify the redirection with a DNS explorer like <a  href="https://en.wikipedia.org/wiki/Dig_(command)">dig</a>.</p>
   </div>
   <div class="col-md-6">
-    <img class="img-responsive" alt="dns zone edit CNAME" src="/static/img/posts/dns_redirect/dns_create.png">
+    <img class="img-fluid" alt="dns zone edit CNAME" src="/static/img/posts/dns_redirect/dns_create.png">
   </div>
 </div>
 

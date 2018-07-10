@@ -24,12 +24,12 @@ Les paramètres `position`, `rotation` et `viewport` des caméras sont réglés 
 
 <div class="container">
 <div class="row">
-<div class="col-md-offset-3 col-md-3 col-xs-6">
-  <img class="img-responsive magnify" src="/static/img/posts/unity/layout_sample.png" alt="sample layout image" >
+<div class="offset-md-3 col-md-3 col-xs-6">
+  <img class="img-fluid magnify" src="/static/img/posts/unity/layout_sample.png" alt="sample layout image" >
   <center>Résultat sans "background"</center>
 </div>
 <div class="col-md-3 col-xs-6">
-  <img class="img-responsive magnify" src="/static/img/posts/unity/layout_sample_2.png" alt="sample layout image" >
+  <img class="img-fluid magnify" src="/static/img/posts/unity/layout_sample_2.png" alt="sample layout image" >
   <center>Résultat avec "background"</center>
 </div>
 </div>

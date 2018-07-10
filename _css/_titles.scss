@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 h1,h2,h3,h4,h5,h6{
 	font-family: open_sanslight;
 	color: $light-blue;
@@ -82,20 +82,19 @@ h3:target{
   padding:200px 0px 0px 0px;
 }
 .header{
-  background-color:$light-grey;
+  background-color:$grey-100;
   background-repeat:no-repeat;
   background-size: 100% auto;
 }
 
 /* Titles on blue background that targets page sections*/
-section.title{
-  background: url("/build/img/front/section_2x.jpg") center/cover no-repeat;
-}
-section.title{
-  h1, a, a:hover{
+section.title, .section-title {
+  background: url("/build/img/front/section_2x.png") center/cover no-repeat;
+	h1, a, a:hover{
     color:$white;
   }
 }
+
 
 #section-header{
   /*padding-top:52px;*/
