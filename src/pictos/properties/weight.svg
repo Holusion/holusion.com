@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 8 H15 Q18 8, 18.5 11 L19.5 17Q20 20, 17 20 H7 Q4 20, 4.5 17L5.5 11 Q6 8, 9 8 H10 c-2 -2, 6 -2, 4 0"/>
+    <text fill="white" x="6" y="18" font-size="8">KG</text>
+</svg>
+<!--A1.5 1.5 0 0 1 12 6-->
