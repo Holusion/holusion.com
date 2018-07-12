@@ -1,13 +1,4 @@
-
-class PostsReg
-  @@list
-  def self.set (l)
-    @@list = l
-  end
-  def self.get
-    return @@list
-  end
-end
+require "jekyll/utils"
 
 def product_sort(a, b)
   ra = a.data["rank"]
@@ -45,14 +36,13 @@ Jekyll::Hooks.register :site, :post_read do |site|
   c.keys.each do |col|
     c[col]["fr"].each do |p|
       alt_url = p.data["alt_url"]
-      alt_p_index = site.pages.find_index {|item| item.url == alt_url}
-      next if not alt_url or not alt_p_index  # break if no alt page exists
+      alt_p = site.pages.find {|item| item.url == alt_url}
+      next if not alt_url or not alt_p  # break if no alt page exists
 
-      alt_p = site.pages[alt_p_index]
       # copy keys (no overwrite)
-      p.data.keys.each do |k|
-        alt_p.data[k] = p.data[k] if ! alt_p.data.key? k
-      end
+      alt_p.data = Jekyll::Utils.deep_merge_hashes(
+        p.data, alt_p.data
+      )
     end
 
   end
