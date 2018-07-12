@@ -20,6 +20,10 @@ weight:
   icon: src/pictos/properties/weight.svg
   fr: poids
   en: weight
+box:
+  icon: src/pictos/properties/box.svg
+  fr: taille du packaging
+  en: packaged size
 brightness:
   icon: src/pictos/properties/brightness.svg
   fr: luminosité
@@ -56,3 +60,19 @@ setup:
   icon: src/pictos/properties/time.svg
   fr: temps d'installation
   en: setup time
+transport:
+  icon: src/pictos/properties/box.svg
+  fr: caisse de transport
+  en: flight case
+nfc:
+  icon: src/pictos/properties/nfc.svg
+  fr: contrôle sans contact
+  en: near field communication
+package:
+  icon: src/pictos/properties/custom_color.svg
+  fr: pochette
+  en: packaging
+lettering:
+  icon: src/pictos/properties/short_text.svg
+  fr: gravure
+  en: lettering
