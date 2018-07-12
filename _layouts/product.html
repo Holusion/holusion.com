@@ -2,37 +2,74 @@
 layout: page
 ---
 
-<div class="container" id="product-header">
-  <div class="row" />
-    <div class="col-lg-6 col-md-12 row-no-padding">
-      {% include components/slideshow.html contents=page.slides height=250 %}
-    </div>
-    <div class="col-lg-6 col-md-12" align="center">
-      <img style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid" src="{{page.picto}}"/>
-      <h1 align="center">{{page.header}}</h1>
-      {% if page.price %}
-        <h3 align="center">{{page.price}} € {{site.data.strings["store-no-vat"][page.lang]}}</h3>
-        <div align="center" style="font-size: 0.7rem">
-          {{site.data.strings[public-price][page.lang]}}.
-          {%unless page.location == false %}
-          {{site.data.strings[rent-available][page.lang]}}
-          {%endunless%}
-        </div>
-      {% else %}
-        <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
-      {% endif %}
-      {% if page.ecommerce %}
-        {% include shop/store-fab.html url=page.ecommerce %}
-      {% else %}
-        {% capture contact_us_string %}{{site.data.strings["contact-us"][page.lang]}}{%endcapture%}
-        {% include components/contact_button.html txt=contact_us_string %}
-      {% endif %}
-    </div>
+<div class="row  no-gutters">
+  <div class="col-lg-6 col-md-12">
+    {% include components/slideshow.html contents=page.slides height=250 %}
+  </div>
+  <div class="col-lg-6 col-md-12" align="center">
+    <img style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid" src="{{page.picto}}"/>
+    <h1 align="center">{{page.header}}</h1>
+    {% if page.price %}
+      <h3 align="center">{{page.price}} € {{site.data.strings["store-no-vat"][page.lang]}}</h3>
+      <div align="center" style="font-size: 0.7rem">
+        {{site.data.strings[public-price][page.lang]}}.
+        {%unless page.location == false %}
+        {{site.data.strings[rent-available][page.lang]}}
+        {%endunless%}
+      </div>
+    {% else %}
+      <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
+    {% endif %}
+    {% if page.ecommerce %}
+      {% include shop/store-fab.html url=page.ecommerce %}
+    {% else %}
+      {% capture contact_us_string %}{{site.data.strings["contact-us"][page.lang]}}{%endcapture%}
+      {% include components/contact_button.html txt=contact_us_string %}
+    {% endif %}
   </div>
 </div>
 <div id="product-content">
   {{content}}
 </div>
+{% if page.properties %}
+<div id="product-properties" class="container-fluid">
+  <h2 class="text-center">{{site.data.strings.characteristics[page.lang]}}</h2>
+  <div class="card-deck justify-content-around">
+    {% for prop_group in page.properties %}
+      <div class="card  product-property-group">
+        <div class="card-header text-capitalize font-weight-bold bg-primary text-light product-property-header">
+          {%assign prop_group_name = prop_group[0] %}
+          {{site.data.product_properties[prop_group_name][page.lang]}}
+        </div>
+        <ul class="list-group list-group-flush">
+          {%for prop in prop_group[1] %}
+            {%capture prop_key %}{{prop[0]}}{%endcapture%}
+            {%capture prop_value %}{{prop[1]}}{%endcapture%}
+            {%capture prop_icon %}{{site.data.product_properties[prop_key]["icon"] |default: "src/pictos/properties/default.svg"}}{%endcapture%}
+
+            <li class="product-property list-group-item d-flex">
+              <div class="product-property-icon">
+                {%svg {{prop_icon}} width=48 %}
+              </div>
+              <div class="product-property-body d-flex flex-column flex-grow-1">
+                <div class="product-property-title font-weight-bold text-secondary">
+                  {{site.data.product_properties[prop_key][page.lang] |default: prop_key}}
+                </div>
+                <div class="product-property-value justify-self-end text-right text-muted">
+                  {{prop_value}}
+                </div>
+              </div>
+            </li>
+          {%endfor%}
+          <li class="product-property list-group-item d-none d-lg-flex">
+            <!--provide a trailing border for esthetics-->
+          </li>
+        </ul>
+      </div>
+    {%endfor%}
+  </div>
+</div>
+{% endif %}
 {% include components/similar_posts.html %}
 <div id="goto-products" style="max-width:600px;margin:auto;padding-top:40px">
   <a href="/{{page.lang}}/products"class="btn btn-primary btn-lg btn-block" >

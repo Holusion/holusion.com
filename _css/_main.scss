@@ -16,6 +16,7 @@
 @import "store";
 @import "team_portraits";
 @import "medias";
+@import "product";
 
 body{
   padding-top: 57px;
@@ -26,19 +27,7 @@ body{
   min-height:60vh;
 
 }
-/* make the whole content padding-less on small devices */
-@media screen and (max-width: $break-md){
-  #content, #content .container, #content .container-fluid{
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .row-no-padding.col-md-12,
-  .row-no-padding.col-sm-12,
-  .row-no-padding.col-xs-12 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+
 
 #content.container p, .rtejustify {
   text-align: justify;

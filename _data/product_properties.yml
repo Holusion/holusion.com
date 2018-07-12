@@ -1,0 +1,58 @@
+# property groups
+display:
+  fr: affichage
+  en: display
+characteristics:
+  fr: caractéristiques
+  en: characteristics
+computing:
+  fr: performances
+  en: performance
+options:
+  fr: options
+  en: options
+# individual properties
+size:
+  icon: src/pictos/properties/ruler-size.svg
+  fr: taille totale
+  en: total size
+weight:
+  icon: src/pictos/properties/weight.svg
+  fr: poids
+  en: weight
+brightness:
+  icon: src/pictos/properties/brightness.svg
+  fr: luminosité
+  en: brightness
+contrast:
+  icon: src/pictos/properties/contrast.svg
+  fr: contraste
+  en: contrast ratio
+resolution:
+  icon: src/pictos/properties/resolution.svg
+  fr: résolution
+  en: resolution
+full_display_area:
+  icon: src/pictos/properties/display-size.svg
+  fr: taille de l'affichage
+  en: active display size
+diagonal:
+  icon: src/pictos/properties/diagonal.svg
+  fr: diagonale de l'écran
+  en: screen diagonal
+power:
+  icon: src/pictos/properties/power.svg
+  fr: puissance
+  en: power
+cpu:
+  icon: src/pictos/properties/compute.svg
+  fr: processeur
+  en: processor
+inputs:
+  icon: src/pictos/properties/inputs.svg
+  fr: formats supportés
+  en: supported inputs
+setup:
+  icon: src/pictos/properties/time.svg
+  fr: temps d'installation
+  en: setup time
