@@ -38,7 +38,7 @@ contact-us:
   fr: Contactez-nous
   en: Contact us
 see-other-products:
-  fr: Découvrir d'autres produits
+  fr: Découvrir tous nos produits
   en: See other products
 see-other-stories:
   fr: "Plus d'histoires"
@@ -49,6 +49,9 @@ see-other-stories-2:
 read-more:
   fr: en savoir plus
   en: read more
+also:
+  fr: découvrir aussi...
+  en:  also made by holusion...
 rent-only:
   fr: Uniquement en location
   en: Only available for rent

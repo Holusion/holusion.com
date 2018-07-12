@@ -104,4 +104,4 @@ Tous ces éléments sont reflétés dans les deux panneaux réfléchissants cent
 L'innovation ici, consiste à utiliser des hologrammes et une rétro-projection, plus classique, pour créer les images à taille humaine. En effet, les images à taille humaine sont très souvent une contrainte technique important pour le Pepper's Ghost. Il faut souvent énormémement d'espace et de recul pour les générer. Ce qui explique pourquoi cette technologie restait plutôt cantonné au monde de la scène.</p>
 <p>L'hologramme tire parti des éléments de décors, pour donner une forte impression de profondeur. Le talent de la réalisation de la vidéo est un point central du succès de cette installation. Réalisé par Ralph Lauren eux-même avec beaucoup de soins, le message devient plus authentique et pertinent</p>
 
-<h4 class="rtecenter" style="padding-top: 20px">Découvrir aussi...</h4>
+
