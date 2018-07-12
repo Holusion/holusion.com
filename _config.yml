@@ -35,6 +35,7 @@ pagination:
 #This is the public test api key and can be publicly shared consequence-free
 # It will be overriden by further "_deploy.yml" file during deployment.
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
+permalink: /:path
 collections:
   posts:
     output: true
