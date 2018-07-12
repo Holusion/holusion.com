@@ -1,25 +1,30 @@
+{%unless similar_posts %}
+  {% assign similar_posts = "" | split: ""  %}
 
+  {% for post in site.categories[page.lang] %}
+    {% for tag in page.tags %}
+      {% if post.tags contains tag %}
+        {% unless post.url == page.url %}
+          {% assign similar_posts = similar_posts |push: post %}
+          {%comment%}break once post is matched to prevent duplication{%endcomment%}
+          {% break %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{%endunless%}
 
-<div id="post-similar">
-  <div class="row" >
-    {% assign similar_posts = "" | split: ""  %}
-    {% for post in site.posts_items[page.lang] %}
-      {% for tag in page.tags %}
-        {% if post.tags contains tag %}
-          {% unless post.url == page.url %}
-            {% assign similar_posts = similar_posts |push:post %}
-            {%comment%}break once post is matched to prevent duplication{%endcomment%}
-            {% break %}
-          {% endunless %}
-        {% endif %}
+{% if similar_posts.size != 0 %}
+  <div id="post-similar">
+    <h4 class="text-center pt-4">{{site.data.strings["also"][page.lang]}}</h4>
+    <div class="row" >
+      {% for post in similar_posts limit: 3 %}
+        {% include components/post_thumbnail.html content=post %}
       {% endfor %}
-    {% endfor %}
-    {% for post in similar_posts limit: 3 %}
-      {% include components/post_thumbnail.html content=post %}
-    {% endfor %}
-    {% capture stories_url %}/{{page.lang}}/posts{% endcapture %}
-    {% capture other-story %}{{site.data.strings["see-other-stories"][page.lang]}}{% endcapture %}
-    {% capture other-story-2 %}{{site.data.strings["see-other-stories-2"][page.lang]}}{% endcapture %}
-    {% include components/post_thumbnail.html title=other-story image="/static/img/posts/default.jpg" abstract=other-story-2 url=stories_url %}
+      {% capture stories_url %}/{{page.lang}}/posts{% endcapture %}
+      {% capture other-story %}{{site.data.strings["see-other-stories"][page.lang]}}{% endcapture %}
+      {% capture other-story-2 %}{{site.data.strings["see-other-stories-2"][page.lang]}}{% endcapture %}
+      {% include components/post_thumbnail.html title=other-story image="/static/img/posts/default.jpg" abstract=other-story-2 url=stories_url %}
+    </div>
   </div>
-</div>
+{% endif %}
