@@ -93,37 +93,27 @@
   ul{
     list-style: none;
     padding-left:0;
-  }
-  a{
-    color:$white;
-  }
-  a:hover{
-    color:$white;
-    text-decoration: underline;
+    >li>a{
+      color:$white;
+      &:hover{
+        color:$white;
+        text-decoration: underline;
+      }
+    }
   }
 }
+
 #section-bottom h4{
   color:$light-blue;
 }
+
 .navbar-default .navbar-brand {
   font-size: 2em;
   font-weight:800;
 }
 
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
-  background:$light-blue !important;
-  color:$white !important;
-}
 .flag {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-}
-#mc_embed_signup{
-  #mc_submit{
-    cursor:pointer;
-    :hover{
-      color:#2fafe6;
-    }
-  }
 }
