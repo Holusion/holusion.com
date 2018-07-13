@@ -1,5 +1,5 @@
 @import "variables";
-@import "cookieconsent.min.css";
+@import "/node_modules/cookieconsent/build/cookieconsent.min.css";
 
 .cc-banner, .cc-revoke{
   background: $deep-blue;
