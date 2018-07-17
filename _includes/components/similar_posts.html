@@ -17,6 +17,7 @@
 {% if similar_posts.size != 0 %}
   <div id="post-similar">
     <h4 class="text-center pt-4">{{site.data.strings["also"][page.lang]}}</h4>
+
     <div class="row" >
       {% for post in similar_posts limit: 3 %}
         {% include components/post_thumbnail.html content=post %}

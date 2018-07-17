@@ -1,8 +1,7 @@
 ---
 title: Holusion - Holographic showcase
 image: /static/img/posts/ralph_lauren/header.jpg
-abstract: How Ralph Lauren designed its hologram on 5th Avenue
-tags: marketing, real size, event
+abstract: How Ralph Lauren designed its hologram on 5th Avenuetags: marketing real size event
 ---
 <center>
 
