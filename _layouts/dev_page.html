@@ -12,39 +12,37 @@ layout: index
         {% include utils/make_pages.html %}
         {% assign categories = "toolbox,platform,content" |split: "," %}
         {% for category in categories %}
-        {% capture signature %}{{page.lang}}/{{category}}{% endcapture %}
-        {% if page.url contains signature %}
-          {% assign active=true %}
-        {% else %}
-          {% assign active=false %}
-        {%endif%}
-        <div class="card">
-          <div class="card-header">
-            <h5 class="mb-0">
-              <button
-              class="btn btn-link text-secondary font-weight-bold" type="button" data-toggle="collapse"
-              data-target="#collapseCard{{forloop.index}}"
-              aria-expanded="{%if active%}true{%else%}false{%endif%}"
-              aria-controls="collapseCard{{forloop.index}}" >
-                {{category}}
-              </button>
-            </h5>
-          </div>
-          <div id="collapseCard{{forloop.index}}" class="collapse{%if active%} show{%endif%}"
-          aria-labelledby="collapseCard{{forloop.index}}"
-          data-parent="#sidebar"
-          aria-expanded="{%if active%}true{%else%}false{%endif%}">
-            <div class="card-body">
+        {% capture signature %}/dev/{{page.lang}}/{{category}}{%endcapture%}
+          {% if page.url contains  signature %}
+            {% assign active="true" %}
+          {% else %}
+            {% assign active="false" %}
+          {%endif%}
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button
+                class="btn btn-link text-secondary font-weight-bold" type="button" data-toggle="collapse"
+                data-target="#collapseCard{{forloop.index}}"
+                aria-expanded="{{active}}"
+                aria-controls="collapseCard{{forloop.index}}" >
+                  {{category}} - {{signature}}
+                </button>
+              </h5>
+            </div>
+            <div id="collapseCard{{forloop.index}}" class="collapse{%if active == "true" %} show{%endif%}"
+            aria-labelledby="collapseCard{{forloop.index}}"
+            data-parent="#sidebar"
+            aria-expanded="{{active}}">
               <ul class="list-group list-group-flush">
                 {% for content in site.content_dev %}
-                  {% if content.url contains page.lang and content.url contains "toolbox" and content.abstract %}
+                  {% if content.url contains page.lang and content.url contains category and content.abstract %}
                     {% include components/nav/navbar_link.html type="list-group" title=content.title href=content.url %}
                     {% endif %}
                 {% endfor %}
               </ul>
             </div>
           </div>
-        </div>
         {%endfor%}
       </nav>
     </div>
