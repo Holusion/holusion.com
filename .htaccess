@@ -13,7 +13,7 @@ RewriteRule ^/(fr|en)/store(.*)$ https://holusion.com/$1/store$2 [R,L]
 # rewrite dev.holusion.com to holusion.com/dev
 RewriteCond %{HTTP_HOST} ^dev.holusion.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www.dev.holusion.com$
-RewriteRule (.*)$ https://holusion.com.com/dev/$1 [R=301,L]
+RewriteRule (.*)$ https://holusion.com/dev/$1 [R=301,L]
 
 
 #permanent redirect for home page to french version
