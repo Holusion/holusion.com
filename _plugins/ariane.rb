@@ -29,7 +29,7 @@ module Jekyll
         links.unshift( %!<a href="/#{m["prefix"]}">dev</a> !) if m["dev"]
 
         return %@
-        <div class="ariane">
+        <div class="ariane container">
           <a href="/#{m["prefix"]}">
             #{site.data["sections"]["home"][lang]}
           </a>
