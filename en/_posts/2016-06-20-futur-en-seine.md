@@ -3,7 +3,7 @@ title: Futur En Seine 2016
 image: /build/img/products/focus_futur_en_seine.jpg
 image2x: /build/img/products/focus_futur_en_seine_2x.jpg
 abstract: Bagdad 3D, future of our origins.
-tags: evenementiel, formation, focus
+tags: evenementiel formation focus
 ---
 
 
