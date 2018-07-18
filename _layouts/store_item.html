@@ -48,7 +48,7 @@ layout: store
              </span>
              <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
              <meta itemprop="url" content="{{page.url | absolute_url}}" />
-             {% include shop/link.html data=page %}
+             {% include components/shop/link.html data=page %}
            </div>
          </div>
         </div>
