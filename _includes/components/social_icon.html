@@ -1,4 +1,4 @@
 
-<a target="_blank" href="{{include.link}}" aria-label="{{include.name}}">
+<a target="_blank" href="{{include.link}}" aria-label="{{include.name}}" onclick="gtag('event', 'click', {event_category: 'social', event_label: '{{include.name}}'})">
   <div class="{{include.name}}{%if include.invert%} invert{%endif%}">&nbsp;</div>
 </a>
