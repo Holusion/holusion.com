@@ -2,9 +2,9 @@
 
   {% include components/contact_form.html %}
   <section id="contact-bottom">
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-center">
         {{site.data.strings["need-help"][page.lang]}} ?
-        <a style="cursor:pointer;text-decoration: underline" onclick='displayContactForm()'>{{site.data.strings["contact-us"][page.lang]}}</a>
+        <button class="btn btn-outline-light" style="cursor:pointer;font-size: 25px;margin-left:25px" onclick='displayContactForm()'>{{site.data.strings["contact-us"][page.lang]}}</button>
     </div>
   </section>
   <div class="container-fluid" id="section-bottom">
