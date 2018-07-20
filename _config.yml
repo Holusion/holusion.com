@@ -39,7 +39,7 @@ permalink: /:path
 collections:
   posts:
     output: true
-    permalink: /:categories/posts/:year-:month-:day-:title
+    permalink: /:categories/posts/:title
   content_dev:
     permalink: /dev/:path
     output: true
