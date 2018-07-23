@@ -2,81 +2,92 @@
 {% comment %} ensure it's included only once {% endcomment %}
 
 {% assign contact_strings = site.data.contact_form_locale %}
-<section id="section-contactform" class="">
-  <!-- USAGE
-    <a onclick="displayContactForm()">foo</a>;
-  -->
-  <div id="contactform-overlay">
-  </div>
-    <form name="contactform" class="form-horizontal" method="post" action="/contact.php">
-      <span id="contactform-close" class="glyphicon glyphicon-remove"></span>
+<!-- USAGE
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactform-modal">foo</button>;
+-->
+<div id="contactform-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
 
-      <input type="hidden" name="lang" value="{{page.lang}}">
-      <div class="form-group">
-        <label for="fname">{{contact_strings["firstname"][page.lang]}}</label>
-        <input
-          type="text" class="form-control"
-          name="fname" id="first_name"
-          maxlength="50" size="30"
-          placeholder="{{contact_strings["firstname"][page.lang]}}"
-          required
-          pattern="..+"
-          autocomplete="given-name">
+    <div class="modal-dialog bg-light" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 id="contactModalLabel" class="modal-title w-100 font-weight-bold">Contact</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form name="contactform" method="post" action="/contact.php" >
+          <div class="modal-body">
+            <input type="hidden" name="lang" value="{{page.lang}}">
+            <div class="form-group">
+              <label for="fname">{{contact_strings["firstname"][page.lang]}}</label>
+              <input
+                type="text" class="form-control"
+                name="fname" id="first_name"
+                maxlength="50" size="30"
+                placeholder="{{contact_strings["firstname"][page.lang]}}"
+                required
+                pattern=".+"
+                autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lname">{{contact_strings["lastname"][page.lang]}}</label>
+              <input
+                type="text" class="form-control"
+                name="lname" id="last_name"
+                maxlength="50" size="30"
+                placeholder="{{contact_strings["lastname"][page.lang]}}"
+                required
+                pattern=".+"
+                autocomplete="family-name">
+            </div>
+            <div class="form-group">
+              <label for="email">{{contact_strings["mail"][page.lang]}}</label>
+              <input
+                type="text" class="form-control"
+                name="email" id="email"
+                maxlength="80" size="30"
+                placeholder="mail@example.com"
+                required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="phone">{{contact_strings["phone"][page.lang]}}</label>
+              <input
+                type="text" class="form-control"
+                name="phone" id="telephone"
+                maxlength="30" size="30"
+                placeholder="{{contact_strings["phone"][page.lang]}}"
+                pattern="^([0-9+]|\([0-9]{1,3}\))[0-9 .,-x]{7,20}$"
+                autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="comments">{{contact_strings["comments"][page.lang]}}</label>
+              <textarea
+                role="textbox"
+                name="comments"
+                class="form-control" id="comments"
+                maxlength="1000" cols="25" rows="6"
+                required></textarea>
+            </div>
+
+            <div class="modal-footer">
+              <button type="submit" class="form-control btn btn-primary">Submit</button>
+              {% if site.recaptcha_public %}
+              <div class="g-recaptcha"
+                data-sitekey="{{site.recaptcha_public}}"
+                data-size="invisible"
+                data-badge="inline"
+                data-callback="onValidated">
+              </div>
+              {%endif%}
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="lname">{{contact_strings["lastname"][page.lang]}}</label>
-        <input
-          type="text" class="form-control"
-          name="lname" id="last_name"
-          maxlength="50" size="30"
-          placeholder="{{contact_strings["lastname"][page.lang]}}"
-          required
-          pattern="..+"
-          autocomplete="family-name">
-      </div>
-      <div class="form-group">
-        <label for="email">{{contact_strings["mail"][page.lang]}}</label>
-        <input
-          type="text" class="form-control"
-          name="email" id="email"
-          maxlength="80" size="30"
-          placeholder="mail@example.com"
-          required
-          pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-          autocomplete="email">
-      </div>
-      <div class="form-group">
-        <label for="phone">{{contact_strings["phone"][page.lang]}}</label>
-        <input
-          type="text" class="form-control"
-          name="phone" id="telephone"
-          maxlength="30" size="30"
-          placeholder="{{contact_strings["phone"][page.lang]}}"
-          pattern="[0-9+][0-9\s.-,]+"
-          autocomplete="tel">
-      </div>
-      <div class="form-group">
-        <label for="comments">{{contact_strings["comments"][page.lang]}}</label>
-        <textarea
-          role="textbox"
-          name="comments"
-          class="form-control" id="comments"
-          maxlength="1000" cols="25" rows="6"
-          required></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="form-control btn btn-secondary">Submit</button>
-      </div>
-      {% if site.recaptcha_public %}
-      <div class="g-recaptcha"
-        data-sitekey="{{site.recaptcha_public}}"
-        data-size="invisible"
-        data-badge="inline"
-        data-callback="onValidated">
-      </div>
-      {%endif%}
-    </form>
-    <script async defer src="/static/js/contact.js"></script>
-</section>
+    </div>
+    <script async src="/static/js/contact.js"></script>
+</div>
 <div id="logger"></div>
 {% endunless %}

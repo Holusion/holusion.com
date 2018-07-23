@@ -245,7 +245,9 @@ describe(`${target}`,function(){
           // `page.setRequestInterception(true)` somewhere
           await block(page,["images", "medias", "analytics", "captcha"]);
           await page.goto(`${href}/${lang}/`);
-          await page.waitForSelector("#section-contactform.is-ready");
+          await page.waitForSelector("#contactform-modal.is-ready");
+          //Remove animations to speed up tests
+          await page.$eval("#contactform-modal.fade", e=>{e.classList.remove("fade")});
           page.on('request', function(r){
             let path = r.url();
             if (path == "/contact.php"){
@@ -256,40 +258,52 @@ describe(`${target}`,function(){
         after(async function(){
           await page.close();
         });
-        //We don't reload the page because the form is supposed to be reset each time
+        //We don't reload the page, tests may leak
         beforeEach(async function(){
           await page.click("#navbar-contact-button");
-          this.form = await page.waitForSelector("#section-contactform.active");
+          this.form = await page.waitForSelector("#contactform-modal.show");
           this.write = (async function (name, txt){
+            let selector = `#contactform-modal [name="${name}"]`
             //Looks like input is not necessarily cleared otherwise
-            await page.$eval(`#section-contactform.active [name="${name}"]`, e => {e.value = ""})
+            await page.$eval(selector, e => {e.value = ""})
             if(txt){
-              await page.type(`#section-contactform.active [name="${name}"]`, txt);
+              await page.type(selector, txt);
             }
-            return await page.$eval(`#section-contactform.active [name="${name}"]`, e => e.checkValidity())
+            return await page.$eval(selector, e => e.checkValidity())
           })
         })
         afterEach(async function(){
-          await page.evaluate("closeForm()")
+          //await page.evaluate("closeForm()")
         })
         it("shows contact form", async function(){
           expect(this.form).to.be.ok;
         })
+        it("close contact form by clicking the close button", async function(){
+          await page.click('#contactform-modal [data-dismiss="modal"]');
+          await page.waitForSelector("#contactform-modal:not(.show)");
+        })
         //Accept various types of fake data
-        const faker_map = {
-          fname: faker.name.firstName,
-          lname: faker.name.lastName,
-          email: faker.internet.email,
-          phone: faker.phone.phoneNumber,
-          comments: faker.random.words
-        }
-        Object.keys(faker_map).forEach(function (k){
-          for (let i = 0; i <10; i++){
-            let item = faker_map[k]();
-            it(`accept valid ${k} : ${item}`,async function(){
-              expect(await this.write(k,item), `Expect "${item}" to be a valid ${k}`).to.be.true;
+        const faker_locales = ["en", "fr", "zh_CN"];
+        faker_locales.forEach(function(faker_locale){
+          describe(`Random data for : ${faker_locale} locale`, function(){
+            faker.locale = faker_locale;
+            const faker_map = {
+              fname: faker.name.firstName,
+              lname: faker.name.lastName,
+              email: faker.internet.email,
+              phone: faker.phone.phoneNumber,
+              comments: faker.random.words
+            }
+            Object.keys(faker_map).forEach(function (k){
+              // 5 is not a lot. If someday it misses exceptions, boost it
+              for (let i = 0; i <5; i++){
+                let item = faker_map[k]();
+                it(`accept valid ${k} : ${item}`,async function(){
+                  expect(await this.write(k,item), `Expect "${item}" to be a valid ${k}`).to.be.true;
+                })
+              }
             })
-          }
+          })
         })
         //Reject empty
         const fields = ["fname", "lname", "comments", "email"]
