@@ -10,6 +10,7 @@ $secretKey = "{{site.recaptcha_secret}}";
 
 $locale_strings = [
   "fr" => [
+    "success" => "Merci de nous avoir contacté, votre demande sera traitée au plus vite",
     "err" => "Erreur",
     "empty1" => "est vide",
     "empty2" => "sont vides",
@@ -19,6 +20,7 @@ $locale_strings = [
     "einvcomment" => 'Les commentaires doivent faire au moins 20 caractères',
   ],
   "en" => [
+    "success" => "Thank you for contacting us. We will be in touch with you very soon",
     "err" => "Error",
     "empty1"      => "is empty",
     "empty2"      => "are empty",
@@ -153,7 +155,7 @@ if ($email_from == "contact@holusion.com"){
   echo('{"code":200,"message":'.json_encode($email_message).'}');
 }else{
   @mail($email_to, $email_subject, $email_message, $headers);
-  echo('{"code":200,"message":"Thank you for contacting us. We will be in touch with you very soon"}');
+  echo('{"code":200,"message":"'.$strings["success"].'"}');
 }
 
 ?>
