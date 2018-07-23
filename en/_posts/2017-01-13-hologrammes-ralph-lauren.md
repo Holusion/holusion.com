@@ -44,7 +44,7 @@ Real props and accessories, such as the cords, ground decorations and lights, sp
 Finaly, inside the corners, on the right and on the left, two screens, for informations and characters outside the ring</p>
 <p>The most important point to understand this installation, is the couple of glass panels. They behave simultanously as mirror and as glass in order to blend images from the central screen and from the corners</p>
 
-<img class="img-fluid;" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren_en.jpg" title="installation drawings" alt="Schematic representation of the holographic installation in the front window of Ralph Lauren on the 5th Avenue in New York">
+<img class="img-fluid" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren_en.jpg" title="installation drawings" alt="Schematic representation of the holographic installation in the front window of Ralph Lauren on the 5th Avenue in New York">
 </div>
 <p>This solution is very optimized for shallow spaces. All the depth is suggested by the central mirrors.</p>
 
