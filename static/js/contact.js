@@ -10,6 +10,29 @@ function closeForm(){
   $("#contactform-modal").modal('hide');
 }
 
+const contact_strings = {
+  captcha_error: {
+    en: "Recaptcha service error. Please try again later",
+    fr: "Erreur du service ReCaptcha. Veuillez rééssayer plus tard"
+  }, got_error:{
+    en: "An error happened",
+    fr: "Une erreur s'est produite"
+  }, network_error:{
+    en: 'A network error prevented submission. Please try again later',
+    fr: "Une erreur réseau a empéché l'envoi. Veuillez rééssayer plus tard"
+  }, sending: {
+    en: "Sending...",
+    fr:"Envoi en cours"
+  },
+};
+const page_lang_m = /^\/(fr|en)\//.exec(window.location.pathname);
+const page_lang = (page_lang_m && page_lang_m[1])? page_lang_m[1]: "en";
+
+function localize(key){
+  if(!contact_strings[key]) return key;
+  return contact_strings[key][page_lang]|| contact_strings[key]["en"]
+}
+
 // Utility function to create and display logs for form actions
 function logInfo(level,txt){
   console.log(txt);
@@ -56,7 +79,7 @@ function onSubmitContactForm(e){
     grecaptcha.execute();
   }catch(e){
     console.error(e);
-    logInfo("alert-warning", "Recaptcha service error. Please try again later");
+    logInfo("alert-warning", localize("captcha_error"));
     closeForm();
   }
   return false;
@@ -67,7 +90,7 @@ function onValidated(){
   var XHR = new XMLHttpRequest();
   var FD  = new FormData(submission);
   FD.append("source", window.location.pathname);
-  var spinnerClose = logInfo("alert-info","Envoi en cours");
+  var spinnerClose = logInfo("alert-info",localize("sending"));
   XHR.addEventListener('load', function(res) {
     var txt;
     console.log(res.target.statusText);
@@ -82,12 +105,12 @@ function onValidated(){
       logInfo('alert-success',txt);
       closeForm();
     }else {
-      logInfo("alert-danger","An error happened : "+txt);
+      logInfo("alert-danger",localize("got_error")+" : "+txt);
     }
   });
   // We define what will happen in case of error
   XHR.addEventListener('error', function(event) {
-    logInfo("alert-warning",'Oups! Something went wrong :(');
+    logInfo("alert-warning",localize("network_error"));
   });
   XHR.open('POST', '/contact.php');
   XHR.send(FD);
