@@ -2,6 +2,8 @@ function displayContactForm(){
   var contactform = document.getElementById("section-contactform")
   contactform.classList.add("active");
 }
+
+// Utility function to create and display logs for form actions
 function logInfo(level,txt){
   console.log(txt);
   var logger = document.querySelector("#logger");
@@ -31,19 +33,22 @@ function closeForm(){
   var contactform = document.querySelector("#section-contactform");
   contactform.classList.remove("active");
 }
+
 function setupForm(){
+  var contactform = document.querySelector("#section-contactform");
   var submission = document.querySelector("#section-contactform>form");
   var overlay = document.querySelector("#contactform-overlay");
   var closer = document.querySelector("#contactform-close");
   overlay.onclick = closeForm;
   closer.onclick = closeForm;
   submission.onsubmit = onSubmitContactForm;
+  contactform.classList.add("is-ready");
 }
 
 function onSubmitContactForm(e){
+  //Client-side validation is done in compatible browsers by input.pattern attributes before this callback
   e.preventDefault();
-  //TODO : perform more client-side validations?
-    grecaptcha.execute();
+  grecaptcha.execute();
 
   return false;
 }

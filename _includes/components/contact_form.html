@@ -1,9 +1,10 @@
 {% unless contact_strings %}
+{% comment %} ensure it's included only once {% endcomment %}
 
 {% assign contact_strings = site.data.contact_form_locale %}
 <section id="section-contactform" class="">
   <!-- USAGE
-    displayContactForm();
+    <a onclick="displayContactForm()">foo</a>;
   -->
   <div id="contactform-overlay">
   </div>
@@ -19,6 +20,7 @@
           maxlength="50" size="30"
           placeholder="{{contact_strings["firstname"][page.lang]}}"
           required
+          pattern="..+"
           autocomplete="given-name">
       </div>
       <div class="form-group">
@@ -29,6 +31,7 @@
           maxlength="50" size="30"
           placeholder="{{contact_strings["lastname"][page.lang]}}"
           required
+          pattern="..+"
           autocomplete="family-name">
       </div>
       <div class="form-group">
@@ -39,6 +42,7 @@
           maxlength="80" size="30"
           placeholder="mail@example.com"
           required
+          pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
           autocomplete="email">
       </div>
       <div class="form-group">
@@ -48,6 +52,7 @@
           name="phone" id="telephone"
           maxlength="30" size="30"
           placeholder="{{contact_strings["phone"][page.lang]}}"
+          pattern="[0-9+][0-9\s.-,]+"
           autocomplete="tel">
       </div>
       <div class="form-group">

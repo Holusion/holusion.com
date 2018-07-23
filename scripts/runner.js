@@ -5,6 +5,7 @@ const url = require('url');
 const util = require('util');
 const fs = require("fs");
 
+const faker = require("faker");
 const puppeteer = require('puppeteer');
 const devices = require('puppeteer/DeviceDescriptors');
 //Tools to serve the site locally
@@ -236,6 +237,70 @@ describe(`${target}`,function(){
           });
         });
       })
+      describe(`/${lang}/ contact form validation`,function(){
+        let page;
+        before(async function(){
+          page = await newPage();
+          //In those tests, it's important to have at least
+          // `page.setRequestInterception(true)` somewhere
+          await block(page,["images", "medias", "analytics", "captcha"]);
+          await page.goto(`${href}/${lang}/`);
+          await page.waitForSelector("#section-contactform.is-ready");
+          page.on('request', function(r){
+            let path = r.url();
+            if (path == "/contact.php"){
+              r.respond(`{"code":200,"message":"OK}`);
+            }
+          })
+        });
+        after(async function(){
+          await page.close();
+        });
+        //We don't reload the page because the form is supposed to be reset each time
+        beforeEach(async function(){
+          await page.click("#navbar-contact-button");
+          this.form = await page.waitForSelector("#section-contactform.active");
+          this.write = (async function (name, txt){
+            //Looks like input is not necessarily cleared otherwise
+            await page.$eval(`#section-contactform.active [name="${name}"]`, e => {e.value = ""})
+            if(txt){
+              await page.type(`#section-contactform.active [name="${name}"]`, txt);
+            }
+            return await page.$eval(`#section-contactform.active [name="${name}"]`, e => e.checkValidity())
+          })
+        })
+        afterEach(async function(){
+          await page.evaluate("closeForm()")
+        })
+        it("shows contact form", async function(){
+          expect(this.form).to.be.ok;
+        })
+        //Accept various types of fake data
+        const faker_map = {
+          fname: faker.name.firstName,
+          lname: faker.name.lastName,
+          email: faker.internet.email,
+          phone: faker.phone.phoneNumber,
+          comments: faker.random.words
+        }
+        Object.keys(faker_map).forEach(function (k){
+          for (let i = 0; i <10; i++){
+            let item = faker_map[k]();
+            it(`accept valid ${k} : ${item}`,async function(){
+              expect(await this.write(k,item), `Expect "${item}" to be a valid ${k}`).to.be.true;
+            })
+          }
+        })
+        //Reject empty
+        const fields = ["fname", "lname", "comments", "email"]
+        fields.forEach(function(k){
+          it(`requires ${k} to be not empty`, async function(){
+            expect(await this.write(k,""), `empty ${k} should not verify`).to.be.false;
+          });
+        })
+      })//End of form validation
+
+
       describe(`GET /${lang}/store/`,function(){
         let storePage;
         let thumb_cells;
