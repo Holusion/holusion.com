@@ -1,6 +1,13 @@
+// Kept for backward compatibility
+//Do : data-toggle="modal" data-target="#contactform-modal" instead
 function displayContactForm(){
-  var contactform = document.getElementById("section-contactform")
-  contactform.classList.add("active");
+  //var contactform = document.getElementById("section-contactform")
+  //contactform.classList.add("active");
+  $("#contactform-modal").modal('show');
+}
+
+function closeForm(){
+  $("#contactform-modal").modal('hide');
 }
 
 // Utility function to create and display logs for form actions
@@ -29,18 +36,15 @@ function logInfo(level,txt){
   return closer;
 }
 
-function closeForm(){
-  var contactform = document.querySelector("#section-contactform");
-  contactform.classList.remove("active");
-}
+
 
 function setupForm(){
-  var contactform = document.querySelector("#section-contactform");
-  var submission = document.querySelector("#section-contactform>form");
-  var overlay = document.querySelector("#contactform-overlay");
-  var closer = document.querySelector("#contactform-close");
-  overlay.onclick = closeForm;
-  closer.onclick = closeForm;
+  var contactform = document.querySelector("#contactform-modal");
+  var submission = document.querySelector("#contactform-modal form");
+  //var overlay = document.querySelector("#contactform-overlay");
+  //var closer = document.querySelector("#contactform-close");
+  //overlay.onclick = closeForm;
+  //closer.onclick = closeForm;
   submission.onsubmit = onSubmitContactForm;
   contactform.classList.add("is-ready");
 }
@@ -48,13 +52,18 @@ function setupForm(){
 function onSubmitContactForm(e){
   //Client-side validation is done in compatible browsers by input.pattern attributes before this callback
   e.preventDefault();
-  grecaptcha.execute();
-
+  try{
+    grecaptcha.execute();
+  }catch(e){
+    console.error(e);
+    logInfo("alert-warning", "Recaptcha service error. Please try again later");
+    closeForm();
+  }
   return false;
 }
 // The name `onValidated` is used by the captcha button as a callback
 function onValidated(){
-  var submission = document.querySelector("#section-contactform>form");
+  var submission = document.querySelector("#contactform-modal form");
   var XHR = new XMLHttpRequest();
   var FD  = new FormData(submission);
   FD.append("source", window.location.pathname);
@@ -87,16 +96,10 @@ function onValidated(){
 /* BOOTSTRAP */
 (function(){
     'use strict';
-    var contactform = document.getElementById("section-contactform")
     var script = document.createElement("SCRIPT");
     script.async = "1";
     script.onload = setupForm();
     script.src = "https://www.google.com/recaptcha/api.js";
     document.head.appendChild(script);
-    var links = document.querySelectorAll(".contact-link");
-    for(var i = 0; i< links.length; i++){
-      links[i].onclick = function(){
-        displayContactForm()();
-      }
-    }
+
   })()
