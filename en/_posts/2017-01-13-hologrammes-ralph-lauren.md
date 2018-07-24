@@ -108,4 +108,4 @@ The innovation here is to use a combination of holograms and video-projection to
 <p>
 The hologram make a smart use of background elements to give a nice feeling of depths. The well executed realisation is a main point of the hologram sucess. The movie itself, directed by Ralph Lauren with care, give all its meaning and depth of the marketing message and brand identity.</p>
 
-<h4 class="rtecenter" style="padding-top: 20px">Also find...</h4>
+

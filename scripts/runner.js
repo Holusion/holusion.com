@@ -494,7 +494,7 @@ describe(`${target}`,function(){
    if (!is_extended) return;
 
    /** EXTENDED TESTS **/
-   describe(`Verify full sitemap.xml`,function(){
+   describe(`from sitemap.xml`,function(){
      const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
      before(function(){
        //Perform basic validation on sitemap
@@ -515,7 +515,7 @@ describe(`${target}`,function(){
      .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc)
      // Perform tests for EVERY location
      for (let loc of locations){
-       describe(`Test ${loc}`,function(){
+       describe(`page ${loc}`,function(){
          let page;
          let ln = loc;
          before(async ()=>{
@@ -528,26 +528,27 @@ describe(`${target}`,function(){
          after(async()=>{
            return await page.close();
          });
-         it("have correct canonical link",async ()=>{
+         it("check canonical link",async ()=>{
            let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
-           expect(c_link.replace(/^https?:\/\/[^\/]+/, "")).to.equal(loc);
+           expect(
+             c_link.replace(/^https?:\/\/[^\/]+/, ""),
+             `canonical link ${c_link} seems invalid`
+           ).to.equal(loc);
            return c_link;
          });
-
          for (let device of target_devices){
-           it(`have only 16:9 unique thumbnails on ${device.name}`, async function() {
-             await page.emulate(device);
-             const thumb_cells = await page.$$(".thumbnail-cell");
-             if(thumb_cells.length == 0){
-               return;
-             }
-             await force16by9(thumb_cells);
-             const links = await getThumbnailLinks(thumb_cells);
-             const uniqueLinks = Array.from(new Set(links));
-             expect(uniqueLinks,
-               `Some duplicates in [\n\t${links.join(",\n\t")}\n]`
-             ).to.have.property("length", links.length);
-           });
+           describe(`on ${device.name}`,function(){
+             before(async function(){
+               await page.emulate(device)
+             })
+             it("have no h-scroll", async function(){
+               let scrollX = await page.evaluate(()=>{
+                 window.scrollBy(1,0);
+                 return Promise.resolve(window.scrollX);
+               })
+               expect(scrollX, `Horizontal scroll should be locked to 0`).to.equal(0);
+             })
+           })
          }
        });
      }
