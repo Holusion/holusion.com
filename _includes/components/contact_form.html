@@ -1,5 +1,10 @@
 {% unless contact_strings %}
-{% comment %} ensure it's included only once {% endcomment %}
+{% comment %}
+  ensure it's included only once
+  It uses bootstrap's slightly modified validation process
+  https://getbootstrap.com/docs/4.0/components/forms/#validation
+  But can be reverted to standard behaviour by just removing the `novalidate`
+{% endcomment %}
 
 {% assign contact_strings = site.data.contact_form_locale %}
 <!-- USAGE
@@ -7,10 +12,10 @@
 -->
 <div id="contactform-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog bg-light" role="document">
+    <div class="modal-dialog bg-light text-dark" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h4 id="contactModalLabel" class="modal-title w-100 font-weight-bold">Contact</h4>
+          <h4 id="contactModalLabel" class="modal-title w-100 font-weight-bold text-primary">Contact</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -68,6 +73,9 @@
                 role="textbox"
                 name="comments"
                 class="form-control" id="comments"
+                placeholder="{{contact_strings["comments_holder"][page.lang]}}"
+                pattern="^.{20}.*"
+                setCustomValidity="{{contact_strings["comments_validity"][page.lang]}}"
                 maxlength="1000" cols="25" rows="6"
                 required></textarea>
             </div>
@@ -89,5 +97,6 @@
     </div>
     <script async src="/static/js/contact.js"></script>
 </div>
+
 <div id="logger"></div>
 {% endunless %}

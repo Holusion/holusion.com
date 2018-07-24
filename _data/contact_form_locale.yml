@@ -13,3 +13,10 @@ comments:
 mail:
   fr: Adresse Mail
   en: Email Address
+
+comments_holder:
+  fr: Décrivez votre demande
+  en: Describe your project
+comments_validity:
+  fr: Veuillez fournir un commentaire d'au moins 20 caractères
+  en: Please use at least 20 char. to describe your needs.
