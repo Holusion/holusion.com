@@ -108,7 +108,7 @@ if(!preg_match($email_exp,$email_from)) {
   $error_message .= error_invalid("einvmail");
 }
 
-$string_exp = "/^[A-Za-z .'-]+$/";
+$string_exp = "/^.+$/";
 if(!preg_match($string_exp,$first_name)) {
   $error_message .= error_invalid("einvfname");
 }
