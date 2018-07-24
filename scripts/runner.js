@@ -162,7 +162,7 @@ if (is_extended){
 // use :
 // target_devices.forEach(function(device){})
 // to run tests on multiple devices
-describe(`${target}`,function(){
+describe(`${target}.`,function(){
   // Retry all tests in this suite up to 3 times
   this.retries(3);
 
@@ -213,7 +213,7 @@ describe(`${target}`,function(){
   });
 
   ["fr","en"].forEach((lang)=>{
-    describe(`${lang}`,function(){
+    describe(`${lang}.`,function(){
 
       describe("Can load index aliases",function(){
         beforeEach(async function(){
@@ -275,10 +275,10 @@ describe(`${target}`,function(){
         afterEach(async function(){
           //await page.evaluate("closeForm()")
         })
-        it("shows contact form", async function(){
+        it("set-up shows contact form", async function(){
           expect(this.form).to.be.ok;
         })
-        it("close contact form by clicking the close button", async function(){
+        it("click close contact form", async function(){
           await page.click('#contactform-modal [data-dismiss="modal"]');
           await page.waitForSelector("#contactform-modal:not(.show)");
         })
@@ -494,7 +494,7 @@ describe(`${target}`,function(){
    if (!is_extended) return;
 
    /** EXTENDED TESTS **/
-   describe(`from sitemap.xml`,function(){
+   describe(`(EXTENDED) sitemap.`,function(){
      const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
      before(function(){
        //Perform basic validation on sitemap
