@@ -13,6 +13,8 @@ exclude:
   - "build/zopflipng"
   - "build/phantomjs"
   - "build/static"
+  - "node_modules/**/*.html"
+  - "node_modules/**/*.pdf"
 highlighter: rouge
 incremental: true
 plugins:
@@ -85,5 +87,6 @@ defaults:
       path: "_content_dev/en"
     values:
       lang: "en"
+
 
 # most default config is made in make_collections plugin because this mechanism is too restrictive

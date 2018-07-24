@@ -5,7 +5,7 @@ abstract: Museums of tomorrow
 tags: museographie evenementiel focus prism ecran transparent
 ---
 
-<p><img alt="Hologramme à l'accueil du Museum Connections 2016" src="/static/img/posts/museum_connections_2016/banniere_museum_connections_hologramme.jpg" class="img-fluid" style="width: 1200px; height: 349px;" /></p>
+<p><img alt="Hologramme à l'accueil du Museum Connections 2016" src="/static/img/posts/museum_connections_2016/banniere_museum_connections_hologramme.jpg" class="img-fluid" ></p>
 
 
 <div class="row" style="padding-top: 20 px">
@@ -18,7 +18,11 @@ tags: museographie evenementiel focus prism ecran transparent
 
   </div>
 
-  <div class="col-md-6 col-xs-12"><iframe class="rtecenter" allowfullscreen="" frameborder="0" height="281" mozallowfullscreen="" src="https://player.vimeo.com/video/153765180" webkitallowfullscreen="" width="500"></iframe></div>
+  <div class="col-md-6 col-xs-12">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="rtecenter" allowfullscreen="" frameborder="0" height="281" mozallowfullscreen="" src="https://player.vimeo.com/video/153765180" webkitallowfullscreen="" ></iframe>
+    </div>
+  </div>
 </div>
 
 <div>
@@ -83,13 +87,12 @@ tags: museographie evenementiel focus prism ecran transparent
 
   <div class="row">
     <div class="col-md-6 col-xs-12 rtecenter">
-
-      <p class="rteleft"><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/q9usAg-2SMc" width="560"></iframe></p>
+      {% include components/medias/youtube.html embed="q9usAg-2SMc" %}
     </div>
 
     <div class="col-md-6 col-xs-12 rtecenter">
       <div>
-        <p><img alt="Partenariat Holusion Edikom sur le Museum Connections 2016" src="/static/img/posts/museum_connections_2016/museum_connections_stand_D9.jpg" class="img-fluid" style="width: 300px; height: 200px; float: left;" /></p>
+        <p><img alt="Partenariat Holusion Edikom sur le Museum Connections 2016" src="/static/img/posts/museum_connections_2016/museum_connections_stand_D9.jpg" class="img-fluid"></p>
       </div>
 
       <div>
@@ -97,4 +100,3 @@ tags: museographie evenementiel focus prism ecran transparent
       </div>
     </div>
   </div>
-  <h4 class="rtecenter">Also find...</h4>

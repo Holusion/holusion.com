@@ -45,4 +45,4 @@ tags: evenementiel formation focus
 
   <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 80%; height: 80%; margin-top: 10px; margin-bottom: 10px;" /></div>
 </div>
-<h4 class="rtecenter">Also find...</h4>
+
