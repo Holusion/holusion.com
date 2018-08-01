@@ -123,22 +123,7 @@ properties:
 
   <div class="row" style="padding-top: 40px">
     <div class="col-lg-6 col-md-12  d-flex flex-column justify-content-center">
-      {%svg src/pictos/schema_hebergement_pixel.svg class="forward-anim-svg" %}
-      <script defer>
-      (function(){
-        /* Activate animatinon once it enters scroll range for the first time */
-          var anim = document.querySelector(".forward-anim-svg");
-          var pos = anim.getBoundingClientRect();
-          function onScroll(ev){
-            var y = window.scrollY;
-            if(y < pos.bottom && pos.top < y){
-              anim.classList.add("active");
-              document.removeEventListener("scroll", onScroll);
-            }
-          }
-          document.addEventListener("scroll", onScroll);
-        })();
-      </script>
+      {%include components/animated_svg.html src="/src/pictos/schema_hebergement_pixel.svg"  %}
     </div>
     <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
       <h2>Vos hologrammes</h2>

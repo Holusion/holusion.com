@@ -1,0 +1,20 @@
+
+{%svg {{include.src}} class="forward-anim-svg" %}
+{%unless have_animated_svg %}
+  {%assign have_animated_svg="true" %}
+  <script defer>
+  (function(){
+    /* Activate animatinon once it enters scroll range for the first time */
+      var anim = document.querySelector(".forward-anim-svg");
+      var pos = anim.getBoundingClientRect();
+      function onScroll(ev){
+        var y = window.scrollY;
+        if(y < pos.bottom && pos.top < y){
+          anim.classList.add("active");
+          document.removeEventListener("scroll", onScroll);
+        }
+      }
+      document.addEventListener("scroll", onScroll);
+    })();
+  </script>
+{%endunless%}
