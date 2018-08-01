@@ -1,3 +1,8 @@
+/* This file describes two concepts :
+ * - section-main-header : full-width image with optionnal text card
+ * - section-main-tile : left-right alternate half-text-half-image tiles
+ * Both providing full-width edge-to-edge layout to construct pages
+ */
 .section-main-header{
   position: relative;
   display:flex;
@@ -5,168 +10,216 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-}
 
-.main-header-image-wrapper{
-  position:absolute;
-  z-index: -1;
-  top: 0;
-  left:0;
-  width:100%;
-  bottom:0;
-  padding: 40px 0;
-  clip: rect(0, auto, auto, 0);
-  /*clip being deprecated, clip-path will take over it when it's disabled in the future */
-  clip-path: inset(0px 0px 0px 0px);
-}
-.main-header-image-wrapper img{
-  position:fixed;
-  z-index: -1;
-  margin: auto;
-  top: 50px;
-  left: 0;
-  right: 0;
-  max-height: 60vh;
-  max-height: 60vmin;
-  object-fit: contain;
-  pointer-events: none;
-}
-.main-header-spacer{
-  z-index: 0;
-  flex-grow: 0;
-  height:60vh;
-  height:60vmin;
-  width:100%;
-}
-.main-header-overlay{
-  z-index: 0;
-  flex-grow: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-self: stretch;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 15px;
-  background-color: $primary;
-  color: $light;
-}
-.main-header-overlay .rs{
-  align-self: center;
-}
-.main-header-overlay .rs>a{
-  display:inline-block;
-}
-
-.main-header-overlay-text{
-  color: $white;
-  padding: 12px;
-  margin: 0;
-}
-
-@include media-breakpoint-down(md){
-  .main-header-overlay, .main-header-overlay-text{
-    font-size: 2.5rem;
-    max-width:100%;
-  }
+  /* Background is in an image for SEO */
   .main-header-image-wrapper{
-    max-width:100%;
+    position:absolute;
+    z-index: -1;
+    top: 0;
+    left:0;
+    width:100%;
+    bottom:0;
+    padding: 40px 0;
+    /*clip being deprecated, clip-path will take over it when it's disabled in the future */
+    clip-path: inset(0px 0px 0px 0px);
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     clip: rect(0, auto, auto, 0);
+    }
+    @supports not(clip-path: inset(0px 0px 0px 0px)){
+      clip: rect(0, auto, auto, 0);
+    }
+  }
+
+  .main-header-image-wrapper img{
+    position:fixed;
+    z-index: -1;
+    margin: auto;
+    top: 57px;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    max-height: 60vmin;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  /* when header have no body, we use a spacer to still have some height */
+  .main-header-spacer, .main-header-body{
+    z-index: 1;
+    flex-grow: 0;
+    height:60vh;
+    height:60vmin;
+    width:100%;
+  }
+  .main-header-body{
+    padding:10vh 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .content {
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+  }
+  &.header-fill {
+    .main-header-spacer, .main-header-body{
+      height: 100vh;
+    }
+    .main-header-image-wrapper img{
+      object-fit:cover;
+      width:100%;
+      height: 100vh;
+      max-height: 100vh;
+    }
+  }
+  + .section-main-header{
+    border-top: 4px solid $dark;
+  }
+  &:nth-of-type(2n){
+    .main-header-body:not(.full-width){
+      padding-right: 65%;
+    }
+  }
+  &:nth-of-type(2n+1){
+    .main-header-body:not(.full-width){
+      padding-left: 65%;
+    }
+  }
+  .main-header-overlay{
+    z-index: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-color: $primary;
+    color: $light;
+  }
+  .main-header-overlay .rs{
+    align-self: center;
+  }
+  .main-header-overlay .rs>a{
+    display:inline-block;
+  }
+
+  .main-header-overlay-text{
+    color: $white;
+    padding: 12px;
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(md){
+    .main-header-overlay, .main-header-overlay-text{
+      font-size: 2.5rem;
+      max-width:100%;
+    }
+    .main-header-image-wrapper{
+      max-width:100%;
+    }
   }
 }
 
 
-.home-page-section{
+
+.section-main-tile{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-content: center;
   align-items: stretch;
-}
-
-.home-page-image {
-  flex-grow: 1;
-  width: 50%;
-  padding: 0 38px;
-  max-height: 60vh;
-  overflow: hidden;
-  display:flex;
-}
-
-.home-page-image img{
-  object-fit: cover;
-  width:100%;
-  height:auto;
-}
-
-.home-page-text{
-  flex-grow: 1;
-  font-size: 1.2rem;
-  padding: 20px 8%;
-  width:50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.home-page-text h3{
-  color: $light-blue;
-  font-size: 2rem;
-  text-align: left;
-  text-transform: uppercase;
-  margin: 20px 0 25px 0;
-  font-weight: normal;
-}
-.home-page-text .home-page-text-link {
-
-}
-@include media-breakpoint-up(xl){
-  .home-page-text{
-    font-size: 1.5rem;
-    padding: 20px;
-  }
-  .home-page-text h3 {
-    font-size: 3rem;
-  }
-  .home-page-image{
-    padding:0;
-  }
-}
-
-@include media-breakpoint-down(md){
-  .home-page-image, .home-page-text {
-    width:100%;
-  }
-  .home-page-text{
-    width: 80%;
-    margin: auto;
-  }
-  .home-page-image{
+  /* defaults for XS */
+  .main-tile-image-wrapper {
+    flex-grow: 1;
+    width: 50%;
+    height: 56.25vh;
+    height: 56.25vmin;
     padding: 0;
+    overflow: hidden;
+    display:flex;
   }
-}
 
-@include media-breakpoint-down(sm){
-  .home-page-text{
+  .main-tile-image-wrapper img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    height:auto;
+  }
+  .main-tile-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    padding: 0 20px;
-    min-height:30vh;
+    padding: 20px;
+    min-height: 40vh;
     font-size: 1rem;
     h3 {
+      color: $light-blue;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      margin: 10px 0 10px 0;
       font-size: 1.5rem;
     }
   }
-}
-
-/* alternate right and left */
-.home-page-section:nth-of-type(2n){
-  flex-direction: row-reverse;
-  .home-page-image{
-    padding-left: 0px;
+  @include media-breakpoint-up(sm){
+    .main-tile-body{
+      width: 80%;
+      margin: auto;
+    }
+    .main-tile-image-wrapper{
+      padding: 0;
+    }
   }
-}
-.home-page-section:nth-of-type(2n+1){
+  @include media-breakpoint-up(lg){
+    .main-tile-body{
+      font-size: 1.2rem;
+      padding: 0 20px;
+      width:50%;
+      justify-content: space-evenly;
+      h3{
+        font-size: 2rem;
+        margin: 20px 0 0 0;
+      }
+    }
+    .main-tile-image-wrapper{
+      min-height: 50vh;
+      min-height: 50vmin;
+      padding:0;
+    }
+  }
 
-  .home-page-image{
-    padding-right: 0px;
+  @include media-breakpoint-up(xl){
+    .main-tile-body{
+      padding: 0 40px;
+      h3 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  /* provide an additional "xxl" breakpoint*/
+  @media (min-width: 1600px) {
+    .main-tile-body{
+      font-size: 1.5rem;
+    }
+   }
+
+
+  /* alternate right and left */
+  &:nth-of-type(2n){
+    flex-direction: row-reverse;
+    .main-tile-image-wrapper{
+      padding-left: 0px;
+    }
+  }
+  &:nth-of-type(2n+1){
+
+    .main-tile-image-wrapper{
+      padding-right: 0px;
+    }
   }
 }
