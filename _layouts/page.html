@@ -1,7 +1,11 @@
 ---
-layout: index
+layout: front_page
 ---
 
+{% if page.title %}
+  {% include components/section_title.html title=page.title %}
+{%endif %}
+{% ariane %}
 <main class="container" id="content">
   {{content}}
 </main>
