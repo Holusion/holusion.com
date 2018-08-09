@@ -32,24 +32,30 @@
       stroke-linecap: round;
       stroke-dasharray: 100;
       stroke-dashoffset:100;
-      animation: dash 3s linear forwards;
       animation-iteration-count: 1;
     }
-    g .appear {
+		svg.active g path:not(.appear){
+			animation: dash 3s linear forwards;
+		}
+    svg.active g .appear {
       opacity: 0.2;
-      animation: appear 3s linear forwards;
     }
+		svg.active g .appear{
+			animation: appear 3s linear forwards;
+		}
     g path.shorter {
       stroke-dasharray: 71;
       stroke-dashoffset:71;
     }
-    g.second-group path {
+		g.second-group path {
       stroke-dasharray: 32;
       stroke-dashoffset:32;
+    }
+		svg.active g.second-group path {
       animation-delay: 3s;
       animation-duration: 5s;
     }
-    g.third-group path {
+    svg.active g.third-group path {
       animation-delay: 8s;
     }
   </style>

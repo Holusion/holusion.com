@@ -6,15 +6,25 @@
   (function(){
     /* Activate animatinon once it enters scroll range for the first time */
       var anim = document.querySelector(".forward-anim-svg");
-      var pos = anim.getBoundingClientRect();
       function onScroll(ev){
+        // Pos is set first time a scroll event is sent
+        // If set before, it has a bad habit of being changed...
+        // it's not good performance-wise to re-get it after each event but we're not sur it's position hasn't changed after load due to slow-coming images
+        var pos = anim.getBoundingClientRect();
         var y = window.scrollY;
-        if(y < pos.bottom && pos.top < y){
+        if(0 < pos.y  && pos.y < window.innerHeight){
+          console.log("activating animation");
           anim.classList.add("active");
           document.removeEventListener("scroll", onScroll);
         }
       }
-      document.addEventListener("scroll", onScroll);
+      //Wait for "load" event to have better chances not to screw up our animation
+      window.addEventListener("load", function(event) {
+        console.log("on load")
+        document.addEventListener("scroll", onScroll);
+        onScroll();
+      });
+
     })();
   </script>
 {%endunless%}
