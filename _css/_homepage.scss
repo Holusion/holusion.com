@@ -113,11 +113,20 @@
   }
 
   @include media-breakpoint-down(md){
+    .main-header-body{
+      width:100%;
+      /* those props are defined in other media-queries and we need to make sure they apply here */
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      height: auto !important;
+    }
     .main-header-overlay, .main-header-overlay-text{
       font-size: 2.5rem;
       max-width:100%;
     }
     .main-header-image-wrapper{
+      position: relative; /* from position: absolute. Make it take space in parent */
+      padding: 0 0 56.25% 0;
       max-width:100%;
     }
   }

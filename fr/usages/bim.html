@@ -35,7 +35,9 @@ bimViews:
 </section>
 
 <section class="section row no-gutters bg-white">
-  {% include components/slideshow.html contents=page.bimViews name="bim-views-slideshow" classes="carousel-fade" interval="2000" %}
+  <div class="container">
+    {% include components/slideshow.html contents=page.bimViews name="bim-views-slideshow" classes="carousel-fade" interval="1500" %}
+  </div>
 </section>
 
 <section class="section section-main-header header-fill">
@@ -43,7 +45,7 @@ bimViews:
   <div class="main-header-body full-width">
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="d-flex justify-content-center align-items-center flex-wrap">
-        <div style="max-height:50vh;min-width:300px;">
+        <div style="min-width:300px;">
           {%include components/animated_svg.html src="/src/pictos/schema_BIM.svg"  %}
         </div>
         <div style="min-width:300px">
