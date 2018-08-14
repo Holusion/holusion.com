@@ -2,23 +2,47 @@
 layout: index
 title: Solutions holographiques
 ---
-<div class="container">
-  <p>
-    Notre expérience des affichages holographiques nous permet de proposer des solutions de création éprouvées, fiables et de qualité.
-  </p>
-  <p>
-    Toutes ces créations peuvent être réalisées dans le cadre de solutions complètes, prêtes à utiliser ou en collaboration avec vos partenaires habituels.
-  </p>
-</div>
-<div class="container-fluid">
-  <div class="row">
-    {% include components/post_thumbnail.html type="card" classes="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" title="Maquettes Interactives" abstract="Exploitez vos plans BIM pour créer des hologrammes techniques et précis" image="/build/img/products/iris75_ardoines.jpg" url="/fr/usages/bim" %}
-
-    {% include components/post_thumbnail.html type="card" classes="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" title="Téléprésence" abstract="Intervenez en hologramme, en direct ou en différé" image="/build/img/home_sections/iris75_vivatech.jpg" url="/fr/usages/visio" %}
+<section id="section-intro" class="section section-main-header header-fill">
+  {%include components/header_image.html image="/build/img/products/focus_museo.jpg" image2x="/build/img/products/focus_museo_2x.jpg" %}
+  <div class="main-header-body">
+    <div class="content shadow rounded bg-white rounded p-4">
+      <h2> Des solutions prêtes à déployer</h2>
+      <p>
+        Notre expérience des affichages holographiques nous permet de proposer des solutions de création éprouvées, fiables et de qualité.
+      </p>
+      <h2>Nos engagements</h2>
+      <p>En travaillant avec Holusion, vous avez l'assurance de pouvoir maitriser de bout en bout la réalisation de vos projets. Nous assurons un accès <b>sans restriction</b> à nos produits pour vous permettre de choisir vos sous-traitants en toute liberté. Toutes ces créations peuvent être réalisées dans le cadre de solutions complètes, prêtes à utiliser ou en collaboration avec vos partenaires habituels.
+      </p>
+    </div>
   </div>
-</div>
-<div class="container">
-  <h2>Nos engagements</h2>
-  <p>En travaillant avec Holusion, vous avez l'assurance de pouvoir maitriser de bout en bout la réalisation de vos projets</p>
-  <p> Nous assurons un accès <b>sans restriction</b> à nos produits pour vous permettre de choisir vos sous-traitants en toute liberté</p>
-</div>
+</section>
+
+<section id="section-bim" class="section-main-tile">
+  <a class="main-tile-image-wrapper" href="/fr/usages/bim">
+    <img class="img-fluid" src="/build/img/products/iris75_ardoines.jpg" srcset="/build/img/products/iris75_ardoines.jpg 960w, /build/img/products/iris75_ardoines.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+  </a>
+  <div class="main-tile-body">
+    <h3>Maquettes Interactives</h3>
+    <p>
+      Exploitez vos plans BIM pour créer des hologrammes techniques et précis.
+    </p>
+    <p>
+      Nous proposons des solutions clé en main de <a href="/fr/usages/bim">maquettes "BIM" augmentées</a>
+    </p>
+  </div>
+</section>
+
+<section id="section-tele" class="section-main-tile">
+  <a class="main-tile-image-wrapper" href="/fr/usages/visio">
+    <img class="img-fluid" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+  </a>
+  <div class="main-tile-body">
+    <h3>Téléprésence en hologrammes</h3>
+    <p>
+      Intervenez en hologramme, en direct ou en différé.
+    </p>
+    <p>
+      De la préparation au tournage à la mise en place, nous proposons un package complet de création d'une <a href="/fr/usages/visio">intervention holographique</a>.
+    </p>
+  </div>
+</section>
