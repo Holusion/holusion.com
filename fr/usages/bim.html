@@ -16,6 +16,21 @@ bimViews:
     caption: Ventilation
 ---
 
+<script>
+function Changetitle() {
+text = ["Ils ont été assez inconscient pour nous faire confiance", "Incroyable ! Ils nous ont donné de l'argent", "J'ai volé tous ces logos sur internet", "Bientôt en vente dans vos MonoPrix", "Ils aiment les hologrammes. Et vous ?", "On parle à des gens stylé parfois. Pas eux, ok, mais parfois.","Wanted, Dead or Alive","Peut importe la couleur du chat, un bon chat attrape les souris","Nous les avons défié à un combat au couteau","Nous avons passé le weekend avec eux","Ils nous ont confié leur chat à garder pendant l'été","Ils acceptent les sacrifices humains","lE TiTre EsT pOsSeDé ! aU sEcOurs","Ils accepteraient de nous suivre jusqu'au bout du monde", "Nous exécuterons un otage toutes les heures", "Kataguruma !", "Liste des Sociaux-traites","Ils ont rejoint l'Eglise des Saints des Dernier Jours","Saurez-vous identifier tous ces logos ?", "Il a deux catégories de personnes, ceux qui ont un pistolet chargé et ceux qui creusent", "Yipikai, Motherfucker", "Fan club lensois de Shakira", "Nous leur avons promis notre premier né" ]
+setTimeout(function () {
+  var rand = text[Math.floor(Math.random() * text.length)];
+  document.getElementById('main-title-2').innerHTML = rand;
+    Changetitle();
+}, 5000);
+}
+
+window.onload = function() {
+ Changetitle()
+}
+</script>
+
 <section class="section section-main-header header-fill">
   {%include components/header_image.html image="/static/img/products/iris32_quartz.jpg" image2x="/build/img/products/iris32_quartz_2x.jpg" %}
   <div class="main-header-body">
@@ -86,7 +101,7 @@ bimViews:
       <div class="col-md-4">
         <img src="/static/img/usages/picto_layer.jpg" />
         <div>
-          <strong>Présentation Mutli-layer</strong>
+          <strong>Présentation Mutli-layers</strong>
           <p>Rentrez dans les détails et explorant les infrastructures techniques</p>
         </div>
           </div>
@@ -99,8 +114,37 @@ bimViews:
         </div>
     </div>
     <p><strong>Adaptez les détails de votre présentation</strong> et maîtrisez votre budget avec nos différents offres calculées en fonction de la Surface de Plancher (<i>sdp</i>) des projets et la résolution HD, 4K ou 8K.<p>
-      <p>La <b>vue orbitale</b> est la solution la plus accessible pour visualiser une maquette dans son ensemble. Combiné à l'outil interactif Stingray, il est possible de controler la rotation pour présenter un point précis</p>
+      <p>La <b>vue orbitale</b> est la solution la plus accessible pour visualiser une maquette dans son ensemble. Combiné à l'outil interactif <a href="http://holusion.github.io/stingray/">Stingray</a>, il est possible de controler la rotation pour présenter un point précis.</p>
       <p>Rentrez dans les coulisses avec l'option de <b>visualisation multicouche</b> des réseaux et infrastructures. Avec la gestion de la transparence, les aspects technologiques sont mis en surbrillance</p>
     <p>Des besoins pour une présentation fluide d'une construction complexe ? La <b>3D temps réel</b> vous donne la liberté de tourner autour du projet, zoomer sur les détails et afficher ou dissimuler les élements techniques. Véritable logiciel d'exploration, cette solution haut-de-gamme offre une finesse de manipulation supérieure.</p>
+  </div>
+</section>
+
+<section class="section section-main-header header-fill">
+  {%include components/header_image.html image="/static/img/products/halles_ardoines.jpg" image2x="/build/img/products/halles_ardoines_2x.jpg" %}
+  <div class="main-header-body full-width">
+    <div class="content shadow rounded bg-white rounded p-4">
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <div style="min-width:300px;text-align : center">
+          <h1 id="main-title-2">Ils nous ont fait confiance</h1>
+          <div class="row logo-images">
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_BYC.jpg');"> <img src="/static/img/logo/logo_BYC.jpg" alt="logo Bouygues Construction"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_BYIM.jpg');"><img src="/static/img/logo/logo_BYIM.jpg" alt="logo Bouygues Immobilier"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_VINCI_IMMO.jpg');"><img src="/static/img/logo/logo_VINCI_IMMO.jpg" alt="logo Vinci Immobilier"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_SQY.jpg');"><img src="/static/img/logo/logo_SQY.jpg" alt="logo Agglomération de Saint Quentin en Yvelines"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_RBX.jpg');"><img src="/static/img/logo/logo_RBX.jpg" alt="logo Ville de Roubaix"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_BRS.jpg');"><img src="/static/img/logo/logo_BRS.jpg" alt="logo Ville de Bruges, France"/></div>
+          </div>
+          <div class="row logo-images">
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_ALES.jpg');"><img src="/static/img/logo/logo_ALES.jpg" alt="logo des mines d'Ales"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_EUROTUNNEL.jpg');"><img src="/static/img/logo/logo_EUROTUNNEL.jpg" alt="logo d'Eurotunnel"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_SNCF.jpg');"><img src="/static/img/logo/logo_SNCF.jpg" alt="logo SNCF"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_NAUSICAA.jpg');"><img src="/static/img/logo/logo_NAUSICAA.jpg" alt="logo Nausicaa"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_HDF.jpg');"><img src="/static/img/logo/logo_HDF.jpg" alt="logo de la région Hauts de France"/></div>
+            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_ENGIE.jpg');"><img src="/static/img/logo/logo_ENGIE.jpg" alt="logo Engie Axima"/></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
