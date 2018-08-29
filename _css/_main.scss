@@ -38,3 +38,19 @@ body{
 a{
   color:$blue;
 }
+
+.logo-images div {
+  background-repeat: no-repeat;
+  background-position: center;
+  padding : 0px;
+}
+
+.logo-images img {
+
+}
+
+.logo-images img:hover {
+opacity: 0;
+transition: opacity 0.3s;
+
+}
