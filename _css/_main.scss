@@ -39,18 +39,17 @@ a{
   color:$blue;
 }
 
-.logo-images div {
+.logo-image {
   background-repeat: no-repeat;
   background-position: center;
   padding : 0px;
 }
 
-.logo-images img {
+.logo-image img {
 
 }
 
-.logo-images img:hover {
-opacity: 0;
-transition: opacity 0.3s;
-
+.logo-image img:hover {
+  opacity: 0;
+  transition: opacity 0.7s;
 }
