@@ -16,20 +16,6 @@ bimViews:
     caption: Ventilation
 ---
 
-<script>
-function Changetitle() {
-text = ["Ils ont été assez inconscient pour nous faire confiance", "Incroyable ! Ils nous ont donné de l'argent", "J'ai volé tous ces logos sur internet", "Bientôt en vente dans vos MonoPrix", "Ils aiment les hologrammes. Et vous ?", "On parle à des gens stylé parfois. Pas eux, ok, mais parfois.","Wanted, Dead or Alive","Peut importe la couleur du chat, un bon chat attrape les souris","Nous les avons défié à un combat au couteau","Nous avons passé le weekend avec eux","Ils nous ont confié leur chat à garder pendant l'été","Ils acceptent les sacrifices humains","lE TiTre EsT pOsSeDé ! aU sEcOurs","Ils accepteraient de nous suivre jusqu'au bout du monde", "Nous exécuterons un otage toutes les heures", "Kataguruma !", "Liste des Sociaux-traites","Ils ont rejoint l'Eglise des Saints des Dernier Jours","Saurez-vous identifier tous ces logos ?", "Il a deux catégories de personnes, ceux qui ont un pistolet chargé et ceux qui creusent", "Yipikai, Motherfucker", "Fan club lensois de Shakira", "Nous leur avons promis notre premier né" ]
-setTimeout(function () {
-  var rand = text[Math.floor(Math.random() * text.length)];
-  document.getElementById('main-title-2').innerHTML = rand;
-    Changetitle();
-}, 5000);
-}
-
-window.onload = function() {
- Changetitle()
-}
-</script>
 
 <section class="section section-main-header header-fill">
   {%include components/header_image.html image="/static/img/products/iris32_quartz.jpg" image2x="/build/img/products/iris32_quartz_2x.jpg" %}
