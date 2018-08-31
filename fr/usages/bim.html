@@ -21,7 +21,7 @@ bimViews:
   {%include components/header_image.html image="/static/img/products/iris32_quartz.jpg" image2x="/build/img/products/iris32_quartz_2x.jpg" %}
   <div class="main-header-body">
     <div class="content shadow rounded bg-white rounded p-4">
-      <h1 id="main-title-1">Maquette holographique</h1>
+      <h2 id="main-title-1">Maquette holographique</h2>
       <p>A l'Ere de l'Information, vos présentations doivent s'appuyer sur des <strong>modèles intuitifs, précis et interactifs</strong>. Holusion vous permet d'acceder à une solution de visualisation 3D de projets immobiliers sans casque ni appareil. Utilisable comme une maquette physique, avec toutes les possibilités du numérique</p>
       <ul>
         <li> Exposition magistrale</li>
@@ -36,7 +36,7 @@ bimViews:
 </section>
 <section class="section bg-light py-4">
   <div class="container jumbotron bg-white shadow my-0">
-    <h1 class="display-4">Expérience de visualisation</h1>
+    <h2>Expérience de visualisation</h2>
     <p> <strong>Un Objectif :</strong> Présenter votre batiment sous toutes ses coutures.  Mettez en avant ses points forts, explorez ses réseaux techniques, démontrez les savoirs faire derrière sa construction. Nos solutions promeuvent vos propositions d'architecture et d'ingénieurie avec des maquettes numériques interactives jusqu'à <a href="/fr/products/iris75">2m de large</a>.</p>
     <p>Ce type d'images pourra être exploitée sur l'ensemble de la gamme Holusion, mais aussi sur des diffusions papier, web, etc. pour maximiser votre impact multi-canal.
     </p>
@@ -58,7 +58,7 @@ bimViews:
           {%include components/animated_svg.html src="/src/pictos/schema_BIM.svg"  %}
         </div>
         <div style="min-width:300px">
-          <h1 id="main-title-1">Capitalisez sur vos modélisations</h1>
+          <h2 id="main-title-1">Capitalisez sur vos modélisations</h2>
           <p>
             Nos solutions supportent tous les formats usuels du bâtiment: <b>Revit</b>, <b>fbx</b>, <b>3ds</b> ou encore <b>obj</b>.
           </p>
@@ -75,7 +75,7 @@ bimViews:
 </section>
 <section class="section bg-light py-4">
   <div class="container jumbotron bg-white shadow my-0">
-    <h1 class="display-4">3 Niveaux de détails</h1>
+    <h2>3 Niveaux de détails</h2>
     <div class="row" style="text-align:center">
       <div class="col-md-4">
         <img src="/static/img/usages/picto_360.jpg" />
@@ -112,22 +112,22 @@ bimViews:
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="d-flex justify-content-center align-items-center flex-wrap">
         <div style="min-width:300px;text-align : center">
-          <h1 id="main-title-2">Ils nous ont fait confiance</h1>
-          <div class="row logo-images">
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_BYC.jpg');"> <img src="/static/img/logo/logo_BYC.jpg" alt="logo Bouygues Construction"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_BYIM.jpg');"><img src="/static/img/logo/logo_BYIM.jpg" alt="logo Bouygues Immobilier"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_VINCI_IMMO.jpg');"><img src="/static/img/logo/logo_VINCI_IMMO.jpg" alt="logo Vinci Immobilier"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_SQY.jpg');"><img src="/static/img/logo/logo_SQY.jpg" alt="logo Agglomération de Saint Quentin en Yvelines"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_RBX.jpg');"><img src="/static/img/logo/logo_RBX.jpg" alt="logo Ville de Roubaix"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_BRS.jpg');"><img src="/static/img/logo/logo_BRS.jpg" alt="logo Ville de Bruges, France"/></div>
+          <h2 id="main-title-2">Ils nous ont fait confiance</h2>
+          <div class="row">
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_BYC.jpg" hover="/static/img/logo/logo_BYC.jpg" alt="logo Bouygues Construction" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_BYIM.jpg" hover="/static/img/logo/logo_BYIM.jpg" alt="logo Bouygues Immobilier" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_VINCI_IMMO.jpg" hover="/static/img/logo/logo_VINCI_IMMO.jpg" alt="logo Vinci Immobilier" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_SQY.jpg" hover="/static/img/logo/logo_SQY.jpg" alt="logo Agglomération de Saint Quentin en Yvelines" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_RBX.jpg" hover="/static/img/logo/logo_RBX.jpg" alt="logo Ville de Roubaix" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_BRS.jpg" hover="/static/img/logo/logo_BRS.jpg" alt="logo Ville de Bruges, France" %}
           </div>
-          <div class="row logo-images">
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_ALES.jpg');"><img src="/static/img/logo/logo_ALES.jpg" alt="logo des mines d'Ales"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_EUROTUNNEL.jpg');"><img src="/static/img/logo/logo_EUROTUNNEL.jpg" alt="logo d'Eurotunnel"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_SNCF.jpg');"><img src="/static/img/logo/logo_SNCF.jpg" alt="logo SNCF"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_NAUSICAA.jpg');"><img src="/static/img/logo/logo_NAUSICAA.jpg" alt="logo Nausicaa"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_HDF.jpg');"><img src="/static/img/logo/logo_HDF.jpg" alt="logo de la région Hauts de France"/></div>
-            <div class="col-lg-2 col-sm-4" style="background-image: url('/static/img/logo/logo_projet_ENGIE.jpg');"><img src="/static/img/logo/logo_ENGIE.jpg" alt="logo Engie Axima"/></div>
+          <div class="row">
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_ALES.jpg" hover="/static/img/logo/logo_ALES.jpg" alt="logo des mines d'Ales" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_EUROTUNNEL.jpg" hover="/static/img/logo/logo_EUROTUNNEL.jpg" alt="logo d'Eurotunnel" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_SNCF.jpg" hover="/static/img/logo/logo_SNCF.jpg" alt="logo SNCF" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_NAUSICAA.jpg" hover="/static/img/logo/logo_NAUSICAA.jpg" alt="logo Nausicaa" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_HDF.jpg" hover="/static/img/logo/logo_HDF.jpg" alt="logo de la région Hauts de France" %}
+            {% include components/medias/hover_image.html src="/static/img/logo/logo_projet_ENGIE.jpg" hover="/static/img/logo/logo_ENGIE.jpg" alt="logo Engie Axima" %}
           </div>
         </div>
       </div>
