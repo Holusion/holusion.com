@@ -31,7 +31,6 @@
   }
 
   .main-header-image-wrapper img{
-    position:fixed;
     z-index: -1;
     margin: auto;
     top: 57px;
@@ -63,20 +62,7 @@
       align-items: stretch;
     }
   }
-  &.header-fill {
-    .main-header-spacer, .main-header-body{
-      height: 100vh;
-    }
-    .main-header-image-wrapper img{
-      object-fit:cover;
-      width:100%;
-      height: 100vh;
-      max-height: 100vh;
-    }
-  }
-  + .section-main-header{
-    border-top: 4px solid $dark;
-  }
+
   &:nth-of-type(2n){
     .main-header-body:not(.full-width){
       padding-right: 65%;
@@ -111,7 +97,27 @@
     padding: 12px;
     margin: 0;
   }
-
+  /* make a parallax effect for large displays */
+  @include media-breakpoint-up(lg){
+    .main-header-image-wrapper img{
+      position:fixed;
+    }
+    &.header-fill {
+      .main-header-spacer, .main-header-body{
+        height: 100vh;
+      }
+      .main-header-image-wrapper img{
+        object-fit:cover;
+        width:100%;
+        height: 100vh;
+        max-height: 100vh;
+      }
+    }
+    + .section-main-header{
+      border-top: 4px solid $dark;
+    }
+  }
+  /* but disable it for medium and smaller */
   @include media-breakpoint-down(md){
     .main-header-body{
       width:100%;
@@ -126,7 +132,7 @@
     }
     .main-header-image-wrapper{
       position: relative; /* from position: absolute. Make it take space in parent */
-      padding: 0 0 56.25% 0;
+      padding: 0;
       max-width:100%;
     }
   }
