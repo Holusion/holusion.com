@@ -40,16 +40,24 @@ a{
 }
 
 .logo-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  padding : 0px;
+  perspective: 600px;
+  padding: 15px; /* important to prevent mis-alignment. also change image-back position if modified */
 }
 
 .logo-image img {
-
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
-
-.logo-image img:hover {
-  opacity: 0;
-  transition: opacity 0.7s;
+.logo-image img.logo-image-back{
+  position: absolute;
+  top:15px;
+  left:15px;
+  transform: rotateY( -180deg );
+}
+.logo-image:hover img.logo-image-back{
+  transform: rotateY( 0deg );
+}
+.logo-image:hover img.logo-image-front{
+  transform: rotateY( 180deg );
 }
