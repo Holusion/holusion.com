@@ -7,25 +7,25 @@ install_optimizers(){
   #check presence of system-wide commands
   command -v convert >/dev/null 2>&1 || { echo >&2 "convert from imagemagick package is required but it's not installed.  Aborting."; exit 1; }
   command -v xcf2png >/dev/null 2>&1 || { echo >&2 "xcf2png from xcftools package is required but it's not installed.  Aborting."; exit 1; }
-  command -v avconv >/dev/null 2>&1 || { echo >&2 "avconv from libav-tools package is required but it's not installed.  Aborting."; exit 1; }
+  command -v ffmpeg >/dev/null 2>&1 || { echo >&2 "ffmpeg from ffmpeg package is required but it's not installed.  Aborting."; exit 1; }
 }
 
 build_webm(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
     echo "CONVERT $1 to $2"
-    avconv  -i "$1" -y -c:v libvpx -c:a libvorbis -qmin 20 -qmax 30 -threads 0 "$2" </dev/null
+    ffmpeg  -i "$1" -y -c:v libvpx -c:a libvorbis -qmin 20 -qmax 30 -threads 0 "$2" </dev/null
   fi
 }
 build_mpeg4(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
     echo "CONVERT $1 to $2"
-    avconv -i "$1" -y -c:v h264 -profile:v main -level 31 -c:a copy "$2" </dev/null
+    ffmpeg -i "$1" -y -c:v h264 -profile:v main -level 31 -c:a copy "$2" </dev/null
   fi
 }
 build_ogg(){
   if ${make_force} || [ ! -f "$2" ] || [ "$2" -ot "$1" ] ;then
     echo "CONVERT $1 to $2"
-    avconv -i "$1" -y -c:v libtheora -qscale:v 7 -c:a libvorbis -qscale:a 5 -threads 0 "$2" </dev/null
+    ffmpeg -i "$1" -y -c:v libtheora -qscale:v 7 -c:a libvorbis -qscale:a 5 -threads 0 "$2" </dev/null
   fi
 }
 convert_video(){
