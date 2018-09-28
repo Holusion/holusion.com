@@ -13,11 +13,11 @@ tags: evenementiel formation focus
 
 
 <div class="row">
-  <div class="col-md-4 col-xs-12 rtecenter">
+  <div class="col-md-4 col-12 rtecenter">
     <div style="padding:30px 0px 0px 40px"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></div>
   </div>
 
-  <div class="col-md-8 col-xs-12">
+  <div class="col-md-8 col-12">
     <h2 class="rtejustify">Une mission de sauvegarde</h2>
 
     <p class="rtejustify">Le projet Bagdad 3D part de l'envie de conserver une trace indestructible du patrimoine irakien. Sa numérisation a pour objectif de conserver les détails et les formes pour toujours afin de <strong>protéger</strong> des oeuvres pouvant être détruites.</p>
@@ -31,7 +31,7 @@ tags: evenementiel formation focus
 </div>
 
 <div class="row">
-  <div class="col-md-6 col-xs-12">
+  <div class="col-md-6 col-12">
     <h2>Les hologrammes au service de la culture</h2>
 
     <p class="rtejustify">Sceau et écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="/fr/products/focus">Focus</a> a permis au visiteur de visualiser les images innovantes à 360°.</p>
@@ -43,6 +43,6 @@ tags: evenementiel formation focus
     <p class="rtejustify"><img alt="Logo Cap Digital" src="/static/img/posts/futur-en-seine/cap-digital-logo1.jpg" style="width: 200px; height: 72px;" /></p>
   </div>
 
-  <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 80%; height: 80%; margin-top: 10px; margin-bottom: 10px;" /></div>
+  <div class="col-md-6 col-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 80%; height: 80%; margin-top: 10px; margin-bottom: 10px;" /></div>
 </div>
 

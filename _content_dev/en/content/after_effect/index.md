@@ -56,7 +56,7 @@ To customize this guide, you can choose your target product in the list below.
 ## Product Choice
 
 <div class="row">
-<div class="col-lg-4 col-xs-5" style="text-align:right;padding-right:0px;">
+<div class="col-lg-4 col-5" style="text-align:right;padding-right:0px;">
 <p>
 <button class="btn btn-secondary product-button" onclick="changeProduct(this.innerHTML)" >Prism</button>
 </p>
@@ -64,7 +64,7 @@ To customize this guide, you can choose your target product in the list below.
 <button id="btnProductDefault" class="btn btn-primary product-button" onclick="changeProduct(this.innerHTML)" >Focus</button>
 </p>
 </div>
-<div class="col-xs-5 col-lg-4">
+<div class="col-5 col-lg-4">
 <img class="product-show img-fluid" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
 <img class="product-show img-fluid" height="100px" title="Focus" src="/static/img/products/focus.jpg"/>
 </div>
@@ -101,7 +101,7 @@ In the left column, right click and select ```Import > File``` (shortcut Ctrl+I)
 Composition's duration must be changed in order to match your content's.
 Right click on the <b>"Input"</b> composition and select <b>Settings</b> then change the duration of the composition.
 </div>
-<div class="col-md-3 offset-sm-1 col-sm-4 col-xs-6 offset-xs-3">
+<div class="col-md-3 offset-sm-1 col-sm-4 col-6 offset-xs-3">
 <img src="/static/img/posts/after-effect/settings.jpg" class="img-fluid magnify"/>
 </div>
 </div>

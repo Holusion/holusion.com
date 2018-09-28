@@ -18,7 +18,7 @@
 {%if include.classes %}
   {% assign classes = include.classes %}
 {% else %}
-  {% assign classes = "col-lg-3 col-md-4 col-sm-6 col-xs-12" %}
+  {% assign classes = "col-lg-3 col-md-4 col-sm-6 col-12" %}
 {% endif %}
 {%capture alt_text %}{%if content.abstract%}{{content.abstract}}{%else%}{{content.title}}{%endif%}{%endcapture%}
 

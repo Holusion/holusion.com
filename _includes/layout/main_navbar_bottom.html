@@ -10,7 +10,7 @@
   <div class="container-fluid" id="section-bottom">
     <div class="container" id="bottom-index">
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <h4 class="block-title">Holusion</h4>
           <ul>
             <li><a href="{{domain}}/{{page.lang}}/about">
@@ -27,7 +27,7 @@
             </a></li>
           </ul>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <h4 class="block-title">{{site.data.sections.products[page.lang]}}</h4>
           {% include utils/make_products.html %}
           <ul>
@@ -36,7 +36,7 @@
           {% endfor %}
           </ul>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <h4 class="block-title">{{site.data.sections.posts[page.lang]}}</h4>
           <ul>
             {% for post in site.categories[page.lang] limit: 4 %}
@@ -44,7 +44,7 @@
             {% endfor %}
           </ul>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <h4 class="block-title">{{ site.data.strings.social-links[page.lang] }}</h4>
           {% include social_list.html %}
           <div class="newsletter">
