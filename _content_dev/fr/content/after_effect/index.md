@@ -56,7 +56,7 @@ Chaque projet contient deux scènes : **Input** et **Render**, qui seront utilis
 
 
 <div class="row">
-  <div class="col-lg-4 col-xs-5" style="text-align:right;padding-right:0px;">
+  <div class="col-lg-4 col-5" style="text-align:right;padding-right:0px;">
 	<p>
      <button class="btn btn-secondary product-button" onclick="changeProduct(this.innerHTML)" style="margin-bottom:5px;">Prism</button>
 	</p>
@@ -64,7 +64,7 @@ Chaque projet contient deux scènes : **Input** et **Render**, qui seront utilis
      <button id="btnProductDefault" class="btn btn-primary product-button" onclick="changeProduct(this.innerHTML)" >Focus</button>
 	</p>
   </div>
-  <div class="col-xs-5 col-lg-4">
+  <div class="col-5 col-lg-4">
     <img class="product-show img-fluid" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
     <img class="product-show img-fluid" height="100px" title="Focus" src="/static/img/products/focus.jpg"/>
   </div>
@@ -103,7 +103,7 @@ Il faut changer la durée de la composition en fonction de celle du contenu dés
 Par exemple, pour réaliser une vidéo d'une minute : cliquez droit sur la composition <b>"Input"</b> dans le
 volet "projet" ; puis sur <b>paramètres de composition</b>. Dans la fenêtre qui apparait, modifiez le champ <i>durée</i>.
 </div>
-<div class="col-md-3 offset-sm-1 col-sm-4 col-xs-6 offset-xs-3">
+<div class="col-md-3 offset-sm-1 col-sm-4 col-6 offset-xs-3">
 <img src="/static/img/posts/after-effect/settings.jpg" class="img-fluid magnify"/>
 </div>
 </div>

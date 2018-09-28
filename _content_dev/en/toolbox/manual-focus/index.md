@@ -8,12 +8,12 @@ rank: 3
 menu: toolbox
 ---
 <div class="row">
-<div class="col-lg-4 col-md-6 col-xs-12">
+<div class="col-lg-4 col-md-6 col-12">
 
 <img class="img-fluid" src="/static/img/posts/manuel-focus/dimensions.png">
 
 </div>
-<div class=" col-lg-8 col-md-6 col-xs-12">
+<div class=" col-lg-8 col-md-6 col-12">
 <p>
 The <b>Focus</b> provides a high definition display, with its 50cm tall hologram.
 </p>
