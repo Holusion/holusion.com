@@ -14,13 +14,13 @@ rank: 2
 Chaque produit dispose d'une résolution et d'une disposition de contenu qui lui est propre. Cette page présente des guides permettant de positionner les éléments à afficher pour un rendu optimal.
 
 <div class="row">
-  <div class="col-lg-4 offset-lg-2 col-xs-6">
+  <div class="col-lg-4 offset-lg-2 col-6">
     <a onclick="changeProduct('Prism')" style="text-align:center;cursor:pointer">
       <img class="img-fluid" height="100px" title="Prisme" src="/static/img/products/prisme.jpg"/>
       <h2>Prism</h2>
     </a>
 	</div>
-  <div class="col-lg-4 col-xs-6" >
+  <div class="col-lg-4 col-6" >
     <a onclick="changeProduct('Focus')"  style="text-align:center;cursor:pointer">
       <img class="img-fluid" height="100px" title="Prisme" src="/static/img/products/focus.jpg"/>
       <h2>Focus</h2>
