@@ -13,11 +13,11 @@ tags: evenementiel formation focus
 
 
 <div class="row">
-  <div class="col-md-4 col-xs-12 rtecenter">
+  <div class="col-md-4 col-12 rtecenter">
     <div style="padding:30px 0px 0px 40px"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></div>
   </div>
 
-  <div class="col-md-8 col-xs-12">
+  <div class="col-md-8 col-12">
     <h2 class="rtejustify">A rescue mission</h2>
 
     <p class="rtejustify">The Bagdad 3D project began with the will to maintain an unbreakable part of the Iraqy heritage. The digitalization comes in order to <strong>protect</strong> art works that could be destroyed.</p>
@@ -31,7 +31,7 @@ tags: evenementiel formation focus
 </div>
 
 <div class="row">
-  <div class="col-md-6 col-xs-12">
+  <div class="col-md-6 col-12">
     <h2>Holograms serving the culture</h2>
 
     <p class="rtejustify">Seal and wedge-shaped writing have appeared in hologram. The <a href="/en/products/focus">Focus</a> allowed the visitors to see the novative pictures in 360°.</p>
@@ -43,6 +43,6 @@ tags: evenementiel formation focus
     <p class="rtejustify"><img alt="Logo Cap Digital" src="/static/img/posts/futur-en-seine/cap-digital-logo1.jpg" style="width: 200px; height: 72px;" /></p>
   </div>
 
-  <div class="col-md-6 col-xs-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 80%; height: 80%; margin-top: 10px; margin-bottom: 10px;" /></div>
+  <div class="col-md-6 col-12"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/focus_fens.jpg" style="width: 80%; height: 80%; margin-top: 10px; margin-bottom: 10px;" /></div>
 </div>
 
