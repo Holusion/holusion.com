@@ -63,12 +63,18 @@
 
   &:nth-of-type(2n){
     .main-header-body:not(.full-width){
-      padding-right: 65%;
+      padding-right: 55%;
+      @include media-breakpoint-up(xl){
+        padding-right: 65%;
+      }
     }
   }
   &:nth-of-type(2n+1){
     .main-header-body:not(.full-width){
-      padding-left: 65%;
+      padding-left: 55%;
+      @include media-breakpoint-up(xl){
+        padding-left: 65%;
+      }
     }
   }
   .main-header-overlay{
