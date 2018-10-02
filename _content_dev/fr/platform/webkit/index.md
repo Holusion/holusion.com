@@ -95,7 +95,7 @@ Avec cette base, il est possible de construire toutes sortes d'applications.
 
 ### Mise en forme manuelle
 
-Le module `layout` fourni permet une mise en forme rapide et efficace pour débuter. Si il ne remplit pas sa fonction, il est possible de mettre en forme manuellement le contenu. Pour cela, créer des `<div>` positionnées de façon absolue dans le document, suivant le format de votre [produit](http://dev.holusion.com/fr/content/layout/index).
+Le module `layout` fourni permet une mise en forme rapide et efficace pour débuter. Si il ne remplit pas sa fonction, il est possible de mettre en forme manuellement le contenu. Pour cela, créer des `<div>` positionnées de façon absolue dans le document, suivant le format de votre [produit](/dev/fr/content/layout/).
 
 ### Applications complexes
 
