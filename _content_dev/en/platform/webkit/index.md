@@ -94,7 +94,7 @@ With this base, it is possible to create all types of applications.
 
 ### Manual shaping
 
-The given `layout` module allows a fast and efficient shaping to begin. If it doesn't fulfil its fonction, it is possible to manually shape the content. To do this, create some `<div>` placed in an absolute way, following your [product](http://dev.holusion.com/fr/content/layout/index) format.
+The given `layout` module allows a fast and efficient shaping to begin. If it doesn't fulfil its fonction, it is possible to manually shape the content. To do this, create some `<div>` placed in an absolute way, following your [product](/dev/fr/content/layout/) format.
 
 ### Complex applications
 
