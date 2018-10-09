@@ -496,13 +496,15 @@ describe(`${target}.`,function(){
    /** EXTENDED TESTS **/
    describe(`(EXTENDED) sitemap.`,function(){
      const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
-     before(function(){
+     it("have a urlset and many children",function(done){
        //Perform basic validation on sitemap
        expect(sitemap.root).to.have.property("name", "urlset");
        expect(sitemap.root).to.have.property("children").to.be.an("array").that.have.property("length").above(50);
+       done()
      });
 
-     let locations = sitemap.root.children.map((node)=>{
+     let locations = sitemap.root.children
+     .map((node)=>{
        return node.children.find((child)=>{
          return child.name == "loc";
        }).content
