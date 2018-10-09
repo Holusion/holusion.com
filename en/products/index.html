@@ -3,7 +3,6 @@ title: Holusion - Products
 layout: front_page
 ---
 
-{% include utils/make_products.html %}
 <section class="title">
     <div class="container">
       <h1>
@@ -18,7 +17,7 @@ layout: front_page
 </div>
 <div class="container-fluid">
   <div class="row">
-  {% for product in products %}
+  {% for product in site.products_items[page.lang] %}
     {% include components/post_thumbnail.html content=product %}
   {% endfor %}
   {% include components/post_thumbnail.html

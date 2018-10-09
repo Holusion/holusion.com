@@ -30,9 +30,8 @@
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
         <h4 class="block-title text-white">{{site.data.sections.products[page.lang]}}</h4>
-        {% include utils/make_products.html %}
         <ul class="navbar-nav">
-        {% for post in products limit: 4 %}
+        {% for post in site.products_items[page.lang] limit: 4 %}
           {% include components/nav/bottom_li.html content=post %}
         {% endfor %}
         </ul>
