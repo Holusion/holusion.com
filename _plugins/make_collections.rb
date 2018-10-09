@@ -14,6 +14,10 @@ def product_sort(a, b)
   end
 end
 
+
+def product_filter(a)
+  return a.data && a.data.key?("title") && a.data.key?("abstract")
+end
 Jekyll::Hooks.register :site, :post_read do |site|
   c = {
     "products" => { "fr" =>[], "en" => []},
@@ -22,14 +26,16 @@ Jekyll::Hooks.register :site, :post_read do |site|
 
   site.pages.each do |page|
     match = /\/(?<lang>fr|en)\/(?<type>products|store)\/(?!index)[^\/]+$/.match(page.url)
-    next if ! match
-    c["#{match["type"]}"][match["lang"]].push( page )
+    next if ! match #skip if page does not match
     # then assign defaults to categories
     # we don't do it in _config.yml because it's buggy
     case match["type"]
-    when "products"
-      page.data["layout"] = "product" unless page.data.key? "layout"
+      when "products"
+        page.data["layout"] = "product" unless page.data.key? "layout"
     end
+    print("")
+    #add it to collections
+    c["#{match["type"]}"][match["lang"]].push( page )
   end
   # merge data attributes once we got the whole site
   # it only work from french -> english and not the other way around
@@ -44,14 +50,15 @@ Jekyll::Hooks.register :site, :post_read do |site|
         p.data, alt_p.data
       )
     end
+    c[col]["fr"].sort! {|a,b|product_sort(a,b)}
+    c[col]["fr"].select!{|a|product_filter(a)}
+    c[col]["en"].sort! {|a,b|product_sort(a,b)}
+    c[col]["en"].select!{|a|product_filter(a)}
 
   end
 
   # Sort collections
-  c["products"]["fr"].sort! {|a,b|product_sort(a,b)}
-  c["products"]["en"].sort! {|a,b|product_sort(a,b)}
-  c["store"]["fr"].sort! {|a,b|product_sort(a,b)}
-  c["store"]["en"].sort! {|a,b|product_sort(a,b)}
+
   #print c["posts"]["fr"].map {|p| p.basename}.join("\n")
   #print "\n"
   c.each do |cat, val|
