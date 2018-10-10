@@ -6,19 +6,34 @@
 
   a#home-logo{
     padding: 25px 170px 20px 0px;
+    margin: 0;
     background-image:url("/static/img/logo.png");
     background-repeat:no-repeat;
     background-position:10px 10px;
     background-size: 150px auto;
-    @media screen and (max-width: $break-md){
-      padding-right: 45px;
-    }
   }
 
   .navbar-nav > li {
     a{
       text-transform: lowercase;
       transition: all 0.5s ease-in-out;
+    }
+  }
+
+
+  @include media-breakpoint-down(md){
+    a#home-logo{
+      padding-right: 45px;
+    }
+    &>.container {
+      max-width: 1200px;
+      padding: 0;
+    }
+  }
+  /* collapsed navbar */
+  @include media-breakpoint-down(sm){
+    a#home-logo{
+      padding-right: 170px;
     }
   }
 } /* end #navbar-top */

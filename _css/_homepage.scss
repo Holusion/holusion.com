@@ -39,6 +39,10 @@
     object-fit: contain;
     pointer-events: none;
   }
+  .main-header-image-wrapper img.fit-contain{
+    max-height: 60vmin;
+  }
+
   /* when header have no body, we use a spacer to still have some height */
   .main-header-spacer, .main-header-body{
     z-index: 1;
@@ -131,13 +135,21 @@
       height: auto !important;
     }
     .main-header-overlay, .main-header-overlay-text{
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       max-width:100%;
+    }
+    .main-header-spacer{
+      display: none;
     }
     .main-header-image-wrapper{
       position: relative; /* from position: absolute. Make it take space in parent */
       padding: 0;
       max-width:100%;
+    }
+  }
+  @include media-breakpoint-down(sm){
+    .main-header-overlay, .main-header-overlay-text{
+      font-size: 1rem;
     }
   }
 }
