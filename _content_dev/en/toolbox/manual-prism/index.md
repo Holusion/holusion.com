@@ -36,7 +36,7 @@ When using the holusion **prism**, please take the following precautions :
 
 ### Manage the content
 
-Content management is similar to all our products. Details can be found [here](/en/packaging)
+Content management is similar to all our products. Details can be found [here](https://github.com/Holusion/stargazer#english)
 
 ## Maintenance of the prism
 
