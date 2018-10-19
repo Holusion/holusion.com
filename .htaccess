@@ -22,11 +22,12 @@ RewriteRule /(.*)$ https://holusion.com/dev/$1 [R=301,L]
 
 
 #permanent redirect for home page to french version when preferred
-RewriteCond %{HTTP:Accept-Language} ^fr.*$ [NC]
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^/$ https://holusion.com/fr/ [L,R=301]
+# FIXME : looks like it takes a lot of time
+#RewriteCond %{HTTP:Accept-Language} ^fr.*$ [NC]
+#RewriteCond %{REQUEST_URI} ^/$
+#RewriteRule ^/$ https://holusion.com/fr/ [L,R=301]
 
-RedirectMatch 301 ^/$ /en/
+RedirectMatch 301 ^/$ /fr/
 
 #for some reason those requests normally answer 200 OK ...
 RedirectMatch 403 ^/~.*
