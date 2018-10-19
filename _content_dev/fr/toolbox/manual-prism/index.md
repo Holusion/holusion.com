@@ -36,7 +36,7 @@ Lorsque vous utilisez le **Prism** d'Holusion, merci de suivre les instructions 
 
 ### Gestion du contenu
 
-La gestion du contenu est la même que sur tous nos produits. Retrouvez les détails [ici](/fr/packaging)
+La gestion du contenu est la même que sur tous nos produits. Retrouvez les détails <a href="https://github.com/Holusion/stargazer">ici</a>.
 
 ## Nettoyage du produit
 
