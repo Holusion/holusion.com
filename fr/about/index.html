@@ -4,25 +4,25 @@ title: A propos
 ---
 
 {% include components/section_title.html title="L'entreprise" %}
-<div class="img-fluid" style="width:100%;height:300px;background:url('/static/img/front/bandeau_entreprise_1.jpg') left/cover;"></div>
-
-{% ariane %}
+<div class="container">
+  {% ariane %}
+</div>
 <section id="lentreprise">
-  <h1 align="center" style="padding-bottom: 20px">Notre expertise</h1>
-
   <div class="row no-gutters">
     <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
+      <h1 align="center" style="padding-bottom: 20px">Notre expertise</h1>
       <h3>Spécialiste de l'affichage digital innovant</h3>
-      <p>Holusion conçoit, développe et commercialise des solutions d’affichages innovantes basées sur <b>l'hologramme</b>.
+      <p>
+        Holusion conçoit, développe et commercialise des solutions d’affichages innovantes basées sur <b>l'hologramme</b>.
         Cette illusion d'optique est communément appelée le
         <a href="https://fr.wikipedia.org/wiki/Fant%C3%B4me_de_Pepper" title="Pepper's Ghost" target="_blank">Pepper's Ghost</a>.
         En effet, l'hologramme est obtenu grâce au reflet d'un écran sur une surface miroitée, inclinée et transparente.
-        C'est cette transparence qui donne le sentiment que l'objet flotte dans l'air.</p>
-
+        C'est cette transparence qui donne le sentiment que l'objet flotte dans l'air.
+      </p>
     </div>
-      <div class="col-md-6">
-        {% include components/medias/youtube.html embed="Q7HP_otO8KE" %}
-      </div>
+    <div class="col-md-6">
+      {% include components/medias/youtube.html embed="Q7HP_otO8KE" %}
+    </div>
   </div>
 
   <div class="row no-gutters">
@@ -32,45 +32,49 @@ title: A propos
     <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
       <h3>Standard et sur-mesure</h3>
       <p>
-        Envie de tourner autour de l'hologramme ou de l'intégrer dans une scénographie ?
-        Nous proposons des <a href="/fr/products/">solutions standards</a> à 360° ou d'une seule face.
-        Notre expertise dans la fabrication des produits nous permet de créer des solutions sur-mesure tel que
-        l'hologramme à taille humaine.
-        Découvrez <a href="/fr/posts/">quelques expériences</a> que nous avons déjà mises en place.
+        Envie de tourner autour de l'hologramme ou de l'intégrer dans une scénographie ? Nous proposons des <a href="/fr/products/">solutions standards</a> à 360° ou d'une seule face. Notre expertise dans la fabrication des produits nous permet de créer des solutions sur-mesure tel que l'hologramme à taille humaine. Découvrez <a href="/fr/posts/">quelques expériences</a> que nous avons déjà mises en place.
       </p>
     </div>
   </div>
-  <div class="row no-gutters">
-    <div class="col-md-6 px-5">
-      <h3>Des animations interactives en temps réel</h3>
-      <p>En plus de l'expertise hardware, nous développons chaque jour des applications interactives pour nos clients.
-        Ces animations ludiques permettent d'apprendre ou de découvrir des concepts différement, d'avoir une nouvelle
-        approche des produits en points de vente ou encore de valoriser le patrimoine culturel.
-      </p>
-    </div>
-    <div class="col-md-6 px-5">
-      <h3>De l'industrie au conseil</h3>
-      <p>Holusion a une vision <b>industrielle</b> de son activité. Son ambition est de démocratiser
-        les solutions holographiques. Mais nous sommes aussi très porté sur le <b>conseil</b> apporté à nos clients.
-        Nous les accompagnons de A à Z dans le projet afin qu'il réponde aux objectifs et soit une véritable réussite.</p>
+
+  <section class="section bg-light py-4">
+    <div class="container jumbotron bg-white shadow my-0">
+      <div class="row">
+        <div class="col-md-6 px-5">
+          <h3>Des animations interactives en temps réel</h3>
+          <p>En plus de l'expertise hardware, nous développons chaque jour des applications interactives pour nos clients. Ces animations ludiques permettent d'apprendre ou de découvrir des concepts différement, d'avoir une nouvelle approche des produits en points de vente ou encore de valoriser le patrimoine culturel.
+          </p>
+        </div>
+        <div class="col-md-6 px-5">
+          <h3>De l'industrie au conseil</h3>
+          <p>
+            Holusion a une vision <b>industrielle</b> de son activité. Son ambition est de démocratiser les solutions holographiques. Nous accompagnons nos clients de A à Z dans leurs projets afin de d'obtenir une qualité irréprochable en phase avec leurs attentes.
+          </p>
+        </div>
       </div>
-  </div>
+    </div>
+  </section>
 
   <h1 align="center" style="padding: 30px 0px 10px 0px">Notre histoire</h1>
 
   <div class="row no-gutters" style="padding-bottom: 30px">
     <div class="col-lg-6 col-md-12 px-5 d-flex flex-column justify-content-center">
       <h3>Du projet à l'entreprise</h3>
-      <p>C’est en 2012 que deux ingénieurs, Thibault Guillaumont et Sebastien Dumetz, se lancent dans l'aventure Holusion.
-        Diplômés de l’<a href="http://centralelille.fr" target="_blanc">école Centrale de Lille</a> et de l’<a href ="http://www.isen.fr/" target="_blanc">ISEN</a>,
-        ils se retrouvent d’abord autour d’un projet lors du <i>Start-up Weekend</i> à la CCI.
-        Après l’obtention d’une subvention, le premier projecteur d’hologrammes fait son apparition.</p>
-      <p>Le projet entre d'abord en incubation chez <a href="http://www.tonic-incubation.com/">Tonic Incubation</a>. Holusion est officiellement créée le 6 mai 2014 et peut commencer son développement commercial.
-        Pour cela, la startup entre en phase d'accélération à la <a href="http://www.plaine-images.fr/">Plaine Images</a>.
-        Cette pépinière d'entreprises met Holusion en relation avec des acteurs de l'innovation et de la créativité digitale.</p>
+      <p>
+        C’est en 2012 que deux ingénieurs, Thibault Guillaumont et Sebastien Dumetz, se lancent dans l'aventure Holusion.
+        Diplômés de l’<a href="http://centralelille.fr" target="_blanc">école Centrale de Lille</a> et de l’<a href ="http://www.isen.fr/" target="_blanc">ISEN</a>, ils se retrouvent d’abord autour d’un projet lors d'un <a href="https://startupweekend.org/">Start-up Weekend</a> à la <a href="https://hautsdefrance.cci.fr/cci-grand-lille/">CCI de lille</a>.
+        Le premier projecteur d’hologrammes  est créé.
+      </p>
+      <p>
+        Le projet entre rapidement en phase d'incubation chez <a href="http://www.tonic-incubation.com/">Tonic Incubation</a>. Holusion est officiellement créée le 6 mai 2014 et peut commencer son développement commercial.
+        L'accélération à la <a href="http://www.plaine-images.fr/">Plaine Images</a> met Holusion en relation avec des acteurs de l'innovation et de la créativité digitale.
+      </p>
+
       <h3>Au coeur de la French Tech</h3>
-      <p>La région des Hauts-de-France valorise et aide au développement des nouvelles technologies.
-        Cet écosystème fructueux se concrétise d’ailleurs avec le label <a href="http://www.lafrenchtech.com/metropole/lille-french-tech">“Lille is French Tech”</a> obtenu en 2014.</P>
+      <p>
+        La région des Hauts-de-France valorise et aide au développement des nouvelles technologies.
+        Cet écosystème fructueux se concrétise avec l'obtention du label <a href="http://www.lafrenchtech.com/metropole/lille-french-tech">“Lille is French Tech”</a> en 2014.
+      </p>
     </div>
 
     <div class="col-lg-6 col-md-12">
@@ -81,7 +85,7 @@ title: A propos
   <h1 align="center" style="padding: 30px 0px 20px 0px">Nos valeurs</h1>
 
   <div class="row no-gutters" style="padding-bottom: 30px">
-    <div class="col-lg-6 col-md-12 px-5 d-flex flex-column justify-content-center">
+    <div class="col-lg-8 col-md-12 px-5 d-flex flex-column justify-content-center">
       <h3>Privilégier l'écosystème digital français</h3>
       <p>Notre première ambition a toujours été d'ancrer nos solutions sur le territoire français. Avec ses produits <i>Made in France</i>, nous nous plaçons au coeur de la dynamique <i>French Tech</i>.
         Nos fournisseurs viennent essentiellement de la région et les projecteurs d’hologrammes sont assemblés directement au siège à Tourcoing. La proximité avec ces derniers permet notamment d'être très réactif dans la gestion de nos projets.</p>
@@ -93,7 +97,7 @@ title: A propos
       <p>Une plateforme regroupant nos <a href="/dev/fr/">ressources techniques</a> vous donne toutes les clés pour créer vos propres hologrammes et animations.</p>
 
     </div>
-    <div class="col-lg-6 col-md-12 d-flex justify-content-end">
+    <div class="col-lg-4 col-md-12 d-flex justify-content-end">
       <img alt="Imaginarium Plaine Images" class="img-fluid" src="/static/img/products/plaineimages.jpg"/>
     </div>
   </div>

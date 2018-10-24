@@ -1,4 +1,5 @@
 require "jekyll/utils"
+#require "pp" #prettyprint
 
 def product_sort(a, b)
   ra = a.data["rank"]
@@ -20,8 +21,8 @@ def product_filter(a)
 end
 Jekyll::Hooks.register :site, :post_read do |site|
   c = {
-    "products" => { "fr" =>[], "en" => []},
-    "store" => { "fr" =>[], "en" => []},
+    "products"  => { "fr" =>[], "en" => []},
+    "store"     => { "fr" =>[], "en" => []},
   }
 
   site.pages.each do |page|
@@ -50,16 +51,13 @@ Jekyll::Hooks.register :site, :post_read do |site|
         p.data, alt_p.data
       )
     end
+    # Sort collections and filter bad pages
     c[col]["fr"].sort! {|a,b|product_sort(a,b)}
     c[col]["fr"].select!{|a|product_filter(a)}
     c[col]["en"].sort! {|a,b|product_sort(a,b)}
     c[col]["en"].select!{|a|product_filter(a)}
 
   end
-
-  # Sort collections
-
-  #print c["posts"]["fr"].map {|p| p.basename}.join("\n")
   #print "\n"
   c.each do |cat, val|
     site.config["#{cat}_items"] = val
