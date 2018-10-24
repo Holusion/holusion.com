@@ -10,7 +10,7 @@
   {% assign title = include.title %}
 {% endif %}
 
-{% if page.url contains include.url %}
+{% if page.url contains href %}
   <li class="{{include.type | default: "nav"}}-item active">
     <a class="{{include.type | default: "nav"}}-link" href="{{href}}" >
       {{title}}

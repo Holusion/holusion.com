@@ -10,7 +10,7 @@ menu: toolbox
   <div class="col-lg-6 col-md-12">
   <p>Holusion is giving a free public API on each of its products. It permits to control the activation, desactivation, to add or delete medias, and to play the medias.
   </p><p>
-  By default, this API can be used via the web interface that allows <a href="/en/packaging">transfere medias</a>, but it can also be used through external applications.
+  By default, this API can be used via the web interface that allows to <a href="/dev/en/toolbox/packaging/">transfer medias</a>, but it can also be used through external applications.
   </p>
   <p>
   Thanks to the API, we can create and use complex content managing methods. The following functions are available :
@@ -36,8 +36,8 @@ If you have a custom installation, the access method to the product have been gi
 
 If the Wi-Fi doesn't work, is too slow, or if the product isn't equiped, you can connect it with an ethernet cable :
 
-- On your [local network](/en/toolbox/packaging/net-discovery)
-- Directly on your [work station](/en/toolbox/packaging/local-dhcp)
+- On your [local network](/dev/en/toolbox/packaging/net-discovery)
+- Directly on your [work station](/dev/en/toolbox/packaging/local-dhcp)
 
 In the case of the demountable products (focus, iris...), make sure to connect at least one screen to the computer. The administration service doesn't start if there is no display.
 

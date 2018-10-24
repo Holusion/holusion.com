@@ -20,7 +20,7 @@ Toutes les sources sont librement téléchargable sur le site de la **Fondation 
 
 > Ce tutoriel s'adresse à un public possédant une expérience basique de la modélisation et du rendu 3D.
 
-##Nouvel arrivant sur Blender ?
+## Nouvel arrivant sur Blender ?
 
 La communauté est très active autour de Blender. Elle vous propose des tutoriels pour prendre en main et approfondir vos connaissances sur ce logiciel :
 
@@ -35,7 +35,7 @@ La communauté est très active autour de Blender. Elle vous propose des tutorie
 </div>
 </div>
 
-##Holusion Blender Framework
+## Holusion Blender Framework
 
 Vous pouvez utiliser notre framework pour le **Prism** ou le **Focus**. Cela vous permet :
 
@@ -45,9 +45,9 @@ Vous pouvez utiliser notre framework pour le **Prism** ou le **Focus**. Cela vou
 
 <img src="/static/img/posts/blender/blender.jpg" srcset="/static/img/posts/blender/blender4x.jpg 1900w, /static/img/posts/blender/blender2x.jpg 1000w, /static/img/posts/blender/blender.jpg 500w" alt="Blender framework" class="img-fluid">
 
-##How To
+## How To
 
-###Réaliser une modélisation
+### Réaliser une modélisation
 Blender vous permet de modéliser vos propres sujets pour en faire des hologrammes. Vous pouvez en effet importer un modèle d'une autre source :
 
 * Collada (.dae)
@@ -60,7 +60,7 @@ Blender vous permet de modéliser vos propres sujets pour en faire des hologramm
 * Wavefront (.obj)
 * X3D Extensible 3D (.wrl)
 
-###Importer la scène
+### Importer la scène
 Téléchargez et ouvrez votre scène .blend en fonction de votre modèle  :
 
 * [Prism](/static/files/BLENDER_PRISME.zip)
@@ -85,7 +85,7 @@ vous pouvez éditer de nouvelles fonctionnalités en modifiant le panneau de Nod
 * Créez un hologramme avec 4 faces différentes.
 
 
-##Scène ready-to-go
+## Scène ready-to-go
 
 Voici un modèle libre de Char d'assault Panzer III pour pouvoir faire vos tests sur le Prism :
 
