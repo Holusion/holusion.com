@@ -1,8 +1,5 @@
 ---
 title: Media Upload
-redirect_from:
-  - "/en/transfert-de-m-dias/"
-  - "/en/packaging/"
 image: /build/img/posts/banner_packaging.jpg
 image2x: /build/img/posts/banner_packaging_2x.jpg
 abstract: Prepare and upload your contents

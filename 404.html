@@ -20,7 +20,11 @@ This page's localization is handled with javascript because we do not know in wh
 </div>
 
 <script>
-  var lang = location.pathname.split('/')[1].toLowerCase();
+  var path_parts = location.pathname.split('/');
+
+  var id_dev = path_parts[1] && path_parts[1] == "dev";
+  var lang = ((is_dev)?path_parts[2]:path_parts[1]).toLowerCase();
+  if (! lang) return;
   var strings = [
     {name:"404-title",fr:"La page demandée n'existe pas"}
   , {name:"404-long",fr:"Peut-être a-t-elle été déplacée? N'hésitez pas à nous signaler si vous avez suivi un lien mort."}
@@ -33,5 +37,5 @@ This page's localization is handled with javascript because we do not know in wh
       document.getElementById(str.name).innerHTML = str[lang];
     }
   });
-
+  document.getElementById("404-home").href = "/"+(is_dev?"dev/":"" )+lang+"/";
 </script>

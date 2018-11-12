@@ -1,56 +1,36 @@
 ---
-layout: index
+layout: front_page
 ---
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-12 navbar-expand-md navbar-light bg-light" >
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#sidebar"  aria-expanded="false" aria-controls="sidebar">
-        <span class="sr-only">Toggle navigation</span>
-        Show TOC
-      </button>
-      <nav class="collapse bg-faded navbar-collapse d-flex flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
-        {% include utils/make_pages.html %}
-        {% assign categories = "toolbox,platform,content" |split: "," %}
-        {% for category in categories %}
-        {% capture signature %}/dev/{{page.lang}}/{{category}}{%endcapture%}
-          {% if page.url contains  signature %}
-            {% assign active="true" %}
-          {% else %}
-            {% assign active="false" %}
-          {%endif%}
-          <div class="card">
-            <div class="card-header">
-              <h5 class="mb-0">
-                <button
-                class="btn btn-link text-secondary font-weight-bold" type="button" data-toggle="collapse"
-                data-target="#collapseCard{{forloop.index}}"
-                aria-expanded="{{active}}"
-                aria-controls="collapseCard{{forloop.index}}" >
-                  {{site.data.sections[category]["short"][page.lang]}}
-                </button>
-              </h5>
-            </div>
-            <div id="collapseCard{{forloop.index}}" class="collapse{%if active == "true" %} show{%endif%}"
-            aria-labelledby="collapseCard{{forloop.index}}"
-            data-parent="#sidebar"
-            aria-expanded="{{active}}">
-              <ul class="list-group list-group-flush">
-                {% for content in site.content_dev %}
-                  {% if content.url contains page.lang and content.url contains category and content.abstract %}
-                    {% include components/nav/navbar_link.html type="list-group" title=content.title href=content.url %}
-                    {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        {%endfor%}
-      </nav>
-    </div>
-    <div class="col">
-      <div class="container">
-        {{ content }}
+
+{% if page.title %}
+  {% include components/section_title.html title=page.title %}
+{%endif %}
+<div id="dev-header" class="row no-gutters">
+  <div class="col-12 border-light border-bottom">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="flex-grow-1">
+        {% ariane %}
       </div>
+      <a class="content-bar-toggle collapsed d-flex align-items-center d-lg-none" data-toggle="collapse" data-target="#sidebar"  aria-expanded="false" aria-controls="sidebar" title="{{site.data.strings["toc"][page.lang]}}">
+        <span class="sr-only">{{site.data.strings["toc"][page.lang]}}</span>
+        &nbsp;
+      </a>
     </div>
   </div>
+</div>
 
+<div id="dev-layout" class="row no-gutters">
+
+  <div class="col-xl-2 col-lg-3 col-12 navbar-expand-lg navbar-light content-bar" >
+    <nav class="collapse bg-faded navbar-collapse flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
+      {% include utils/make_pages.html %}
+      {% assign categories = "toolbox,content" |split: "," %}
+      {% devnav list=site.content_dev %}
+    </nav>
+  </div>
+  <div class="col">
+    <main id="content" class="container-fluid">
+      {{ content }}
+    </main>
+  </div>
 </div>

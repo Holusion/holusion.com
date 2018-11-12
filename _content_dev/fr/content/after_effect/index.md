@@ -37,13 +37,13 @@ rank: 4
     </p>
     <p><center><a class="button" href="/static/files/Templates_after_effect.zip">Télécharger</a></center></p>
     <p>
-      Pour des montages sur-mesure, <a href="#Expert">une section dédiée</a> vous permettra d'optimiser vos propres projets.
+      Pour des montages sur-mesure, <a href="#améliorer-lhologramme">une section dédiée</a> vous permettra d'optimiser vos propres projets.
     </p>
   </div>
 </div>
 
 
-#Prise en main
+# Prise en main
 
 Les compositions After Effect fournies sont compatibles avec **Adobe After Effect CS6**. Elles ont
 un seul objectif : simplifier le montage de vidéos pour les projecteurs d'hologrammes Holusion.

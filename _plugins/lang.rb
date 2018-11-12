@@ -1,14 +1,12 @@
 
-RE = /^\/(?<lang>fr|en)\//
+RE = /^\/(?<is_dev>dev\/)?(?<lang>fr|en)\//
 
 
-def add_alt_language(doc)
-  pageType = "#{doc.class.name}"
+def add_alt_language(doc, alts)
   site = doc.site
-  alts = pageType == "Jekyll::Page" ? site.pages: site.documents
   url = doc.url
   filepath = doc.relative_path
-  #always set page.data["lang"] because it otherwise breaks things
+  #always set page.data["lang"] if not set because it otherwise breaks things
   if !  doc.data.key? "lang"
     match = RE.match(url)
     if match
@@ -31,7 +29,6 @@ def add_alt_language(doc)
     # and will call this hook and set alt_lang and alt_url for both pages
     peer = alts.find_index {|p| p.url == alt_url}
     if peer != nil
-      #print "lang is #{page.data["lang"]} alt lang is : #{alt_lang}\n"
       doc.data["alt_lang"] = alt_lang
       doc.data["alt_url"] = alt_url
       alts[peer].data["alt_lang"] = lang
@@ -42,13 +39,18 @@ end
 
 Jekyll::Hooks.register :pages, :post_init, priority: "high" do |p|
   #print "Making alt for page : #{p.name}\n"
-  add_alt_language(p)
+  add_alt_language(p, p.site.pages)
 end
 
 Jekyll::Hooks.register :posts, :post_init, priority: "high" do |p|
-  add_alt_language(p)
+  add_alt_language(p, p.site.documents)
 end
 
+Jekyll::Hooks.register :content_dev, :post_init, priority: "high" do |p|
+  #print "Making alt for page : #{p.name}\n"
+  #print "collections : #{ p.site.collections["content_dev"]}"
+  add_alt_language(p, p.site.collections["content_dev"].docs)
+end
 =begin
 Jekyll::Hooks.register :pages, :pre_render, priority: "high" do |p|
   if !p.data.key? "alt_url"

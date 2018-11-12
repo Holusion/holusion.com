@@ -1,6 +1,6 @@
 
 {% assign item = site.data.sections[include.section] %}
-{% capture path %}/{{page.lang}}/{{include.section}}{% endcapture %}
+{% capture path %}{{include.prefix}}/{{page.lang}}/{{include.section}}{% endcapture %}
 <div class="row">
   <div class="col-md-12">
     <h3>
