@@ -10,7 +10,7 @@ menu: toolbox
   <div class="col-lg-6 col-md-12">
   <p>Holusion fournit une API publique sur chacun de ses produits. Elle permet de controler l'activation, la désactivation, l'ajout ou la suppression, la lecture des médias.
   </p><p>
-  Par défaut, cette API est utilisable via l'interface web permettant de <a href="/fr/packaging">transférer des médias</a>, mais il est possible de l'utiliser directement à partir d'applications tierces.
+  Par défaut, cette API est utilisable via l'interface web permettant de <a href="/dev/fr/toolbox/packaging/">transférer des médias</a>, mais il est possible de l'utiliser directement à partir d'applications tierces.
   </p>
   <p>
   On peut grâce à elle réaliser des systèmes complexes de gestion de contenu. Parmis les interactions possibles avec nos produits, vous pouvez notamment retrouver :
@@ -36,8 +36,8 @@ Si vous bénéficiez d'une installation sur mesure, la méthode d'accès au prod
 
 Si le wifi ne fonctionne pas, est trop lent, ou si votre produit n'en est pas équipé, vous pouvez le connecter via un cable Ethernet :
 
-- Sur votre [réseau local](/fr/toolbox/packaging/net-discovery)
-- Directement sur votre [poste de travail](/fr/toolbox/packaging/local-dhcp)
+- Sur votre [réseau local](/dev/fr/toolbox/packaging/net-discovery)
+- Directement sur votre [poste de travail](/dev/fr/toolbox/packaging/local-dhcp)
 
 Dans le cas des produits démontables (focus, iris...), assurez-vous de connecter au moins un écran à l'ordinateur. Le service d'administration ne démarre pas quand aucun affichage n'est détecté.
 

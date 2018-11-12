@@ -14,7 +14,7 @@ All sources are free to download at the main page of the **Blender Foundation** 
 The following tutorial is addressed to users with basic experience of 3D computer graphics.
 
 
-<a class="button" href="/static/files/static/files/BLENDER_PRISME.zip">Download for Prisme</a>
+<a class="button" href="/static/files/BLENDER_PRISME.zip">Download for Prisme</a>
 
 ##Welcome to Blender
 New to Blender? Train yourself on tutorials at

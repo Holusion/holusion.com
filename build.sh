@@ -92,7 +92,7 @@ done
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 OLD_PWD=$(pwd)
-cd $DIR
+cd "$DIR"
 #Get convert helpers
 source ./scripts/optimizers.sh
 
@@ -171,10 +171,11 @@ ${make_check} && bundle exec htmlproofer _site \
 --only-4xx \
 --disable-external \
 --internal-domains "holusion.com,test.holusion.com" \
---file-ignore "/vendor/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
+--file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/" \
+--url-ignore "/^\/?$/"
 
 ${make_check} && test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
---file-ignore "/vendor/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
+--file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
 
 
 

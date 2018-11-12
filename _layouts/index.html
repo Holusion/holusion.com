@@ -5,7 +5,9 @@ layout: front_page
 {% if page.title %}
   {% include components/section_title.html title=page.title %}
 {%endif %}
-{% ariane %}
+<div class="container">
+  {% ariane %}
+</div>
 <!-- Page Content -->
 <main id="content">
   {{ content }}

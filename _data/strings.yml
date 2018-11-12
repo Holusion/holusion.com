@@ -52,6 +52,12 @@ read-more:
 also:
   fr: découvrir aussi...
   en:  also made by holusion...
+current:
+  fr: courant
+  en: current
+toc:
+  fr: Index
+  en: Index
 rent-only:
   fr: Uniquement en location
   en: Only available for rent
