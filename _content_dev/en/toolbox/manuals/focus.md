@@ -2,8 +2,8 @@
 title: Focus manual guide
 redirect_from: "/fr/manual-focus/"
 abstract: Holusion's Focus user guide
-image: /build/img/posts/banner_manual_focus.jpg
-image2x: /build/img/posts/banner_manual_focus_2x.jpg
+image: img/posts/banner_manual_focus.jpg
+
 rank: 3
 menu: toolbox
 ---

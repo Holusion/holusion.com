@@ -1,9 +1,9 @@
-{%capture image_url %}/build/img/portraits/{{include.img |default: "default" }}{%endcapture%}
+{%capture image_url %}img/portraits/{{include.img |default: "default" }}{%endcapture%}
 <a class="team-portrait" {%if include.url%} href="{{include.url}}"{% endif %}>
   <div class="views-field views-field-field-image">
-    <div class="field-content" style='background-image: url({{image_url}}_Holo.jpg);'>
+    <div class="field-content" style='background-image: url({{image_url | append:"_Holo.jpg" | asset:"@path"}});'>
 
-      <img typeof="foaf:Image" src="{{image_url}}.jpg" srcset="{{image_url}}_2x.jpg 512w, {{image_url}}.jpg 256w" alt="{%if include.img %}{{include.name}}{%else%}default{%endif%} portrait" width="256" height="256" sizes="256px" alt="">
+      <img typeof="foaf:Image" src="{{image_url|append:".jpg" | asset:"@path"}}" srcset="{{image_url| append:".jpg" | asset:"magick:resize=512x512 @path"}} 512w, {{image_url| append:".jpg" | asset:"magick:resize=256x256 @path"}} 256w" alt="{%if include.img %}{{include.name}}{%else%}default{%endif%} portrait" width="256" height="256" sizes="256px" alt="">
       <i class="circle-border"></i>
     </div>
   </div>

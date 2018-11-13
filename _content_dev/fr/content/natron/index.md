@@ -1,7 +1,7 @@
 ---
 title: Natron
-image: /build/img/posts/banner_natron.jpg
-image2x: /build/img/posts/banner_natron_2x.jpg
+image: img/posts/banner_natron.jpg
+
 abstract: Création de vidéos holographiques en utilisant le logiciel de création gratuit "Natron"
 menu: content
 rank: 5

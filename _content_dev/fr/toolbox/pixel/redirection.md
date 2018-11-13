@@ -1,7 +1,7 @@
 ---
 title: Redirection Pixel
-image: /build/img/posts/dns_redirect/header.jpg
-image2x: /build/img/posts/dns_redirect/header_2x.jpg
+image: img/posts/dns_redirect/header.jpg
+
 abstract: Utilisez votre nom de domaine pour démarrer la playlist d'hologrammes Pixel
 rank: 2
 menu: toolbox

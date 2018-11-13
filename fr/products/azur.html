@@ -1,7 +1,7 @@
 ---
 title: Azur
-image: /build/img/products/azur_voiture.jpg
-image2x: /build/img/products/azur_voiture_2x.jpg
+image: img/products/azur_voiture.jpg
+
 abstract: L'Azur est une vitrine qui diffuse les hologrammes à 180°
 rank: 5
 tags: Azur
@@ -50,6 +50,12 @@ properties:
 </div>
 
 <div align="center" style="padding-top: 50px">
-  <img class="img-fluid" src="/build/img/products/mesures/Azur22.png"
-    srcset="/build/img/products/mesures/Azur22_2x.png 1920w, /build/img/products/mesures/Azur22.png 960w" alt="Schéma de dimensions de l'Azur 22, hologramme à 3 faces" sizes="(min-width: 1200px) 1200px, 100vw">
+  {%asset img/products/mesures/Azur22.png
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    sizes="(min-width: 1200px) 1200px, 100vw"
+    alt="Schéma de dimensions de l'Azur 22, hologramme à 3 faces"
+  %}
+
 </div>

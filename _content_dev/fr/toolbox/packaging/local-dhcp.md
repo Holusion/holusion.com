@@ -1,7 +1,7 @@
 ---
 title: établir une connection filaire directe
-image: /build/img/posts/banner_packaging.jpg
-image2x: /build/img/posts/banner_packaging_2x.jpg
+image: img/posts/banner_packaging.jpg
+
 abstract: Connectez votre produit holusion à votre poste de travail
 ---
 

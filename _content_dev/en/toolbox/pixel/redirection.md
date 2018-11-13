@@ -1,7 +1,7 @@
 ---
 title: Redirect your Pixel
-image: /build/img/posts/dns_redirect/header.jpg
-image2x: /build/img/posts/dns_redirect/header_2x.jpg
+image: img/posts/dns_redirect/header.jpg
+
 abstract: Use your own domain name to distribute your pixel videos.
 rank: 2
 menu: toolbox

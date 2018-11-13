@@ -1,7 +1,7 @@
 ---
 title: Establish a wire connection
-image: /build/img/posts/banner_packaging.jpg
-image2x: /build/img/posts/banner_packaging_2x.jpg
+image: img/posts/banner_packaging.jpg
+
 abstract: Connect your Holusion product to your work station
 ---
 

@@ -7,7 +7,7 @@ tags: tourisme museographie
 ---
 
 <section class="section section-main-header header-fill" style="max-width: 1920px">
-  {%include components/header_image.html image="/build/img/posts/2018_manufacture/catissefactory_full.jpg" image2x="/build/img/posts/2018_manufacture/catissefactory_full_2x.jpg" %}
+  {%include components/header_image.html image="img/posts/2018_manufacture/catissefactory_full.jpg" %}
   <div class="main-header-body">
     <div class="content shadow rounded bg-white rounded p-4">
       <h1>Ça Tisse Factory</h1>
@@ -25,7 +25,7 @@ tags: tourisme museographie
 </section>
 
 <section class="section section-main-header header-fill">
-  {%include components/header_image.html image="/build/img/posts/2018_manufacture/manufacture.jpg" image2x="/build/img/posts/2018_manufacture/manufacture_2x.jpg" %}
+  {%include components/header_image.html image="img/posts/2018_manufacture/manufacture.jpg" %}
   <div class="main-header-body full-width">
     <div class="content shadow rounded bg-white rounded p-4">
 
@@ -77,8 +77,12 @@ tags: tourisme museographie
     <p>
       D'ailleurs, on ne saurait que vous encourage à découvrir au <strong>Palais des Beaux-Arts de Lille</strong> les prototypes de la prochaine édition de <a href="https://www.museomix.org/editions/2018/lille-palais-des-beaux-arts">MuseoMix Nord le 11 Novembre 2018</a>.
     </p>
-
-    <img src="/build/img/posts/2018_manufacture/dispositif.jpg" width="100%" srcset="/build/img/posts/2018_manufacture/dispositif_2x.jpg" alt="Dispositif Ca Tisse Factory"/>
+    {% asset "img/posts/2018_manufacture/dispositif.jpg"
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      alt="Dispositif Ca Tisse Factory au musée de la manufacture de roubaix"
+    %}
 
     <h2>Manufacture de Roubaix</h2>
     <p>
@@ -88,7 +92,7 @@ tags: tourisme museographie
 </section>
 
 <section class="section section-main-header header-fill">
-  {%include components/header_image.html image="/build/img/posts/2018_manufacture/condition_publique.jpg" image2x="/build/img/posts/2018_manufacture/condition_publique_2x.jpg" %}
+  {%include components/header_image.html image="img/posts/2018_manufacture/condition_publique.jpg" %}
   <div class="main-header-body full-width">
     <div class="content shadow rounded bg-white rounded p-4">
 
