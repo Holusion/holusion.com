@@ -94,31 +94,14 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 OLD_PWD=$(pwd)
 cd "$DIR"
 #Get convert helpers
-source ./scripts/optimizers.sh
+#source ./scripts/optimizers.sh
 
 
-[ -d "$DIR/build" ] || mkdir -p "$DIR/build"
-install_optimizers "$DIR/build"
+#[ -d "$DIR/build" ] || mkdir -p "$DIR/build"
+#install_optimizers "$DIR/build"
 
 #check gem dependencies and install if necessary
 bundle check >/dev/null || bundle install
-
-[ -d build/videos ] || mkdir -p build/videos
-
-while IFS= read -r -d '' file; do
-    # single filename is in $file
-    convert_video "$file"
-done < <(find src/videos/ -type f -print0)
-
-[ -d build/img ] || mkdir -p build/img
-
-
-while IFS= read -r -d '' file; do
-    # single filename is in $file
-    build_srcset "$file"
-    # your code here
-done < <(find src/img/ -type f -print0)
-
 
 
 if ${make_build} ;then

@@ -1,3 +1,12 @@
 <div class="main-header-image-wrapper">
-  <img class="img-fluid" src="{{include.image}}" {%if include.image2x%}srcset="{{include.image}} 960w, {{include.image2x}} 1920w" sizes="100w"{%endif%} alt="{{include.alt}}">
+  {% if assets[include.image] %}
+    {% asset "{{include.image}}"
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      alt="{{include.alt}}"
+    %}
+  {% else %}
+    <img class="img-fluid" src="{{include.image}}" {%if include.image2x%}srcset="{{include.image}} 960w, {{include.image2x}} 1920w" sizes="100w"{%endif%} alt="{{include.alt}}">
+  {% endif %}
 </div>

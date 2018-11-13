@@ -1,7 +1,7 @@
 ---
 title: Iris 75
-image: /build/img/products/iris_75_voiture.jpg
-image2x: /build/img/products/iris_75_voiture_2x.jpg
+image: img/products/iris_75_voiture.jpg
+
 abstract: l'hologramme XXL pour des projets grandeur nature
 rank: 1
 slides:
@@ -62,8 +62,14 @@ properties:
 
 <div class="row">
   <div class="col order-2">
-    <img class="img-fluid" src="/build/img/products/mesures/Iris75.png"
-      srcset="/build/img/products/mesures/Iris75_2x.png 1920w, /build/img/products/mesures/Iris75.png 960w" alt="Schéma de dimensions de l'iris 75" sizes="(min-width: 1200px) 50vw, 100vw">
+    {%asset img/products/mesures/Iris75.png
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      sizes="(min-width: 1200px) 50vw, 100vw"
+      alt="Schéma de dimensions de l'iris 75 pouces"
+    %}
+
   </div>
   <div class="col-lg-6 col-md-12 align-self-center order-1">
     <h2>Précis</h2>

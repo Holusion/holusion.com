@@ -1,7 +1,7 @@
 ---
 title: Iris 32
-image: /build/img/products/iris_nausicaa.jpg
-image2x: /build/img/products/iris_nausicaa_2x.jpg
+image: img/products/iris_nausicaa.jpg
+
 abstract: Vitrine holographique inédite
 rank: 3
 slides:
@@ -12,8 +12,8 @@ slides:
   -
     image: /static/img/products/Iris_32_immobilier.jpg
   -
-    image: /build/img/products/iris32_ales.jpg
-    image2x: /build/img/products/iris32_ales_2x.jpg
+    image: img/products/iris32_ales.jpg
+
 header: Hologramme 1 face
 picto: /static/img/products/picto_iris.jpg
 price: "4500,00"
@@ -56,6 +56,13 @@ properties:
 </div>
 
 <div align="center" style="padding-top: 30px">
-  <img  alt="Schéma de l'Iris 32 pouces" class="img-fluid" alt="Schéma de l'Iris 32 Holusion" class="img-fluid" src="/build/img/products/mesures/Iris32.png" srcset="/build/img/products/mesures/Iris32_2x.png 2x, /build/img/products/mesures/Iris32.png" sizes="(min-width: 1200px) 1200px, 100vw" style="padding-top: 40px; padding-bottom: 10px;" />
+  {% asset img/products/mesures/Iris32.png
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    sizes="(min-width: 1200px) 1200px, 100vw"
+    style="padding-top: 40px; padding-bottom: 10px;"
+    alt="Schema des dimensions de l'iris 32 pouces"
+  %}
   <h3> <b>L'iris 32</b> </h3>
 </div>

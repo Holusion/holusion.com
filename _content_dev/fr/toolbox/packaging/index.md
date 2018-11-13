@@ -3,8 +3,8 @@ title: Transfert de médias
 redirect_from:
   - "/fr/media-upload/"
   - "/fr/packaging/"
-image: /build/img/posts/banner_packaging.jpg
-image2x: /build/img/posts/banner_packaging_2x.jpg
+image: img/posts/banner_packaging.jpg
+
 abstract: Préparer vos fichiers pour les transférer sur projecteur
 rank: 1
 menu: toolbox

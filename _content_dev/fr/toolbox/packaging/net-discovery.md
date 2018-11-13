@@ -1,7 +1,7 @@
 ---
 title: trouver un produit holusion sur le réseau
-image: /build/img/posts/banner_packaging.jpg
-image2x: /build/img/posts/banner_packaging_2x.jpg
+image: img/posts/banner_packaging.jpg
+
 abstract: Localisez un produit holusion sur votre réseau
 ---
 

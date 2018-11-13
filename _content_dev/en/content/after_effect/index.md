@@ -1,7 +1,7 @@
 ---
 title: After Effect
-image: /build/img/posts/banner_after_effect.jpg
-image2x: /build/img/posts/banner_after_effect_2x.jpg
+image: img/posts/banner_after_effect.jpg
+
 abstract: After Effect project to simplify the content making.
 rank: 1
 menu: content

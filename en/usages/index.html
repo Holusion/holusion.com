@@ -3,7 +3,7 @@ layout: index
 title: Holographic solutions
 ---
 <section id="section-intro" class="section section-main-header header-fill">
-  {%include components/header_image.html image="/build/img/products/focus_museo.jpg" image2x="/build/img/products/focus_museo_2x.jpg" %}
+  {%include components/header_image.html image="img/products/focus_museo.jpg" %}
   <div class="main-header-body">
     <div class="content shadow rounded bg-white rounded p-4">
       <h2>End-to-end solutions</h2>
@@ -20,7 +20,13 @@ title: Holographic solutions
 
 <section id="section-bim" class="section-main-tile">
   <a class="main-tile-image-wrapper" href="/fr/usages/bim">
-    <img class="img-fluid" src="/build/img/products/iris75_ardoines.jpg" srcset="/build/img/products/iris75_ardoines.jpg 960w, /build/img/products/iris75_ardoines.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw" alt="a 75 inch product displays an architectural project">
+    {% asset "img/products/iris75_ardoines.jpg"
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      alt="A 75 inch product displays an architectural project"
+    %}
   </a>
   <div class="main-tile-body">
     <h3>Interactive models</h3>
@@ -35,7 +41,13 @@ title: Holographic solutions
 
 <section id="section-tele" class="section-main-tile">
   <a class="main-tile-image-wrapper" href="/fr/usages/visio">
-    <img class="img-fluid" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw" alt="a 75 inch holographic display at french fair vivatech in 2018">
+    {% asset "img/sections/iris75_vivatech.jpg"
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      alt="A 75 inch holographic display at french fair vivatech in 2018"
+    %}
   </a>
   <div class="main-tile-body">
     <h3>Holographic telepresence</h3>
@@ -50,7 +62,13 @@ title: Holographic solutions
 
 <section id="section-tele" class="section-main-tile">
   <a class="main-tile-image-wrapper" href="/fr/usages/visio">
-    <img class="img-fluid" src="/build/img/home_sections/iris32_lille1.jpg" srcset="/build/img/home_sections/iris32_lille1.jpg 960w, /build/img/home_sections/iris32_lille1.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    {% asset "img/sections/iris32_lille1.jpg"
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      alt="A 32 inch hologram at Lille's University, France"
+    %}
   </a>
   <div class="main-tile-body">
     <h3>Culture and heritage</h3>

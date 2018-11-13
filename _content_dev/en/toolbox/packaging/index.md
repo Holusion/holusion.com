@@ -1,7 +1,7 @@
 ---
 title: Media Upload
-image: /build/img/posts/banner_packaging.jpg
-image2x: /build/img/posts/banner_packaging_2x.jpg
+image: img/posts/banner_packaging.jpg
+
 abstract: Prepare and upload your contents
 rank: 1
 menu: toolbox

@@ -1,8 +1,8 @@
 ---
 title: "Contactless Control"
 redirect_from: "/en/contr-le-sans-contact/"
-image: /build/img/posts/banner_contactless.jpg
-image2x: /build/img/posts/banner_contactless_2x.jpg
+image: img/posts/banner_contactless.jpg
+
 abstract: Empower your product with contactless technologies
 rank: 2
 menu: toolbox

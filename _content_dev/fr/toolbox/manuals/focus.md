@@ -2,8 +2,8 @@
 title: Manuel Focus
 redirect_from: "/fr/manual-focus/"
 abstract: Guide d'utilisation des produits "focus" d'Holusion
-image: /build/img/posts/banner_manual_focus.jpg
-image2x: /build/img/posts/banner_manual_focus_2x.jpg
+image: img/posts/banner_manual_focus.jpg
+
 rank: 3
 menu: toolbox
 ---

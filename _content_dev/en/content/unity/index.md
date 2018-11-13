@@ -1,7 +1,7 @@
 ---
 title: Unity 3D
-image: /build/img/posts/banner_unity.jpg
-image2x: /build/img/posts/banner_unity_2x.jpg
+image: img/posts/banner_unity.jpg
+
 abstract: Demonstration app for Unity 3D version 4
 rank: 0
 menu: platform
