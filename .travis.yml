@@ -26,4 +26,4 @@ install:
 script:
   - './build.sh'
   - './build.sh --no-build -t;'
-  - './build.sh --no-build -i local --jenkins;'
+  - './build.sh --no-build -i local -e;'
