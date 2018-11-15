@@ -6,3 +6,4 @@ build
 _site/
 .jekyll-metadata
 .sass-cache
+.jekyll-cache

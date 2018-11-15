@@ -1,8 +1,8 @@
 ---
 title: "Contrôle Sans Contact"
 redirect_from: "/fr/contactless-control/"
-image: /build/img/posts/banner_contactless.jpg
-image2x: /build/img/posts/banner_contactless_2x.jpg
+image: img/posts/banner_contactless.jpg
+
 abstract: Ajoutez la puissance des technologies sans contact à votre produit
 rank: 2
 menu: toolbox

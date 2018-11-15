@@ -22,12 +22,22 @@ plugins:
   - jekyll-redirect-from
   - jekyll-inline-svg
   - jekyll-paginate-v2
+  - jekyll-assets
 sass:
   style: compressed
   sourcemap: true
   load_paths:
     - _css
     - node_modules
+assets:
+  destination: "/assets"
+  defaults:
+    img: { integrity: false }
+  plugins:
+    img: { optim: {}}
+  sources:
+    - _assets
+    - _assets/img
 pagination:
   enabled: true
   limit: 0

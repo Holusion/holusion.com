@@ -1,0 +1,29 @@
+language: ruby
+dist: xenial
+# blocklist
+branches:
+  except:
+    - master
+    - testing
+cache:
+  bundler: true
+  npm: true
+  directories:
+    - .git/lfs
+    - .sass-cache
+    - .jekyll-cache
+git:
+  lfs_skip_smudge: true
+
+before_install:
+  - git lfs pull
+  - sudo apt-get install -y nodejs
+  - sudo apt-get install -y ffmpeg xcftools
+  - gem install bundler
+install:
+  - bundle
+  - npm install
+script:
+  - './build.sh'
+  - './build.sh --no-build -t;'
+  - './build.sh --no-build -i local -e;'

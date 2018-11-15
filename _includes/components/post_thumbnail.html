@@ -26,11 +26,19 @@
 <div class="{{classes}}">
   <div class="card shadow-sm border-dark" style="min-height:100%">
     {% if content.image %}
-      <img class="card-img-top" src="{{content.image}}"
-        {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
-    {% else %}
-      <img class="card-img-top" src="/static/img/posts/default.jpg" alt="{{alt_text}}">
-    {%endif%}
+      {% if assets[content.image] %}
+        {% asset "{{content.image}}"
+          srcset:width="800"
+          srcset:width="400"
+          sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw"
+          class="card-img-top"
+          alt="{{alt_text}}"
+        %}
+      {% else %}
+        <img class="card-img-top" src="{{content.image|default: "/static/img/posts/default.jpg"}}"
+          {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+      {% endif %}
+    {% endif %}
     <a href="{{content.url}}" class="card-header bg-dark text-light">
         {{content.title}}
     </a>
@@ -50,21 +58,28 @@
   <div class="thumbnail">
     <a href = "{{content.url}}">
       {% if content.image %}
-        <img src="{{content.image}}"
-          {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
-      {% else %}
-        <img src="/static/img/posts/default.jpg" alt="{{alt_text}}">
+        {% if assets[content.image] %}
+          {% asset "{{content.image}}"
+            srcset:width="800"
+            srcset:width="400"
+            sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw"
+            alt="{{alt_text}}"
+          %}
+        {% else %}
+          <img src="{{content.image|default: "/static/img/posts/default.jpg"}}"
+            {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+        {% endif %}
       {% endif %}
-        <div class="caption">
-          <h3 class="caption-title">
-            <span class="caption-title-text">{{content.title}}</span>
-            {% if content.price %}
-              <span class="caption-title-price">{{content.price}}€</span>
-            {% endif %}
-          </h3>
-          <span class="caption-text">
-            {{content.abstract}}
-          </span>
+      <div class="caption">
+        <h3 class="caption-title">
+          <span class="caption-title-text">{{content.title}}</span>
+          {% if content.price %}
+            <span class="caption-title-price">{{content.price}}€</span>
+          {% endif %}
+        </h3>
+        <span class="caption-text">
+          {{content.abstract}}
+        </span>
       </div>
     </a>
   </div>

@@ -22,13 +22,15 @@
   {% else %}
     <meta name="description" content="{{site.data.strings.site-description[page.lang]}}" />
   {% endif %}
+
   {% if page.image %}
-    {% if page.image2x %}
-      <meta property="og:image" content="{{site.url}}{{page.image2x}}"/>
+    {% if assets[page.image] %}
+      <meta name="twitter:image"  content="{{page.image | remove: "_assets/" |asset:" @path"}}">
+      <meta name="og:image"  content="{{page.image | remove: "_assets/" |asset:" @path"}}">
     {% else %}
+      <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
       <meta property="og:image" content="{{site.url}}{{page.image}}"/>
     {% endif %}
-    <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
   {% endif %}
   {% if page.layout == "post" %}
     <meta property="og:type" content="article"/>
