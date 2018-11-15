@@ -1,7 +1,7 @@
 ---
 title: Iris 22
-image: /build/img/products/iris_22.jpg
-image2x: /build/img/products/iris_22_2x.jpg
+image: img/products/iris_22.jpg
+
 abstract: Vitrine holographique inédite
 rank: 3
 slides:
@@ -44,6 +44,13 @@ properties:
 </div>
 
 <div align="center" style="padding-top: 30px">
-  <img  alt="Schéma de l'Iris 32 pouces" class="img-fluid" <img   style="padding-top: 70px" alt="Schéma du Iris" class="img-fluid" src="/build/img/products/mesures/Iris22.png" srcset="/build/img/products/mesures/Iris22_2x.jpg 2x, /build/img/products/mesures/Iris22.jpg" style="padding-top: 40px; padding-bottom: 10px;" />
+  {%asset img/products/mesures/Iris22.png
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    sizes="(min-width: 1200px) 1200px, 100vw"
+    style="padding-top: 40px; padding-bottom: 10px;"
+    alt="Schema des dimensions de l'iris 22 pouces"
+  %}
   <h3> <b>L'iris 22</b> </h3>
 </div>

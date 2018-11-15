@@ -35,7 +35,10 @@ title: About us
     </div>
 
       <div class="col-md-6" style="padding-top: 40px">
-        <img style="padding-top: 30px" alt="Step by step" class="img-fluid" src="/static/img/products/step.png"/>
+        {% asset "img/products/pencil.png"
+          style="padding-top: 30px"
+          class="img-fluid"
+        %}
         </div>
     </div>
 
@@ -113,9 +116,9 @@ Our suppliers mostly come from our region and the holographic display are manufa
             url="https://www.linkedin.com/in/sebastien-dumetz-67442b86/"
           %}
           {% include components/team_member_portrait.html
-            img="/aline"
-            name="Aline Neznal"
-            title="Communication manager"
+            img=""
+            name="Sebastien Delannoy"
+            title="Project Manager"
           %}
           {% include components/team_member_portrait.html
             img="yann"

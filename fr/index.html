@@ -2,14 +2,18 @@
 layout: front_page
 title: Home page
 lang: fr
-image: /build/img/home_sections/prism.jpg
-image2x: /build/img/home_sections/prism_2x.jpg
+image: img/sections/prism.jpg
 
 ---
 
 <section class="section section-main-header">
   <div class="main-header-image-wrapper">
-    <img class="img-fluid fit-contain" src="/build/img/home_sections/header.jpg" srcset="/build/img/home_sections/header.jpg 1920w, /build/img/home_sections/header_2x.jpg 3840w" alt="l'opal d'holusion en configuration horizontale présentant un hologramme de la dame de brassempuis">
+    {% asset 'img/sections/header.jpg'
+      srcset:width="960"
+      srcset:width="1920"
+      class="img-fluid fit-contain"
+      alt="l'opal d'holusion en configuration horizontale présentant un hologramme de la dame de brassempuis"
+    %}
   </div>
   <div class="main-header-spacer"></div>
   <div class="main-header-overlay section-title">
@@ -38,7 +42,13 @@ image2x: /build/img/home_sections/prism_2x.jpg
 <main class="home-page-main">
   <section id="section-gamme" class="section-main-tile">
     <div class="main-tile-image-wrapper">
-      <img class="img-fluid" src="/build/img/home_sections/prism.jpg" srcset="/build/img/home_sections/prism.jpg 960w, /build/img/home_sections/prism_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      {% asset sections/prism.jpg
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        class="img-fluid"
+        alt="un prism holusion au soleil dans la coursive du 2eme étage de l'imaginarium, Plaine Images à Tourcoing"
+      %}
     </div>
     <div class="main-tile-body">
       <h3>Adaptable</h3>
@@ -53,7 +63,13 @@ image2x: /build/img/home_sections/prism_2x.jpg
 
   <section id="section-interactive" class="section-main-tile">
     <div class="main-tile-image-wrapper">
-      <img class="img-fluid" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      {% asset 'img/sections/iris75_vivatech.jpg'
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        class="img-fluid"
+        alt="L'Iris 75 Holusion à l'exposition Vivatechnologies 2018"
+      %}
     </div>
     <div class="main-tile-body">
       <h3>Interactif</h3>
@@ -66,7 +82,13 @@ image2x: /build/img/home_sections/prism_2x.jpg
 
   <section id="section-accompagnement" class="section-main-tile">
     <div class="main-tile-image-wrapper">
-      <img class="img-fluid" src="/build/img/home_sections/design.jpg" srcset="/build/img/home_sections/design.jpg 960w, /build/img/home_sections/design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      {% asset 'img/sections/design.jpg'
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        class="img-fluid"
+        alt="Schemas et dessins de la conception d'un Opal Holusion"
+      %}
     </div>
     <div class="main-tile-body">
       <h3> Personnalisé </h3>
@@ -81,7 +103,13 @@ image2x: /build/img/home_sections/prism_2x.jpg
 
   <section id="section-design" class="section-main-tile">
     <div class="main-tile-image-wrapper">
-      <img class="img-fluid" src="/build/img/home_sections/cafe_design.jpg" srcset="/build/img/home_sections/cafe_design.jpg 960w, /build/img/home_sections/cafe_design_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      {% asset 'img/sections/cafe_design.jpg'
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        class="img-fluid"
+        alt="Schemas et dessins de la création d'un projecteur d'hologrammes sur mesure"
+      %}
     </div>
     <div class="main-tile-body">
       <h3> Créatif</h3>
@@ -96,7 +124,13 @@ image2x: /build/img/home_sections/prism_2x.jpg
 
   <section id="section-accessible" class="section-main-tile">
     <div class="main-tile-image-wrapper">
-      <img class="img-fluid" src="/build/img/home_sections/opal.jpg" srcset="/build/img/home_sections/opal.jpg 960w, /build/img/home_sections/opal.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      {% asset 'img/sections/opal.jpg'
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        class="img-fluid"
+        alt="Opal Horizontal Holusion présenant l'extension de l'aquarium Nausicaa dans le Pas de Calais"
+      %}
     </div>
     <div class="main-tile-body">
       <h3> Accessible</h3>
@@ -116,7 +150,13 @@ image2x: /build/img/home_sections/prism_2x.jpg
   </section>
   <section id="section-production" class="section-main-tile">
     <div class="main-tile-image-wrapper">
-      <img class="img-fluid" src="/build/img/home_sections/plaine image.jpg" srcset="/build/img/home_sections/plaine%20image.jpg 960w, /build/img/home_sections/plaine%20image_2x.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+      {% asset "img/sections/plaine_image.jpg"
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        class="img-fluid"
+        alt="Vue du 2eme étage sur la cour intérieure de la plaine image, après sa réhabilitation en 2017"
+      %}
     </div>
     <div class="main-tile-body">
       <h3> Made in France</h3>

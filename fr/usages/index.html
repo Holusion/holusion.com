@@ -3,7 +3,7 @@ layout: index
 title: Solutions holographiques
 ---
 <section id="section-intro" class="section section-main-header header-fill">
-  {%include components/header_image.html image="/build/img/home_sections/cafe_design.jpg" image2x="/build/img/home_sections/cafe_design_2x.jpg" %}
+  {%include components/header_image.html image="img/sections/cafe_design.jpg" %}
   <div class="main-header-body">
     <div class="content shadow rounded bg-white rounded p-4">
       <h2> Des solutions prêtes à déployer</h2>
@@ -19,7 +19,13 @@ title: Solutions holographiques
 
 <section id="section-bim" class="section-main-tile">
   <a class="main-tile-image-wrapper" href="/fr/usages/bim">
-    <img class="img-fluid" src="/build/img/products/iris75_ardoines.jpg" srcset="/build/img/products/iris75_ardoines.jpg 960w, /build/img/products/iris75_ardoines.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    {% asset "img/products/iris75_ardoines.jpg"
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      alt="Projet de rénovation du pôle gare des ardoines dans un Iris de 75 pouces"
+    %}
   </a>
   <div class="main-tile-body">
     <h3>Maquettes Interactives</h3>
@@ -34,7 +40,13 @@ title: Solutions holographiques
 
 <section id="section-tele" class="section-main-tile">
   <a class="main-tile-image-wrapper" href="/fr/usages/visio">
-    <img class="img-fluid" src="/build/img/home_sections/iris75_vivatech.jpg" srcset="/build/img/home_sections/iris75_vivatech.jpg 960w, /build/img/home_sections/iris75_vivatech.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    {% asset "img/sections/iris75_vivatech.jpg"
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    sizes="(max-width: 992px) 100vw, 50vw"
+    alt="l'Iris 75 sur le stand holusion pour Vivatechnologies"
+    %}
   </a>
   <div class="main-tile-body">
     <h3>Téléprésence en hologrammes</h3>
@@ -49,7 +61,13 @@ title: Solutions holographiques
 
 <section id="section-tele" class="section-main-tile">
   <a class="main-tile-image-wrapper" href="/fr/usages/visio">
-    <img class="img-fluid" src="/build/img/home_sections/iris32_lille1.jpg" srcset="/build/img/home_sections/iris32_lille1.jpg 960w, /build/img/home_sections/iris32_lille1.jpg 1920w" sizes="(max-width: 992px) 100vw, 50vw">
+    {% asset "img/sections/iris32_lille1.jpg"
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    sizes="(max-width: 992px) 100vw, 50vw"
+    alt="l'Iris 32 à utilisé par l'université de Lille"
+    %}
   </a>
   <div class="main-tile-body">
     <h3>Valorisation du patrimoine</h3>

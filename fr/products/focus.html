@@ -1,14 +1,13 @@
 ---
 title: Focus
-image: /build/img/products/focus_futur_en_seine.jpg
-image2x: /build/img/products/focus_futur_en_seine_2x.jpg
+image: img/products/focus_futur_en_seine.jpg
 abstract: L'hologramme scénique pour sublimer vos produits
 rank: 3
 slides:
   -
     image: /static/img/products/focus_holusion.jpg
   -
-    image: /build/img/products/focus_futur_en_seine_2x.jpg
+    image: img/products/focus_futur_en_seine.jpg
   -
     image: /static/img/products/focus_interactif_formation.jpg
   -
@@ -56,6 +55,11 @@ properties:
 
 
 <div align="center">
-  <img class="img-fluid" src="/build/img/products/mesures/Focus.png"
-    srcset="/build/img/products/mesures/Focus_2x.png 1920w, /build/img/products/mesures/Focus.png 960w" alt="Schéma de dimensions du focus holusion" sizes="(min-width: 1200px) 1200px, 100vw">
+  {%asset img/products/mesures/Focus.png
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    sizes="(min-width: 1200px) 1200px, 100vw"
+    alt="Schéma de dimensions du focus holusion"
+  %}
 </div>

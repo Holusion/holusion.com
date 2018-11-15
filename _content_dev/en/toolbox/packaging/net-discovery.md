@@ -1,7 +1,7 @@
 ---
 title: find a Holusion product on the network
-image: /build/img/posts/banner_packaging.jpg
-image2x: /build/img/posts/banner_packaging_2x.jpg
+image: img/posts/banner_packaging.jpg
+
 abstract: Locate a Holusion product on your network
 ---
 
