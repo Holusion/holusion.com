@@ -94,11 +94,11 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 OLD_PWD=$(pwd)
 cd "$DIR"
 #Get convert helpers
-#source ./scripts/optimizers.sh
+source ./scripts/optimizers.sh
 
 
 #[ -d "$DIR/build" ] || mkdir -p "$DIR/build"
-#install_optimizers "$DIR/build"
+install_optimizers "$DIR/build"
 
 #check gem dependencies and install if necessary
 bundle check >/dev/null || bundle install
@@ -134,7 +134,7 @@ if ${make_build} ;then
   bundle exec jekyll $exec_cmd --config $s_conf $add_opts
 
   if $make_compress ;then
-    echo "Compress static assets"
+    #echo "Compress static assets"
     #Use a tmp dir to atomically mv images afgter compression.
     # Prevent partial results on interrupted builds
     time build_static "$DIR"
