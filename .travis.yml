@@ -12,6 +12,7 @@ cache:
     - .git/lfs
     - .sass-cache
     - .jekyll-cache
+    - .static-cache
 git:
   lfs_skip_smudge: true
 
