@@ -81,7 +81,7 @@ Pour transformer votre vidéo en contenu adapté, un petit processus de concepti
 
 
 <div class="contenu">
-<img border="0" src="/static/img/posts/prism/Pyramide.png" alt="Format vidéo de la pyramide" width="217" height="175" style="float: right;" /></div>
+<img src="/static/img/posts/prism/Pyramide.png" alt="Format vidéo de la pyramide" style="img-fluid" /></div>
 <br />
 - Pour <a href="/dev/fr/content/after_effect/index">After Effect</a> : Logiciel de montage de la suite Adobe.
 - Pour <a href="/dev/fr/content/natron/index">Natron</a> : Logiciel de montage open source.
