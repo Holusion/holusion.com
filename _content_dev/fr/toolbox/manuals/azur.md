@@ -2,7 +2,7 @@
 title: Manuel Azur
 abstract: Guide d'utilisation des produits "Azur" d'Holusion
 image: /static/img/posts/azur/azur.jpg
-rank: 5
+rank: 6
 menu: toolbox
 
 ---
