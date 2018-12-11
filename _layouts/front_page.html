@@ -8,11 +8,8 @@
   <meta name="author" content="Holusion">
   <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
 
-  {% if page.title %}
-    <title>{{page.title}} {{page.abstract }} - {{site.data.strings.site-title[page.lang]}}</title>
-  {% else %}
-    <title>{{site.data.strings.site-title[page.lang]}}</title>
-  {% endif %}
+  <title>{% if page.title %}{{page.title}} : {% endif %}{%if page.abstract %}{{page.abstract }} - {% endif %}{{site.data.strings.site-title[page.lang]}}</title>
+  
   {% if page.description %}
     <meta name="description" content="{{ page.description | strip_html | truncatewords:155 }}" />
     <meta property="og:description" content="{{page.description | strip_html | truncatewords:297}}"/>

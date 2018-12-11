@@ -11,10 +11,10 @@ layout: page
     <h1 align="center">{{page.header}}</h1>
     {% if page.price %}
       <h3 align="center">{{page.price}} € {{site.data.strings["store-no-vat"][page.lang]}}</h3>
-      <div align="center" style="font-size: 0.7rem">
-        {{site.data.strings[public-price][page.lang]}}.
+      <div id="available-for-rent-notice" align="center" style="font-size: 0.7rem">
+        {{site.data.strings["public-price"][page.lang]}}.
         {%unless page.location == false %}
-        {{site.data.strings[rent-available][page.lang]}}
+        {{site.data.strings["rent-available"][page.lang]}}
         {%endunless%}
       </div>
     {% else %}

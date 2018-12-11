@@ -76,11 +76,13 @@ Pour en savoir plus, rendez vous sur <a href="/dev/fr/content/recording/index">c
 - **L'infographie 3D** :
 Pour réaliser des dessins 3D, nous utilisons le logiciel libre Blender. Il vous permettra de créer des objets, animations, effets visuels, etc.
 Pour plus de détails, visitez <a href="/dev/fr/content/blender/index">cette page</a>.
-<br />
+
+
 <center>
 <img class="img-fluid" src="/static/img/posts/azur/Infographie.jpg" alt="Passer d'un objet à un hologramme">
 </center>
-<br />
+
+
 ### Adaptation et montage d'une vidéo
 
 Afin d’adapter votre vidéo en contenu pour le **Azur**, partez de votre objet 3D. Il n'y a même pas besoin de Template afin de transformer votre vidéo en hologramme.
@@ -89,14 +91,13 @@ Pour transformer votre vidéo en contenu adapté, un petit processus de concepti
 
 
 <div class="contenu">
-<img src="/static/img/posts/azur/Pyramide.png" alt="Format vidéo de la pyramide"  style="img-fluid;" /></div>
-<br />
+<img class="img-fluid" src="/static/img/posts/azur/Pyramide.png" alt="Format vidéo de la pyramide"/>
+</div>
+
 - Pour <a href="/dev/fr/content/after_effect/index">After Effect</a> : Logiciel de montage de la suite Adobe.
 - Pour <a href="/dev/fr/content/natron/index">Natron</a> : Logiciel de montage open source.
 - Pour <a href="/dev/fr/content/blender/index">Blender</a> : Logiciel d’infographie 3D open source.
-<br />
-<br />
-<br />
+
 
 
 ## Déplacement, manipulation, nettoyage

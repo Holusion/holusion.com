@@ -10,7 +10,7 @@ Cette page a pour but de vous informer de vos droits et de nos obligations conce
 ## Informations recueillies
 
 ### Navigation
-Holusion collecte des données anonymisée de fréquentation du site [holusion.com](https://holusion.com) et de ses sous domaines. Nous utilisons des [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) tierces pour déterminer :
+Holusion collecte des données anonymisée de fréquentation du site [holusion.com](https://holusion.com) et de ses sous domaines. Nous utilisons des [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) tierces fournies par [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage) pour déterminer :
 
 - la fréquence des visites
 - la popularité des pages
@@ -19,6 +19,8 @@ Holusion collecte des données anonymisée de fréquentation du site [holusion.c
 - les erreurs rencontrées
 
 Ces informations sont conservées de façon sécurisée pour une durée maximale de 26 mois.
+
+Si vous refusez l'utilisation de cookies tierces, c'est la seule information qui sera sauvegardée.
 
 ### Achats en ligne
 

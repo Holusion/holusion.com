@@ -7,16 +7,12 @@ menu: toolbox
 
 ---
 
-<br />
-
-
-
 
 ## Le produit
 
 L'**Iris** d'Holusion affiche des hologrammes de 30cm de haut dans sa vitrine en verre. Il est facile à transporter et particulièrement adapté pour les usages qui nécessitent des déplacements. C'est un affichage à 180° avec une image flottant librement qui sublime vos produits à merveille.
-<br />
-<br />
+
+
 ## Installation
 
 Installez l'**Iris** sur un plan horizontal à environ 1.70 mètres du sol. L'écran doit être à hauteur des yeux.
@@ -25,8 +21,8 @@ Branchez l’alimentation fournie d’un côté dans le port prévu à cet effet
 
 Démarrez l'**Iris** grâce au bouton d’allumage à l’arrière ou en le branchant electriquement le cas échant, et attendez la fin du chargement.
 Pour arrêter l'**Iris**, appuyez sur le même bouton ou en le débranchant le cas échant.
-<br />
-<br />
+
+
 <center>
 
 {%asset img/products/mesures/Iris22.png
@@ -39,7 +35,6 @@ Pour arrêter l'**Iris**, appuyez sur le même bouton ou en le débranchant le c
 %}
 
 </center>
-<br />
 
 ## Gestion de l'hologramme depuis un ordinateur
 
@@ -55,8 +50,7 @@ Rendez-vous sur :	 <a href="https://github.com/Holusion/stargazer">ce lien</a> e
 Une fois *Stargazer* installé, lancez l’application. Il vous est proposé soit de lancer une vidéo déjà présente, soit d’apporter du contenu vidéographique de votre conception. Le manuel d’utilisation de *Stargazer* se trouve sur le même lien que l’installation.
 
 Une fois la vidéo lancée sur *Stargazer*, votre hologramme fonctionne sur l'**Iris**.
-<br />
-<br />
+
 ## Création d'un hologramme
 
 ### Format vidéo holographiques
@@ -77,11 +71,12 @@ Pour en savoir plus, rendez vous sur <a href="/dev/fr/content/recording/index">c
 - **L'infographie 3D** :
 Pour réaliser des dessins 3D, nous utilisons le logiciel libre Blender. Il vous permettra de créer des objets, animations, effets visuels, etc.
 Pour plus de détails, visitez <a href="/dev/fr/content/blender/index">cette page</a>.
-<br />
+
 <center>
 <img class="img-fluid" src="/static/img/posts/iris/Infographie.jpg" alt="Passer d'un objet à un hologramme">
 </center>
-<br />
+
+
 ### Adaptation et montage d'une vidéo
 
 Afin d’adapter votre vidéo en contenu pour le **Iris**, partez de votre objet 3D. Il n'y a même pas besoin de Template afin de transformer votre vidéo en hologramme.
@@ -89,15 +84,11 @@ Afin d’adapter votre vidéo en contenu pour le **Iris**, partez de votre objet
 Pour transformer votre vidéo en contenu adapté, un petit processus de conception est nécessaire. Il faut que celui-ci soit sur fond noir et soit en miroir.
 
 
-<div class="contenu"></div>
 
-<br />
 - Pour <a href="/dev/fr/content/after_effect/index">After Effect</a> : Logiciel de montage de la suite Adobe.
 - Pour <a href="/dev/fr/content/natron/index">Natron</a> : Logiciel de montage open source.
 - Pour <a href="/dev/fr/content/blender/index">Blender</a> : Logiciel d’infographie 3D open source.
-<br />
-<br />
-<br />
+
 
 
 ## Déplacement, manipulation, nettoyage

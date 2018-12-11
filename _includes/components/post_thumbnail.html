@@ -23,7 +23,7 @@
 {%capture alt_text %}{%if content.abstract%}{{content.abstract}}{%else%}{{content.title}}{%endif%}{%endcapture%}
 
 {%if include.type == "card" %}
-<div class="{{classes}}">
+<div class="{{classes}}" role="listitem" aria-label="{{content.title}}">
   <div class="card shadow-sm border-dark" style="min-height:100%">
     {% if content.image %}
       {% if assets[content.image] %}
