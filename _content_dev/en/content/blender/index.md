@@ -17,6 +17,7 @@ The following tutorial is addressed to users with basic experience of 3D compute
 <a class="button" href="/static/files/BLENDER_PRISME.zip">Download for Prisme</a>
 
 ##Welcome to Blender
+
 New to Blender? Train yourself on tutorials at
 
 * [Introduction to Blender](http://cgcookie.com/flow/introduction-to-blender/)
@@ -31,7 +32,9 @@ New to Blender? Train yourself on tutorials at
 
 
 ##Holusion Blender Framework
+
 [image screenshot]
+
 You can use our framework for **Prisme** or **Focus** which allow you to deal with:
 
 * Default resolution and compositing option
@@ -41,7 +44,9 @@ You can use our framework for **Prisme** or **Focus** which allow you to deal wi
 <img src="/static/img/posts/blender/blender.jpg" alt="Blender framework" class="img-fluid">
 
 ##How To
+
 Modeling: Blender can be used to create your own design of holograms. Or you could just use a ready-to-use scene with your model inside.
+
 Blender support imports from :
 
 * Collada (.dae)

@@ -15,7 +15,7 @@ layout: front_page
 {{content}}
 
 <div class="container-fluid">
-  <div class="row align-items-stretch">
+  <div class="row align-items-stretch" role="list">
     {% for post in paginator.posts %}
     {% include components/post_thumbnail.html content=post type="card" classes="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 mb-4"%}
   {% endfor %}
@@ -23,7 +23,7 @@ layout: front_page
 </div>
 {% if paginator.total_pages > 1 %}
 <div class="container" style="padding-top:40px">
-  <nav class="d-flex justify-content-center" aria-label="Page navigation example">
+  <nav class="d-flex justify-content-center" role="navigation" aria-label="Pages de posts">
     <ul class="pagination">
       {% if paginator.first_page != paginator.page %}
       <li class="page-item">
@@ -36,7 +36,7 @@ layout: front_page
       {% if paginator.page_trail %}
         {% for trail in paginator.page_trail %}
           {% if trail.num == paginator.page %}
-          <li class="page-item active">
+          <li class="page-item active" aria-current="true" >
             <a class="page-link" href="{{ trail.path | absolute}}" title="{{trail.title}}">
               {{trail.num}}
               <span class="sr-only">(current)</span>

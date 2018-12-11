@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%"
+<svg id="schema_BIM" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%"
 	 viewBox="0 0 100 100" >
   <style>
-    text, path.icon{
+    #schema_BIM text, path.icon{
       color: #103040;
       color: var(--dark);
       fill: currentColor;
     }
-    path.outline {
+    #schema_BIM path.outline {
       color: #333333;
       color: var(--dark);
       opacity: 0.2;
@@ -23,7 +23,7 @@
         opacity:1;
       }
     }
-    g path:not(.appear){
+    #schema_BIM g path:not(.appear){
       color:#00A1DC;
       color: var(--primary);
       fill: none;
@@ -34,28 +34,28 @@
       stroke-dashoffset:100;
       animation-iteration-count: 1;
     }
-		svg.active g path:not(.appear){
+		 svg.active#schema_BIM g path:not(.appear){
 			animation: dash 3s linear forwards;
 		}
-    svg.active g .appear {
+    svg.active#schema_BIM  g .appear {
       opacity: 0.2;
     }
-		svg.active g .appear{
+		svg.active#schema_BIM g .appear{
 			animation: appear 3s linear forwards;
 		}
-    g path.shorter {
+    #schema_BIM g path.shorter {
       stroke-dasharray: 71;
       stroke-dashoffset:71;
     }
-		g.second-group path {
+		#schema_BIM g.second-group path {
       stroke-dasharray: 32;
       stroke-dashoffset:32;
     }
-		svg.active g.second-group path {
+		svg.active#schema_BIM g.second-group path {
       animation-delay: 3s;
       animation-duration: 5s;
     }
-    svg.active g.third-group path {
+    svg.active#schema_BIM g.third-group path {
       animation-delay: 8s;
     }
   </style>

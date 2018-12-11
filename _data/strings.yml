@@ -62,10 +62,10 @@ rent-only:
   fr: Uniquement en location
   en: Only available for rent
 rent-available:
-  fr: Dispobible en location
+  fr: Disponible en location
   en: available for rent
 public-price:
-  fr: Prix public conseillé.
+  fr: Prix public conseillé
   en: Recommended public price
 store-vat:
   fr: TTC

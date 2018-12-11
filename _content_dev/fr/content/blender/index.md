@@ -31,8 +31,8 @@ La communauté est très active autour de Blender. Elle vous propose des tutorie
 
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
-<img src="/static/img/posts/blender/blender_screen.png" srcset="/static/img/posts/blender/blender_screen2x.png 1200w, /static/img/posts/blender/blender_screen2x.png 600w" alt="Blender screen" class="img-fluid">
-</div>
+    <img src="/static/img/posts/blender/blender_screen.png" srcset="/static/img/posts/blender/blender_screen2x.png 1200w, /static/img/posts/blender/blender_screen2x.png 600w" alt="Blender screen" class="img-fluid">
+  </div>
 </div>
 
 ## Holusion Blender Framework

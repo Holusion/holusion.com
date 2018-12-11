@@ -167,7 +167,7 @@
   .main-tile-image-wrapper {
     flex-grow: 1;
     width: 50%;
-    height: 56.25vh;
+    height: 56.25vh; /* for ie & old versions */
     height: 56.25vmin;
     padding: 0;
     overflow: hidden;
@@ -218,8 +218,7 @@
       }
     }
     .main-tile-image-wrapper{
-      min-height: 50vh;
-      min-height: 50vmin;
+      min-height: 28.12vw; /*respect the minimum ratio of 16:9 on half-width */
       padding:0;
     }
   }

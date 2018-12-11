@@ -2,16 +2,18 @@
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script defer type="text/javascript">
   //Being denied isn't the same as not-consented-yet
-  var is_consented = document.cookie.indexOf('cookieconsent_status=dismiss') != -1;
-  var is_denied = document.cookie.indexOf('cookieconsent_status=deny') != -1;
+  var is_consented = document.cookie.indexOf('cookieconsent_status=allow') != -1;
+  var is_denied = document.cookie.indexOf('cookieconsent_status=dismiss') != -1;
 
   var tracking = 'UA-48469340-1';
   var disableString = 'ga-disable-'+tracking;
+  //We can prepare gtag function whatever the final choice is
+  //It will just never get sent if cookies are refused
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
 
   if (is_denied) {
-    console.log("disabling gtag because cookieconsent_status=deny is set");
+    console.log("disabling gtag because cookieconsent_status is set to dismiss");
     window[disableString] = true;
   }else if(is_consented){
     gtag('js', new Date());
@@ -21,12 +23,13 @@
   //cookieconsent does automatically store user response and call this callback
   function registerGa(status){
     // if cookie wasn't set we wait for consent to call gtag
-    if(!is_consented && this.hasConsented()){
+    if(!is_consented && status== "allow" && this.hasConsented()){
       is_consented = true;
       gtag('js', new Date());
       gtag('config', tracking);
     }
   }
+
   //Always create cookieconsent to give revoke option
   var cc = document.createElement("SCRIPT");
   cc.src = '/node_modules/cookieconsent/build/cookieconsent.min.js';
@@ -34,26 +37,30 @@
   cc.onload = function(){
     console.log("cookieconsent loaded")
     window.cookieconsent.initialise({
-      type: "opt-out",
+      type: "opt-in",
       container: document.body,
       revokable: true,
-      dismissOnScroll: 500,
       content:{
         message: "{{site.data.strings.cookieconsent[page.lang]}}",
         link: "{{site.data.strings.read-more[page.lang]}}",
-        href: 'http://cookiesandyou.com',
-        dismiss: "&#x2713;",
-        deny: "&times;",
+        href: '/{{page.lang}}/about/privacy',
+        dismiss: "&times;",
+        allow: "&#x2713;",
       },
-      elements: {
-        dismiss: '<a aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">&#x2713;</a>',
-        deny: '<a aria-label="deny cookies" tabindex="0" class="cc-btn cc-deny">&times;</a>'
+      palette:{
+        "popup": {
+          "background": "var(--dark)",
+          "text": "var(--light)"
+        },
+        "button": {
+          "background": "var(--info)",
+          "text": "#ffffff"
+        }
       },
       onStatusChange: registerGa,
       onInitialise: registerGa
     });
   }
   document.head.appendChild(cc);
-  // Those will be ignored if ga-disable is set.
 </script>
 <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-48469340-1"></script>
