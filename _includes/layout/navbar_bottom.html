@@ -57,7 +57,7 @@
     </div>
   </nav>
   <section id="bottom-nav-row" class="row no-gutters">
-    <div class="col-xl-4 col-lg-3 col-sm-6 order-2 order-lg-1">
+    <div class="col-4 col-lg-5 col-xl-6 order-1 text-left">
       <span class="d-none d-lg-inline">
         {{ site.data.strings.copyright[page.lang]}}
       </span>
@@ -66,25 +66,18 @@
         <span class="d-inline d-xl-none">CC.BySa</span>
       </a>
     </div>
-    <div class="col-xl-4 col-lg-12 col-sm-6 order-3 text-center">
+    <div class="col-12 col-sm-6 col-lg-5 col-xl-4 order-3 order-sm-2">
+      +33 (0)9 72 42 44 51
+    </div>
+    <div class="col order-2 order-sm-3 d-flex justify-content-end">
+      <ul class="navbar-nav">
+          {% include components/language_picker.html type="dropup" %}
+      </ul>
+    </div>
+
+    <div class="col-12 col-xl-12 order-4 text-center">
       99A bvd Descat, 59200 Tourcoing - France
     </div>
-    <div class="col-xl-4 col-lg-9 col-sm-12 order-1 order-lg-2">
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col">
-            <a href="/{{page.lang}}">Holusion SAS</a>
-          </div>
-          <div class="col">
-            +33 (0)9 72 42 44 51
-          </div>
-          <div class="col d-flex justify-content-end">
-            <ul class="navbar-nav">
-                {% include components/language_picker.html type="dropup" %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </section>
 </footer>
