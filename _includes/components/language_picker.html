@@ -3,7 +3,7 @@
 {% comment %} output nothing when no alt page is available {%endcomment%}
 {% if page.alt_url  %}
 <li class="{{include.type}}">
-  <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+  <a href="" class="dropdown-toggle{{include.classes}}" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
     {{page.lang}}
     <span class="caret"></span>
     <span class="sr-only">(change language)</span>
