@@ -1,6 +1,6 @@
 ---
-title: Manuel Iris
-abstract: Guide d'utilisation des produits "Iris" d'Holusion
+title: Manuel Iris 22
+abstract: Guide d'utilisation du produits "Iris 22" d'Holusion
 image: /static/img/posts/iris/iris22.jpg
 rank: 5
 menu: toolbox
