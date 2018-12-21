@@ -1,6 +1,6 @@
 /* This file describes two concepts :
  * - section-main-header : full-width image with optionnal text card
- * - section-main-tile : left-right alternate half-text-half-image tiles
+ * - section-tile : left-right alternate half-text-half-image tiles
  * Both providing full-width edge-to-edge layout to construct pages
  */
 .section-main-header{
@@ -156,7 +156,7 @@
 
 
 
-.section-main-tile{
+.section-tile{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -164,7 +164,7 @@
   align-content: center;
   align-items: stretch;
   /* defaults for XS */
-  .main-tile-image-wrapper {
+  .tile-image-wrapper {
     flex-grow: 1;
     width: 50%;
     height: 56.25vh; /* for ie & old versions */
@@ -174,81 +174,87 @@
     display:flex;
   }
 
-  .main-tile-image-wrapper img{
+  /* can wrap anything, but designed to wrap an image or a video */
+  .tile-image-wrapper>*{
     object-fit: cover;
     width:100%;
     height:100%;
     height:auto;
   }
-  .main-tile-body{
+  .tile-body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     padding: 20px;
     min-height: 40vh;
-    font-size: 1rem;
-    h3 {
-      color: $light-blue;
-      text-align: left;
-      text-transform: uppercase;
-      font-weight: normal;
-      margin: 10px 0 10px 0;
-      font-size: 1.5rem;
+    &.tile-body--main{
+      font-size: 1rem;
+      h3 {
+        color: $light-blue;
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 10px 0 10px 0;
+        font-size: 1.5rem;
+      }
     }
   }
   @include media-breakpoint-up(sm){
-    .main-tile-body{
+    .tile-body{
       width: 80%;
       margin: auto;
     }
-    .main-tile-image-wrapper{
+    .tile-image-wrapper{
       padding: 0;
     }
   }
   @include media-breakpoint-up(lg){
-    .main-tile-body{
-      font-size: 1.2rem;
+    .tile-body{
+      &.tile-body--main{
+        font-size: 1.2rem;
+        h3{
+          font-size: 2rem;
+          margin: 20px 0 0 0;
+        }
+      }
       padding: 0 20px;
       width:50%;
       justify-content: space-evenly;
-      h3{
-        font-size: 2rem;
-        margin: 20px 0 0 0;
-      }
+
     }
-    .main-tile-image-wrapper{
+    .tile-image-wrapper{
       min-height: 28.12vw; /*respect the minimum ratio of 16:9 on half-width */
       padding:0;
     }
   }
 
   @include media-breakpoint-up(xl){
-    .main-tile-body{
+    .tile-body{
       padding: 0 40px;
-      h3 {
+      &.tile-body--main h3 {
         font-size: 2.5rem;
       }
     }
   }
   /* provide an additional "xxl" breakpoint*/
   @media (min-width: 1600px) {
-    .main-tile-body{
+    .tile-body.tile-body--main{
       font-size: 1.5rem;
     }
-   }
+  }
 
 
   /* alternate right and left */
   &:nth-of-type(2n){
     flex-direction: row-reverse;
-    .main-tile-image-wrapper{
+    .tile-image-wrapper{
       padding-left: 0px;
     }
   }
   &:nth-of-type(2n+1){
 
-    .main-tile-image-wrapper{
+    .tile-image-wrapper{
       padding-right: 0px;
     }
   }

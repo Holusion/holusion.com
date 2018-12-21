@@ -8,66 +8,51 @@ properties:
     cpu: project-dependant
 ---
 
-
-<div class="row">
-  <div class="col-lg-6 col-md-12 align-self-center">
-    <h2 style="padding-top: 30px">Impacting</h2>
-    <p>The holographic display <b>IRIS 75</b> is perfectly suited for presentation purposes. This giant hologram is <b>2 meters wide</b> and 1,60 meter high. It is powered by an Ultra HD monitor, displaying <b>4K</b> images with high quality and fidelity. Give more impact to your messages and brands with this <b>high-end holographic display</b> and catch your public's attention.</p>
-    <p>It is available worldwide to buy or to rent.</p>
-
-  </div>
-  <div class="col-lg-6 col-md-12">
-    <div style="padding-top: 40px">
-    <div align="center" class="embed-responsive embed-responsive-16by9">
-      <iframe class="img-fluid" width="560" height="315" src="https://www.youtube.com/embed/oqddzF35d9w" frameborder="0" allowfullscreen></iframe>
-    </div>
+<section class="section section-main-header header-fill">
+  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="The large iris in broad daylight. Outdoor setup to show it's very high brightness potential" %}
+  <div class="main-header-body">
+    <div class="content shadow rounded bg-white rounded p-md-4">
+      <h2 style="padding-top: 30px">Impacting</h2>
+      <p>The holographic display <b>IRIS 75</b> is perfectly suited for presentation purposes. This giant hologram is <b>2 meters wide</b> and 1,60 meter high. It is powered by an Ultra HD monitor, displaying <b>4K</b> images with high quality and fidelity. Give more impact to your messages and brands with this <b>high-end holographic display</b> and catch your public's attention.</p>
+      <p>It is available worldwide to buy or to rent.</p>
     </div>
   </div>
-</div>
+</section>
 
-<div class="row">
-  <div class="col-lg-6 col-md-12">
-    <img class="img-fluid" src="/static/img/posts/meet_2018/vignette_meet_2018.jpg" alt="The Iris 75 in Luxembourg at Meet 2018 with a printed white Dibond finish">
-  </div>
-  <div class="col-lg-6 col-md-12 align-self-center">
-    <h2>Modular</h2>
-    <p>The Iris 75" is customizable by design and can be set-up as a landscape or portrait display.</p>
-    <p>Make it visually distinctive with a wide variety of finish, from the integrable raw metal structure to textile or rigid covers, use the whole surface as an additional display area</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-6 col-md-12 align-self-center">
-    <h2>Precise</h2>
-    <p>Its size and quality give you the opportunity to display content with <b>precision</b>. Don't let any detail left on technical ou educative presentations. <a href="/en/usages/bim">Real-estate</a> is a major player for this technology as it allows them to display 3D model of building very easily</p>
-  </div>
-  <div class="col">
-    {%asset img/products/mesures/Iris75.png
-      srcset:width="1920"
-      srcset:width="960"
-      class="img-fluid"
-      sizes="(min-width: 1200px) 1200px, 100vw"
-      alt="Iris 75 rough schematics"
-    %}
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col order-2">
-    {%asset img/products/iris75_exterieur_BIM_1080p.jpg
-      srcset:width="1920"
-      srcset:width="960"
-      class="img-fluid"
-      sizes="(min-width: 1200px) 50vw, 100vw"
-      alt="an Iris 75 shot outdoors during a sunny day to show the true potential of it's high brightness display"
-    %}
-
-  </div>
-  <div class="col-lg-6 col-md-12 align-self-center order-1">
+<section class="section bg-light py-4">
+  <div class="container jumbotron bg-white shadow my-0">
     <h2>Bright</h2>
     <p>
       The Iris 75" is fitted with a <b>very high brightness</b> screen to be able to display high quality holograms even in outdoor venues.
     </p>
+
+    {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
   </div>
-</div>
+</section>
+
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    {% include components/medias/youtube.html embed="oqddzF35d9w" %}
+  </div>
+  <div class="tile-body tile-body--main">
+    <h2>Modular</h2>
+    <p>The Iris 75" is customizable by design and can be set-up as a landscape or portrait display.</p>
+    <p>Make it visually distinctive with a wide variety of finish, from the integrable raw metal structure to textile or rigid covers, use the whole surface as an additional display area</p>
+  </div>
+</section>
+
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    {%asset img/products/mesures/Iris75.png
+      srcset:width="1920"
+      srcset:width="960"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      class="img-fluid"
+      alt="Dimension schematics of a 75 inch iris"
+    %}
+  </div>
+  <div class="tile-body tile-body--main">
+    <h2>Precise</h2>
+    <p>Its size and quality give you the opportunity to display content with <b>precision</b>. Don't let any detail left on technical ou educative presentations. <a href="/en/usages/bim">Real-estate</a> is a major player for this technology as it allows them to display 3D model of building very easily</p>
+  </div>
+</section>
