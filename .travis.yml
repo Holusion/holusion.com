@@ -20,6 +20,8 @@ before_install:
   - git lfs pull
   - sudo apt-get install -y nodejs
   - sudo apt-get install -y ffmpeg xcftools
+  - gem update --system
+  - gem --version
   - gem install bundler
 install:
   - bundle
