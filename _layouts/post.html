@@ -1,13 +1,22 @@
 ---
-layout: page
+layout: front_page
 ---
 
-<div id="post-content">
-{{content}}
+{% if page.title %}
+  {% include components/section_title.html title=page.title %}
+{%endif %}
+<div class="container">
+  {% ariane %}
 </div>
-{% include lists/similar_posts.html %}
-<div id="goto-products" style="max-width:600px;margin:auto;padding-top:40px">
-  <a href="/{{page.lang}}/products"class="btn btn-primary btn-lg btn-block" >
-    {{ site.data.strings["see-other-products"][page.lang] }}
-  </a>
-</div>
+<main class="container" id="content">
+  <div id="post-content">
+  {{content}}
+  </div>
+  {% include lists/similar_posts.html %}
+  <div id="goto-products" style="max-width:600px;margin:auto;padding-top:40px">
+    <a href="/{{page.lang}}/products"class="btn btn-primary btn-lg btn-block" >
+      <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
+        <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
+    </a>
+  </div>
+</main>
