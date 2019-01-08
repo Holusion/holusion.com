@@ -6,7 +6,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-header">
-        <a href="/{{page.lang}}/" class="navbar-brand" id="home-logo" aria-label="Holusion logo"> </a>
+        <a href="/{{page.lang}}/" class="navbar-brand" id="home-logo" aria-label="Holusion logo">
+          {% asset img/logo_web.svg @inline %}
+        </a>
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav mr-auto" role="menu">
