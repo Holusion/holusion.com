@@ -1,47 +1,60 @@
 ---
-layout: page
+layout: front_page
 ---
-<div itemscope itemtype="http://schema.org/Product">
+
+{% if page.title %}
+  {% include components/section_title.html title=page.title %}
+{%endif %}
+<div class="container">
+  {% ariane %}
+</div>
+<main itemscope itemtype="http://schema.org/Product" id="content">
   <meta itemprop="brand" content="{{page.brand|default: "holusion"}}"/>
-  <meta itemprop="description" content="{{page.abstract}}"/>
   <meta itemprop="name" content="{{page.title}}"/>
-  <div class="row  no-gutters">
-    <div class="col-lg-6 col-md-12">
-      {% include components/slideshow.html contents=page.slides height=250 %}
-    </div>
-    <div class="col-lg-6 col-md-12" align="center">
-      <img itemprop="image" style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid" src="{{page.picto}}"/>
-      <h1 align="center">{{page.header}}</h1>
-      {% if page.price %}
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-          <h3 align="center">
-            <span itemprop="price" content="{{page.price |replace: ",", "."| replace: " ", "" }}">
-              {{page.price}}
-            </span>
-            <span itemprop="priceCurrency" content="EUR">€</span> {{site.data.strings["store-no-vat"][page.lang]}}
-            <link itemprop="availability" href="http://schema.org/InStock" />
+  <section id="section-intro" class="section section-main-header header-fill">
+    {%capture header_image %}{{page.image}}{%endcapture%}
+    {%include components/header_image.html image=header_image %}
+    <div class="main-header-body">
+      <div class="content shadow rounded bg-white rounded p-4">
+        <img itemprop="image" style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid align-self-center" src="{{page.picto}}"/>
+        <h1 align="center">{{page.header}}</h1>
+        {% if page.price %}
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <h3 align="center">
+              <span itemprop="price" content="{{page.price |replace: ",", "."| replace: " ", "" }}">
+                {{page.price}}
+              </span>
+              <span itemprop="priceCurrency" content="EUR">€</span> {{site.data.strings["store-no-vat"][page.lang]}}
+              <link itemprop="availability" href="http://schema.org/InStock" />
 
-          </h3>
-          <div id="available-for-rent-notice" align="center" style="font-size: 0.7rem">
-            {{site.data.strings["public-price"][page.lang]}}.
-            {%unless page.location == false %}
-            {{site.data.strings["rent-available"][page.lang]}}
-            {%endunless%}
+            </h3>
+            <div id="available-for-rent-notice" align="center" style="font-size: 0.7rem">
+              {{site.data.strings["public-price"][page.lang]}}.
+              {%unless page.location == false %}
+              {{site.data.strings["rent-available"][page.lang]}}
+              {%endunless%}
+            </div>
+            <div class="d-flex align-items-center">
+              {% if page.ecommerce %}
+                {% include components/shop/store-fab.html url=page.ecommerce %}
+                <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
+              {% else %}
+                <button class="btn btn-primary" style="cursor:pointer" onclick="displayContactForm()" >
+                    {{site.data.strings["contact-us"][page.lang]}}
+                </button>
+              {% endif %}
+              <div itemprop="description" class="p-2 flex-grow-1 text-left">
+                {{page.abstract}}
+              </div>
+            </div>
           </div>
-          {% if page.ecommerce %}
-            {% include components/shop/store-fab.html url=page.ecommerce %}
-            <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
-          {% else %}
-            {% capture contact_us_string %}{{site.data.strings["contact-us"][page.lang]}}{%endcapture%}
-            {% include components/contact_button.html txt=contact_us_string %}
-          {% endif %}
-        </div>
-      {% else %}
-        <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
-      {% endif %}
-
+        {% else %}
+          <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
+        {% endif %}
+      </div>
     </div>
-  </div>
+  </section>
+
   <div id="product-content">
     {{content}}
   </div>
@@ -89,7 +102,8 @@ layout: page
 
   <div id="goto-products" style="max-width:600px;margin:auto;padding-top:40px">
     <a href="/{{page.lang}}/products"class="btn btn-primary btn-lg btn-block" >
-      {{ site.data.strings["see-other-products"][page.lang] }}
+      <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
+        <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
     </a>
   </div>
-</div>
+</main>

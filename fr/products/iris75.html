@@ -39,57 +39,66 @@ properties:
 ---
 
 
-<div class="row pt-4">
-  <div class="col-lg-6 col-md-12 align-self-center">
-    <h2 >Impactant</h2>
-    <p>
-      L’hologramme <b>IRIS 75</b> ou <b>l’hologramme XXL</b> est idéal pour des présentations spectaculaires.
-    </p>
-    <p>Cette vitrine holographique XXL est disponible à la vente et à location, partout en Europe, facile à installer et à faire fonctionner.</p>
-    <p>
-      Cet hologramme géant mesure <b>2 mètres</b> de large et 1 mètre 60 de haut.
-      Il vous permet de découvrir des images Ultra HD d'une qualité incroyable. Cet hologramme <b>haut de gamme</b> vous permettra de moderniser votre discours et ainsi de monopoliser l’attention de votre public.
-    </p>
-  </div>
-  <div class="col-lg-6 col-md-12">
-    <div>
-      {% include components/medias/youtube.html embed="oqddzF35d9w" %}
+<section class="section section-main-header header-fill">
+  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+  <div class="main-header-body">
+    <div class="content shadow rounded bg-white rounded p-md-4">
+      <h2 >Impactant</h2>
+      <p>
+        L’hologramme <b>IRIS 75</b> ou <b>l’hologramme XXL</b> est idéal pour des présentations spectaculaires.
+      </p>
+      <p>Cette vitrine holographique XXL est disponible à la vente et à location, partout en Europe, facile à installer et à faire fonctionner.</p>
+      <p>
+        Cet hologramme géant mesure <b>2 mètres</b> de large et 1 mètre 60 de haut.
+        Il vous permet de découvrir des images Ultra HD d'une qualité incroyable. Cet hologramme <b>haut de gamme</b> vous permettra de moderniser votre discours et ainsi de monopoliser l’attention de votre public.
+      </p>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col">
-    {%asset img/products/iris75_exterieur_BIM_1080p.jpg
-      srcset:width="1920"
-      srcset:width="960"
-      class="img-fluid"
-      sizes="(min-width: 1200px) 50vw, 100vw"
-      alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité"
-    %}
+</section>
 
-  </div>
-  <div class="col-lg-6 col-md-12 align-self-center order-1">
+<section class="section bg-light py-4">
+  <div class="container jumbotron bg-white shadow my-0">
     <h2>Lumineux</h2>
     <p>
       L'Iris 75" est équipé d'un écran <b>Très haute luminosité</b> de 2500cd/m². Profitez d'hologrammes exceptionnel, même en plein jour.
     </p>
+
+    {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
   </div>
-</div>
+</section>
 
-<div class="row">
-
-  <div class="col-lg-6 col-md-12 align-self-center">
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    {% include components/medias/youtube.html embed="oqddzF35d9w" %}
+  </div>
+  <div class="tile-body tile-body--main">
     <h2>Modulaire</h2>
     <p>L'Iris 75" est naturellement customisable et peut être utilisé en affichage portrait ou paysage.</p>
     <p>Il est proposé dans une large gamme de finitions. Du métal brut intégrable aux habillages Textiles ou rigides ; unis ou imprimés.</p>
   </div>
-  <div class="col-lg-6 col-md-12">
-    <img class="img-fluid" src="/static/img/posts/meet_2018/vignette_meet_2018.jpg" alt="L'Iris 75 au palais des congrès de Luxembourg à l'occasion du Meet 2018, habillé de dibond blanc imprimé">
-  </div>
-</div>
+</section>
 
-<div class="section row no-gutters bg-white">
-  <div class="container">
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    {%asset img/products/mesures/Iris75.png
+      srcset:width="1920"
+      srcset:width="960"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      class="img-fluid"
+      alt="Schéma de dimensions de l'iris 75 pouces"
+    %}
+  </div>
+  <div class="tile-body tile-body--main">
+    <h2>Précis</h2>
+    <p>
+      Sa résolution permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
+    </p>
+  </div>
+</section>
+
+
+<section class="section bg-light py-1">
+  <div class="container jumbotron bg-white shadow">
     <div class="center-block">
       {% asset img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
       <div class="text-muted text-center">
@@ -97,23 +106,4 @@ properties:
       </div>
     </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="col order-2">
-    {%asset img/products/mesures/Iris75.png
-      srcset:width="1920"
-      srcset:width="960"
-      class="img-fluid"
-      sizes="(min-width: 1200px) 50vw, 100vw"
-      alt="Schéma de dimensions de l'iris 75 pouces"
-    %}
-
-  </div>
-  <div class="col-lg-6 col-md-12 align-self-center order-1">
-    <h2>Précis</h2>
-    <p>
-      Sa résolution permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
-    </p>
-  </div>
-</div>
+</section>

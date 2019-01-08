@@ -30,7 +30,9 @@ body{
 
 
 #content.container p, .rtejustify {
-  text-align: justify;
+  @include media-breakpoint-up(sm){
+    text-align: justify;
+  }
 }
 .rtecenter{
   text-align:center;

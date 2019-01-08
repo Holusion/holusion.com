@@ -148,7 +148,7 @@ if (is_extended){
   });
   const mobile_devices = ([ //Device list : https://github.com/GoogleChrome/puppeteer/blob/master/DeviceDescriptors.js
     'iPad',
-    'iPhone 5',
+    'iPhone 4',
     'iPhone X landscape'
   ]).map( d =>{
     let dev =  devices[d];
@@ -430,6 +430,7 @@ describe(`${target}.`,function(){
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/products/`,{timeout:10000});
           thumb_cells = await storePage.$$(".thumbnail-cell");
+          thumb_cells.push(...(await storePage.$$(".card")));
           links = await Promise.all(thumb_cells.map(async (cell)=>{
             let a = await cell.$("A");
             let handle = await a.getProperty("href");
@@ -474,6 +475,7 @@ describe(`${target}.`,function(){
                   return Promise.resolve();
                 }
               });
+              /*
               it("has carousel with all identical images",async ()=>{
                 const slides = await page.$$(".carousel-inner>.carousel-item");
                 expect(slides,
@@ -481,6 +483,7 @@ describe(`${target}.`,function(){
                 ).to.have.property("length").above(1).below(10);
                 await force16by9(slides);
               });
+              //*/
             });
           }
         })
