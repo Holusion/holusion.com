@@ -76,15 +76,12 @@ In order to adapt your video as content for the **Prism**, start with your 3D ob
 For transforming your video into adapted content, a quick conception step is necessary. It is detailed on the following link, in fonction of the video software you use. You can download there the adapted templates :
 
 
-<div class="content">
-<img border="0" src="/static/img/posts/prism/Pyramide.png" alt="Pyramid video format" width="217" height="175" style="float: right;" /></div>
-<br />
+<img src="/static/img/posts/prism/Pyramide.png" alt="Pyramid video format for prism" class="img-fluid" />
+
 - For <a href="/dev/en/content/after_effect/index">After Effect</a> : Adobe video montage software.
 - For <a href="/dev/en/content/natron/index">Natron</a> : Open source video montage software.
 - For <a href="/dev/en/content/blender/index">Blender</a> : Open source 3D grapics software.
-<br />
-<br />
-<br />
+
 
 ## Travel, manipulation, cleaning
 
