@@ -41,22 +41,6 @@ h1{
 #content p+h1{
   padding-top:52px;
 }
-#content p+h1:before{
-  content:"_";
-  position:relative;
-  overflow:hidden;
-  text-align:center;
-  float:right;
-  right:50%;
-  margin-right:-250px;
-  width:500px;
-  border-bottom: 1px solid $light-blue;
-  top:-35px;
-  color:$light-blue;
-  font-weight: bold;
-  line-height:30px;
-  font-size:40px;
-}
 /* to make anchors work despite of the static navbar. When using anchors, add a padding and negative margin to compensate.*/
 h1:target, h2:target{
   padding-top: 52px;
