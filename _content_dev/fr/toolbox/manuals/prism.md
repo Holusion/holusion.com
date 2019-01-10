@@ -80,8 +80,8 @@ Afin d’adapter votre vidéo en contenu pour le **Prism**, partez de votre obje
 Pour transformer votre vidéo en contenu adapté, un petit processus de conception est nécessaire. Celui-ci est détaillé sur les liens suivants, en fonction du logiciel vidéo que vous utilisez. Vous pourrez y récupérer les templates adaptés :
 
 
-<div class="contenu">
-<img src="/static/img/posts/prism/Pyramide.png" alt="Format vidéo de la pyramide" style="img-fluid" /></div>
+<img src="/static/img/posts/prism/Pyramide.png" alt="Format vidéo de la pyramide prism" class="img-fluid" />
+
 <br />
 - Pour <a href="/dev/fr/content/after_effect/index">After Effect</a> : Logiciel de montage de la suite Adobe.
 - Pour <a href="/dev/fr/content/natron/index">Natron</a> : Logiciel de montage open source.
