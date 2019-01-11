@@ -26,7 +26,7 @@
 <div class="{{classes}}" role="listitem" aria-label="{{content.title}}">
   <div class="card shadow-sm border-dark" style="min-height:100%">
     {% if content.image %}
-      <a {%if content.url %}href="{{content.url}}"{% endif %}>
+      <a {%if content.url %}href="{{content.url}}"{% endif %} class="card-img-top-wrap">
       {% if assets[content.image] %}
         {% asset "{{content.image}}"
           srcset:width="800"
