@@ -87,3 +87,9 @@ $title-height: 42px;
   background: $grey-600;
 }
 */
+
+/* ugly card fix for ie11 */
+.card>.card-img-top, .card>.card-img-top-wrap {
+  max-width: 100%;
+  flex-shrink: 0;
+}
