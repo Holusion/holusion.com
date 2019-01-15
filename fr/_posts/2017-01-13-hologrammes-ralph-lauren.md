@@ -4,7 +4,7 @@ image: /static/img/posts/ralph_lauren/header.jpg
 abstract: Comment Ralph Lauren a réalisé une installation holographique en vitrinetags: commerce taille humaine evenementiel
 ---
 <center>
-<h1>Un boxeur presque réel</h1>
+<h2>Un boxeur presque réel</h2>
 </center>
 
 <div class="row">
