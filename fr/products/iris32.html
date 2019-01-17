@@ -36,28 +36,53 @@ properties:
 
 ---
 
-<div class="row no-gutters">
-  <div class="col-lg-6 col-md-12">
-    <h2 style="padding-top: 30px">Vitrine holographique</h2>
+
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    {%asset img/products/iris32_ales.jpg
+      srcset:width="800"
+      srcset:width="400"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      class="img-fluid"
+      alt="Utilisation d'un Iris 32 pour la présentation du bâtiment des mines d'Alès"
+    %}
+  </div>
+  <div class="tile-body">
+    <h2>Vitrine holographique</h2>
     <p>L’hologramme IRIS 32 donne de la <b>visibilité</b> à vos produits ou projets grâce à sa vitrine holographique en haute définition. Ce projecteur, <b>fiable et autonome</b>, s’intègre naturellement dans votre univers. </p>
       <p>Cette vitrine holographique est disponible en vente ou en location.</p>
       <p>Très simple à installer, configurable et interactif, IRIS devient le <b>support idéal </b> pour des présentations institutionnelles ou éducatives.</p>
 
-    <h2>Prenez de l'avance</h2>
-    <p> L'Iris 32 est notre meilleure solution pour un maximum d'impact dans un minimum de place. Sa puissance lumineuse et la qualité graphique de ses rendus le rend très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions</b>. C'est pour cela que plusieurs clients à travers la France nous font déjà confiance pour son utilisation, comme Nausicaa pour présenter des <a href="https://www.nausicaa.fr/article/les-abysses/" target="_blank">poissons des abysses</a> dans son exposition permanente ou encore les <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a> pour présenter leur futurs bâtiments.</p>
-
-    <h2>Mapping d'objets</h2>
-    <p>Votre produit ne fera plus qu'un avec l'hologramme. Placé dans le projecteur d'hologrammes, un <b>mapping vidéo</b> apparaît sur le produit pour le mettre en avant et apporter des informations complémentaires. Effets spéciaux, personnalisation ou réalité augmentée, un <b>large panel d'effets</b> viennent à vous pour valoriser votre produit.</p>
   </div>
+</section>
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    <img class="img-fluid" src="/static/img/products/iris32_quartz.jpg" alt="Iris 32 montrant le siège de Colas en hologramme">
+  </div>
+  <div class="tile-body">
+    <h2>Prenez de l'avance</h2>
+    <p> 
+      L'Iris 32 est notre meilleure solution pour un maximum d'impact dans un minimum de place. 
+      Sa puissance lumineuse et la qualité graphique de ses rendus le rend très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions</b>.
+      C'est pour cela que plusieurs clients à travers la France nous font déjà confiance pour son utilisation, comme Nausicaa pour présenter des <a href="https://www.nausicaa.fr/article/les-abysses/" target="_blank">poissons des abysses</a> dans son exposition permanente ou encore les <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a> pour présenter leur futurs bâtiments.</p>
+  </div>
+</section>
 
-  <div class="col-lg-6 col-md-12">
-    <div style="padding-top: 40px">
+<section id="section-gamme" class="section-tile">
+    <div class="tile-image-wrapper">
       {% include components/medias/youtube.html embed="GlQzBthx9JE" %}
     </div>
-  </div>
-</div>
+    <div class="tile-body">
+      <h2>Mapping d'objets</h2>
+      <p>
+        Votre produit ne fera plus qu'un avec l'hologramme.
+        Placé dans le projecteur d'hologrammes, un <b>mapping vidéo</b> apparaît sur le produit pour le mettre en avant et apporter des informations complémentaires.
+        Effets spéciaux, personnalisation ou réalité augmentée, un <b>large panel d'effets</b> viennent à vous pour valoriser votre produit.
+      </p>
+    </div>
+  </section>
 
-<div align="center" style="padding-top: 30px">
+<div align="center" class="p-4">
   {% asset img/products/mesures/Iris32.png
     srcset:width="1920"
     srcset:width="960"
