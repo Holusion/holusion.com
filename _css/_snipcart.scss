@@ -11,16 +11,16 @@
   }
   #snipcart-header-total{
     background: $grey-100;
-    color:$deep-blue;
+    color:$blue;
   }
   #snipcart-header h2#snipcart-title{
     text-transform:lowercase;
     font-family: open_sanslight;
-    color: $blue;
+    color: $cyan;
     font-weight: bold;
   }
   a.snip-quantity-trigger__btn:hover{
-    background-color:$blue;
+    background-color:$cyan;
   }
   a.snip-ico.snip-ico--close{
     color:$grey-600;
@@ -36,14 +36,14 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
   a.snip-btn.snip-btn--highlight{
-    background: $blue;
+    background: $cyan;
     color:$white;
   }
   a.snip-btn.snip-btn--highlight:hover{
     background: $light-blue;
   }
   #snipcart-footer{
-    background: $deep-blue;
+    background: $blue;
     color:$white;
   }
   #snipcart-footer .snip-footer__copyright {
