@@ -6,23 +6,23 @@
 
 //COLORS
 //Built-in colors
-$black:#053241;
 $grey-600:#707070;
 $grey-100:#eeeeee;
 $transparent-grey:rgba(255,255,255,.3);
 
-// Custom colors
-$light-blue: #2fafe6;
-$blue:#00a5e8;
-$deep-blue:#00517d;
+// Main colors
+$cyan: #00a5e8;
+$blue:#00517d;
 $dark-blue:#103040;
-$orange: rgb(255, 153, 102);
-
+// Custom colors
+$black: #053241;
+$light-blue: #2fafe6;
+$orange: #ff9966;
 
 // THEMING
 $primary:       $blue;
 $secondary:     $orange;
-$info:          $light-blue;
+$info:          $cyan;
 //$warning:       $yellow;
 //$danger:        $red;
 $light:         $grey-100;
@@ -34,10 +34,13 @@ $break-sm:768px;
 $break-md: 992px;
 $break-lg: 1200px;
 
+//BODY styles
+$body-color:                $black;
+
 // NAVBAR styles
-$navbar-light-active-color: $primary;
-$navbar-light-hover-color:  darken($primary, 10);
-$navbar-light-color: $black;
+$navbar-light-active-color: $cyan;
+$navbar-light-hover-color:  darken($cyan, 10);
+$navbar-light-color: $dark;
 $navbar-padding-y: 0.1rem;
 
 // FONTS

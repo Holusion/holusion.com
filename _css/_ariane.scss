@@ -3,15 +3,15 @@
   padding-bottom:10px;
   a:last-of-type, a:last-of-type:hover{
     cursor:default;
-    color:$deep-blue;
+    color:$blue;
     text-decoration: none !important;
   }
   a:not(:last-of-type), a:not(:last-of-type):hover{
-    color:$blue;
+    color:$cyan;
     text-decoration: none;
   }
   a:not(:last-of-type)::after {
     content:" /";
-    color:$black;
+    color:$dark;
   }
 }
