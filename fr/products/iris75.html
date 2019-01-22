@@ -37,7 +37,9 @@ properties:
 
 
 <section class="section section-main-header header-fill">
-  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+  {%include components/header_image.html image="img/products/iris75_chaufferie.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+
+  
   <div class="main-header-body">
     <div class="content shadow rounded bg-white rounded p-md-4">
       <h2 >Impactant</h2>
@@ -53,16 +55,25 @@ properties:
   </div>
 </section>
 
-<section class="section bg-light py-4">
-
-  <div class="container jumbotron bg-white shadow my-0">
-
-    <h2>Lumineux</h2>
-    <p>
-      L'Iris 75" est équipé d'un écran <b>Très haute luminosité</b> de 2500cd/m². Profitez d'hologrammes exceptionnel, même en plein jour.
-    </p>
-
-    {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
+<section class="section section-main-header  header-fill py-4">
+  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+  <div class="main-header-body full-width">
+    <div class="content container shadow rounded bg-white py-4">
+      <h2 class="text-center">Lumineux</h2>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <p>
+            L'Iris 75" est équipé d'un écran <b>Très haute luminosité</b> de 2500cd/m². Profitez d'hologrammes exceptionnel, même en plein jour.
+          </p>
+          <p>
+            Notre connaissance des matériaux nous permet de proposer le meilleur compromis entre contraste et transparence pour toutes les situations
+          </p>
+        </div>
+        <div class="col">
+          {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -96,14 +107,16 @@ properties:
   </div>
 </section>
 
-
-<section class="section bg-light py-1">
-  <div class="container jumbotron bg-white shadow">
-    <div class="center-block">
-      {% asset img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
-      <div class="text-muted text-center">
-        Dimensions brutes de l'habillage d'un Iris 75" horizontal
+<section class="section section-main-header  header-fill py-4"> 
+  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_detail_1440p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+  <div class="main-header-body full-width">
+    <div class="container jumbotron bg-white shadow">
+      <div class="center-block">
+        {% asset img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
+        <div class="text-muted text-center">
+          Dimensions brutes de l'habillage d'un Iris 75" horizontal
+        </div>
       </div>
     </div>
-  </div>
-</section>
+    </div>
+</sction>
