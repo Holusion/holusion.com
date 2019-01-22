@@ -123,16 +123,16 @@ footer #contact-bottom{
     background: none;
     padding: .75rem 0 .75rem .25rem;
     a{
-      color: $deep-blue;
+      color: $blue;
       padding: .5rem 0;
     }
     &:hover {
-      /*background: rgba($black, .1); /*Ugly*/
+      /*background: rgba($dark, .1); /*Ugly*/
     }
     &.current {
       z-index: 2;
       & > a {
-        color: $blue !important;
+        color: $cyan !important;
       }
     }
   }
