@@ -38,7 +38,10 @@ body{
   text-align:center;
 }
 a{
-  color:$blue;
+  color:$cyan;
+  &:hover{
+    color: lighten($cyan, 10);
+  }
 }
 
 .logo-image {
