@@ -6,6 +6,7 @@ def add_alt_language(doc, alts)
   site = doc.site
   url = doc.url
   filepath = doc.relative_path
+  return if !doc || !doc.data
   #always set page.data["lang"] if not set because it otherwise breaks things
   if !  doc.data.key? "lang"
     match = RE.match(url)
