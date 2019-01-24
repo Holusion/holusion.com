@@ -22,10 +22,11 @@ plugins:
   - jekyll-redirect-from
   - jekyll-inline-svg
   - jekyll-paginate-v2
+  - jekyll-sass-converter
   - jekyll-assets
 sass:
   style: compressed
-  sourcemap: true
+  source_map_contents: true
   load_paths:
     - _css
     - node_modules
