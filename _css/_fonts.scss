@@ -1,36 +1,18 @@
 
+// Uses fon-display for font-face swap strategy : https://developers.google.com/web/updates/2016/02/font-display
 @font-face {
-  font-family: open_sansregular;
-  font-weight: normal;
+  font-family: "Open Sans";
+  font-weight: 400;
   font-style: normal;
-  src: url('/static/fonts/opensans-regular-webfont.eot');
-  src: url('/static/fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/static/fonts/opensans-regular-webfont.woff') format('woff'), url('/static/fonts/opensans-regular-webfont.ttf') format('truetype'), url('/static/fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+  font-variant:normal;
+  font-display: optional; /* font-swapping for page body will be distractive for users. Either swap immediately after page load or never */
+  src:  local('Open Sans Regular'), local('OpenSans-Regular'), url('/static/fonts/opensans-regular-webfont.woff2') format('woff2'),  url('/static/fonts/opensans-regular-webfont.woff') format('woff');
 }
+
 @font-face {
-  font-family: open_sansbold;
-  font-weight: normal;
+  font-family: "Open Sans";
+  font-weight: 300;
   font-style: normal;
-  src: url('/static/fonts/opensans-bold-webfont.eot');
-  src: url('/static/fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'), url('/static/fonts/opensans-bold-webfont.woff') format('woff'), url('/static/fonts/opensans-bold-webfont.ttf') format('truetype'), url('/static/fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
-}
-@font-face {
-  font-family: open_sanslight;
-  font-weight: normal;
-  font-style: normal;
-  src: url('/static/fonts/opensans-light-webfont.eot');
-  src: url('/static/fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'), url('/static/fonts/opensans-light-webfont.woff') format('woff'), url('/static/fonts/opensans-light-webfont.ttf') format('truetype'), url('/static/fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
-}
-@font-face {
-  font-family: open_sanssemibold;
-  font-weight: normal;
-  font-style: normal;
-  src: url('/static/fonts/open-sans.semibold-webfont.eot');
-  src: url('/static/fonts/open-sans.semibold-webfont.eot?#iefix') format('embedded-opentype'), url('/static/fonts/open-sans.semibold-webfont.woff') format('woff'), url('/static/fonts/open-sans.semibold-webfont.ttf') format('truetype'), url('/static/fonts/open-sans.semibold-webfont.svg#open_sanssemibold') format('svg');
-}
-@font-face {
-  font-family: open_sansregular;
-  font-weight: normal;
-  font-style: normal;
-  src: url('/static/fonts/opensans-regular-webfont.eot');
-  src: url('/static/fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/static/fonts/opensans-regular-webfont.woff') format('woff'), url('/static/fonts/opensans-regular-webfont.ttf') format('truetype'), url('/static/fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+  font-display: swap; /* uses swap to ultimately have titles nearly/always displayed with the right font */
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('/static/fonts/opensans-light-webfont.woff2') format('woff2'), url('/static/fonts/opensans-light-webfont.woff') format('woff');
 }
