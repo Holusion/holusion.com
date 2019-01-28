@@ -7,8 +7,9 @@ title: A propos
 <div class="container">
   {% ariane %}
 </div>
+
 <section id="logo-full">
-  <div id="roow no-gutters">
+  <div class="container">
     <img class="img-fluid" src="/static/img/logo_holusion_web_HD.png" alt="logo officiel Holusion SAS" title="Logo Holusion haute définition"
   srcset="/static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w" sizes="100w">
   </div>
@@ -16,7 +17,7 @@ title: A propos
 <section id="lentreprise">
   <div class="row no-gutters">
     <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
-      <h1 align="center" style="padding-bottom: 20px">Notre expertise</h1>
+      <h2 align="center" style="padding-bottom: 20px">Notre expertise</h2>
       <h3>Spécialiste de l'affichage digital innovant</h3>
       <p>
         Holusion conçoit, développe et commercialise des solutions d’affichages innovantes basées sur <b>l'hologramme</b>.
@@ -33,8 +34,11 @@ title: A propos
 
   <div class="row no-gutters">
     <div class="col-md-6">
-      {% asset "img/products/pencil.png"
-        alt="crayonnage prism et iris holusion"
+      {% asset "img/sections/schema.png"
+        srcset:width="1920"
+        srcset:width="960"
+        sizes="(max-width: 992px) 100vw, 50vw"
+        alt="Dessin schématisant l'activité de création de maquettes numérique par holusion"
         class="img-fluid"
       %}
     </div>
@@ -46,25 +50,30 @@ title: A propos
     </div>
   </div>
 
-  <section class="section bg-light py-4">
-    <div class="container jumbotron bg-white shadow my-0">
-      <div class="row">
-        <div class="col-md-6 px-5">
-          <h3>Des animations interactives en temps réel</h3>
-          <p>En plus de l'expertise hardware, nous développons chaque jour des applications interactives pour nos clients. Ces animations ludiques permettent d'apprendre ou de découvrir des concepts différement, d'avoir une nouvelle approche des produits en points de vente ou encore de valoriser le patrimoine culturel.
-          </p>
-        </div>
-        <div class="col-md-6 px-5">
-          <h3>De l'industrie au conseil</h3>
-          <p>
-            Holusion a une vision <b>industrielle</b> de son activité. Son ambition est de démocratiser les solutions holographiques. Nous accompagnons nos clients de A à Z dans leurs projets afin de d'obtenir une qualité irréprochable en phase avec leurs attentes.
-          </p>
+  <section class="section section-main-header  header-fill py-4">
+    {%include components/header_image.html image="img/sections/dessin_prism.png" alt="Dessin à main levée du design du prism holusion" %}
+    <div class="main-header-body full-width">
+      <div class="content container shadow rounded bg-white pt-4">
+        <div class="row">
+          <div class="col-md-6 px-5">
+            <h3>Des animations interactives en temps réel</h3>
+            <p>En plus de l'expertise hardware, nous développons chaque jour des applications interactives pour nos clients. Ces animations ludiques permettent d'apprendre ou de découvrir des concepts différement, d'avoir une nouvelle approche des produits en points de vente ou encore de valoriser le patrimoine culturel.
+            </p>
+          </div>
+          <div class="col-md-6 px-5">
+            <h3>De l'industrie au conseil</h3>
+            <p>
+              Holusion a une vision <b>industrielle</b> de son activité. Son ambition est de démocratiser les solutions holographiques. Nous accompagnons nos clients de A à Z dans leurs projets afin de d'obtenir une qualité irréprochable en phase avec leurs attentes.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  
 
-  <h1 align="center" style="padding: 30px 0px 10px 0px">Notre histoire</h1>
+
+  <h2 align="center" style="padding: 30px 0px 10px 0px">Notre histoire</h2>
 
   <div class="row no-gutters" style="padding-bottom: 30px">
     <div class="col-lg-6 col-md-12 px-5 d-flex flex-column justify-content-center">
@@ -91,7 +100,7 @@ title: A propos
     </div>
   </div>
 
-  <h1 align="center" style="padding: 30px 0px 20px 0px">Nos valeurs</h1>
+  <h2 align="center" style="padding: 30px 0px 20px 0px">Nos valeurs</h2>
 
   <div class="row no-gutters" style="padding-bottom: 30px">
     <div class="col-lg-8 col-md-12 px-5 d-flex flex-column justify-content-center">
@@ -111,7 +120,7 @@ title: A propos
     </div>
   </div>
 
-  <h1 align="center" style="padding: 30px 0px 10px 0px">Ils l'ont dit</h1>
+  <h2 align="center" style="padding: 30px 0px 10px 0px">Ils l'ont dit</h2>
 
   <div class="container pb-4">
     <blockquote class="blockquote">
@@ -132,7 +141,7 @@ title: A propos
 
   <section id="section-equipe" class="section section-equipe" style="padding:30px 0px 50px 0px;background-color:#eeeeee;">
     <div class="container-fluid">
-      <h1 align="center" style="padding-bottom: 20px">L'équipe</h1>
+      <h2 align="center" style="padding-bottom: 20px">L'équipe</h2>
       <div class="content view-team" align="center">
         {% include components/team_member_portrait.html
           img="thibault"
@@ -166,7 +175,7 @@ title: A propos
     </section>
 
   <section id="section-clients" align="center">
-    <h1 align="center" style="padding-bottom: 20px"> Nos Partenaires</h1>
+    <h2 align="center" style="padding-bottom: 20px"> Nos Partenaires</h2>
 
 <div class="container">
   <div class="row" style="padding-bottom: 30px" align="center">
