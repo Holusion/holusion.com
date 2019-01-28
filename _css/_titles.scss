@@ -1,18 +1,16 @@
 @import "variables";
 h1,h2,h3,h4,h5,h6{
-	font-family: open_sanslight;
+	font-family: "Open Sans", sans-serif;
 	color: $light-blue;
-  font-weight: bold;
+  font-weight: 300; /*light*/
   line-height: 1.2em;
 }
 h2{
 	font-size:25px;
-	font-family: open_sanslight, sans-serif;
 }
 
 h3, h3 a {
   color: $blue;
-  font-weight:bold;
 	font-size:20px;
 }
 h4{
@@ -31,9 +29,7 @@ h6{
 }
 
 h1{
-  font-family: open_sanslight, sans-serif;
   font-size:30px;
-  font-weight:400;
 	padding: 6px 0px 12px 0px;
 }
 
