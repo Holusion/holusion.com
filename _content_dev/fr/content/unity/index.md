@@ -40,7 +40,18 @@ Les paramètres `position`, `rotation` et `viewport` des caméras sont réglés 
 
 ## Inversion des caméras
 
-Pour pouvoir utiliser Unity3D sur les produits Holusion, la première étape est d'inverser les caméras. Elles doivent projeter l'image comme vue à travers un miroir.
+Pour pouvoir utiliser Unity3D sur les produits Holusion, la première étape est généralement d'inverser la caméra. Elles doivent projeter l'image comme vue à travers un miroir. Deux méthodes sont possibles: En utilisant le *hook* `OnPreCull` de la caméra, ou via un `Post Process Volume` (*>5.6* uniquement).
+
+**Note** : Sur certains produits, cette inversion peut aussi être réalisée directement via configuration du serveur X dans le contrôleur.
+
+
+
+### Méthode PostProcessing
+
+Depuis la version **5.6**, Unity propose un module de [post-processing](https://docs.unity3d.com/Manual/PostProcessing-Stack.html). Il permet la mise en place d'effets visuels divers : flou de mouvement, color grading, etc... Il est possible de réaliser un shader d'inversion de l'image :
+
+Télécharger le script [ici](https://raw.githubusercontent.com/Holusion/HoloZoom/master/Assets/Scripts/CameraFlop.cs) et le shader [ici](https://raw.githubusercontent.com/Holusion/HoloZoom/master/Assets/Shaders/CameraFlop.shader)) Pour que le Shader aie un effet, il faut ajouter un composant `Post Process Layer` et un composant `Post Process Volume` et lui ajouter l'effet `Camera Flop`.
+De plus ajoutez le Shader dans `Edit > Project settings > Gaphics > Always included Shaders`, augmentez l'option `Size` si nécessaire.
 
 ### Méthode sans PostProcessing
 
@@ -75,12 +86,6 @@ Pour ce faire, attacher le script suivant à chaque caméra de la scène :
 Ce script inverse horizontalement les cameras.
 **Attention**, il n'est pas protégé contre les cameras aux aspects-ratio spéciaux et peut nécessiter quelques modifications.
 
-### Méthode avec PostProcessing
-
-Si vous voulez utiliser des effets visuel provenants du [package PostProcessing](https://docs.unity3d.com/Manual/PostProcessing-Stack.html) comme le flou de mouvement, la méthode
-décrite ci-dessus ne fonctionnera pas. La solution est d'ajouter un effet de PostProcessing :
-(Télécharger le script [ici](https://raw.githubusercontent.com/Holusion/HoloZoom/master/Assets/Scripts/CameraFlop.cs) et le shader [ici](https://raw.githubusercontent.com/Holusion/HoloZoom/master/Assets/Shaders/CameraFlop.shader)) Pour que le Shader est un effet, il faut ajouter un composant `Post Process Layer` et un composant `Post Process Volume` et lui ajouter l'effet `Camera Flop`.
-De plus ajoutez le Shader dans `Edit > Project settings > Gaphics > Always included Shaders`, augmentez l'option `Size` si nécessaire.
 
 #### Script (C#)
 
