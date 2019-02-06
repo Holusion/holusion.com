@@ -42,6 +42,8 @@ Les paramètres `position`, `rotation` et `viewport` des caméras sont réglés 
 
 Pour pouvoir utiliser Unity3D sur les produits Holusion, la première étape est d'inverser les caméras. Elles doivent projeter l'image comme vue à travers un miroir.
 
+### Méthode sans PostProcessing
+
 Pour ce faire, attacher le script suivant à chaque caméra de la scène :
 (Télécharger le script [ici](https://raw.githubusercontent.com/Holusion/3d-viewer/master/Assets/Scripts/HSymmetry.cs))
 {% highlight csharp %}
@@ -73,6 +75,81 @@ Pour ce faire, attacher le script suivant à chaque caméra de la scène :
 Ce script inverse horizontalement les cameras.
 **Attention**, il n'est pas protégé contre les cameras aux aspects-ratio spéciaux et peut nécessiter quelques modifications.
 
+### Méthode avec PostProcessing
+
+Si vous voulez utiliser des effets visuel provenants du [package PostProcessing](https://docs.unity3d.com/Manual/PostProcessing-Stack.html) comme le flou de mouvement, la méthode
+décrite ci-dessus ne fonctionnera pas. La solution est d'ajouter un effet de PostProcessing :
+(Télécharger le script [ici](https://raw.githubusercontent.com/Holusion/HoloZoom/master/Assets/Scripts/CameraFlop.cs) et le shader [ici](https://raw.githubusercontent.com/Holusion/HoloZoom/master/Assets/Shaders/CameraFlop.shader)) Pour que le Shader est un effet, il faut ajouter un composant `Post Process Layer` et un composant `Post Process Volume` et lui ajouter l'effet `Camera Flop`.
+De plus ajoutez le Shader dans `Edit > Project settings > Gaphics > Always included Shaders`, augmentez l'option `Size` si nécessaire.
+
+#### Script (C#)
+
+{% highlight csharp %}
+  using System;
+  using UnityEngine;
+  using UnityEngine.Rendering.PostProcessing;
+
+  [Serializable]
+  [PostProcess(typeof(CameraFlopRenderer), PostProcessEvent.AfterStack, "CameraFlop")]
+  public sealed class CameraFlop : PostProcessEffectSettings
+  {
+  }
+
+  public sealed class CameraFlopRenderer : PostProcessEffectRenderer<CameraFlop>
+  {
+      public override void Render(PostProcessRenderContext context)
+      {
+          var sheet = context.propertySheets.Get(Shader.Find("Hidden/CameraFlop"));
+          context.command.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);
+      }
+  }
+{% endhighlight %}
+
+#### Shader (HLSL)
+
+{% highlight glsl %}
+  // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+  Shader "Hidden/CameraFlop"
+  {
+    HLSLINCLUDE
+
+        #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
+
+        TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
+        int _FlopH, _FlopV;
+
+        float4 Frag(VaryingsDefault i) : SV_Target
+        {
+            float2 uv = i.texcoord;
+            if(_FlopH) {
+                uv.x = 1- uv.x;
+            }
+            if(_FlopV) {
+                uv.y = 1 - uv.y;
+            }
+            float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv);
+            return color;
+        }
+
+    ENDHLSL
+
+    SubShader
+    {
+        Cull Off ZWrite Off ZTest Always
+
+        Pass
+        {
+            HLSLPROGRAM
+
+                #pragma vertex VertDefault
+                #pragma fragment Frag
+
+            ENDHLSL
+        }
+    }
+  }
+{% endhighlight %}
 
 ## Détails
 
@@ -83,7 +160,7 @@ dans *pc, mac & linux standalone*, categorie *Resolution and Presentation*, ```d
 
 Utiliser l'option ```linux x86_64``` dans le menu **build** de Unity.
 
-Cela crée normalement un fichier *<votre_projet>.x86_64* et un dossier *<votre_projet_data>*. Sélectionnez-les et archivez-les au format .tar.gz ou .zip.
+Cela crée normalement un fichier *\<votre_projet\>.x86_64* et un dossier *\<votre_projet_data\>*. Sélectionnez-les et archivez-les au format .tar.gz ou .zip.
 
 Sur Windows : ```clic droit -> Envoyer vers -> Dossier compressé ```.
 
