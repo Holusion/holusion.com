@@ -40,6 +40,8 @@ Redirect 301 /en/posts/2018-06-04_Viva_Technology_2018 /en/posts/2018-06-04-Viva
 Redirect 301 /en/products/iris /en/products/iris75
 Redirect 301 /fr/products/iris /fr/products/iris75
 
+Redirect 301 /infoatelier https://goo.gl/forms/cTC9k0ZI1dy0Q6Y32
+
 <IfModule mod_expires.c>
 	ExpiresActive On
 	ExpiresDefault "access plus 1 day"
