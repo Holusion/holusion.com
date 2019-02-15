@@ -76,3 +76,7 @@ lettering:
   icon: src/pictos/properties/short_text.svg
   fr: gravure
   en: lettering
+NFC:
+  icon: src/pictos/produits/Picto_Tag-NFC.svg
+  fr: nfc
+  en: nfc  
