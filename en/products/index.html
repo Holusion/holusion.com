@@ -25,10 +25,12 @@ layout: front_page
 <div class="container-fluid">
   <div class="row">
   {% for product in site.products_items[page.lang] %}
-    {% include components/post_thumbnail.html content=product %}
+    {% include components/post_thumbnail.html content=product type="card" classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1" %}
   {% endfor %}
   {% include components/post_thumbnail.html
     image="/static/img/misc/conception_au_marteau.jpg"
+    type="card"
+    classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1"
     title="Custom"
     abstract="Discover our personalised consulting, that will help you setting up your innovation project"
     %}
