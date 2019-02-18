@@ -77,6 +77,14 @@ lettering:
   fr: gravure
   en: lettering
 NFC:
-  icon: src/pictos/produits/Picto_Tag-NFC.svg
+  icon: src/pictos/properties/nfc.svg
   fr: nfc
-  en: nfc  
+  en: nfc
+Wifi:
+  icon: src/pictos/properties/wifi.svg
+  fr: wifi
+  en: wifi
+Arduino:
+  icon: src/pictos/properties/arduino.svg
+  fr: arduino
+  en: arduino
