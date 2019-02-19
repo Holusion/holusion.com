@@ -8,12 +8,12 @@ properties:
 ---
 
 
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
     {% include components/medias/youtube.html embed="slU544PEirs" %}
   </div>
-  <div class="tile-body">
-    <h2 style="padding-top: 30px">Holographic goodies</h2>
+  <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
+    <h2>Holographic goodies</h2>
     <p>
       To spice up your <b>product presentations</b>, this handlheld hologram is by your side in everyday life.
     </p>
@@ -29,42 +29,45 @@ properties:
   </div>
 
 </section>
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+
+<section class="row no-gutters">
+  <div class="tcol-lg-6 col-12">
     <img class="img-fluid" src="/static/img/products/pixel.jpg" alt="holusion's Pixel : a small pyramid for portable holograms">
   </div>
-  <div class="tile-body">
+  <div class="col-lg-6 col-12 p-4 px-md-2">
     <h2 align="center">A playful experience</h2>
     <p>Transform your mobile devices into holographic displays. Works with Android or iOS.</p>
     <p>Use this new digital technology to display you advertising on any size of tablets or smartphones</p>
   </div>
 </section>
-<section class="section-tile">
-    <div class="tile-image-wrapper">
-      {% asset img/products/pixelplus_tablette_2.jpg
-        srcset:width="1920"
-        srcset:width="960"
-        sizes="(max-width: 992px) 100vw, 50vw"
-        class="img-fluid"
-        title="Holusion Pixel XL"
-        alt="Pixel XL for iOS or Android tablets"
-      %}
-    </div>
-    <div class="tile-body">
-      <h2>Rightly sized</h2>
-      <p>New customers can use our complete pack with :
-      </p>
-      <ul>
-        <li> 5 <b>Pixel</b> pyramids for smartphones</li>
-        <li> 1 <b>Pixel XL</b> pyramid for tablets</li>
-      </ul>
-      <p>
-        To allow you to experiment in complete freedom, it is offered without any visible brand, with direct buy from our <a href="/en/store/kitpixels">online store</a>.
-      </p>
-    </div>
-  </section>
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12">
+    {% asset img/products/pixelplus_tablette_2.jpg
+      srcset:width="1920"
+      srcset:width="960"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      class="img-fluid"
+      title="Holusion Pixel XL"
+      alt="Pixel XL for iOS or Android tablets"
+    %}
+  </div>
+  <div class="col-lg-6 col-12 p-4 px-md-2">
+    <h2>Rightly sized</h2>
+    <p>New customers can use our complete pack with :
+    </p>
+    <ul>
+      <li> 5 <b>Pixel</b> pyramids for smartphones</li>
+      <li> 1 <b>Pixel XL</b> pyramid for tablets</li>
+    </ul>
+    <p>
+      To allow you to experiment in complete freedom, it is offered without any visible brand, with direct buy from our <a href="/en/store/kitpixels">online store</a>.
+    </p>
+  </div>
+</section>
+
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
     {% asset img/products/pochette_contenu.jpg
       srcset:width="1920"
       srcset:width="960"
@@ -74,7 +77,7 @@ properties:
       alt="A Pixel's content, branded for holusion's promotional use"
     %}
   </div>
-  <div class="tile-body">
+  <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
     <h2 align="center">Readily available</h2>
     <p>We can process orders from a few units to thousands of products</p>
     <p>You can get a sample right now from our <a href="/en/store/pixel">online store</a> or get a <a href="/fr/store/kitpixels">demonstration kit</a> without any mention of Holusion to help convince your future clients</p>
@@ -125,27 +128,33 @@ properties:
     </div>
   </div>
 </section>
-<section class="section bg-white py-4">
-  <div class="container jumbotron bg-white shadow my-0">
-    <div class="row">
-      <div class="col-lg-6 col-md-12  d-flex flex-column justify-content-center">
-        {%include components/animated_svg.html src="/src/pictos/schema_hebergement_pixel.svg"  %}
-      </div>
-      <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
-        <h2>Your holograms</h2>
+<section class="section section-main-header header-fill py-4">
+  <div class="main-header-image-wrapper">
+    {% asset img/products/kit_pixels_vignette.jpg
+      srcset:width="1920"
+      srcset:width="1920"
+      srcset:width="960"
+      sizes="100vw"
+      class="img-fluid"
+      alt="a complete pixel kit packaged in a cardboard box"
+    %}
+  </div>
+  <div class="main-header-body container">
+    <div class="content bg-white shadow my-4 p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12  d-flex flex-column justify-content-center">
+          {%include components/animated_svg.html src="/src/pictos/schema_hebergement_pixel.svg"  %}
+        </div>
+        <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+          <h2>Your holograms</h2>
           <h3>Transform</h3>
             <p>In a few clicks, transform a standard video to an holographic show using our <a href="https://pixel.colusion.com">online service</a>.</p>
           <h3>Distribute</h3>
             <p>Optimize your communication with this dedicated platform, designed for speed and accessibility</p>
           <h3>Manage</h3>
           <p>Add or modify your content easily. Create more holograms as you please with our hands-on administration tools</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<div align="center" style="padding-top: 50px"><button class="button button-blue" style="cursor:pointer" onclick=window.location.href="/en/store">
-           Holusion store
-         </button></div>
-
-<h2 align="center" id="main-title-1" style="padding-top: 50px">Some stories about Pixel...</h2>

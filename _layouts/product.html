@@ -14,8 +14,8 @@ layout: front_page
   <section id="section-intro" class="section section-main-header header-fill">
     {%capture header_image %}{{page.image}}{%endcapture%}
     {%include components/header_image.html image=header_image %}
-    <div class="main-header-body">
-      <div class="content shadow rounded bg-white rounded p-4">
+    <div class="main-header-body body-right">
+      <div class="content shadow rounded bg-white rounded p-2 p-lg-4">
         <img itemprop="image" style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid align-self-center" src="{{page.picto}}"/>
         <h1 align="center">{{page.header}}</h1>
         {% if page.price %}
@@ -34,19 +34,20 @@ layout: front_page
               {{site.data.strings["rent-available"][page.lang]}}
               {%endunless%}
             </div>
-            <div class="d-flex align-items-center">
-              {% if page.ecommerce %}
-                {% include components/shop/store-fab.html url=page.ecommerce %}
-                <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
-              {% else %}
-                <button class="btn btn-primary" style="cursor:pointer" onclick="displayContactForm()" >
-                    {{site.data.strings["contact-us"][page.lang]}}
-                </button>
-              {% endif %}
-              <div itemprop="description" class="p-2 flex-grow-1 text-left">
-                {{page.abstract}}
-              </div>
+            
+            <div itemprop="description" class="p-2 flex-grow-1 text-center" style="min-width:300px">
+              {{page.abstract}}
             </div>
+            <div style="min-width:200px" class="d-flex justify-content-center">
+                {% if page.ecommerce %}
+                  {% include components/shop/store-fab.html url=page.ecommerce %}
+                  <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
+                {% else %}
+                  <button class="btn btn-primary" style="cursor:pointer" onclick="displayContactForm()" >
+                      {{site.data.strings["contact-us"][page.lang]}}
+                  </button>
+                {% endif %}
+              </div>
           </div>
         {% else %}
           <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
