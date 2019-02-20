@@ -40,7 +40,20 @@ Les paramètres `position`, `rotation` et `viewport` des caméras sont réglés 
 
 ## Inversion des caméras
 
-Pour pouvoir utiliser Unity3D sur les produits Holusion, la première étape est d'inverser les caméras. Elles doivent projeter l'image comme vue à travers un miroir.
+Pour pouvoir utiliser Unity3D sur les produits Holusion, la première étape est généralement d'inverser la caméra. Elles doivent projeter l'image comme vue à travers un miroir. Deux méthodes sont possibles: En utilisant le *hook* `OnPreCull` de la caméra, ou via un `Post Process Volume` (*>5.6* uniquement).
+
+**Note** : Sur certains produits, cette inversion peut aussi être réalisée directement via configuration du serveur X dans le contrôleur.
+
+
+
+### Méthode PostProcessing
+
+Depuis la version **5.6**, Unity propose un module de [post-processing](https://docs.unity3d.com/Manual/PostProcessing-Stack.html). Il permet la mise en place d'effets visuels divers : flou de mouvement, color grading, etc... Il est possible de réaliser un shader d'inversion de l'image :
+
+Dans un premier temps, installer le package `Post Processing v2` via le `Package Manager` d'Unity, puis téléchargez le package [CameraFlop](https://assetstore.unity.com/packages/vfx/shaders/cameraflop-139055) via Unity. Pour que le Shader aie un effet, il faut ajouter un composant `Post Process Layer` et un composant `Post Process Volume` et lui ajouter l'effet `Camera Flop`.
+De plus ajoutez le Shader dans `Edit > Project settings > Gaphics > Always included Shaders`, augmentez l'option `Size` si nécessaire.
+
+### Méthode sans PostProcessing
 
 Pour ce faire, attacher le script suivant à chaque caméra de la scène :
 (Télécharger le script [ici](https://raw.githubusercontent.com/Holusion/3d-viewer/master/Assets/Scripts/HSymmetry.cs))
@@ -74,6 +87,7 @@ Ce script inverse horizontalement les cameras.
 **Attention**, il n'est pas protégé contre les cameras aux aspects-ratio spéciaux et peut nécessiter quelques modifications.
 
 
+
 ## Détails
 
 Il faut impérativement désactiver la boite de dialogue de choix des résolutions. Aller dans ```Edit -> Project Settings -> Player```,
@@ -83,7 +97,7 @@ dans *pc, mac & linux standalone*, categorie *Resolution and Presentation*, ```d
 
 Utiliser l'option ```linux x86_64``` dans le menu **build** de Unity.
 
-Cela crée normalement un fichier *<votre_projet>.x86_64* et un dossier *<votre_projet_data>*. Sélectionnez-les et archivez-les au format .tar.gz ou .zip.
+Cela crée normalement un fichier *\<votre_projet\>.x86_64* et un dossier *\<votre_projet_data\>*. Sélectionnez-les et archivez-les au format .tar.gz ou .zip.
 
 Sur Windows : ```clic droit -> Envoyer vers -> Dossier compressé ```.
 
