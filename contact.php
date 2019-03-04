@@ -167,7 +167,7 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) {
     forbidden($err);
   }
   if($_POST['email'] == "contact@holusion.com"){
-    echo('{"code":200,"message":'.json_encode(write_mail($_POST)).', headers:'.json_encode(write_headers($_POST)).'}');
+    echo('{"code":200,"message":'.json_encode(write_mail($_POST)).', "headers":'.json_encode(write_headers($_POST)).'}');
   }else{
     @mail($email_to, $email_subject, write_mail($_POST), write_headers($_POST));
     echo('{"code":200,"message":"'.$strings["success"].'"}');
