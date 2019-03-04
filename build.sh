@@ -145,21 +145,28 @@ fi
 # TEST target
 # + static analysis of site's files.
 #
-${make_check} && bundle exec htmlproofer _site \
---assume-extension \
---alt-ignore "/.*/" \
---check-favicon \
---check-opengraph \
---checks-to-ignore ScriptCheck \
---only-4xx \
---disable-external \
---internal-domains "holusion.com,test.holusion.com" \
---file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/" \
---url-ignore "/^\/?$/"
+if ${make_check} ;then
+  bundle exec htmlproofer _site \
+    --assume-extension \
+    --alt-ignore "/.*/" \
+    --check-favicon \
+    --check-opengraph \
+    --checks-to-ignore ScriptCheck \
+    --only-4xx \
+    --disable-external \
+    --internal-domains "holusion.com,test.holusion.com" \
+    --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/" \
+    --url-ignore "/^\/?$/"
 
-${make_check} && test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
---file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
+  test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
+    --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
 
+  if ! test -x "scripts/phpunit" ;then
+    wget -O "scripts/phpunit" https://phar.phpunit.de/phpunit-6.phar
+    chmod +x "scripts/phpunit"
+  fi
+  ./scripts/phpunit scripts/test_contact.php
+fi
 
 
 # Integration End-To-End tests
