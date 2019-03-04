@@ -8,3 +8,5 @@ _site/
 .sass-cache
 .jekyll-cache
 .static-cache
+
+scripts/phpunit
