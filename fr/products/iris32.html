@@ -1,6 +1,6 @@
 ---
 title: Iris 32
-image: img/products/iris32_meuble_chat.jpg
+image: img/products/iris32_museum.jpg
 abstract: Une vitrine holographique de 32 pouces.
 rank: 3
 header: Hologramme 1 face
@@ -26,50 +26,52 @@ properties:
 ---
 
 
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
-    {%asset img/products/iris32_ales.jpg
-      srcset:width="800"
-      srcset:width="400"
-      sizes="(max-width: 992px) 100vw, 50vw"
-      class="img-fluid"
-      alt="Utilisation d'un Iris 32 pour la présentation du bâtiment des mines d'Alès"
-    %}
-  </div>
-  <div class="tile-body">
+<section class="section section-main-header header-fill">
+  {%include components/header_image.html image="img/products/iris32_quartz.jpg" alt="L'iris 32 en présentation d'hologrammes d'objets précieux" %}
+  <div class="main-header-body">
+    <div class="content shadow rounded bg-white rounded p-md-4">
     <h2>Vitrine holographique</h2>
     <p>L’hologramme IRIS 32 donne de la <b>visibilité</b> à vos produits ou projets grâce à sa vitrine holographique en haute définition. Ce projecteur, <b>fiable et autonome</b>, s’intègre naturellement dans votre univers. </p>
       <p>Cette vitrine holographique est disponible en vente ou en location.</p>
-      <p>Très simple à installer, configurable et interactif, IRIS devient le <b>support idéal </b> pour des présentations institutionnelles ou éducatives.</p>
-
+      <p>Très simple à installer, configurable et interactif, IRIS devient le <b>support idéal </b> pour des présentations institutionnelles ou <a href="/fr/posts/2019-02-15-holomouseio.html">éducatives</a>.</p>
+      </div>
   </div>
 </section>
+<section class="section section-main-header  header-fill py-4">
+  {%include components/header_image.html image="img/products/iris32_archeo.jpg" alt="L'Iris32 est très lumineux et adéquat pour des présentation d'objets 3D" %}
+  <div class="main-header-body full-width">
+    <div class="content container shadow rounded bg-white py-4">
+      <h2 class="text-center">Prenez de l'avance</h2>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <p>
+            L'Iris 32 est notre meilleure solution pour un maximum d'impact dans un minimum de place.
+            Sa puissance lumineuse et la qualité graphique de ses rendus le rend très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions</b>.</p>
+            <p>
+            C'est pour cela que plusieurs clients à travers la France nous font déjà confiance pour son utilisation, comme Nausicaa pour présenter des <a href="https://www.nausicaa.fr/article/les-abysses/" target="_blank">poissons des abysses</a> dans son exposition permanente ou encore les <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a> pour présenter leur futurs bâtiments.</p>
+        </div>
+        <div class="col">
+          {% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="section-gamme" class="section-tile">
   <div class="tile-image-wrapper">
-    <img class="img-fluid" src="/static/img/products/iris32_quartz.jpg" alt="Iris 32 montrant le siège de Colas en hologramme">
+    {% include components/medias/youtube.html embed="h2PtmAhlp2A" %}
   </div>
-  <div class="tile-body">
-    <h2>Prenez de l'avance</h2>
-    <p> 
-      L'Iris 32 est notre meilleure solution pour un maximum d'impact dans un minimum de place. 
-      Sa puissance lumineuse et la qualité graphique de ses rendus le rend très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions</b>.
-      C'est pour cela que plusieurs clients à travers la France nous font déjà confiance pour son utilisation, comme Nausicaa pour présenter des <a href="https://www.nausicaa.fr/article/les-abysses/" target="_blank">poissons des abysses</a> dans son exposition permanente ou encore les <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a> pour présenter leur futurs bâtiments.</p>
+  <div class="tile-body tile-body--main">
+    <h2>Mapping d'objets</h2>
+    <p>
+      Votre produit ne fera plus qu'un avec l'hologramme.
+      Placé dans le projecteur d'hologrammes, un <b>mapping vidéo</b> apparaît sur le produit pour le mettre en avant et apporter des informations complémentaires.
+      Effets spéciaux, personnalisation ou réalité augmentée, un <b>large panel d'effets</b> viennent à vous pour valoriser votre produit.
+    </p>
   </div>
 </section>
 
-<section id="section-gamme" class="section-tile">
-    <div class="tile-image-wrapper">
-      {% include components/medias/youtube.html embed="GlQzBthx9JE" %}
-    </div>
-    <div class="tile-body">
-      <h2>Mapping d'objets</h2>
-      <p>
-        Votre produit ne fera plus qu'un avec l'hologramme.
-        Placé dans le projecteur d'hologrammes, un <b>mapping vidéo</b> apparaît sur le produit pour le mettre en avant et apporter des informations complémentaires.
-        Effets spéciaux, personnalisation ou réalité augmentée, un <b>large panel d'effets</b> viennent à vous pour valoriser votre produit.
-      </p>
-    </div>
-  </section>
 
 <div align="center" class="p-4">
   {% asset img/products/mesures/Iris32.png
