@@ -9,45 +9,45 @@
   <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
 
   <title>{% if page.title %}{{page.title}} : {% endif %}{%if page.abstract %}{{page.abstract }} - {% endif %}{{site.data.strings.site-title[page.lang]}}</title>
-  
-  {% if page.description %}
+
+  {%- if page.description -%}
     <meta name="description" content="{{ page.description | strip_html | truncatewords:155 }}" />
     <meta property="og:description" content="{{page.description | strip_html | truncatewords:297}}"/>
-  {% elsif page.abstract %}
+  {%- elsif page.abstract -%}
     <meta name="description" content="{{ page.abstract|truncatewords:155 }}" />
     <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297}}"/>
-  {% else %}
+  {%- else -%}
     <meta name="description" content="{{site.data.strings.site-description[page.lang]}}" />
-  {% endif %}
+  {%- endif -%}
 
-  {% if page.image %}
-    {% if assets[page.image] %}
+  {%- if page.image -%}
+    {%- if assets[page.image] -%}
       <meta name="twitter:image"  content="{{page.image | remove: "_assets/" |asset:" @path"}}">
       <meta name="og:image"  content="{{page.image | remove: "_assets/" |asset:" @path"}}">
-    {% else %}
+    {%- else -%}
       <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
       <meta property="og:image" content="{{site.url}}{{page.image}}"/>
-    {% endif %}
-  {% endif %}
-  {% if page.layout == "post" %}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if page.layout == "post" -%}
     <meta property="og:type" content="article"/>
-  {% else %}
+  {%- else -%}
     <meta property="og:type" content="website"/>
-  {%endif %}
-  {% if page.lang %}
+  {%- endif -%}
+  {%- if page.lang -%}
     <meta property="og:locale" content="{{page.lang}}"/>
-  {% endif %}
+  {%- endif -%}
 
   <link rel="canonical" href="{{page.url | absolute_url }}">
-  {% if page.alt_url %}
+  {%- if page.alt_url -%}
   <link rel="alternate" hreflang="{{page.alt_lang}}" href="{{page.alt_url | absolute_url }}">
   <link rel="alternate" hreflang="{{page.lang}}" href="{{page.url |absolute_url }}">
-  {% endif %}
+  {%- endif -%}
 
   <!-- CSS Loading -->
   <link href="/css/style.css{%if site.build_id%}?id={{site.build_id}}{%endif%}" rel="stylesheet">
 
-  <!-- jquery is only used as a bootstrap dependency. Please avoid binding the site to it -->
+  {%- comment -%}jquery is only used as a bootstrap dependency. Please avoid binding the site to it {%- endcomment -%}
   <script defer="" src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script defer="" src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script defer="" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
