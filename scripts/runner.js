@@ -544,52 +544,49 @@ describe(`${target}.`,function(){
      .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc)
      // Perform tests for EVERY location
      for (let loc of locations){
-       describe(`page ${loc}`,function(){
-         let page;
-         let ln = loc;
-         before(async ()=>{
-           //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
-           ln = path.join(href,loc);
-           page = await newPage();
-           await block(page,["medias", "analytics", "captcha"]);
-           return await page.goto(`${ln}`);
-         });
-         after(async()=>{
-           return await page.close();
-         });
-         it("check canonical link",async ()=>{
-           let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
-           expect(
-             c_link.replace(/^https?:\/\/[^\/]+/, ""),
-             `canonical link ${c_link} seems invalid`
-           ).to.equal(loc);
-           return c_link;
-         });
-         it("Check for deprecated classes",async ()=>{
-           await Promise.all([
-             ".main-header-body.full-width",
-             ".main-header-body:not(.container) .container" //ie11 makes text overflow when .container is aplied to children instead of header-body
+        describe(`page ${loc}`,function(){
+          let page;
+          let ln = loc;
+          before(async ()=>{
+            //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
+            ln = path.join(href,loc);
+            page = await newPage();
+            await block(page,["medias", "analytics", "captcha"]);
+            return await page.goto(`${ln}`);
+          });
+          after(async()=>{
+            return await page.close();
+          });
+          it("check canonical link",async ()=>{
+            let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
+            expect(
+              c_link.replace(/^https?:\/\/[^\/]+/, ""),
+              `canonical link ${c_link} seems invalid`
+            ).to.equal(loc);
+            return c_link;
+          });
+          it("Check for deprecated classes",async ()=>{
+            await Promise.all([
+              ".main-header-body.full-width",
+              ".main-header-body:not(.container) .container", //ie11 makes text overflow when .container is aplied to children instead of header-body
+              ".section-main-header > div:not(.main-header-image-wrapper):not(.main-header-body):not(.main-header-overlay)"
             ].map(async(sel)=>{
-            const invalid_elements = await page.$$(sel);
-            expect(invalid_elements, `".${sel}" should not match anything. Found ${invalid_elements.length} results`).to.have.property("length", 0);
- 
-           }));
+              const invalid_elements = await page.$$(sel);
+              expect(invalid_elements, `"${sel}" should not match anything. Found ${invalid_elements.length} results`).to.have.property("length", 0);
+              
+            }));
           })
-         for (let device of target_devices){
-           describe(`on ${device.name}`,function(){
-             before(async function(){
-               await page.emulate(device)
-             })
-             it("have no h-scroll", async function(){
-               let scrollX = await page.evaluate(()=>{
-                 window.scrollBy(1,0);
-                 return Promise.resolve(window.scrollX);
-               })
-               expect(scrollX, `Horizontal scroll should be locked to 0`).to.equal(0);
-             })
-           })
-         }
-       });
-     }
+          it("have no h-scroll on every devices", async function(){
+            for (let device of target_devices){
+              await page.emulate(device);
+              let scrollX = await page.evaluate(()=>{
+                window.scrollBy(1,0);
+                return Promise.resolve(window.scrollX);
+              })
+              expect(scrollX, `Horizontal scroll should be locked to 0`).to.equal(0);
+            }
+          });
+        });
+      }
    });
 });
