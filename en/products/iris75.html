@@ -9,40 +9,58 @@ properties:
 ---
 
 <section class="section section-main-header header-fill">
-  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="The large iris in broad daylight. Outdoor setup to show it's very high brightness potential" %}
-  <div class="main-header-body">
+    {%include components/header_image.html image="img/products/iris75_chaufferie.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+
+   <div class="main-header-body body-right">
     <div class="content shadow rounded bg-white rounded p-md-4">
       <h2 style="padding-top: 30px">Impacting</h2>
-      <p>The holographic display <b>IRIS 75</b> is perfectly suited for presentation purposes. This giant hologram is <b>2 meters wide</b> and 1,60 meter high. It is powered by an Ultra HD monitor, displaying <b>4K</b> images with high quality and fidelity. Give more impact to your messages and brands with this <b>high-end holographic display</b> and catch your public's attention.</p>
+      <p>
+        The holographic display <b>IRIS 75</b> is perfectly suited for presentation purposes. 
+        This giant hologram is <b>2 meters wide</b> and 1,60 meter high. 
+        It is powered by an Ultra HD monitor, displaying <b>4K</b> images with high quality and fidelity. 
+        Give more impact to your messages and brands with this <b>high-end holographic display</b> and catch your public's attention.
+      </p>
       <p>It is available worldwide to buy or to rent.</p>
     </div>
   </div>
 </section>
 
-<section class="section bg-light py-4">
-  <div class="container jumbotron bg-white shadow my-0">
-    <h2>Bright</h2>
-    <p>
-      The Iris 75" is fitted with a <b>very high brightness</b> screen to be able to display high quality holograms even in outdoor venues.
-    </p>
 
-    {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
+<section class="section section-main-header  header-fill py-4">
+  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="The largest Iris in broad daylight showing its full potential in high brightness situations" %}
+  <div class="main-header-body container">
+    <div class="content shadow rounded bg-white py-4">
+      <h2 class="text-center">Lumineux</h2>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h2>Bright</h2>
+          <p>
+            The Iris 75" is fitted with a <b>very high brightness</b> screen to be able to display high quality holograms even in outdoor venues.
+          </p>
+        
+        </div>
+        <div class="col">
+          {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+  
 
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
+<section id="section-gamme" class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
     {% include components/medias/youtube.html embed="oqddzF35d9w" %}
   </div>
-  <div class="tile-body tile-body--main">
+  <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
     <h2>Modular</h2>
     <p>The Iris 75" is customizable by design and can be set-up as a landscape or portrait display.</p>
     <p>Make it visually distinctive with a wide variety of finish, from the integrable raw metal structure to textile or rigid covers, use the whole surface as an additional display area</p>
   </div>
 </section>
 
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
+<section id="section-gamme" class="row no-gutters">
+  <div class="col-lg-6 col-12">
     {%asset img/products/mesures/Iris75.png
       srcset:width="1920"
       srcset:width="960"
@@ -51,7 +69,7 @@ properties:
       alt="Dimension schematics of a 75 inch iris"
     %}
   </div>
-  <div class="tile-body tile-body--main">
+  <div class="col-lg-6 col-12 p-4 px-md-2">
     <h2>Precise</h2>
     <p>Its size and quality give you the opportunity to display content with <b>precision</b>. Don't let any detail left on technical ou educative presentations. <a href="/en/usages/bim">Real-estate</a> is a major player for this technology as it allows them to display 3D model of building very easily</p>
   </div>

@@ -44,25 +44,34 @@ a{
   }
 }
 
+
 .logo-image {
+  $logo_image_padding: 10px;
   perspective: 600px;
-  padding: 15px; /* important to prevent mis-alignment. also change image-back position if modified */
+  padding: $logo_image_padding; /* important to prevent mis-alignment. also change image-back position if modified */
+  .logo-image-back, .logo-image-front{
+    transition: transform 0.7s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .logo-image-back{
+    position: absolute;
+    top: $logo_image_padding;
+    left: $logo_image_padding;
+    bottom: $logo_image_padding;
+    right: $logo_image_padding;
+    -webkit-transform: rotateY( -180deg );
+    transform: rotateY( -180deg );
+  }
+  &:hover .logo-image-back{
+    -webkit-transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+  }
+  &:hover .logo-image-front{
+    -webkit-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+  }
 }
 
-.logo-image img {
-  transition: transform 0.7s;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-.logo-image img.logo-image-back{
-  position: absolute;
-  top:15px;
-  left:15px;
-  transform: rotateY( -180deg );
-}
-.logo-image:hover img.logo-image-back{
-  transform: rotateY( 0deg );
-}
-.logo-image:hover img.logo-image-front{
-  transform: rotateY( 180deg );
-}

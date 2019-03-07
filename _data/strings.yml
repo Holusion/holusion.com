@@ -70,6 +70,9 @@ rent-available:
 public-price:
   fr: Prix public conseillé
   en: Recommended public price
+buy-online:
+  fr: Acheter en ligne
+  en: Buy online
 store-vat:
   fr: TTC
   en: w. VAT

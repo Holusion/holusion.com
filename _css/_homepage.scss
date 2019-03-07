@@ -1,97 +1,65 @@
 /* This file describes two concepts :
  * - section-main-header : full-width image with optionnal text card
- * - section-tile : left-right alternate half-text-half-image tiles
- * Both providing full-width edge-to-edge layout to construct pages
  */
 .section-main-header{
   position: relative;
-  display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-
-  /* Background is in an image for SEO */
-  .main-header-image-wrapper{
-    position:absolute;
-    z-index: -1;
-    top: 0;
-    left:0;
-    width:100%;
-    bottom:0;
-    padding: 40px 0;
-    /*clip being deprecated, clip-path will take over it when it's disabled in the future */
-    clip-path: inset(0px 0px 0px 0px);
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-     clip: rect(0, auto, auto, 0);
-    }
-    @supports not(clip-path: inset(0px 0px 0px 0px)){
-      clip: rect(0, auto, auto, 0);
-    }
+  @supports (display: flex) {
+    // prevents ie11 from trying to use flex with... questionable results
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-
+  
   .main-header-image-wrapper img{
-    z-index: -1;
     margin: auto;
     top: 57px;
     left: 0;
     right: 0;
-    object-fit: contain;
-    pointer-events: none;
-  }
-  .main-header-image-wrapper img.fit-contain{
-    max-height: 60vmin;
+    width:100%;
   }
 
+  .fit-contain {
+    object-fit: contain;
+    max-height: 60vmin;
+  }
+  
   /* when header have no body, we use a spacer to still have some height */
   .main-header-spacer, .main-header-body{
     z-index: 1;
     flex-grow: 0;
-    height:60vh;
-    height:60vmin;
-    width:100%;
-  }
-  .main-header-body{
-    padding:10vh 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .content {
-      width:100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: stretch;
-    }
+    padding: 20px 15px;
   }
 
-  &:nth-of-type(2n){
-    .main-header-body:not(.full-width){
-      padding-right: 55%;
-      @include media-breakpoint-up(xl){
-        padding-right: 65%;
-      }
+  .main-header-body.body-left{
+    margin-right: 55%;
+    @include media-breakpoint-up(xl){
+      margin-right: 65%;
     }
   }
-  &:nth-of-type(2n+1){
-    .main-header-body:not(.full-width){
-      padding-left: 55%;
+  .main-header-body.body-right{
+    margin-left: 55%;
       @include media-breakpoint-up(xl){
-        padding-left: 65%;
+        margin-left: 65%;
       }
+  }
+  @include media-breakpoint-down(md){
+    .main-header-body, .main-header-body.body-right, .main-header-body.body-left{
+      width:100%;
+      /* those props are defined in other media-queries and we need to make sure they apply here */
+      padding: 30px 15px;
+      margin: auto;
     }
   }
   .main-header-overlay{
-    z-index: 0;
+    z-index: 2;
     flex-grow: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-self: stretch;
-    flex-direction: row;
-    justify-content: space-between;
     padding: 0 15px;
     background-color: $primary;
     color: $light;
+    width:100%;
+  }
+  .main-header-body + .main-header-overlay{
+    position:absolute;
   }
   .main-header-overlay .rs{
     align-self: center;
@@ -101,42 +69,100 @@
   }
 
   .main-header-overlay-text{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: space-between;
     color: $white;
     padding: 12px;
     margin: 0;
+    h1{
+      margin: 0;
+      padding: 0;
+    }
   }
-  /* make a parallax effect for large displays */
+  &.header-dark{
+    .content{
+      color: $white;
+    }
+  }
+
   @include media-breakpoint-up(lg){
-    .main-header-image-wrapper img{
-      position:fixed;
+    .main-header-image-wrapper{
+      z-index: -1; // Required when image is not clipped. Disable when clip-path is supported
+      position:absolute;
+      overflow: hidden;
+      top: 0;
+      left:0;
+      width:100%;
+      bottom:0;
+      padding: 0;
     }
-    &.header-fill {
-      .main-header-spacer, .main-header-body{
-        height: 100vh;
-      }
-      .main-header-image-wrapper img{
-        object-fit:cover;
-        width:100%;
-        height: 100vh;
-        max-height: 100vh;
+    @supports (clip-path: inset(0px 0px 0px 0px)) {
+      // make a parallax effect for large displays 
+      // Old browsers with no basic "clip-path" support are not able to provide a good-enough experience
+      // with any known parallax method, so it's disabled for them
+      // Remember to always test default behavior on IE/Edge
+      .main-header-image-wrapper {
+        z-index: 0; //Disable negative z-index. It doesn't change anything but makes the image right-clip selectable, which is nice.
+        //equivalent to overflow:hidden, but works on position: static;
+        clip-path: inset(0px 0px 0px 0px);
+        img{
+          position: fixed;
+        }
       }
     }
+
     + .section-main-header{
       border-top: 4px solid $dark;
     }
-  }
-  /* but disable it for medium and smaller */
-  @include media-breakpoint-down(md){
-    .main-header-body{
-      width:100%;
-      /* those props are defined in other media-queries and we need to make sure they apply here */
-      padding-left: 15px !important;
-      padding-right: 15px !important;
-      height: auto !important;
+    /* fill is for 100% height header. ultrawide for 3,55 (typ. 3840x1080) ratio */
+    &.header-fill, &.header-ultrawide{
+      .main-header-image-wrapper img{
+        object-fit:cover;
+      }
     }
-    .main-header-overlay, .main-header-overlay-text{
-      font-size: 1.8rem;
+
+    &.header-fill {
+      min-height: calc(100vh - 60px);
+      .main-header-image-wrapper img{
+        min-height: calc(100vh - 60px);
+      }
+    }
+
+    &.header-ultrawide{ /* ultrawide is for 3840x1080 ultra-wide resolutions */
+      // can't just use `height: 100vw * 1080 / 3840;` 
+      // because vw doesn't count the scroll bar's width 
+      // while img's 100% width does so it causes a slightly bad aspect-ratio...
+      //So we must have those little hacks in the following lines...
+      &::before{
+        content: "";
+        z-index: -2;
+        display: block;
+        padding-top: 100% * 1080 / 3840;
+      }
+      .main-header-spacer, .main-header-body{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        bottom:0;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    .main-header-overlay{
+      padding: 7.5px 2px;
+    }
+    .main-header-overlay .main-header-overlay-text, .main-header-overlay .main-header-overlay-text h1{
+      display: inline;
+      font-size: 1.4rem;
       max-width:100%;
+      padding: 0;
     }
     .main-header-spacer{
       display: none;
@@ -146,14 +172,27 @@
       padding: 0;
       max-width:100%;
     }
+    &.header-dark{
+      .content{
+        color: $dark;
+      }
+    }
   }
   @include media-breakpoint-down(sm){
-    .main-header-overlay, .main-header-overlay-text{
+    .main-header-overlay .main-header-overlay-text h1{
       font-size: 1rem;
+      padding: 0 4px;
     }
   }
 }
 
+@include media-breakpoint-up(lg){
+  .img-cover-lg{
+    position: absolute; /*as a consequence, if the other column has no height, it won't be visible...*/
+    object-fit: cover;
+    height: 100%;
+  }
+}
 
 
 .section-tile{

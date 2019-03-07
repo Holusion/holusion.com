@@ -541,6 +541,16 @@ describe(`${target}.`,function(){
            ).to.equal(loc);
            return c_link;
          });
+         it("Check for deprecated classes",async ()=>{
+           await Promise.all([
+             ".main-header-body.full-width",
+             ".main-header-body:not(.container) .container" //ie11 makes text overflow when .container is aplied to children instead of header-body
+            ].map(async(sel)=>{
+            const invalid_elements = await page.$$(sel);
+            expect(invalid_elements, `".${sel}" should not match anything. Found ${invalid_elements.length} results`).to.have.property("length", 0);
+ 
+           }));
+          })
          for (let device of target_devices){
            describe(`on ${device.name}`,function(){
              before(async function(){

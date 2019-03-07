@@ -1,7 +1,14 @@
-<div class="rs" style="{{include.style}}">
-  {% include components/social_icon.html name="facebook" link="https://fr-fr.facebook.com/holusion" invert=include.invert %}
-  {% include components/social_icon.html name="twitter" link="https://twitter.com/holusion" invert=include.invert %}
-  {% include components/social_icon.html name="youtube" link="https://www.youtube.com/channel/UChquBpE1S5zFjUbtZWddZMQ" invert=include.invert %}
-  {% include components/social_icon.html name="linkedin" link="https://www.linkedin.com/company/holusion/" invert=include.invert %}
-  {% include components/social_icon.html name="instagram" link="https://www.instagram.com/holusion_officiel/" invert=include.invert %}
+<div class="rs" style="{{include.style}}">{%-comment-%}
+  Do not insert line breaks to prevent whitespaces inserting additional padding
+  {%-endcomment-%}{%- 
+    include components/social_icon.html name="facebook" link="https://fr-fr.facebook.com/holusion" invert=include.invert
+  -%}{%-
+    include components/social_icon.html name="twitter" link="https://twitter.com/holusion" invert=include.invert
+  -%}{%-
+    include components/social_icon.html name="youtube" link="https://www.youtube.com/channel/UChquBpE1S5zFjUbtZWddZMQ" invert=include.invert
+  -%}{%-
+    include components/social_icon.html name="linkedin" link="https://www.linkedin.com/company/holusion/" invert=include.invert
+  -%}{%-
+    include components/social_icon.html name="instagram" link="https://www.instagram.com/holusion_officiel/" invert=include.invert
+  -%}
 </div>
