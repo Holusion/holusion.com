@@ -237,6 +237,30 @@ describe(`${target}.`,function(){
           });
         });
       })
+      describe(`/${lang}/ UI`,function(){
+        let page;
+        before(async function(){
+          page = await newPage();
+          //In those tests, it's important to have at least
+          // `page.setRequestInterception(true)` somewhere
+          await block(page,["images", "medias", "analytics", "captcha"]);
+          await page.goto(`${href}/${lang}/`);
+        });
+
+        after(async function(){
+          await page.close();
+        });
+        it("Has links to same lang in top navbar",async function(){
+          const nav_links = await page.$$eval("#navbar-collapse-1 .nav-link", links => {
+            return Promise.resolve(links.map(l => l.href));
+          });
+          expect( nav_links).to.be.ok;
+          expect(nav_links).to.have.property("length").above(1);
+          nav_links.forEach(a =>{
+            expect(a).to.match(new RegExp(`/(dev/)?${lang}/`));
+          })
+        });
+      })
       describe(`/${lang}/ contact form validation`,function(){
         let page;
         before(async function(){
