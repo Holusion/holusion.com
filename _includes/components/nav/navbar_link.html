@@ -1,24 +1,23 @@
 
-{% if include.href %}
-  {% assign href = include.href %}
-{% else %}
-  {% capture href %}/{{page.lang}}/{{include.url}}/{% endcapture %}
-{%endif%}
-{% if include.title[page.lang] %}
-  {% assign title = include.title[page.lang] %}
-{% else %}
-  {% assign title = include.title %}
-{% endif %}
-
-{% if page.url contains href %}
+{%- if include.href -%}
+  {%- assign href = include.href -%}
+{%- else -%}
+  {%- capture href %}/{{page.lang}}/{{include.url}}/{% endcapture -%}
+{%- endif -%}
+{%- if include.title[page.lang] -%}
+  {%- assign title = include.title[page.lang] -%}
+{%- else -%}
+  {%- assign title = include.title -%}
+{%- endif -%}
+{%- if page.url contains href -%}
   <li class="{{include.type | default: "nav"}}-item active">
     <a class="{{include.type | default: "nav"}}-link" href="{{href}}" >
       {{title}}
     </a>
     <span class="sr-only">(current)</span>
   </li>
-{% else %}
+{%- else -%}
   <li class="{{include.type | default: "nav"}}-item">
     <a class="{{include.type | default: "nav"}}-link" href="{{href}}">{{title}}</a>
   </li>
-{% endif %}
+{%- endif -%}
