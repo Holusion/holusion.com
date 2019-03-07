@@ -2,14 +2,13 @@
 
 .btn {
   vertical-align: middle;
-  svg { //Ensure svgs are also aligned
-    vertical-align: middle;
-    path:not([fill]) { //Paths should follow currentColor unless fill is set
-      fill: currentColor;
-    }
+}
+.btn svg, svg.icon, .icon svg{ //Ensure svgs are also aligned
+  vertical-align: middle;
+  path:not([fill]) { //Paths should follow currentColor unless fill is set
+    fill: currentColor;
   }
 }
-
 #feedback {
   position: fixed;
   bottom:10%;
@@ -69,10 +68,4 @@
   text-align: center;
   background:white;
   color: #00A1DC;
-}
-.icon{
-  height:20px;
-  width:20px;
-  min-width:56px;
-  display:inline-block;
 }

@@ -1,6 +1,8 @@
-<div class="logo-image col-lg-2 col-sm-4 col-6">
-  <img class="logo-image-front shadow" src="{{include.src}}" alt="{{include.alt}}"/>
+<div class="logo-image col-xl-2 col-lg-3 col-sm-4 col-6">
+  <img class="logo-image-front shadow img-fluid" src="{{include.src}}" alt="{{include.alt}}"/>
   {% if include.hover %}
-  <img class="logo-image-back shadow" src="{{include.hover}}">
+    <div class="logo-image-back shadow">
+      <img class="img-fluid" src="{{include.hover}}">
+    </div>
   {%endif%}
 </div>

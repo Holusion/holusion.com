@@ -29,12 +29,12 @@ properties:
     package: impression pochette
     lettering: gravure sur chaque pyramide
 ---
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
     {% include components/medias/youtube.html embed="slU544PEirs" %}
   </div>
-  <div class="tile-body">
-    <h2 style="padding-top: 30px">Un goodie innovant</h2>
+  <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
+    <h2>Un goodie innovant</h2>
     <p>
       Le<a href="/fr/products/pixel"> Pixel</a>  est une petite pyramide qui diffuse un <b>hologramme à 360°</b>. Il se glisse dans la poche pour en faire profiter votre entourage. C’est le  gadget innovant qu’on a envie de montrer à tout le monde.
     </p>
@@ -42,18 +42,18 @@ properties:
     <p>Le tout de façon <b>très simple</b> : il vous suffit de poser la pyramide sur le smartphone, de la porter à hauteur des yeux et la magie peut commencer !</p>
   </div>
 </section>
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1">
     <img class="img-fluid" src="/static/img/products/pixel.jpg" alt="Le Pixel d'Holusion : une pyramide pour hologrammes mobiles">
   </div>
-  <div class="tile-body">
-    <h2 align="center">Une expérience ludique</h2>
+  <div class="col-lg-6 col-12 order-2">
+    <h2>Une expérience ludique</h2>
     <p>Transformez votre smartphone en mini projecteur d'hologrammes, pour tous les smartphones, Android ou IOS.</p>
     <p>Proposez un affichage novateur pour votre message publicitaire, au format téléphone ou tablette tactile.</p>
   </div>
 </section>
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
     {% asset img/products/pixelplus_tablette_2.jpg
       srcset:width="1920"
       srcset:width="960"
@@ -63,7 +63,7 @@ properties:
       alt="Pixel Plus pour tablettes tactiles iPad ou Android"
     %}
   </div>
-  <div class="tile-body">
+  <div class="col-lg-6 col-12 order-2 order-lg-1">
     <h2>Pour toutes les tailles</h2>
     <p>Un kit complet pour tester les différents modèles :
     </p>
@@ -76,8 +76,8 @@ properties:
     </p>
   </div>
 </section>
-<section class="section-tile">
-  <div class="tile-image-wrapper">
+<section class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1">
     {% asset img/products/pochette_contenu.jpg
       srcset:width="1920"
       srcset:width="960"
@@ -87,7 +87,7 @@ properties:
       alt="Le contenu d'une pochette de Pixel marqué pour holusion"
     %}
   </div>
-  <div class="tile-body">
+  <div class="col-lg-6 col-12 order-2">
     <h2 align="center">Accessible dès maintenant</h2>
     <p>Nous sommes équipés pour traiter des commandes allant de quelques dizaines à plusieurs milliers d'exemplaires.</p>
     <p>Commandez un échantillon en ligne ou contactez-nous pour demander un devis. Vous souhaitez démarcher vos prospects avec ce produit ? présentez-leur notre offre en <a href="/fr/store/kitpixels">kit marque blanche</a>.</p>
@@ -101,41 +101,60 @@ properties:
       <p>Chaque produit Pixel contient tout le nécessaire pour que l'utilisateur puisse visualiser son hologramme en autonomie. Réalisez une série sur mesure, gravée et marquée aux couleurs de la marque ou de l'évènement que vous souhaitez mettre à l'honneur.
       </p>
     </div>
-    <div class="col-lg-4 col-md-6 col-12">
-      {% asset img/products/pochette_pixel_verso.jpg
-        srcset:width="960"
-        srcset:width="430"
-        sizes="(max-width: 992px) 33vw, 100vw"
-        class="img-fluid"
-        alt="Le verso d'une pochette de pixel personnalisée"
-      %}
-      <h3>Pochette personnalisée</h3>
-      <p>Impression monochrome au dos de la pochette</p>
+    <div class="col-lg-4 col-12">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-12">
+          {% asset img/products/pochette_pixel_verso.jpg
+            srcset:width="960"
+            srcset:width="430"
+            sizes="(max-width: 992px) 33vw, 100vw"
+            class="img-fluid"
+            alt="Le verso d'une pochette de pixel personnalisée"
+          %}
+        </div>
+        <div class="col-12 col-md-6 col-lg-12">
+          <h3>Pochette personnalisée</h3>
+          <p>Impression monochrome au dos de la pochette</p>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-12">
-      {% asset img/products/pochette_pixel_recto.jpg
-        srcset:width="1920"
-        srcset:width="960"
-        sizes="(max-width: 992px) 33vw, 100vw"
-        class="img-fluid"
-        alt="Le contenu d'une pochette de Pixel marqué pour holusion"
-      %}
-      <h3>Notice d'utilisation</h3>
-      <p>A vos couleurs et sur mesure. Avec un lien direct vers votre contenu, qu'il soit hébergé sur notre service ou par vos soins</p>
+    <div class="col-lg-4 col-12">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-12">
+          {% asset img/products/pochette_pixel_recto.jpg
+            srcset:width="1920"
+            srcset:width="960"
+            sizes="(max-width: 992px) 33vw, 100vw"
+            class="img-fluid"
+            alt="Le contenu d'une pochette de Pixel marqué pour holusion"
+          %}
+        </div>
+        <div class="col-12 col-md-6 col-lg-12">
+          <h3>Notice d'utilisation</h3>
+          <p>A vos couleurs et sur mesure. Avec un lien direct vers votre contenu, qu'il soit hébergé sur notre service ou par vos soins</p>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-12">
-      {% asset img/products/pixels_gravure.jpg
-        srcset:width="1920"
-        srcset:width="960"
-        sizes="(max-width: 992px) 50vw, 100vw"
-        class="img-fluid"
-        alt="Le contenu d'une pochette de Pixel marqué pour holusion"
-      %}
-      <h3>Sérigraphie</h3>
-      <p>Marquage de la pyramide, pour que vos clients n'oublient pas d'où vient leur cadeau</p>
+    <div class="col-lg-4 col-12">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-12">
+          {% asset img/products/pixels_gravure.jpg
+            srcset:width="1920"
+            srcset:width="960"
+            sizes="(max-width: 992px) 50vw, 100vw"
+            class="img-fluid"
+            alt="Le contenu d'une pochette de Pixel marqué pour holusion"
+          %}
+        </div>
+        <div class="col-12 col-md-6 col-lg-12">
+          <h3>Sérigraphie</h3>
+          <p>Marquage de la pyramide, pour que vos clients n'oublient pas d'où vient leur cadeau</p>  
+        </div>
+      </div>   
     </div>
   </div>
 </section>
+
 <section class="section section-main-header header-fill py-4">
   <div class="main-header-image-wrapper">
     {% asset img/products/kit_pixels_vignette.jpg
@@ -147,19 +166,21 @@ properties:
       alt="Un paquet de kit pixel complet"
     %}
   </div>
-  <div class="container jumbotron bg-white shadow my-4">
-    <div class="row">
-      <div class="col-lg-6 col-md-12  d-flex flex-column justify-content-center">
-        {%include components/animated_svg.html src="/src/pictos/schema_hebergement_pixel.svg"  %}
-      </div>
-      <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
-        <h2>Vos hologrammes</h2>
-          <h3>Transformer</h3>
-            <p>En quelques clics transformez votre vidéo en hologramme sur <a href="https://pixel.holusion.com">pixel.holusion.com</a> </p>
-          <h3>Distribuer</h3>
-            <p>Optimisez votre communication avec une plateforme dédiée, accessible et rapide</p>
-          <h3>Gérer</h3>
-          <p>Ajoutez ou modifez des vidéo en autonomie, surveillez vos métriques d'utilisation et vos statistiques visiteurs</p>
+  <div class="main-header-body container">
+    <div class="content container bg-white shadow my-4 p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12  d-flex flex-column justify-content-center">
+          {%include components/animated_svg.html src="/src/pictos/schema_hebergement_pixel.svg"  %}
+        </div>
+        <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+          <h2>Vos hologrammes</h2>
+            <h3>Transformer</h3>
+              <p>En quelques clics transformez votre vidéo en hologramme sur <a href="https://pixel.holusion.com">pixel.holusion.com</a> </p>
+            <h3>Distribuer</h3>
+              <p>Optimisez votre communication avec une plateforme dédiée, accessible et rapide</p>
+            <h3>Gérer</h3>
+            <p>Ajoutez ou modifez des vidéo en autonomie, surveillez vos métriques d'utilisation et vos statistiques visiteurs</p>
+        </div>
       </div>
     </div>
   </div>

@@ -18,31 +18,48 @@ properties:
     cpu: INTEL Atom J1900
   options:
       transport: flight case or wooden case. Deliver worldwide
-
 ---
 
-<div class="row no-gutters">
-  <div class="col-lg-6 col-md-12">
-    <h2 style="padding-top: 30px">Holographic Showcase</h2>
-    <p>The Iris 32 holographic display provide <b>visibility</b> to your products and projects thanks to its wide holographic showcase in high-definition. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. With its easy content management and interactivity, the IRIS becomes <b>the most appropriate tool </b> for corporate presentation or education</p>
-    <p>It is available worldwide to buy or to rent.</p>
-
-    <h2>Take a lead</h2>
-    <p> The Iris 32 is our best offer for high impact with limited ressources. Its high luminosity and graphical performances make it a powerful tool in <b>an exhibition, a point of sale or a museum</b>.This is why our customers trust us for their key project, such as <a href="https://www.nausicaa.co.uk/" target="_blank">Nausicaa</a>, largest aquarium in Europe, to present fishes from the deep sea or an enginnering school new buildings at  <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a></p>
-
-    <h2>Mapping</h2>
-    <p>By placing a object inside of the showcase, one can make a <b>video mapping</b> on it to enhance this product with holograms. Customization, content enrichment, holographic animation are some of the tools you can use to better showcase your products</p>
+<section id="section-gamme" class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
+    {%asset img/products/iris32_ales.jpg
+      srcset:width="800"
+      srcset:width="400"
+      sizes="(max-width: 992px) 100vw, 50vw"
+      class="img-fluid img-cover-lg"
+      alt="Usage of an Iris32 to show the new construction project in the Mines D'alès"
+    %}
   </div>
+  <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
+      <h2>Holographic Showcase</h2>
+      <p>The Iris 32 holographic display provide <b>visibility</b> to your products and projects thanks to its wide holographic showcase in high-definition. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. With its easy content management and interactivity, the IRIS becomes <b>the most appropriate tool </b> for corporate presentation or education</p>
+      <p>It is available worldwide to buy or to rent.</p>
+  </div>
+</section>
 
-  <div class="col-lg-6 col-md-12">
-    <div style="padding-top: 40px">
+<section id="section-gamme" class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1">
+    <img class="img-fluid img-cover-lg" src="/static/img/products/iris32_quartz.jpg" alt="Iris 32 montrant le siège de Colas en hologramme">
+  </div>
+  <div class="col-lg-6 col-12 order-2 p-4 px-md-2">
+      <h2>Take the lead</h2>
+      <p> The Iris 32 is our best offer for high impact with limited ressources. Its high luminosity and graphical performances make it a powerful tool in <b>an exhibition, a point of sale or a museum</b>.This is why our customers trust us for their key project, such as <a href="https://www.nausicaa.co.uk/" target="_blank">Nausicaa</a>, largest aquarium in Europe, to present fishes from the deep sea or an enginnering school new buildings at  <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a></p>
+  
+  </div>
+</section>
+
+<section id="section-gamme" class="row no-gutters">
+    <div class="col-lg-6 col-12 order-1 order-lg-2">
       {% include components/medias/youtube.html embed="GlQzBthx9JE" %}
     </div>
-  </div>
-</div>
+    <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
+      <h2>Mapping</h2>
+      <p>By placing an object inside of the showcase, one can make a <b>video mapping</b> on it to enhance this product with holograms. Customization, content enrichment, holographic animation are some of the tools you can use to better showcase your products</p>    
+    </div>
+  </section>
 
-<div align="center" style="padding-top: 30px">
-  {%asset img/products/mesures/Iris32.png
+<div align="center" class="p-4">
+  {% asset img/products/mesures/Iris32.png
     srcset:width="1920"
     srcset:width="960"
     class="img-fluid"
@@ -50,5 +67,5 @@ properties:
     style="padding-top: 40px; padding-bottom: 10px;"
     alt="Schematic representation and dimensions of holusion's iris 32"
   %}
-  <h3> Iris 32 </h3>
+  <h3> <b>Iris 32</b> </h3>
 </div>

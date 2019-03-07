@@ -57,8 +57,8 @@ properties:
 
 <section class="section section-main-header  header-fill py-4">
   {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
-  <div class="main-header-body full-width">
-    <div class="content container shadow rounded bg-white py-4">
+  <div class="main-header-body container">
+    <div class="content shadow rounded bg-white py-4">
       <h2 class="text-center">Lumineux</h2>
       <div class="row">
         <div class="col-12 col-md-6">
@@ -77,19 +77,19 @@ properties:
   </div>
 </section>
 
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
+<section id="section-gamme" class="row no-gutters">
+  <div class="col-lg-6 col-12 order-1 order-lg-2">
     {% include components/medias/youtube.html embed="oqddzF35d9w" %}
   </div>
-  <div class="tile-body tile-body--main">
+  <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
     <h2>Modulaire</h2>
     <p>L'Iris 75" est naturellement customisable et peut être utilisé en affichage <b>portrait</b> ou <b>paysage</b>.</p>
     <p>Il est proposé dans une large gamme de finitions. Du métal brut intégrable aux habillages Textiles ou rigides ; unis ou imprimés.</p>
   </div>
 </section>
 
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
+<section id="section-gamme" class="row no-gutters">
+  <div class="col-lg-6 col-12">
     {%asset img/products/mesures/Iris75.png
       srcset:width="1920"
       srcset:width="960"
@@ -98,7 +98,7 @@ properties:
       alt="Schéma de dimensions de l'iris 75 pouces"
     %}
   </div>
-  <div class="tile-body tile-body--main">
+  <div class="col-lg-6 col-12 p-4 px-md-2">
     <h2>Précis</h2>
     <p>
       Sa résolution <b>UltraHD</b> permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
@@ -109,8 +109,8 @@ properties:
 
 <section class="section section-main-header  header-fill py-4"> 
   {%include components/header_image.html image="img/products/iris75_exterieur_BIM_detail_1440p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
-  <div class="main-header-body full-width">
-    <div class="container jumbotron bg-white shadow">
+  <div class="main-header-body container">
+    <div class="jumbotron bg-white shadow">
       <div class="center-block">
         {% asset img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
         <div class="text-muted text-center">
