@@ -19,18 +19,16 @@ layout: front_page
   </div>
 </div>
 
-<div id="dev-layout" class="row no-gutters">
-
-  <div class="col-xl-2 col-lg-3 col-12 navbar-expand-lg navbar-light content-bar" >
-    <nav class="collapse bg-faded navbar-collapse flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
-      {% include utils/make_pages.html %}
-      {% assign categories = "toolbox,content" |split: "," %}
-      {% devnav list=site.content_dev %}
-    </nav>
-  </div>
-  <div class="col">
-    <main id="content" class="container-fluid">
-      {{ content }}
-    </main>
-  </div>
+<div id="dev-layout" class="sidebar-layout">
+  <nav class="content-bar bg-faded  navbar-light navbar-expand-lg"  >
+    <div class="collapse navbar-collapse flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
+        {% include utils/make_pages.html %}
+        {% assign categories = "toolbox,content" |split: "," %}
+        {% devnav list=site.content_dev %}
+    </div>
+    
+  </nav>
+  <main id="content" class="content container-fluid">
+    {{ content }}
+  </main>
 </div>
