@@ -36,9 +36,9 @@ Redirect 301 	/fr/posts/2016-12-08_kiabi_popupstore /fr/posts/2016-12-08-kiabi_p
 Redirect 301 /fr/posts/2017-06-23-Salon_du_bourget_Thal%C3%A8s /fr/posts/2017-06-23-Salon_du_bourget_Thales
 Redirect 301 /fr/posts/2018-06-04_Viva_Technology_2018 /fr/posts/2018-06-04-Viva_Technology_2018
 Redirect 301 /en/posts/2018-06-04_Viva_Technology_2018 /en/posts/2018-06-04-Viva_Technology_2018
-
 Redirect 301 /en/products/iris /en/products/iris75
 Redirect 301 /fr/products/iris /fr/products/iris75
+Redirect 301 /sites/default/files/holusion_logo.png /static/img/logo_holusion_web_HD.png
 
 Redirect 301 /infoatelier https://goo.gl/forms/cTC9k0ZI1dy0Q6Y32
 
