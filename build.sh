@@ -165,7 +165,7 @@ if ${make_check} ;then
     wget -O "scripts/phpunit" https://phar.phpunit.de/phpunit-6.phar
     chmod +x "scripts/phpunit"
   fi
-  ./scripts/phpunit scripts/test_contact.php
+  find ./scripts/ -iname "*.php" -exec ./scripts/phpunit {} \;
 fi
 
 

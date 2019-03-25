@@ -1,19 +1,20 @@
-
-
-{% comment %} output nothing when no alt page is available {%endcomment%}
+{%- comment -%} 
+  output nothing when no alt page is available 
+  Optionally uses change_preferred_language(), defined along the gtag function in the google analytics block, only if cookies are accepted
+{%- endcomment -%}
 {% if page.alt_url  %}
-<li class="{{include.type}}">
+<li class="{{include.type}}" >
   <a href="" class="dropdown-toggle {{include.classes}}" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
     {{page.lang}}
     <span class="caret"></span>
     <span class="sr-only">(change language)</span>
   </a>
   <div class="dropdown-menu language-picker" role="menu">
-    <a class="dropdown-item" href="{{page.url}}" onclick="(function(){localStorage.setItem('userlanguage','{{page.lang}}')}())" >
+    <a class="dropdown-item" href="{{page.url}}" onclick="change_preferred_language('{{page.lang}}')" >
       {{page.lang}}
     </a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="{{page.alt_url}}" onclick="(function(){localStorage.setItem('userlanguage','{{page.alt_lang}}')}())">
+    <a class="dropdown-item" href="{{page.alt_url}}" onclick="change_preferred_language('{{page.alt_lang}}')">
       {{page.alt_lang}}
     </a>
   </div>
