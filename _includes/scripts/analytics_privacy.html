@@ -11,6 +11,15 @@
   //It will just never get sent if cookies are refused
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  
+  function change_preferred_language(lang){
+    gtag('event', 'click', {event_category: 'lang', event_label: lang});
+    if(is_consented){
+      var d = new Date();
+      d.setTime(d.getTime() + (360*24*60*60*1000));
+      document.cookie = 'lang='+lang+'; expires='+d.toUTCString()+'; path=/;'
+    }
+  }
 
   if (is_denied) {
     console.log("disabling gtag because cookieconsent_status is set to dismiss");
