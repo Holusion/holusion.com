@@ -76,3 +76,15 @@ lettering:
   icon: src/pictos/properties/short_text.svg
   fr: gravure
   en: lettering
+NFC:
+  icon: src/pictos/properties/nfc.svg
+  fr: nfc
+  en: nfc
+Wifi:
+  icon: src/pictos/properties/wifi.svg
+  fr: wifi
+  en: wifi
+Arduino:
+  icon: src/pictos/properties/arduino.svg
+  fr: arduino
+  en: arduino
