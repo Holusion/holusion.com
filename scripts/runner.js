@@ -515,13 +515,9 @@ describe(`${target}.`,function(){
     });
 
   }); //END of localized tests
-  /**
-   * End of standard tests
-   */
-   if (!is_extended) return;
 
    /** EXTENDED TESTS **/
-   describe(`(EXTENDED) sitemap.`,function(){
+   describe(`sitemap.`,function(){
      const sitemap = parseString(fs.readFileSync(path.join(local_site_files,"sitemap.xml"), 'utf8'));
      it("have a urlset and many children",function(done){
        //Perform basic validation on sitemap
@@ -530,20 +526,29 @@ describe(`${target}.`,function(){
        done()
      });
 
-     let locations = sitemap.root.children
+     const locations = sitemap.root.children
      .map((node)=>{
        return node.children.find((child)=>{
          return child.name == "loc";
        }).content
      })
      .filter(n => n) //remove any undefined content
-     .filter((loc)=>{//remove pdf files
-       return ! /\.(pdf|xml)$/.test(loc)
-     })
-     //on local target, delete https://some_domain_name/ prefix from URL
-     .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc)
-     // Perform tests for EVERY location
-     for (let loc of locations){
+     .map((loc)=> (target== "local")?loc.replace(/^https?:\/\/[^\/]+/, ""):loc);
+     
+    it("Have no PDF or XML files",function(){
+      const filtered_locs = locations.filter((loc)=>{ //remove pdf files
+        return ! /\.(pdf|xml)$/.test(loc);
+      });
+      expect(filtered_locs).to.deep.equal(locations);
+    });
+    /**
+     * End of standard tests
+     */
+    if (!is_extended) return;
+    // Perform load tests for EVERY location (can be quite long...)
+    
+    describe("(EXTENDED)",function(){
+      for (let loc of locations){
         describe(`page ${loc}`,function(){
           let page;
           let ln = loc;
@@ -588,5 +593,6 @@ describe(`${target}.`,function(){
           });
         });
       }
-   });
+    })
+  });
 });
