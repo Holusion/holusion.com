@@ -98,6 +98,11 @@ defaults:
       path: "_content_dev/en"
     values:
       lang: "en"
+  -
+    scope:
+      path: "static/**/*.pdf"
+    values:
+      sitemap: false
 
 
 # most default config is made in make_collections plugin because this mechanism is too restrictive
