@@ -51,6 +51,9 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) {
   $best_locale = get_best_locale($_SERVER['HTTP_ACCEPT_LANGUAGE'], $_COOKIE['lang']);
 
   #don't check if file exists, it should.
+  #set lang cookie to selected locale
+  setcookie("lang", $best_locale);
+
   header('Status: 301 Moved Permanently', false, 301);
   header('Location: https://'.$_SERVER['HTTP_HOST'].'/'.$best_locale.'/');
   header('Vary: Accept-Language, Cookie');
