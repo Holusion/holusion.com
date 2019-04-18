@@ -1,13 +1,12 @@
 <div id="map" style="min-height:250px;height: calc(100% - 45px);"></div>
     <script defer>
       function initMap() {
-        var markerCoord = {lat: 50.7005965, lng: 3.1551021};
-        var centerCoord = {lat: 50.4, lng:  markerCoord.lng};
+        var centerCoord = {lat: 48, lng:  3.14};
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
           center: centerCoord,
           scrollwheel: false,
-          zoom: 6,
+          zoom: 5,
           styles: [
             {featureType: "water", stylers:[{color:"#005380"}]},
             { featureType:"administrative.country", elementType:"geometry.stroke", stylers:[{color: "#337ab7"}]},
@@ -18,17 +17,26 @@
             { featureType:"administrative", elementType: "labels.text.fill", stylers:[{color:"#103040"}]}
           ]
         });
+        
+        function newMarker(coordinates, title, link, marker="{{site.url}}/static/img/icons/location_marker.svg"){
+          var marker = new google.maps.Marker({
+            map: map,
+            position: coordinates,
+            title: title,
+            icon: marker
+          });
+          if(link){
+            marker.addListener('click', function() {
+              window.open(link, "_blank");
+            });
+          }
+        }
 
-        var marker = new google.maps.Marker({
-          map: map,
-          position: markerCoord,
-          title: 'holusion, Plaine Images - Tourcoing (France)',
-          icon: "{{site.url}}/static/img/icons/location_marker.svg"
-        });
-
-        marker.addListener('click', function() {
-          window.open('https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJX7_iud8ow0cRKwrMErNTtGA&destination={{"99A Bvd Constantin Descat 59200 Tourcoing"| uri_escape}}', "_blank");
-        });
+        newMarker({lat: 50.7011311, lng: 3.1562374 }, 'Holusion, Plaine Images - Tourcoing (France)', 'https://www.google.com/maps/place/Holusion/@50.7011311,3.1562374,17z/', "{{site.url}}/static/img/icons/location_marker_orange.svg");
+        newMarker({lat: 46.6437708, lng: -1.4154018}, 'Gustav by Cocktail, {{site.data.strings.partner-and-reseller[page.lang]}}','https://www.google.com/maps/place/Gustav+by+Cocktail/@46.6437708,-1.4154018,17z/');
+        newMarker({lat: 48.9026579, lng: 2.3276241 }, '4D Motion, {{site.data.strings.partner-and-reseller[page.lang]}}', 'https://www.google.com/maps/place/4D+Motion/@48.9026579,2.3276241,17z/');
+        newMarker({lat: 45.762307 , lng: 4.8548433 }, 'Hyliad distribution, {{site.data.strings.partner-and-reseller[page.lang]}}', 'https://www.google.com/maps/place/HYLIAD+Distribution/@45.762307,4.8548433,17z/');
+        
       }
 
     </script>
