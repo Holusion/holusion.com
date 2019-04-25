@@ -3,11 +3,10 @@ title: Boutique en ligne
 layout: store
 ---
 {% include utils/make_store_items.html %}
-<div class="container">
-  <h1 align="center">Bienvenue dans la boutique en ligne Holusion</h1>
-  <div class="row">
-    {% for item in store_items %}
-      {% include components/post_thumbnail.html content=item %}
-    {% endfor %}
-  </div>
+
+<h1 align="center">Bienvenue dans la boutique en ligne Holusion</h1>
+<div class="row  no-gutters">
+  {% for item in store_items %}
+    {% include components/card.html content=item classes="col-xl-4 col-lg-4 col-sm-6 col-12 py-1 p-sm-1" %}
+  {% endfor %}
 </div>

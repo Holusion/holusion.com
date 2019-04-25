@@ -76,7 +76,7 @@ function prettySet(slides, prop){
   let map = []
   for (let dim of s.values()) {
     let srcs = slides.filter(slide => slide[prop] == dim).map(slide => slide.src);
-    map.push(`${dim} : ${srcs.join(", ")}`);
+    map.push(` - ${srcs.join("\n - ")} \n\thave a ${prop} of ${dim}`);
   }
   return map
 }
@@ -90,7 +90,7 @@ async function getImgSize(img){
   return { src, width, height, ok};
 }
 
-async function force16by9(cells){
+async function forceSameRatio(cells){
   let images = await Promise.all(cells.map(async (cell)=>{
     return await getImgSize(await cell.$("IMG"));
   }));
@@ -99,14 +99,15 @@ async function force16by9(cells){
     expect(img.ok, `${img.src} is not OK (probably: does not exists)`).to.be.true;
   });
   //console.log(images);
+
   const ratios = prettySet(images.map(img=> {
     let ratio = img.width/img.height;
     ratio = Math.trunc(ratio*10)/10;
     return Object.assign(img, { ratio })
   }), "ratio");
   // allow a length of 1.
-  expect(ratios, `Have non-unique ratio : \n\t${ratios.join("\n\t")}`).to.have.property("length", 1);
-  return images;
+  expect(ratios, `Have non-unique ratio : \n${ratios.join("\n")}`).to.have.property("length", 1);
+  return images; 
 }
 
 async function getThumbnailLinks(cells){
@@ -348,7 +349,7 @@ describe(`${target}.`,function(){
           storePage = await newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
-          thumb_cells = await storePage.$$(".thumbnail-cell");
+          thumb_cells = await storePage.$$("[data-test=card]");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
             let a = await cell.$("A");
             let handle = await a.getProperty("href");
@@ -374,8 +375,8 @@ describe(`${target}.`,function(){
         it(`has some thumbnails`,async ()=>{
           expect(thumb_cells).to.have.property("length").above(MIN_PRODUCTS_NUMBER); //arbitrary "good" number
         });
-        it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          return await force16by9(thumb_cells);
+        it(`thumbnails have same aspect ratio`, async ()=>{
+          return await forceSameRatio(thumb_cells);
         });
         it("links to products are absolute",function(){
           expect(links).to.have.property("length").above(MIN_PRODUCTS_NUMBER);
@@ -429,7 +430,7 @@ describe(`${target}.`,function(){
           storePage = await newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
-            thumb_cells = await storePage.$$(".thumbnail-cell");
+            thumb_cells = await storePage.$$("[data-test=card]");
           });
         after(async ()=>{
           await storePage.close();
@@ -437,11 +438,11 @@ describe(`${target}.`,function(){
             cell.dispose();
           }
         });
-        it(`has thumbnails`,()=>{
+        it(`has cards`,()=>{
           expect(thumb_cells).to.have.property("length").above(1);
         })
-        it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          return await force16by9(thumb_cells);
+        it(`cards have unique aspect ratio`, async ()=>{
+          return await forceSameRatio(thumb_cells);
         });
       })
       describe(`GET /${lang}/products/`,function(){
@@ -453,8 +454,7 @@ describe(`${target}.`,function(){
           storePage = await newPage();
           await block(storePage, ["medias", "analytics", "captcha"]);
           await storePage.goto(`${href}/${lang}/products/`,{timeout:10000});
-          thumb_cells = await storePage.$$(".thumbnail-cell");
-          thumb_cells.push(...(await storePage.$$(".card")));
+          thumb_cells = await storePage.$$("[data-test=card]");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
             let a = await cell.$("A");
             let handle = await a.getProperty("href");
@@ -473,8 +473,8 @@ describe(`${target}.`,function(){
         it(`has thumbnails`,()=>{
           expect(thumb_cells).to.have.property("length").above(1);
         })
-        it(`thumbnails have 16:9 aspect ratio`, async ()=>{
-          return await force16by9(thumb_cells)
+        it(`thumbnails have same aspect ratio`, async ()=>{
+          return await forceSameRatio(thumb_cells)
         });
         describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
           //We don't know in advance the size of our array
@@ -505,7 +505,7 @@ describe(`${target}.`,function(){
                 expect(slides,
                   `have unreasonable carousel length in ${links[i]}`
                 ).to.have.property("length").above(1).below(10);
-                await force16by9(slides);
+                await forceSameRatio(slides);
               });
               //*/
             });
