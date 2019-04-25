@@ -1,0 +1,57 @@
+{% if include.content %}
+  {% assign content = include.content %}
+{% else %}
+  {% assign content = include %}
+{% endif %}
+
+{%comment%}
+    Two types are provided :
+    - thumbnails
+    - cards
+
+    Thumbnails are compact 16:9 images with on-hover overlay effect designed to be used in bootstrap grid system
+
+    Cards are more flexible and meant to be included in a "card-group" or "card-deck" container
+    http://getbootstrap.com/docs/4.1/components/card/
+{%endcomment%}
+
+{%if include.classes %}
+  {% assign classes = include.classes %}
+{% else %}
+  {% assign classes = "col-lg-3 col-md-4 col-sm-6 col-12" %}
+{% endif %}
+{%capture alt_text %}{%if content.abstract%}{{content.abstract}}{%else%}{{content.title}}{%endif%}{%endcapture%}
+
+<div class="{{classes}}" role="listitem" aria-label="{{content.title}}">
+  <div class="card shadow-sm border-primary" data-test="card" style="min-height:100%">
+    {% if content.image %}
+      <a {%if content.url %}href="{{content.url}}"{% endif %} class="card-img-top-wrap">
+      {% if assets[content.image] %}
+        {% asset "{{content.image}}"
+          srcset:width="800"
+          srcset:width="400"
+          sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw"
+          class="card-img-top"
+          title="{{content.title}}"
+          alt="{{alt_text}}"
+        %}
+      {% else %}
+        <img class="card-img-top" src="{{content.image|default: "/static/img/posts/default.jpg"}}"
+          {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+      {% endif %}
+      </a>
+    {% endif %}
+    <a href="{{content.url}}" class="card-header bg-primary text-light">
+        {{content.title}}
+    </a>
+    <div class="card-body text-left">
+      <p class="card-text">{{content.abstract}}</p>
+    </div>
+    <div class="card-footer text-right">
+      <a href="{{content.url}}" class="card-link text-secondary">
+        {{content.action| default:site.data.strings["read-more"][page.lang] }}
+      </a>
+    </div>
+  </div>
+</div>
+

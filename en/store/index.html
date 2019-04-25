@@ -3,11 +3,9 @@ title: Online store for holographic devices
 layout: store
 ---
 {% include utils/make_store_items.html %}
-<div class="container">
-  <h1 align="center">Welcome to Holusion's web store</h1>
-  <div class="row">
-    {% for item in store_items %}
-      {% include components/post_thumbnail.html content=item %}
-    {% endfor %}
-  </div>
+<h1 align="center">Welcome to Holusion's web store</h1>
+<div class="row no-gutters">
+  {% for item in store_items %}
+    {% include components/card.html content=item %}
+  {% endfor %}
 </div>
