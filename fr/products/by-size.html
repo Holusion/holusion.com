@@ -25,19 +25,23 @@ abstract: Affichages holographiques commercialisés en vente directe ou en locat
     Tous les cas d'utilisation de l'hologramme sont possibles; comme une installation dans un musée ou une exposition, la location avec livraison clé-en-main pour un salon ou la fabrication en masse pour un déploiement commercial. Bien d'autres usages sont encore à écrire et à découvrir.
   </p>
   <div class="m-auto">
-    <a class="btn btn-primary active" aria-pressed="true" href="/fr/products/">
+    <a class="btn btn-primary" href="/fr/products/">
       Par photo
     </a>
-    <a class="btn btn-primary" href="/fr/products/by-size">
+    <a class="btn btn-primary active" aria-pressed="true" href="/fr/products/by-size">
       Par schéma
     </a>
   </div>
 </div>
+
 <div>
   <div class="row no-gutters">
   {%- for product in site.products_items[page.lang] -%}
-    {% include components/card.html 
-      content=product 
+    {% include components/card.html
+      image=product.sketch
+      title=product.title
+      url=product.url
+      abstract=product.abstract
       classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1" 
     %}
   {%- endfor -%}

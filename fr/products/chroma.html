@@ -3,15 +3,9 @@ title: Chroma
 image: img/products/chroma_vignette.jpg
 abstract: Une nouvelle génération d'affichage transparent.
 rank: 6
-slides:
-  -
-    image: /static/img/products/chroma_maquette.jpg
-  -
-    image: /static/img/products/chroma_1.jpg
-  -
-    image: /static/img/products/chroma_3.jpg
 header: Expérience créative
 picto: /static/img/products/chroma_picto.png
+sketch: img/products/mesures/chroma.jpg
 ecommerce: false
 tags: chroma
 properties:
@@ -45,4 +39,10 @@ properties:
   </div>
 </div>
 
-<img style="padding-top: 30px" alt="Dimensions du Chroma" class="img-fluid" src="/static/img/products/chroma_dimensions.jpg"/>
+{%asset img/products/mesures/chroma.jpg
+  srcset:width="1920"
+  srcset:width="960"
+  class="img-fluid"
+  sizes="(min-width: 1200px) 1200px, 100vw"
+  alt="Schéma de dimensions du chroma holusion"
+%}
