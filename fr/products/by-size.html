@@ -32,11 +32,13 @@ abstract: Affichages holographiques commercialisés en vente directe ou en locat
       Par schéma
     </a>
   </div>
+  <div>Tous nos produits, classés par taille croissante</div>
 </div>
 
 <div>
   <div class="row no-gutters">
-  {%- for product in site.products_items[page.lang] -%}
+  {% assign products_by_size = site.products_items[page.lang] | sort: "diagonal" %}
+  {%- for product in  products_by_size -%}
     {% include components/card.html
       image=product.sketch
       title=product.title
