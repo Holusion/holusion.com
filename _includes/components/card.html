@@ -4,16 +4,6 @@
   {% assign content = include %}
 {% endif %}
 
-{%comment%}
-    Two types are provided :
-    - thumbnails
-    - cards
-
-    Thumbnails are compact 16:9 images with on-hover overlay effect designed to be used in bootstrap grid system
-
-    Cards are more flexible and meant to be included in a "card-group" or "card-deck" container
-    http://getbootstrap.com/docs/4.1/components/card/
-{%endcomment%}
 
 {%if include.classes %}
   {% assign classes = include.classes %}
@@ -24,9 +14,8 @@
 
 <div class="{{classes}}" role="listitem" aria-label="{{content.title}}">
   <div class="card shadow-sm border-primary" data-test="card" style="min-height:100%">
-    {% if content.image %}
-      <a {%if content.url %}href="{{content.url}}"{% endif %} class="card-img-top-wrap">
-      {% if assets[content.image] %}
+    <a {%if content.url %}href="{{content.url}}"{% endif %} class="card-img-top-wrap"></a>
+      {%- if content.image and assets[content.image] -%}
         {% asset "{{content.image}}"
           srcset:width="800"
           srcset:width="400"
@@ -35,12 +24,11 @@
           title="{{content.title}}"
           alt="{{alt_text}}"
         %}
-      {% else %}
+      {%- else -%}
         <img class="card-img-top" src="{{content.image|default: "/static/img/posts/default.jpg"}}"
           {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
-      {% endif %}
-      </a>
-    {% endif %}
+      {%- endif -%}
+    </a>
     <a href="{{content.url}}" class="card-header bg-primary text-light">
         {{content.title}}
     </a>
