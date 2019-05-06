@@ -141,7 +141,7 @@ footer #contact-bottom{
       border-left: 1px solid rgba(5,50,65,0.125);
     }
   }
-  @include media-breakpoint-up(xl){
+  @media screen and (min-width:1700px) {
     nav:not(.toggled) + main.content{  
       margin-right: $sidebar_width + 1;
     }
