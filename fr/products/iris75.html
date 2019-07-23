@@ -88,42 +88,57 @@ properties:
   </div>
 </section>
 
-<section id="section-gamme" class="row no-gutters p-4 px-md-4">
-  <div class="col-lg-6 col-12">
-    {%asset img/products/mesures/Iris75.png
+
+
+<section class="section section-main-header header-fill py-4">
+
+  <div class="main-header-image-wrapper">
+    {% asset img/posts/2019_Nacarat/iris75_rendu_shake.jpg
+      srcset:width="1920"
       srcset:width="1920"
       srcset:width="960"
-      sizes="(max-width: 992px) 100vw, 50vw"
+      sizes="100vw"
       class="img-fluid"
-      alt="Schéma de dimensions de l'iris 75 pouces"
-    %}
-  </div>
-  <div class="col-lg-6 col-12 p-4 px-md-2 p-4 px-md-4">
-    <h2>Précis</h2>
-    <p>
-      Sa résolution <b>UltraHD</b> permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
-    </p>
+      alt="Iris 75 hologram"
+      %}
+    </div>
 
-  </div>
-</section>
+    <div class="main-header-body container jumbotron bg-white shadow my-4">
 
-<section id="section-gamme" class="row no-gutters p-4 px-md-4">
-  <div class="col-lg-6 col-12">
-    <h2>Orientable</h2>
-    <p>
-      Choisissez l'orientation de votre Iris 75". <b>Horizontal</b> pour l'inauguration officielle de votre bâtiments ou une présentation instutionelle de votre dernière innovation, <b>vertical</b> pour présenter une personne en taille réelle réalisant un discours ou pour de l'accueil sur un salon, optez pour la configuration la mieux adaptée.
-    </p>
-  </div>
-  <div class="col-lg-6 col-12">
-    {%asset img/products/mesures/Iris75V.png
-      srcset:width="1920"
-      srcset:width="960"
-      sizes="(max-width: 992px) 100vw, 50vw"
-      class="img-fluid"
-      alt="Schéma de dimensions de l'iris 75 pouces vertical"
-    %}
-  </div>
-</section>
+      <div id="section-gamme" class="row no-gutters p-4">
+        <div class="col-lg-6 col-12">
+          {%asset img/products/mesures/Iris75.png
+            srcset:width="1920"
+            srcset:width="960"
+            sizes="(max-width: 992px) 100vw, 50vw"
+            class="img-fluid"
+            alt="Schema des dimensions du generateur d'hologramme iris 75 horizontal"
+            %}
+          </div>
+          <div class="col-lg-6 col-12 p-4 px-md-2">
+            <h2>Précis</h2>
+            <p>Sa résolution <b>UltraHD</b> permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).</p>
+          </div>
+        </div>
+        <div id="section-gamme" class="row no-gutters p-4 px-md-4">
+          <div class="col-lg-6 col-12">
+            <h2>Orientable</h2>
+            <p>
+              Choisissez l'orientation de votre Iris 75". <b>Horizontal</b> pour l'inauguration officielle de votre bâtiments ou une présentation instutionelle de votre dernière innovation, <b>vertical</b> pour présenter une personne en taille réelle réalisant un discours ou pour de l'accueil sur un salon, optez pour la configuration la mieux adaptée.
+            </p>
+          </div>
+          <div class="col-lg-6 col-12">
+            {%asset img/products/mesures/Iris75V.png
+              srcset:width="1920"
+              srcset:width="960"
+              sizes="(max-width: 992px) 100vw, 50vw"
+              class="img-fluid"
+              alt="Schema des dimensions du generateur d'hologramme iris 75 vertical"
+              %}
+            </div>
+          </div>
+        </div>
+      </section>
 
 <section class="section section-main-header  header-fill py-4">
   {%include components/header_image.html image="img/products/iris75_exterieur_BIM_detail_1440p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
