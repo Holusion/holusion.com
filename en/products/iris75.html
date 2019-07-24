@@ -2,16 +2,16 @@
 abstract: XXL Holographic display for life sized projects.
 header: Holographic showcase
 properties:
-  characteristics:
-    power: 650W (screen)
-  computing:
-    cpu: project-dependant
+characteristics:
+power: 650W (screen)
+computing:
+cpu: project-dependant
 ---
 
 <section class="section section-main-header header-fill">
-    {%include components/header_image.html image="img/products/iris75_chaufferie.jpg" alt="Outside photo of the Iris 75 with an hologram in broad daylight " %}
+  {%include components/header_image.html image="img/products/iris75_chaufferie.jpg" alt="Outside photo of the Iris 75 with an hologram in broad daylight " %}
 
-   <div class="main-header-body body-right">
+  <div class="main-header-body body-right">
     <div class="content shadow rounded bg-white rounded p-md-4">
       <h2 style="padding-top: 30px">Impacting</h2>
       <p>
@@ -31,14 +31,14 @@ properties:
   <div class="main-header-body container">
     <div class="content shadow rounded bg-white py-4">
       <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 p-4">
           <h2>Bright</h2>
           <p>
             The Iris 75" is fitted with a <b>very high brightness</b> screen to be able to display high quality holograms even in outdoor venues.
           </p>
 
         </div>
-        <div class="col">
+        <div class="col p-4">
           {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
         </div>
       </div>
@@ -47,8 +47,8 @@ properties:
 </section>
 
 
-<section id="section-gamme" class="row no-gutters">
-  <div class="col-lg-6 col-12 order-1 order-lg-2">
+<section id="section-gamme" class="row no-gutters p-4">
+  <div class="col-lg-6 col-12 order-1 order-lg-2 p-4">
     {% include components/medias/youtube.html embed="oqddzF35d9w" %}
   </div>
   <div class="col-lg-6 col-12 order-2 order-lg-1 p-4 px-md-2">
@@ -58,18 +58,70 @@ properties:
   </div>
 </section>
 
-<section id="section-gamme" class="row no-gutters">
-  <div class="col-lg-6 col-12">
-    {%asset img/products/mesures/Iris75.png
+
+
+</section>
+
+<section class="section section-main-header header-fill py-4">
+
+  <div class="main-header-image-wrapper">
+    {% asset img/posts/2019_Nacarat/iris75_rendu_shake.jpg
+      srcset:width="1920"
       srcset:width="1920"
       srcset:width="960"
-      sizes="(max-width: 992px) 100vw, 50vw"
+      sizes="100vw"
       class="img-fluid"
-      alt="Dimension schematics of a 75 inch iris"
-    %}
-  </div>
-  <div class="col-lg-6 col-12 p-4 px-md-2">
-    <h2>Precise</h2>
-    <p>Its size and quality give you the opportunity to display content with <b>precision</b>. Don't let any detail left on technical ou educative presentations. <a href="/en/usages/bim">Real-estate</a> is a major player for this technology as it allows them to display 3D model of building very easily</p>
-  </div>
-</section>
+      alt="Iris 75 hologram"
+      %}
+    </div>
+
+    <div class="main-header-body container jumbotron bg-white shadow my-4">
+
+      <div id="section-gamme" class="row no-gutters p-4">
+        <div class="col-lg-6 col-12">
+          {%asset img/products/mesures/Iris75.png
+            srcset:width="1920"
+            srcset:width="960"
+            sizes="(max-width: 992px) 100vw, 50vw"
+            class="img-fluid"
+            alt="Dimension schematics of a 75 inches iris"
+            %}
+          </div>
+          <div class="col-lg-6 col-12 p-4 px-md-2">
+            <h2>Precise</h2>
+            <p>Its size and quality give you the opportunity to display content with <b>precision</b>. Don't let any detail left on technical ou educative presentations. <a href="/en/usages/bim">Real-estate</a> is a major player for this technology as it allows them to display 3D model of building very easily</p>
+          </div>
+        </div>
+        <div id="section-gamme" class="row no-gutters p-4 px-md-4">
+          <div class="col-lg-6 col-12">
+            <h2>Orientable</h2>
+            <p>
+              Chose the orientation of your Iris 75". <b>Horizontal</b> for official inauguration of your buildings or your last innovation institutional presentation, <b>vertical</b> for presenting a real sized person making a speech or for your event welcoming, opt for the well adapted configuration.
+            </p>
+          </div>
+          <div class="col-lg-6 col-12">
+            {%asset img/products/mesures/Iris75V.png
+              srcset:width="1920"
+              srcset:width="960"
+              sizes="(max-width: 992px) 100vw, 50vw"
+              class="img-fluid"
+              alt="Dimensions schematics of a vertical 75 inches Iris"
+              %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-main-header  header-fill py-4">
+        {%include components/header_image.html image="img/products/iris75_exterieur_BIM_detail_1440p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+        <div class="main-header-body container">
+          <div class="jumbotron bg-white shadow">
+            <div class="center-block">
+              {% asset img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
+              <div class="text-muted text-center">
+                Dimension of the covering of the Iris 75 horiztonal
+              </div>
+            </div>
+          </div>
+          </div>
+      </section>
