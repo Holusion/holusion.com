@@ -19,6 +19,9 @@ store:
 dev:
   fr: "Développeurs"
   en: "Documentation"
+interactivity:
+  fr: "Interactivité"
+  en: "Interactivity"
 cgv:
   fr: "Conditions générales de vente"
   en: "Terms and conditions"

@@ -80,7 +80,7 @@
             {% include components/nav/navbar_link.html href=dev_url title=site.data.sections.dev %}
             {% include components/nav/navbar_link.html url='about' title=site.data.sections.about %}
             {% include components/nav/navbar_link.html url='products' title=site.data.sections.products %}
-            {% include components/nav/navbar_link.html url='usages' title=site.data.sections.usages %}
+            {% include components/nav/navbar_link.html url='interaction' title=site.data.sections.interactivity %}
             {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
             {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
             {% include components/language_picker.html type="nav-item dropdown" classes="nav-link" %}
@@ -92,19 +92,19 @@
 
   <!-- Page Content -->
     {{ content }}
-  
+
   <!-- Footer -->
   <footer class="mt-5 bg-dark text-white">
     {% comment %} contact-form is position:fixed and will not interfere int the layout {%endcomment%}
     {% include components/contact_form.html %}
-  
+
     <section id="contact-bottom" class="bg-info text-white">
       <div class="container">
           {{site.data.strings["need-help"][page.lang]}} ?
           <a id="navbar-contact-button" class="btn btn-outline-secondary text-white font-weight-bold" style="cursor:pointer" onclick='displayContactForm()'>{{site.data.strings["contact-us"][page.lang]}}</a>
       </div>
     </section>
-  
+
     <nav id="navbar-bottom" role="navigation"  class="navbar navbar-dark text-light p-2">
       <div class="row w-100">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
@@ -170,12 +170,12 @@
             {% include components/language_picker.html type="dropup" %}
         </ul>
       </div>
-  
+
       <div class="col-12 col-xl-12 order-4 text-center">
         99A bvd Descat, 59200 Tourcoing - France
       </div>
-  
+
     </section>
-  </footer>  
+  </footer>
 </body>
 </html>
