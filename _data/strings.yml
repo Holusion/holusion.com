@@ -101,8 +101,8 @@ return-policy:
   fr: Politique de retour
   en: Return policy
 return-policy-text:
-  fr: "Politique de retour sur Holusion.com : Si vous n'êtes pas satisfait d'un produit que vous avez commandé auprès d'Holusion.com ou si celui-ci est défectueux ou endommagé, vous pouvez créer une demande de remplacement ou remboursement dans les 30 jours suivant la date de livraison, en cliquant sur le bouton ci dessous. Pour plus d’informations, veuillez consulter les <a href='/static/files/CGV_GENERAL_condensee_2017.pdf' >conditions générales de vente</a>."
-  en: "Return policy on Holusion.com : If you are not satisfied with your product bought on Holusion.com, or if it's damaged or malfunctionning, you can request a refund or replacement by clicking on the button below. <br>Learn more about our <a href='/static/files/CGV_GENERAL_condensee_2017.pdf' >conditions of use</a>."
+  fr: "Politique de retour sur Holusion.com : Si vous n'êtes pas satisfait d'un produit que vous avez commandé auprès d'Holusion.com ou si celui-ci est défectueux ou endommagé, vous pouvez créer une demande de remplacement ou remboursement dans les 30 jours suivant la date de livraison, en cliquant sur le bouton ci dessous. Pour plus d’informations, veuillez consulter les <a href='/fr/CGV' >conditions générales de vente</a>."
+  en: "Return policy on Holusion.com : If you are not satisfied with your product bought on Holusion.com, or if it's damaged or malfunctionning, you can request a refund or replacement by clicking on the button below. <br>Learn more about our <a href='/en/CGV' >conditions of use</a>."
 delivery-title:
   fr: Frais et délais de livraison
   en: Delivery conditions
