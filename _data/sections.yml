@@ -22,6 +22,9 @@ dev:
 cgv:
   fr: "Conditions générales de vente"
   en: "Terms and conditions"
+privacy :
+    fr : "Politique de confidentialité"
+    en : "Privacy Policy"
 s1:
   fr: "Holusion : Ressources Techniques"
   en: "Holusion : Developper Network"
