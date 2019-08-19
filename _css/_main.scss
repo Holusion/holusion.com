@@ -75,3 +75,30 @@ a{
   }
 }
 
+.fade_404 {
+
+      animation: 20s ease-out 0s 1 RUlost;
+    }
+
+    @keyframes RUlost {
+
+      0% {
+        display: none;
+        opacity: 0;
+    }
+
+    20% {
+        display: block;
+        opacity: 0;
+    }
+
+    50% {
+      display: block;
+      opacity: 0.2;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}

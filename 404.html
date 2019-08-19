@@ -6,7 +6,7 @@ sitemap: false
 {% comment %}
 This page's localization is handled with javascript because we do not know in which language it's gonna be beforehand.
 {% endcomment %}
-<div style="text-align:center; width:100%; padding-bottom:25px; padding-top:25px; min-height:45vh">
+<div style="text-align:center; width:100%; padding-bottom:25px; padding-top:25px; min-height:25vh">
   <h2 id="404-title">Sorry this page does not exist.</h2>
   <h1 style="font-size:5em;">404</h1>
   <div id="404-long">
@@ -14,7 +14,18 @@ This page's localization is handled with javascript because we do not know in wh
   </div>
 </div>
 <div>
-  <center>
+    <center>
+  <div class="fade_404" style="width:600px">
+    <a href="https://www.coca-colacompany.com/stories/the-story-of-the-coca-cola-bottle">
+    {% asset "img/sections/404_illu.jpg"
+      srcset:width="584"
+      srcset:width="300"
+      class="img-fluid"
+      alt="Are you lost ?"
+    %}
+    </a>
+    </div>
+
     <button class="btn btn-outline-primary"><a id="404-home" href="/">Go to Home</a></button>
     <button class="btn btn-primary" style="cursor:pointer" onclick="displayContactForm()" ><a id="404-signal">Signal a dead link</a></button>
   </center>
@@ -46,5 +57,5 @@ This page's localization is handled with javascript because we do not know in wh
     });
     document.getElementById("404-home").href = "/"+(is_dev?"dev/":"" )+lang+"/";
   });
-  
+
 </script>
