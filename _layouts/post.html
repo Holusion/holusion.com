@@ -4,12 +4,16 @@ layout: front_page
 
 {% if page.title %}
   {% include components/section_title.html title=page.title %}
-{%endif %}
+{% endif %}
+
+
+
 <div class="container">
   {% ariane %}
 </div>
-<main class="container" id="content">
-  <div id="post-content">
+<main class="container" id="content" itemscope itemtype="http://schema.org/Article">
+  <meta itemprop="abstract" content="{{page.abstract}}"/>
+  <div itemprop="articleBody" id="post-content">
   {{content}}
   </div>
   {% include lists/similar_posts.html %}
@@ -19,4 +23,9 @@ layout: front_page
         <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
     </a>
   </div>
+  <footer>
+    <meta itemprop="keywords" content="{{page.tags | join: ", "}}"/>
+    <meta itemprop="sourceOrganization" content="Holusion SAS"/>
+    <meta itemprop="license" content="https://creativecommons.org/licenses/by-sa/4.0/"/>
+  </footer>
 </main>
