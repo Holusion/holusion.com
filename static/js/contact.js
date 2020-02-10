@@ -1,9 +1,11 @@
 // Kept for backward compatibility
 //Do : data-toggle="modal" data-target="#contactform-modal" instead
-function displayContactForm(){
+function displayContactForm(arg){
   //var contactform = document.getElementById("section-contactform")
   //contactform.classList.add("active");
-  $("#contactform-modal").modal('show');
+  var modalContainer = $("#contactform-modal");
+  //modalContainer.dataset['context'] = arg; //only known way to pass data to the modal
+  modalContainer.modal('show');
 }
 
 function closeForm(){
