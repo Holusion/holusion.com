@@ -1,0 +1,134 @@
+@import "variables";
+
+#section-pricing-table{
+  .main-header-body{
+    max-width: 570px;
+  }
+  #pricing-page-nav{
+    /* match outer container border radius */
+    border-radius: .25rem .25rem 0 0!important;
+    border-bottom: 1px solid $grey-600;
+    @include media-breakpoint-up(xl){
+      border-bottom: none;
+    }
+    .navbar-brand {
+      max-width: 100%;
+      white-space: pre-line;
+    }
+    .nav{
+      background: $light;
+
+      .nav-item{
+        padding: 0;
+        flex-grow: 1;
+
+        .nav-link{
+          padding: 1.5rem .5rem;
+          text-align: center;
+          &.active{
+            color: $light;
+            background: $primary;
+          }
+        }
+      }
+    }
+  }
+  .content{
+    @include media-breakpoint-up(xl){
+      min-height: 800px;
+    }
+    .tab-content{
+      padding: 1rem;
+    }
+  }
+}
+
+.pricing-grid {
+  display: grid;
+  $title_height: 80px;
+  $grid_gap: 0px;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: $title_height;
+  grid-auto-rows: auto;
+  grid-gap: $grid_gap;
+  grid-template-areas:
+    "brand brand"
+    "aside aside"
+    "content content";
+  @include media-breakpoint-up(lg){
+    grid-template-areas:
+    "brand aside"
+    "content content"
+    "content content";
+  }
+  @include media-breakpoint-up(xl){
+    grid-template-areas:
+    "brand content"
+    "aside content"
+    "aside content";
+  }
+  //main Layout
+  .pricing-grid-brand{  
+    grid-area: brand;
+    padding: .5rem;
+  }
+  .pricing-grid-aside{  
+    grid-area: aside;
+    background: $light;
+  }
+  .pricing-grid-content{
+    grid-area: content;
+    min-height: 800px;
+    max-width: 100%;
+  }
+  .tab-pane{
+    .tab-header{
+      @include media-breakpoint-up(xl){
+        height: $title_height + $grid_gap;
+      }
+      padding: .5rem;
+    }
+    .table.prices-table {
+      min-width:400px;
+      td, thead th{
+        border: 0;
+        &:not(:last-of-type){
+          border-right: 2px solid $light;
+        }
+      }
+      .merged-colspan{
+        background: $info;
+        padding:8px;
+        border-top: 2px solid $white;
+        border-bottom: 2px solid $white;
+        &>*{
+          background: $white;
+        }
+      }
+    }
+  }
+  
+  .nav{
+    .nav-item{
+      padding: 0;
+      flex-grow: 1;
+
+      .nav-link{
+        padding: .5rem;
+        text-align: left;
+        vertical-align: middle;
+        svg{
+          @include media-breakpoint-up(xl){
+            width: 50px;
+            height:50px;
+          }
+          fill: currentColor;
+        }
+        &.active{
+          color: $light;
+          background: $primary;
+        }
+      }
+    }
+  }
+}
