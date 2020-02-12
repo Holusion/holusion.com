@@ -24,7 +24,7 @@ before_install:
   - gem --version
   - gem install bundler
 install:
-  - bundle
+  - bundle install --with test
   - npm install
 script:
   - './build.sh'

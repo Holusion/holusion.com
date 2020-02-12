@@ -156,7 +156,8 @@ if ${make_check} ;then
     --disable-external \
     --internal-domains "holusion.com,test.holusion.com" \
     --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/" \
-    --url-ignore "/^\/?$/"
+    --url-ignore "/^\/?$/" \
+    --log-level :debug
 
   test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
     --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
