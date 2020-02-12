@@ -11,11 +11,11 @@
   <title>{% if page.title %}{{page.title}} : {% endif %}{%if page.abstract %}{{page.abstract }} - {% endif %}{{site.data.strings.site-title[page.lang]}}</title>
 
   {%- if page.description -%}
-    <meta name="description" content="{{ page.description | strip_html | truncatewords:155 }}" />
-    <meta property="og:description" content="{{page.description | strip_html | truncatewords:297}}"/>
+    <meta name="description" content="{{ page.description | strip_html | truncatewords:155|escape }}" />
+    <meta property="og:description" content="{{page.description | strip_html | truncatewords:297|escape}}"/>
   {%- elsif page.abstract -%}
-    <meta name="description" content="{{ page.abstract|truncatewords:155 }}" />
-    <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297}}"/>
+    <meta name="description" content="{{ page.abstract|truncatewords:155|escape }}" />
+    <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297 |escape}}"/>
   {%- else -%}
     <meta name="description" content="{{site.data.strings.site-description[page.lang]}}" />
   {%- endif -%}

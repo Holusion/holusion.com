@@ -8,5 +8,5 @@ _site/
 .sass-cache
 .jekyll-cache
 .static-cache
-
+.bundle/
 scripts/phpunit
