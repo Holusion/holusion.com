@@ -24,6 +24,7 @@ const target = process.env["TARGET"];
 const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
   //headless:false,
+  executablePath: process.env["PUPPETEER_EXEC_PATH"], // set by github action
   args:["--no-sandbox"]
 };
 

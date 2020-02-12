@@ -1,0 +1,62 @@
+name: Build website
+on: [push]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install puppeteer dependencies
+      run: |
+        sudo apt-get install -yqq libgconf-2-4
+    - name: Set up RVM
+      run: |
+        curl -sSL https://get.rvm.io | bash
+
+    - name: Set up Ruby from .ruby-version
+      run: |
+        source $HOME/.rvm/scripts/rvm
+        rvm install $(cat .ruby-version)
+        rvm --default use $(cat .ruby-version)
+    
+    - name: install nodejs
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+      
+    - name: set up bundler cache
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-
+      
+    - uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: create _deploy.yml config file
+      run: |
+        echo "env: production" > _deploy.yml
+        echo "url: https://holusion.com" >> _deploy.yml
+        echo "build_id: $GITHUB_RUN_ID" >> _deploy.yml
+        echo "snipcart_api_key: 'MTA0ZmUzN2EtNGFlZS00NjZkLWFiZDktM2RlNzUyODgzMDBhNjM2MTQzNjEyNzYwNDkzMDM2'" >> _deploy.yml
+        echo "recaptcha_secret: '$RECAPTCHA_SECRET'" >> _deploy.yml
+        echo "recaptcha_public: '6Lctxz0UAAAAABSHCOl3jWxLHt3hLRJfhkR-j8Ju'" >> _deploy.yml
+    - name: get dependencies
+      run: |
+        source ~/.rvm/scripts/rvm
+        gem install bundler
+        bundle config set with 'test'
+        bundle install --jobs 4 --retry 3
+        npm ci
+    - name: build
+      run: |
+        source ~/.rvm/scripts/rvm
+        ./build.sh -c
+        ./build.sh --no-build -t
+        ./build.sh --no-build -i local -e
+        
