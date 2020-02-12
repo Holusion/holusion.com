@@ -50,11 +50,13 @@ services:
   - name: Individuel
     note: Maquettes individuelles
     price: Gratuit
+    yearly: false
     properties:
       - Administration hors ligne en autonomie
   - name: Professionnel
     note: Besoins récurrents
     price: 125€ HT/mois
+    yearly: true
     properties:
       - Administration en ligne sur interface dédiée
       - 10Go de stockage cloud inclus
@@ -62,12 +64,13 @@ services:
   - name: Entreprise
     note: Déploiements
     price: 210€ HT/mois
+    yearly: true
     properties:
       - Administration en ligne sur interface dédiée
       - 100 Go de stockage cloud
       - Jusqu'à 100 bornes en gestion centralisée
-      - Application interactive en temps réel
-
+      - Application interactive en temps réel offerte
+  
 ---
 
 {% include components/section_title.html title="Tarifs" %}
@@ -76,10 +79,10 @@ services:
 </div>
 
 <section id="section-pricing-grid" class="section section-main-header header-fill py-4">
-
-  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
-
-  <div class="main-header-body container p-0">
+  
+  {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" title="holusion Iris 75\"" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+  
+  <div id="section-pricing-content" class="main-header-body container p-0">
     <div class="pricing-grid content shadow rounded bg-white row no-gutters">
       <div class="pricing-grid-brand navbar-brand text-secondary text-center text-lg-left">Découvrez nos offres</div>
       <nav role="navigation" id="pricing-grid-nav" class="pricing-grid-aside">
@@ -200,7 +203,7 @@ services:
                 <tr>
                   {% for model in page.models %}
                     <td>
-                      <h5 class="text-right text-secondary">+ {{model.price}}€</h5>
+                      <h5 class="text-right text-secondary">{{model.price}}€</h5>
                       <small class="d-block w-100 text-right">par maquette</small>
                     </td>
                   {% endfor %}
@@ -242,6 +245,7 @@ services:
           <div class="tab-header">
             <h2 class="text-center">Notre offre de services de gestion</h2>
             <div class="">
+              Contrôlez votre hologramme en autonomie et en toute sérénité
             </div>
           </div>
           <div class="table-responsive-md">
@@ -259,6 +263,9 @@ services:
                     <td>
                       <span>{{service.note}}</span>
                       <h5 class="text-right text-secondary">{{service.price}}</h5>
+                      {% if service.yearly %}
+                        <small class="d-inline-block w-100 text-right">engagement 12 mois</small>
+                        {% endif %}
                     </td>
                   {% endfor %}
                 </tr>

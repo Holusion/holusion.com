@@ -1,44 +1,14 @@
 @import "variables";
 
-#section-pricing-table{
-  .main-header-body{
-    max-width: 570px;
-  }
-  #pricing-page-nav{
-    /* match outer container border radius */
-    border-radius: .25rem .25rem 0 0!important;
-    border-bottom: 1px solid $grey-600;
-    @include media-breakpoint-up(xl){
-      border-bottom: none;
+#section-pricing-grid {
+  #section-pricing-content.main-header-body{
+    @include media-breakpoint-down(md){
+      max-width: calc(100% - 1rem);
+      margin-top: .5rem;
     }
-    .navbar-brand {
+    @include media-breakpoint-down(xs){
       max-width: 100%;
-      white-space: pre-line;
-    }
-    .nav{
-      background: $light;
-
-      .nav-item{
-        padding: 0;
-        flex-grow: 1;
-
-        .nav-link{
-          padding: 1.5rem .5rem;
-          text-align: center;
-          &.active{
-            color: $light;
-            background: $primary;
-          }
-        }
-      }
-    }
-  }
-  .content{
-    @include media-breakpoint-up(xl){
-      min-height: 800px;
-    }
-    .tab-content{
-      padding: 1rem;
+      margin-top: 0;
     }
   }
 }
