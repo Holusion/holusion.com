@@ -38,6 +38,12 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+    - uses: actions/cache@v1
+      with:
+        path: .jekyll-cache
+        key: ${{ runner.os }}-jekyll-cache
+        restore-keys: |
+          ${{ runner.os }}-jekyll-cache
     - name: create _deploy.yml config file
       run: |
         echo "env: production" > _deploy.yml

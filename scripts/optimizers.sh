@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 #takes build directory as argument.
 install_optimizers(){
   set -e
@@ -38,20 +36,21 @@ compress_png(){
 build_static(){
   local DIR="$1"
   local TMP_STORE="$(mktemp -d)"
-  [ -d ".static-cache" ] || mkdir -p ".static-cache"
+  local CACHE_DIR="$DIR/.jekyll-cache/static-assets"
+  [ -d "$CACHE_DIR" ] || mkdir -p "$CACHE_DIR"
   while IFS= read -r -d '' file; do
     #  $file path is relative to $DIR
     ldir="$(dirname "$file")"
     name="$(basename "$file")"
-    [ -d "_site/$ldir" ] || mkdir -p "_site/$ldir"
-    [ -d ".static-cache/$ldir" ] || mkdir -p ".static-cache/$ldir"
+    [ -d "$DIR/_site/$ldir" ] || mkdir -p "$DIR/_site/$ldir"
+    [ -d "$CACHE_DIR/$ldir" ] || mkdir -p "$CACHE_DIR/$ldir"
     #re-compress file only if it'sc older or doesn't exist
-    if ! test -f ".static-cache/$file" || test ".static-cache/$file" -ot "$file" ;then
+    if ! test -f "$CACHE_DIR/$file" || test "$CACHE_DIR/$file" -ot "$file" ;then
       echo "Compress $file"
       compress_img "$file" "$TMP_STORE/$name"
-      mv "$TMP_STORE/$name" ".static-cache/$file" #mv is atomic. No partial/failed file.
+      mv "$TMP_STORE/$name" "$CACHE_DIR/$file" #mv is atomic. No partial/failed file.
     fi
-    cp ".static-cache/$file" "$DIR/_site/$file"
+    cp "$CACHE_DIR/$file" "$DIR/_site/$file"
   done < <(find "static" -type f \( -iname "*.jpg" -o -iname "*.png" \) -print0)
   rm -rf "$TMP_STORE"
 }
