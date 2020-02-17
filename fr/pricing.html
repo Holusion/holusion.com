@@ -5,16 +5,24 @@ title: Prix
 models:
   - name: Explore
     price: "750"
+    description:
+      - L'essentiel en exploration
     properties:
       - Vue orbitale dynamique
   - name: Improve
     price: "1 250"
+    description:
+      - Une découverte améliorée
     properties:
-      - Scénarisation avancée
+      - Toute l'offre "Explore"
       - Transitions dynamiques
+      - Rendus réalistes
   - name: Upgrade
     price: "2 500"
+    description:
+      - Le niveau supérieur de simulation 3D
     properties:
+      - Toute l'offre "Improve"
       - Scénarisation avancée
       - Motion design
       - Direction artistique dédiée
@@ -25,16 +33,19 @@ products:
     properties:
       - 1000 cd/m²
       - image full HD
+    img: "seb"
   - name: Iris 32"
     price: "1 750"
     properties:
       - 1000 cd/m²
       - image full HD
+    img: "seb"
   - name: Iris 75"
     price: "4 950"
     properties:
       - 2500 cd/m²
       - image 4k
+    img: "seb"
 services:
   - name: Individuel
     note: Maquettes individuelles
@@ -56,7 +67,7 @@ services:
       - 100 Go de stockage cloud
       - Jusqu'à 100 bornes en gestion centralisée
       - Application interactive en temps réel
-  
+
 ---
 
 {% include components/section_title.html title="Tarifs" %}
@@ -65,9 +76,9 @@ services:
 </div>
 
 <section id="section-pricing-grid" class="section section-main-header header-fill py-4">
-  
+
   {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
-  
+
   <div class="main-header-body container p-0">
     <div class="pricing-grid content shadow rounded bg-white row no-gutters">
       <div class="pricing-grid-brand navbar-brand text-secondary text-center text-lg-left">Découvrez nos offres</div>
@@ -119,6 +130,7 @@ services:
                     </td>
                   {% endfor %}
                 </tr>
+
                 <tr>
                   {% for product in page.products %}
                     <td>
@@ -134,6 +146,18 @@ services:
                   {% for product in page.products %}
                     <td class="text-right"><a href="{{product.url}}">en savoir plus</a></td>
                   {% endfor %}
+                </tr>
+                <tr>
+
+                {% for product in page.products %}
+                <td>
+                  <span>image</span>
+
+                  {% include components/offer_miniature.html
+                    img=product.img
+                  %}
+                  </td>
+                {% endfor %}
                 </tr>
               </tbody>
             </table>
@@ -164,18 +188,19 @@ services:
                   <td colspan="{{page.models.size}}" class="merged-colspan">
                     <div class="d-flex align-items-center flex-column">
                       <div>
-                        <label for="frais-variables" class="text-muted">frais d'intégration</label>
-                        <h5 id="frais-variables" class="text-right text-secondary p-0 m-0">0.15€/m²</h5>
+                        <label for="frais-variables" class="text-muted">Conversion de votre maquette BIM au format holographique</label>
+                        <h5 id="frais-variables" class="text-center text-secondary p-0 m-0">0.15€/m²</h5>
                       </div>
-                      <small class="d-block w-100 text-right">Prix calculés en m² de surface plancher</small>
+                      <small class="d-block w-100 text-right">Prix calculés en m² de surface de plancher (sdp).</small>
+                      <small class="d-block w-100 text-right">Puis choississez le niveau de finition souhaité.</small>
                     </div>
+
                   </td>
                 </tr>
                 <tr>
                   {% for model in page.models %}
                     <td>
-                      <span>réalisation</span>
-                      <h5 class="text-right text-secondary">{{model.price}}€</h5>
+                      <h5 class="text-right text-secondary">+ {{model.price}}€</h5>
                       <small class="d-block w-100 text-right">par maquette</small>
                     </td>
                   {% endfor %}
@@ -183,6 +208,18 @@ services:
                 <tr>
                   {% for model in page.models %}
                     <td>
+                      <ul class="list-group list-group-flush">
+                        {% for desc in model.description %}
+                          <li class="list-group-item font-italic">{{desc}}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  {% for model in page.models %}
+                    <td>
+                      <span class="text-bold">Inclus :</span>
                       <ul class="list-group list-group-flush">
                         {% for prop in model.properties %}
                           <li class="list-group-item">{{prop}}</li>
@@ -251,5 +288,3 @@ services:
     </div>
   </div>
 </section>
-
-
