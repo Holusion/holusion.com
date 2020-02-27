@@ -7,7 +7,7 @@ image: img/sections/prism.jpg
 
 <section class="section section-main-header header-dark header-ultrawide home-header">
   <div class="main-header-image-wrapper" style="background:#717576">
-    <picture>
+    <picture id="main-header-picture">
       <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:half @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
       <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:half @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
       {% asset 'img/sections/iris22_header_brassempouy.jpg'
