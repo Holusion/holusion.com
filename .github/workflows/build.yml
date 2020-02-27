@@ -2,48 +2,40 @@ name: Build website
 on: [push]
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
     - name: Install puppeteer dependencies
       run: |
         sudo apt-get install -yqq libgconf-2-4
-    - name: Set up RVM
-      run: |
-        curl -sSL https://get.rvm.io | bash
 
-    - name: Set up Ruby from .ruby-version
-      run: |
-        source $HOME/.rvm/scripts/rvm
-        rvm install $(cat .ruby-version)
-        rvm --default use $(cat .ruby-version)
-    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: .ruby-version
+
     - name: install nodejs
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
       
-    - name: set up bundler cache
+    - name: bundler cache
       uses: actions/cache@v1
       with:
         path: vendor/bundle
-        key: bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}${{ hashFiles('**/Gemfile.lock') }}
+        key: bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-
       
-    - uses: actions/cache@v1
+    - name: npm cache
+      uses: actions/cache@v1
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - uses: actions/cache@v1
-      with:
-        path: .jekyll-cache
-        key: ${{ runner.os }}-jekyll-cache
-        restore-keys: |
-          ${{ runner.os }}-jekyll-cache
+
     - name: create _deploy.yml config file
       run: |
         echo "env: production" > _deploy.yml
@@ -54,15 +46,22 @@ jobs:
         echo "recaptcha_public: '6Lctxz0UAAAAABSHCOl3jWxLHt3hLRJfhkR-j8Ju'" >> _deploy.yml
     - name: get dependencies
       run: |
-        source ~/.rvm/scripts/rvm
         gem install bundler
+        bundle config path vendor/bundle
         bundle config set with 'test'
         bundle install --jobs 4 --retry 3
         npm ci
     - name: build
       run: |
-        source ~/.rvm/scripts/rvm
-        ./build.sh -c
+        ./build.sh
+    - name: test
+      run: |
         ./build.sh --no-build -t
         ./build.sh --no-build -i local -e
-        
+
+    - name: deploy built website
+      if: github.ref == 'refs/heads/master'
+      run: |
+        mkdir ~/.ssh
+        echo "$DEPLOY_KEY" > ~/.ssh/key
+        rsync -avz --delete-after -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" "_site/" "$DEPLOY_TARGET"

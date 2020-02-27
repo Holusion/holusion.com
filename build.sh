@@ -104,6 +104,11 @@ install_optimizers "$DIR/build"
 bundle check >/dev/null || bundle install
 
 
+if $make_compress ;then
+  #echo "Compress static assets"
+  time compress_folder "$DIR/static"
+fi
+
 if ${make_build} ;then
   s_conf="_config.yml"
 
@@ -133,12 +138,6 @@ if ${make_build} ;then
   # final command
   bundle exec jekyll $exec_cmd --config $s_conf $add_opts
 
-  if $make_compress ;then
-    #echo "Compress static assets"
-    #Use a tmp dir to atomically mv images afgter compression.
-    # Prevent partial results on interrupted builds
-    time build_static "$DIR"
-  fi
 fi
 
 #
