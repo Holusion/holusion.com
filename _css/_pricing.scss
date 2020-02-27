@@ -13,6 +13,10 @@
   }
 }
 
+.priceTag {
+  font-size : 175%;
+}
+
 .pricing-grid {
   display: grid;
   $title_height: 80px;
@@ -38,11 +42,11 @@
     "aside content";
   }
   //main Layout
-  .pricing-grid-brand{  
+  .pricing-grid-brand{
     grid-area: brand;
     padding: .5rem;
   }
-  .pricing-grid-aside{  
+  .pricing-grid-aside{
     grid-area: aside;
     background: $light;
   }
@@ -50,11 +54,12 @@
     grid-area: content;
     min-height: 800px;
     max-width: 100%;
+    margin-bottom: 10px;
   }
   .tab-pane{
     .tab-header{
       @include media-breakpoint-up(xl){
-        height: $title_height + $grid_gap;
+        min-height: $title_height + $grid_gap;
       }
       padding: .5rem;
     }
@@ -77,7 +82,16 @@
       }
     }
   }
-  
+
+  video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+  .quotation button {
+    margin-top : 20px;
+  }
+
   .nav{
     .nav-item{
       padding: 0;
