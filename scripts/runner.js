@@ -4,6 +4,7 @@ const path = require("path");
 const url = require('url');
 const util = require('util');
 const fs = require("fs");
+const {exec} = require("child_process");
 
 const faker = require("faker");
 const puppeteer = require('puppeteer');
@@ -19,8 +20,9 @@ const MIN_PRODUCTS_NUMBER = 4;
 const MAX_PRODUCTS_NUMBER = 10;
 
 const local_site_files = path.resolve(__dirname,'../_site');
+const local_assets_files = path.resolve(__dirname, "../_assets");
 
-const target = process.env["TARGET"];
+const target = process.env["TARGET"] || "local";
 const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
   //headless:false,
@@ -84,7 +86,11 @@ function prettySet(slides, prop){
 
 
 async function getImgSize(img){
-  const src = await img.getProperty("src").then(v => v.jsonValue());
+  let src;
+  src = await img.getProperty("currentSrc").then(v => v.jsonValue());
+  if(!src){
+    src = await img.getProperty("src").then(v => v.jsonValue());
+  }
   const width = await img.getProperty("naturalWidth").then(v => v.jsonValue());
   const height = await img.getProperty("naturalHeight").then(v => v.jsonValue());
   const ok = Number.isInteger(width) && Number.isInteger(height) && 0 < width && 0 < height;
@@ -143,6 +149,18 @@ if (is_extended){
       'width': 1920,
       'height': 1080,
       'deviceScaleFactor': 1,
+      'isMobile': false,
+      'hasTouch': false,
+      'isLandscape': true
+    }
+  });
+  target_devices.push({
+    'name': '4k Desktop Chrome 66',
+    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'viewport': {
+      'width': 3840,
+      'height': 2160,
+      'deviceScaleFactor': 2,
       'isMobile': false,
       'hasTouch': false,
       'isLandscape': true
@@ -516,6 +534,61 @@ describe(`${target}.`,function(){
     });
 
   }); //END of localized tests
+
+  describe(`quality verifications`, function(){
+    /*
+     * Performs various quality checks to try and detect cache corruptions
+     */
+
+
+    describe("has low noise on assets images", function(){
+      let page;
+      before(async function(){
+        page = await newPage();
+        await block(page, ["analytics", "captcha"]);
+        await page.goto(`${href}/fr/`,{timeout:10000});
+      })
+      after(async function(){
+        await page.close();
+      })
+      for (let device of target_devices){
+        it(`checks header image noise on ${device.name}`, async function(){
+          this.retries(0);
+        //Check noise for each target device
+          await page.emulate(device);
+          const header = await page.waitForSelector("PICTURE#main-header-picture IMG", {timeout: 5000});
+          let currentSrc = await header.getProperty("currentSrc").then(v => v.jsonValue());
+          if(!currentSrc){
+            currentSrc = await header.getProperty("src").then(v => v.jsonValue());
+          }
+          let origPath;
+          if(/\/assets\/[0-9A-F]{6}-[0-9A-F]{64}\.jpg$/i.test(currentSrc)){
+            const mainSrc = await header.getProperty("src").then(v => v.jsonValue());
+            const {path:srcPath} = url.parse(mainSrc);
+            const parts = srcPath.split("/")
+            origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64}\.jpg$/i,".jpg"));
+          }else{
+            const {path:srcPath} = url.parse(currentSrc);
+            origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64}\.jpg$/i,".jpg"));
+          }
+          expect(origPath).to.be.ok;
+
+          //*
+          const diff = await new Promise((resolve, reject)=>{
+            exec(`curl -sSL "${currentSrc}" | convert "${origPath}" - -trim +repage -resize 256x256^! -metric PSNR -format "%[distortion]" -compare info:`, function(error, stdout, stderr){
+              if(error) return reject(error);
+              if(stderr) return reject(stderr);
+              resolve(stdout);
+            })
+          })
+          //Depending on version, PSNR diff of identical images could be "inf" or "0"
+          if(diff !=="inf" && diff !== "0"){
+            expect(parseInt(diff), `PSNR of exported images should be above 40db. Got ${Math.round(diff)}db from ${currentSrc}`).to.be.above(40);
+          }
+        })
+      }
+    })
+  })
 
    /** EXTENDED TESTS **/
    describe(`sitemap.`,function(){
