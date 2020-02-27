@@ -64,9 +64,10 @@ On peut à partir de ces 2 requêtes créer une application permettant de pilote
     #!/usr/bin/env python
     import curses
     import requests
-    ip = "10.0.0.1"
+    ip = "192.168.1.129"
     medias = requests.get("http://"+ip+"/playlist").json()
     cursor = 0
+    offset= 0
 
     # init curses #
     screen = curses.initscr()
@@ -75,30 +76,43 @@ On peut à partir de ces 2 requêtes créer une application permettant de pilote
     screen.keypad(True)
     screen.addstr("Press Arrow keys or Esc.")
 
-    index = 0
-    for media in medias:
-        if media.get("active") :
-            screen.addstr(index+1,2,media.get("name"))
-        else:
-            screen.addstr(index+1,2,media.get("name"))
-        index = index+1
-        screen.refresh()
 
-    screen.move(cursor+1,0)
+    def display_media(offset):
+    	cursor=0
+    	screen.clear()
+    	screen.addstr("Press Arrow keys or Esc.")
+    	index=0
+    	for media in medias[offset:15+offset]:
+    		if media.get("active") :
+           			screen.addstr(index+1,2,media.get("name"))
+    		else:
+    			screen.addstr(index+1,2,media.get("name"),curses.A_REVERSE))
+    		index = index+1
+    		screen.refresh()
+
+    	screen.move(cursor+1,0)
+
+    display_media(offset)
     while 1:
-        screen.addstr(cursor+1,2,medias[cursor].get("name"),curses.A_REVERSE)
+        screen.addstr(cursor+1,2,medias[cursor+offset].get("name"),curses.A_REVERSE)
         screen.refresh()
         c = screen.getch()
-        if c == curses.KEY_UP:
-            screen.addstr(cursor+1,2,medias[cursor].get("name"))
+        if c == curses.KEY_UP and cursor>0:
+            screen.addstr(cursor+1,2,medias[cursor+offset].get("name"))
             cursor = cursor - 1
-        elif c == curses.KEY_DOWN:
-            screen.addstr(cursor+1,2,medias[cursor].get("name"))
+        elif c == curses.KEY_DOWN and cursor<14:
+            screen.addstr(cursor+1,2,medias[cursor+offset].get("name"))
             cursor = cursor + 1
+        elif c == curses.KEY_RIGHT and len(medias)<offset+15:
+            offset = offset+15
+            display_media(offset)
+        elif c == curses.KEY_LEFT and offset>=15:
+            offset = offset-15
+            display_media(offset)
         elif c == 27: #Escape
             break;
         elif c == 10:
-            req = requests.put('http://'+ip+'/control/current/'+medias[cursor].get("name"))
+            req = requests.put('http://'+ip+'/control/current/'+medias[cursor+offset].get("name"))
             if req.status_code != 200:
                 screen.addstr(0,30,req.text)
             else:
