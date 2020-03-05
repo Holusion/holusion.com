@@ -65,11 +65,15 @@
     }
     .table.prices-table {
       min-width:400px;
+      table-layout: fixed;
       td, thead th{
         border: 0;
         &:not(:last-of-type){
           border-right: 2px solid $light;
         }
+      li{
+        padding-left :0px;
+      }
       }
       .merged-colspan{
         background: $info;
