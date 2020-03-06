@@ -98,15 +98,15 @@ services:
 <section class="section section-main-header header-dark header-ultrawide home-header">
   <div class="main-header-image-wrapper" style="background:#717576">
     <picture id="main-header-picture">
-      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:half @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
-      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:half @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
+      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
+      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
       {% asset 'img/sections/iris22_header_brassempouy.jpg'
         srcset:width="960"
         srcset:width="1920"
         srcset:width="3840"
         class="img-fluid"
         sizes="100w"
-        alt="the Iris 22 made by holusion displaying the Dame de Brassempouy"
+        alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme de la dame de brassempouy"
       %}
     </picture>
 
