@@ -29,10 +29,12 @@ jobs:
           ${{ runner.os }}-node-
 
     - name: create _deploy.yml config file
+      env: 
+        RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET }}
       run: |
         echo "env: production" > _deploy.yml
         echo "url: https://holusion.com" >> _deploy.yml
-        echo "build_id: $GITHUB_RUN_ID" >> _deploy.yml
+        echo "build_id: '$GITHUB_RUN_ID'" >> _deploy.yml
         echo "snipcart_api_key: 'MTA0ZmUzN2EtNGFlZS00NjZkLWFiZDktM2RlNzUyODgzMDBhNjM2MTQzNjEyNzYwNDkzMDM2'" >> _deploy.yml
         echo "recaptcha_secret: '$RECAPTCHA_SECRET'" >> _deploy.yml
         echo "recaptcha_public: '6Lctxz0UAAAAABSHCOl3jWxLHt3hLRJfhkR-j8Ju'" >> _deploy.yml
@@ -53,7 +55,11 @@ jobs:
 
     - name: deploy built website
       if: github.ref == 'refs/heads/master'
+      env:
+        DEPLOY_TARGET: ${{ secrets.DEPLOY_TARGET }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
         mkdir ~/.ssh
         echo "$DEPLOY_KEY" > ~/.ssh/key
+        chmod 600 ~/.ssh/key
         rsync -avz --delete-after -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" "_site/" "$DEPLOY_TARGET"
