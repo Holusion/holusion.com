@@ -10,3 +10,7 @@ _site/
 .static-cache
 .bundle/
 scripts/phpunit
+
+#ignore npm pack artifacts
+dist/
+holusion-theme*.tgz

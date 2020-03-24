@@ -1,21 +1,19 @@
 {
-  "name": "holusion-doc",
+  "name": "@holusion/theme",
   "version": "0.0.1",
-  "private": true,
-  "main": "app.js",
+  "private": false,
+  "repository": "https://github.com/Holusion/holusion.com",
+  "license": "MIT",
+  "main": "dist/bootstrap.css",
   "scripts": {
     "test": "mocha --slow 1500 --timeout 10000 ./scripts/runner.js",
-    "jenkins_test": "JUNIT_REPORT_PATH=report.xml mocha ./scripts/runner.js --reporter mocha-jenkins-reporter --timeout 15000"
+    "jenkins_test": "JUNIT_REPORT_PATH=report.xml mocha ./scripts/runner.js --reporter mocha-jenkins-reporter --timeout 15000",
+    "prepack": "mkdir -p dist/ && cp _site/css/bootstrap.* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/ && cp _css/_variables.scss dist/",
+    "postpack": "rm -rf dist/"
   },
-  "os": [
-    "linux"
+  "files": [
+    "dist/"
   ],
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "cookieconsent": "^3.0.6",
-    "jquery": "^3.4.0",
-    "popper.js": "^1.14.7"
-  },
   "devDependencies": {
     "chai": "^4.1.2",
     "faker": "^4.1.0",
@@ -24,6 +22,10 @@
     "mocha-jenkins-reporter": "0.3.9",
     "puppeteer": "^1.15.0",
     "serve-static": "^1.13.2",
-    "xml-parser": "^1.2.1"
+    "xml-parser": "^1.2.1",
+    "bootstrap": "^4.3.1",
+    "cookieconsent": "^3.0.6",
+    "jquery": "^3.4.0",
+    "popper.js": "^1.14.7"
   }
 }
