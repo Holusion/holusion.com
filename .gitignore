@@ -10,6 +10,7 @@ _site/
 .static-cache
 .bundle/
 scripts/phpunit
+/vendor
 
 #ignore npm pack artifacts
 dist/

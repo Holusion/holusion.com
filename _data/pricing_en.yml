@@ -1,0 +1,88 @@
+models:
+  - name: Explore
+    price: "750"
+    img: "img/pricing/model_1.png"
+    video: "/static/video/pricing/model_1.mp4"
+    description:
+      - The bare necessity for exploration
+    properties:
+      - Dynamic orbital view
+  - name: Improve
+    price: "1 250"
+    img: "img/pricing/model_2.png"
+    video: "/static/video/pricing/model_2.mp4"
+    description:
+      - An improved visualization
+    properties:
+      - All of "Explore" included
+      - Dynamic transitions
+      - Realistic renders
+  - name: Upgrade
+    price: "2 500"
+    img: "img/pricing/model_3.png"
+    video: "/static/video/pricing/model_3.mp4"
+    description:
+      - Upgrade your 3D simulation
+    properties:
+      - All of "Improve" included
+      - Advanced screenwriting
+      - Motion design
+      - Dedicated art management
+      - Rooms and flats in cutaway view
+      - Ultra-HD rendering
+products:
+  - name: Iris 22"
+    price: "500"
+    properties:
+      - 1000 cd/m²
+      - image full HD
+      - 49 x 29cm
+    img: "img/pricing/iris22.png"
+    video: "/static/video/pricing/iris22.mp4"
+    url: "/en/products/iris22"
+  - name: Iris 32"
+    price: "1 750"
+    properties:
+      - 1000 cd/m²
+      - image full HD
+      - 70 x 39cm
+    img: "img/pricing/iris32.png"
+    video: "/static/video/pricing/iris32.mp4"
+    url: "/en/products/iris32"
+  - name: Iris 75"
+    price: "4 950"
+    properties:
+      - 2500 cd/m²
+      - image 4k
+      - 165 x 92 cm
+    img: "img/pricing/iris75.png"
+    video: "/static/video/pricing/iris75.mp4"
+    url: "/en/products/iris75"
+services:
+  - name: Individual
+    note: Single model
+    price: <span class="priceTag">Free</span>
+    yearly: false
+    properties:
+      - Autonomous offline management of your products
+  - name: Professionnal
+    note: Recuring needs
+    price: <span class="priceTag">125</span>€ w/o VAT/month
+    yearly: true
+    properties:
+      - Online remote administration
+      - 10Go cloud storage included
+      - 1 to 4 displays in local management
+      - iPad control
+      - iPad included
+  - name: Entreprise
+    note: Deployments
+    price: <span class="priceTag">210</span>€ w/o VAT/month
+    yearly: true
+    properties:
+      - Online remote administration
+      - 100Go cloud storage included
+      - Up to 100 holographics displays in remote management
+      - Interactive application included
+      - iPad control
+      - iPad included
