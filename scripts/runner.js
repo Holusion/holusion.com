@@ -4,7 +4,7 @@ const path = require("path");
 const url = require('url');
 const util = require('util');
 const fs = require("fs");
-const {exec} = require("child_process");
+const {exec, spawn} = require("child_process");
 
 const faker = require("faker");
 const puppeteer = require('puppeteer');
@@ -21,7 +21,6 @@ const MAX_PRODUCTS_NUMBER = 10;
 
 const local_site_files = path.resolve(__dirname,'../_site');
 const local_assets_files = path.resolve(__dirname, "../_assets");
-
 const target = process.env["TARGET"] || "local";
 const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
@@ -587,6 +586,58 @@ describe(`${target}.`,function(){
           }
         })
       }
+    })
+
+    describe("Has moov atom set to faststart on videos", ()=>{
+      it(`checks every files in /static/video`, async function (){
+        this.slow(10000);
+        this.timeout(15000);
+        const walk = async (dir)=>{
+          let files = await fs.promises.readdir(dir, {withFileTypes: true})
+          files = await Promise.all(files.map(f => {
+            return f.isDirectory()? walk(path.join(dir, f.name)): Promise.resolve(path.join(dir, f.name))
+          }))
+
+          files = files.reduce((list, fileOrList)=>{
+            if(Array.isArray(fileOrList)){
+              return list.concat(fileOrList)
+            }else{
+              return list.concat([fileOrList]);
+            }
+          }, []);
+          return  files;
+        }
+
+        const files = await walk(path.join(local_site_files, "static/video"));
+        let results = await Promise.all(files.map(file=>{
+          return new Promise((resolve, reject)=>{
+            let out = [], txt = [];
+            const cmd = spawn(`ffmpeg`, ["-y", "-nostdin", "-v", "trace", "-i", file]);
+            cmd.on("error", reject);
+            const onData =(d) => {
+              for (let line of d.toString().split("\n")){
+                if(! /^\[[^\]]+\]\s*(stts:|AVIndex|count=\d+)/.test(line)) txt.push(line);
+              }
+            }
+            cmd.stdout.on("data", onData)
+            cmd.stderr.on("data", onData)
+            cmd.on("close", (code)=>{
+              if([0,1].indexOf(code) === -1) { //code 1 is also acceptable
+                console.error("ffmpeg failed with code %d full output : %s", code, txt.join("\n"));
+                return reject(new Error(`ffmpeg for ${file} exited with status : ${code}.`))
+              }
+              resolve([file, txt]);
+            });
+          });
+        }));
+        for (let [file, lines] of results){
+          const moovIndex = lines.findIndex(l=> /type:'moov'/.test(l));
+          const mdatIndex = lines.findIndex(l=> /type:'mdat'/.test(l));
+          expect(moovIndex, `expected 'moov' atom to be present in output of ${file}. Output is : ${lines.join("\n")}`).to.not.equal(-1);
+          expect(moovIndex, `expected 'moov' to be before 'mdat' in ${file}. This probably means encoding wasn't done right`).to.be.below(mdatIndex);
+        }
+      })
+      //
     })
   })
 
