@@ -21,7 +21,6 @@ const MAX_PRODUCTS_NUMBER = 10;
 
 const local_site_files = path.resolve(__dirname,'../_site');
 const local_assets_files = path.resolve(__dirname, "../_assets");
-
 const target = process.env["TARGET"] || "local";
 const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
@@ -587,6 +586,44 @@ describe(`${target}.`,function(){
           }
         })
       }
+    })
+
+    describe("Has moov atom set to faststart on videos", ()=>{
+      it(`checks every files in /static/video`, async()=>{
+        const walk = async (dir)=>{
+          let files = await fs.promises.readdir(dir, {withFileTypes: true})
+          files = await Promise.all(files.map(f => {
+            return f.isDirectory()? walk(path.join(dir, f.name)): Promise.resolve(path.join(dir, f.name))
+          }))
+
+          files = files.reduce((list, fileOrList)=>{
+            if(Array.isArray(fileOrList)){
+              return list.concat(fileOrList)
+            }else{
+              return list.concat([fileOrList]);
+            }
+          }, []);
+          return  files;
+        }
+        const files = await walk(path.join(local_site_files, "static/video"));
+
+        const results = await Promise.all(files.map(file=>{
+          return new Promise((resolve, reject)=>{
+            exec(`ffmpeg -v trace -i "${file}" 2>&1 | grep -e "type:'mdat'" -e "type:'moov'"`, (error, stdout, stderr)=>{
+              if(error) return reject(error);
+              resolve([file, stdout]);
+            });
+          });
+        }));
+
+        for (let [file, stdout] of results){
+          const lines = stdout.split("\n").filter(l => l);
+          expect(lines, `log for ${file} doesn't look right : ${stdout}`).to.have.property("length", 2);
+          expect(lines[0], `expected 'moov' to be first in ${file}. This probably means encoding wasn't done right`).to.match(/type:'moov'/);
+          expect(lines[1]).to.match(/type:'mdat'/);
+        }
+      })
+      //
     })
   })
 
