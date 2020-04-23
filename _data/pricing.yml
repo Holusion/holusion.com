@@ -1,0 +1,86 @@
+models:
+  - name: Explore
+    price: "750"
+    img: "img/pricing/model_1.png"
+    video: "model_1.mp4"
+    description:
+      - L'essentiel en exploration
+    properties:
+      - Vue orbitale dynamique
+  - name: Improve
+    price: "1 250"
+    img: "img/pricing/model_2.png"
+    video: "model_2.mp4"
+    description:
+      - Une découverte améliorée
+    properties:
+      - Toute l'offre "Explore"
+      - Transitions dynamiques
+      - Rendus réalistes
+  - name: Upgrade
+    price: "2 500"
+    img: "img/pricing/model_3.png"
+    video: "model_3.mp4"
+    description:
+      - Le niveau supérieur de simulation 3D
+    properties:
+      - Toute l'offre "Improve"
+      - Scénarisation avancée
+      - Motion design
+      - Direction artistique dédiée
+      - Vue en écorché des appartements
+      - Rendu Ultra-HD
+products:
+  - name: Iris 22"
+    price: "500"
+    properties:
+      - 1000 cd/m²
+      - image full HD
+      - 49 x 29cm
+    img: "img/pricing/iris22.png"
+    video: "iris22.mp4"
+    url: "/fr/products/iris22"
+  - name: Iris 32"
+    price: "1 750"
+    properties:
+      - 1000 cd/m²
+      - image full HD
+      - 70 x 39cm
+    img: "img/pricing/iris32.png"
+    video: "iris32.mp4"
+    url: "/fr/products/iris32"
+  - name: Iris 75"
+    price: "4 950"
+    properties:
+      - 2500 cd/m²
+      - image 4k
+      - 165 x 92 cm
+    img: "img/pricing/iris75.png"
+    video: "iris75.mp4"
+    url: "/fr/products/iris75"
+services:
+  - name: Individuel
+    note: Maquettes individuelles
+    price: <span class="priceTag">Gratuit</span>
+    yearly: false
+    properties:
+      - Administration hors ligne en autonomie
+  - name: Professionnel
+    note: Besoins récurrents
+    price: <span class="priceTag">125</span>€ HT/mois
+    yearly: true
+    properties:
+      - Administration en ligne sur interface dédiée
+      - 10Go de stockage cloud inclus
+      - 1 à 4 borne en gestion locale
+      - Gestion par iPad
+      - iPad inclus
+  - name: Entreprise
+    note: Déploiements
+    price: <span class="priceTag">210</span>€ HT/mois
+    yearly: true
+    properties:
+      - Administration en ligne sur interface dédiée
+      - 100 Go de stockage cloud
+      - Jusqu'à 100 bornes en gestion centralisée
+      - Application interactive en temps réel offerte
