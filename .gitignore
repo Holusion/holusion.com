@@ -9,6 +9,7 @@ _site/
 .jekyll-cache
 .static-cache
 .bundle/
+/vendor
 scripts/phpunit
 
 #ignore npm pack artifacts
