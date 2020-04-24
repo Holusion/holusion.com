@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
-  command -v bundle >/dev/null 2>&1 || { echo >&2 "bundle command from bundler gem can not be found. run \"gem install bundler\"."; exit 1; }
+
+command -v bundle >/dev/null 2>&1 || { echo >&2 "bundle command from bundler gem can not be found. run \"gem install bundler\"."; exit 1; }
+command -v npm >/dev/null 2>&1 || { echo >&2 "npm command from nodejs package can not be found. Please install nodejs."; exit 1; }
+
+
 usageStr(){
   if ! test -z "$1" ;then
     echo -e "invalid Option : $1"
@@ -161,11 +165,11 @@ if ${make_check} ;then
   test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
     --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
 
-  if ! test -x "scripts/phpunit" ;then
-    wget -O "scripts/phpunit" https://phar.phpunit.de/phpunit-6.phar
-    chmod +x "scripts/phpunit"
+  if ! test -x "$HOME/.cache/phpunit" ;then
+    curl -sSL -o "$HOME/.cache/phpunit" "https://phar.phpunit.de/phpunit-6.phar"
+    chmod +x "$HOME/.cache/phpunit"
   fi
-  find ./scripts/ -iname "*.php" -exec ./scripts/phpunit {} \;
+  find ./scripts/ -iname "*.php" -exec "$HOME/.cache/phpunit" {} \;
 fi
 
 
@@ -173,6 +177,11 @@ fi
 # if $integration_target=local, will start a local web server to test from `_site`
 if ! test -z "$integration_target" ;then
   echo "RUN integration tests on $integration_target"
+  if ! command -v ffmpeg >/dev/null 2>&1 ;then
+    echo "FFMPEG not found. Installing ffmpeg-static"
+    npm install --no-save ffmpeg-static
+    PATH="$PATH:$DIR/node_modules/ffmpeg-static"
+  fi
   if $is_jenkins ;then
     TARGET="$integration_target" npm run jenkins_test
   else
