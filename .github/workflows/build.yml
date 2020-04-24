@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
+      with:
+        lfs: true
     - name: Install puppeteer dependencies
       run: |
         sudo apt-get install -yqq libgconf-2-4
@@ -35,6 +37,24 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+    - name: user cache
+      id: user-cache-folder
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache
+        key: ${{ runner.os }}-user-cache
+        restore-keys: |
+          ${{ runner.os }}-user-cache
+      
+    - name: install ffmpeg
+        #ffmpeg-static will cache binaries in ~/.cache/ffmpeg-static
+      run: |
+        mkdir -p "$HOME/.cache"
+        chmod 777 "$HOME/.cache"
+        npm install --no-save ffmpeg-static
+        echo "::add-path::$GITHUB_WORKSPACE/node_modules/ffmpeg-static"
+        test -x "$HOME/.cache/phpunit" || curl -sSL -o "$HOME/.cache/phpunit" "https://phar.phpunit.de/phpunit-6.phar"
+        chmod +x "$HOME/.cache/phpunit"
 
     - name: create _deploy.yml config file
       env: 
@@ -58,6 +78,7 @@ jobs:
         ./build.sh
     - name: test
       run: |
+        echo "PATH : $PATH"
         ./build.sh --no-build -t
         ./build.sh --no-build -i local -e
 
