@@ -25,6 +25,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-sass-converter
   - jekyll-assets
+  - jekyll-autoprefixer
 sass:
   style: compressed
   sourcemap: always
