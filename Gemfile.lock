@@ -32,6 +32,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    autoprefixer-rails (9.7.6)
+      execjs
     colorator (1.1.0)
     concurrent-ruby (1.1.6)
     em-websocket (0.5.1)
@@ -85,6 +87,8 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
+    jekyll-autoprefixer (1.0.2)
+      autoprefixer-rails (~> 9.3)
     jekyll-inline-svg (1.1.4)
       jekyll (>= 3.3, < 5.0)
       svg_optimizer (~> 0.2.5)
@@ -159,6 +163,7 @@ DEPENDENCIES
   image_optim_pack
   jekyll (~> 4.0.0)
   jekyll-assets!
+  jekyll-autoprefixer (~> 1.0.2)
   jekyll-inline-svg (~> 1.1.1)
   jekyll-paginate-v2 (~> 3.0.0)
   jekyll-redirect-from (>= 0.14.0)

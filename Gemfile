@@ -12,6 +12,7 @@ group :plugins do
   gem 'jekyll-redirect-from', ">=0.14.0"
   gem 'jekyll-inline-svg', "~>1.1.1"
   gem 'jekyll-paginate-v2', "~>3.0.0"
+  gem 'jekyll-autoprefixer', "~>1.0.2"
 end
 
 group :assets do
