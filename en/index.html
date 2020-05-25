@@ -3,20 +3,23 @@ layout: front_page
 title: Holusion
 abstract: holographic solutions design and production
 image: img/sections/prism.jpg
+
+
+
 ---
 
 <section class="section section-main-header header-dark header-ultrawide home-header">
   <div class="main-header-image-wrapper" style="background:#717576">
-    <picture>
-      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:half @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
-      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:half @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
+    <picture id="main-header-picture">
+      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
+      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
       {% asset 'img/sections/iris22_header_brassempouy.jpg'
         srcset:width="960"
         srcset:width="1920"
         srcset:width="3840"
         class="img-fluid"
         sizes="100w"
-        alt="the Iris 22 made by holusion displaying the Dame de Brassempouy"
+        alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme de la dame de brassempouy"
       %}
     </picture>
 
@@ -30,11 +33,12 @@ image: img/sections/prism.jpg
   <div class="main-header-body body-right">
     <div class="content rounded py-4">
       <p>
-        <b>Specialist</b> in custom digital signage, holusion provides a wide range of products.
-        From small smartphone goodies to 2m wide transportable displays. We sell and rent our products all over europe.
+        <b>Specialist</b> in custom digital signage, holusion provides a wide range of products.<br/>
+        From small smartphone goodies to 2m wide transportable displays. <br/>
+        We sell and rent our products all over europe.
       </p>
       <p>
-        <a href="/en/products/">Discover our products</a>
+        <a  type="button" href="/fr/products/" class="btn btn-primary">Discover our products</a>
       </p>
     </div>
   </div>
@@ -43,32 +47,8 @@ image: img/sections/prism.jpg
 
 
 <main class="home-page-main">
-
-  <section class="section bg-light py-4">
-    <div class="container jumbotron bg-white shadow my-0 py-4">
-      <h2>Customized support</h2>
-      <p>
-        We provide flexible support services for your projects. Thanks to our open source system, you can make your own content without artificial limits or let us manage your project entirely from start to delivery
-      </p>
-      <span class="text-right"><a href="/dev/en/content/">Checkout our dedicated tutorials</a></span>
-      <div class="row text-primary">
-        <div class="col-12 col-md-4">Project Analysis</div>
-        <div class="col-12 col-md-4">Modelling and rendering</div>
-        <div class="col-12 col-md-4">Set-up</div>
-      </div>
-      <div>
-        {% asset sections/schema.png
-          srcset:width="1920"
-          srcset:width="960"
-          class="img-fluid"
-          alt="Holusion's offerings"
-        %}
-      </div>
-    </div>
-  </section>
-
   <section class="section section-main-header header-fill">
-    {%include components/header_image.html image="img/sections/iris75_vivatech.jpg" alt="L'Iris 75 présenté par holusion au salon Vivatechnologies en 2018, lors des journées grand public" %}
+    {%include components/header_image.html image="img/sections/iris32_openr_cut.png" alt="Iris32 with building 3d model" %}
     <div class="main-header-body container">
       <div class="content shadow rounded bg-white p-4">
         <h2>Impress your audience</h2>
@@ -85,39 +65,13 @@ image: img/sections/prism.jpg
     </div>
   </section>
 
+    {% include pricing_en.html %}
 
-  <section class="section bg-light py-4">
-    <div class="container jumbotron bg-white shadow my-0">
-      <h2>3 levels of detail</h2>
-      <div class="row" style="text-align:center">
-        <div class="col-md-4">
-          <img class="img-fluid" src="/static/img/usages/picto360.png" />
-          <div>
-            <strong>Orbital view</strong>
-          <p>
-            Economic solution to provide a good view of a system or a structure with great visual quality. Simply make a rotation or a simple animation, around a chosen object.
-          </p>
-        </div>
-        </div>
-        <div class="col-md-4">
-          <img class="img-fluid" src="/static/img/usages/pictoBim.png" />
-          <div>
-            <strong>Multi-layers presentation</strong>
-            <p>Explore a complete multi-view environment with complex animations and transitions. Simply show the full complexity of your work</p>
-          </div>
-            </div>
-        <div class="col-md-4">
-          <img class="img-fluid" src="/static/img/usages/picto_3d.jpg"/>
-          <div>
-            <strong>Realtime 3D</strong>
-            <p>Fully customize your scene and present anything with complete freedom</p>
-          </div>
-          </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="section-tele" class="row no-gutters">
+  <section id="section-pricing-grid" class="section section-main-header header-fill py-4">
+    {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" title="holusion Iris 75\"" alt="Iris 75 outside showing the visibility of it's high luminosity holograms" %}
+  <div class="main-header-body container">
+  <div class="content shadow rounded bg-white p-4 row">
     <div class="col-lg-6 col-12 order-lg-2 order-1">
       {% asset "img/products/iris22_side_whitebg.png"
       srcset:width="1920"
@@ -140,6 +94,8 @@ image: img/sections/prism.jpg
       </ul>
       <p>Holusion can help you with all of those steps, and further into any use you might have of our products</p>
       <span class="text-right"><a href="/en/posts/">See more of our work</a></span>
+    </div>
+    </div>
     </div>
   </section>
 
@@ -184,9 +140,32 @@ image: img/sections/prism.jpg
         {% endfor %}
       </div>
       <div class="main-tile-link">
-        <a href="/fr/products/">Plus de produits à découvrir > </a>
+        <a href="/en/products/">Plus de produits à découvrir > </a>
       </div>
     </div>
+    </section>
+
+
+    <section class="section bg-light py-4">
+      <div class="container jumbotron bg-white shadow my-0 py-4">
+        <h2>Customized support</h2>
+        <p>
+          We provide flexible support services for your projects. Thanks to our open source system, you can make your own content without artificial limits or let us manage your project entirely from start to delivery
+        </p>
+        <span class="text-right"><a href="/dev/en/content/">Checkout our dedicated tutorials</a></span>
+        <div class="row text-primary">
+          <div class="col-12 col-md-4">Project Analysis</div>
+          <div class="col-12 col-md-4">Modelling and rendering</div>
+          <div class="col-12 col-md-4">Set-up</div>
+        </div>
+        <div>
+          {% asset "sections/schema.png"
+          class="img-fluid"
+          sizes="100w"
+          alt="administration of Holusion products"
+          %}
+        </div>
+      </div>
     </section>
 </main>
 

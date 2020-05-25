@@ -9,9 +9,9 @@ layout: store
       <div class="row no-gutters">
         <div class="col-lg-4 px-lg-3 offset-lg-1 col-md-6 col-sm-6 col-12">
           {% if page.image contains "/static" %}
-            <img  itemprop="image" alt="{{page.title}}: {{page.abstract}}" class="img-fluid" src="{{page.image}}">
+            <img  itemprop="image" alt="{{page.title}}: {{page.abstract | escape}}" class="img-fluid" src="{{page.image}}">
           {% else %}
-            <img  itemprop="image" alt="{{page.title}}: {{page.abstract}}" class="img-fluid" src="{% asset "{{page.image}}" @path %}">
+            <img  itemprop="image" alt="{{page.title}}: {{page.abstract | escape}}" class="img-fluid" src="{% asset "{{page.image}}" @path %}">
           {% endif %}
        </div>
 

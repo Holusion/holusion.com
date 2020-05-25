@@ -4,11 +4,12 @@ title: Holusion
 abstract: "Conception, fabrication, vente et location d'affichages innovants"
 lang: fr
 image: img/sections/prism.jpg
+
 ---
 
 <section class="section section-main-header header-dark header-ultrawide home-header">
   <div class="main-header-image-wrapper" style="background:#717576">
-    <picture>
+    <picture id="main-header-picture">
       <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
       <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
       {% asset 'img/sections/iris22_header_brassempouy.jpg'
@@ -35,10 +36,9 @@ image: img/sections/prism.jpg
         <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
         À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
       </p>
-      <p>
-        <a href="/fr/products/">Explorez notre catalogue</a>
-      </p>
+      <a  type="button" href="/fr/products/" class="btn btn-primary">Explorez notre catalogue</a>
     </div>
+
   </div>
 </section>
 
@@ -55,24 +55,17 @@ image: img/sections/prism.jpg
         Grâce à notre <b>écosystème ouvert</b>, réalisez vous-même vos hologrammes ou laissez-vous guider par nos équipes dans la réalisation d'une animation qui vous ressemble.
       </p>
       <span class="text-right"><a href="/dev/fr/content/">Suivre nos guides dédiés</a></span>
-      <div class="row text-primary">
-        <div class="col-12 col-md-4">Analyse de projet</div>
-        <div class="col-12 col-md-4">Modélisation et rendus</div>
-        <div class="col-12 col-md-4">Installation</div>
+
+      {% asset "img/sections/administration_fr.png"
+        class="img-fluid"
+        sizes="100w"
+        alt="schéma de l'offre professionnelle d'administration des produits"
+      %}
       </div>
-      <div>
-        {% asset sections/schema.png
-          srcset:width="1920"
-          srcset:width="960"
-          class="img-fluid"
-          alt="schema des prestations holusion"
-        %}
-      </div>
-    </div>
   </section>
 
   <section class="section section-main-header header-fill">
-    {%include components/header_image.html image="img/sections/iris75_vivatech.jpg" alt="L'Iris 75 présenté par holusion au salon Vivatechnologies en 2018, lors des journées grand public" %}
+    {%include components/header_image.html image="img/sections/iris32_openr_cut.png" alt="Iris32 with building 3d model" %}
     <div class="main-header-body container">
       <div class="content shadow rounded bg-white p-4">
         <h2>Suscitez l'intérêt</h2>
@@ -89,37 +82,13 @@ image: img/sections/prism.jpg
     </div>
   </section>
 
+  {% include pricing.html %}
 
-  <section class="section bg-light py-4">
-    <div class="container jumbotron bg-white shadow my-0">
-      <h2>3 Niveaux de détails</h2>
-      <div class="row" style="text-align:center">
-        <div class="col-md-4">
-          <img class="img-fluid" src="/static/img/usages/picto360.png" />
-          <div>
-            <strong>Vue Orbitale</strong>
-          <p>Solution économique pour présenter en toute simplicité l'aspect extérieur d'un bâtiment ou d'un objet</p>
-        </div>
-        </div>
-        <div class="col-md-4">
-          <img class="img-fluid" src="/static/img/usages/pictoBim.png" />
-          <div>
-            <strong>Présentation Multi-layers</strong>
-            <p>Rentrez dans les détails en explorant des infrastructures ou des systèmes techniques</p>
-          </div>
-            </div>
-        <div class="col-md-4">
-          <img class="img-fluid" src="/static/img/usages/picto_3d.jpg"/>
-          <div>
-            <strong>3D temps réel</strong>
-            <p>Prenez la main à 100% sur votre présentation pour une exploration en toute liberté</p>
-          </div>
-          </div>
-      </div>
-    </div>
-  </section>
+  <section id="section-pricing-grid" class="section section-main-header header-fill py-4">
 
-  <section id="section-tele" class="row no-gutters">
+    {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" title="holusion Iris 75\"" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
+<div class="main-header-body container">
+  <div class="content shadow rounded bg-white p-4 row">
     <div class="col-lg-6 col-12 order-lg-2 order-1">
       {% asset "img/products/iris22_side_whitebg.png"
       srcset:width="1920"
@@ -142,6 +111,8 @@ image: img/sections/prism.jpg
       </ul>
       <p> Holusion vous accompagne <b>tout au long</b> de votre projet et de votre utilisation de l'hologramme.</p>
       <span class="text-right"><a href="/fr/posts/">En savoir plus sur nos réalisations</a></span>
+    </div>
+    </div>
     </div>
   </section>
 
@@ -179,7 +150,7 @@ image: img/sections/prism.jpg
   <section id="section-produits" class="">
     <div class="container-fluid ">
       <h1 align="center" id="main-title-1" style="padding-top: 40px;text-transform: uppercase;"> <a href="/en/products/">Nos produits phares</a></h1>
-      <div class="row">
+      <div class="row no-gutters">
         {% for product in site.products_items[page.lang] limit:4 %}
         {% include components/post_thumbnail.html content=product classes="col-md-3 col-sm-6" %}
         {% endfor %}
@@ -188,9 +159,27 @@ image: img/sections/prism.jpg
         <a href="/fr/products/">Plus de produits à découvrir > </a>
       </div>
     </div>
-    </section>
-</main>
 
+    </section>
+
+<section class="section bg-light py-4">
+  <div class="container jumbotron bg-white shadow my-0 py-4">
+    <div class="row no-gutters text-primary">
+      <div class="col-12 col-md-4">Analyse de projet</div>
+      <div class="col-12 col-md-4">Modélisation et rendus</div>
+      <div class="col-12 col-md-4">Installation</div>
+    </div>
+<div>
+  {% asset sections/schema.png
+    srcset:width="1920"
+    srcset:width="960"
+    class="img-fluid"
+    alt="schema des prestations holusion"
+  %}
+</div>
+</div>
+</section>
+</main>
 
 <section id="section-contact" class="row no-gutters" itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
   <meta itemprop="name" content="holusion" />

@@ -1,6 +1,6 @@
 ---
 title: Prism User Manual
-abstract: User manual for "prism" by Holusion
+abstract: 'User manual for "prism" by Holusion'
 image: /static/img/posts/prism/prism_couloir.jpg
 rank: 4
 menu: toolbox

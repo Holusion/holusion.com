@@ -6,15 +6,16 @@ exclude:
   - "*.ai"
   - "*.psd"
   - "*.sh"
-  - "Gemfile*"
   - "README.md"
   - "bower.json"
   - "package.json"
-  - "build/zopflipng"
-  - "build/phantomjs"
-  - "build/static"
-  - "node_modules/**/*.html"
-  - "node_modules/**/*.pdf"
+include:
+  - ".htaccess"
+  - "node_modules/jquery/dist/jquery.min.js"
+  - "node_modules/popper.js/dist/umd/popper.min.js"
+  - "node_modules/bootstrap/dist/js/bootstrap.min.js"
+  - "node_modules/cookieconsent/build/cookieconsent.min.css"
+  - "node_modules/cookieconsent/build/cookieconsent.min.js"
 highlighter: rouge
 incremental: true
 plugins:
@@ -24,9 +25,10 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-sass-converter
   - jekyll-assets
+  - jekyll-autoprefixer
 sass:
   style: compressed
-  source_map_contents: true
+  sourcemap: always
   load_paths:
     - _css
     - node_modules

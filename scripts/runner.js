@@ -4,6 +4,7 @@ const path = require("path");
 const url = require('url');
 const util = require('util');
 const fs = require("fs");
+const {exec, spawn} = require("child_process");
 
 const faker = require("faker");
 const puppeteer = require('puppeteer');
@@ -19,8 +20,8 @@ const MIN_PRODUCTS_NUMBER = 4;
 const MAX_PRODUCTS_NUMBER = 10;
 
 const local_site_files = path.resolve(__dirname,'../_site');
-
-const target = process.env["TARGET"];
+const local_assets_files = path.resolve(__dirname, "../_assets");
+const target = process.env["TARGET"] || "local";
 const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
   //headless:false,
@@ -84,7 +85,11 @@ function prettySet(slides, prop){
 
 
 async function getImgSize(img){
-  const src = await img.getProperty("src").then(v => v.jsonValue());
+  let src;
+  src = await img.getProperty("currentSrc").then(v => v.jsonValue());
+  if(!src){
+    src = await img.getProperty("src").then(v => v.jsonValue());
+  }
   const width = await img.getProperty("naturalWidth").then(v => v.jsonValue());
   const height = await img.getProperty("naturalHeight").then(v => v.jsonValue());
   const ok = Number.isInteger(width) && Number.isInteger(height) && 0 < width && 0 < height;
@@ -143,6 +148,18 @@ if (is_extended){
       'width': 1920,
       'height': 1080,
       'deviceScaleFactor': 1,
+      'isMobile': false,
+      'hasTouch': false,
+      'isLandscape': true
+    }
+  });
+  target_devices.push({
+    'name': '4k Desktop Chrome 66',
+    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'viewport': {
+      'width': 3840,
+      'height': 2160,
+      'deviceScaleFactor': 2,
       'isMobile': false,
       'hasTouch': false,
       'isLandscape': true
@@ -516,6 +533,113 @@ describe(`${target}.`,function(){
     });
 
   }); //END of localized tests
+
+  describe(`quality verifications`, function(){
+    /*
+     * Performs various quality checks to try and detect cache corruptions
+     */
+
+
+    describe("has low noise on assets images", function(){
+      let page;
+      before(async function(){
+        page = await newPage();
+        await block(page, ["analytics", "captcha"]);
+        await page.goto(`${href}/fr/`,{timeout:10000});
+      })
+      after(async function(){
+        await page.close();
+      })
+      for (let device of target_devices){
+        it(`checks header image noise on ${device.name}`, async function(){
+          this.retries(0);
+        //Check noise for each target device
+          await page.emulate(device);
+          const header = await page.waitForSelector("PICTURE#main-header-picture IMG", {timeout: 5000});
+          let currentSrc = await header.getProperty("currentSrc").then(v => v.jsonValue());
+          if(!currentSrc){
+            currentSrc = await header.getProperty("src").then(v => v.jsonValue());
+          }
+          let origPath;
+          if(/\/assets\/[0-9A-F]{6}-[0-9A-F]{64}\.jpg$/i.test(currentSrc)){
+            const mainSrc = await header.getProperty("src").then(v => v.jsonValue());
+            const {path:srcPath} = url.parse(mainSrc);
+            const parts = srcPath.split("/")
+            origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64}\.jpg$/i,".jpg"));
+          }else{
+            const {path:srcPath} = url.parse(currentSrc);
+            origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64}\.jpg$/i,".jpg"));
+          }
+          expect(origPath).to.be.ok;
+
+          //*
+          const diff = await new Promise((resolve, reject)=>{
+            exec(`curl -sSL "${currentSrc}" | convert "${origPath}" - -trim +repage -resize 256x256^! -metric PSNR -format "%[distortion]" -compare info:`, function(error, stdout, stderr){
+              if(error) return reject(error);
+              if(stderr) return reject(stderr);
+              resolve(stdout);
+            })
+          })
+          //Depending on version, PSNR diff of identical images could be "inf" or "0"
+          if(diff !=="inf" && diff !== "0"){
+            expect(parseInt(diff), `PSNR of exported images should be above 40db. Got ${Math.round(diff)}db from ${currentSrc}`).to.be.above(40);
+          }
+        })
+      }
+    })
+
+    describe("Has moov atom set to faststart on videos", ()=>{
+      it(`checks every files in /static/video`, async function (){
+        this.slow(10000);
+        this.timeout(15000);
+        const walk = async (dir)=>{
+          let files = await fs.promises.readdir(dir, {withFileTypes: true})
+          files = await Promise.all(files.map(f => {
+            return f.isDirectory()? walk(path.join(dir, f.name)): Promise.resolve(path.join(dir, f.name))
+          }))
+
+          files = files.reduce((list, fileOrList)=>{
+            if(Array.isArray(fileOrList)){
+              return list.concat(fileOrList)
+            }else{
+              return list.concat([fileOrList]);
+            }
+          }, []);
+          return  files;
+        }
+
+        const files = await walk(path.join(local_site_files, "static/video"));
+        let results = await Promise.all(files.map(file=>{
+          return new Promise((resolve, reject)=>{
+            let out = [], txt = [];
+            const cmd = spawn(`ffmpeg`, ["-y", "-nostdin", "-v", "trace", "-i", file]);
+            cmd.on("error", reject);
+            const onData =(d) => {
+              for (let line of d.toString().split("\n")){
+                if(! /^\[[^\]]+\]\s*(stts:|AVIndex|count=\d+)/.test(line)) txt.push(line);
+              }
+            }
+            cmd.stdout.on("data", onData)
+            cmd.stderr.on("data", onData)
+            cmd.on("close", (code)=>{
+              if([0,1].indexOf(code) === -1) { //code 1 is also acceptable
+                console.error("ffmpeg failed with code %d full output : %s", code, txt.join("\n"));
+                return reject(new Error(`ffmpeg for ${file} exited with status : ${code}.`))
+              }
+              resolve([file, txt]);
+            });
+          });
+        }));
+        for (let [file, lines] of results){
+          const moovIndex = lines.findIndex(l=> /type:'moov'/.test(l));
+          const mdatIndex = lines.findIndex(l=> /type:'mdat'/.test(l));
+          expect(moovIndex, `expected 'moov' atom to be present in output of ${file}. Output is : ${lines.join("\n")}`).to.not.equal(-1);
+          expect(moovIndex, `expected 'moov' to be before 'mdat' in ${file}. This probably means encoding wasn't done right`).to.be.below(mdatIndex);
+        }
+      })
+      //
+    })
+  })
 
    /** EXTENDED TESTS **/
    describe(`sitemap.`,function(){

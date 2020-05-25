@@ -1,0 +1,233 @@
+<section class="section bg-light py-4" id="pricing">
+  <div class="container jumbotron bg-white shadow my-0 py-4">
+
+
+  <div id="section-pricing-content" class="main-header-body container p-0">
+    <div class="pricing-grid content shadow rounded bg-white row no-gutters">
+      <div class="pricing-grid-brand navbar-brand text-secondary text-center text-lg-left">Discover our offers</div>
+      <nav role="navigation" id="pricing-grid-nav" class="pricing-grid-aside">
+        <ul class="nav d-flex flex-row flex-xl-column">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#products" role="tab" aria-controls="produits">
+              {% asset icons/ui/resize-24px.svg @inline %}
+              Renting/buying
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#models" role="tab" aria-controls="maquettes">
+              {% asset icons/ui/apartment-24px.svg @inline %}
+              Models
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#admin" role="tab" aria-controls="administration">
+              {% asset icons/ui/transfer-24px.svg @inline %}
+              Administration
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="tab-content pricing-grid-content px-lg-2">
+        <div id="products" class="tab-pane fade show active">
+          <div class="tab-header">
+            <h2 class="text-center">Need to rend our product for an exhibition ?</h2>
+            <div class="text-center">
+              <p>Our best solutions to display your 3D models in holograms</p>
+              <p>Rent it, just for the show, or buy it to bring it home</p>
+              <p>Made in France</p>
+            </div>
+          </div>
+          <div class="table-responsive-md">
+            <table class="table prices-table">
+              <thead>
+                <tr class="bg-primary text-white">
+                  {% for product in site.data.pricing_en.products %}
+                    <th scope="col">{{product.name}}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {% for product in site.data.pricing_en.products %}
+                    <td>
+                      <span>Starting:</span>
+                      <h5 class="text-right text-secondary"><span class="priceTag"> {{product.price}}</span>€ <br class="d-md-none">w/o VAT</h5>
+                      <small class="d-block w-100 text-right">3 days renting</small>
+                    </td>
+                  {% endfor %}
+                </tr>
+
+                <tr>
+                  {% for product in site.data.pricing_en.products %}
+                    <td>
+                      <ul class="list-group list-group-flush">
+                        {% for prop in product.properties %}
+                          <li class="list-group-item">{{prop}}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  {% for product in site.data.pricing_en.products %}
+                    <td class="text-right"><a href="{{product.url}}">About</a></td>
+                  {% endfor %}
+                </tr>
+                <tr>
+
+                {% for product in site.data.pricing_en.products %}
+                  <td>
+                    {% include components/medias/video.html video=product.video img=product.img %}
+                  </td>
+                {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="w-100 text-right px-2 quotation">
+            Découvrez notre <a href="/fr/products/">All of our products</a><br/>
+            {% include components/contact_button.html txt="Get your quotation"%}
+          </div>
+        </div>
+        <div id="models" class="tab-pane fade">
+          <div class="tab-header">
+            <h2 class="text-center">Our 3D models</h2>
+            <div class="text-center">
+              <p>Convert your BIM 3D models into holographic animations. <a href="/en/posts/2019-07-01-SHAKE#video">It's our specialty</a>.</p>
+              <p>Calculate by yourselves the cost of your content</p>
+            </div>
+          </div>
+          <div class="table-responsive-md">
+            <table class="table prices-table">
+              <thead>
+                <tr class="bg-primary text-white">
+                  {% for model in site.data.pricing_en.models %}
+                    <th scope="col">{{model.name}}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="{{site.data.pricing_en.models.size}}" class="merged-colspan">
+                    <div class="d-flex align-items-center flex-column">
+                      <div>
+                        <label for="frais-variables" class="text-muted">Conversion from BIM models to holographic models</label>
+                        <h5 id="frais-variables" class="text-center text-secondary p-0 m-0"><span class="priceTag">0.15</span>€/m²</h5>
+                      </div>
+                      <small class="d-block w-100 text-right">Calculated on m² of floor space.</small>
+
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <small class="d-block w-100">Then choose the finishing touch you need:</small>
+                    </td>
+                  </tr>
+                <tr>
+                  {% for model in site.data.pricing_en.models %}
+                    <td>
+                      <h5 class="text-right text-secondary"> + <span class="priceTag">{{model.price}}</span> €</h5>
+                      <small class="d-block w-100 text-right">per model</small>
+                    </td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  {% for model in site.data.pricing_en.models %}
+                    <td>
+                      <ul class="list-group list-group-flush">
+                        {% for desc in model.description %}
+                          <li class="list-group-item font-italic">{{desc}}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                    {% for model in site.data.pricing_en.models %}
+                    <td>
+                      {% include components/medias/video.html video=model.video img=model.img %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                  {% for model in site.data.pricing_en.models %}
+                    <td>
+                      <span class="text-bold">Inclus :</span>
+                      <ul class="list-group list-group-flush">
+                        {% for prop in model.properties %}
+                          <li class="list-group-item">{{prop}}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  {% endfor %}
+                </tr>
+
+                <tr>
+                  {% for model in site.data.pricing_en.models %}
+                    <td class="text-right">{% include components/contact_button.html txt="Contact us"%}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="admin" class="tab-pane fade">
+          <div class="tab-header">
+            <h2 class="text-center">Our administration tools</h2>
+            <div class="text-center">
+              <p>Control your hologram by yourself. Easy and stress free.</p>
+              <p>Thanks to our cloud solutions, enjoy remote control and an iPad application for <a href="/en/interaction/">interactive holograms.</a></p>
+              <p>Interactivity, reliability and easy updates.</p>
+            </div>
+          </div>
+          <div class="table-responsive-md">
+            <table class="table prices-table">
+              <thead>
+                <tr class="bg-primary text-white">
+                  {% for service in site.data.pricing_en.services %}
+                    <th scope="col">{{service.name}}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {% for service in site.data.pricing_en.services %}
+                    <td>
+                      <span>{{service.note}}</span>
+                      <h5 class="text-right text-secondary">{{service.price}}</h5>
+                      {% if service.yearly %}
+                        <small class="d-inline-block w-100 text-right">12 months commitment </small>
+                        {% endif %}
+                    </td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  {% for service in site.data.pricing_en.services %}
+                    <td>
+                      <ul class="list-group list-group-flush">
+                        {% for prop in service.properties %}
+                          <li class="list-group-item">{{prop}}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  {% for service in site.data.pricing_en.services %}
+                    <td class="text-right">{% include components/contact_button.html txt="contact us"%}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- ensure href hashs are kept between refreshs -->
+      <script defer src="/static/js/tabs-links.js"></script>
+    </div>
+</section>

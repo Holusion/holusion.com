@@ -31,11 +31,11 @@
             srcset:width="800"
             srcset:width="400"
             sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw"
-            alt="{{alt_text}}"
+            alt="{{alt_text| escape}}"
           %}
         {% else %}
           <img src="{{content.image|default: "/static/img/posts/default.jpg"}}"
-            {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+            {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text | escape}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
         {% endif %}
       {% endif %}
       <div class="caption">

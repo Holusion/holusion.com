@@ -1,12 +1,11 @@
-{% unless contact_strings %}
 {% comment %}
   ensure it's included only once
   It uses bootstrap's slightly modified validation process
   https://getbootstrap.com/docs/4.0/components/forms/#validation
   But can be reverted to standard behaviour by just removing the `novalidate`
 {% endcomment %}
+{% assign default_contact_strings = site.data.contact_form_locale %}
 
-{% assign contact_strings = site.data.contact_form_locale %}
 <!-- USAGE
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactform-modal">foo</button>;
 -->
@@ -25,29 +24,29 @@
           <div class="modal-body">
             <input type="hidden" name="lang" value="{{page.lang}}">
             <div class="form-group">
-              <label for="fname">{{contact_strings["firstname"][page.lang]}}</label>
+              <label for="fname">{{default_contact_strings["firstname"][page.lang]}}</label>
               <input
                 type="text" class="form-control"
                 name="fname" id="first_name"
                 maxlength="50" size="30"
-                placeholder="{{contact_strings["firstname"][page.lang]}}"
+                placeholder="{{default_contact_strings["firstname"][page.lang]}}"
                 required
                 pattern=".+"
                 autocomplete="given-name">
             </div>
             <div class="form-group">
-              <label for="lname">{{contact_strings["lastname"][page.lang]}}</label>
+              <label for="lname">{{default_contact_strings["lastname"][page.lang]}}</label>
               <input
                 type="text" class="form-control"
                 name="lname" id="last_name"
                 maxlength="50" size="30"
-                placeholder="{{contact_strings["lastname"][page.lang]}}"
+                placeholder="{{default_contact_strings["lastname"][page.lang]}}"
                 required
                 pattern=".+"
                 autocomplete="family-name">
             </div>
             <div class="form-group">
-              <label for="email">{{contact_strings["mail"][page.lang]}}</label>
+              <label for="email">{{default_contact_strings["mail"][page.lang]}}</label>
               <input
                 type="text" class="form-control"
                 name="email" id="email"
@@ -58,24 +57,24 @@
                 autocomplete="email">
             </div>
             <div class="form-group">
-              <label for="phone">{{contact_strings["phone"][page.lang]}}</label>
+              <label for="phone">{{default_contact_strings["phone"][page.lang]}}</label>
               <input
                 type="text" class="form-control"
                 name="phone" id="telephone"
                 maxlength="30" size="30"
-                placeholder="{{contact_strings["phone"][page.lang]}}"
+                placeholder="{{default_contact_strings["phone"][page.lang]}}"
                 pattern="^([0-9+]|\([0-9]{1,3}\))[0-9 .,-x]{7,20}$"
                 autocomplete="tel">
             </div>
             <div class="form-group">
-              <label for="comments">{{contact_strings["comments"][page.lang]}}</label>
+              <label for="comments">{{default_contact_strings["comments"][page.lang]}}</label>
               <textarea
                 role="textbox"
                 name="comments"
                 class="form-control" id="comments"
-                placeholder="{{contact_strings["comments_holder"][page.lang]}}"
+                placeholder="{{default_contact_strings["comments_holder"][page.lang]}}"
                 pattern="^.{20}.*"
-                setCustomValidity="{{contact_strings["comments_validity"][page.lang]}}"
+                setCustomValidity="{{default_contact_strings["comments_validity"][page.lang]}}"
                 maxlength="1000" cols="25" rows="6"
                 required></textarea>
             </div>
@@ -99,4 +98,3 @@
 </div>
 
 <div id="logger"></div>
-{% endunless %}

@@ -17,19 +17,28 @@ compress_img(){
   convert $(compress_img_opts) "$1" "$2"
 }
 
-# compress_jpg "in.jpg"
-compress_jpg(){
-  local dest_quality=80
-  QUALITY=$(identify -format "%Q" "$1")
-  if test $dest_quality -lt $QUALITY ;then
-    #fallback to copy if convert failed
-    mogrify  -quality $dest_quality -strip "$1"
-  fi
-}
+compress_folder(){
+  local folder="$1"
+  echo "compressing PNG files in $folder/**"
+  while IFS= read -r -d '' file; do
+    #do not filter png images because they are fast to compress
+    mogrify \
+    -filter Triangle -define filter:support=2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 \
+    -quality 9 \
+    -define png:exclude-chunk=all -interlace none -colorspace sRGB \
+    "$file"
+  done < <(find "$folder" -type f -iname "*.png" -print0)
 
-# compress_png "in.png"
-compress_png(){
-  mogrify -format png -quality 9 -strip "$1"
+  echo "compressing JPG files in $folder/**"
+  while IFS= read -r -d '' file; do
+    echo "Compressing $file"
+    quality="$(identify -format '%Q' "$file")"
+    if test "$quality" -gt "85" ;then
+      echo "compressing $file of Q : $quality"
+      mogrify -strip -interlace Plane -sampling-factor 4:2:0 -quality 85% \
+      "$file"
+    fi
+  done < <(find "$folder" -type f -iname "*.jpg" -print0)
 }
 
 #auto-compress images in static folder
@@ -44,7 +53,7 @@ build_static(){
     name="$(basename "$file")"
     [ -d "$DIR/_site/$ldir" ] || mkdir -p "$DIR/_site/$ldir"
     [ -d "$CACHE_DIR/$ldir" ] || mkdir -p "$CACHE_DIR/$ldir"
-    #re-compress file only if it'sc older or doesn't exist
+    #re-compress file only if it doesn't exist or has changed
     if ! test -f "$CACHE_DIR/$file" || test "$CACHE_DIR/$file" -ot "$file" ;then
       echo "Compress $file"
       compress_img "$file" "$TMP_STORE/$name"
