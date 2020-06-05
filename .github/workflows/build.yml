@@ -21,9 +21,8 @@ jobs:
       uses: actions/cache@v1
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
+        key: ${{ runner.os }}-${{ hashFiles( '.ruby-version' ) }}-gems-${{ hashFiles( '**/Gemfile.lock' ) }}
+      # require strict cache hit, otherwise we get some Illegal Instruction errors
     
     - name: install nodejs
       uses: actions/setup-node@v1
