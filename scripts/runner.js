@@ -437,6 +437,12 @@ describe(`${target}.`,function(){
                 expect(id).to.be.a("string");
                 expect(id).to.match(/^[\w+_]+(FR|EN)$/);
               });
+
+              it("opens dialog when clicking on snipcart button", async ()=>{
+                  await page.click(".btn.snipcart-add-item");
+                  await page.waitForSelector(".snipcart");
+
+              })
             });
           }
         })
