@@ -1,6 +1,6 @@
 models:
   - name: Explore
-    price: "750"
+    price: "950"
     img: "img/pricing/model_1.png"
     video: "/static/video/pricing/model_1.mp4"
     description:
@@ -8,7 +8,7 @@ models:
     properties:
       - Dynamic orbital view
   - name: Improve
-    price: "1 250"
+    price: "1.750"
     img: "img/pricing/model_2.png"
     video: "/static/video/pricing/model_2.mp4"
     description:
@@ -18,7 +18,7 @@ models:
       - Dynamic transitions
       - Realistic renders
   - name: Upgrade
-    price: "2 500"
+    price: "3.750"
     img: "img/pricing/model_3.png"
     video: "/static/video/pricing/model_3.mp4"
     description:
