@@ -7,6 +7,7 @@ models:
       - The bare necessity for exploration
     properties:
       - Dynamic orbital view
+      - "Required data format: .ifc / .fbx / .obj / .3ds"
   - name: Improve
     price: "1.750"
     img: "img/pricing/model_2.png"
