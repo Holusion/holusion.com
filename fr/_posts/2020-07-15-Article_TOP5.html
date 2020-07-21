@@ -10,7 +10,7 @@ tags: top5 immobilier education hologramme conseils tips
 ---
 
 <section class="section section-main-header header-fill" style="max-width: 1920px">
-  {%include components/header_image.html image="img/posts/2020_Renoir/Canotiers.jpg" %}
+  {%include components/header_image.html image="img/posts/2020_Renoir/FondRenoir.jpg" %}
   <div class="main-header-body body-right">
     <div class="content shadow rounded bg-white rounded p-4 text-justify">
       <h2> TOP 5 des meilleures utilisations d'hologrammes </h2>
@@ -37,14 +37,42 @@ tags: top5 immobilier education hologramme conseils tips
 
     Quant à <a href="https://www.leparisien.fr/culture-loisirs/musique/on-etait-au-concert-d-hatsune-miku-superstar-virtuelle-17-01-2020-8238333.php" target="_blank"> Hatsune Miku </a>, elle initie un mouvement d’artistes existant uniquement grâce aux hologrammes.
     </p>
+
+    <p onmouseover="document.getElementById('morts').style.opacity = '1'" onmouseout="document.getElementById('morts').style.opacity = '0'">Son identité entièrement virtuelle grâce à la combinaison d'un synthétiseur vocal ouvre un champ artistique inédit qui ouvre peut être bien plus de portes que les mémoriaux musicaux aux artistes disparus.</p>
+    <p id="morts" style="opacity:0; transition:opacity 0.5s linear">
+      Car, décidément, le show bizness est bien impitoyable. Les morts célèbres n'ont pas droit au repos éternel.
+    </p>
+      {% asset img/posts/2020_top5/tupac_holo.jpg
+        srcset:width="1920"
+        sizes="100vw"
+        class="img-fluid"
+        alt="Tupac en hologrammes au festival Coachella"
+        %}
   </div>
 
   <div class="main-header-body container jumbotron bg-white shadow my-4">
-    <h2>{% capture index %}{{ index | plus:1 }}{% endcapture %}{{index}}. Montrer des oeuvres cachées </h2>
+    <h2>{% capture index %}{{ index | plus:1 }}{% endcapture %}{{index}}. Montrer des œuvres cachées </h2>
     <p>
-    Les hologrammes sont parfaits pour les musées : ils permettent non seulement de captiver une audience, mais aussi de montrer des collections cachées au public.
-    En effet, certaines collections ne peuvent être montrées au public, du fait de leur fragilité ou parce qu’elles doivent être restaurées. Ainsi, les hologrammes permettent de dévoiler ces artefacts au grand public.
+    Les hologrammes sont parfaits pour les musées. ils permettent non seulement de captiver une audience, mais aussi de montrer des collections cachées au public.
     </p>
+    <p>
+    Trop précieux pour être déplacé, inaccessible pour cause de restauration, indisponible, détruit… il existe de nombreuses raisons qui gardent les objets de notre patrimoine loin de yeux des visiteurs.
+    </p>
+    <p>
+    Par l'hologramme, on peut copier les œuvres, les dupliquer. Mais aussi, grâce au travaux des chercheurs et des conservateurs, montrer leurs secrets. Avec les dernières techniques de numérisation, il est possible de reconstituer les parties manquantes, voir le cœur des objets et les détails invisibles jusqu'ici pour les visiteurs.
+
+    Ainsi, les hologrammes permettent de dévoiler ces artefacts au grand public.
+    </p>
+    <p>Les musées utilisent de le plus en plus la technologie. Elle s'invite dans les <b>musées d'archéologie, de science naturelle, de culture scientifique, les aquariums...</b>
+      L'hologramme bientôt un incontournable compagnon de la visite dans les musées ? </p>
+
+      {% asset img/posts/2020_top5/holomouseio.jpg
+        srcset:width="1920"
+        sizes="100vw"
+        class="img-fluid"
+        alt="Une borne holographique au Palais des Beaux-Arts de Lille"
+        %}
+
   </div>
 
   <div class="main-header-body container jumbotron bg-white shadow my-4">
@@ -52,6 +80,14 @@ tags: top5 immobilier education hologramme conseils tips
     <p>
       Après le monde de la scène, ce sont d’autres sphères de la vie publique qui se sont emparées de l’innovation. Les hologrammes sont un moyen d’organiser des réunions, allant de <a href="https://holusion.com/fr/posts/2020-02-26-Musee-du-Sport" target="_blank"> l’entretien individuel </a>  à la tenue d’un <a href="https://www.leparisien.fr/elections/presidentielle/l-hologramme-de-melenchon-mode-d-emploi-18-04-2017-6864120.php" target="_blank"> meeting politique. </a>
     </p>
+
+    {% asset img/posts/2020_top5/meet.jpg
+      srcset:width="1920"
+      sizes="100vw"
+      class="img-fluid"
+      alt="Un meeting en hologrammes"
+      %}
+
   </div>
 
     <div class="main-header-body container jumbotron bg-white shadow my-4">
@@ -62,6 +98,14 @@ tags: top5 immobilier education hologramme conseils tips
       <p>
       De plus, les hologrammes permettent de créer ce que l’on appelle du <b>“mapping”</b>, et de montrer plus d’informations sur l’objet que l’on découvre. Ces informations peuvent être dévoilées au fur et à mesure grâce à un iPad connecté.
       </p>
+
+      {% asset img/posts/2020_top5/education.jpg
+        srcset:width="1920"
+        sizes="100vw"
+        class="img-fluid"
+        alt="Tupac en hologrammes au festival Coachella"
+        %}
+
     </div>
 
     <div class="main-header-body container jumbotron bg-white shadow my-4">
