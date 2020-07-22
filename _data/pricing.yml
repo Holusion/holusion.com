@@ -1,14 +1,15 @@
 models:
   - name: Explore
-    price: "750"
+    price: "950"
     img: "img/pricing/model_1.png"
     video: "model_1.mp4"
     description:
       - L'essentiel en exploration
     properties:
       - Vue orbitale dynamique
+      - "Formats supportés : .ifc / .fbx / .obj / .3ds"
   - name: Improve
-    price: "1 250"
+    price: "1 700"
     img: "img/pricing/model_2.png"
     video: "model_2.mp4"
     description:
@@ -18,7 +19,7 @@ models:
       - Transitions dynamiques
       - Rendus réalistes
   - name: Upgrade
-    price: "2 500"
+    price: "3 750"
     img: "img/pricing/model_3.png"
     video: "model_3.mp4"
     description:

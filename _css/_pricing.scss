@@ -105,6 +105,7 @@
         padding: .5rem;
         text-align: left;
         vertical-align: middle;
+        height: $title_height;
         svg{
           @include media-breakpoint-up(xl){
             width: 50px;
