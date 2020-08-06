@@ -28,11 +28,10 @@
     <div class="tab-content pricing-grid-content px-lg-2">
       <div id="products" class="tab-pane fade show active">
         <div class="tab-header">
-          <h2 class="text-center">Notre offre de location évènementielle</h2>
+          <h2 class="text-center">Des générateurs d'hologrammes Made in France</h2>
           <div class="text-center">
-            <p>Nos meilleurs solutions pour la présentation de vos maquettes en hologrammes.</p>
+            <p>Nos meilleures solutions pour la présentation de vos maquettes en hologrammes.</p>
             <p>A louer le temps d'un salon, ou à acheter pour chez vous.</p>
-            <p>Made in France</p>
           </div>
         </div>
         <div class="table-responsive-md">
@@ -50,6 +49,14 @@
                   <td>
                     <span>à partir de</span>
                     <h5 class="text-right text-secondary"><span class="priceTag"> {{product.price}}</span>€ HT</h5>
+                  </td>
+                {% endfor %}
+                </tr>
+                <tr>
+                {% for product in site.data.pricing.products %}
+                  <td>
+                    <span>Vous préférez la location ?</span>
+                    <h6 class="text-right text-secondary italic"><span class="priceTag"> {{product.renting}}</span>€ HT</h6>
                     <small class="d-block w-100 text-right">Location sur 3 jours</small>
                   </td>
                 {% endfor %}
