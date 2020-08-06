@@ -10,6 +10,9 @@ usages:
 products:
   fr: "Produits"
   en: "Products"
+keynotes:
+  fr: "Présentations"
+  en: "Keynotes"
 home:
   fr: "Accueil"
   en: "Home"
