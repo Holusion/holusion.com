@@ -1,0 +1,35 @@
+---
+layout: front_page
+title: Holusion
+abstract: "Présentations"
+image: img/sections/prism.jpg
+layout : front_page
+lang: en
+visibility: hidden
+---
+
+
+<section class="title">
+  <div class="container">
+    <h1>
+      Présentations Holusion
+    </h1>
+  </div>
+</section>
+
+<div class="container">
+  {% ariane %}
+</div>
+
+<div>
+  <div class="row no-gutters">
+
+
+{% assign keynotes=site.keynotes | where:"lang", page.lang %}
+{% for keynote in keynotes %}
+{% if  keynote.visibility !="hidden" %}
+  {% include components/card.html content=keynote classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1"%}
+  {% endif %}
+{% endfor %}
+  </div>
+</div>
