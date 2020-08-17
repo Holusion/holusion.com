@@ -77,11 +77,10 @@
           </ul>
           <ul class="nav navbar-nav" role="menu">
             {% capture dev_url %}/dev/{{page.lang}}/{% endcapture %}
-            {% capture keynote_url %}/keynotes/{{page.lang}}/{% endcapture %}
             {% include components/nav/navbar_link.html href=dev_url title=site.data.sections.dev %}
             {% include components/nav/navbar_link.html url='about' title=site.data.sections.about %}
             {% include components/nav/navbar_link.html url='products' title=site.data.sections.products %}
-            {% include components/nav/navbar_link.html href=keynote_url title=site.data.sections.keynotes %}
+            {% include components/nav/navbar_link.html url='interaction' title=site.data.sections.interactivity %}
             {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
             {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
             {% include components/language_picker.html type="nav-item dropdown" classes="nav-link text-info" %}
