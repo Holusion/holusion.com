@@ -77,7 +77,7 @@ module Jekyll
           current_hash[last_part] = {
             "title" => doc.data["title"],
             "url" => doc.url,
-            "visibility" => doc.data["visibility"],
+            "visible" => doc.data["visible"],
             "children"=>(current_hash.has_key?(last_part)) ? current_hash[last_part]["children"] : {},
           }
         end
@@ -89,7 +89,11 @@ module Jekyll
         is_active = active_uri.include? path
         title = item["title"] || path.split("/").last
         url = item["url"] || ""
-        visibility = item["visibility"]
+        if item["visible"].nil?
+          visible = true
+        else
+          visible = item["visible"]
+        end
         if item["children"].empty?
           dropdown_list = ""
         else
@@ -110,8 +114,9 @@ module Jekyll
             </ul>
           )
         end
-        if visibility == "hidden" #Pourquoi je ne le test pas avant ? Parce que ça crash, ça crashe comme une buse et j'ai aucune idée de comment débuger ça proprement. Alors, je le vire ici, à la toute fin. Et c'est très bien comme ça
-          list_item=""
+       #Pourquoi je ne le test pas avant ? Parce que ça crash, ça crashe comme une buse et j'ai aucune idée de comment débuger ça proprement. Alors, je le vire ici, à la toute fin. Et c'est très bien comme ça
+        if visible == false
+            list_item=""
         else
         list_item = %(
           <li class="list-group-item content-bar--link#{is_active ? " current" : ""}">
