@@ -2,9 +2,8 @@
 title: Solutions pour les musées et la culture
 abstract: "Présentation en muséographie"
 lang: fr
-image: img/sections/prism.jpg
+image: img/tiles/Museotile2.jpg
 menu: keynotes
-abstract: Application de démonstration sur Unity3D
 rank: 2
 
 ---

@@ -3,9 +3,8 @@ title: Holusion
 abstract: "SIEC"
 lang: fr
 visible: false
-image: img/sections/prism.jpg
+image: img/tiles/Siectile.jpg
 menu: keynotes
-abstract: Application de démonstration sur Unity3D
 rank: 2
 ---
 
