@@ -1,8 +1,12 @@
 ---
-  title: Création de contenu
-  lang: fr
+title: Les règles de la création d'hologrammes
+image: img/posts/banner_unity.jpg
+
+abstract: Perfectionnez vos contenus holographiques avec ces principes de base
+rank: 1
 ---
 
+<h1>Perfectionnez vos vidéos hologaphiques</h1>
 
 <div class="row">
   <div class="col-lg-6 col-12">
@@ -57,5 +61,3 @@
 <p>
   Que vous soyez utilisateur de la <b>Suite Adobe</b>, <b>Infographiste 3D</b>, <b>développeur</b>, <b>vidéaste</b> ou amateur éclairé, nous avons pensé à vous et préparé des guides complets pour produire facilement vos contenus.
 </p>
-
-{% include lists/section_thumbnails.html section="content" %}

@@ -1,8 +1,9 @@
 ---
-title: Contrôler l'affichage en python
-abstract: Utilisez l'API Holusion pour contrôler votre produit
-
+title: Utiliser l'API de contrôle
+abstract: Utilisez l'API Holusion pour contrôler l'affichage de votre produit
+rank: 5
 ---
+
 # Utiliser la playlist
 Nous allons réaliser un programme en python qui affichera la liste des médias et permettra de séléctionner un élément de la playlist pour le lire.
 

@@ -14,6 +14,7 @@
 
 <div class="{{classes}}" role="listitem" aria-label="{{content.title}}">
   <div class="card shadow-sm border-primary" data-test="card" style="min-height:100%">
+    
     <a {%if content.url %}href="{{content.url}}"{% endif %} class="card-img-top-wrap">
       {%- if content.image and assets[content.image] -%}
         {% asset "{{content.image}}"
@@ -29,16 +30,22 @@
           {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
       {%- endif -%}
     </a>
-    <a href="{{content.url}}" class="card-header bg-primary text-light">
+
+    <a {%if content.url %}href="{{content.url}}"{% endif %} class="card-header bg-primary text-light">
         {{content.title}}
     </a>
+
     <div class="card-body text-left">
       <p class="card-text">{{content.abstract}}</p>
     </div>
-    <div class="card-footer text-right">
-      <a href="{{content.url}}" class="card-link text-secondary">
-        {{content.action| default:site.data.strings["read-more"][page.lang] }}
-      </a>
-    </div>
+
+    {% if content.url %}
+      <div class="card-footer text-right">
+        <a href="{{content.url}}" class="card-link text-secondary">
+          {{content.action| default:site.data.strings["read-more"][page.lang] }}
+        </a>
+      </div>
+    {% endif %}
+
   </div>
 </div>
