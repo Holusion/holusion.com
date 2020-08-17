@@ -11,8 +11,8 @@ products:
   fr: "Produits"
   en: "Products"
 keynotes:
-  fr: "Ressources"
-  en: "Ressources"
+  fr: "Ressources et documents"
+  en: "Ressources and documentation"
 home:
   fr: "Accueil"
   en: "Home"
@@ -20,7 +20,7 @@ store:
   fr: "Store"
   en: "Store"
 dev:
-  fr: "Développeurs"
+  fr: "Documentation"
   en: "Documentation"
 interactivity:
   fr: "Interactivité"
