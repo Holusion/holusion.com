@@ -2,7 +2,6 @@ require "nokogiri"
 module Jekyll
   module Tags
     class DevNav < Liquid::Tag
-      @@tree = nil
       #import lookup_variable function
       # https://github.com/jekyll/jekyll/blob/master/lib/jekyll/liquid_extensions.rb
       include Jekyll::LiquidExtensions
@@ -22,6 +21,9 @@ module Jekyll
        ([\w-]+)\s*=\s*
        (?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.\-#]+))
      !x
+      def cache
+        @@cache ||= Jekyll::Cache.new("DevNav")
+      end
 
       def initialize(tag_name, markup, tokens)
         super
@@ -58,8 +60,14 @@ module Jekyll
         end
         return params
       end
+
+      # makes a tree of docs as a hash like :
+      # {
+      #   "fr" => {
+      #     "page_path" => { :title, :url, :children }
+      #   }
+      # }
       def doc_tree(docs)
-        return @@tree if @@tree
         tree = { "fr" =>{}, "en" => {}}
         docs.each do |doc|
           match = /\/dev\/(?<lang>fr|en)\/((?<rest>.*)\/)?(?<last>(?!index)[^\/]+)/.match(doc.url)
@@ -78,22 +86,28 @@ module Jekyll
             "title" => doc.data["title"],
             "url" => doc.url,
             "children"=>(current_hash.has_key?(last_part)) ? current_hash[last_part]["children"] : {},
+            "visible" => doc.data.has_key?("visible")? doc.data["visible"] : true
           }
         end
-        @@tree = tree
-        return @@tree
+        return tree
       end
+
       def render_item(path, item, active_uri)
         uid = path.sub("/","-")
+
         is_active = active_uri.include? path
         title = item["title"] || path.split("/").last
         url = item["url"] || ""
+
+        return if item["visible"] == false
+
         if item["children"].empty?
           dropdown_list = ""
         else
           child_nodes = item["children"].map do |childKey, child|
             render_item(path+"/#{childKey}", child, active_uri)
           end
+
           dropdown_list = %(
             <a class="dropdown-toggle" role="button"
               data-toggle="collapse"  aria-haspopup="true"
@@ -104,6 +118,9 @@ module Jekyll
             <ul class="collapse list-group list-group-flush content-bar-group--sub#{is_active ? " show" : ""}"
               id="collapseCard#{uid}"
               aria-expanded="#{ is_active ? "true" : "false"}">
+              <li class="list-group-item content-bar--link">
+                <a href="#{url}">Introduction</a>
+              </li>
               #{child_nodes.join("\n")}
             </ul>
           )
@@ -135,14 +152,20 @@ module Jekyll
           END
         end
 
-        col = doc_tree(docs)
+        docs_tree = cache.getset(docs) do
+          doc_tree(docs)
+        end
+
         html = %(<ul class="list-group list-group-flush content-bar-group--main">)
-          col[lang].each do |key, doc|
-            next if doc["children"].empty? # do not render categories with no children for now
-            #print "Document #{key}: #{doc.keys}\n"
-            is_active_category = page["url"].include? doc["url"]
-            html+=%(#{render_item(key, doc, page["url"])}</li>)
-          end
+
+        html += %(<li class="list-group-item content-bar--link#{ page["url"] == "/dev/"+lang ? " current" : ""}">
+          <a href="/dev/#{lang}/">Introduction</a>
+        </li>)
+
+        docs_tree[lang].each do |key, doc|
+          next if doc["children"].empty? # do not render categories with no children for now
+          html += render_item(key, doc, page["url"])
+        end
   	    return html+"</ul>"
       end
     end

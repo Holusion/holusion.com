@@ -100,6 +100,19 @@ cd "$DIR"
 #Get convert helpers
 source ./scripts/optimizers.sh
 
+#Set up RVM
+if test -s "$HOME/.rvm/scripts/rvm" ; then
+  # First try to load from a user install
+  source "$HOME/.rvm/scripts/rvm"
+  rvm use "$(cat $DIR/.ruby-version)@$(cat $DIR/.ruby-gemset)"
+elif test -s "/usr/local/rvm/scripts/rvm" ; then
+  # Then try to load from a root install
+  source "/usr/local/rvm/scripts/rvm"
+  rvm use "$(cat $DIR/.ruby-version)@$(cat $DIR/.ruby-gemset)"
+else
+  printf "WARNING: An RVM installation was not found.\n"
+fi
+
 
 #[ -d "$DIR/build" ] || mkdir -p "$DIR/build"
 install_optimizers "$DIR/build"
