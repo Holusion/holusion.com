@@ -2,7 +2,7 @@
 title: Holusion
 abstract: "SIEC"
 lang: fr
-visibility: hidden
+visible: false
 image: img/sections/prism.jpg
 menu: keynotes
 abstract: Application de démonstration sur Unity3D
