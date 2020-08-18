@@ -1,8 +1,8 @@
 ---
-title: Maquettes holographiques pour l'immobilier
+title: Maquettes holographiques
 abstract: "Présentation de maquettes innovantes"
 lang: fr
-image: img/tiles/Immotile2.jpg
+image: img/tiles/Immotile.jpg
 menu: keynotes
 rank: 2
 

@@ -3,6 +3,8 @@ title: Holusion for Museum
 abstract: "Museography"
 lang: en
 image: img/sections/prism.jpg
+rank: 2
+menu: keynotes
 ---
 
 
