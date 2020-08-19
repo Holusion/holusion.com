@@ -3,7 +3,7 @@ title: After Effect
 image: img/posts/banner_after_effect.jpg
 
 abstract: After Effect project to simplify the content making.
-rank: 1
+rank: 10
 menu: content
 ---
 
