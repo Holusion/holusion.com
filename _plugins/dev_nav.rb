@@ -90,7 +90,7 @@ module Jekyll
             :url => doc.url,
             :children =>(current_hash.has_key?(last_part)) ? current_hash[last_part][:children]: {},
             :visible => doc.data.has_key?("visible")? doc.data["visible"] : true
-          }
+          } if doc.data["visible"] != false
         end
 
         return tree
@@ -103,7 +103,6 @@ module Jekyll
         title = item[:title] || path.split("/").last
         url = item[:url] || ""
 
-        return if item[:visible] == false
 
         if item[:children].empty?
           dropdown_list = ""
@@ -167,8 +166,9 @@ module Jekyll
           <a href="/dev/#{lang}/">Introduction</a>
         </li>)
 
-        docs_tree[lang].each do |key, doc|
-          next if doc[:children].empty? # do not render categories with no children for now
+        sorted_localized_docs = docs_tree[lang].sort_by { |key, val| val.has_key?(:rank)? val[:rank] : 0 }
+        sorted_localized_docs.each do |key, doc|
+          next if doc[:children].empty?# do not render categories with no children for now
           html += render_item(key, doc, page["url"])
         end
   	    return html+"</ul>"
