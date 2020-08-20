@@ -56,7 +56,7 @@ rank: 1
 <p>
   Chaque produit dispose d'une résolution et d'une disposition de contenu qui lui est propre. Il est important de bien positionner les éléments à afficher pour un rendu optimal.
   <br>
-  Le <a href="/dev/fr/toolbox/manuals/">Manuel</a> de votre produit devrait détailler son format d'image, sa résolution et toutes informations techniques utiles. Nous fournissons par ailleurs des templates prêts à l'emploi pour pouvoir créer rapidement vos hologrammes sans barrière technique.
+  Le <a href="/dev/fr/manuals/">Manuel</a> de votre produit devrait détailler son format d'image, sa résolution et toutes informations techniques utiles. Nous fournissons par ailleurs des templates prêts à l'emploi pour pouvoir créer rapidement vos hologrammes sans barrière technique.
 </p>
 <p>
   Que vous soyez utilisateur de la <b>Suite Adobe</b>, <b>Infographiste 3D</b>, <b>développeur</b>, <b>vidéaste</b> ou amateur éclairé, nous avons pensé à vous et préparé des guides complets pour produire facilement vos contenus.

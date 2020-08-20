@@ -97,7 +97,7 @@ A cette étape, il faut généralement redémarrer le produit Holusion tout en l
 
 La liste des IP allouées est aussi disponible à l'adresse : [http://localhost:6789](http://localhost:6789)
 
-Vous pouvez maintenant accéder [normalement](index) à votre produit à l'adresse [http://192.168.0.2](http://192.168.0.2)
+Vous pouvez maintenant accéder normalement à votre produit à l'adresse [http://192.168.0.2](http://192.168.0.2)
 
 ## Désactivation
 

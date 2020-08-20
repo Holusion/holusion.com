@@ -61,7 +61,7 @@ Une fois la vidéo lancée sur *Stargazer*, votre hologramme fonctionne sur l'**
 ### Format vidéo holographiques
 
 L’hologramme de l'**Azur** se présente comme une vidéo HD en mp4. Sa résolution graphique doit être de 1920x1080.
-Pour plus d’informations, rendez vous sur <a href="/dev/fr/content/">cette page</a>.
+Pour plus d’informations, rendez vous sur <a href="/dev/fr/tutorials/first-steps">cette page</a>.
 
 ### Création de contenu
 
@@ -71,11 +71,11 @@ Il vous est possible de créer du contenu de différentes manières. Les deux pr
 
 - **Le tournage fond noir** :
 Afin de modéliser rapidement un objet ou une personne, l’une des techniques est le tournage fond noir.
-Pour en savoir plus, rendez vous sur <a href="/dev/fr/content/recording/index">ce lien</a>.
+Pour en savoir plus, rendez vous sur <a href="/dev/fr/">ce lien</a>.
 
 - **L'infographie 3D** :
 Pour réaliser des dessins 3D, nous utilisons le logiciel libre Blender. Il vous permettra de créer des objets, animations, effets visuels, etc.
-Pour plus de détails, visitez <a href="/dev/fr/content/blender/index">cette page</a>.
+Pour plus de détails, visitez <a href="/dev/fr/tutorials/first-steps">cette page</a>.
 
 
 <center>
@@ -94,9 +94,9 @@ Pour transformer votre vidéo en contenu adapté, un petit processus de concepti
 <img class="img-fluid" src="/static/img/posts/azur/Pyramide.png" alt="Format vidéo de la pyramide"/>
 </div>
 
-- Pour <a href="/dev/fr/content/after_effect/index">After Effect</a> : Logiciel de montage de la suite Adobe.
-- Pour <a href="/dev/fr/content/natron/index">Natron</a> : Logiciel de montage open source.
-- Pour <a href="/dev/fr/content/blender/index">Blender</a> : Logiciel d’infographie 3D open source.
+- Pour <a href="/dev/fr/">After Effect</a> : Logiciel de montage de la suite Adobe.
+- Pour <a href="/dev/fr/">Natron</a> : Logiciel de montage open source.
+- Pour <a href="/dev/fr/tutorials/first-steps">Blender</a> : Logiciel d’infographie 3D open source.
 
 
 

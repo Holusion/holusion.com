@@ -10,7 +10,7 @@ rank: 1
   <div class="col-lg-6 col-md-12">
   <p>Holusion fournit une API publique sur chacun de ses produits. Elle permet de controler l'activation, la désactivation, l'ajout ou la suppression, la lecture des médias.
   </p><p>
-  Par défaut, cette API est utilisable via l'interface web permettant de <a href="/dev/fr/toolbox/packaging/">transférer des médias</a>, mais il est possible de l'utiliser directement à partir d'applications tierces.
+  Par défaut, cette API est utilisable via l'interface web permettant de <a href="/dev/fr/tutorials/media-transfer">transférer des médias</a>, mais il est possible de l'utiliser directement à partir d'applications tierces.
   </p>
   <p>
   On peut grâce à elle réaliser des systèmes complexes de gestion de contenu. Parmis les interactions possibles avec nos produits, vous pouvez notamment retrouver :
@@ -25,19 +25,17 @@ rank: 1
 </div>
 
 
-## Mise en place
+## Documentation interactive
 
 Pour utiliser l'API de contrôle de votre produit, il faut y être connecté, en [filaire direct](/dev/fr/tutorials/connect-direct-windows) ou via un [nano-routeur](/dev/fr/tutorials/connect-router). Dans ce guide nous utiliserons `192.168.1.100` comme IP de votre produit. Il faudra la remplacer par son IP réelle le cas échéant.
 
-## Découverte
-
-L'API dispose d'une documentation interactive complète à l'adresse : `http://192.168.1.100/doc`. Les requêtes peuvent y être testées en situation réelle directement sur le produit.
-
+Dans l'onglet `Doc`, vous trouverez une version interactive de son API.
 
 Si vous n'avez pas accès à un produit en état de marche, vous pouvez utiliser la version statique de la documentation ci-dessous.
 
 
 ## Documentation
+
 <div id="swagger-ui">
   <div class="d-flex justify-content-center">
     <div class="spinner-border" role="status">

@@ -1,6 +1,6 @@
 ---
 title: Connexion avec un nano-routeur
-image: img/posts/nano_routeur.jpg
+image: img/documentation/nano_router.jpg
 
 abstract: Connectez-vous à votre produit en utilisant un nano-routeur TP Link
 rank: 2
@@ -77,4 +77,4 @@ Ou utiliser un scanner réseau comme `nmap`, ou un scanner mdns comme avahi.
 ## Aller plus loin
 
 - Assigner une IP statique à votre produit
-- Transférer [une vidéo](/dev/fr/media-transfer)
+- Transférer [une vidéo](/dev/fr/tutorials/media-transfer)

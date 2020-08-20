@@ -2,6 +2,7 @@ require "nokogiri"
 module Jekyll
   module Tags
     class DevNav < Liquid::Tag
+      @@uids = 1
       #import lookup_variable function
       # https://github.com/jekyll/jekyll/blob/master/lib/jekyll/liquid_extensions.rb
       include Jekyll::LiquidExtensions
@@ -23,6 +24,10 @@ module Jekyll
      !x
       def cache
         @@cache ||= Jekyll::Cache.new("DevNav")
+      end
+      def getUid
+        @@uids += 1
+        return @@uids
       end
 
       def initialize(tag_name, markup, tokens)
@@ -97,45 +102,51 @@ module Jekyll
       end
 
       def render_item(path, item, active_uri)
-        uid = path.sub("/","-")
+        uid = getUid
 
         is_active = active_uri.include? path
         title = item[:title] || path.split("/").last
         url = item[:url] || ""
 
+        markup = %(<li class="list-group-item content-bar--link#{is_active ? " current" : ""}">)
 
         if item[:children].empty?
-          dropdown_list = ""
+          markup += %(<a href="#{url}">#{title}</a>)
         else
           sorted_children = item[:children].sort_by { |key, val| val[:rank] }
           child_nodes = sorted_children.map do |childKey, child|
             render_item(path+"/#{childKey}", child, active_uri)
           end
 
-          dropdown_list = %(
+          markup += %(
             <a class="dropdown-toggle" role="button"
               data-toggle="collapse"  aria-haspopup="true"
               aria-expanded="#{is_active ? "true" : "false"}"
-              data-target="#collapseCard#{uid}"
-              aria-controls="collapseCard#{uid}" href="">
+              data-target="#collapseList#{uid}"
+              aria-expanded="#{ is_active ? "true" : "false"}"
+              aria-controls="collapseList#{uid}">
+              #{title}
             </a>
+          )
+
+          markup += %(
             <ul class="collapse list-group list-group-flush content-bar-group--sub#{is_active ? " show" : ""}"
-              id="collapseCard#{uid}"
-              aria-expanded="#{ is_active ? "true" : "false"}">
-              <li class="list-group-item content-bar--link">
+              id="collapseList#{uid}"
+            >
+          )
+          if url and 0 < url.length
+            markup += %(
+              <li class="list-group-item content-bar--link#{url == active_uri ? " current": ""}">
                 <a href="#{url}">Introduction</a>
               </li>
-              #{child_nodes.join("\n")}
-            </ul>
-          )
+            )
+          end
+          markup += child_nodes.join("\n")
+          markup += %(</ul>)
         end
 
-        return %(
-          <li class="list-group-item content-bar--link#{is_active ? " current" : ""}">
-            <a href="#{url}">#{title}</a>
-            #{dropdown_list}
-          </li>
-        )
+        markup += %(</li>)
+        return markup
       end
 
       def render(context)
@@ -163,7 +174,7 @@ module Jekyll
 
         html = %(<ul class="list-group list-group-flush content-bar-group--main">)
 
-        html += %(<li class="list-group-item content-bar--link#{ page["url"] == "/dev/"+lang ? " current" : ""}">
+        html += %(<li class="list-group-item content-bar--link#{ page["url"] == %(/dev/#{lang}/index) ? " current" : ""}">
           <a href="/dev/#{lang}/">Introduction</a>
         </li>)
 

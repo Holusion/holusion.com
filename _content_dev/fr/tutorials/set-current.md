@@ -129,4 +129,3 @@ On peut à partir de ces 2 requêtes créer une application permettant de pilote
     curses.echo()
     curses.endwin()
 
-Pour aller plus loin, on peut désactiver le reste de la playlist pour jouer en boucle l'élément sélectionné : [Désactiver des élements](modify-elements)
