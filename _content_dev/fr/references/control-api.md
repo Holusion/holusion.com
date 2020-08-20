@@ -33,63 +33,69 @@ Pour utiliser l'API de contrôle de votre produit, il faut y être connecté, en
 
 L'API dispose d'une documentation interactive complète à l'adresse : `http://192.168.1.100/doc`. Les requêtes peuvent y être testées en situation réelle directement sur le produit.
 
-Les *routes* sont groupées en 5 catégories :
-<center>
-<img class="img-fluid" src="/static/img/posts/media-player/list.png" alt="routes groups">
-</center>
 
-Pour montrer le fonctionnement de cette interface, nous utiliserons dans un premier temps les routes du groupe `playlist`. Cliquer sur la ligne correspondante pour lister les opérations possibles.
+Si vous n'avez pas accès à un produit en état de marche, vous pouvez utiliser la version statique de la documentation ci-dessous.
 
-<center>
-  <img class="img-fluid" src="/static/img/posts/media-player/playlist_routes.png" alt="routes groups">
-</center>
 
-Nous utiliserons d'abord la première route disponible, qui permet de lister les éléments de la liste de lecture.
-
-<div class="row">
-  <div class="col-md-6 col-sm-12">
-    <p>
-    Le détail de `[GET] /playlist`.
-    </p>
-    <img class="img-fluid" src="/static/img/posts/media-player/route_details.png" alt="route details">
-  </div>
-  <div class="col-md-6 col-sm-12">
-    <p>
-    Exemple de réponse en cliquant sur **Try it out!**
-    </p>
-    <img class="img-fluid" src="/static/img/posts/media-player/route_response.png" alt="route details">
+## Documentation
+<div id="swagger-ui">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
   </div>
 </div>
-
-Cette requête produit donc un tableau **JSON** comportant les identifiants des différents médias disponibles.
-
-On peut la réutiliser dans une application très simple. Par exemple, en python (exemple pour python v2.x):
-
-    import requests
-    requests.get("http://10.0.0.1/playlist").text
-
-Renvoie la même séquence de texte que l'exemple de la documentation.
-
-**Attention** : Les requêtes présentées agissent réellement sur le produit. Si vous testez par exemple la route `[DELETE] /medias/{name}`, le média ciblé sera définitivement supprimé de votre produit.
-
-
-## Première application
-
-Afin de prendre en main l'API, nous allons réaliser une première application en python.
-
-**Note** : Tous les environnements modernes proposent des librairies similaires à la syntaxe proche.
-
-Nous utiliserons la librairie `requests`, qui permettra d'accéder à l'API.
-
-    #!/usr/bin/env python
-    import requests
-    #On récupère les médias disponibles :
-    medias = requests.get("http://10.0.0.1/playlist").json()
-    print(medias[0].get("name"))
-
-
-L'idée générale est qu'en utilisant les requêtes standard et en se basant sur les réponses données par la documentation, on peut facilement et rapidement créer une interface complète permettant d'interagir avec les hologrammes.
-
-## Aller plus loin
-
-{% include_relative exemples.html %}
+<script>
+  'use strict';
+  let loadScript = new Promise(function (resolve, reject){
+    let el = document.createElement("SCRIPT");
+    el.onload = resolve;
+    el.onerror = reject;
+    el.src = "https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js";
+    document.head.appendChild(el);
+  });
+  let loadCSS = new Promise(function (resolve, reject){
+    let el = document.createElement("link");
+    el.onload = ()=>{
+      el.media= "screen";
+      resolve();
+    };
+    el.onerror = reject;
+    el.rel = "stylesheet";
+    el.href = "https://unpkg.com/swagger-ui-dist@3/swagger-ui.css";
+    document.head.appendChild(el);
+  });
+  Promise.all([loadScript, loadCSS]).then(function(){
+    console.log("Swagger loaded")
+    const DisableTryItOutPlugin = function() {
+      return {
+        statePlugins: {
+          spec: {
+            wrapSelectors: {
+              allowTryItOutFor: () => () => false
+            }
+          }
+        }
+      }
+    }
+    const ui = SwaggerUIBundle({
+      url: "/static/files/api-docs_3.0.1.json",
+      dom_id: '#swagger-ui',
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIBundle.SwaggerUIStandalonePreset
+      ],
+      plugins: [
+        DisableTryItOutPlugin
+      ],
+      layout: "BaseLayout",
+      docExpansion: "none",
+    })
+  }, function(err){
+    console.warn("Failed to init swagger : ", err);
+    document.querySelector("#swagger-ui").innerHTML = `<div class="jumbotron">
+      <h1>Impossible d'initializer swagger</h1>
+      <p class="lead">${err.toString()}</p>
+    </div>`
+  })
+</script>
