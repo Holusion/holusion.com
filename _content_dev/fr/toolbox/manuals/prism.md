@@ -1,6 +1,6 @@
 ---
 title: Manuel Prism
-abstract: Guide d'utilisation des produits "Prism" d'Holusion
+abstract: Guide d'utilisation des produits Prism d'Holusion
 image: /static/img/posts/prism/prism_couloir.jpg
 rank: 4
 menu: toolbox
