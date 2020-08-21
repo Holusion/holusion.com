@@ -10,7 +10,7 @@
 {% else %}
   {% assign classes = "col-lg-3 col-md-4 col-sm-6 col-12" %}
 {% endif %}
-{%capture alt_text %}{%if content.abstract%}{{content.abstract}}{%else%}{{content.title}}{%endif%}{%endcapture%}
+{%capture alt_text %}{%if content.abstract%}{{content.abstract | escape }}{%else%}{{content.title}}{%endif%}{%endcapture%}
 
 <div class="{{classes}}" role="listitem" aria-label="{{content.title}}">
   <div class="card shadow-sm border-primary" data-test="card" style="min-height:100%">
