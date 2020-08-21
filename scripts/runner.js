@@ -8,7 +8,7 @@ const {exec, spawn} = require("child_process");
 
 const faker = require("faker");
 const puppeteer = require('puppeteer');
-const devices = require('puppeteer/DeviceDescriptors');
+const devices = puppeteer.devices;
 //Tools to serve the site locally
 const serveStatic = require("serve-static");
 const finalhandler = require('finalhandler');
@@ -24,12 +24,10 @@ const local_assets_files = path.resolve(__dirname, "../_assets");
 const target = process.env["TARGET"] || "local";
 const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
-  //headless:false,
+  headless:process.env["HEADLESS"] == "false"? false : true,
   executablePath: process.env["PUPPETEER_EXEC_PATH"], // set by github action
   args:["--no-sandbox"]
 };
-
-console.log("Extended tests : ", (is_extended?"yes":"no"));
 
 /**
  * Utility function to speed up tests
@@ -128,8 +126,8 @@ async function getThumbnailLinks(cells){
 //Default : run only on small and large "dekstop"
 const target_devices = [
   {
-    'name': 'small Desktop Chrome 66',
-    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'name': 'small Desktop Chrome 84',
+    'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
     'viewport': {
       'width': 800,
       'height': 600,
@@ -142,8 +140,8 @@ const target_devices = [
 ]
 if (is_extended){
   target_devices.push({
-    'name': 'large Desktop Chrome 66',
-    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'name': 'large Desktop Chrome 84',
+    'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
     'viewport': {
       'width': 1920,
       'height': 1080,
@@ -154,8 +152,8 @@ if (is_extended){
     }
   });
   target_devices.push({
-    'name': '4k Desktop Chrome 66',
-    'userAgent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    'name': '4k Desktop Chrome 84',
+    'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
     'viewport': {
       'width': 3840,
       'height': 2160,
@@ -178,6 +176,26 @@ if (is_extended){
     target_devices.push(d);
   }
 }
+
+
+describe("pre-tests", function(){
+  it("run extended tests", function(){
+    if(!is_extended){
+      this.skip()
+    }
+  })
+  describe("devices", ()=>{
+    target_devices.forEach(dev=>{
+      it(`${dev.name || "<unknown>"} is a valid device`, ()=>{
+        expect(dev).to.have.property("name").to.be.a("string");
+        expect(dev).to.have.property("viewport").to.be.a("object");
+        expect(dev.viewport).to.have.property("width").to.be.a("number");
+        expect(dev.viewport).to.have.property("height").to.be.a("number");
+        expect(dev).to.have.property("userAgent").to.be.a("string");
+      })
+    })
+  })
+})
 // use :
 // target_devices.forEach(function(device){})
 // to run tests on multiple devices
@@ -676,18 +694,18 @@ describe(`${target}.`,function(){
       for (let loc of locations){
         describe(`page ${loc}`,function(){
           let page;
-          let ln = loc;
+          let ln;
           before(async ()=>{
             //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
             ln = path.join(href,loc);
             page = await newPage();
             await block(page,["medias", "analytics", "captcha"]);
-            return await page.goto(`${ln}`);
+            await page.goto(`${ln}`, {timeout:9000, waitUntil: "domcontentloaded"});
           });
           after(async()=>{
             return await page.close();
           });
-          it("check canonical link",async ()=>{
+          it(`check canonical link for ${loc}`,async ()=>{
             let c_link = await page.$eval("LINK[rel=canonical]",h => h.href);
             expect(
               c_link.replace(/^https?:\/\/[^\/]+/, ""),
@@ -706,17 +724,35 @@ describe(`${target}.`,function(){
               
             }));
           })
-          it("have no h-scroll on every devices", async function(){
-            for (let device of target_devices){
-              await page.emulate(device);
-              let scrollX = await page.evaluate(()=>{
+
+        });
+
+        describe(`device fit for ${loc}`, function(){
+          let ln;
+          let devicePage;
+          before(()=>{
+            //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
+            ln = path.join(href,loc);
+          });
+
+          beforeEach(async ()=>{
+            devicePage = await newPage();
+          });
+          afterEach(async ()=>{
+            await devicePage.close();
+          })
+          for (let device of target_devices){
+            it(`has no h-scroll on ${device.name}`, async function(){
+              await devicePage.emulate(device);
+              await devicePage.goto(ln, {timeout:9000, waitUntil: "domcontentloaded"});
+              let scrollX = await devicePage.evaluate(()=>{
                 window.scrollBy(1,0);
                 return Promise.resolve(window.scrollX);
               })
               expect(scrollX, `Horizontal scroll should be locked to 0`).to.equal(0);
-            }
-          });
-        });
+            });
+          }
+        })
       }
     })
   });
