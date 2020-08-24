@@ -129,18 +129,13 @@ module Jekyll
             </ul>
           )
         end
-       #Pourquoi je ne le test pas avant ? Parce que ça crash, ça crashe comme une buse et j'ai aucune idée de comment débuger ça proprement. Alors, je le vire ici, à la toute fin. Et c'est très bien comme ça
-        if visible == false
-            list_item=""
-        else
-        list_item = %(
+
+        return %(
           <li class="list-group-item content-bar--link#{is_active ? " current" : ""}">
             <a href="#{url}">#{title}</a>
             #{dropdown_list}
           </li>
         )
-      end
-        return list_item
       end
 
       def render(context)
