@@ -53,6 +53,7 @@ pagination:
 # It will be overriden by further "_deploy.yml" file during deployment.
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 permalink: /:path
+
 collections:
   posts:
     output: true
@@ -60,6 +61,10 @@ collections:
   content_dev:
     permalink: /dev/:path
     output: true
+  keynotes:
+    output: true
+    permalink: /keynotes/:path
+
 defaults:
   -
     scope:
@@ -107,6 +112,8 @@ defaults:
       path: "static/**/*.pdf"
     values:
       sitemap: false
+
+
 
 
 # most default config is made in make_collections plugin because this mechanism is too restrictive

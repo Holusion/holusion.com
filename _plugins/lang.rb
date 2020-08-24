@@ -52,6 +52,13 @@ Jekyll::Hooks.register :content_dev, :post_init, priority: "high" do |p|
   #print "collections : #{ p.site.collections["content_dev"]}"
   add_alt_language(p, p.site.collections["content_dev"].docs)
 end
+
+
+Jekyll::Hooks.register :keynotes, :post_init, priority: "high" do |p|
+  #print "Making alt for page : #{p.name}\n"
+  #print "collections : #{ p.site.collections["content_dev"]}"
+  add_alt_language(p, p.site.collections["keynotes"].docs)
+end
 =begin
 Jekyll::Hooks.register :pages, :pre_render, priority: "high" do |p|
   if !p.data.key? "alt_url"
