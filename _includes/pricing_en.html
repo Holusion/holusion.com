@@ -48,15 +48,22 @@
               </thead>
               <tbody>
                 <tr>
-                  {% for product in site.data.pricing_en.products %}
+                  {% for product in site.data.pricing.products %}
                     <td>
                       <span>Starting:</span>
                       <h5 class="text-right text-secondary"><span class="priceTag"> {{product.price}}</span>€ <br class="d-md-none">w/o VAT</h5>
+                    </td>
+                  {% endfor %}
+                  </tr>
+                  <tr>
+                  {% for product in site.data.pricing.products %}
+                    <td>
+                      <span>prefer to rent?</span>
+                      <h6 class="text-right text-secondary italic"><span class="priceTag"> {{product.renting}}</span>€ <br class="d-md-none">w/o VAT</h6>
                       <small class="d-block w-100 text-right">3 days renting</small>
                     </td>
                   {% endfor %}
                 </tr>
-
                 <tr>
                   {% for product in site.data.pricing_en.products %}
                     <td>

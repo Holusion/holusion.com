@@ -77,7 +77,7 @@ module Jekyll
           last_part = match["last"]
 
           current_hash = tree[lang]
-          
+
           parts.each do |part|
             #print "current hash :#{current_hash}"
             current_hash[part] = {:children =>{}, :title => part } if not current_hash.has_key? part
@@ -129,6 +129,7 @@ module Jekyll
             </ul>
           )
         end
+
         return %(
           <li class="list-group-item content-bar--link#{is_active ? " current" : ""}">
             <a href="#{url}">#{title}</a>

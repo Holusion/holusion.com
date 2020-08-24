@@ -1,6 +1,8 @@
 {% include utils/make_pages.html %}
 {% for content in pages %}
-  {% if content.menu == include.path %}
-    {% include {{include.format}} content=content %}
+
+  {% if content.menu == include.path and content.visible != false %}
+    {% include components/card.html content=content classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1" %}
   {% endif %}
+
 {% endfor %}
