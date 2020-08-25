@@ -61,9 +61,6 @@ collections:
   content_dev:
     permalink: /dev/:path
     output: true
-  keynotes:
-    output: true
-    permalink: /keynotes/:path
 
 defaults:
   -
