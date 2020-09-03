@@ -7,13 +7,62 @@ menu: toolbox
 
 ---
 
+<section class="section section-main-header header-fill" style="max-width: 1920px">
 
-## Le produit
+  {%include components/header_image.html image="img/products/Iris22_exemple.jpg" %}
+  <div class="main-header-body body-right">
+    <div class="content shadow rounded bg-white rounded p-4 text-justify">
+      <h2> Contenu de la livraison </h2>
+      <p> </p>
+      <p> - Iris 22” assemblé avec sa vitre et prêt à fonctionner </p>
+      <p> - 1 alimentation à brancher sur une prise secteur  </p>
 
-L'**Iris** d'Holusion affiche des hologrammes de 30cm de haut dans sa vitrine en verre. Il est facile à transporter et particulièrement adapté pour les usages qui nécessitent des déplacements. C'est un affichage à 180° avec une image flottant librement qui sublime vos produits à merveille.
+    </div>
+  </div>
+</section>
 
 
-## Installation
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper">
+    {% include components/header_image.html image="img/products/Precautions.jpg" style="padding-top: 40px"%}
+  </div>
+  <div class="tile-body tile-body--main">
+    <h2>Précautions d'usage</h2>
+    <p>
+    Pour tout déplacement de l’Iris, veuillez le ranger dans le carton fourni, emballé comme à la réception.
+
+    Ne soulevez en aucun cas l’Iris par la dalle du dessus en attrapant l’écran, au risque de casser celui-ci. En revanche, le porter par les parties métalliques ne pose pas de problème.
+    </p>
+   <p>
+    Avant de nettoyer l’Iris, le mettre hors tension pour éviter un choc électrique. Pour la vitre, utilisez un produit lave-vitre classique, ainsi qu’une serviette microfibre afin d’éviter les griffes. Avec ce matériel, vous pouvez de même nettoyer l’ensemble de la structure.
+Ne pas placer l’Iris dans un environnement humide, à des températures inférieures à 0°C et supérieures à 45°C. Ne pas mettre en contact de l’eau.
+   </p>
+  </div>
+</section>
+
+
+<section class="section section-main-header  header-fill py-4">
+  {%include components/header_image.html image="img/products/iris32_archeo.jpg" alt="L'Iris22 présentant un objet archéologique 3D" %}
+  <div class="main-header-body container">
+    <div class="content shadow rounded bg-white p-4">
+      <h2 class="text-center">Mise en route de l’Iris 22</h2>
+      <div class="row">
+        <div class="col-12 col-md-6" valign=middle>
+          <p>
+          Sortir l’Iris de sa caisse (sur la vidéo, il s'agit de l’Iris 32, mais l’installation est la même) en le soulevant par les parties métalliques.
+          Installez-le sur un plan horizontal à environ 1.30 mètres du sol pour que centre de la vitre soit à hauteur des yeux.
+         </p>
+        </div>
+        <div class="col">
+          {% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 Installez l'**Iris** sur un plan horizontal à environ 1.70 mètres du sol. L'écran doit être à hauteur des yeux.
 
