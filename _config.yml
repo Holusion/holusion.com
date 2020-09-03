@@ -13,7 +13,9 @@ include:
   - ".htaccess"
   - "node_modules/jquery/dist/jquery.min.js"
   - "node_modules/popper.js/dist/umd/popper.min.js"
+  - "node_modules/popper.js/dist/umd/popper.min.js.map"
   - "node_modules/bootstrap/dist/js/bootstrap.min.js"
+  - "/node_modules/bootstrap/dist/js/bootstrap.min.js.map"
   - "node_modules/cookieconsent/build/cookieconsent.min.css"
   - "node_modules/cookieconsent/build/cookieconsent.min.js"
 highlighter: rouge
@@ -51,6 +53,7 @@ pagination:
 # It will be overriden by further "_deploy.yml" file during deployment.
 snipcart_api_key: ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2
 permalink: /:path
+
 collections:
   posts:
     output: true
@@ -58,6 +61,7 @@ collections:
   content_dev:
     permalink: /dev/:path
     output: true
+
 defaults:
   -
     scope:
@@ -105,6 +109,8 @@ defaults:
       path: "static/**/*.pdf"
     values:
       sitemap: false
+
+
 
 
 # most default config is made in make_collections plugin because this mechanism is too restrictive

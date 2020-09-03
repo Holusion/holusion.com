@@ -33,7 +33,8 @@ models:
       - Rendu Ultra-HD
 products:
   - name: Iris 22"
-    price: "500"
+    price: "2 000"
+    renting: "500"
     properties:
       - 1000 cd/m²
       - image full HD
@@ -42,7 +43,8 @@ products:
     video: "iris22.mp4"
     url: "/fr/products/iris22"
   - name: Iris 32"
-    price: "1 750"
+    price: "4 500"
+    renting: "1 750"
     properties:
       - 1000 cd/m²
       - image full HD
@@ -51,7 +53,8 @@ products:
     video: "iris32.mp4"
     url: "/fr/products/iris32"
   - name: Iris 75"
-    price: "4 950"
+    price: "23 000"
+    renting: "4 950"
     properties:
       - 2500 cd/m²
       - image 4k

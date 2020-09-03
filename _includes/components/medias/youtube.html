@@ -1,7 +1,7 @@
 {%comment %}
 async loader for youtube videos
 Usage :
-    include components/medias/youtube.html embed=##########
+include components/medias/youtube.html embed=##########
 {%endcomment%}
 <div style="width:100%; overflow:hidden; padding:4px;">
   <div align="center" class="youtube-video embed-responsive embed-responsive-16by9" data-embed="{{include.embed}}" >
@@ -11,15 +11,38 @@ Usage :
       (function(){ //Use an anonymous function to prevent poluting the global space
         var embed = '{{include.embed}}';
         var video = document.querySelector("[data-embed='"+embed+"']");
+
         // Load the image asynchronously
-        var image = new Image();
-        image.src =  "https://img.youtube.com/vi/"+ embed +"/maxresdefault.jpg";
-        image.addEventListener( "load", function() {
-            video.appendChild( image );
-        });
-        image.addEventListener("error", function(e){
-          console.warn(e);
+        youtube_thumbnails = [];
+        youtube_thumbnails.push(
+        new Promise ( (resolve, reject) => {
+          var image = new Image();
+          image.src =  "https://img.youtube.com/vi/"+ embed +"/maxresdefault.jpg";
+          image.addEventListener( "load", function() {resolve(image);});
+          image.addEventListener("error", function(e){console.warn(e)});
         })
+      );
+        //load fallback image
+        youtube_thumbnails.push(
+        new Promise ( (resolve, reject) => {
+          var image_fallback = new Image();
+          image_fallback.src =  "https://img.youtube.com/vi/"+ embed +"/hqdefault.jpg";
+          image_fallback.addEventListener( "load", function() {resolve(image_fallback);})
+        }))
+
+        //If maxresdefault quality is good enough go for it. else go to fallback
+        Promise.all(youtube_thumbnails).then( result => {
+          image = result[0]
+          image_fallback = result[1]
+          if (image.width>600) {
+            video.appendChild(image)
+          } else {
+            video.appendChild(image_fallback)
+          }
+        }
+      );
+
+
         video.addEventListener("click", function(){
           var iframe = document.createElement( "iframe" );
           iframe.className = "embed-responsive-item";

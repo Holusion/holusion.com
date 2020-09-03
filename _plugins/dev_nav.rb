@@ -2,7 +2,7 @@ require "nokogiri"
 module Jekyll
   module Tags
     class DevNav < Liquid::Tag
-      @@tree = nil
+      @@uids = 1
       #import lookup_variable function
       # https://github.com/jekyll/jekyll/blob/master/lib/jekyll/liquid_extensions.rb
       include Jekyll::LiquidExtensions
@@ -22,6 +22,13 @@ module Jekyll
        ([\w-]+)\s*=\s*
        (?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.\-#]+))
      !x
+      def cache
+        @@cache ||= Jekyll::Cache.new("DevNav")
+      end
+      def getUid
+        @@uids += 1
+        return @@uids
+      end
 
       def initialize(tag_name, markup, tokens)
         super
@@ -58,8 +65,14 @@ module Jekyll
         end
         return params
       end
+
+      # makes a tree of docs as a hash like :
+      # {
+      #   "fr" => {
+      #     "page_path" => { :title, :url, :children }
+      #   }
+      # }
       def doc_tree(docs)
-        return @@tree if @@tree
         tree = { "fr" =>{}, "en" => {}}
         docs.each do |doc|
           match = /\/dev\/(?<lang>fr|en)\/((?<rest>.*)\/)?(?<last>(?!index)[^\/]+)/.match(doc.url)
@@ -67,53 +80,73 @@ module Jekyll
           lang = match["lang"]
           parts = match["rest"]? match["rest"].split("/") : []
           last_part = match["last"]
+
           current_hash = tree[lang]
+
           parts.each do |part|
             #print "current hash :#{current_hash}"
-            current_hash[part] = {"children" =>{}, "title" => part } if not current_hash.has_key? part
-            current_hash = current_hash[part]["children"]
+            current_hash[part] = {:children =>{}, :title => part } if not current_hash.has_key? part
+            current_hash = current_hash[part][:children]
           end
 
           current_hash[last_part] = {
-            "title" => doc.data["title"],
-            "url" => doc.url,
-            "children"=>(current_hash.has_key?(last_part)) ? current_hash[last_part]["children"] : {},
-          }
+            :title => doc.data["title"],
+            :rank => doc.data.has_key?("rank")? doc.data["rank"] : 0,
+            :url => doc.url,
+            :children =>(current_hash.has_key?(last_part)) ? current_hash[last_part][:children]: {},
+            :visible => doc.data.has_key?("visible")? doc.data["visible"] : true
+          } if doc.data["visible"] != false
         end
-        @@tree = tree
-        return @@tree
+
+        return tree
       end
+
       def render_item(path, item, active_uri)
-        uid = path.sub("/","-")
+        uid = getUid
+
         is_active = active_uri.include? path
-        title = item["title"] || path.split("/").last
-        url = item["url"] || ""
-        if item["children"].empty?
-          dropdown_list = ""
+        title = item[:title] || path.split("/").last
+        url = item[:url] || ""
+
+        markup = %(<li class="list-group-item content-bar--link#{is_active ? " current" : ""}">)
+
+        if item[:children].empty?
+          markup += %(<a href="#{url}">#{title}</a>)
         else
-          child_nodes = item["children"].map do |childKey, child|
+          sorted_children = item[:children].sort_by { |key, val| val[:rank] }
+          child_nodes = sorted_children.map do |childKey, child|
             render_item(path+"/#{childKey}", child, active_uri)
           end
-          dropdown_list = %(
+
+          markup += %(
             <a class="dropdown-toggle" role="button"
               data-toggle="collapse"  aria-haspopup="true"
               aria-expanded="#{is_active ? "true" : "false"}"
-              data-target="#collapseCard#{uid}"
-              aria-controls="collapseCard#{uid}" href="">
+              data-target="#collapseList#{uid}"
+              aria-expanded="#{ is_active ? "true" : "false"}"
+              aria-controls="collapseList#{uid}">
+              #{title}
             </a>
-            <ul class="collapse list-group list-group-flush content-bar-group--sub#{is_active ? " show" : ""}"
-              id="collapseCard#{uid}"
-              aria-expanded="#{ is_active ? "true" : "false"}">
-              #{child_nodes.join("\n")}
-            </ul>
           )
+
+          markup += %(
+            <ul class="collapse list-group list-group-flush content-bar-group--sub#{is_active ? " show" : ""}"
+              id="collapseList#{uid}"
+            >
+          )
+          if url and 0 < url.length
+            markup += %(
+              <li class="list-group-item content-bar--link#{url == active_uri ? " current": ""}">
+                <a href="#{url}">Introduction</a>
+              </li>
+            )
+          end
+          markup += child_nodes.join("\n")
+          markup += %(</ul>)
         end
-        return %(
-          <li class="list-group-item content-bar--link#{is_active ? " current" : ""}">
-            <a href="#{url}">#{title}</a>
-            #{dropdown_list}
-          </li>
-        )
+
+        markup += %(</li>)
+        return markup
       end
 
       def render(context)
@@ -135,14 +168,21 @@ module Jekyll
           END
         end
 
-        col = doc_tree(docs)
+        docs_tree = cache.getset(docs) do
+          doc_tree(docs)
+        end
+
         html = %(<ul class="list-group list-group-flush content-bar-group--main">)
-          col[lang].each do |key, doc|
-            next if doc["children"].empty? # do not render categories with no children for now
-            #print "Document #{key}: #{doc.keys}\n"
-            is_active_category = page["url"].include? doc["url"]
-            html+=%(#{render_item(key, doc, page["url"])}</li>)
-          end
+
+        html += %(<li class="list-group-item content-bar--link#{ page["url"] == %(/dev/#{lang}/index) ? " current" : ""}">
+          <a href="/dev/#{lang}/">Introduction</a>
+        </li>)
+
+        sorted_localized_docs = docs_tree[lang].sort_by { |key, val| val.has_key?(:rank)? val[:rank] : 0 }
+        sorted_localized_docs.each do |key, doc|
+          next if doc[:children].empty?# do not render categories with no children for now
+          html += render_item(key, doc, page["url"])
+        end
   	    return html+"</ul>"
       end
     end
