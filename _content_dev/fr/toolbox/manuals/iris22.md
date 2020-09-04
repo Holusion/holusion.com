@@ -1,0 +1,141 @@
+---
+title: Manuel Iris 22
+abstract: Guide d'utilisation du produits "Iris 22" d'Holusion
+image: /static/img/posts/iris/iris22.jpg
+rank: 5
+menu: toolbox
+
+---
+
+<section class="section section-main-header header-fill" style="max-width: 1920px">
+
+  {%include components/header_image.html image="img/products/Iris22_exemple.jpg" %}
+  <div class="main-header-body body-right">
+    <div class="content shadow rounded bg-white rounded p-4 text-justify">
+      <h2> Contenu de la livraison </h2>
+      <p> </p>
+      <p> - Iris 22” assemblé avec sa vitre et prêt à fonctionner </p>
+      <p> - 1 alimentation à brancher sur une prise secteur  </p>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper" style="padding-top:70px">
+    {% include components/header_image.html image="img/products/Precautions.jpg"%}
+  </div>
+  <div class="tile-body tile-body--main">
+    <h2>Précautions d'usage</h2>
+    <p>
+    Pour tout déplacement de l’Iris, veuillez le ranger dans le carton fourni, emballé comme à la réception.
+
+    Ne soulevez en aucun cas l’Iris par la dalle du dessus en attrapant l’écran, au risque de casser celui-ci. En revanche, le porter par les parties métalliques ne pose pas de problème.
+    </p>
+   <p>
+    Avant de nettoyer l’Iris, le mettre hors tension pour éviter un choc électrique. Pour la vitre, utilisez un produit lave-vitre classique, ainsi qu’une serviette microfibre afin d’éviter les griffes. Avec ce matériel, vous pouvez de même nettoyer l’ensemble de la structure.
+Ne pas placer l’Iris dans un environnement humide, à des températures inférieures à 0°C et supérieures à 45°C. Ne pas mettre en contact de l’eau.
+   </p>
+  </div>
+</section>
+
+
+<section class="section section-main-header  header-fill py-4">
+  {%include components/header_image.html image="img/products/iris32_archeo.jpg" alt="L'Iris22 présentant un objet archéologique 3D" %}
+  <div class="main-header-body container">
+    <div class="content shadow rounded bg-white p-4">
+      <h2 class="text-center">Mise en route de l’Iris 22</h2>
+      <div class="row">
+        <div class="col-12 col-md-6" valign=middle>
+          <p>
+          Sortir l’Iris de sa caisse (sur la vidéo, il s'agit de l’Iris 32, mais l’installation est la même) en le soulevant par les parties métalliques.
+          Installez-le sur un plan horizontal à environ 1.30 mètres du sol pour que le centre de la vitre soit à hauteur des yeux.
+         </p>
+        </div>
+        <div class="col">
+          {% include components/medias/youtube.html embed="9fYR-hXUyHc" start=25 %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper" style="padding-top:110px">
+    {% include components/header_image.html image="img/products/arriere_iris22.jpg" alt="Vue de l'arrière d'un Iris 22" %}
+  </div>
+  <div class="tile-body tile-body--main">
+    <p>
+      Branchez l’alimentation fournie d’un côté dans le port prévu à cet effet à l’arrière du l’Iris 22, et de l’autre sur une prise secteur.
+    </p>
+    <p>
+    L’Iris 22 démarre automatiquement lorsqu’il est branché. Après un temps de chargement, l’hologramme se lance.
+    Pour arrêter l’Iris 22, débranchez la prise ou coupez le courant.
+   </p>
+  </div>
+</section>
+
+<section id="section-gamme" class="section-tile">
+  <div class="tile-image-wrapper" style="padding-top:0px">
+    {% include components/header_image.html image="img/products/Vis_iris22.png"%}
+  </div>
+  <div class="tile-body tile-body--main" style="padding-bottom:200px">
+    <p>
+    Pour  démonter le capot, dévisser les 4 vis de part et d’autre du capot. Vous pouvez le soulever.
+   </p>
+  </div>
+</section>
+
+
+<section class="section section-main-header header-fill py-4">
+    <div class="main-header-image-wrapper">
+        {% asset img/products/iris22_presentation.jpg
+            srcset:width="1920"
+            srcset:width="1920"
+            srcset:width="960"
+            sizes="100vw"
+            class="img-fluid"
+            alt="iris22 vu par Thibault"
+            %}
+        </div>
+
+        <div class="main-header-body container jumbotron bg-white shadow my-4">
+            <h2 style="margin-bottom:15px"> Modification du contenu </h2>
+            <p>
+              Il est possible de modifier les vidéos sur l’Iris 22 depuis différents appareils et de différentes manières. Ces manipulations doivent uniquement être réalisées en cas de mise à jour des vidéos. En fonctionnement normal, les vidéos restent stockées dans les produits d’un démarrage à l’autre.
+            </p>
+
+            <p class="pb-3">
+            Deux méthodes sont possibles pour la mise à jour des dispositifs
+            </p>
+            <p>
+            Via réseau : en branchant le produit au réseau local, il devient possible d’y avoir accès via un PC sur le réseau via les API
+            </p>
+            <p>
+            En local : en branchant directement un PC au produit avec un câble réseau, il est possible d’utiliser Stargazer sans autre réglages, un logiciel facilitant l’administration en réseau.
+            </p>
+       </div>
+  </section>
+
+
+
+
+## Maintenance
+
+  L’Iris 22 est un produit particulièrement robuste et adapté pour une utilisation continue. Il n’intègre pas de composant mécanique ou de pièces d’usure à la manipulation.
+  Le matériel utilisé par Holusion est un équipement de qualité industriel garantissant un service après-vente et une pérennité des pièces détachées sur une longue période.
+
+  D’un point de vue informatique, tout le dispositif utilise uniquement des logiciels libres ou gratuits, le cas échéant.
+  Aucun achat de licence ou abonnement n’est à prévoir et la maintenance ou la mise à jour peut être réalisée en autonomie par tout technicien avec les bases des systèmes UNIX.
+
+
+  Pour allonger la durée de vie du dispositif, il est important d’éviter de soumettre le produit à trop de stress électriques :
+  - Fonctionnement continu ininterrompu sur de très longues périodes
+  - Coupure de courant intempestive et répétée
+  - Alimentation non stabilisée et surtensions
+
+  Il est conseillé d’avoir une installation électrique moderne, avec des prises de terre. Idéalement, un onduleur peut être placé entre la machine et le réseau électrique.
+
+  Le matériel est garanti sur la première année, il est possible d’étendre cette garantie à 2 ans.
+  Holusion propose une hotline téléphonique, du lundi matin au vendredi soir permettant de signaler tout dysfonctionnement et de réaliser les premiers dépannages.
