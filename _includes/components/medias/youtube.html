@@ -8,12 +8,14 @@ include components/medias/youtube.html embed=##########
     <div class="play-button">
     </div>
     <script defer>
+      'use strict';
       (function(){ //Use an anonymous function to prevent poluting the global space
         var embed = '{{include.embed}}';
         var video = document.querySelector("[data-embed='"+embed+"']");
+        var start = '{{include.start | default: ""}}';
 
         // Load the image asynchronously
-        youtube_thumbnails = [];
+        var youtube_thumbnails = [];
         youtube_thumbnails.push(
         new Promise ( (resolve, reject) => {
           var image = new Image();
@@ -32,8 +34,8 @@ include components/medias/youtube.html embed=##########
 
         //If maxresdefault quality is good enough go for it. else go to fallback
         Promise.all(youtube_thumbnails).then( result => {
-          image = result[0]
-          image_fallback = result[1]
+          var image = result[0]
+          var image_fallback = result[1]
           if (image.width>600) {
             video.appendChild(image)
           } else {
@@ -48,7 +50,9 @@ include components/medias/youtube.html embed=##########
           iframe.className = "embed-responsive-item";
           iframe.setAttribute( "frameborder", "0" );
           iframe.setAttribute( "allowfullscreen", "" );
-          iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ embed +"?rel=0&showinfo=0&autoplay=1");
+          var starttime = (start)? "&start="+start : "";
+          console.log("https://www.youtube.com/embed/"+ embed +"?rel=0&showinfo=0&autoplay=1" + starttime);
+          iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ embed +"?rel=0&showinfo=0&autoplay=1" + starttime);
           video.innerHTML = "";
           video.appendChild(iframe);
         })
