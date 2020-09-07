@@ -3,7 +3,11 @@ title: Modifier la playlist
 abstract: Utilisez l'API Holusion pour contrôler votre produit
 ---
 
+# Modifier un élément de playlist
+
 Nous allons voir dans cet exemple la route `PUT /playlist`, qui permet de modifier **toutes** les propriétés des éléments de playlist. Elle est donc très importante et sera utilisée dans la plupart des applications.
+
+Il est conseillé d'avoir pris connaissance de l'organisation générale de l'[API](/dev/fr/references/control-api) de contrôle des produits
 
 Les commandes de ce tutoriel seront réalisées avec [curl](https://curl.haxx.se/).
 

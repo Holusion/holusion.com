@@ -7,6 +7,8 @@ rank: 5
 # Utiliser la playlist
 Nous allons réaliser un programme en python qui affichera la liste des médias et permettra de séléctionner un élément de la playlist pour le lire.
 
+Une documentation complète de l'API utilisée ici est disponible en [référence](/dev/fr/references/control-api), mais il n'est pas nécessaire de la connaitre pour achever ce tutoriel.
+
 ## L'affichage
 
 Tout d'abord, nous allons récupérer l'ensemble de la playlist et l'afficher avec la librairie ncurses :

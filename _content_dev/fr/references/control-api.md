@@ -1,5 +1,5 @@
 ---
-title: controle de playlist
+title: Controle de playlist
 image: /static/img/posts/media-player/header2.png
 abstract: Utilisez l'API Holusion pour contrôler votre produit
 rank: 1
@@ -27,12 +27,11 @@ rank: 1
 
 ## Documentation interactive
 
-Pour utiliser l'API de contrôle de votre produit, il faut y être connecté, en [filaire direct](/dev/fr/tutorials/connect-direct-windows) ou via un [nano-routeur](/dev/fr/tutorials/connect-router). Dans ce guide nous utiliserons `192.168.1.100` comme IP de votre produit. Il faudra la remplacer par son IP réelle le cas échéant.
+Pour utiliser l'API de contrôle de votre produit, il faut y être connecté, en [filaire direct](/dev/fr/tutorials/connect-direct-windows) ou via un [nano-routeur](/dev/fr/tutorials/connect-router).
 
-Dans l'onglet `Doc`, vous trouverez une version interactive de son API.
+Dans l'interface, dans l'onglet `Doc` ; vous trouverez une version interactive de cette documentation API qui vous permettra de tester les réponses en situation réelle.
 
 Si vous n'avez pas accès à un produit en état de marche, vous pouvez utiliser la version statique de la documentation ci-dessous.
-
 
 ## Documentation
 
