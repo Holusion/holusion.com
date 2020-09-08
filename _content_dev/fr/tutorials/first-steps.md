@@ -25,5 +25,6 @@ Si vous perdez le fil, retrouvez le projet blender de ce tutoriel [ici](/static/
 
 ## Aller plus loin
 
+- [réalisez un montage pour pyramide](blender-prism)
 - [connectez-vous à votre produit](connect-router)
 - [transférez une vidéo](media-transfer)

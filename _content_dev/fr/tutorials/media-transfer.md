@@ -2,7 +2,7 @@
 title: Transférer du contenu
 image: img/products/iris22_blanc.jpg
 abstract: Transférer une vidéo vers votre produit
-rank: 4
+rank: 5
 ---
 
 # Envoi d'une vidéo vers votre produit holusion

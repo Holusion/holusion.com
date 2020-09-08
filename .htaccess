@@ -40,6 +40,8 @@ Redirect 301 /en/products/iris /en/products/iris75
 Redirect 301 /fr/products/iris /fr/products/iris75
 Redirect 301 /sites/default/files/holusion_logo.png /static/img/logo_holusion_web_HD.png
 
+Redirect 301 /dev/fr/content/natron/index/? /dev/fr/tutorials/blender-prism
+
 Redirect 301 /infoatelier https://goo.gl/forms/cTC9k0ZI1dy0Q6Y32
 
 <IfModule mod_expires.c>

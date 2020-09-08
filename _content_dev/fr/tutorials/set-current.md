@@ -1,11 +1,16 @@
 ---
 title: Utiliser l'API de contrôle
 abstract: Utilisez l'API Holusion pour contrôler l'affichage de votre produit
-rank: 5
+rank: 6
 ---
 
-# Utiliser la playlist
-Nous allons réaliser un programme en python qui affichera la liste des médias et permettra de séléctionner un élément de la playlist pour le lire.
+# Utiliser l'API de contrôle
+
+Nous allons réaliser un programme en python qui affichera la liste des médias et permettra de séléctionner un élément de la playlist pour le lire. Il est préférable de connaitre quelques bases de l'[API en question](/dev/fr/references/control-api) avant de commencer.
+
+Il est nécessaire d'être [connecté](/dev/fr/how-to/connect-router) à un produit fonctionnel disposant déjà de [contenus](/dev/fr/media-transfer) pour réaliser ce tutoriel.
+
+Ce guide utilise [python](https://www.python.org/), avec les librairies [curses](https://docs.python.org/3/library/curses.html) et [request](https://fr.python-requests.org/en/latest/).
 
 Une documentation complète de l'API utilisée ici est disponible en [référence](/dev/fr/references/control-api), mais il n'est pas nécessaire de la connaitre pour achever ce tutoriel.
 
@@ -17,7 +22,7 @@ Tout d'abord, nous allons récupérer l'ensemble de la playlist et l'afficher av
     import curses
     import requests
 
-    medias = requests.get("http://192.168.1.46/playlist").json()
+    medias = requests.get("http://192.168.1.100/playlist").json()
 
     # init curses #
     screen = curses.initscr()
@@ -53,12 +58,15 @@ La création d'une requête PUT est souvent un peu plus compliquée qu'un GET.
 
 Avec la librairie requests :
 
-    name= "my_media_name"
-    req = requests.put('http://10.0.0.1/control/current/'+name)
-    if req.status_code != 200:
-      print(req.text) # échec
-    else:
-      print("OK") # succès
+{% highlight python %}
+name= "my_media_name"
+req = requests.put('http://10.0.0.1/control/current/'+name)
+if req.status_code != 200:
+    print(req.text) # échec
+else:
+    print("OK") # succès
+{% endhighlight %}
+
 
 Si l'on essaie ce code, la requête échoue : "my_media_name" n'est pas présent dans les médias disponibles.
 

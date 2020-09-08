@@ -3,7 +3,7 @@ title: Connexion filaire directe
 image: img/posts/banner_packaging.jpg
 
 abstract: Connectez votre produit holusion à votre ordinateur sous Windows
-rank: 3
+rank: 4
 ---
 
 Il est possible de connecter directement votre produit holusion à votre poste de travail. Il faut pour cela équiper ce dernier d'un serveur **DHCP** local.
