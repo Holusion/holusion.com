@@ -63,8 +63,7 @@ jobs:
         echo "url: https://holusion.com" >> _deploy.yml
         echo "build_id: '$GITHUB_RUN_ID'" >> _deploy.yml
         echo "snipcart_api_key: 'MTA0ZmUzN2EtNGFlZS00NjZkLWFiZDktM2RlNzUyODgzMDBhNjM2MTQzNjEyNzYwNDkzMDM2'" >> _deploy.yml
-        echo "recaptcha_secret: '$RECAPTCHA_SECRET'" >> _deploy.yml
-        echo "recaptcha_public: '6Lctxz0UAAAAABSHCOl3jWxLHt3hLRJfhkR-j8Ju'" >> _deploy.yml
+        echo "recaptcha_public: '6Lex5tMZAAAAAI9juEwLb-9fgjlHwB8IU29MHIc-'" >> _deploy.yml
     - name: get dependencies
       run: |
         gem install bundler
@@ -84,10 +83,8 @@ jobs:
     - name: deploy built website
       if: github.ref == 'refs/heads/master'
       env:
-        DEPLOY_TARGET: ${{ secrets.DEPLOY_TARGET }}
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        CREDENTIALS: ${{ secrets.FIREBASE_ACCOUNT_KEY }}
       run: |
-        mkdir ~/.ssh
-        echo "$DEPLOY_KEY" > ~/.ssh/key
-        chmod 600 ~/.ssh/key
-        rsync -avz --delete-after -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" "_site/" "$DEPLOY_TARGET"
+        echo "$CREDENTIALS" > "$HOME/credentials.json"
+        export GOOGLE_APPLICATION_CREDENTIALS="$HOME/credentials.json"
+        npx firebase deploy

@@ -89,33 +89,41 @@ function onSubmitContactForm(e){
 // The name `onValidated` is used by the captcha button as a callback
 function onValidated(){
   var submission = document.querySelector("#contactform-modal form");
-  var XHR = new XMLHttpRequest();
   var FD  = new FormData(submission);
   FD.append("source", window.location.pathname);
   var spinnerClose = logInfo("alert-info",localize("sending"));
-  XHR.addEventListener('load', function(res) {
-    var txt;
-    console.log(res.target.statusText);
+
+  var body = {};
+  for (let pair of FD) {
+    body[pair[0]] = pair[1];
+  }
+
+  fetch(`/api/v1/contact`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    method: 'POST',
+    body: body,
+  }).then((res)=>{
     spinnerClose();
-    try{
-      txt = JSON.parse(res.target.responseText).message;
-    }catch(err){
-      console.error("Failed to parse server response ", res, err)
-    }
-      txt = txt || res.target.statusText;
-    if(res.target.status == 200){
+    if(res.ok){
       logInfo('alert-success',txt);
       closeForm();
-    }else {
-      logInfo("alert-danger",localize("got_error")+" : "+txt);
+      return {code: 200, message: "OK"};
+    }else{
+      return res.json().catch((e)=>{
+        console.error("Failed to parse server error : ", e);
+        return {code: res.statusCode, message: res.statusText}
+      }).then((body)=>{
+        logInfo("alert-danger",localize("got_error")+" : "+body.message);
+      });
     }
-  });
-  // We define what will happen in case of error
-  XHR.addEventListener('error', function(event) {
+  })
+  .catch((e)=>{
+    console.warn("fetch :", e);
     logInfo("alert-warning",localize("network_error"));
-  });
-  XHR.open('POST', '/contact.php');
-  XHR.send(FD);
+  })
 }
 
 /* BOOTSTRAP */
