@@ -16,14 +16,13 @@ const errorStrings = {en:{
   "einvemail": "L'Adresse mail est invalide",
   "einvfname": 'Le prénom contient des caractères interdits',
   "einvlname": 'Le nom contient des caractères interdits',
-  "einvcomments": 'Les commentaires doivent faire au moins 20 caractères',
+  "einvcomments": 'Les commentaires doivent faire au moins 20 caractères et moins de 3000',
 }}
 
 
 module.exports = (req, res)=>{
   const { warn } = require("firebase-functions/lib/logger");
   const admin = require("firebase-admin");
-  const functions = require('firebase-functions');
   const app = admin.app();
 
 
@@ -34,7 +33,7 @@ module.exports = (req, res)=>{
     ['fname', /^.+$/],
     ['lname', /^.+$/],
     ['email', /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/],
-    ['comments', /.{20}/],
+    ['comments', /./],
   ].map(([name, re])=>{
     if(typeof req.body[name] !== "string" || !re.test(req.body[name])){
       return new Error(errorStrings[lang][`einv${name}`]);
@@ -46,16 +45,19 @@ module.exports = (req, res)=>{
   if(0 < errors.length){
     return res.status(400).send(`${errors.map(e=>e.message).join(", ")}`)
   }
+  //FIXME more anti-abuse rules needed
+  if(5000 < req.body.comments.length || req.body.comments.length < 20){
+    return res.status(400).send(errorStrings[lang][einvcomments]);
+  }
 
   app.firestore().collection("mail").add({
     to: ["dsebastien90@gmail.com"],
     from: "contact@holusion.com",
     replyTo: req.body['email'],
-    message: {
-      subject: `contact from ${req.body['fname']} ${req.body['lname']}`,
-      text: `From: ${req.body['email']}\nComments : ${req.body['comments']}`,
-      html:  `<p>From: ${req.body['email']}\nComments : ${req.body['comments']}</p>`
-    }
+    template: {
+      name: "contact",
+      data: req.body,
+    },
   })
   .then(()=>{
     res.status(200).send(errorStrings[lang]["success"]);
