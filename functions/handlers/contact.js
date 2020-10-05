@@ -51,7 +51,7 @@ module.exports = (req, res)=>{
   }
 
   app.firestore().collection("mail").add({
-    to: ["dsebastien90@gmail.com"],
+    to: ["contact@holusion.com"],
     from: "contact@holusion.com",
     replyTo: req.body['email'],
     template: {
