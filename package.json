@@ -19,17 +19,18 @@
     "popper.js": "^1.14.7"
   },
   "devDependencies": {
+    "bootstrap": "^4.5.2",
     "chai": "^4.2.0",
+    "cookieconsent": "^3.0.6",
     "faker": "^4.1.0",
     "finalhandler": "^1.1.1",
+    "firebase-tools": "^8.11.2",
+    "jquery": "^3.5.1",
     "mocha": "^8.1.1",
     "mocha-jenkins-reporter": "0.4.5",
+    "popper.js": "^1.14.7",
     "puppeteer": "^5.2.1",
     "serve-static": "^1.13.2",
-    "xml-parser": "^1.2.1",
-    "bootstrap": "^4.5.2",
-    "cookieconsent": "^3.0.6",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.14.7"
+    "xml-parser": "^1.2.1"
   }
 }
