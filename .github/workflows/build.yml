@@ -82,8 +82,6 @@ jobs:
     - name: deploy built website
       if: github.ref == 'refs/heads/master'
       env:
-        CREDENTIALS: ${{ secrets.FIREBASE_ACCOUNT_KEY }}
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: |
-        echo "$CREDENTIALS" > "$HOME/credentials.json"
-        export GOOGLE_APPLICATION_CREDENTIALS="$HOME/credentials.json"
-        npx firebase deploy
+        npx firebase deploy --token $FIREBASE_TOKEN
