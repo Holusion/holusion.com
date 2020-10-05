@@ -15,4 +15,4 @@ app.firestore().settings({timestampsInSnapshots: true});
 
 const handlers = require("./handlers");
 
-exports.api_calls = functions.region('europe-west1').https.onRequest(handlers);
+exports.api_calls = functions.https.onRequest(handlers);
