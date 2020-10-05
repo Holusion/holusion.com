@@ -1,37 +1,64 @@
 'use strict';
 
+
+const errorStrings = {en:{
+  "success": "Thank you for contacting us. We will be in touch with you very soon",
+  "err": "Error",
+  "empty": "is empty",
+  "einvemail": 'The Email Address you entered does not appear to be valid',
+  "einvfname": 'The First Name you entered does not appear to be valid',
+  "einvlname": 'The Last Name you entered does not appear to be valid',
+  "einvcomments": 'Comments must be at least 20 characters long',
+}, fr: {
+  "success": "Merci de nous avoir contacté, votre demande sera traitée au plus vite",
+  "err": "Erreur",
+  "empty": "est vide",
+  "einvemail": "L'Adresse mail est invalide",
+  "einvfname": 'Le prénom contient des caractères interdits',
+  "einvlname": 'Le nom contient des caractères interdits',
+  "einvcomments": 'Les commentaires doivent faire au moins 20 caractères',
+}}
+
+
 module.exports = (req, res)=>{
   const { warn } = require("firebase-functions/lib/logger");
   const admin = require("firebase-admin");
+  const functions = require('firebase-functions');
   const app = admin.app();
 
 
   //One liner to get client IP.
-  let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  let secretKey = functions.config().recaptcha.key;
-  let captcha = req.body['g-recaptcha-response'];
-
-  //FIXME handle bad params
-
-
-  return fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}&remoteip=${ip}`)
-  .then((res)=>res.json())
-  .then(result=>{
-    if(!result.success){
-      throw new Error(`Failed to validate recaptcha : ${error-codes.map(e=>e.message).join(", ")}`);
+  let lang = req.acceptsLanguages( "en", "fr" );
+  //handle bad params
+  let errors = [
+    ['fname', /^.+$/],
+    ['lname', /^.+$/],
+    ['email', /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/],
+    ['comments', /.{20}/],
+  ].map(([name, re])=>{
+    if(typeof req.body[name] !== "string" || !re.test(req.body[name])){
+      return new Error(errorStrings[lang][`einv${name}`]);
+    }else {
+      return null;
     }
-  }).then(()=> app.firebase().collection("mail").add({
+  }).filter(e=>e);
+
+  if(0 < errors.length){
+    return res.status(400).send(`${errors.map(e=>e.message).join(", ")}`)
+  }
+
+  app.firestore().collection("mail").add({
     to: ["dsebastien90@gmail.com"],
-    from: req.body['email_from'],
-    replyTo: req.body['email_from'],
+    from: "contact@holusion.com",
+    replyTo: req.body['email'],
     message: {
       subject: `contact from ${req.body['fname']} ${req.body['lname']}`,
-      text: `From: ${req.body['email_from']}\nComments : ${req.body['comments']}`,
-      html:  `<p>From: ${req.body['email_from']}\nComments : ${req.body['comments']}</p>`
+      text: `From: ${req.body['email']}\nComments : ${req.body['comments']}`,
+      html:  `<p>From: ${req.body['email']}\nComments : ${req.body['comments']}</p>`
     }
-  }))
+  })
   .then(()=>{
-    res.status(200).send("OK");
+    res.status(200).send(errorStrings[lang]["success"]);
   })
   .catch((e)=>{
     warn(e);

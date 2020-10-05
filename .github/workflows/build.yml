@@ -63,7 +63,6 @@ jobs:
         echo "url: https://holusion.com" >> _deploy.yml
         echo "build_id: '$GITHUB_RUN_ID'" >> _deploy.yml
         echo "snipcart_api_key: 'MTA0ZmUzN2EtNGFlZS00NjZkLWFiZDktM2RlNzUyODgzMDBhNjM2MTQzNjEyNzYwNDkzMDM2'" >> _deploy.yml
-        echo "recaptcha_public: '6Lex5tMZAAAAAI9juEwLb-9fgjlHwB8IU29MHIc-'" >> _deploy.yml
     - name: get dependencies
       run: |
         gem install bundler

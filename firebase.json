@@ -12,7 +12,7 @@
         "function": "api_calls"
       },
       {
-        "source": "/api/v1",
+        "source": "/api/v1/**",
         "function": "api_calls"
       }
     ]

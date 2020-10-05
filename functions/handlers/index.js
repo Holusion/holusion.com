@@ -11,7 +11,7 @@ router.get("/", (req, res)=>{
   return res.redirect(302, `/${lang}/`);
 });
 
-router.post("/api/v1/mail", 
+router.post("/api/v1/sendmail", 
   bodyParser.json(),
   bodyParser.urlencoded({ extended: true }),
   require("./contact")
