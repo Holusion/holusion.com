@@ -70,6 +70,7 @@ jobs:
         bundle config set with 'test'
         bundle install --jobs 4 --retry 3
         npm ci
+        (cd functions && npm ci)
     - name: build
       run: |
         ./build.sh
