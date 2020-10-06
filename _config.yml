@@ -6,9 +6,11 @@ exclude:
   - "*.ai"
   - "*.psd"
   - "*.sh"
+  - "*.log"
   - "README.md"
   - "bower.json"
   - "package.json"
+  - functions
 include:
   - ".htaccess"
   - "node_modules/jquery/dist/jquery.min.js"

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sendmail Basic functions simple sendmail call 1`] = `
+Object {
+  "from": "contact@holusion.com",
+  "replyTo": "j.dupont@lafrance.fr",
+  "template": Object {
+    "data": Object {
+      "comments": "Bonjour, le monde. Je suis Jean Dupont!",
+      "email": "j.dupont@lafrance.fr",
+      "fname": "Jean",
+      "lname": "Dupont",
+    },
+    "name": "contact",
+  },
+  "to": Array [
+    "contact@holusion.com",
+  ],
+}
+`;
