@@ -16,7 +16,8 @@ function* AddrGenerator(){
     }
   }
   throw new Error("getAddr() has run out of IP addresses");
-};
+}
+
 let _addr = AddrGenerator();
 function getAddr(){
   return _addr.next().value;
