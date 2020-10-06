@@ -5,17 +5,17 @@ const errorStrings = {en:{
   "success": "Thank you for contacting us. We will be in touch with you very soon",
   "err": "Error",
   "empty": "is empty",
-  "einvemail": 'The Email Address you entered does not appear to be valid',
-  "einvfname": 'The First Name you entered does not appear to be valid',
-  "einvlname": 'The Last Name you entered does not appear to be valid',
+  "einvemail": 'The Email Address you entered is invalid',
+  "einvfname": 'First Name not povided',
+  "einvlname": 'Last Name not provided',
   "einvcomments": 'Comments must be at least 20 characters long',
 }, fr: {
   "success": "Merci de nous avoir contacté, votre demande sera traitée au plus vite",
   "err": "Erreur",
   "empty": "est vide",
   "einvemail": "L'Adresse mail est invalide",
-  "einvfname": 'Le prénom contient des caractères interdits',
-  "einvlname": 'Le nom contient des caractères interdits',
+  "einvfname": 'Le prénom n\'a pas été fourni',
+  "einvlname": 'Le nom n\'a pas été fourni',
   "einvcomments": 'Les commentaires doivent faire au moins 20 caractères et moins de 3000',
 }}
 
@@ -25,9 +25,8 @@ module.exports = (req, res)=>{
   const admin = require("firebase-admin");
   const app = admin.app();
 
-
-  //One liner to get client IP.
-  let lang = req.acceptsLanguages( "en", "fr" );
+  res.type("text/plain; charset=utf-8");
+  let lang = req.acceptsLanguages( "en", "fr" ) || "en";
   //handle bad params
   let errors = [
     ['fname', /^.+$/],
@@ -45,6 +44,7 @@ module.exports = (req, res)=>{
   if(0 < errors.length){
     return res.status(400).send(`${errors.map(e=>e.message).join(", ")}`)
   }
+
   //FIXME more anti-abuse rules needed
   if(5000 < req.body.comments.length || req.body.comments.length < 20){
     return res.status(400).send(errorStrings[lang][einvcomments]);
@@ -61,9 +61,9 @@ module.exports = (req, res)=>{
   })
   .then(()=>{
     res.status(200).send(errorStrings[lang]["success"]);
-  })
-  .catch((e)=>{
+  }, (e)=>{
     warn(e);
     res.status(500).send(e.message);
-  })
+  });
+  return undefined;
 }
