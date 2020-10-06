@@ -8,6 +8,7 @@ _site/
 .sass-cache
 .jekyll-cache
 .static-cache
+.firebase
 .bundle/
 /vendor
 scripts/phpunit
