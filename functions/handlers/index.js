@@ -11,7 +11,9 @@ const isProduction = !process.env["FIRESTORE_EMULATOR_HOST"];
 router.enable('trust proxy')
 // redirect using language hints
 router.get("/", (req, res)=>{
-  let lang = req.acceptsLanguages("fr", "en");
+  let lang = req.acceptsLanguages("fr", "en") || "en";
+  res.set('Cache-Control', 'public, max-age=3600, s-maxage=7200');
+  res.set("Vary", "Accept-language");
   return res.redirect(302, `/${lang}/`);
 });
 
