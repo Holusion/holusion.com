@@ -80,14 +80,6 @@
             </div>
 
             <div class="modal-footer">
-              {% if site.recaptcha_public %}
-              <div class="g-recaptcha"
-                data-sitekey="{{site.recaptcha_public}}"
-                data-size="invisible"
-                data-badge="inline"
-                data-callback="onValidated">
-              </div>
-              {%endif%}
               <button type="submit" class="form-control btn btn-primary">Submit</button>
             </div>
           </form>
