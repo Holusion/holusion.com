@@ -61,7 +61,8 @@ module.exports = (req, res)=>{
   })
   .then(()=>{
     res.status(200).send(errorStrings[lang]["success"]);
-  }, (e)=>{
+  })
+  .catch((e)=>{
     warn(e);
     res.status(500).send(e.message);
   });
