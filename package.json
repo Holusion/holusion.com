@@ -9,7 +9,8 @@
     "test": "mocha --slow 1500 --timeout 10000 ./scripts/runner.js",
     "jenkins_test": "JUNIT_REPORT_PATH=report.xml mocha ./scripts/runner.js --reporter mocha-jenkins-reporter --timeout 15000",
     "prepack": "mkdir -p dist/ && cp _site/css/bootstrap.* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/ && sed 's/..\\/node_modules\\//~/' _css/_variables.scss > dist/_variables.scss",
-    "postpack": "rm -rf dist/"
+    "postpack": "rm -rf dist/",
+    "postinstall": "(cd functions && npm i)"
   },
   "files": [
     "dist/"

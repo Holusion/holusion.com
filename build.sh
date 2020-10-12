@@ -177,12 +177,6 @@ if ${make_check} ;then
 
   test "x${RUN_EXTENDED_TESTS}" == "x1" && exec htmlproofer _site --external_only \
     --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/"
-
-  if ! test -x "$HOME/.cache/phpunit" ;then
-    curl -sSL -o "$HOME/.cache/phpunit" "https://phar.phpunit.de/phpunit-6.phar"
-    chmod +x "$HOME/.cache/phpunit"
-  fi
-  find ./scripts/ -iname "*.php" -exec "$HOME/.cache/phpunit" {} \;
 fi
 
 
