@@ -1,5 +1,5 @@
 name: Build website
-on:  
+on:
   pull_request:
   push:
     branches:
@@ -8,6 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: log untrusted output
+    run: |
+      # disable command workflow processing
+      echo "::stop-commands::`echo -n ${{ github.token }} | sha256sum | head -c 64`"
+
+      # log untrusted output
+      echo "untrusted output"
+
+      # enable workflow command processing
+      echo "::`echo -n ${{ github.token }} | sha256sum | head -c 64`::"
     - name: checkout
       uses: actions/checkout@v2
       with:
@@ -28,12 +38,12 @@ jobs:
         path: vendor/bundle
         key: ${{ runner.os }}-${{ hashFiles( '.ruby-version' ) }}-gems-${{ hashFiles( '**/Gemfile.lock' ) }}
       # require strict cache hit, otherwise we get some Illegal Instruction errors
-    
+
     - name: install nodejs
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-      
+
     - name: npm cache
       uses: actions/cache@v1
       with:
@@ -49,7 +59,7 @@ jobs:
         key: ${{ runner.os }}-user-cache
         restore-keys: |
           ${{ runner.os }}-user-cache
-    
+
     # Dependencies
     - name: install ffmpeg
         #ffmpeg-static will cache binaries in ~/.cache/ffmpeg-static
@@ -71,7 +81,7 @@ jobs:
 
     # Build
     - name: create _deploy.yml config file
-      env: 
+      env:
         RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET }}
       run: |
         echo "env: production" > _deploy.yml
