@@ -9,15 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: log untrusted output
-    run: |
+      run: |
       # disable command workflow processing
-      echo "::stop-commands::`echo -n ${{ github.token }} | sha256sum | head -c 64`"
+        echo "::stop-commands::`echo -n ${{ github.token }} | sha256sum | head -c 64`"
 
       # log untrusted output
-      echo "untrusted output"
+        echo "untrusted output"
 
       # enable workflow command processing
-      echo "::`echo -n ${{ github.token }} | sha256sum | head -c 64`::"
+        echo "::`echo -n ${{ github.token }} | sha256sum | head -c 64`::"
+
+        
     - name: checkout
       uses: actions/checkout@v2
       with:
