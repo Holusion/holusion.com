@@ -1,10 +1,10 @@
 ---
 title: Solutions pour les musées et la culture
-abstract: "Présentation en muséographie"
+abstract: "Guide scénographique pour l'utilisation de l'hologramme"
 lang: fr
-image: img/tiles/Museotile.jpg
+image: img/tiles/scenotile.jpg
 menu: keynotes
-rank: 2
+rank: 3
 
 ---
 
