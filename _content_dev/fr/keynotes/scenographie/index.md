@@ -1,5 +1,5 @@
 ---
-title: Solutions pour les musées et la culture
+title: Comment intégrer les hologrammes dans votre exposition ?
 abstract: "Guide scénographique pour l'utilisation de l'hologramme"
 lang: fr
 image: img/tiles/scenotile.jpg
