@@ -87,7 +87,7 @@ On peut à partir de ces 2 requêtes créer une application permettant de pilote
     		if media.get("active") :
            			screen.addstr(index+1,2,media.get("name"))
     		else:
-    			screen.addstr(index+1,2,media.get("name"),curses.A_REVERSE))
+    			screen.addstr(index+1,2,media.get("name"),curses.A_REVERSE)
     		index = index+1
     		screen.refresh()
 
@@ -128,4 +128,3 @@ On peut à partir de ces 2 requêtes créer une application permettant de pilote
     screen.keypad(False)
     curses.echo()
     curses.endwin()
-
