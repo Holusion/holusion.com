@@ -18,10 +18,7 @@
     width:100%;
   }
 
-  .fit-contain {
-    object-fit: contain;
-    max-height: 60vmin;
-  }
+
 
   /* when header have no body, we use a spacer to still have some height */
   .main-header-spacer, .main-header-body{
