@@ -114,3 +114,14 @@ color:#777;
 font-size: 75%;
 text-align: center;
 }
+
+
+.fit-contain {
+  object-fit: contain;
+  max-height: 60vmin;
+}
+
+.fit-scale-down {
+  object-fit: scale-down;
+  max-height: 60vmin;
+}
