@@ -116,8 +116,8 @@ delivery-weight-text:
   fr: Le poids unitaire des produits est<br>indiqué sur la fiche produit
   en: Products weight is available <br>in their store pages
 cookieconsent:
-  fr: Ce site utilise des cookies tierces à des fins de mesures d'utilisation
-  en: This website uses cookies to build usage statistics
+  fr: Ce site utilise des cookies pour stocker vos préférences
+  en: This website uses cookies to store your language preferences
 characteristics:
   fr: Spécifications
   en: Specifications

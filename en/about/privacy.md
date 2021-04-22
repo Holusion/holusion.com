@@ -4,6 +4,8 @@ layout: page
 ---
 Holusion is commited to personnal data protection, and attempting to conform to european law ([GDPR](http://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32016R0679&from=EN)).
 
+This is a translation of the original [privacy page](/fr/about/privacy). Please always refer to the original for validation.
+
 This pages aims to inform you of your rights and our obligations concerning your data.
 
 While we try our best to handle your data as legally required, feel free to point us to any shortcommings in our policies, or ask for further clarification in the contact form below.

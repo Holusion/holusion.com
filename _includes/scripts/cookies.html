@@ -1,0 +1,62 @@
+{% comment %} replaces the old google analytics cookie consent with a smaller one{% endcomment %}
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script defer type="text/javascript">
+  //Being denied isn't the same as not-consented-yet
+  var is_consented = document.cookie.indexOf('cookieconsent_status=allow') != -1;
+  var is_denied = document.cookie.indexOf('cookieconsent_status=dismiss') != -1;
+  var disableString = 'disable-cookies';
+
+  
+  function change_preferred_language(lang){
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    document.cookie = 'lang='+lang+'; expires='+d.toUTCString()+'; path=/; SameSite=Strict';
+  }
+
+  if (is_denied) {
+    window[disableString] = true;
+  }
+
+  //cookieconsent does automatically store user response and call this callback
+  function register(status){
+    // if cookie wasn't set we wait for consent to call gtag
+    if(!is_consented && status== "allow" && this.hasConsented()){
+      is_consented = true;
+    }
+  }
+
+  //Always create cookieconsent to give revoke option
+  var cc = document.createElement("SCRIPT");
+  cc.src = '/node_modules/cookieconsent/build/cookieconsent.min.js';
+  cc.async = true;
+  cc.onload = function(){
+    window.cookieconsent.initialise({
+      type: "info",
+      container: document.body,
+      revokable: false,
+      dismissOnScroll: 200,
+      dismissOnTimeout: 50000,
+      content:{
+        message: "{{site.data.strings.cookieconsent[page.lang]}}",
+        link: "{{site.data.strings.read-more[page.lang]}}",
+        href: '/{{page.lang}}/about/privacy',
+        dismiss: "&times;",
+        allow: "&#x2713;",
+      },
+      palette:{
+        "popup": {
+          "background": "var(--dark)",
+          "text": "var(--light)"
+        },
+        "button": {
+          "background": "var(--info)",
+          "text": "#ffffff"
+        }
+      },
+      onStatusChange: register,
+      onInitialise: register,
+    });
+  }
+  document.head.appendChild(cc);
+</script>
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-48469340-1"></script>
