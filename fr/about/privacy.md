@@ -9,22 +9,64 @@ Cette page a pour but de vous informer de vos droits et de nos obligations conce
 
 ## Informations recueillies
 
-### Navigation
-Holusion collecte des données anonymisée de fréquentation du site [holusion.com](https://holusion.com) et de ses sous domaines. Nous utilisons des [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) tierces fournies par [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage) pour déterminer :
+### Requêtes et Navigation
+Holusion collecte des données de fréquentation du site [holusion.com](https://holusion.com) et de ses sous domaines. Celles-ci sont stockées par notre fournisseur [Google](https://cloud.google.com/terms/google-entity) selon les conditions d'utilisation de la plateforme [google cloud](https://cloud.google.com/terms/).
 
-- la fréquence des visites
-- la popularité des pages
-- le temps passé sur le site
-- les navigateurs et types de terminaux utilisés
-- les erreurs rencontrées
+Ces données peuvent contenir les données personnelles suivantes:
+- la chaîne [user-agent](https://fr.wikipedia.org/wiki/User_agent) du navigateur utilisé
+- la langue préférée du navigateur effectuant la requête
+- l'[adresse IP](https://fr.wikipedia.org/wiki/Adresse_IP) de l'utilisateur
 
-Ces informations sont conservées de façon sécurisée pour une durée maximale de 26 mois.
+Ainsi que des données non personelles, telles que : 
+- le nom et le type de la ressource demandée
+- la date de la requête
+- la latence
 
-Si vous refusez l'utilisation de cookies tierces, c'est la seule information qui sera sauvegardée.
+Ces données font l'objet d'un traitement statistique interne et ne sont pas utilisées individuellement. Elles peuvent être stockées pour un maximum de 26 mois.
+
+### Cookies
+
+Holusion des [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) de façon minimale pour assurer le fonctionnement du site.
+
+En visitant la boutique en ligne des cookies additionels suivants seront enregistrés :
+<table class="table table-striped table-responsive-sm">
+  <thead>
+    <th scope="col">Nom</th>
+    <th scope="col">Fournisseur</th>
+    <th scope="col">Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-muted">cookieconsent_status</td>
+      <td class="text-right"><a href="/fr/about/">Holusion</a></td>
+      <td>Stocke une trace de visites précédente où les informations de politique de confidentialité ont été montrées</td>
+    </tr>
+    <tr>
+      <td class="text-muted">lang</td>
+      <td class="text-right"><a href="/fr/about/">Holusion</a></td>
+      <td>Stocke le language préféré de l'utilisateur si différent de celui du navigateur</td>
+    </tr>
+    <tr>
+      <td class="text-muted">__stripe_mid</td>
+      <td class="text-right"><a href="https://stripe.com/fr/privacy">Stripe</a></td>
+      <td>Utilisé par Stripe pour gérer le paiement en ligne sur la <a href="/fr/store/">boutique</a></td>
+    </tr>
+    <tr>
+      <td class="text-muted">__stripe_sid</td>
+      <td class="text-right"><a href="https://stripe.com/fr/privacy">Stripe</a></td>
+      <td>Utilisé par Stripe pour gérer le paiement en ligne sur la <a href="/fr/store/">boutique</a></td>
+    </tr>
+    <tr>
+      <td class="text-muted">snipcart_order_token</td>
+      <td class="text-right"><a href="https://cdn.snipcart.com/legal/dpa.pdf">Snipcart</a></td>
+      <td>Utilisé par Snipcart pour gérer le panier dans la <a href="/fr/store/">boutique</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Achats en ligne
 
-Dans le cas d'un achat, nous recueillons uniquement les informations nécessaires au bon déroulement de la vente. Seules les informations personnelles de contact (nom, prénom, adresse, téléphone) sont stockées afin d'assurer une traçabilité et un service après vente. Ces informations ne sont pas traitées ni exploitées par ailleurs.
+Dans le cas d'un achat, nous recueillons uniquement les informations nécessaires au bon déroulement de la vente. Seules les informations personnelles de contact (nom, prénom, adresse, téléphone) sont stockées par notre fournisseur [Snipcart](https://snipcart.com) afin d'assurer une traçabilité et un service après vente. Ces informations ne sont pas traitées ni exploitées par ailleurs.
 
 Le [portail de paiement](https://stripe.com/fr/privacy) pourra utiliser vos données personnelles à des fins de détection de fraudes.
 
