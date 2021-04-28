@@ -6,17 +6,21 @@ abstract: Explications sur les hologrammes
 tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
 ---
 
-<section class="section section-main-header header-fill" style="max-width: 1920px">
-  {%include components/header_image.html image="img/posts/2020_hologramme/Now.jpg" %}
+<section class="section section-main-header header-fill" style="max-width: 1920px;background-color: black;" ">
+  {%include components/header_image.html image="img/posts/2020_hologramme/starwars.jpg" %}
+
+
   <div class="main-header-body body-right">
-    <div class="content shadow rounded bg-white rounded p-4 text-justify">
-      <h2>L’hologramme, comment ça marche ?</h2>
+    <div class="content shadow rounded rounded p-4 text-justify" style="background-color: rgba(255,255,255,0.8);backdrop-filter: blur(6px);">
+      <h2>Comment fonctionne un hologramme ?</h2>
       <p>
-      Lorsque l’on parle d’hologrammes, il n’est pas rare de penser aux projections bleutées de la célèbre saga Star Wars. Pourtant, parmi les deux types d’hologrammes qui existent réellement, aucun ne permet de projeter Leïa dans le vide !
+      Lorsque l’on parle d’hologrammes, il n’est pas rare de penser aux projections bleutées en 3-dimensions de la célèbre saga <b>Star Wars</b>. Pourtant, parmi les types d’hologrammes qui existent réellement, aucun ne permet actuellement de projeter Leïa dans le vide.
       </p>
       <p>
-      <i>  Par exemple, cet hologramme extrait du film "Insaisissables" (Louis Leterrier, 2013) n’existe pas, et relève du domaine de la magie, ce qui est d'ailleurs le sujet même du film. </i>
+        <b>Magie, science-fiction, rêve ou réalité ?</b> L'hologramme embrase les imaginations et on les retrouvent dans les livres comme au grand écran : Star Wars, Iron Man, Avatar...
       </p>
+      <p>Malheuresement pour nous, dans les films, rien n'est vrai dans ces hologrammes ! Ce sont des <b>effets spéciaux</b> ajouté bien après le tournage sur l'image.</p>
+      <p><b>Mais alors, un hologramme, qu'est-ce que c'est ?</b></p>
     </div>
   </div>
 </section>
@@ -26,34 +30,76 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
   <div class="main-header-body">
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="row">
-        <div class="col-12 col-lg-6">
-          {% picture container img/posts/2020_hologramme/holomouse.jpg
-            --img class="img-fluid"
-            style="padding-bottom: 40px;"
-            alt="Présentation de l'hologramme de Gabor"
-            %}
+        <div class="col-12 col-lg-4 flip-box text-center">
+          <div>
+            {% picture container img/posts/2020_hologramme/holomouse.jpg
+              --img class="img-fluid flip-box-inner"
+              alt="Présentation de l'hologramme de Gabor"
+              %}
+          </div>
+          <div>
+              {% picture container img/posts/2020_hologramme/holomouse-1.jpg
+                --img class="img-fluid flip-box-left"
+                alt="Présentation de l'hologramme de Gabor"
+                %}
+            </div>
           </div>
           <div class="col-12 col-lg-6 text-justify" >
-            <h2>L'hologramme de Gabor</h2>
-            <p>
-            </p>
+            <h2>L'hologramme de Denis Gabor</h2>
 
             <p>
-               <b>  Définition :   </b>
-            Un hologramme est une image contenant des informations tridimensionnelles. Cette projection est obtenue via l’holographie, une technique qui enregistre le volume 3D d’un objet grâce aux ondes. C'est souvent celui qui est désigné sous le nom de "vrai hologramme".
+               <b>Un projet scientifique de pointe</b>
+               </p>
+               <p>
+            Un hologramme est une image contenant des informations tridimensionnelles. Cette projection est obtenue via l’<b>holographie</b>, une technique qui enregistre le volume 3D d’un objet grâce aux propriétés <i>ondulatoires</i> de la lumière (<i>c'est à dire qu'elle se comporte un peu comme une onde acoustique</i>). C'est souvent celui qui est désigné sous le nom de <b>vrai hologramme</b>.
             </p>
             <p>
-              <b>  Comment ça marche ?  </b>
-              L’hologramme existe grâce aux interférences (superpositions de deux ondes proches). Il s’agit de projeter un faisceau lumineux à la fois sur un objet et sur une plaque, et les interactions entre les deux ondes vont créer une image tridimensionnelle.
-            </p>            <p>
-            <b>  Histoire :   </b>
-             L'idée d’hologramme est née en 1947 grâce à Dennis Gabor mais c’est seulement dans les années 1960 avec l’avènement du laser que le procédé se développe. Néanmoins, ces hologrammes ne sont rendus possibles que dans des cadres bien particuliers, car ils nécessitent un environnement propice aux interférences. Leur utilisation n’est donc pas démocratisée et on les retrouve principalement dans des laboratoires. Les hologrammes que nous connaissons aujourd’hui sont donc le résultat d’une analogie.
-                </p>
+              <b>Comment ça marche ?</b>
+            </p>
+              <p>L’hologramme existe grâce aux propriétés physiques de la lumière. Comme celle-ci existe à la fois comme une particule, mais aussi comme une onde, des scientifiques ont émis l'hypothèse qu'il devrait être possible d'enregistrer la lumière en stéréo, de la même manière qu'on enregistre un piste sonore. Par exemple, en projettant un faisceau lumineux à la fois sur un objet et sur une plaque photographique, les interactions entre les deux ondes vont créer une image tridimensionnelle.
+            </p>
+            <div class="text-center">
+              {% picture container img/posts/2020_hologramme/holograph-record.png
+                --img class="img-fluid text-center" style="max-width:70%;margin: 30px"
+                alt="By DrBob at the English-language Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=18103931"
+                %}
+              
+            </div>
+            
+            <p>Lorsque la plaque est à nouveau illuminée par le même rayonnement original, elle restitue l'objet <i>interférent</i> à l'emplacement original par rapport à la prise de la photo holographique.</p>
+            <div class="text-center">
+               {% picture container img/posts/2020_hologramme/holography-reconstruct.png
+                --img class="img-fluid text-center" style="max-height:60vh;margin: 60px"
+                alt="By DrBob at the English-language Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=18103931"
+                %}
+            </div>
+    
+            <p>
+            <b>Qui l'a découvert ?</b>
+            </p>
+            <p>
+             L'idée d’hologramme est née en 1947 grâce à <strong>Dennis Gabor</strong> mais c’est seulement dans les années 1960 avec l’avènement du laser que le procédé se développe. 
+             Néanmoins, ces hologrammes ne sont rendus possibles que dans des cadres bien particuliers, car ils nécessitent un environnement propice aux interférences. 
+             Leur utilisation n’est donc pas démocratisée et on les retrouve principalement dans des laboratoires car leur création est techniquement complexe.
+            </p>
+             <p>
+              Comme une image holographique est extrèmement dure à falsifier, leur première application commerciale aujourd'hui est dans la lutte contre les fraudes. Ils sont utilisé pour la création d'hologrammes de sécurité, des petites images iridiscentes que vous retrouverez sur vos passeports, billets de banque, cartes bancaires et autres documents importants.
+             </p>
+             <p>
+               Mais quel rapport avec l'hologramme ? Ce moyen de communication du futur qui promet de faire flotter l'image de son interlocuteur dans l'air ? Et bien on le doit à popularité croissante de la <b>science-fiction</b> à la fin des années 70. Elle s'empare des hologrammes pour leur inventer des applications futuristes dans la télécommunication et les médias de masses qui débutent alors.
+              </p>
+             <p>
+               Une vision séduisante qui impactera fortement l'imaginaire collectif ! Les hologrammes que nous connaissons aujourd’hui sont donc le résultat d’une analogie avec ces technologies décrites.
+              </p>
+              <p>
+                  Pour ses travaux de recherches, Denis Gabor se verra recompensé par le <a href="https://www.nobelprize.org/prizes/physics/1971/summary/" target="_blank">Prix Nobel de physique en 1971</a>.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
 
     <section id="PeppersGhost" class="section section-main-header header-fill">
 
@@ -61,26 +107,30 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
         <div class="content shadow rounded bg-white rounded p-4">
           <div class="row">
               <div class="col-12 col-lg-6 text-justify" >
-                <h2>L'hologramme de Pepper</h2>
+                <h2>L'hologramme du Fantôme de Pepper</h2>
                 <p>
-                   <b>  Définition :   </b>
-                   Ce type d’hologramme résulte donc d'une analogie, et correspond à toute image tridimensionnelle donnant l’impression de flotter dans les airs. Cette impression de flottement est rendue possible grâce au Pepper’s Ghost.
+                  C'est aujourd'hui la forme la plus commune de ce qu'on appelle des "hologrammes" dans la vie quotidienne. C'est le principe des hologrammes sur scène, dans les musées, dans les expositions. Dans son fonctionnement, il n'a rien en commun avec l'hologramme de Denis Gabor.
                 </p>
                 <p>
-                  <b>  Comment ça marche ?  </b>
-                  Issue du monde de la scène, cette illusion d’optique consiste à utiliser une surface réfléchissante pour donner l’impression qu’un objet apparaît ou disparaît. La  vitre inclinée est invisible aux yeux du spectateur, et l’illusion réside dans le fait qu’elle ne laisse pas seulement voir en transparence, elle reflète aussi un autre objet caché.
-                </p>            <p>
+                   Ce type d’hologramme résulte donc d'un <i>abus de language</i>, et correspond à toute image donnant l’impression de flotter dans les airs. Cette impression de flottement est rendue possible grâce au Pepper’s Ghost. L'image peut être en relief, ou en trompe-l'oeil pour donner l'impression d'une image tridimensionnelle.
+                </p>
+                <p>
+                  <b>Comment ça marche ?  </b>
+                  Issue du monde du spectable, cette illusion d’optique consiste à utiliser une surface réfléchissante pour donner l’impression qu’un objet apparaît ou disparaît. La  vitre inclinée est invisible aux yeux du spectateur, et l’illusion réside dans le fait qu’elle ne laisse pas seulement voir en transparence, elle reflète aussi un autre objet caché.
+                </p>            
+                <p>Cette illusion d'optique n'est pas neuve ! Elle a reçu ses lettres de noblesses par John Henry Pepper au 19<exp>eme</exp> siècle pour faire apparaitre des fantômes sur les scènes de théâtre anglais de l'époque victorienne. D'où le terme de Fantôme de Pepper, ou Pepper's Ghost.</p>
+                <p>Mais le principe serait bien plus ancien et présent dans les fêtes foraines depuis le 16ème siécle comme dans le tour de magie d'une jeune femme se transformant en gorille.</p>
                 <b>  Variantes :   </b>
-                 Cette illusion se décline de plusieurs façons. On la retrouve aussi bien à grande échelle, sur scène, qu’à petite échelle, dans des vitrines holographiques.
+                 Cette illusion se décline de plusieurs façons. On la retrouve aussi bien à grande échelle, sur scène, qu’à plus petite échelle, dans des vitrines holographiques.
                     </p>
                 </div>
-                <div class="col-12 col-lg-6">
-                  {% picture container img/posts/2020_hologramme/PeppersGhost.jpg
-                    --img class="img-fluid
-                    style="padding-bottom: 40px;"
-                    alt="Présentation de l'hologramme de Pepper"
+                <div class="col-12 col-lg-6 text-justify flip-box" >
+                  {% picture container img/posts/2020_hologramme/Peppers_Ghost.jpg
+                    --img class="img-fluid flip-box-left"
+                    alt="Présentation de l'hologramme de Pepper" 
                     %}
-                  </div>
+                
+                </div>
               </div>
             </div>
           </div>
@@ -89,12 +139,9 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
   <section id="video" class="section bg-light py-4">
     <div class="container jumbotron bg-white shadow my-0" style="text-align:center">
       <h2> L'hologramme de Pepper numérique </h2>
+      <p> Aujourd’hui, hologrammes et numérique fusionnent pour créer des rendus holographiques plus réalistes et encore plus impressionnants. Ces hologrammes mixtes consistent à utiliser un écran qui, une fois reflété sur une vitre inclinée, projettent un visuel 3D en réalité augmentée. Ils peuvent être utilisées dans différents secteurs, que ce soit dans l’immobilier tout comme la médiation culturelle ou l’éducation. </p>
       {% include components/medias/youtube.html  embed="AQYExdderJM" %}
       <h3> Vidéo de présentation d'un Pepper's Ghost numérique </h3>
-      <p> </p>
-      <p> Aujourd’hui, hologrammes et numérique fusionnent pour créer des rendus holographiques plus réalistes et encore plus impressionnants. Ces hologrammes mixtes consistent à utiliser un écran qui, une fois reflété sur une vitre inclinée, projettent un visuel 3D en réalité augmentée. Ils peuvent être utilisées dans différents secteurs, que ce soit dans l’immobilier tout comme la médiation culturelle ou l’éducation. </p>
-
-
     </div>
   </section>
 
@@ -111,11 +158,11 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
               %}
           </div>
           <div class="main-header-body container jumbotron bg-white shadow my-4 p-5">
-              <h2 style="margin-bottom:15px">Le saviez-vous ?</h2>
+              <h2 style="margin-bottom:15px">En bref !</h2>
               <div class="my-4">
                 <h3> Quel est le point commun entre Mélenchon et Tupac ?</h3>
                 <p> Les hologrammes de Pepper sont naturellement chéris par le monde de la scène, qui est leur berceau. Tupac a ainsi pu renaître en 2012 à Coachella, grâce à l’illusion de Pepper. Mais ces hologrammes dépassent largement la scène musicale et ont fait leur apparition en politique, avec Mélenchon. Revendiqué comme “hologramme” par l’équipe politique, cela reste une illusion d’optique. </p>
-               <p> Les marques sont de plus en plus friandes : l’américain <b> Supreme </b> vient de s’offrir une collaboration avec l’hologramme de Tupac pour la sortie de sa collection 2020. </p>
+               <p> Les marques sont de plus en plus enthousiastes : l’américain <b> Supreme </b> s'est offert une collaboration avec l’hologramme de Tupac pour la sortie de sa collection 2020. </p>
              </div>
              <div  class="my-4">
                 <h3> Une idée née bien plus tôt...</h3>
@@ -125,11 +172,16 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
               <h3>Quels hologrammes nous côtoient au quotidien ?</h3>
               <p> Les hologrammes les plus répandus sont ceux de nos cartes bleues, de nos cartes d’identité, de nos billets. Ce ne sont pas des hologrammes de Gabor mais des hologrammes de sécurité, destinés à empêcher toute tentative de reproduction illégale. </p>
             </div>
+            <div class="my-4">
+              <h3>Et les autres techniques holographiques ?</h3>
+              <p> Deux autres techniques existent pour créer des illusions holographiques ! Utiliser un écran très fin et transparent, comme un <strong>tulle</strong> et projeter des images dessus au vidéo-projecteur. C'est une technique très appréciée dans le monde du théâtre.</p>
+              <p>L'autre technique, c'est d'utiliser la <strong>permanence rétinienne</strong> pour faire flotter une image. Les hélices holographiques font tournoyer des bandeaux de LED tricolores à haute vitesse pour créer cette impression d'image flottante.</p>
+            </div>
             <div  class="my-4">
-
-
               <h3>Les hologrammes que nous voyons dans les films vont-ils exister ?</h3>
-                  Etant donné que le premier hologramme couleur vient seulement d’être réalisé en... 2015, il semblerait que la technologie se doit encore d’avancer avant de pouvoir démocratiser de tels hologrammes à échelle humaine.
+              <p>Etant donné que le premier hologramme couleur vient seulement d’être réalisé en... 2015, il semblerait que la technologie se doit encore d’avancer avant de pouvoir démocratiser de tels hologrammes à échelle humaine.</p>
+              <p>Une histoire à suivre !</p>
+                  
 </div>
               </div>
           </section>
