@@ -110,7 +110,7 @@
       <div class="container">
         <div class="row w-100">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <h4 class="block-title text-white">Holusion</h4>
+            <h4 class="block-title text-white mb-3">Holusion</h4>
             <ul class="navbar-nav">
               <li><a href="{{domain}}/{{page.lang}}/about">
                 {{site.data.sections.about[page.lang]}}
@@ -127,7 +127,7 @@
             </ul>
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <h4 class="block-title text-white">{{site.data.sections.products[page.lang]}}</h4>
+            <h4 class="block-title text-white mb-3">{{site.data.sections.products[page.lang]}}</h4>
             <ul class="navbar-nav">
             {% for post in site.products_items[page.lang] limit: 4 %}
               {% include components/nav/bottom_li.html content=post %}
@@ -135,7 +135,7 @@
             </ul>
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <h4 class="block-title text-white">{{site.data.sections.posts[page.lang]}}</h4>
+            <h4 class="block-title text-white mb-3">{{site.data.sections.posts[page.lang]}}</h4>
             <ul class="navbar-nav">
               {% for post in site.categories[page.lang] limit: 4 %}
                 {% include components/nav/bottom_li.html content=post %}
@@ -143,7 +143,7 @@
             </ul>
           </div>
           <div class="col-12 col-sm-6 col-md-12 col-lg-3 pt-4">
-            <h4 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h4>
+            <h4 class="block-title text-white mb-3">{{ site.data.strings.social-links[page.lang] }}</h4>
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-12">
                 {% include lists/social_list.html %}
@@ -156,7 +156,8 @@
       </div>
       
     </nav>
-    <section id="bottom-nav-row" class="row no-gutters">
+    <hr class="bg-light">
+    <section id="bottom-nav-row" class="row no-gutters bg-dark">  
       <div class="col-4 col-lg-5 col-xl-6 order-1 text-left">
         <span class="d-none d-lg-inline">
           {{ site.data.strings.copyright[page.lang]}} {{ site.time | date: '%Y' }}
@@ -179,7 +180,7 @@
         99A bvd Descat, 59200 Tourcoing - France
       </div>
 
-    </section>
-  </footer>
+    </section>   
+  </footer>  
 </body>
 </html>

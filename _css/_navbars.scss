@@ -75,7 +75,11 @@ footer #contact-bottom{
 }
 #navbar-bottom .navbar-nav>li>a {
   color: $light;
+  &:hover{
+    color:$cyan;
+  }
 }
+
 #bottom-index{
   padding-bottom:20px;
   padding-top:20px;
