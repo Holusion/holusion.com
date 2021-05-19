@@ -160,7 +160,7 @@ image: img/sections/prism.jpg
           <div class="col-12 col-md-4">Modelling and rendering</div>
           <div class="col-12 col-md-4">Set-up</div>
         </div>
-        <div>
+        <div>     
           {% asset "sections/schema.png"
           class="img-fluid"
           sizes="100w"
@@ -171,47 +171,49 @@ image: img/sections/prism.jpg
     </section>
 </main>
 
-
-<section id="section-contact" class="row no-gutters" itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
+<section id="section-contact" class="section container" itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
   <meta itemprop="name" content="holusion" />
-  <div class="col-md-6 col-sm-12">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
     <h3 style="padding-bottom: 10px">Come meet us :</h3>
-    {% include components/maps_api.html %}
-  </div>
-  <div class="col-md-6 col-sm-12 ">
-    <h3>Contact us :</h3>
-    <div class="p-1">
-      <ul class="list-group">
-          <li class="list-group-item">
-            <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
-            <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
-                srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
-          </li>
-          <li class="list-group-item">
-            <a href="tel:+33972424451" class="text-dark">
-              <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
-              <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
-              <div>
-                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-location_on-24px.svg @inline %}</span>
-                <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
-              </div>
-              <div>
-                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-business-24px.svg @inline %}</span>
-                <span itemprop="postalCode">59200</span>
-                <span itemprop="addressLocality">Tourcoing</span>,
-                <span itemprop="addressCountry">France</span>
-              </div>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
-            <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
-          </li>
-        </ul>
+      {% include components/maps_api.html %}
+    </div>
+    <div class="col-md-6 col-sm-12 ">
+      <h3>Contact us :</h3>
+      <div class="p-1">
+        <ul class="list-group">
+            <li class="list-group-item">
+              <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
+              <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
+                  srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
+            </li>
+            <li class="list-group-item">
+              <a href="tel:+33972424451" class="text-dark">
+                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
+                <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
+                <div>
+                  <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-location_on-24px.svg @inline %}</span>
+                  <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
+                </div>
+                <div>
+                  <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-business-24px.svg @inline %}</span>
+                  <span itemprop="postalCode">59200</span>
+                  <span itemprop="addressLocality">Tourcoing</span>,
+                  <span itemprop="addressCountry">France</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
+              <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
+            </li>
+          </ul>
+      </div>
     </div>
   </div>
+  
 </section>

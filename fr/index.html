@@ -7,7 +7,7 @@ image: img/sections/prism.jpg
 
 ---
 
-<section class="section section-main-header header-dark header-ultrawide home-header">
+<section class="section section-main-header header-dark header-ultrawide home-header"> 
   <div class="main-header-image-wrapper" style="background:#717576">
     <picture id="main-header-picture">
       <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
@@ -24,14 +24,13 @@ image: img/sections/prism.jpg
 
   </div>
   <div class="main-header-overlay section-title">
-    <span class="main-header-overlay-text">
-      <h1>Créateur d'expériences digitales innovantes</h1>
-      {%- include lists/social_list.html -%}
-    </span>
-
+      <span class="main-header-overlay-text">
+        <h1>Créateur d'expériences digitales innovantes</h1>
+        {%- include lists/social_list.html -%}
+      </span>
   </div>
-  <div class="main-header-body body-right">
-    <div class="content rounded py-4">
+  <div class="main-header-body body-right ">
+    <div class="content container rounded py-4">
       <p>
         <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
         À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
@@ -42,12 +41,7 @@ image: img/sections/prism.jpg
   </div>
 </section>
 
-
-
-
 <main class="home-page-main">
-
-
 
   <section class="section section-main-header header-fill">
     {%include components/header_image.html image="img/sections/iris32_openr_cut.png" alt="Iris32 with building 3d model" %}
@@ -83,42 +77,41 @@ image: img/sections/prism.jpg
         sizes="100w"
         alt="schéma de l'offre professionnelle d'administration des produits"
       %}
-      </div>
+    </div>
   </section>
-
 
   <section id="section-pricing-grid" class="section section-main-header header-fill py-4">
     {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" title="holusion Iris 75\"" alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" %}
-<div class="main-header-body container">
-  <div class="content shadow rounded bg-white p-4 row">
-    <div class="col-lg-6 col-12 order-lg-2 order-1">
-      {% asset "img/posts/2020_Renoir/Renoir_portrait.png"
-      srcset:width="1920"
-      srcset:width="960"
-      class="img-fluid fit-contain"
-      sizes="(max-width: 992px) 100vw, 50vw"
-      alt="Hologramme d'Auguste Renoir"
-      %}
+    <div class="main-header-body container">
+      <div class="content shadow rounded bg-white p-4 row">
+        <div class="col-lg-6 col-12 order-lg-2 order-1">
+          {% asset "img/posts/2020_Renoir/Renoir_portrait.png"
+          srcset:width="1920"
+          srcset:width="960"
+          class="img-fluid fit-contain"
+          sizes="(max-width: 992px) 100vw, 50vw"
+          alt="Hologramme d'Auguste Renoir"
+          %}
+        </div>
+        <div class="col-lg-6 col-12 order-lg-1 order-2 p-4">
+          <h2 id="main-title-1">Un accompagnement personnalisé</h2>
+          <p>Notre accompagnement comprend :</p>
+          <ul>
+            <li>Vous aider à choisir l'hologramme le plus adapté </li>
+            <li>Créer un contenu impactant et mémorable  </li>
+            <li>Apporter une expertise unique sur la médiation par l'hologrammes</li>
+            <li>Concevoir les espaces et la scénographie de vos hologrammes</li>
+            <li>Numériser vos œuvres et ressources</li>
+            <li>Réaliser des travaux de modélisations rigoureux</li>
+            <li>Développer des application interactives et intuitives</li>
+            <li>Déployer et maintenir vos solutions sur le long terme</li>
+          </ul>
+          <p> Holusion vous accompagne <b>tout au long</b> de votre projet et de votre utilisation de l'hologramme.</p>
+          <span class="text-right"><a href="/fr/posts/">En savoir plus sur nos réalisations</a></span>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-6 col-12 order-lg-1 order-2 p-4">
-      <h2 id="main-title-1">Un accompagnement personnalisé</h2>
-      <p>Notre accompagnement comprend :</p>
-      <ul>
-        <li>Vous aider à choisir l'hologramme le plus adapté </li>
-        <li>Créer un contenu impactant et mémorable  </li>
-        <li>Apporter une expertise unique sur la médiation par l'hologrammes</li>
-        <li>Concevoir les espaces et la scénographie de vos hologrammes</li>
-        <li>Numériser vos œuvres et ressources</li>
-        <li>Réaliser des travaux de modélisations rigoureux</li>
-        <li>Développer des application interactives et intuitives</li>
-        <li>Déployer et maintenir vos solutions sur le long terme</li>
-      </ul>
-      <p> Holusion vous accompagne <b>tout au long</b> de votre projet et de votre utilisation de l'hologramme.</p>
-      <span class="text-right"><a href="/fr/posts/">En savoir plus sur nos réalisations</a></span>
-    </div>
-    </div>
-    </div>
-  </section>
+  </section> 
 
   <section class="section section-main-header header-fill">
     {%include components/header_image.html image="img/sections/plaine_image.jpg" alt="Vue du balcon du 2eme étage de la Plaine Images à Tourcoing" %}
@@ -151,8 +144,9 @@ image: img/sections/prism.jpg
       </div>
     </div>
   </section>
-  <section id="section-produits" class="">
-    <div class="container-fluid ">
+
+  <section id="section-produits" class="section">
+    <div class="">
       <h1 align="center" id="main-title-1" style="padding-top: 40px;text-transform: uppercase;"> <a href="/en/products/">Nos produits phares</a></h1>
       <div class="row no-gutters">
         {% for product in site.products_items[page.lang] limit:4 %}
@@ -164,67 +158,71 @@ image: img/sections/prism.jpg
       </div>
     </div>
 
-    </section>
+  </section>
 
-<section class="section bg-light py-4">
-  <div class="container jumbotron bg-white shadow my-0 py-4">
-    <div class="row no-gutters text-primary">
-      <div class="col-12 col-md-4">Analyse de projet</div>
-      <div class="col-12 col-md-4">Modélisation et rendus</div>
-      <div class="col-12 col-md-4">Installation</div>
+  <section class="section bg-light py-4">
+    <div class="container jumbotron bg-white shadow my-0 py-4">
+      <div class="row no-gutters text-primary">
+        <div class="col-12 col-md-4">Analyse de projet</div>
+        <div class="col-12 col-md-4">Modélisation et rendus</div>
+        <div class="col-12 col-md-4">Installation</div>
+      </div>
+  <div>
+    {% asset sections/schema.png
+      srcset:width="1920"
+      srcset:width="960"
+      class="img-fluid"
+      alt="schema des prestations holusion"
+    %}
+  </div>
     </div>
-<div>
-  {% asset sections/schema.png
-    srcset:width="1920"
-    srcset:width="960"
-    class="img-fluid"
-    alt="schema des prestations holusion"
-  %}
-</div>
-</div>
-</section>
+  </section>
 </main>
 
-<section id="section-contact" class="row no-gutters" itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
+<section id="section-contact" class="section container" itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
+
   <meta itemprop="name" content="holusion" />
-  <div class="col-md-6 col-sm-12">
+  <div class="row no-gutters">
+    <div class="col-md-6 col-sm-12">
     <h3 style="padding-bottom: 10px">Venez nous rencontrer :</h3>
     {% include components/maps_api.html %}
-  </div>
-  <div class="col-md-6 col-sm-12 ">
-    <h3>Contactez-nous :</h3>
-    <div class="p-1">
-      <ul class="list-group">
-          <li class="list-group-item">
-            <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
-            <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
-                srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
-          </li>
-          <li class="list-group-item">
-            <a href="tel:+33972424451" class="text-dark">
-              <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
-              <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
-              <div>
-                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-location_on-24px.svg @inline %}</span>
-                <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
-              </div>
-              <div>
-                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-business-24px.svg @inline %}</span>
-                <span itemprop="postalCode">59200</span>
-                <span itemprop="addressLocality">Tourcoing</span>,
-                <span itemprop="addressCountry">France</span>
-              </div>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
-            <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
-          </li>
-        </ul>
+    </div>
+    <div class="col-md-6 col-sm-12 ">
+      <h3>Contactez-nous :</h3>
+      <div class="p-1">
+        <ul class="list-group">
+            <li class="list-group-item">
+              <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
+              <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
+                  srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
+            </li>
+            <li class="list-group-item">
+              <a href="tel:+33972424451" class="text-dark">
+                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
+                <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
+                <div>
+                  <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-location_on-24px.svg @inline %}</span>
+                  <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
+                </div>
+                <div>
+                  <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-business-24px.svg @inline %}</span>
+                  <span itemprop="postalCode">59200</span>
+                  <span itemprop="addressLocality">Tourcoing</span>,
+                  <span itemprop="addressCountry">France</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
+              <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
+            </li>
+          </ul>
+      </div>
     </div>
   </div>
+  
 </section>

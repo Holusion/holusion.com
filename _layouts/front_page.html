@@ -95,10 +95,11 @@
 
   <!-- Footer -->
   <footer class="mt-5 bg-dark text-white">
+    
     {% comment %} contact-form is position:fixed and will not interfere int the layout {%endcomment%}
     {% include components/contact_form.html %}
 
-    <section id="contact-bottom" class="bg-info text-white">
+    <section id="contact-bottom" class="bg-info text-white ">
       <div class="container">
           {{site.data.strings["need-help"][page.lang]}} ?
           <a id="navbar-contact-button" class="btn btn-outline-secondary text-white font-weight-bold" style="cursor:pointer" onclick='displayContactForm()'>{{site.data.strings["contact-us"][page.lang]}}</a>
@@ -106,51 +107,54 @@
     </section>
 
     <nav id="navbar-bottom" role="navigation"  class="navbar navbar-dark text-light p-2">
-      <div class="row w-100">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-          <h4 class="block-title text-white">Holusion</h4>
-          <ul class="navbar-nav">
-            <li><a href="{{domain}}/{{page.lang}}/about">
-              {{site.data.sections.about[page.lang]}}
-            </a></li>
-            <li><a href="{{domain}}/{{page.lang}}/products">
-              {{site.data.sections.products[page.lang]}}
-            </a></li>
-            <li><a  href="/{{page.lang}}/CGV">
-              {{site.data.sections.cgv[page.lang]}}
-            </a></li>
-            <li><a href="/{{page.lang}}/about/privacy">
-              {{site.data.sections.privacy[page.lang]}}
-            </a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-          <h4 class="block-title text-white">{{site.data.sections.products[page.lang]}}</h4>
-          <ul class="navbar-nav">
-          {% for post in site.products_items[page.lang] limit: 4 %}
-            {% include components/nav/bottom_li.html content=post %}
-          {% endfor %}
-          </ul>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-          <h4 class="block-title text-white">{{site.data.sections.posts[page.lang]}}</h4>
-          <ul class="navbar-nav">
-            {% for post in site.categories[page.lang] limit: 4 %}
+      <div class="container">
+        <div class="row w-100">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
+            <h4 class="block-title text-white">Holusion</h4>
+            <ul class="navbar-nav">
+              <li><a href="{{domain}}/{{page.lang}}/about">
+                {{site.data.sections.about[page.lang]}}
+              </a></li>
+              <li><a href="{{domain}}/{{page.lang}}/products">
+                {{site.data.sections.products[page.lang]}}
+              </a></li>
+              <li><a  href="/{{page.lang}}/CGV">
+                {{site.data.sections.cgv[page.lang]}}
+              </a></li>
+              <li><a href="/{{page.lang}}/about/privacy">
+                {{site.data.sections.privacy[page.lang]}}
+              </a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
+            <h4 class="block-title text-white">{{site.data.sections.products[page.lang]}}</h4>
+            <ul class="navbar-nav">
+            {% for post in site.products_items[page.lang] limit: 4 %}
               {% include components/nav/bottom_li.html content=post %}
             {% endfor %}
-          </ul>
-        </div>
-        <div class="col-12 col-sm-6 col-md-12 col-lg-3 pt-4">
-          <h4 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h4>
-          <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-12">
-              {% include lists/social_list.html %}
-            </div>
-              <div class="col-sm-12 col-md-6 col-lg-12 newsletter">
-                {% include components/mailchimp.html %}
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
+            <h4 class="block-title text-white">{{site.data.sections.posts[page.lang]}}</h4>
+            <ul class="navbar-nav">
+              {% for post in site.categories[page.lang] limit: 4 %}
+                {% include components/nav/bottom_li.html content=post %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-md-12 col-lg-3 pt-4">
+            <h4 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h4>
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-12">
+                {% include lists/social_list.html %}
               </div>
+                <div class="col-sm-12 col-md-6 col-lg-12 newsletter">
+                  {% include components/mailchimp.html %}
+                </div>
+          </div>
         </div>
       </div>
+      
     </nav>
     <section id="bottom-nav-row" class="row no-gutters">
       <div class="col-4 col-lg-5 col-xl-6 order-1 text-left">
