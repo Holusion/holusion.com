@@ -7,12 +7,12 @@ image: img/sections/prism.jpg
 
 ---
 
-<section class="section section-main-header header-dark header-ultrawide home-header"> 
-  <div class="main-header-image-wrapper" style="background:#717576">
-    <picture id="main-header-picture">
-      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_16by9.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
-      <source srcset="{% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/iris22_header_brassempouy_wide_centered.jpg' @path %} 1920w" media="(max-width: 992px)">
-      {% asset 'img/sections/iris22_header_brassempouy.jpg'
+<main class="home-page-main">
+<div class="main-header-image-wrapper " >
+      <picture id="main-header-picture" style="border-radius: 100px;">
+      <source srcset="{% asset 'img/sections/test.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/test.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
+      <source srcset="{% asset 'img/sections/test.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/test.jpg' @path %} 1920w" media="(max-width: 992px)">
+      {% asset 'img/sections/test.jpg'
         srcset:width="960"
         srcset:width="1920"
         srcset:width="3840"
@@ -21,32 +21,22 @@ image: img/sections/prism.jpg
         alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme de la dame de brassempouy"
       %}
     </picture>
-
   </div>
-  <div class="main-header-overlay section-title">
-      <span class="main-header-overlay-text">
-        <h1>Créateur d'expériences digitales innovantes</h1>
-        {%- include lists/social_list.html -%}
-      </span>
-  </div>
-  <div class="main-header-body body-right ">
-    <div class="content container rounded py-4">
+  <div class="main-header-body body-right">
+    <div class="content rounded py-4">
+      <h1>Créateur d'expériences digitales innovantes
+      </h1>
       <p>
         <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
         À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
       </p>
-      <a href="/fr/products/"> <button  class="btn btn-primary">Explorez notre catalogue</button></a>
+      <a href="/fr/products/"> <button  class="btn btn-info">Explorez notre catalogue</button></a>
     </div>
 
   </div>
-</section>
-
-<main class="home-page-main">
-
-  <section class="section section-main-header header-fill">
-    {%include components/header_image.html image="img/sections/iris32_openr_cut.png" alt="Iris32 with building 3d model" %}
+  <section class="section section-main-header header-fill bg-dark">
     <div class="main-header-body container">
-      <div class="content shadow rounded bg-white p-4">
+      <div class="content p-4">
         <h2>Suscitez l'intérêt</h2>
         <p>
           <b>Impressionnez vos clients avec des images holographique d'une haute qualité.</b> En pointe sur le développement des définitions <b>UltraHD</b> et des nouvelles technologies d'affichage, Holusion vous permettra d'avoir toujours une longueur d'avance.
@@ -55,9 +45,17 @@ image: img/sections/prism.jpg
           Des solutions complètes existent pour de nombreux domaines et permettent d'enrichir la sensation d'immersion pour des expériences toujours plus marquantes.
         </p>
         <p>Présentation de maquettes, outil de médiation scientifique et culturelle, vitrine interactive pour dynamiser vos espaces. Tous ces usages sont à votre portée grâce à nos solutions exclusives et un matériel <b>Made In France.</b>
-        {% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}
-        <span class="text-right"><a href="/fr/usages/">Découvrez nos usages clés</a></span>
+        <!--{% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}-->
       </div>
+      <div class="content" style="filter: invert();">
+      {% asset "img/sections/administration_fr.png"
+        class="img-fluid"
+        sizes="100w"
+        alt="schéma de l'offre professionnelle d'administration des produits"
+      %}
+      </div>
+      <div></div>
+      <button class="btn btn-info center">Découvrez nos usages clés</button>
     </div>
   </section>
 

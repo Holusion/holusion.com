@@ -6,7 +6,8 @@ h1,h2,h3,h4,h5,h6{
   line-height: 1.2em;
 }
 h2{
-	font-size:25px;
+	font-size:35px;
+  margin-bottom: 1em;
 }
 
 h3, h3 a {
@@ -29,7 +30,7 @@ h6{
 }
 
 h1{
-  font-size:30px;
+  font-size:40px;
 	padding: 6px 0px 12px 0px;
 }
 
@@ -59,7 +60,6 @@ h3:target{
 .header-main {
   background-image: url("/static/img/header.jpg");
   background-size: 100% auto !important;
-  padding:200px 0px 0px 0px;
 }
 .header{
   background-color:$grey-100;

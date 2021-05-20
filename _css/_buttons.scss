@@ -2,6 +2,8 @@
 
 .btn {
   vertical-align: middle;
+  padding: 0.5em 1em;
+  border-radius:50px;
 }
 .btn svg, svg.icon, .icon svg{ //Ensure svgs are also aligned
   vertical-align: middle;
