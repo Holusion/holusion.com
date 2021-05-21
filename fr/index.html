@@ -8,35 +8,43 @@ image: img/sections/prism.jpg
 ---
 
 <main class="home-page-main">
-<div class="main-header-image-wrapper " >
+  <div class="home-page-header">
+    <div class="home-page-header-image" >
       <picture id="main-header-picture" style="border-radius: 100px;">
-      <source srcset="{% asset 'img/sections/test.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/test.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
-      <source srcset="{% asset 'img/sections/test.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/test.jpg' @path %} 1920w" media="(max-width: 992px)">
-      {% asset 'img/sections/test.jpg'
-        srcset:width="960"
-        srcset:width="1920"
-        srcset:width="3840"
-        class="img-fluid"
-        sizes="100w"
-        alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme de la dame de brassempouy"
-      %}
-    </picture>
-  </div>
-  <div class="main-header-body body-right">
-    <div class="content rounded py-4">
-      <h1>Créateur d'expériences digitales innovantes
-      </h1>
-      <p>
-        <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
-        À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
-      </p>
-      <a href="/fr/products/"> <button  class="btn btn-info">Explorez notre catalogue</button></a>
+        <source srcset="{% asset 'img/sections/test2.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/test2.jpg' @path %} 1920w" media="(max-width: 992px) and (min-height: 768px)">
+        <source srcset="{% asset 'img/sections/test2.jpg' @magick:resize=960x @path %} 960w, {% asset 'img/sections/test2.jpg' @path %} 1920w" media="(max-width: 992px)">
+        {% asset 'img/sections/test2.jpg' 
+          srcset:width="960"
+          srcset:width="1920"
+          srcset:width="3840"
+          class="img-fluid"
+          sizes="100w"
+          alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme de la dame de brassempouy"
+        %}
+      </picture>
     </div>
-
+    <div class="home-page-header-body">
+      <div class="home-page-header-body--content container">
+        <h1>
+          Créateur d'expériences digitales innovantes
+        </h1>
+        <p>
+          <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
+          À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
+        </p>
+      </div>
+    </div> 
+    <div class="home-page-header-cta d-flex justify-content-center">
+      <a class="d-block" href="/fr/products/"> <button  class="btn btn-info">Explorez notre catalogue</button></a>
+    </div>
   </div>
+    
+  
+ 
+
   <section class="section section-main-header header-fill bg-dark">
     <div class="main-header-body container">
-      <div class="content p-4">
+      <div class="content">
         <h2>Suscitez l'intérêt</h2>
         <p>
           <b>Impressionnez vos clients avec des images holographique d'une haute qualité.</b> En pointe sur le développement des définitions <b>UltraHD</b> et des nouvelles technologies d'affichage, Holusion vous permettra d'avoir toujours une longueur d'avance.
@@ -74,7 +82,7 @@ image: img/sections/prism.jpg
         class="img-fluid"
         sizes="100w"
         alt="schéma de l'offre professionnelle d'administration des produits"
-      %}
+      %} 
     </div>
   </section>
 

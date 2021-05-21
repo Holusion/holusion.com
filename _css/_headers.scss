@@ -1,10 +1,33 @@
-.intro_banner
-{
-  min-height:400px;
-  padding:20px;
-}
-.intro_banner>div{
-  padding: 0px 20px 20px 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+@import "variables";
+
+.home-page-header{
+  position: relative;
+  .home-page-header-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .home-page-header-body--content{
+      h1{
+        @media screen and (max-width: $break-md){
+          font-size: 30px;
+        }
+
+      }
+      align-self: center;
+    }
+    @media screen and (min-width: $break-md){
+      position: absolute;
+      top: 100px;
+      right: 0;
+      left:66%;
+      color: $dark;
+    }
+  }
+  .home-page-header-cta{
+    @media screen and (min-width: $break-md){
+      position: absolute;
+      bottom: 100px;
+      width:100%;
+    }
+  }
 }
