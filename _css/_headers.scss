@@ -6,21 +6,24 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    width: 100%;
     .home-page-header-body--content{
       h1{
         @media screen and (max-width: $break-md){
-          font-size: 30px;
+          font-size: 2em;
         }
-
+        @media screen and (min-width: $break-lg){
+          font-size: 2.4em;
+        }
       }
-      align-self: center;
+      @media screen and (min-width: $break-md){
+        width: 38%;
+      }
     }
     @media screen and (min-width: $break-md){
       position: absolute;
-      top: 100px;
-      right: 0;
-      left:66%;
-      color: $dark;
+      top: 25%;
+      color: $primary;
     }
   }
   .home-page-header-cta{

@@ -24,18 +24,22 @@ image: img/sections/prism.jpg
       </picture>
     </div>
     <div class="home-page-header-body">
-      <div class="home-page-header-body--content container">
-        <h1>
+      <div class="container">
+        <div class="home-page-header-body--content d-flex flex-column ml-auto">
+          <h1>
           Créateur d'expériences digitales innovantes
-        </h1>
-        <p>
-          <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
-          À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
-        </p>
+          </h1>
+        </div>
       </div>
+    </div>
+    <div class="container">
+      <p> 
+        <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
+        À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
+      </p>
     </div> 
     <div class="home-page-header-cta d-flex justify-content-center">
-      <a class="d-block" href="/fr/products/"> <button  class="btn btn-info">Explorez notre catalogue</button></a>
+      <a class="d-block" href="/fr/products/"> <button  class="btn btn-outline-info" style="color: white;">Explorez notre catalogue</button></a>
     </div>
   </div>
     
@@ -54,16 +58,17 @@ image: img/sections/prism.jpg
         </p>
         <p>Présentation de maquettes, outil de médiation scientifique et culturelle, vitrine interactive pour dynamiser vos espaces. Tous ces usages sont à votre portée grâce à nos solutions exclusives et un matériel <b>Made In France.</b>
         <!--{% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}-->
-      </div>
-      <div class="content" style="filter: invert();">
-      {% asset "img/sections/administration_fr.png"
+      </div> 
+      <div class="content">
+      {% asset "img/sections/administration_fr-dark.jpg"
         class="img-fluid"
         sizes="100w"
         alt="schéma de l'offre professionnelle d'administration des produits"
       %}
       </div>
-      <div></div>
-      <button class="btn btn-info center">Découvrez nos usages clés</button>
+      <div class="d-flex justify-content-center m-3">
+        <button class="btn btn-outline-info" style="color: white;">Découvrez nos usages clés</button>
+      </div>
     </div>
   </section>
 
