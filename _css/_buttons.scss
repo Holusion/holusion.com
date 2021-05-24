@@ -6,6 +6,16 @@
   border-radius:50px;
 }
 
+.button-dark{
+  border: solid 0.15em;
+  border-color: #2fe4ff;
+  background-color: transparent;
+  &:hover{
+    background-color: $cyan;
+    border-color: $cyan;
+  }
+}
+
 .btn svg, svg.icon, .icon svg{ //Ensure svgs are also aligned
   vertical-align: middle;
   path:not([fill]) { //Paths should follow currentColor unless fill is set

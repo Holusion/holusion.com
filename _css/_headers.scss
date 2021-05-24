@@ -9,6 +9,7 @@
     width: 100%;
     .home-page-header-body--content{
       h1{
+        color: $dark-blue; 
         @media screen and (max-width: $break-md){
           font-size: 2em;
         }
