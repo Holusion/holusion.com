@@ -1,0 +1,43 @@
+.main-grid{
+  $margin: 7rem;
+  $padding: 2rem;
+  .section{
+    display: grid;
+    grid-template-columns: [start] 1fr [content-start] minmax(auto, 600px) [middle] minmax(auto, 600px) [content-end] 1fr [end];
+    grid-template-rows: [title] $margin [line] auto;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+      ". title-left   title-right   title-extra"
+      ". content-left content-right .          ";
+
+    > h2 {
+      position: relative;
+      padding: $padding 0 0 $padding;
+      grid-area: title-right;
+    }
+    &.section-white::before{
+      content: "";
+      display: block;
+      background-color: $white;
+      grid-area: title / content-start/ span 1 / end;
+    }
+
+    & > section-image, & > img, & > svg {
+      margin-bottom: -($margin * 2 / 3);
+      grid-area: line / start/ span 1 / middle;
+      max-width: 100%;
+      display: block;
+    }
+
+    &.section-image{
+      > img:not(section-image--before):not(section-image--after){
+        grid-area: line / content-start / span 1 / content-end;
+      }
+    }
+    .content{
+      grid-area: content-right;
+      padding: 0 $padding;
+    }
+
+  }  
+}

@@ -7,8 +7,8 @@ image: img/sections/prism.jpg
 
 ---
 
-<main class="home-page-main">
-  <div class="home-page-header">
+<main class="home-page-main main-grid">
+  <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
         {% asset 'img/sections/header-test-wide.png' 
@@ -27,35 +27,44 @@ image: img/sections/prism.jpg
         </div>
       </div>
     </div>
-    <div class="home-page-header-body--content container">
-      <p class="mx-auto"> 
-        <b>Spécialiste</b> de l'affichage digital, holusion propose une large gamme de produits.
-        À la <b>vente</b> comme à la <b>location</b>, de l'hologramme de poche à celui de 2 mètres de large.
-      </p>
     </div> 
     <div class="home-page-header-cta d-flex justify-content-center">
       <a class="d-block" href="/fr/products/"> <button  class="btn btn-info" style="color: white;">Explorez notre catalogue</button></a>
     </div>
-  </div>
+  </section>
 
-  <section class="home-page-section">
-    <div class="home-page-section-image">
-      {% asset "img/sections/interactivite.jpg"
-        class="image-shadow w-50"
-        style="margin-top: 110px;"
-        alt="iris 22 holomuseio"
+  <section class="section">
+    <h2>Suscitez l'intérêt</h2>
+    {% asset img/posts/2021_PierreDeSeine/Rouen.jpg
+      srcset:width="1920"
+      srcset:width="960"
+      sizes="50vw"
+      alt="Hologramme At'Rouen"
       %}
+    <div class="content">
+      <p>
+        <b>Impressionnez vos clients avec des images holographique d'une haute qualité.</b> En pointe sur le développement des définitions <b>UltraHD</b> et des nouvelles technologies d'affichage, Holusion vous permettra d'avoir toujours une longueur d'avance.
+      </p>
+      <p>
+        Des solutions complètes existent pour de nombreux domaines et permettent d'enrichir la sensation d'immersion pour des expériences toujours plus marquantes.
+      </p>
+      <p>Présentation de maquettes, outil de médiation scientifique et culturelle, vitrine interactive pour dynamiser vos espaces. Tous ces usages sont à votre portée grâce à nos solutions exclusives et un matériel <b>Made In France.</b>
     </div>
-    <div class="home-page-section-body w-100 ">
-      <div class="container">
-        <div class="content ml-auto">
-        <h2>Suscitez l'intérêt</h2>
-        <p>
-          <b>Impressionnez vos clients avec des images holographique d'une haute qualité.</b> En pointe sur le développement des définitions <b>UltraHD</b> et des nouvelles technologies d'affichage, Holusion vous permettra d'avoir toujours une longueur d'avance.
-        </p>
-        <a href="/fr/usages/"><button class="btn btn-info image-shadow my-3">Découvrez nos usages clés</button></a>
-        </div> 
-      </div>
+  </section>
+
+  <section class="section section-white section-image">
+    <h2 class="">Une expérience complète</h2>
+    {% asset "img/sections/administration_fr-dark_before.png"
+      class="section-image--before"
+    %}
+    {% asset "img/sections/administration_fr-dark.png"
+      alt="schéma de l'offre professionnelle d'administration des produits"
+    %}
+    {% asset "img/sections/administration_fr-dark_after.png"
+      class="section-image--after"
+    %}
+    <div class="d-flex justify-content-center">
+      <a href="/dev/fr/"><button class="btn btn-info image-shadow my-3">Suivre nos guides dédiés</button></a>
     </div>
   </section>
 
@@ -65,13 +74,6 @@ image: img/sections/prism.jpg
         <h2>Une expérience complète</h2>
       </div>
     </div>  
-      {% asset "img/sections/administration_fr-dark-2.png"
-      class="img-fluid"
-      alt="schéma de l'offre professionnelle d'administration des produits"
-      %}
-    <div class="d-flex justify-content-center">
-      <a href="/dev/fr/"><button class="btn btn-info image-shadow my-3">Suivre nos guides dédiés</button></a>
-    </div>
   </section>
 
   <section class="home-page-section my-5">
