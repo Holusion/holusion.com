@@ -578,16 +578,14 @@ describe(`${target}.`,function(){
           if(!currentSrc){
             currentSrc = await header.getProperty("src").then(v => v.jsonValue());
           }
-          let origPath;
-          if(/\/assets\/[0-9A-F]{6}-[0-9A-F]{64}\.jpg$/i.test(currentSrc)){
+          let srcPath;
+          if(/\/assets\/[0-9A-F]{6}-[0-9A-F]{64,}\.(?:jpe?g|png|webp)$/i.test(currentSrc)){
             const mainSrc = await header.getProperty("src").then(v => v.jsonValue());
-            const {path:srcPath} = url.parse(mainSrc);
-            const parts = srcPath.split("/")
-            origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64}\.jpg$/i,".jpg"));
+            srcPath = url.parse(mainSrc).path;
           }else{
-            const {path:srcPath} = url.parse(currentSrc);
-            origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64}\.jpg$/i,".jpg"));
+            srcPath = url.parse(currentSrc).path;
           }
+          const origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64,}\.(?:jpe?g|png|webp)$/i,".jpg"));
           expect(origPath).to.be.ok;
 
           //*
