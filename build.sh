@@ -155,11 +155,6 @@ fi
 # if $integration_target=local, will start a local web server to test from `_site`
 if ! test -z "$integration_target" ;then
   echo "RUN integration tests on $integration_target"
-  if ! command -v ffmpeg >/dev/null 2>&1 ;then
-    echo "FFMPEG not found. Installing ffmpeg-static"
-    npm install --no-save ffmpeg-static
-    PATH="$PATH:$DIR/node_modules/ffmpeg-static"
-  fi
   TARGET="$integration_target" npm test -- $@
 fi
 
