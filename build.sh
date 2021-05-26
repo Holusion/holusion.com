@@ -20,13 +20,11 @@ usageStr(){
   echo -e "\t-w --watch : Use jekyll serve mode"
   echo -e "\t-c --compress-static : compress static assets"
   echo "long option only : "
-  echo -e "\t--jenkins : apply JenkinsCI specific settings"
   echo -e "\t--no-build : disable site build"
 }
 make_build=true
 make_force=false
 make_check=false
-is_jenkins=false
 make_watch=false
 make_compress=false
 integration_target=""
@@ -65,9 +63,6 @@ do
       ;;
       -c|--compress-static)
         make_compress=true
-      ;;
-      --jenkins)
-        is_jenkins=true
       ;;
       --no-build)
         make_build=false
@@ -165,11 +160,7 @@ if ! test -z "$integration_target" ;then
     npm install --no-save ffmpeg-static
     PATH="$PATH:$DIR/node_modules/ffmpeg-static"
   fi
-  if $is_jenkins ;then
-    TARGET="$integration_target" npm run jenkins_test
-  else
-    TARGET="$integration_target" npm test -- $@
-  fi
+  TARGET="$integration_target" npm test -- $@
 fi
 
 cd "$OLD_PWD" #go back to initial directory
