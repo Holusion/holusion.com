@@ -15,6 +15,7 @@
       padding: $padding 0 0 $padding;
       grid-area: title-right;
     }
+
     &.section-white::before{
       content: "";
       display: block;
@@ -27,6 +28,7 @@
       grid-area: line / start/ span 1 / middle;
       max-width: 100%;
       display: block;
+      z-index: 1;
     }
 
     &.section-image{
@@ -39,5 +41,22 @@
       padding: 0 $padding;
     }
 
+  }
+  .section-left{
+    text-align: right;
+    > h2 {
+      grid-area: title-left;
+    }
+    &.section-white::before{
+      grid-area: title / start/ span 1 / content-end;
+      text-align: left;
+    }
+    & > section-image, & > img, & > svg {
+      grid-area: line / middle/ span 1 / end;
+    }
+    .content{
+      grid-area: content-left;
+      padding: 0 $padding;
+    }
   }  
 }
