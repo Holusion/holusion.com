@@ -35,11 +35,9 @@ const options = {
  * Categories are : images, medias, analytics, captcha
  * can also have an additional filter that return true on requests to be intercepted
  */
-async function block(page, types, filter){
+async function block(page, {types=["images", "medias", "analytics", "captcha"], filter}={}){
   await page.setRequestInterception(true);
-  if(typeof filter !== "function"){
-    filter = _ => false;
-  }
+
   page.on('request', interceptedRequest => {
     let url = interceptedRequest.url();
     //console.log(interceptedRequest.url);
@@ -57,10 +55,10 @@ async function block(page, types, filter){
       url.indexOf("google-analytics.com") != -1
     ))|| (types.indexOf("captcha") != -1 &&(
       url.indexOf("gstatic.com") != -1
-    )) || filter(url)
+    )) || (typeof filter === "function" && filter(url))
     ){
-      //console.log("Aborted : ",interceptedRequest.url)
       interceptedRequest.respond("");
+      //console.log("Aborted : ",interceptedRequest.url)
     }else{
       interceptedRequest.continue();
     }
@@ -195,7 +193,8 @@ describe("pre-tests", function(){
       })
     })
   })
-})
+});
+
 // use :
 // target_devices.forEach(function(device){})
 // to run tests on multiple devices
@@ -255,7 +254,7 @@ describe(`${target}.`,function(){
       describe("Can load index aliases",function(){
         beforeEach(async function(){
           this.page = await newPage();
-          await block(this.page,["images", "medias", "analytics", "captcha"]);
+          await block(this.page);
         })
         afterEach(async function(){
           await this.page.close();
@@ -280,7 +279,7 @@ describe(`${target}.`,function(){
           page = await newPage();
           //In those tests, it's important to have at least
           // `page.setRequestInterception(true)` somewhere
-          await block(page,["images", "medias", "analytics", "captcha"]);
+          await block(page);
           await page.goto(`${href}/${lang}/`);
         });
 
@@ -304,7 +303,7 @@ describe(`${target}.`,function(){
           page = await newPage();
           //In those tests, it's important to have at least
           // `page.setRequestInterception(true)` somewhere
-          await block(page,["images", "medias", "analytics", "captcha"]);
+          await block(page);
           await page.goto(`${href}/${lang}/`);
           await page.waitForSelector("#contactform-modal.is-ready");
           //Remove animations to speed up tests
@@ -383,7 +382,7 @@ describe(`${target}.`,function(){
         this.timeout(20000);
         before(async function(){
           storePage = await newPage();
-          await block(storePage, ["medias", "analytics", "captcha"]);
+          await block(storePage, {types: ["medias", "analytics", "captcha"]});
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
           thumb_cells = await storePage.$$("[data-test=card]");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
@@ -439,7 +438,7 @@ describe(`${target}.`,function(){
                 let link = links[i];
                 console.log(link);
                 page = await newPage();
-                await block(page,["images", "medias", "analytics", "captcha"]);
+                await block(page);
                 return await page.goto(`${link}`);
               })
               after(async function(){
@@ -464,7 +463,7 @@ describe(`${target}.`,function(){
         let thumb_cells;
         before(async ()=>{
           storePage = await newPage();
-          await block(storePage, ["medias", "analytics", "captcha"]);
+          await block(storePage, {types: ["medias", "analytics", "captcha"]});
           await storePage.goto(`${href}/${lang}/store/`,{timeout:10000});
             thumb_cells = await storePage.$$("[data-test=card]");
           });
@@ -488,7 +487,7 @@ describe(`${target}.`,function(){
         this.timeout(20000);
         before(async ()=>{
           storePage = await newPage();
-          await block(storePage, ["medias", "analytics", "captcha"]);
+          await block(storePage, {types: ["medias", "analytics", "captcha"]});
           await storePage.goto(`${href}/${lang}/products/`,{timeout:10000});
           thumb_cells = await storePage.$$("[data-test=card]");
           links = await Promise.all(thumb_cells.map(async (cell)=>{
@@ -525,7 +524,7 @@ describe(`${target}.`,function(){
                 }
                 console.log(link);
                 page = await newPage();
-                await block(page,["medias", "analytics", "captcha"]);
+                await block(page,{types: ["medias", "analytics", "captcha"]});
                 return await page.goto(`${link}`);
               })
               after(async function(){
@@ -562,7 +561,7 @@ describe(`${target}.`,function(){
       let page;
       before(async function(){
         page = await newPage();
-        await block(page, ["analytics", "captcha"]);
+        await block(page, {types: ["analytics", "captcha"]});
         await page.goto(`${href}/fr/`,{timeout:10000});
       })
       after(async function(){
@@ -641,11 +640,25 @@ describe(`${target}.`,function(){
         describe(`page ${loc}`,function(){
           let page;
           let ln;
+          let exist_checks = [];
           before(async ()=>{
             //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
             ln = path.join(href,loc);
             page = await newPage();
-            await block(page,["medias", "analytics", "captcha"]);
+            await block(page,{types: ["analytics", "captcha"]});
+            page.on("request", (interceptedRequest)=>{
+              let url = interceptedRequest.url();
+              if(url.startsWith(href) && /\.(?:png|jpe?g|webp)$/i.test(url)){
+                const localPath = url.slice(href.length+1).split("/").map(s=>decodeURIComponent(s)).join("/");
+                exist_checks.push((async ()=>{
+                  try{
+                    await fs.promises.access(path.resolve(local_site_files, localPath));
+                  }catch(e){
+                    return localPath;
+                  }
+                })());
+              }
+            });
             await page.goto(`${ln}`, {timeout:9000, waitUntil: "domcontentloaded"});
           });
           after(async()=>{
@@ -669,6 +682,15 @@ describe(`${target}.`,function(){
               expect(invalid_elements, `"${sel}" should not match anything. Found ${invalid_elements.length} results`).to.have.property("length", 0);
               
             }));
+          });
+
+          it("'check missing images", async ()=>{
+            const missing_files = (await Promise.all(exist_checks)).filter(f=> f);
+            if(0 < missing_files.length) await fs.promises.appendFile(path.resolve(__dirname, "..", "checkout.txt"), missing_files.join("\n")+"\n");
+            expect(missing_files).to.have.property("length", 0, `Missing files : \n`
+            + JSON.stringify(missing_files, null, 2)
+            +`\n`);
+            
           })
 
         });
