@@ -90,19 +90,17 @@
   }
   .section-left{
     text-align: right;
+    grid-template-areas: 
+      "white white  title   end"
+      "start content image  image"; 
     > h2 {
-      grid-area: title-left;
+      padding: $padding $padding 0 0;
+    }
+    &.section-white{
+      text-align:left;
     }
     &.section-white::before{
-      grid-area: title / start/ span 1 / content-end;
-      text-align: left;
-    }
-    & > section-image, & > img, & > svg {
-      grid-area: line / middle/ span 1 / end;
-    }
-    .content{
-      grid-area: content-left;
-      padding: 0 $padding;
+      grid-area: white / white / span 1 / title;
     }
   }  
 }
