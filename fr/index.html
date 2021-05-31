@@ -68,59 +68,62 @@ image: img/sections/prism.jpg
   </section>
 
   <section class="section section-left text-left">
-      <div class="fixed-background">
-        {% asset "img/sections/image1.png"
-          sizes="50vw"
-          class="fixed"
-          alt="iris 22 holomuseio"
+    <div data-slide="1" class="fixed-background">
+      <div class="sticky-content">
+        {% asset "img/sections/background-slides.png"
+        sizes="50vw"
+        class="fixed"
+        alt="iris 22 holomuseio"
         %}
-
+        <div class="slides">
+          {% asset "img/sections/image1.png"
+            sizes="50vw"
+            data-slide="1"
+            alt="iris 22 holomuseio"
+          %}
+          {% asset "img/sections/image2.png"
+            sizes="50vw"
+            data-slide="2"
+            alt="iris 22 holomuseio"
+          %}
+          {% asset "img/sections/image3.png"
+            sizes="50vw"
+            data-slide="3"
+            alt="iris 22 holomuseio"
+          %}
+          {% asset "img/sections/image4.png"
+            sizes="50vw"
+            data-slide="4"
+            alt="iris 22 holomuseio"
+          %}
+        </div>
       </div>
-    <div class="content" style="margin-top: 200px;">
-        <h2>Presentez vos batiments et fichiers BIM</h2>
+    </div>
+    <div class="slide content">
+      <div style="margin-top: 25vh;">
+          <h2>Presentez vos batiments et fichiers BIM</h2>
+          <p>
+            Des images ultra haute qualité et lumineuses
+          </p>
+          <p>
+            Utilisation d'un moteur graphique performant et open source pour la création d'images photo-réalistes 
+            restistuant au mieux les choix de matériaux et l'ambition architecturale.
+          </p>
+      </div>
+      <div style="margin-top: 50vh;">
+        <h2>TÉLÉPRÉSENCE EN HOLOGRAMMES</h2>
         <p>
-          Des images ultra haute qualité et lumineuses
+          Intervenez en hologramme, en direct ou en différé.
         </p>
         <p>
-          Utilisation d'un moteur graphique performant et open source pour la création d'images photo-réalistes 
-          restistuant au mieux les choix de matériaux et l'ambition architecturale.
+          Utilisez l'hologramme pour diffuser un message en téléprésence, enregistrer une présentation 
+          ou faire revenir une personnalité passée.
         </p>
-    </div>
-  </section>
-  <section class="section section-left text-left">
-    
-    <div class="fixed-background">
-      {% asset "img/sections/image2.png"
-        sizes="50vw"
-        class="fixed"
-        alt="iris 22 holomuseio"
-      %}
-
-    </div>
-  <div class="content" style="margin-top: 200px;">
-      <h2>TÉLÉPRÉSENCE EN HOLOGRAMMES</h2>
-      <p>
-        Intervenez en hologramme, en direct ou en différé.
-      </p>
-      <p>
-        Utilisez l'hologramme pour diffuser un message en téléprésence, enregistrer une présentation 
-        ou faire revenir une personnalité passée.
-      </p>
-      <p>
-        En direct ou en différé, l'hologramme saura appuyer votre présentation et marquer votre auditoire.
-      </p>
-    </div>
-  </section>
-  <section data-slide="1" class="section section-left text-left">
-    <div class="fixed-background">
-      {% asset "img/sections/image3.png"
-        sizes="50vw"
-        class="fixed"
-        alt="iris 22 holomuseio"
-      %}
-    </div>
-    <div class="content" style="margin-top: 200px;">
-      <div class="slide">
+        <p>
+          En direct ou en différé, l'hologramme saura appuyer votre présentation et marquer votre auditoire.
+        </p>
+      </div>
+      <div style="margin-top: 50vh;">
         <h2>VALORISATION DU PATRIMOINE</h2>
         <p>
           L’utilisation de l’hologramme permet d’attirer de nouveaux publics et de moderniser l’image des musées.
@@ -133,29 +136,40 @@ image: img/sections/prism.jpg
           parcours de vos visiteurs et mettre en lumière le travail de recherche et de conservation de vos équipes.
         </p>
       </div>
-      
-    </div>
-  </section>
-  <section class="section section-left text-left">
-    
-    <div class="fixed-background">
-      {% asset "img/sections/image4.png"
-        sizes="50vw"
-        class="fixed"
-        alt="iris 22 holomuseio"
-      %}
-
-    </div>
-  <div class="content" style="margin-top: 200px;">
-      <h2>Interractivité</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-        aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
-      </p>
-      <div class="d-flex justify-content-center">
-        <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">En savoir plus sur nos réalisations</button></a>
+      <div style="margin-top: 50vh; margin-bottom: 50vh;">
+        <h2>Interractivité</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">En savoir plus sur nos réalisations</button></a>
+        </div>
       </div>
     </div>
+    <script>
+      const contents = Array.prototype.slice.call(document.querySelectorAll(".section .slide.content > div"));
+      const slides = document.querySelectorAll(".section .slides > img");
+      console.log("Contents : ", contents, slides);
+      let active = 0;
+      o = new IntersectionObserver((entries)=>{
+        for (let entry of entries){
+          if(!entry.isIntersecting) continue;
+          //FIXME test dataset
+          const index = contents.indexOf(entry.target);
+          if(active != -1){
+            slides[active].style.opacity = 0;
+            active = index;
+          }
+          slides[index].style.opacity = 1;
+        }
+      }, {
+        threshold:[0.1]
+      });
+      for(let c of contents){
+        o.observe(c);
+      }
+    </script>
   </section>
 
   <section class="section section-white section-left mb-6"  style="margin-bottom: 7rem;">
