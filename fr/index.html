@@ -76,6 +76,11 @@ image: img/sections/prism.jpg
         alt="iris 22 holomuseio"
         %}
         <div class="slides">
+          {% asset "img/sections/image0.png"
+          sizes="50vw"
+          data-slide="0"
+          alt="iris 22 holomuseio"
+        %}
           {% asset "img/sections/image1.png"
             sizes="50vw"
             data-slide="1"
@@ -101,47 +106,74 @@ image: img/sections/prism.jpg
     </div>
     <div class="slide content">
       <div style="margin-top: 25vh;">
-          <h2>Presentez vos batiments et fichiers BIM</h2>
+          <h2>Créez une nouvelle dimension</h2>
           <p>
-            Des images ultra haute qualité et lumineuses
+            Aujourd'hui, la tendance est au numérique.
           </p>
           <p>
-            Utilisation d'un moteur graphique performant et open source pour la création d'images photo-réalistes 
-            restistuant au mieux les choix de matériaux et l'ambition architecturale.
+            Images, modèles 3D, reconstitutions, simulations...  la production de contenus digitaux est au coeur de nos métiers. Nous nous appuyons sur des solutions modélisation ou de numérisation pour étudier, communiquer, informer.
+          </p>
+          <p>Et ces données sont précieuses ! Elles méritent d'être largement partagées et mises en avant. Vous cherchez un outil pour leur donner une nouvelle dimension ?</p>
+          <p>
+           <strong>L'hologramme vous donne l'opportunité de créer support physique innovant et attrayant pour ces contenus.</strong>
           </p>
       </div>
+        <div style="margin-top: 50vh;">
+            <h2>Presentez vos batiments et fichiers BIM</h2>
+            <p>
+              <strong>Des maquettes ultra haute qualité et lumineuses</strong>
+            </p>
+            <p>
+              Avec la démocratisation du BIM et des maquettes 3D, il n'a jamais été aussi simple de présenter vos maquettes en hologrammes.
+            </p>
+            <p>
+              Utilisation d'un moteur graphique performant et open source pour la création d'images photo-réalistes restistuant au mieux les choix de matériaux et l'ambition architecturale.
+            </p>
+        </div>
+        <div style="margin-top: 50vh;">
+          <h2>Valorisez un patrimoine</h2>
+          <p>
+            <strong>Une approche ludique et innovante des sciences et de la culture</strong>
+          </p>
+          <p>
+            L’utilisation de l’hologramme permet d’attirer de nouveaux publics et de moderniser l’image des musées.
+          </p>
+          <p>
+            Holusion vous propose des solutions valorisant vos collections tout en créant des expériences inédites pour les visiteurs.
+          </p>
+          <p>
+            Reconstitutions, présentations de pièces de réserves, médiation : tirez parti des forces de l'hologramme pour enrichir le 
+            parcours de vos visiteurs et mettre en lumière le travail de recherche et de conservation de vos équipes.
+          </p>
+        </div>
       <div style="margin-top: 50vh;">
-        <h2>TÉLÉPRÉSENCE EN HOLOGRAMMES</h2>
+        <h2>Séduisez vos clients</h2>
         <p>
-          Intervenez en hologramme, en direct ou en différé.
+          <strong>Mettez en avants vos produits et vos solutions.</strong>
         </p>
         <p>
-          Utilisez l'hologramme pour diffuser un message en téléprésence, enregistrer une présentation 
-          ou faire revenir une personnalité passée.
+          Utilisez l'hologramme pour diffuser un message en 3D, vous afficher en téléprésence ou présentez un nouveau produit en avant-première !
         </p>
         <p>
-          En direct ou en différé, l'hologramme saura appuyer votre présentation et marquer votre auditoire.
-        </p>
-      </div>
-      <div style="margin-top: 50vh;">
-        <h2>VALORISATION DU PATRIMOINE</h2>
-        <p>
-          L’utilisation de l’hologramme permet d’attirer de nouveaux publics et de moderniser l’image des musées.
-        </p>
-        <p>
-          Holusion vous propose des solutions valorisant vos collections tout en créant des expériences inédites pour les visiteurs.
-        </p>
-        <p>
-          Reconstitutions, présentations de pièces de réserves, médiation : tirez parti des forces de l'hologramme pour enrichir le 
-          parcours de vos visiteurs et mettre en lumière le travail de recherche et de conservation de vos équipes.
+          En magasin ou sur salon, l'hologramme saura appuyer votre présentation et marquer votre auditoire.
         </p>
       </div>
       <div style="margin-top: 50vh; margin-bottom: 50vh;">
-        <h2>Interractivité</h2>
+        <h2>Une gamme adaptée à tous vos besoins</h2>
+        <p><strong>Fabrication française et modèles orginaux</strong></p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-          aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+           De bornes mobiles et astucieuses jusqu'à des dispositifs scéniques de plusieurs métres. Nous proposons des solutions holographiques à la vente ou la location.
         </p>
+        <p>Notre savoir-faire unique dans la fabrication d'hologrammes est à votre service pour adapter aux mieux à vos contraintes.</p>
+        <div class="d-flex justify-content-center">
+          <a href="/fr/products/"><button class="btn btn-info image-shadow my-3">Découvrez notre gamme de produits</button></a>
+        </div>
+        </div>
+        
+        <div style="margin-top: 50vh; margin-bottom: 50vh;">
+          <h2>Une gamme adaptée à tous vos besoins</h2>
+          <p><strong>Fabrication française et modèles orginaux</strong></p>
+          <p></p>
         <div class="d-flex justify-content-center">
           <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">En savoir plus sur nos réalisations</button></a>
         </div>
@@ -150,6 +182,7 @@ image: img/sections/prism.jpg
     <script>
       const contents = Array.prototype.slice.call(document.querySelectorAll(".section .slide.content > div"));
       const slides = document.querySelectorAll(".section .slides > img");
+      const stickyContent = document.querySelectorAll(".section .sticky-content > img");
       console.log("Contents : ", contents, slides);
       let active = 0;
       o = new IntersectionObserver((entries)=>{
@@ -160,6 +193,8 @@ image: img/sections/prism.jpg
           if(active != -1){
             slides[active].style.opacity = 0;
             active = index;
+            if(active == 0 || 4) {stickyContent[0].style.opacity = 0}
+            else {stickyContent[0].style.opacity = 1}
           }
           slides[index].style.opacity = 1;
         }

@@ -76,6 +76,8 @@
           width: 100%;
           height:100%;
           object-fit: contain;
+          opacity: 0; //initialisation à 0
+          transition: opacity 1s;
         }
       }
       .slides{
