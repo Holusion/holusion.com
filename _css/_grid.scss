@@ -37,6 +37,15 @@
     .content{
       grid-area: content;
       padding: 0 $padding;
+      &.slide{
+        @include media-breakpoint-down(lg){
+          grid-area: image;
+          z-index: 2;
+          >div{
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+        }
+      }
     }
 
 
