@@ -39,7 +39,8 @@
       padding: 0 $padding;
     }
 
-    & > img{
+
+    & > img, & .fixed-background{
       grid-area: image;
       width: 100%;
       display: block;
@@ -57,6 +58,20 @@
         margin-bottom: 0;
       }
     }
+    & .fixed-background {
+      position: relative;
+      clip-path: inset(0px 0px 0px 0px);
+      margin-bottom: -$margin;
+      & > img {
+        position: fixed;
+        top: 0;
+        bottom:0;
+        right: 0;
+        left:calc( 50% + 10px);
+        object-fit: contain;
+      }
+    }
+
     &.section-image {
       > img {
         grid-area: 2 / col-start / span 1 / col-end;
