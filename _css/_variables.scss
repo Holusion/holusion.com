@@ -27,7 +27,7 @@ $info:          $cyan;
 //$warning:       $yellow;
 //$danger:        $red;
 $light:         $grey-100;
-$dark:          $black;
+$dark:          $dark-blue;
 
 
 // BREAKPOINTS
@@ -36,7 +36,7 @@ $break-md: 992px;
 $break-lg: 1200px;
 
 //BODY styles
-$body-color:                $grey-100;
+$body-color:                $dark;
 
 // NAVBAR styles
 $navbar-light-active-color: $cyan;

@@ -11,9 +11,8 @@
       ". white  title   end"
       "image image content  end";
 
-    @include media-breakpoint-down(md){
-      grid-template-columns: 15px [col-start] auto [col-end] 15px;
-      grid-template-rows: auto auto auto;
+    @include media-breakpoint-down(lg){
+      grid-template-columns: 0px [col-start] auto [col-end] 0px;
       grid-template-areas: 
         "white  title  ."
         ".     content ."
@@ -22,7 +21,9 @@
 
     > h2 {
       position: relative;
-      padding: $padding 0 0 $padding;
+      padding-left: 2rem;
+      margin-top: auto;
+      margin-bottom: auto;
       grid-area: title / content / span 1 / content;
     }
 
@@ -44,7 +45,15 @@
       display: block;
       z-index: 1;
       margin-bottom: -($margin * 2 / 3);
-      @include media-breakpoint-down(md){
+      &.cover{
+        height: calc( 100% + 7rem * 2 / 3);
+        object-fit:cover;
+        object-position: right;
+      }
+      @include media-breakpoint-down(lg){
+        &.cover{
+          height: auto;
+        }
         margin-bottom: 0;
       }
     }
@@ -68,8 +77,8 @@
         right: 0;
         position: absolute;
         > div{
-          position: relative;
-          margin-left: calc(-100vw + 100%);
+          position: absolute;
+          margin-left: calc( (-100vw + 100%) / 2 );
           display: flex;
           justify-content: flex-end;
         }
@@ -79,22 +88,44 @@
         right: 0;
         position: absolute;
         > div{
-          position: relative;
-          margin-right: calc(-100vw + 100%);
+          position: absolute;
+          margin-right: calc( (-100vw + 100%) / 2 );
           display: flex;
           justify-content: flex-start;
         }
       }
     }
-
+  }
+  .section-center{
+    > h2{
+      grid-area: title / content / span 1 / content;
+      
+    }
+    > div{
+      grid-area: 2 / col-start / span 1 / col-end;
+    }
+    > img{
+      grid-area: 2 / col-start / span 1 / col-end;
+    }
+    &:not(.section-white) > h2{
+      grid-area: 1 / col-start / span 1 / col-end;
+    }
   }
   .section-left{
     text-align: right;
     grid-template-areas: 
       "white white  title   end"
       "start content image  image"; 
+    @include media-breakpoint-down(lg){
+      text-align: left;
+      grid-template-columns: 0px [col-start] auto [col-end] 0px;
+      grid-template-areas: 
+        "white  title  ."
+        ".     content ."
+        ".      image  .";
+    }
     > h2 {
-      padding: $padding $padding 0 0;
+      padding-right: 2rem;
     }
     &.section-white{
       text-align:left;

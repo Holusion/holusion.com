@@ -7,7 +7,7 @@ image: img/sections/prism.jpg
 
 ---
 
-<main class="home-page-main main-grid">
+<main class="home-page-main main-grid pb-5">
   <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
@@ -39,13 +39,14 @@ image: img/sections/prism.jpg
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" style="margin-bottom: 7rem;">
     <h2>Suscitez l'intérêt</h2>
     {% asset img/posts/2021_PierreDeSeine/Rouen.jpg
       srcset:width="1920"
       srcset:width="960"
       sizes="50vw"
-      class="image-shadow"
+      class="image-shadow cover"
+      style="object-position: 70% 0"
       alt="Hologramme At'Rouen"
       %}
     <div class="content">
@@ -57,41 +58,83 @@ image: img/sections/prism.jpg
       </p>
       <p>Présentation de maquettes, outil de médiation scientifique et culturelle, vitrine interactive pour dynamiser vos espaces. Tous ces usages sont à votre portée grâce à nos solutions exclusives et un matériel <b>Made In France.</b>
         <div class="d-flex justify-content-center">
-          <a href="/dev/fr/"><button class="btn btn-info image-shadow my-3">Suivre nos guides dédiés</button></a>
+          <a href="/dev/fr/"><button class="btn btn-info image-shadow my-3">Découvrez nos usages clés</button></a>
         </div>
       </div>
   </section>
 
-  <section class="section section-white section-image">
+  <section class="section section-left" style="margin-bottom: 7rem;">
     <h2 class="">Une expérience complète</h2>
-    {% asset "img/sections/administration_fr-dark.png" %}
-    <div class="section-background">
-      <div class="section-background--left" style="top:11.5%;">
-        <div style="border-bottom:5px solid var(--cyan); right:66%;">
-          <span>Générateur d'hologrammes interactif</span>
-        </div>
+    {% asset "img/sections/Holomouseio.jpg"
+      class="image-shadow cover"
+      alt="holomouseio"
+    %}
+    <div class="content">
+      <p>
+        Accompagnement flexible et personnalisé de vos projets sur toutes les phases critiques.
+        Grâce à notre <b>écosystème ouvert</b>, réalisez vous-même vos hologrammes ou laissez-vous guider par nos équipes dans la réalisation d'une animation qui vous ressemble.
+      </p>
+      <div class="d-flex justify-content-center">
+        <a href="/dev/fr/"><button class="btn btn-info image-shadow my-3">Suivre nos guides dédiés</button></a>
       </div>
-      <div class="section-background--right" style="top:65.3%;">
-        <div class="d-flex justify-content-start" style="border-bottom:5px solid var(--cyan); left:73%;">
-          <span>Maquettes 3D</span>
-        </div>
-      </div>
-      <div class="section-background--left" style="top:93.5%;">
-        <div style="border-bottom:5px solid var(--cyan); right:72%;">
-          <span>Générateur d'hologrammes interactif</span>
-        </div>
+    </div>
+  </section>
+<!--
+  <section class="section section-white">
+    <h2 class="">Une expérience complète</h2>
+  </section>
+  <section class="section section-left">
+    {% asset "img/sections/administration_fr-dark-1.png"
+      alt="schéma de l'offre professionnelle d'administration des produits"
+    %}
+    <div class="content">
+      <p>
+        Accompagnement flexible et personnalisé de vos projets sur toutes les phases critiques.
+        Grâce à notre <b>écosystème ouvert</b>, réalisez vous-même vos hologrammes ou laissez-vous guider par nos équipes dans la réalisation d'une animation qui vous ressemble.
+      </p>
+      <div class="d-flex justify-content-center">
+        <a href="/dev/fr/"><button class="btn btn-info image-shadow my-3">Suivre nos guides dédiés</button></a>
       </div>
     </div>
   </section>
 
-  <section class="section section-left">
+  <section class="section">
+    {% asset "img/sections/administration_fr-dark-2.png"
+      alt="schéma de l'offre professionnelle d'administration des produits"
+    %} 
+    <div class="content">
+      <p>Contrôle par tablette</p>
+    </div>
+  </section>
+
+  <section class="section-left">
+    {% asset "img/sections/administration_fr-dark-3.png"
+      alt="schéma de l'offre professionnelle d'administration des produits"
+    %}
+    <div class="content">
+      <p>Maquette 3D</p>
+    </div>
+  </section>
+-->
+  <section class="section">
     <h2>Un accompagnement personnalisé</h2>
       {% asset "img/sections/interactivite.jpg"
         sizes="50vw"
-        class="image-shadow"
+        class="image-shadow cover"
         alt="iris 22 holomuseio"
       %}
     <div class="content">
+      <p>Notre accompagnement comprend :</p>
+        <ul>
+          <li>Vous aider à choisir l'hologramme le plus adapté </li>
+          <li>Créer un contenu impactant et mémorable  </li>
+          <li>Apporter une expertise unique sur la médiation par l'hologrammes</li>
+          <li>Concevoir les espaces et la scénographie de vos hologrammes</li>
+          <li>Numériser vos œuvres et ressources</li>
+          <li>Réaliser des travaux de modélisations rigoureux</li>
+          <li>Développer des application interactives et intuitives</li>
+          <li>Déployer et maintenir vos solutions sur le long terme</li>
+        </ul>
         <p>
           Holusion vous accompagne <b>tout au long</b> de votre projet et de votre utilisation de l'hologramme.
         </p>
@@ -99,11 +142,66 @@ image: img/sections/prism.jpg
     </div>
   </section>
 
-  <section class="section section-left section-white section-image">
-    <h2 class="">Une expérience complète</h2>
-    {% asset "img/sections/administration_fr-dark.png"
-      alt="schéma de l'offre professionnelle d'administration des produits"
-    %} 
+  <section class="section section-white mb-6"  style="margin-bottom: 7rem;">
+    <h2>Nos produits phares</h2>
+  </section>
+
+  <section id="section-produits">
+    <div class="row no-gutters">
+      {% for product in site.products_items[page.lang] limit:4 %}
+        {% include components/post_thumbnail.html content=product classes="col-md-3 col-sm-6" %}
+        {% endfor %}
+    </div>
+    
+  </section>
+      
+  {% include pricing.html %}
+
+  <section id="section-contact" class="section section-center " itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
+    <meta itemprop="name" content="holusion" />
+    <div class="row no-gutters">
+      <div class="col-md-6 col-sm-12">
+        <h3 style="padding-bottom: 10px">Venez nous rencontrer :</h3>
+        {% include components/maps_api.html %}
+      </div>
+      <div class="col-md-6 col-sm-12 ">
+        <h3>Contactez-nous :</h3>
+        <div class="p-1">
+          <ul class="list-group">
+              <li class="list-group-item">
+                <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
+                <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
+                    srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
+              </li>
+              <li class="list-group-item">
+                <a href="tel:+33972424451" class="text-dark">
+                  <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
+                  <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
+                  <div>
+                    <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-location_on-24px.svg @inline %}</span>
+                    <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
+                  </div>
+                  <div>
+                    <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-business-24px.svg @inline %}</span>
+                    <span itemprop="postalCode">59200</span>
+                    <span itemprop="addressLocality">Tourcoing</span>,
+                    <span itemprop="addressCountry">France</span>
+                  </div>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
+                <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    
   </section>
 
 </main>

@@ -90,12 +90,11 @@
       
       <!-- /.container -->
   </nav>
-<div class="diagonal-box"></div>
   <!-- Page Content -->
     {{ content }}
 
   <!-- Footer -->
-  <footer class="mt-5 text-white">
+  <footer class="text-white">
     
     {% comment %} contact-form is position:fixed and will not interfere int the layout {%endcomment%}
     {% include components/contact_form.html %}
@@ -158,7 +157,7 @@
       
     </nav>
     <hr class="bg-light">
-    <section id="bottom-nav-row" class="row no-gutters">  
+    <section id="bottom-nav-row" class="row no-gutters container m-auto">  
       <div class="col-4 col-lg-5 col-xl-6 order-1 text-left">
         <span class="d-none d-lg-inline">
           {{ site.data.strings.copyright[page.lang]}} {{ site.time | date: '%Y' }}
@@ -177,7 +176,7 @@
         </ul>
       </div>
 
-      <div class="col-12 col-xl-12 order-4 text-center">
+      <div class="col-12 col-xl-12 order-4 text-center p-2">
         99A bvd Descat, 59200 Tourcoing - France
       </div>
 

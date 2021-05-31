@@ -22,11 +22,10 @@
 @import "grid";
 
 body{
-  overflow-x: hidden;
   padding-top: 50px;
   min-height:100%;
   width:100%;
-  background-color: $black;
+  background-color: $light;
 }
 #content{
   min-height:60vh;
