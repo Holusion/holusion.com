@@ -101,6 +101,17 @@ image: img/sections/prism.jpg
             data-slide="4"
             alt="iris 22 holomuseio"
           %}
+          {% asset "img/sections/image5.png"
+          sizes="50vw"
+          data-slide="5"
+          alt="iris 22 holomuseio"
+        %}
+        {% asset "img/sections/image1.png"
+        sizes="50vw"
+        data-slide="6"
+        alt="iris 22 holomuseio"
+      %}
+
         </div>
       </div>
     </div>
@@ -169,10 +180,25 @@ image: img/sections/prism.jpg
           <a href="/fr/products/"><button class="btn btn-info image-shadow my-3">Découvrez notre gamme de produits</button></a>
         </div>
         </div>
-        
+
         <div style="margin-top: 50vh; margin-bottom: 50vh;">
-          <h2>Une gamme adaptée à tous vos besoins</h2>
-          <p><strong>Fabrication française et modèles orginaux</strong></p>
+          <h2>Une solutions holographique, des contenus à l'infinis</h2>
+          <p><strong>Une application dédiée <a href="https://content.holusion.com">Holusion Companion</a> transforme votre projet</strong></p>
+          <p>Donnez une profondeur inédite à votre projet en donnant le contrôle à vos utilisateurs.</p>
+          <ul>
+            <li>Prenez la main sur l'hologramme à partir d'une application mobile</li>
+            <li>Créez des application <strong>no-code</strong> directement depuis votre navigateur</li>
+            <li>Gérez jusqu'à plusieurs heures de contenus sur autant de produits que vous le souhaitez</li>
+            <li>Avec une connexion 4G, collectez les avis de vos visiteurs et restez tout le temps à jours !</li>
+          </ul>
+        <div class="d-flex justify-content-center">
+          <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Application Holusion Companion,</button></a>
+        </div>
+      </div>
+
+        <div style="margin-top: 50vh; margin-bottom: 50vh;">
+          <h2>Chaque projet est unique</h2>
+          <p><strong></strong></p>
           <p></p>
         <div class="d-flex justify-content-center">
           <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">En savoir plus sur nos réalisations</button></a>
@@ -193,7 +219,7 @@ image: img/sections/prism.jpg
           if(active != -1){
             slides[active].style.opacity = 0;
             active = index;
-            if(active == 0 || 4) {stickyContent[0].style.opacity = 0}
+            if(active == 0 || active == 4) {stickyContent[0].style.opacity = 0}
             else {stickyContent[0].style.opacity = 1}
           }
           slides[index].style.opacity = 1;
