@@ -42,7 +42,17 @@
           padding: 0;
           grid-area: image;
           z-index: 2;
-          >div{
+        }
+        
+        > div{
+          margin-top:75vh;
+          &:first-child{
+            margin-top: 30vh;
+          }
+          &:last-child{
+            margin-bottom: 75vh;
+          }
+          @include media-breakpoint-down(lg){
             padding: $padding;
             background-color: rgba(0, 0, 0, 0.8);
           }
@@ -77,13 +87,19 @@
       display: block;
       z-index: 1;
       margin-bottom: -$margin;
+      clip-path: inset(0 0 0 0 );
       & > .sticky-content {
         position: sticky;
         top: 0;
         right: 0;
         width: 100%;
         height: 100vh;
+        @include media-breakpoint-down(lg){
+          margin-top: -30vh;
+        }
         img{
+          opacity:0;
+          transition: opacity 0.8s;
           width: 100%;
           height:100%;
           object-fit: contain;
@@ -96,10 +112,6 @@
           left:0;
           bottom:0;
           right:0;
-        }
-        >img{
-          opacity:0;
-          transition: opacity 1s;
         }
       }
     }
