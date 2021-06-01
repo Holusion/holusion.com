@@ -7,19 +7,19 @@
       <ul class="nav d-flex flex-row flex-xl-column">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#products" role="tab" aria-controls="produits">
-            {% asset icons/ui/resize-24px.svg @inline %}
+            {% svg _assets/icons/ui/resize-24px.svg %}
             Location/vente
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#models" role="tab" aria-controls="maquettes">
-            {% asset icons/ui/apartment-24px.svg @inline %}
+            {% svg _assets/icons/ui/apartment-24px.svg %}
             Maquettes
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#admin" role="tab" aria-controls="administration">
-            {% asset icons/ui/transfer-24px.svg @inline %}
+            {% svg _assets/icons/ui/transfer-24px.svg %}
             Administration
           </a>
         </li>
@@ -82,13 +82,13 @@
 
               {% for product in site.data.pricing.products %}
               <td>
-                <video poster="{{assets[model.img].digest_path}}" muted autoplay loop>
+                <video poster="{% picture direct "{{product.img}}" %}" muted autoplay loop>
                   <source src="/static/video/pricing/{{product.video}}" type="video/mp4">
-              {% asset {{product.img}}
-                class="img-fluid"
-                sizes="100w"
-                alt="animation de l'offre"
-              %}
+                  {% picture {{product.img}}
+                    --img class="img-fluid
+                    --img sizes="100w"
+                    --alt  animation de l'offre
+                  %}
               </video>
 
                 </td>
@@ -144,13 +144,13 @@
               <tr>
                   {% for model in site.data.pricing.models %}
                   <td>
-                    <video poster="{{assets[model.img].digest_path}}" muted autoplay loop>
+                    <video poster="{% picture direct "{{model.img}}" %}" muted autoplay loop>
                       <source src="/static/video/pricing/{{model.video}}" type="video/mp4">
-                  {% asset {{model.img}}
-                    class="img-fluid"
-                    sizes="100w"
-                    alt="animation de l'offre"
-                  %}
+                      {% picture {{model.img}}
+                        --img class="img-fluid"
+                        --img sizes="100w"
+                        --alt  animation de l'offre
+                      %}
                   </video>
                   </td>
                   {% endfor %}

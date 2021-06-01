@@ -21,12 +21,12 @@
   {%- endif -%}
 
   {%- if page.image -%}
-    {%- if assets[page.image] -%}
-      <meta name="twitter:image"  content="{{page.image | remove: "_assets/" |asset:" @path"}}">
-      <meta name="og:image"  content="{{page.image | remove: "_assets/" |asset:" @path"}}">
-    {%- else -%}
+    {%- if page.image contains "static/" -%}
       <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
       <meta property="og:image" content="{{site.url}}{{page.image}}"/>
+    {%- else -%}
+      <meta name="twitter:image"  content="{% picture meta "{{page.image}}" %}">
+      <meta name="og:image"  content="{% picture meta "{{page.image}}" %}">
     {%- endif -%}
   {%- endif -%}
   {%- if page.layout == "post" -%}
@@ -68,7 +68,7 @@
         </button>
         <div class="navbar-header">
           <a href="/{{page.lang}}/" class="navbar-brand" id="home-logo" aria-label="Holusion logo">
-            {% asset img/logo_web.svg @inline %}
+            {% svg _assets/img/logo_web.svg %}
           </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">

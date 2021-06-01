@@ -1,7 +1,7 @@
 ---
 layout: index
 title: BIM and holographic models
-image: img/posts/2020_bim/Miniature.png
+image: img/posts/2020_bim/Miniature.jpg
 abstract: Hologram as a real-estate presentation tool
 tags: immobilier iris32 iris22
 ---
@@ -9,7 +9,7 @@ tags: immobilier iris32 iris22
 
 
 <section class="section section-main-header header-fill" style="max-width: 1920px">
-    {%include components/header_image.html image="img/posts/2020_bim/iris32_immobilier_terrasse.png" %}
+    {%include components/header_image.html image="img/posts/2020_bim/iris32_immobilier_terrasse.jpg" %}
     <div class="main-header-body body-right">
         <div class="content shadow rounded bg-white rounded p-4 text-justify">
             <h1>Holographic application for BIM and building models</h1>
@@ -61,12 +61,9 @@ tags: immobilier iris32 iris22
 
 <section class="section section-main-header header-fill py-4">
     <div class="main-header-image-wrapper">
-        {% asset img/posts/2020_bim/iris22_flat.jpg
-            srcset:width="1920"
-            srcset:width="1920"
-            srcset:width="960"
+        {% picture  img/posts/2020_bim/iris22_flat.jpg
+            --img class="img-fluid
             sizes="100vw"
-            class="img-fluid"
             alt="iris22 with an appartement flaying"
             %}
         </div>
@@ -78,14 +75,11 @@ tags: immobilier iris32 iris22
             <p>
               The support for this interaction is usually a <b>touch screen tablet</b> - the use of which is well known to the user - but can take different forms depending on the need. For example, the application can control the rotation of the model and <b>zoom in</b> to view details of interest to the investor, provide additional information in text form, or even allow the user to select the hologram to be displayed: the building at night, a particular area of it, for example an apartment.
             </p>
-            {% asset img/posts/2020_bim/iris32_bim_reservation.jpg
-                srcset:width="1920"
-                srcset:width="1920"
-                srcset:width="960"
+            {% picture img/posts/2020_bim/iris32_bim_reservation.jpg
+                --img class="img-fluid"
                 sizes="100vw"
-                class="img-fluid"
-                alt="iris32 présentant un module de réservation de salles"
-                %}
+                --alt  iris32 présentant un module de réservation de salles
+            %}
 
             <p>
               Finally, the use of real time is possible in <b>applications</b>. The term real time refers to the fact that information is processed within a given time. Thus, the hologram can change content as soon as a particular predefined action is performed. For example, when an employee books a meeting room in the building online, the hologram placed in the lobby may greet the room and display it as reserved.

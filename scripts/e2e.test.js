@@ -577,14 +577,8 @@ describe(`${target}.`,function(){
           if(!currentSrc){
             currentSrc = await header.getProperty("src").then(v => v.jsonValue());
           }
-          let srcPath;
-          if(/\/assets\/[0-9A-F]{6}-[0-9A-F]{64,}\.(?:jpe?g|png|webp)$/i.test(currentSrc)){
-            const mainSrc = await header.getProperty("src").then(v => v.jsonValue());
-            srcPath = url.parse(mainSrc).path;
-          }else{
-            srcPath = url.parse(currentSrc).path;
-          }
-          const origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-[0-9A-F]{64,}\.(?:jpe?g|png|webp)$/i,".jpg"));
+          let srcPath= url.parse(currentSrc).path;
+          const origPath = path.join(local_assets_files, srcPath.replace("assets/", "").replace(/-(?:\d+)-(?:[0-9a-f]{9,})\.(?:jpe?g|png|webp)$/i,".jpg"));
           expect(origPath).to.be.ok;
 
           //*
@@ -597,7 +591,7 @@ describe(`${target}.`,function(){
           })
           //Depending on version, PSNR diff of identical images could be "inf" or "0"
           if(diff !=="inf" && diff !== "0"){
-            expect(parseInt(diff), `PSNR of exported images should be above 40db. Got ${Math.round(diff)}db from ${currentSrc}`).to.be.above(40);
+            expect(parseFloat(diff), `PSNR of exported images should be above 30db. Got ${Math.round(diff)}db between ${currentSrc} and ${origPath}`).to.be.above(30);
           }
         })
       }

@@ -54,12 +54,9 @@ tags: culture alençon education hologramme collectivités
 
   <section class="section section-main-header header-fill py-4">
       <div class="main-header-image-wrapper">
-          {% asset img/posts/2020_Alencon/banner_alencon.jpg
-              srcset:width="1920"
-              srcset:width="1920"
-              srcset:width="960"
+          {% picture  img/posts/2020_Alencon/banner_alencon.jpg
+            --img class="img-fluid"
               sizes="100vw"
-              class="img-fluid"
               alt="Alencon city parc where the hologram is installed"
               %}
           </div>
@@ -70,14 +67,10 @@ tags: culture alençon education hologramme collectivités
                 <p> As the place was used for <b> many different uses </b>, these informations can be really useful for the visitors. Especially since the castle remained private for nearly two centuries ! Something worth a peek...
               </p>
               <p class="pb-1">
-              {% asset img/posts/2020_Alencon/BandeauAlencon.png
-                  srcset:width="1920"
-                  srcset:width="1920"
-                  srcset:width="960"
-                  sizes="100vw"
-                  class="img-fluid"
-                  alt="Alencon city parc where the hologram is installed"
-                  %}
+              {% picture container img/posts/2020_Alencon/BandeauAlencon.jpg
+                --img class="img-fluid"
+                --alt  Alencon city parc where the hologram is installed
+              %}
               </p>
               <p class="pb-3">
                   <h2> Crédits </h2>

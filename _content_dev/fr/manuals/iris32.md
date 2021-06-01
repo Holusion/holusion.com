@@ -29,13 +29,10 @@ Pour arrêter l'**Iris**, appuyez sur le même bouton ou en le débranchant le c
 <br />
 <center>
 
-{%asset img/products/mesures/Iris32.png
-  srcset:width="1920"
-  srcset:width="960"
-  class="img-fluid"
-  sizes="(min-width: 1200px) 1200px, 100vw"
-  style="padding-top: 40px; padding-bottom: 10px;"
-  alt="Schema des dimensions de l'iris 22 pouces"
+{% picture  img/products/mesures/Iris32.png
+  --img class="img-fluid"
+  --img style="padding-top: 40px; padding-bottom: 10px;"
+  --alt  Schema des dimensions de l'iris 22 pouces
 %}
 
 </center>
