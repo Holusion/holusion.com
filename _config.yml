@@ -22,28 +22,15 @@ include:
   - "node_modules/cookieconsent/build/cookieconsent.min.js"
 highlighter: rouge
 incremental: true
-plugins:
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jekyll-inline-svg
-  - jekyll-paginate-v2
-  - jekyll-sass-converter
-  - jekyll-assets
 sass:
   style: compressed
   sourcemap: always
   load_paths:
     - _css
     - node_modules
-assets:
-  destination: "/assets"
-  defaults:
-    img: { integrity: false }
-  plugins:
-    img: { optim: {}}
-  sources:
-    - _assets
-    - _assets/img
+picture:
+  source: "_assets/"
+  output: "assets"
 pagination:
   enabled: true
   limit: 0

@@ -1,9 +1,11 @@
 {%capture image_url %}img/portraits/{{include.img |default: "default" }}{%endcapture%}
 <a class="team-portrait" {%if include.url%} href="{{include.url}}" target="_blank" {% endif %}>
   <div class="views-field views-field-field-image">
-    <div class="field-content" style='background-image: url({{image_url | append:"_Holo.jpg" | asset:"@path"}});'>
-
-      <img typeof="foaf:Image" src="{{image_url|append:".jpg" | asset:"@path"}}" srcset="{{image_url| append:".jpg" | asset:"magick:resize=512x512 @path"}} 512w, {{image_url| append:".jpg" | asset:"magick:resize=256x256 @path"}} 256w" alt="{%if include.img %}{{include.name}}{%else%}default{%endif%} portrait" width="256" height="256" sizes="256px" alt="">
+    <div class="field-content" style='background-image: url({% picture direct "{{image_url}}_Holo.jpg" %});'>
+      {% picture "{{image_url}}.jpg" 
+      --img typeof="foaf:Image" width="256" height="256" sizes="256px"
+      --alt  {{include.name}}
+      %}
       <i class="circle-border"></i>
     </div>
   </div>

@@ -54,10 +54,8 @@ properties:
 </section>
 <section class="row no-gutters p-4">
   <div class="col-lg-6 col-12 order-1 order-lg-2">
-    {% asset img/products/pixelplus_tablette_2.jpg
-      srcset:width="1920"
-      srcset:width="960"
-      sizes="(max-width: 992px) 100vw, 50vw"
+    {% picture  img/products/pixelplus_tablette_2.jpg
+      --img sizes="(max-width: 992px) 100vw, 50vw"
       class="img-fluid"
       title="Holusion Pixel Plus"
       alt="Pixel Plus pour tablettes tactiles iPad ou Android"
@@ -78,10 +76,8 @@ properties:
 </section>
 <section class="row no-gutters">
   <div class="col-lg-6 col-12 order-1p-4">
-    {% asset img/products/pochette_contenu.jpg
-      srcset:width="1920"
-      srcset:width="960"
-      sizes="(max-width: 992px) 100vw, 50vw"
+    {% picture img/products/pochette_contenu.jpg
+     --img sizes="(max-width: 992px) 100vw, 50vw"
       class="img-fluid"
       title="Holusion Prism"
       alt="Le contenu d'une pochette de Pixel marqué pour holusion"
@@ -104,10 +100,8 @@ properties:
     <div class="col-lg-4 col-12">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-12">
-          {% asset img/products/pochette_pixel_verso.jpg
-            srcset:width="960"
-            srcset:width="430"
-            sizes="(max-width: 992px) 33vw, 100vw"
+          {% picture img/products/pochette_pixel_verso.jpg
+            --img sizes="(max-width: 992px) 33vw, 100vw"
             class="img-fluid"
             alt="Le verso d'une pochette de pixel personnalisée"
           %}
@@ -121,10 +115,8 @@ properties:
     <div class="col-lg-4 col-12">
       <div class="row p-4">
         <div class="col-12 col-md-6 col-lg-12">
-          {% asset img/products/pochette_pixel_recto.jpg
-            srcset:width="1920"
-            srcset:width="960"
-            sizes="(max-width: 992px) 33vw, 100vw"
+          {% picture img/products/pochette_pixel_recto.jpg
+            --img sizes="(max-width: 992px) 33vw, 100vw"
             class="img-fluid"
             alt="Le contenu d'une pochette de Pixel marqué pour holusion"
           %}
@@ -138,11 +130,9 @@ properties:
     <div class="col-lg-4 col-12">
       <div class="row p-4">
         <div class="col-12 col-md-6 col-lg-12">
-          {% asset img/products/pixels_gravure.jpg
-            srcset:width="1920"
-            srcset:width="960"
+          {% picture img/products/pixels_gravure.jpg
+            --img class="img-fluid"
             sizes="(max-width: 992px) 50vw, 100vw"
-            class="img-fluid"
             alt="Le contenu d'une pochette de Pixel marqué pour holusion"
           %}
         </div>
@@ -157,13 +147,10 @@ properties:
 
 <section class="section section-main-header header-fill py-4">
   <div class="main-header-image-wrapper">
-    {% asset img/products/kit_pixels_vignette.jpg
-      srcset:width="1920"
-      srcset:width="1920"
-      srcset:width="960"
+    {% picture img/products/kit_pixels_vignette.jpg
+      --img class="img-fluid"
       sizes="100vw"
-      class="img-fluid"
-      alt="Un paquet de kit pixel complet"
+      --alt  Un paquet de kit pixel complet
     %}
   </div>
   <div class="main-header-body container">

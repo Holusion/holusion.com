@@ -29,14 +29,10 @@ Pour arrêter l'**Azur**, appuyez sur le même bouton ou en le débranchant le c
 <br />
 <center>
 
-{%asset img/products/mesures/Azur22.png
-  srcset:width="1920"
-  srcset:width="960"
-  class="img-fluid"
-  sizes="(min-width: 1200px) 1200px, 100vw"
-  alt="Schéma de dimensions de l'Azur 22, hologramme à 3 faces"
-%}
-
+  {% picture  img/products/mesures/Azur22.png
+    --img class="img-fluid"
+    --alt  Schéma de dimensions de l'Azur 22, hologramme à 3 faces
+  %}
 </center>
 <br />
 

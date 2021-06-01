@@ -34,11 +34,8 @@ tags: real-estate iris75
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="row">
         <div class="col-12 col-lg-6">
-          {%asset img/posts/2019_Nacarat/shake_holo.jpg
-            srcset:width="1920"
-            srcset:width="650"
-            class="img-fluid"
-            sizes="(min-width: 1200px) 1200px, 100vw"
+          {% picture container img/posts/2019_Nacarat/shake_holo.jpg
+            --img class="img-fluid"
             style="padding-bottom: 40px;"
             alt="Hologram on Iris 75 during the inauguration"
             %}
@@ -68,10 +65,10 @@ tags: real-estate iris75
 
     <section class="section section-main-header header-fill py-4">
       <div class="main-header-image-wrapper">
-        {% asset img/posts/2019_Nacarat/iris75_side.jpg
-          srcset:width="1920"
-          srcset:width="1920"
-          srcset:width="960"
+        {% picture img/posts/2019_Nacarat/iris75_side.jpg
+          
+          
+          
           sizes="100vw"
           class="img-fluid"
           alt="iris75 hologram on stand"
@@ -93,11 +90,8 @@ tags: real-estate iris75
 
           <div class="row">
             <div class="col-lg-4 col-md-12  d-flex flex-column justify-content-center">
-              {%asset img/posts/2019_Nacarat/iris75_foule.jpg
-                srcset:width="1920"
-                srcset:width="650"
-                class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
+              {% picture container img/posts/2019_Nacarat/iris75_foule.jpg
+                --img class="img-fluid"
                 style="padding-bottom: 40px;"
                 alt="crowd recording an hologram"
                 %}
@@ -124,11 +118,8 @@ tags: real-estate iris75
             <h2>1 - BIM data</h2>
             <p>Compatible avec tous les logiciels professionels</p>
             <p><i>Manage a database of 3D files integrating all the elements of the building</i></p>
-            {%asset img/posts/2019_Nacarat/hologramme_reseaux.jpg
-              srcset:width="1920"
-              srcset:width="650"
+            {% picture container img/posts/2019_Nacarat/hologramme_reseaux.jpg
               class="img-fluid"
-              sizes="(min-width: 1200px) 1200px, 100vw"
               style="padding-bottom: 40px;"
               alt="High quality architectural rendering"
               %}
@@ -140,11 +131,8 @@ tags: real-estate iris75
               <h2>2 -  Script writing</h2>
               <p>To make the most of the available information</p>
               <p><i>Emphasis on the programmatic mix, technical networks, everything that makes a real estate project truly unique</i></p>
-              {%asset img/posts/2019_Nacarat/hologramme_quartier.jpg
-                srcset:width="1920"
-                srcset:width="650"
+              {% picture container img/posts/2019_Nacarat/hologramme_quartier.jpg
                 class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
                 style="padding-bottom: 40px;"
                 alt="High quality architectural rendering"
                 %}
@@ -156,14 +144,11 @@ tags: real-estate iris75
                 <h2>3 - High quality architectural rendering</h2>
                 <p>Ultra high quality and bright images</p>
                 <p><i>Use of a powerful and open source graphic engine for the creation of photo-realistic images that best highlight material choices and architectural ambition.</i></p>
-                {%asset img/posts/2019_Nacarat/iris75_rendu_shake.jpg
-                  srcset:width="1920"
-                  srcset:width="650"
-                  class="img-fluid"
-                  sizes="(min-width: 1200px) 1200px, 100vw"
+                {% picture container img/posts/2019_Nacarat/iris75_rendu_shake.jpg
+                  --img class="img-fluid"
                   style="padding-bottom: 40px;"
                   alt="High quality architectural rendering"
-                  %}
+                %}
                 </div>
               </section>
 
@@ -172,10 +157,10 @@ tags: real-estate iris75
                   <div class="row justify-content-center">
                     <div class="col-12 col-lg-1 text-center" >
                       <a href="https://www.linkedin.com/in/r%C3%A9mi-foulon-6a0354118/" target="_blank">
-                        {%asset img/posts/2019_Nacarat/Remi_Foulon.png
-                          srcset:width="1920"
-                          srcset:width="650"
-                          class="img-fluid"
+                        {% picture img/posts/2019_Nacarat/Remi_Foulon.png
+                          
+                          
+                          --img class="img-fluid
                           sizes="(min-width: 300px) 200px, 100vw"
                           style="padding-bottom: 40px;"
                           alt="Remi Foulon"
@@ -201,12 +186,12 @@ tags: real-estate iris75
                   <div class="main-header-body">
                     <div class="content shadow rounded bg-white rounded p-4">
                       <div class="row">
-                        {%asset img/posts/2019_Nacarat/bottom_en.jpg
-                          srcset:width="1920"
-                          class="img-fluid"
+                        {% picture img/posts/2019_Nacarat/bottom_en.jpg
+                          
+                          --img class="img-fluid"
                           sizes="(min-width: 1200px) 1920px, 100vw"
                           style="padding-bottom: 40px;"
-                          alt="location of the event"
+                          --alt  location of the event
                           %}
                         </div>
                       </div>

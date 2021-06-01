@@ -11,7 +11,7 @@ layout: store
           {% if page.image contains "/static" %}
             <img  itemprop="image" alt="{{page.title}}: {{page.abstract | escape}}" class="img-fluid" src="{{page.image}}">
           {% else %}
-            <img  itemprop="image" alt="{{page.title}}: {{page.abstract | escape}}" class="img-fluid" src="{% asset "{{page.image}}" @path %}">
+            {% picture "{{page.image}}" --img itemprop="image" --img class="img-fluid" --alt  {{page.title}}: {{page.abstract | escape}} %}
           {% endif %}
        </div>
 

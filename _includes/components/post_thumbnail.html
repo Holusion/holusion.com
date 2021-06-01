@@ -26,16 +26,14 @@
   <div class="thumbnail" data-test="card">
     <a href = "{{content.url}}">
       {% if content.image %}
-        {% if assets[content.image] %}
-          {% asset "{{content.image}}"
-            srcset:width="800"
-            srcset:width="400"
-            sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw"
-            alt="{{alt_text| escape}}"
-          %}
-        {% else %}
+        {% if content.image contains "static/" %}
           <img src="{{content.image|default: "/static/img/posts/default.jpg"}}"
             {% if content.image2x %} srcset="{{content.image2x}} 800w, {{content.image}} 400w" {% endif %} alt="{{alt_text | escape}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+
+        {% else %}
+          {% picture card "{{content.image}}"
+            --alt  {{alt_text| escape}}
+          %}
         {% endif %}
       {% endif %}
       <div class="caption">
