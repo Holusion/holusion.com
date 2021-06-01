@@ -39,9 +39,11 @@
       padding: 0 $padding;
       &.slide{
         @include media-breakpoint-down(lg){
+          padding: 0;
           grid-area: image;
           z-index: 2;
           >div{
+            padding: $padding;
             background-color: rgba(0, 0, 0, 0.8);
           }
         }
