@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '10'
+          node-version: '12'
       - name: npm cache
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node10-${{ hashFiles('functions/package-lock.json') }}
+          key: ${{ runner.os }}-node12-${{ hashFiles('functions/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node10-
+            ${{ runner.os }}-node12-
       - name: install functions dependencies
         run: |
           (cd functions && npm ci)
