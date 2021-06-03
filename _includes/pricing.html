@@ -82,11 +82,11 @@
 
               {% for product in site.data.pricing.products %}
               <td>
-                <video poster="{% picture direct "{{product.img}}" %}" muted autoplay loop>
+                <video poster="{% picture direct_portrait "{{product.img}}" %}" muted autoplay loop>
                   <source src="/static/video/pricing/{{product.video}}" type="video/mp4">
-                  {% picture {{product.img}}
+                  {% picture portrait {{product.img}}
                     --img class="img-fluid
-                    --img sizes="100w"
+                    --img sizes="200px"
                     --alt  animation de l'offre
                   %}
               </video>

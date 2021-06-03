@@ -1,16 +1,16 @@
 # Introduction
 
-website for holusion sas. Access at : https://holusion.com
+Site web pour SAS Holusion : https://holusion.com
 
-Also used to publish a custom bootstrap theme on [@holusion/theme](https://www.npmjs.com/package/@holusion/theme).
+Aussi utilisé pour publier un thème bootstrap personnalisé : [@holusion/theme](https://www.npmjs.com/package/@holusion/theme).
 
-## DEVELOPMENT
+## DEVELOPPEMENT
 
-see [Wiki](https://github.com/Holusion/holusion.com/wiki).
+voir le wiki [Wiki](https://github.com/Holusion/holusion.com/wiki).
 
-Developped using [Jekyll](https://jekyllrb.com/). Feel free to contribute and report any error and [issues](https://github.com/Holusion/holusion.com/issues).
+Developpé avec [Jekyll](https://jekyllrb.com/). Les [issues](https://github.com/Holusion/holusion.com/issues) pour rapporter toute erreur.
 
-## PACKAGE USAGE
+## UTILISATION DU THEME
 
 ```
   import "@holusion/theme"; //import modified bootstrap.css file

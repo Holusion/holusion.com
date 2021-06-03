@@ -1,8 +1,8 @@
 {%capture image_url %}img/portraits/{{include.img |default: "default" }}{%endcapture%}
 <a class="team-portrait" {%if include.url%} href="{{include.url}}" target="_blank" {% endif %}>
   <div class="views-field views-field-field-image">
-    <div class="field-content" style='background-image: url({% picture direct "{{image_url}}_Holo.jpg" %});'>
-      {% picture "{{image_url}}.jpg" 
+    <div class="field-content" style='background-image: url({% picture direct_portrait "{{image_url}}_Holo.jpg" %});'>
+      {% picture portrait "{{image_url}}.jpg" 
       --img typeof="foaf:Image" width="256" height="256" sizes="256px"
       --alt  {{include.name}}
       %}
