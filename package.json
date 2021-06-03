@@ -11,7 +11,7 @@
     "test:e2e": "mocha --slow 1500 --timeout 10000 ./scripts/e2e.test.js",
     "prepack": "mkdir -p dist/ && cp _site/css/bootstrap.* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/ && sed 's/..\\/node_modules\\//~/' _css/_variables.scss > dist/_variables.scss",
     "postpack": "rm -rf dist/",
-    "postinstall": "(cd functions && npm i)"
+    "postinstall": "(cd functions && npm ci)"
   },
   "files": [
     "dist/"
