@@ -47,10 +47,13 @@
         > div{
           margin-top:75vh;
           &:first-child{
-            margin-top: 30vh;
+            margin-top: 25vh;
           }
           &:last-child{
-            margin-bottom: 75vh;
+            margin-bottom: 25vh;
+            @include media-breakpoint-down(lg){
+              margin-bottom: 75vh;
+            }
           }
           @include media-breakpoint-down(lg){
             padding: $padding;
@@ -86,8 +89,11 @@
       width: 100%;
       display: block;
       z-index: 1;
-      margin-bottom: -$margin;
-      clip-path: inset(0 0 0 0 );
+      margin-bottom: -($margin * 2);
+      clip-path: inset(0 0 0 -50px);
+      @include media-breakpoint-down(lg){
+        margin-bottom: -($margin / 2);
+      }
       & > .sticky-content {
         position: sticky;
         top: 0;
@@ -112,6 +118,16 @@
           left:0;
           bottom:0;
           right:0;
+        }
+        &.slides-front > img:last-child{
+          height: calc(50% + 7rem);
+          margin: auto;
+          object-fit: cover;
+          object-position: left center;
+          border-radius: 50px 0px 0px 50px;
+          @include media-breakpoint-down(lg){
+            border-radius: 0px;
+          }
         }
       }
     }
