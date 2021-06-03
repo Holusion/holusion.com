@@ -84,7 +84,14 @@
 
                 {% for product in site.data.pricing_en.products %}
                   <td>
-                    {% include components/medias/video.html video=product.video img=product.img %}
+                    <video poster="{% picture direct_portrait "{{product.img}}" %}" muted autoplay loop>
+                      <source src="/static/video/pricing/{{product.video}}" type="video/mp4">
+                      {% picture portrait {{product.img}}
+                        --img class="img-fluid
+                        --img sizes="200px"
+                        --alt  product animation
+                      %}
+                    </video>
                   </td>
                 {% endfor %}
                 </tr>
@@ -136,7 +143,14 @@
                 <tr>
                     {% for model in site.data.pricing_en.models %}
                     <td>
-                      {% include components/medias/video.html video=model.video img=model.img %}
+                      <video poster="{% picture direct_portrait "{{model.img}}" %}" muted autoplay loop>
+                        <source src="/static/video/pricing/{{model.video}}" type="video/mp4">
+                        {% picture portrait {{model.img}}
+                          --img class="img-fluid
+                          --img sizes="200px"
+                          --alt  product animation
+                        %}
+                    </video>
                     </td>
                     {% endfor %}
                 </tr>

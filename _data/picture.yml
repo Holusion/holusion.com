@@ -41,7 +41,7 @@ presets:
       md: 50vw
     size: 100vw
   container:
-    format: [webp, original]
+    formats: [webp, original]
     widths: [400, 800, 1200]
     fallback_width: 400
     sizes:
@@ -54,10 +54,13 @@ presets:
     widths: [256, 512]
     fallback_width: 256
     size: 256px
+  direct_portrait:
+    markup: direct_url
+    fallback_width: 256
   meta:
     markup: direct_url
     widths: [200, 400]
-    format: [original]
+    formats: [original]
   direct:
     markup: direct_url
 

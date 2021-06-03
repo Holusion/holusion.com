@@ -1,9 +1,24 @@
 #!/bin/bash
 set -e
 
-command -v bundle >/dev/null 2>&1 || { echo >&2 "bundle command from bundler gem can not be found. run \"gem install bundler\"."; exit 1; }
-command -v npm >/dev/null 2>&1 || { echo >&2 "npm command from nodejs package can not be found. Please install nodejs."; exit 1; }
+command -v bundle >/dev/null 2>&1 || {
+  echo >&2 "Impossible de trouver la commande \"bundle\"."
+  echo >&2 "Installer bundler avec \"gem install bundler\"."
+  exit 1
+}
 
+command -v npm >/dev/null 2>&1 || {
+  echo >&2 "Impossible de trouver la commande \"npm\"."
+  echo >&2 "Installer nodejs pour continuer "
+  echo >&2 "\thttps://docs.microsoft.com/fr-fr/windows/dev-environment/javascript/nodejs-on-wsl"
+  exit 1
+}
+
+command -v vips >/dev/null 2>&1 || {
+  echo >&2 "Impossible de trouver la commande \"vips\""
+  echo >&2 "Installer libvips avec \"sudo apt install libvips-tools\""
+  exit 1
+}
 
 usageStr(){
   if ! test -z "$1" ;then
@@ -22,6 +37,7 @@ usageStr(){
   echo "long option only : "
   echo -e "\t--no-build : disable site build"
 }
+
 make_build=true
 make_force=false
 make_check=false
