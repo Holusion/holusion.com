@@ -60,8 +60,6 @@ jobs:
 
     # Build
     - name: create _deploy.yml config file
-      env:
-        RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET }}
       run: |
         echo "env: production" > _deploy.yml
         echo "url: https://holusion.com" >> _deploy.yml

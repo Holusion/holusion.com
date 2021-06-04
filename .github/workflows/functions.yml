@@ -8,7 +8,7 @@ on:
      - ".github/workflows/functions.yml"
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,34 +24,16 @@ jobs:
             ${{ runner.os }}-node12-
       - name: install functions dependencies
         run: |
-          npm i -g firebase-tools
-          (cd functions && npm ci)
+          npm ci
       - name: test functions
         run: |
           cd functions
           npm run lint
           npm test
-          
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '12'
-      - name: npm cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node12-${{ hashFiles('functions/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node12-
-      - name: install dependencies
-        run: |
-          npm ci
       - name: deploy
         env:
+          # it is revoked if it has not been used for 6 months
+          # Generate a new one from command line using `firebase login:ci` and update it on Github
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          npx firebase deploy --only functions --token $FIREBASE_TOKEN
+          npx firebase --token "$FIREBASE_TOKEN" deploy --only functions
