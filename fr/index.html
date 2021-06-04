@@ -73,73 +73,73 @@ image: img/sections/prism.jpg
         {% asset "img/sections/background-slides.png"
         sizes="50vw"
         class="fixed"
-        alt="iris 22 holomuseio" 
+        alt="illustration d'un iris 75" 
         %}
         <div class="slides slides-back">
           {% asset "img/sections/slide_hologramme_batiment.png"
           sizes="50vw"
           data-slide="0"
           style = "transition: none;"
-          alt="iris 22 holomuseio"
+          alt="illustration d'un batiment"
           %} 
           {% asset "img/sections/slide_hologramme_batiment.png" 
           sizes="50vw"
           data-slide="1"
           style = "transition: none;"
-          alt="iris 22 holomuseio"
+          alt="illustration d'un batiment"
           %}
           {% asset "img/sections/slide_hologramme_musee.png"
             sizes="50vw"
             data-slide="2"
-            alt="iris 22 holomuseio"
+            alt="illustration d'une statue"
           %}
           {% asset "img/sections/slide_hologramme_produit.png"
             sizes="50vw" 
             data-slide="3"
-            alt="iris 22 holomuseio"
+            alt="illustration d'un produit"
           %}
           {% asset "img/sections/slide_hologramme_chateau.png"
           sizes="50vw"
           data-slide="4"
-          alt="iris 22 holomuseio" 
+          alt="illustration d'un chateau" 
           %}
         </div> 
         <div class="slides slides-front"> 
           {% asset "img/sections/blank.png"
           sizes="50vw"
           data-slide="0"
-          alt="iris 22 holomuseio"
+          alt="blank"
           %}
           {% asset "img/sections/slide_plante.png"
           sizes="50vw"
           data-slide="1"
-          alt="iris 22 holomuseio"
+          alt="illustration d'une plante"
           %}
           {% asset "img/sections/slide_musee.png"
             sizes="50vw"
             data-slide="2"
-            alt="iris 22 holomuseio"
+            alt="illustration d'un ado devant l'hologramme"
           %}
           {% asset "img/sections/slide_gens.png"
             sizes="50vw"
             data-slide="3"
-            alt="iris 22 holomuseio"
+            alt="illustration de personnages devant l'hologramme"
           %}
           {% asset "img/sections/slide_interaction.png"
           sizes="50vw"
           data-slide="4"
-          alt="iris 22 holomuseio"
+          alt="illustration de l'interraction avec la tablette"
           %}
-          {% asset "img/sections/image4.png" 
+          {% asset "img/sections/slide_gamme.png" 
           sizes="50vw"
           data-slide="5"
-          alt="iris 22 holomuseio"
+          alt="illustration représentant une gamme d'hologrammes"
           %}
           {% asset "img/sections/cafe_design.jpg"
           class="image-shadow"
           sizes="50vw"
           data-slide="6"
-          alt="iris 22 holomuseio"
+          alt="photo de croquis"
           %}
         </div> 
       </div>
@@ -242,7 +242,7 @@ image: img/sections/prism.jpg
       const slides = document.querySelectorAll(".section .slides-front > img");
       const hologram = document.querySelectorAll(".section .slides-back > img");
       const stickyContent = document.querySelectorAll(".section .sticky-content > img");
-      let thresholdValue = window.matchMedia("(max-width: 1200px)").matches ? 0.01 : 0.5;
+      let thresholdValue = window.matchMedia("(max-width: 1200px)").matches ? 0.1 : 0.5;
       let active = 0;
 
       o = new IntersectionObserver((entries)=>{
@@ -265,7 +265,7 @@ image: img/sections/prism.jpg
             for(let i = 0; i < 7; i++){
               if( i < 5){hologram[i].style.opacity = 0;}
               if(i < index){slides[i].style.opacity = 1;}
-              if(i > index){slides[i].style.opacity = 0;}
+              if(i > index){slides[i].style.opacity = 0;} 
             }
             hologram[index].style.opacity = 1;
             slides[index].style.opacity = 1;
