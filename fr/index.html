@@ -125,7 +125,7 @@ image: img/sections/prism.jpg
             data-slide="3"
             alt="iris 22 holomuseio"
           %}
-          {% asset "img/sections//blank.png"
+          {% asset "img/sections/slide_interaction.png"
           sizes="50vw"
           data-slide="4"
           alt="iris 22 holomuseio"
@@ -168,7 +168,7 @@ image: img/sections/prism.jpg
           </p>
           <p>
             Utilisation d'un moteur graphique performant et open source pour la création d'images photo-réalistes restistuant au mieux les choix de matériaux et l'ambition architecturale.
-          </p>
+          </p> 
       </div>
       <div>
         <h2>Valorisez un patrimoine</h2>
@@ -242,38 +242,42 @@ image: img/sections/prism.jpg
       const slides = document.querySelectorAll(".section .slides-front > img");
       const hologram = document.querySelectorAll(".section .slides-back > img");
       const stickyContent = document.querySelectorAll(".section .sticky-content > img");
-      let thresholdValue = 0;
+      let thresholdValue = window.matchMedia("(max-width: 1200px)").matches ? 0.01 : 0.5;
       let active = 0;
 
       o = new IntersectionObserver((entries)=>{
         for (let entry of entries){
           if(!entry.isIntersecting) continue;
-          thresholdValue = window.matchMedia("(max-width: 1200px)").matches ? 0.01 : 0.5; 
-          //FIXME test dataset
+
           const index = contents.indexOf(entry.target);
-          slides[active].style.opacity = 0;
-
-          if(active < 5 && active != 0){hologram[active].style.opacity = 0;}
-          if(active == 1){hologram[0].style.opacity = 0;}
-
-          active = index;
-
-          if(active == 0 || active >= 5) {stickyContent[0].style.opacity = 0}
-          else {stickyContent[0].style.opacity = 1}
-
-          if(active < 5){
-            hologram[active].style.opacity = 1;
-            for(let i = 0; i < active; i++){
-              slides[i].style.opacity = 1;
-            }
-          }
-          if(active == 5){
-            hologram[active - 1].style.opacity = 0;
-            for(let i = 0; i < active; i++){
+          //FIXME test dataset
+          if(index == 0){
+            stickyContent[0].style.opacity = 0;
+            for(let i = 0; i < 7; i++){
+              if(i < 5 && i > 1){hologram[i].style.opacity = 0;}
               slides[i].style.opacity = 0;
             }
-          } 
-          slides[index].style.opacity = 1;
+            hologram[1].style.opacity = 1;
+
+          }else if(index < 5){
+            stickyContent[0].style.opacity = 1;
+
+            for(let i = 0; i < 7; i++){
+              if( i < 5){hologram[i].style.opacity = 0;}
+              if(i < index){slides[i].style.opacity = 1;}
+              if(i > index){slides[i].style.opacity = 0;}
+            }
+            hologram[index].style.opacity = 1;
+            slides[index].style.opacity = 1;
+
+          }else{
+            for(let i = 0; i < 7; i++){
+              if( i < 5){hologram[i].style.opacity = 0;}
+              slides[i].style.opacity = 0;
+            }
+            slides[index].style.opacity = 1;
+            stickyContent[0].style.opacity = 0;
+          }
         }
       }, {
         threshold:[thresholdValue]
@@ -284,7 +288,7 @@ image: img/sections/prism.jpg
     </script>
   </section>
 
-  <section class="section section-white section-left mb-6" >
+  <section class="section section-white section-left mb-6 text-dark" >
     <h2>Découvrez nos offres</h2>
   </section>
        
