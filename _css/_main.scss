@@ -127,10 +127,10 @@ text-align: center;
 }
 
 .flip-box {
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1500px; /* Remove this if you don't want the 3D effect */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -144,13 +144,13 @@ text-align: center;
 
 .flip-box-inner:hover {
   box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
-  transform: scale(1.15) rotateY(13deg);
+  transform: scale(1.15) rotateY(15deg);
   margin-bottom: 40px;
 }
 
 .flip-box-inner-left:hover {
   box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
-  transform: scale(1.15) rotateY(-13deg);
+  transform: scale(1.15) rotateY(-15deg);
   margin-bottom: 40px;
 }
 .body-right h2 {
