@@ -20,7 +20,7 @@
 @import "pricing";
 
 body{
-  padding-top: 57px;
+  padding-top: 51px;
   min-height:100%;
   width:100%;
 }
@@ -124,4 +124,35 @@ text-align: center;
 .fit-scale-down {
   object-fit: scale-down;
   max-height: 60vmin;
+}
+
+.flip-box {
+  perspective: 1500px; /* Remove this if you don't want the 3D effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flip-box-inner, .flip-box-inner-left  {
+  background-color: transparent;
+  transition: all 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);;
+  margin-bottom: 20px;
+}
+
+.flip-box-inner:hover {
+  box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
+  transform: scale(1.15) rotateY(15deg);
+  margin-bottom: 40px;
+}
+
+.flip-box-inner-left:hover {
+  box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
+  transform: scale(1.15) rotateY(-15deg);
+  margin-bottom: 40px;
+}
+.body-right h2 {
+  font-weight: bold;
 }
