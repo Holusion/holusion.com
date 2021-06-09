@@ -66,10 +66,14 @@
     }
 
 
-    & > img{
+    & > img, &>picture{
       grid-area: image;
       width: 100%;
+      z-index: 1;
+    }
+    & > img, &>picture>img {
       display: block;
+      width: 100%;
       z-index: 1;
       margin-bottom: -($margin * 2 / 3);
       &.cover{
@@ -92,7 +96,6 @@
       display: block;
       z-index: 1;
       margin-bottom: -($margin * 2);
-      clip-path: inset(0 0 0 -50px);
       @include media-breakpoint-down(lg){
         margin-bottom: -($margin / 2);
       }
@@ -114,14 +117,25 @@
         }
       }
       .slides{
-        &, >img{
+        position: absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        img{
           position: absolute;
           top:0;
           left:0;
           bottom:0;
           right:0;
+          opacity: 0;
+          
+          &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
+            opacity: 1;
+          }
         }
-        &.slides-front > img:last-child{
+        
+        &:last-child > *:last-child img, &:last-child > img:last-child{
           height: calc(50% + 7rem);
           margin: auto;
           object-fit: cover;
