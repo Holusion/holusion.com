@@ -12,6 +12,10 @@ jobs:
       uses: actions/checkout@v2
       with:
         lfs: true
+    
+    - name: Install libvips
+      run: |
+        sudo apt-get install -yqq libvips-tools
     - name: Install puppeteer dependencies
       run: |
         sudo apt-get install -yqq libgconf-2-4
@@ -32,32 +36,17 @@ jobs:
     - name: install nodejs
       uses: actions/setup-node@v1
       with:
-        node-version: '10.x'
+        node-version: '12'
 
     - name: npm cache
       uses: actions/cache@v1
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node12-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-
-    - name: user cache
-      id: user-cache-folder
-      uses: actions/cache@v1
-      with:
-        path: ~/.cache
-        key: ${{ runner.os }}-user-cache
-        restore-keys: |
-          ${{ runner.os }}-user-cache
+          ${{ runner.os }}-node12-
 
     # Dependencies
-    - name: install ffmpeg
-        #ffmpeg-static will cache binaries in ~/.cache/ffmpeg-static
-      run: |
-        mkdir -p "$HOME/.cache"
-        chmod 777 "$HOME/.cache"
-        npm install --no-save ffmpeg-static
-        echo "$GITHUB_WORKSPACE/node_modules/ffmpeg-static" >> $GITHUB_PATH
 
     - name: get gem dependencies
       run: |
@@ -71,8 +60,6 @@ jobs:
 
     # Build
     - name: create _deploy.yml config file
-      env:
-        RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET }}
       run: |
         echo "env: production" > _deploy.yml
         echo "url: https://holusion.com" >> _deploy.yml

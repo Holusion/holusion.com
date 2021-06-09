@@ -23,7 +23,7 @@ compress_folder(){
   while IFS= read -r -d '' file; do
     #do not filter png images because they are fast to compress
     mogrify \
-    -filter Triangle -define filter:support=2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 \
+    -filter Triangle -define filter:support=2  -dither None \
     -quality 9 \
     -define png:exclude-chunk=all -interlace none -colorspace sRGB \
     "$file"
@@ -31,9 +31,10 @@ compress_folder(){
 
   echo "compressing JPG files in $folder/**"
   while IFS= read -r -d '' file; do
-    echo "Compressing $file"
-    quality="$(identify -format '%Q' "$file")"
-    if test "$quality" -gt "85" ;then
+    res="$(identify -format '%Q %B' "$file")"
+    quality="$(echo "$res" | cut -d ' ' -f 1)"
+    size="$(echo "$res" | cut -d ' ' -f 2)"
+    if test "$quality" -gt "85" -a "$size" -gt "128000" ;then
       echo "compressing $file of Q : $quality"
       mogrify -strip -interlace Plane -sampling-factor 4:2:0 -quality 85% \
       "$file"

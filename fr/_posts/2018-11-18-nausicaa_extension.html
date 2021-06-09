@@ -50,11 +50,8 @@ tags: museographie iris
         <p><i>Illustration : Hologramme de Baudroie, Nausicaa 2018</i></p>
       </div>
       <div class="col-xl-6 ">
-        {%asset img/posts/nausicaa/baudroie.jpg
-          srcset:width="1920"
-          srcset:width="960"
-          class="img-fluid"
-          sizes="(min-width: 1200px) 1200px, 100vw"
+        {% picture container img/posts/nausicaa/baudroie.jpg
+          --img class="img-fluid"
           style="padding-bottom: 40px;"
           alt="Schema des dimensions de l'iris 22 pouces"
           %}
@@ -68,11 +65,8 @@ tags: museographie iris
 
       <div class="row justify-content-xl-center">
         <div class="col-xl-6 ">
-          {%asset img/posts/nausicaa/calamar.jpg
-            srcset:width="1920"
-            srcset:width="960"
-            class="img-fluid"
-            sizes="(min-width: 1200px) 1200px, 100vw"
+          {% picture container img/posts/nausicaa/calamar.jpg
+            --img class="img-fluid
             style="padding-bottom: 40px;"
             alt="Schema des dimensions de l'iris 22 pouces"
             %}
@@ -110,13 +104,10 @@ tags: museographie iris
             <p><i>Illustration : Hologramme de méduse, Nausicaa 2018</i></p>
           </div>
           <div class="col-xl-6 ">
-            {%asset img/posts/nausicaa/meduse.jpg
-              srcset:width="1920"
-              srcset:width="960"
-              class="img-fluid"
-              sizes="(min-width: 1200px) 1200px, 100vw"
+            {% picture container img/posts/nausicaa/meduse.jpg
+              --img class="img-fluid"
               style="padding-bottom: 40px;"
-              alt="Schema des dimensions de l'iris 22 pouces"
+              --alt  Schema des dimensions de l'iris 22 pouces
               %}
             </div>
           </div>
@@ -132,7 +123,7 @@ tags: museographie iris
 
             <div class="row justify-content-xl-center">
               <div class="col-xl-6 ">
-                <img class="img-fluid" style="object-fit:contain" src="/static/img/usages/meduse_design.png">
+                {% picture grid img/documentation/meduse_design.png --img class="img-fluid" %}
               </div>
             </div>
 

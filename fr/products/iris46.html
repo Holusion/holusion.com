@@ -67,10 +67,8 @@ properties:
 
 <section id="section-gamme" class="section-tile">
   <div class="tile-image-wrapper">
-    {% asset "img/products/iris46_culture.jpg"
-      srcset:width="1920"
-      srcset:width="960"
-      class="img-fluid fit-contain"
+    {% picture  "img/products/iris46_culture.jpg"
+      --img class="img-fluid fit-contain
       sizes="(max-width: 992px) 100vw, 50vw"
       alt="Hologramme d'un crâne d'hippopotame, également nommé à point 'hippopologramme' "
       %}
@@ -89,13 +87,10 @@ properties:
 
 
 <div align="center" class="p-4">
-  {% asset img/products/mesures/Iris46.png
-    srcset:width="1920"
-    srcset:width="960"
-    class="img-fluid"
-    sizes="(min-width: 1200px) 1200px, 100vw"
+  {% picture container img/products/mesures/Iris46.png
+    --img class="img-fluid"
     style="padding-top: 40px; padding-bottom: 10px;"
-    alt="Schema des dimensions de l'iris 32 pouces"
+    --alt  Schema des dimensions de l'iris 32 pouces
   %}
   <h3> <b>L'iris 46</b> </h3>
 </div>

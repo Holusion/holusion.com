@@ -2,7 +2,7 @@ models:
   - name: Explore
     price: "950"
     img: "img/pricing/model_1.png"
-    video: "/static/video/pricing/model_1.mp4"
+    video: "model_1.mp4"
     description:
       - The bare necessity for exploration
     properties:
@@ -11,7 +11,7 @@ models:
   - name: Improve
     price: "1.750"
     img: "img/pricing/model_2.png"
-    video: "/static/video/pricing/model_2.mp4"
+    video: "model_2.mp4"
     description:
       - An improved visualization
     properties:
@@ -21,7 +21,7 @@ models:
   - name: Upgrade
     price: "3.750"
     img: "img/pricing/model_3.png"
-    video: "/static/video/pricing/model_3.mp4"
+    video: "model_3.mp4"
     description:
       - Upgrade your 3D simulation
     properties:
@@ -39,7 +39,7 @@ products:
       - image full HD
       - 49 x 29cm
     img: "img/pricing/iris22.png"
-    video: "/static/video/pricing/iris22.mp4"
+    video: "iris22.mp4"
     url: "/en/products/iris22"
   - name: Iris 32"
     price: "1 750"
@@ -48,7 +48,7 @@ products:
       - image full HD
       - 70 x 39cm
     img: "img/pricing/iris32.png"
-    video: "/static/video/pricing/iris32.mp4"
+    video: "iris32.mp4"
     url: "/en/products/iris32"
   - name: Iris 75"
     price: "4 950"
@@ -57,7 +57,7 @@ products:
       - image 4k
       - 165 x 92 cm
     img: "img/pricing/iris75.png"
-    video: "/static/video/pricing/iris75.mp4"
+    video: "iris75.mp4"
     url: "/en/products/iris75"
 services:
   - name: Individual

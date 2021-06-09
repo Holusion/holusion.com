@@ -6,11 +6,12 @@
   "license": "MIT",
   "main": "dist/bootstrap.css",
   "scripts": {
-    "test": "mocha --slow 1500 --timeout 10000 ./scripts/runner.js",
-    "jenkins_test": "JUNIT_REPORT_PATH=report.xml mocha ./scripts/runner.js --reporter mocha-jenkins-reporter --timeout 15000",
+    "test": "npm run test:integration && npm run test:e2e",
+    "test:integration": "mocha ./scripts/integration.test.js",
+    "test:e2e": "mocha --slow 1500 --timeout 10000 ./scripts/e2e.test.js",
     "prepack": "mkdir -p dist/ && cp _site/css/bootstrap.* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/ && sed 's/..\\/node_modules\\//~/' _css/_variables.scss > dist/_variables.scss",
     "postpack": "rm -rf dist/",
-    "postinstall": "(cd functions && npm i)"
+    "postinstall": "(cd functions && npm ci)"
   },
   "files": [
     "dist/"
@@ -28,7 +29,6 @@
     "firebase-tools": "^8.11.2",
     "jquery": "^3.5.1",
     "mocha": "^8.1.1",
-    "mocha-jenkins-reporter": "0.4.5",
     "popper.js": "^1.14.7",
     "puppeteer": "^5.2.1",
     "serve-static": "^1.13.2",

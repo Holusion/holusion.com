@@ -8,12 +8,6 @@ title: A propos
   {% ariane %}
 </div>
 
-<section id="logo-full">
-  <div class="container">
-    <img class="img-fluid" src="/static/img/logo_holusion_web_HD.png" alt="logo officiel Holusion SAS" title="Logo Holusion haute définition"
-  srcset="/static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w" sizes="100w">
-  </div>
-</section>
 <section id="lentreprise">
   <div class="row no-gutters">
     <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
@@ -34,12 +28,9 @@ title: A propos
 
   <div class="row no-gutters">
     <div class="col-md-6">
-      {% asset "img/sections/schema.png"
-        srcset:width="1920"
-        srcset:width="960"
-        sizes="(max-width: 992px) 100vw, 50vw"
-        alt="Dessin schématisant l'activité de création de maquettes numérique par holusion"
-        class="img-fluid"
+      {% picture container "img/sections/schema.png"
+        --alt="Dessin schématisant l'activité de création de maquettes numérique par holusion"
+        --img class="img-fluid
       %}
     </div>
     <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
@@ -192,10 +183,7 @@ title: A propos
       <img alt="LMI" class="img-fluid" src="/static/img/front/sponsors/lmi.jpg"/>
     </div>
     <div class="col-lg-3 col-md-6">
-      {% asset img/logo/ausu.png
-        class="img-fluid"
-        alt="logo Adopte une Startup"
-      %}
+      <img class="img-fluid" src="/static/img/logo/ausu.jpg" alt="logo Adopte une Startup"/>
     </div>
     <div class="col-lg-3 col-md-6">
       <img alt="Bizspark" class="img-fluid" src="/static/img/front/sponsors/bizspark.jpg"/>

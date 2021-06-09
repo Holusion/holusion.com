@@ -44,9 +44,9 @@ properties:
 
 <section class="row no-gutters p-4">
   <div class="col-lg-6 col-12">
-    {% asset img/products/pixelplus_tablette_2.jpg
-      srcset:width="1920"
-      srcset:width="960"
+    {% picture  img/products/pixelplus_tablette_2.jpg
+      
+      
       sizes="(max-width: 992px) 100vw, 50vw"
       class="img-fluid"
       title="Holusion Pixel XL"
@@ -69,9 +69,9 @@ properties:
 
 <section class="row no-gutters p-4">
   <div class="col-lg-6 col-12 order-1 order-lg-2">
-    {% asset img/products/pochette_contenu.jpg
-      srcset:width="1920"
-      srcset:width="960"
+    {% picture img/products/pochette_contenu.jpg
+      
+      
       sizes="(max-width: 992px) 100vw, 50vw"
       class="img-fluid"
       title="Holusion Prism"
@@ -95,9 +95,9 @@ properties:
       <p>Every product is a self-contained package with all you need to view an hologram without any external help. You can make a customized package, branded to your colors, with custom visuals.</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12 text-center">
-      {% asset img/products/pochette_pixel_verso.jpg
-        srcset:width="960"
-        srcset:width="430"
+      {% picture img/products/pochette_pixel_verso.jpg
+        
+        
         sizes="(max-width: 992px) 33vw, 100vw"
         class="img-fluid"
         alt="the back of a pixel's standard packaging"
@@ -106,9 +106,9 @@ properties:
       <p>monochrome printing on each package</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12 text-center">
-      {% asset img/products/pochette_pixel_recto.jpg
-        srcset:width="1920"
-        srcset:width="960"
+      {% picture img/products/pochette_pixel_recto.jpg
+        
+        
         sizes="(max-width: 992px) 33vw, 100vw"
         class="img-fluid"
         alt="Front view of a pixel in it's original packaging"
@@ -117,11 +117,9 @@ properties:
       <p>Using your colors of choice and any picture you need. With a direct link to your video content, whether it is hosted on our servers or elsewhere</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12 text-center">
-      {% asset img/products/pixels_gravure.jpg
-        srcset:width="1920"
-        srcset:width="960"
+      {% picture img/products/pixels_gravure.jpg
         sizes="(max-width: 992px) 50vw, 100vw"
-        class="img-fluid"
+        --img class="img-fluid
         alt="A pixel's package content"
       %}
       <h3>Engraving</h3>
@@ -131,13 +129,10 @@ properties:
 </section>
 <section class="section section-main-header header-fill py-4">
   <div class="main-header-image-wrapper">
-    {% asset img/products/kit_pixels_vignette.jpg
-      srcset:width="1920"
-      srcset:width="1920"
-      srcset:width="960"
+    {% picture card img/products/kit_pixels_vignette.jpg      
       sizes="100vw"
-      class="img-fluid"
-      alt="a complete pixel kit packaged in a cardboard box"
+      --img class="img-fluid"
+      --alt  a complete pixel kit packaged in a cardboard box
     %}
   </div>
   <div class="main-header-body container">

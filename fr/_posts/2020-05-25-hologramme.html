@@ -1,7 +1,7 @@
 ---
 layout: index
 title: L’hologramme, comment ça marche ?
-image: img/posts/2020_hologramme/Miniature.png
+image: img/posts/2020_hologramme/Miniature.jpg
 abstract: Explications sur les hologrammes
 tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
 ---
@@ -27,9 +27,8 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="row">
         <div class="col-12 col-lg-6">
-          {%asset img/posts/2020_hologramme/holomouse.jpg
-            class="img-fluid"
-            sizes="(min-width: 1200px) 1200px, 100vw"
+          {% picture container img/posts/2020_hologramme/holomouse.jpg
+            --img class="img-fluid"
             style="padding-bottom: 40px;"
             alt="Présentation de l'hologramme de Gabor"
             %}
@@ -76,11 +75,8 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
                     </p>
                 </div>
                 <div class="col-12 col-lg-6">
-                  {%asset img/posts/2020_hologramme/PeppersGhost.jpg
-                    srcset:width="1920"
-                    srcset:width="650"
-                    class="img-fluid"
-                    sizes="(min-width: 1200px) 1200px, 100vw"
+                  {% picture container img/posts/2020_hologramme/PeppersGhost.jpg
+                    --img class="img-fluid
                     style="padding-bottom: 40px;"
                     alt="Présentation de l'hologramme de Pepper"
                     %}
@@ -105,13 +101,13 @@ tags: Explications Hologrammes Pepper's ghost Tupac Mélenchon Star Wars
 
   <section class="section section-main-header header-fill py-4">
       <div class="main-header-image-wrapper">
-          {% asset img/posts/2020_hologramme/Tupacldd.jpg
-              srcset:width="1920"
-              srcset:width="1920"
-              srcset:width="960"
+          {% picture img/posts/2020_hologramme/Tupacldd.jpg
+              
+              
+              
               sizes="100vw"
-              class="img-fluid"
-              alt="iris22 avec un ecorché d'appartement"
+              --img class="img-fluid"
+              --alt  iris22 avec un ecorché d'appartement
               %}
           </div>
           <div class="main-header-body container jumbotron bg-white shadow my-4 p-5">

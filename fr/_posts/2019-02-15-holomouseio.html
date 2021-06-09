@@ -35,14 +35,11 @@ tags: museographie tourisme iris32
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="row">
         <div class="col-12 col-lg-6">
-          {%asset img/posts/2019_holomouseio/holomouseio.jpg
-            srcset:width="1920"
-            srcset:width="650"
-            class="img-fluid"
-            sizes="(min-width: 1200px) 1200px, 100vw"
+          {% picture container img/posts/2019_holomouseio/holomouseio.jpg
+            --img class="img-fluid"
             style="padding-bottom: 40px;"
             alt="Le dispositif holomouseio consite en un Iris32, une tablette et un meuble sur mesure"
-            %}
+          %}
           </div>
           <div class="col-12 col-lg-6">
             <h2>Voyage au sein d'exposition virtuelles</h2>
@@ -66,11 +63,8 @@ tags: museographie tourisme iris32
 
     <section class="section section-main-header header-fill py-4">
       <div class="main-header-image-wrapper">
-        {% asset img//posts/2019_holomouseio/numerisation_lille1.jpg
-          srcset:width="1920"
-          srcset:width="1920"
-          srcset:width="960"
-          sizes="100vw"
+        {% picture img/posts/2019_holomouseio/numerisation_lille1.jpg
+          --img sizes="100vw"
           class="img-fluid"
           alt="Laboratoire de numérisation de l'université de Lille"
           %}
@@ -90,11 +84,8 @@ tags: museographie tourisme iris32
           </p>
           <div class="row">
             <div class="col-lg-6 col-md-12  d-flex flex-column justify-content-center">
-              {%asset img/posts/2019_holomouseio/projet_lille1.jpg
-                srcset:width="1920"
-                srcset:width="650"
-                class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
+              {% picture container img/posts/2019_holomouseio/projet_lille1.jpg
+                --img class="img-fluid
                 style="padding-bottom: 40px;"
                 alt="Laboratoire de numérisation de l'université de Lille"
                 %}
@@ -153,13 +144,10 @@ tags: museographie tourisme iris32
 
                     </div>
                     <div class="col-12 col-lg-6">
-                      {%asset img/posts/2019_holomouseio/holomouseio_tablette.jpg
-                        srcset:width="1920"
-                        srcset:width="650"
-                        class="img-fluid"
-                        sizes="(min-width: 1200px) 1200px, 100vw"
+                      {% picture container img/posts/2019_holomouseio/holomouseio_tablette.jpg
+                        --img class="img-fluid"
                         style="padding-bottom: 40px;"
-                        alt="Laboratoire de numérisation de l'université de Lille"
+                        --alt  Laboratoire de numérisation de l'université de Lille
                         %}
                       </div>
                     </div>
