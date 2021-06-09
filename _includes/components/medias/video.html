@@ -1,5 +1,5 @@
 <video 
-  poster="{{assets[include.img].digest_path}}" 
+  poster="{%picture direct "{{include.img}}" %}" 
   muted 
   autoplay 
   loop
@@ -8,9 +8,9 @@
   webkit-playsinline
 >
   <source src="{{include.video}}" type='video/mp4; codecs="avc1.4D401F"'>
-  {% asset {{include.img}}
-  class="img-fluid"
+  {% picture  {{include.img}}
+  --img class="img-fluid"
   sizes="100w"
-  alt="model animation"
+  --alt  model animation
   %}
 </video>

@@ -93,11 +93,8 @@ properties:
 <section class="section section-main-header header-fill py-4">
 
   <div class="main-header-image-wrapper">
-    {% asset img/posts/2019_Nacarat/iris75_rendu_shake.jpg
-      srcset:width="1920"
-      srcset:width="1920"
-      srcset:width="960"
-      sizes="100vw"
+    {% picture  img/posts/2019_Nacarat/iris75_rendu_shake.jpg
+      --img sizes="100vw"
       class="img-fluid"
       alt="Iris 75 hologram"
       %}
@@ -107,11 +104,9 @@ properties:
 
       <div id="section-gamme" class="row no-gutters p-4">
         <div class="col-lg-6 col-12">
-          {%asset img/products/mesures/Iris75.png
-            srcset:width="1920"
-            srcset:width="960"
+          {% picture img/products/mesures/Iris75.png
+            --img class="img-fluid"
             sizes="(max-width: 992px) 100vw, 50vw"
-            class="img-fluid"
             alt="Schema des dimensions du generateur d'hologramme iris 75 horizontal"
             %}
           </div>
@@ -128,12 +123,10 @@ properties:
             </p>
           </div>
           <div class="col-lg-6 col-12">
-            {%asset img/products/mesures/Iris75V.png
-              srcset:width="1920"
-              srcset:width="960"
+            {% picture img/products/mesures/Iris75V.png
+              --img class="img-fluid"
               sizes="(max-width: 992px) 100vw, 50vw"
-              class="img-fluid"
-              alt="Schema des dimensions du generateur d'hologramme iris 75 vertical"
+              --alt  Schema des dimensions du generateur d'hologramme iris 75 vertical
               %}
             </div>
           </div>
@@ -145,7 +138,7 @@ properties:
   <div class="main-header-body container">
     <div class="jumbotron bg-white shadow">
       <div class="center-block">
-        {% asset img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
+        {% picture img/products/mesures/habillage_iris75_horizontal.png class="img-fluid" %}
         <div class="text-muted text-center">
           Dimensions brutes de l'habillage d'un Iris 75" horizontal
         </div>

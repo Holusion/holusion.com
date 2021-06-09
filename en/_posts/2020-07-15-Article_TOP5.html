@@ -10,7 +10,9 @@ tags: top5 immobilier education hologramme conseils tips
 ---
 
 <section class="section section-main-header header-fill" style="max-width: 1920px">
-  {%include components/header_image.html image="img/posts/2020_Renoir/FondRenoir.jpg" %}
+  <div class="main-header-image-wrapper">
+    <img src="/static/img/posts/2020_Renoir/FondRenoir.jpg" alt="Someone acting as auguste Renoir"/>
+  </div>
   <div class="main-header-body body-right">
     <div class="content shadow rounded bg-white rounded p-4 text-justify">
       <h2> TOP5 of the best hologram uses </h2>
@@ -43,8 +45,8 @@ tags: top5 immobilier education hologramme conseils tips
     <p id="morts" style="opacity:0; transition:opacity 0.5s linear">
       As, definitely, showbiz is quite unforgiving. Famous dead people aren't allowed to rest in peace.
     </p>
-    {% asset img/posts/2020_top5/tupac_holo.jpg
-      srcset:width="1920"
+    {% picture  img/posts/2020_top5/tupac_holo.jpg
+      
       sizes="100vw"
       class="img-fluid"
       alt="Tupac en hologrammes au festival Coachella"
@@ -71,8 +73,8 @@ tags: top5 immobilier education hologramme conseils tips
        A soon-to-be friendly companion for museum tours ?
       </p>
 
-        {% asset img/posts/2020_top5/holomouseio.jpg
-          srcset:width="1920"
+        {% picture img/posts/2020_top5/holomouseio.jpg
+          
           sizes="100vw"
           class="img-fluid"
           alt="Une borne holographique au Palais des Beaux-Arts de Lille"
@@ -91,8 +93,8 @@ tags: top5 immobilier education hologramme conseils tips
           <p>Holographic telepresence is becoming a new issue for telecoms in order to animate meetings. In Japan, a leading player in telecoms, NTT, is developing a new solution to broadcast an hologram combined with a real time video using AI. <a href="https://www.ntt.co.jp/activity/en/innovation/kirari/" target="_blank"> Kirari</a>, the name of this innovation may allow us to see the Tokyo Olympics in holograms ?
 
 </p>
-          {% asset img/posts/2020_top5/meet.jpg
-            srcset:width="1920"
+          {% picture img/posts/2020_top5/meet.jpg
+            
             sizes="100vw"
             class="img-fluid"
             alt="Un meeting en hologrammes"
@@ -114,10 +116,10 @@ tags: top5 immobilier education hologramme conseils tips
 
             </p>
 
-            {% asset img/posts/2020_top5/education.jpg
-              srcset:width="1920"
+            {% picture img/posts/2020_top5/education.jpg
+              
               sizes="100vw"
-              class="img-fluid"
+              --img class="img-fluid
               alt="hologramme interactif d'un squelette humain"
               %}
               <p class="caption"> Human anatomy explained with the help of an interactive hologram</p>
@@ -129,11 +131,11 @@ tags: top5 immobilier education hologramme conseils tips
                 In order to present a building programme, a model is a must-have. Holograms allow the presentation of a project in many views. They pinpoint the project within a neighbourhood, and can get closer to the building to present <a href="2020-04-20-buildings" target="_blank"> tiny details</a>, invisible to the eye.
               </p>
 
-              {% asset img/posts/2020_bim/iris32_immobilier_terrasse.png
-                srcset:width="1920"
+              {% picture img/posts/2020_bim/iris32_immobilier_terrasse.jpg
+                
                 sizes="100vw"
-                class="img-fluid"
-                alt="Hologramme de maquette de bâtiment immobiliers"
+                --img class="img-fluid"
+                --alt  Hologramme de maquette de bâtiment immobiliers
                 %}
                 <p class="caption">Holographic model of a real-estate program</p>
 

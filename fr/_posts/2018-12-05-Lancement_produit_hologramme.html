@@ -34,13 +34,10 @@ tags: marketing pixel
             <p>Le format personnalisé du Pixel permet de rappeller la marque sur tous les aspects du goodie et de s'assurer que l'objet final portera toujours la mention la plus important</p>
         </div>
         <div class="col-12 col-lg-6">
-            {%asset img/posts/molnlycke/customized_pixel.jpg
-              srcset:width="1920"
-              srcset:width="650"
-              class="img-fluid"
-              sizes="(min-width: 1200px) 1200px, 100vw"
+            {% picture container img/posts/molnlycke/customized_pixel.jpg
+              --img class="img-fluid"
               style="padding-bottom: 40px;"
-              alt="Schema des dimensions de l'iris 22 pouces"
+              --alt  Schema des dimensions de l'iris 22 pouces
             %}
         </div>
       </div>

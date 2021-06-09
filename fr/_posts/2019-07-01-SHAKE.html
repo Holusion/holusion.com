@@ -36,11 +36,8 @@ tags: immobilier iris75
     <div class="content shadow rounded bg-white rounded p-4">
       <div class="row">
         <div class="col-12 col-lg-6">
-          {%asset img/posts/2019_Nacarat/shake_holo.jpg
-            srcset:width="1920"
-            srcset:width="650"
-            class="img-fluid"
-            sizes="(min-width: 1200px) 1200px, 100vw"
+          {% picture container img/posts/2019_Nacarat/shake_holo.jpg
+            --img class="img-fluid"
             style="padding-bottom: 40px;"
             alt="L'hologramme du ShAke sur Iris 75 lors de la pose de 1ère pierre"
             %}
@@ -69,10 +66,10 @@ tags: immobilier iris75
 
     <section class="section section-main-header header-fill py-4">
       <div class="main-header-image-wrapper">
-        {% asset img/posts/2019_Nacarat/iris75_side.jpg
-          srcset:width="1920"
-          srcset:width="1920"
-          srcset:width="960"
+        {% picture img/posts/2019_Nacarat/iris75_side.jpg
+          
+          
+          
           sizes="100vw"
           class="img-fluid"
           alt="iris75 hologramme sur estrade"
@@ -93,11 +90,8 @@ tags: immobilier iris75
           </p>
           <div class="row">
             <div class="col-lg-4 col-md-12  d-flex flex-column justify-content-center">
-              {%asset img/posts/2019_Nacarat/iris75_foule.jpg
-                srcset:width="1920"
-                srcset:width="650"
-                class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
+              {% picture container img/posts/2019_Nacarat/iris75_foule.jpg
+                --img class="img-fluid"
                 style="padding-bottom: 40px;"
                 alt="foule en train de filmer l'hologramme de la pose de 1ère pierre de ShAke"
                 %}
@@ -125,11 +119,8 @@ tags: immobilier iris75
               <h2>1 - Gestion de données BIM</h2>
                 <p>Compatible avec tous les logiciels professionels</p>
               <p><i>Gérer une base de données de fichiers 3D intégrant tous les éléments du bâtiment</i></p>
-              {%asset img/posts/2019_Nacarat/hologramme_reseaux.jpg
-                srcset:width="1920"
-                srcset:width="650"
-                class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
+              {% picture container img/posts/2019_Nacarat/hologramme_reseaux.jpg
+                --img class="img-fluid"
                 style="padding-bottom: 40px;"
                 alt="Rendu architectural en haute qualité"
                 %}
@@ -141,11 +132,8 @@ tags: immobilier iris75
               <h2>2 - Scénarisation</h2>
               <p>Pour tirer le meilleur parti de la richesse des informations disponibles</p>
               <p><i>Mise en avant de la mixité programmatique, des réseaux techniques, de tout ce qui rend un projet immobilier vraiment unique</i></p>
-              {%asset img/posts/2019_Nacarat/hologramme_quartier.jpg
-                srcset:width="1920"
-                srcset:width="650"
-                class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
+              {% picture container img/posts/2019_Nacarat/hologramme_quartier.jpg
+                --img class="img-fluid"
                 style="padding-bottom: 40px;"
                 alt="Rendu architectural en haute qualité"
                 %}
@@ -157,11 +145,8 @@ tags: immobilier iris75
               <h2>3 - Rendu Ultra Haute Définiton</h2>
             <p>Des images ultra haute qualité et lumineuses</p>
               <p><i>Utilisation d'un moteur graphique performant et open source pour la création d'images photo-réalistes restistuant au mieux les choix de matériaux et l'ambition architecturale.</i></p>
-              {%asset img/posts/2019_Nacarat/iris75_rendu_shake.jpg
-                srcset:width="1920"
-                srcset:width="650"
-                class="img-fluid"
-                sizes="(min-width: 1200px) 1200px, 100vw"
+              {% picture container img/posts/2019_Nacarat/iris75_rendu_shake.jpg
+                --img class="img-fluid"
                 style="padding-bottom: 40px;"
                 alt="Rendu architectural en haute qualité"
                 %}
@@ -173,15 +158,8 @@ tags: immobilier iris75
               <div class="row justify-content-center">
                 <div class="col-12 col-lg-1 text-center" >
                   <a href="https://www.linkedin.com/in/r%C3%A9mi-foulon-6a0354118/" target="_blank">
-                  {%asset img/posts/2019_Nacarat/Remi_Foulon.png
-                    srcset:width="1920"
-                    srcset:width="650"
-                    class="img-fluid"
-                    sizes="(min-width: 300px) 200px, 100vw"
-                    style="padding-bottom: 40px;"
-                    alt="Remi Foulon"
-                    %}
-                    </a>
+                    <img class="img-fluid" src="/static/img/posts/2019_Nacarat/Remi_Foulon.png" alt="Remi Foulon" style="padding-bottom: 40px;"/>
+                  </a>
                   </div>
                   <div class="col-12 col-lg-6 text-justify" >
                     <blockquote class="blockquote">
@@ -202,12 +180,12 @@ tags: immobilier iris75
             <div class="main-header-body">
               <div class="content shadow rounded bg-white rounded p-4">
                 <div class="row">
-                      {%asset img/posts/2019_Nacarat/bottom.jpg
-                        srcset:width="1920"
-                        class="img-fluid"
+                      {% picture img/posts/2019_Nacarat/bottom.jpg
+                        
+                        --img class="img-fluid"
                         sizes="(min-width: 1200px) 1920px, 100vw"
                         style="padding-bottom: 40px;"
-                        alt="Lieu de la pose de première pierre de ShAke, sur le chantier"
+                        --alt  Lieu de la pose de première pierre de ShAke, sur le chantier
                         %}
                     </div>
                   </div>

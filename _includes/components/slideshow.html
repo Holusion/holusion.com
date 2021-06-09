@@ -3,14 +3,13 @@
 <div id="{{uid}}" class="carousel slide {{include.classes}}" data-ride="carousel" {%if include.interval%}data-interval="{{include.interval}}"{%endif%}>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      {%capture content0_image %}{{contents[0].image}}{%endcapture%}
-      {% if assets[content0_image] %}
-        {% asset "{{content0_image}}"
-          class="d-block w-100"
+      {% if contents[0].image contains "static/" %}
+        <img data-deprecated="carousel-static-image" class="d-block w-100" src="{{contents[0].image}}" alt="{{contents[0].title}}" {%if contents[0].image2x %} srcset="{{contents[0].image2x}} 2x, {{contents[0].image}}"{%endif%}>     
+      {% else %}
+        {% picture  "{{contents[0].image}}"
+          --img class="d-block w-100
           alt="{{contents[0].title}}"
         %}
-      {% else %}
-        <img class="d-block w-100" src="{{contents[0].image}}" alt="{{contents[0].title}}" {%if contents[0].image2x %} srcset="{{contents[0].image2x}} 2x, {{contents[0].image}}"{%endif%}>
       {% endif %}
       {% if contents[0].caption %}
       <div class="carousel-caption d-none d-md-block">
@@ -20,15 +19,13 @@
     </div>
     {% for post in contents | offset: 1 |limit: 7 %}
     <div class="carousel-item">
-      {% if assets[post.image] %}
-        {% asset "{{post.image}}"
-          srcset:width="800 2x"
-          srcset:width="400 1x"
-          class="d-block w-100"
-          alt="{{post.title}}"
-        %}
+      {% if post.image contains "static/" %}
+        <img data-deprecated="carousel-static-image" class="d-block w-100" src="{{post.image}}" alt="{{post.title}}" {% if post.image2x %} srcset="{{post.image2x}} 2x, {{post.image}}"{%endif%}>
       {% else %}
-        <img class="d-block w-100" src="{{post.image}}" alt="{{post.title}}" {% if post.image2x %} srcset="{{post.image2x}} 2x, {{post.image}}"{%endif%}>
+        {% picture "{{post.image}}"
+          --img class="d-block w-100"
+          --alt  {{post.title}}
+        %}
       {% endif %}
 
       {% if post.caption %}

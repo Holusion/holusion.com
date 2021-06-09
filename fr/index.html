@@ -10,13 +10,11 @@ image: img/sections/prism.jpg
 <main class="home-page-main main-grid pb-5">
   <section class="home-page-header">
     <div class="home-page-header-image" >
-      <picture id="main-header-picture">
-        {% asset 'img/sections/header-test-wide.png' 
-          class="img-fluid"
-          sizes="100w"
-          alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme"
-        %}
-      </picture>
+      {% picture 'img/sections/header-test-wide.png' 
+        --picture id="main-header-picture"
+        --img class="img-fluid"
+        --alt "l'iris 22 d'Holusion en configuration horizontale présentant un hologramme"
+      %}
     </div>
     <div class="home-page-header-body">
       <div class="container">
@@ -41,14 +39,11 @@ image: img/sections/prism.jpg
 
   <section class="section">
     <h2>Suscitez l'intérêt</h2>
-    {% asset img/posts/2021_PierreDeSeine/Rouen.jpg
-      srcset:width="1920"
-      srcset:width="960"
-      sizes="50vw"
-      class="image-shadow cover"
+    {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
+      --img class="image-shadow cover"
       style="object-position: 70% 0"
-      alt="Hologramme At'Rouen"
-      %}
+      --alt "Hologramme At'Rouen"
+    %}
     <div class="content">
       <p>
         <b>Impressionnez vos clients avec des images holographique d'une haute qualité.</b> En pointe sur le développement des définitions <b>UltraHD</b> et des nouvelles technologies d'affichage, Holusion vous permettra d'avoir toujours une longueur d'avance.
@@ -70,76 +65,63 @@ image: img/sections/prism.jpg
   <section class="section section-left text-left">
     <div data-slide="1" class="fixed-background">
       <div class="sticky-content">
-        {% asset "img/sections/background-slides.png"
-        sizes="50vw"
-        class="fixed"
-        alt="illustration d'un iris 75" 
+        {% picture grid "img/sections/background-slides.png"
+        --img class="fixed"
+        --alt "illustration d'un iris 75" 
         %}
         <div class="slides slides-back">
-          {% asset "img/sections/slide_hologramme_batiment.png"
-          sizes="50vw"
-          data-slide="0"
+          {% picture grid "img/sections/slide_hologramme_batiment.png"
+          --picture data-slide="0"
           style = "transition: none;"
-          alt="illustration d'un batiment"
-          %} 
-          {% asset "img/sections/slide_hologramme_batiment.png" 
-          sizes="50vw"
-          data-slide="1"
+          --alt "illustration d'un batiment"
+          %}
+          {% picture "img/sections/slide_hologramme_batiment.png" 
+          --picture data-slide="1"
           style = "transition: none;"
-          alt="illustration d'un batiment"
+          --alt "illustration d'un batiment"
           %}
-          {% asset "img/sections/slide_hologramme_musee.png"
-            sizes="50vw"
-            data-slide="2"
-            alt="illustration d'une statue"
+          {% picture "img/sections/slide_hologramme_musee.png"
+            --picture data-slide="2"
+            --alt "illustration d'une statue"
           %}
-          {% asset "img/sections/slide_hologramme_produit.png"
-            sizes="50vw" 
-            data-slide="3"
-            alt="illustration d'un produit"
+          {% picture "img/sections/slide_hologramme_produit.png"
+            --picture data-slide="3"
+            --alt "illustration d'un produit"
           %}
-          {% asset "img/sections/slide_hologramme_chateau.png"
-          sizes="50vw"
-          data-slide="4"
-          alt="illustration d'un chateau" 
+          {% picture "img/sections/slide_hologramme_chateau.png"
+          --picture data-slide="4"
+          --alt "illustration d'un chateau" 
           %}
         </div> 
         <div class="slides slides-front"> 
-          {% asset "img/sections/blank.png"
-          sizes="50vw"
-          data-slide="0"
-          alt="blank"
+          {% picture "img/sections/blank.png"
+          --picture data-slide="0"
+          --alt "blank"
           %}
-          {% asset "img/sections/slide_plante.png"
-          sizes="50vw"
-          data-slide="1"
-          alt="illustration d'une plante"
+          {% picture "img/sections/slide_plante.png"
+          --picture data-slide="1"
+          --alt "illustration d'une plante"
           %}
-          {% asset "img/sections/slide_musee.png"
-            sizes="50vw"
-            data-slide="2"
-            alt="illustration d'un ado devant l'hologramme"
+          {% picture "img/sections/slide_musee.png"
+            --picture data-slide="2"
+            --alt "illustration d'un ado devant l'hologramme"
           %}
-          {% asset "img/sections/slide_gens.png"
-            sizes="50vw"
-            data-slide="3"
-            alt="illustration de personnages devant l'hologramme"
+          {% picture "img/sections/slide_gens.png"
+            --picture data-slide="3"
+            --alt "illustration de personnages devant l'hologramme"
           %}
-          {% asset "img/sections/slide_interaction.png"
-          sizes="50vw"
-          data-slide="4"
-          alt="illustration de l'interraction avec la tablette"
+          {% picture "img/sections/slide_interaction.png"
+          --picture data-slide="4"
+          --alt "illustration de l'interraction avec la tablette"
           %}
-          {% asset "img/sections/slide_gamme.png" 
-          sizes="50vw"
-          data-slide="5"
-          alt="illustration représentant une gamme d'hologrammes"
+          {% picture "img/sections/slide_gamme.png"
+          --picture data-slide="5"
+          --alt "illustration représentant une gamme d'hologrammes"
           %}
-          {% asset "img/sections/cafe_design.jpg"
-          class="image-shadow"
-          sizes="50vw"
-          data-slide="6"
-          alt="photo de croquis"
+          {% picture "img/sections/cafe_design.jpg"
+          --img class="image-shadow"
+          --picture data-slide="6"
+          --alt "photo de croquis"
           %}
         </div> 
       </div>
@@ -200,10 +182,9 @@ image: img/sections/prism.jpg
       </div>
       <div>
         <h2>Une solutions holographique, des contenus à l'infinis</h2>
-        {% asset "img/sections/slide_tablette.png"
-        data-slide="6"
-        class="img-fluid mb-5"
-        alt="tablette avec l'application Holusion Companion"
+        {% picture "img/sections/slide_tablette.png"
+        --img class="img-fluid mb-5"
+        --alt "tablette avec l'application Holusion Companion"
         %}
         <p><strong>Une application dédiée <a href="https://content.holusion.com">Holusion Companion</a> transforme votre projet</strong></p>
         <p>Donnez une profondeur inédite à votre projet en donnant le contrôle à vos utilisateurs.</p>
@@ -312,18 +293,18 @@ image: img/sections/prism.jpg
               </li>
               <li class="list-group-item">
                 <a href="tel:+33972424451" class="text-dark">
-                  <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
+                  <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
                   <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
                 </a>
               </li>
               <li class="list-group-item">
                 <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
                   <div>
-                    <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-location_on-24px.svg @inline %}</span>
+                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-location_on-24px.svg @inline %}</span>
                     <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
                   </div>
                   <div>
-                    <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-business-24px.svg @inline %}</span>
+                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-business-24px.svg @inline %}</span>
                     <span itemprop="postalCode">59200</span>
                     <span itemprop="addressLocality">Tourcoing</span>,
                     <span itemprop="addressCountry">France</span>
@@ -331,7 +312,7 @@ image: img/sections/prism.jpg
                 </a>
               </li>
               <li class="list-group-item">
-                <span class="icon d-none d-sm-inline">{% asset icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
+                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
                 <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
               </li>
             </ul>

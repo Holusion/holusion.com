@@ -9,19 +9,19 @@
         <ul class="nav d-flex flex-row flex-xl-column">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#products" role="tab" aria-controls="produits">
-              {% asset icons/ui/resize-24px.svg @inline %}
+              {% svg _assets/icons/ui/resize-24px.svg %}
               Renting/buying
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#models" role="tab" aria-controls="maquettes">
-              {% asset icons/ui/apartment-24px.svg @inline %}
+              {% svg _assets/icons/ui/apartment-24px.svg %}
               Models
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#admin" role="tab" aria-controls="administration">
-              {% asset icons/ui/transfer-24px.svg @inline %}
+              {% svg _assets/icons/ui/transfer-24px.svg %}
               Administration
             </a>
           </li>
@@ -84,7 +84,14 @@
 
                 {% for product in site.data.pricing_en.products %}
                   <td>
-                    {% include components/medias/video.html video=product.video img=product.img %}
+                    <video poster="{% picture direct_portrait "{{product.img}}" %}" muted autoplay loop>
+                      <source src="/static/video/pricing/{{product.video}}" type="video/mp4">
+                      {% picture portrait {{product.img}}
+                        --img class="img-fluid
+                        --img sizes="200px"
+                        --alt  product animation
+                      %}
+                    </video>
                   </td>
                 {% endfor %}
                 </tr>
@@ -136,7 +143,14 @@
                 <tr>
                     {% for model in site.data.pricing_en.models %}
                     <td>
-                      {% include components/medias/video.html video=model.video img=model.img %}
+                      <video poster="{% picture direct_portrait "{{model.img}}" %}" muted autoplay loop>
+                        <source src="/static/video/pricing/{{model.video}}" type="video/mp4">
+                        {% picture portrait {{model.img}}
+                          --img class="img-fluid
+                          --img sizes="200px"
+                          --alt  product animation
+                        %}
+                    </video>
                     </td>
                     {% endfor %}
                 </tr>

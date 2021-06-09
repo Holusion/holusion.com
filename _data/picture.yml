@@ -1,0 +1,71 @@
+presets:
+  default:
+    markup: auto
+    formats: [original]
+    widths: [400, 800, 1200]
+    fallback_width: 800
+    fallback_format: original
+    noscript: false
+    link_source: false
+    quality: 85
+    format_quality:
+      webp: 70
+      avif: 30
+      jp2: 30
+    strip_metadata: true
+    image_options:
+      avif:
+        compression: av1
+        speed: 8
+    data_sizes: true
+    keep: attention
+    dimension_attributes: false
+  grid:
+    widths: [480, 960, 1280]
+    fallback_width: 960
+    sizes:
+      lg: 50vw
+    size: 100vw
+  header:
+    formats: [webp, original]
+    widths: [480, 960, 1280, 1920, 3072, 3840]
+    fallback_width: 960
+    size: 100vw
+  card:
+    formats: [webp, original]
+    widths: [400, 800]
+    fallback_width: 400
+    sizes:
+      xl: 25vw
+      lg: 33vw
+      md: 50vw
+    size: 100vw
+  container:
+    formats: [webp, original]
+    widths: [400, 800, 1200]
+    fallback_width: 400
+    sizes:
+      xl: 1140px
+      lg: 960px
+      md: 720px
+    size: 100vw
+  portrait:
+    formats: [original]
+    widths: [256, 512]
+    fallback_width: 256
+    size: 256px
+  direct_portrait:
+    markup: direct_url
+    fallback_width: 256
+  meta:
+    markup: direct_url
+    widths: [200, 400]
+    formats: [original]
+  direct:
+    markup: direct_url
+
+media_queries: 
+  sm: 'min-width: 576px'
+  md: 'min-width: 768px'
+  lg: 'min-width: 992px'
+  xl: 'min-width: 1200px'
