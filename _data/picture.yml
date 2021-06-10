@@ -1,41 +1,73 @@
+# presets are merged at runtime with the gem's default-preset, which is :
+# { 
+#   'markup' => 'auto',
+#   'formats' => ['original'],
+#   'widths' => [400, 600, 800, 1000],
+#   'fallback_width' => 800,
+#   'fallback_format' => 'original',
+#   'noscript' => false,
+#   'link_source' => false,
+#   'quality' => 75,
+#   'format_quality' => { 
+#     'webp' => 50,
+#     'avif' => 30,
+#     'jp2' => 30 
+#   },
+#   'data_sizes' => true,
+#   'keep' => 'attention',
+#   'dimension_attributes' => false,
+#   'strip_metadata' => true,
+#   'image_options' => {
+#     'avif' => { 'compression' => 'av1', 'speed' => 8 }
+#   } 
+# }
+# they DO NOT inherit from this file's `preset.default`!
+# See https://github.com/rbuchberger/jekyll_picture_tag/pull/271
 presets:
   default:
-    markup: auto
     formats: [original]
     widths: [400, 800, 1200]
     fallback_width: 800
     fallback_format: original
-    noscript: false
-    link_source: false
     quality: 85
     format_quality:
-      webp: 70
-      avif: 30
-      jp2: 30
-    strip_metadata: true
+      webp:
+        3000: 60
+        1920: 70
+        1080: 80
+      jpeg: 85
     image_options:
-      avif:
-        compression: av1
-        speed: 8
-    data_sizes: true
-    keep: attention
-    dimension_attributes: false
+      png:
+        compression: 9
   grid:
-    widths: [480, 960, 1280]
+    widths: [960, 1280]
     fallback_width: 960
     formats: [webp, original]
+    format_quality:
+      webp: 75
+      jpeg: 85
     sizes:
       xl: 50vw
     size: 100vw
   header:
     formats: [webp, original]
     widths: [480, 960, 1280, 1920, 3072, 3840]
+    format_quality:
+      webp:
+        3072: 60
+        1920: 70
+        960: 80
+      jpeg: 85
     fallback_width: 960
+    dimension_attributes: true
     size: 100vw
   card:
     formats: [webp, original]
     widths: [400, 800]
     fallback_width: 400
+    format_quality:
+      webp: 75
+      jpeg: 85
     sizes:
       xl: 25vw
       lg: 33vw
@@ -45,11 +77,14 @@ presets:
     formats: [webp, original]
     widths: [400, 800, 1200]
     fallback_width: 400
+    dimension_attributes: true
     sizes:
       xl: 1140px
       lg: 960px
       md: 720px
     size: 100vw
+    format_quality:
+      webp: 75
   portrait:
     formats: [original]
     widths: [256, 512]
