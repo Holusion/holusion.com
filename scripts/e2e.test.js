@@ -572,7 +572,7 @@ describe(`${target}.`,function(){
           this.retries(0);
         //Check noise for each target device
           await page.emulate(device);
-          const header = await page.waitForSelector("PICTURE#main-header-picture IMG", {timeout: 5000});
+          const header = await page.waitForSelector("IMG[data-noisetest]", {timeout: 5000});
           let currentSrc = await header.getProperty("currentSrc").then(v => v.jsonValue());
           if(!currentSrc){
             currentSrc = await header.getProperty("src").then(v => v.jsonValue());

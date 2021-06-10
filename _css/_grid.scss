@@ -1,0 +1,228 @@
+.main-grid{
+  $margin: 7rem;
+  $padding: 2rem;
+  $col: 1200px;
+  .section{
+    display: grid;
+    grid-template-columns: 1fr [col-start] minmax(auto, $col/2) [middle] minmax(auto, $col/2) [col-end] 1fr;
+    grid-template-rows: $margin auto;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+      ". white  title   end"
+      "image image content  end";
+
+    @include media-breakpoint-down(lg){
+      grid-template-columns: 0px [col-start] auto [col-end] 0px;
+      grid-template-areas: 
+        "white  title  ."
+        ".     content ."
+        ".      image  .";
+    }
+
+    > h2 {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: auto;
+      margin-bottom: auto;
+      grid-area: title / content / span 1 / content;
+    }
+
+    &.section-white::before{
+      content: "";
+      display: block;
+      background-color: $white;
+      grid-area: white / white / span 1 / end;
+    }
+
+    .content{
+      grid-area: content;
+      padding: 0 $padding;
+      &.slide{
+        @include media-breakpoint-down(lg){
+          padding: 0;
+          grid-area: image;
+          z-index: 2;
+        }
+        
+        > div{
+          margin-top:75vh;
+          &:first-child{
+            margin-top: 25vh;
+          }
+          &:last-child{
+            margin-bottom: 25vh;
+            @include media-breakpoint-down(lg){
+              margin-bottom: 75vh;
+            }
+          }
+          @include media-breakpoint-down(lg){
+            padding: $padding;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: saturate(180%) blur(18px);
+            box-shadow: rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          }
+        }
+      }
+    }
+
+
+    & > img, &>picture{
+      grid-area: image;
+      width: 100%;
+      z-index: 1;
+    }
+    & > img, &>picture>img {
+      display: block;
+      width: 100%;
+      z-index: 1;
+      margin-bottom: -($margin * 2 / 3);
+      &.cover{
+        height: calc( 100% + 7rem * 2 / 3);
+        object-fit:cover;
+        object-position: right;
+      }
+      @include media-breakpoint-down(lg){
+        &.cover{
+          height: auto;
+        }
+        margin-bottom: 0;
+      }
+
+    }
+    & .fixed-background {
+      position: relative; 
+      grid-area: image;
+      width: 100%;
+      display: block;
+      z-index: 1;
+      margin-bottom: -($margin * 2);
+      @include media-breakpoint-down(lg){
+        margin-bottom: -($margin / 2);
+      }
+      & > .sticky-content {
+        position: sticky;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        @include media-breakpoint-down(lg){
+          margin-top: -30vh;
+        }
+        img{
+          opacity:0;
+          transition: opacity 0.8s;
+          width: 100%;
+          height:100%;
+          object-fit: contain;
+        }
+      }
+      .slides{
+        position: absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        img{
+          position: absolute;
+          top:0;
+          left:0;
+          bottom:0;
+          right:0;
+          opacity: 0;
+          
+          &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
+            opacity: 1;
+          }
+        }
+        
+        &:last-child > *:last-child img, &:last-child > img:last-child{
+          height: calc(50% + 7rem);
+          margin: auto;
+          object-fit: cover;
+          object-position: left center;
+          border-radius: 50px 0px 0px 50px;
+          @include media-breakpoint-down(lg){
+            border-radius: 0px;
+          }
+        }
+      }
+    }
+
+    &.section-image {
+      > img {
+        grid-area: 2 / col-start / span 1 / col-end;
+      }
+      > svg {
+        grid-area: 2 / 1 / span 1 / end;
+        width:100%;
+        height: 100%;
+      }
+    }
+
+    > .section-background {
+      position: relative;
+      grid-area: 2 / col-start / span 1 / col-end;
+      height: 100%;
+      >.section-background--left{
+        left: 0;
+        right: 0;
+        position: absolute;
+        > div{
+          position: absolute;
+          margin-left: calc( (-100vw + 100%) / 2 );
+          display: flex;
+          justify-content: flex-end;
+        }
+      }    
+      >.section-background--right{
+        left: 0;
+        right: 0;
+        position: absolute;
+        > div{
+          position: absolute;
+          margin-right: calc( (-100vw + 100%) / 2 );
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+  .section-center{
+    > h2{
+      grid-area: title / content / span 1 / content;
+      
+    }
+    > div{
+      grid-area: 2 / col-start / span 1 / col-end;
+    }
+    > img{
+      grid-area: 2 / col-start / span 1 / col-end;
+    }
+    &:not(.section-white) > h2{
+      grid-area: 1 / col-start / span 1 / col-end;
+    }
+  }
+  .section-left{
+    text-align: right;
+    grid-template-areas: 
+      "white white  title   end"
+      "start content image  image"; 
+    @include media-breakpoint-down(lg){
+      text-align: left;
+      grid-template-columns: 0px [col-start] auto [col-end] 0px;
+      grid-template-areas: 
+        "white  title  ."
+        ".     content ."
+        ".      image  .";
+    }
+    > h2 {
+      padding-right: 2rem;
+    }
+    &.section-white{
+      text-align:left;
+    }
+    &.section-white::before{
+      grid-area: white / white / span 1 / title;
+    }
+  }  
+}

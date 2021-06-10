@@ -23,6 +23,7 @@ presets:
   grid:
     widths: [480, 960, 1280]
     fallback_width: 960
+    formats: [webp, original]
     sizes:
       lg: 50vw
     size: 100vw

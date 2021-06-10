@@ -2,210 +2,294 @@
 layout: front_page
 title: Holusion
 abstract: holographic solutions design and production
-image: img/sections/prism.jpg
-
-
-
+scripts:
+  - /static/js/observer.js
 ---
 
-<section class="section section-main-header header-dark header-ultrawide home-header">
-  <div class="main-header-image-wrapper" style="background:#717576">
-    {% picture img/sections/iris22_header_brassempouy_16by9.jpg  
-      md: img/sections/iris22_header_brassempouy_wide_centered.jpg
-      lg: img/sections/iris22_header_brassempouy.jpg
-      --parent id="main-header-picture"
-      --img class="img-fluid"
-      --img sizes="100w"
-      --alt  l'iris 22 d'Holusion en configuration horizontale présentant un hologramme de la dame de brassempouy
-    %}
-
-
-  </div>
-  <div class="main-header-overlay section-title">
-    <h1 class="main-header-overlay-text">
+<main class="home-page-main main-grid pb-5">
+  <section class="home-page-header">
+    <div class="home-page-header-image" >
+      <picture id="main-header-picture">
+        <source srcset="/static/img/front/header/header_4k.webp 3840w, /static/img/front/header/header_retina.webp 3072w, /static/img/front/header/header_hd.webp 1920w, /static/img/front/header/header_sd.webp 1080w" type="image/webp"/>
+        <img class="img-fluid" src="/static/img/front/header/header_hd.svg" sizes="100w" alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme"/>
+      </picture>
+    </div>
+    <div class="home-page-header-body">
+      <div class="container">
+        <div class="home-page-header-body--title d-flex flex-column ml-auto">
+          <h1>
             Digital user experience creator
-    </h1>
-    {%- include lists/social_list.html -%}
-  </div>
-  <div class="main-header-body body-right">
-    <div class="content rounded py-4">
-      <p>
-        <b>Specialist</b> in custom digital signage, holusion provides a wide range of products.<br/>
-        From small smartphone goodies to 2m wide transportable displays. <br/>
-        We sell and rent our products all over europe.
-      </p>
-      <p>
-        <a  type="button" href="/fr/products/" class="btn btn-primary">Discover our products</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-<main class="home-page-main">
-  <section class="section section-main-header header-fill">
-    {%include components/header_image.html image="img/sections/iris32_openr_cut.jpg" alt="Iris32 with building 3d model" %}
-    <div class="main-header-body container">
-      <div class="content shadow rounded bg-white p-4">
-        <h2>Impress your audience</h2>
-        <p>
-          Make a lasting impression with images of exceptional quality.
-          Early adopters of UltraHD screens or other new display technologies, we can share our knowledge and experience to provide you with the best reliable experience.
-        </p>
-        <p>
-          Our packaged solutions will provide unsurpassed immersion and customer engagement for your business cases.
-        </p>
-        {% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}
-        <span class="text-right"><a href="/en/usages/">Discover our key business cases</a></span>
-      </div>
-    </div>
-  </section>
-
-    {% include pricing_en.html %}
-
-
-    <section id="section-pricing-grid" class="section section-main-header header-fill py-4">
-      {%include components/header_image.html image="img/products/iris75_exterieur_BIM_1080p.jpg" title="holusion Iris 75\"" alt="iris 75 outdoor hologram high luminosity" %}
-  <div class="main-header-body container">
-    <div class="content shadow rounded bg-white p-4 row">
-      <div class="col-lg-6 col-12 order-lg-2 order-1">
-        {% picture "img/posts/2020_Renoir/Renoir_portrait.jpg"
-        --img class="img-fluid fit-contain"
-        sizes="(max-width: 992px) 100vw, 50vw"
-        alt="Hologram of Auguste Renoir"
-        %}
-      </div>
-      <div class="col-lg-6 col-12 order-lg-1 order-2 p-4">
-        <h2 id="main-title-1">Un accompagnement personnalisé</h2>
-        <p>Our services include</p>
-        <ul>
-          <li>Helping you to get the most suitable holographic solution</li>
-          <li>Creating impactful and memorable content </li>
-          <li>Providing unique expertise on hologram mediation</li>
-          <li>Designing the spaces and the scenography of your holograms</li>
-          <li>Digitizing your works and resources</li>
-          <li>Carrying out rigorous modelling work</li>
-          <li>Developing interactive and intuitive applications</li>
-          <li>Deploying and maintaining your solutions over the long term</li>
-        </ul>
-        <p> Holusion accompanies you throughout <b>your project</b> and your use of the hologram.</p>
-        <span class="text-right"><a href="/en/posts/">More about our projects</a></span>
-      </div>
-      </div>
-      </div>
-    </section>
-
-  <section class="section section-main-header header-fill">
-    {%include components/header_image.html image="img/sections/plaine_image.jpg" alt="View over Roubaix from Plaine Images' 2nd floor balcony on a sunny day in Tourcoing" %}
-    <div class="main-header-body container shadow rounded bg-white">
-      <div class="content">
-        <h2> Made in France</h2>
-        <p>
-          Holusion is working from North of France, in Tourcoing.
-          Our network of partnerships allow us to provide services to many other areas.
-        </p>
-        <p>We're a "French Tech" startup since the label's creation</p>
-        <div class="row">
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_BYC.jpg" hover="/static/img/logo/logo_projet_BYC.jpg" alt="logo Bouygues Construction" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_BYIM.jpg" hover="/static/img/logo/logo_projet_BYIM.jpg" alt="logo Bouygues Immobilier" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_VINCI_IMMO.jpg" hover="/static/img/logo/logo_projet_VINCI_IMMO.jpg" alt="logo Vinci Immobilier" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_SQY.jpg" hover="/static/img/logo/logo_projet_SQY.jpg" alt="logo Agglomération de Saint Quentin en Yvelines" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_RBX.jpg" hover="/static/img/logo/logo_projet_RBX.jpg" alt="logo Ville de Roubaix" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_SNCF.jpg" hover="/static/img/logo/logo_projet_SNCF.jpg" alt="logo SNCF" %}
-
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_NAUSICAA.jpg" hover="/static/img/logo/nausicaa_meduse.jpg" alt="logo Nausicaa" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_lille1.jpg" hover="/static/img/logo/logo_statuette_lille1.jpg" alt="logo université de Lille" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_museomix.jpg" hover="/static/img/logo/logo_projet_museomix.jpg" alt="logo museomix" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo-catho.jpg" hover="/static/img/logo/logo_projet_catho.jpg" alt="logo universite catholique lille" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_all.jpg" hover="/static/img/logo/logo_projet_louvre_lens.jpg" alt="logo autour du louvre lens" %}
-            {% include components/medias/hover_image.html src="/static/img/logo/logo_cnrs.jpg" hover="/static/img/logo/logo_projet_cnrs.jpg" alt="logo cnrs" %}
-
-          </div>
-        <div class="main-tile-link">
-          <a href="/en/about/">Checkout our company's history</a>
+          </h1>
         </div>
       </div>
     </div>
-  </section>
-  <section id="section-produits" class="">
-    <div class="container-fluid ">
-      <h1 align="center" id="main-title-1" style="padding-top: 40px;text-transform: uppercase;"> <a href="/en/products/">Nos produits phares</a></h1>
-      <div class="row">
-        {% for product in site.products_items[page.lang] limit:4 %}
-        {% include components/post_thumbnail.html content=product classes="col-md-3 col-sm-6" %}
-        {% endfor %}
-      </div>
-      <div class="main-tile-link">
-        <a href="/en/products/">Plus de produits à découvrir > </a>
-      </div>
+    <div class="home-page-header-body--content container">
+      <p class="mx-auto"> 
+        <b>Specialist</b> in custom digital signage, holusion provides a wide range of products.
+        From small smartphone goodies to 2m wide transportable displays.
+        We sell and rent our products all over europe. 
+      </p>
     </div>
-    </section>
+    </div> 
+    <div class="home-page-header-cta d-flex justify-content-center">
+      <a class="d-block" href="/fr/products/"> <button  class="btn btn-info">Discover our products</button></a>
+    </div>
+  </section> 
 
-
-    <section class="section bg-light py-4">
-      <div class="container jumbotron bg-white shadow my-0 py-4">
-        <h2>Customized support</h2>
-        <p>
-          We provide flexible support services for your projects. Thanks to our open source system, you can make your own content without artificial limits or let us manage your project entirely from start to delivery
-        </p>
-        <span class="text-right"><a href="/dev/en/">Checkout our dedicated tutorials</a></span>
-        <div class="row text-primary">
-          <div class="col-12 col-md-4">Project Analysis</div>
-          <div class="col-12 col-md-4">Modelling and rendering</div>
-          <div class="col-12 col-md-4">Set-up</div>
+  <section class="section">
+    <h2>Impress your audience</h2>
+    {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
+      --img class="image-shadow cover"
+      data-noisetest="1"
+      style="object-position: 70% 0"
+      --alt Hologram At Rouen (France)
+    %}
+    <div class="content">
+            
+      <p>
+        Make a lasting impression with images of exceptional quality. Early adopters of UltraHD screens or other new display technologies, we can share our knowledge and experience to provide you with the best reliable experience.
+      </p>
+      <p>
+        Our packaged solutions will provide unsurpassed immersion and customer engagement for your business cases. 
+      </p>
+      <p>
+        To display models, as a scientific or cultural mediation tool, as an interactive showcase. Our products are <b>designed and made in France</b> and can be used in a wide variety of cases.
+        <div class="d-flex justify-content-center">
+          <a href="/fr/usages/"><button class="btn btn-info image-shadow my-3">Discover our key use cases</button></a>
         </div>
-        <div>
-          {% picture container "img/sections/schema.png"
-            --img class="img-fluid"
-            --alt  administration of Holusion products
+      </div>
+  </section>
+
+  <section class="section section-white">
+    <h2 class="">An augmented display</h2>
+  </section>
+
+  <section class="section section-left text-left">
+    <div data-slide="1" class="fixed-background">
+      <div class="sticky-content">
+        <div class="slides">
+          {% picture grid "img/sections/background-slides.png"
+          --img data-slides="1-4"
+          --img class="fixed"
+          --alt sketch of an iris 75
           %}
         </div>
+        <div class="slides">
+          {% picture grid "img/sections/slide_hologramme_batiment.png"
+          --img data-slides="0,1"
+          style = "transition: none;"
+          --alt sketch of a building used as hologram
+          %}
+          {% picture grid "img/sections/slide_hologramme_musee.png"
+            --img data-slides="2"
+            --alt sketch of a statue used as an hologram
+          %}
+          {% picture grid "img/sections/slide_hologramme_produit.png"
+            --img data-slides="3"
+            --alt sketch of a marketing ad used as an hologram
+          %}
+          {% picture grid "img/sections/slide_hologramme_chateau.png"
+          --img data-slides="4"
+          --alt Sketch of an historical stronghold used as an hologram
+          %}
+        </div> 
+        <div class="slides">
+          {% picture grid "img/sections/slide_plante.png"
+          --img data-slides="1-4"
+          --alt sketch of a plant
+          %}
+          {% picture grid "img/sections/slide_musee.png"
+            --img data-slides="2-4"
+            --alt sketch of a young person looking at an holographic display
+          %}
+          {% picture grid "img/sections/slide_gens.png"
+            --img data-slides="3-4"
+            --alt sketch of an audience looking at an holographic display
+          %}
+          {% picture grid "img/sections/slide_interaction.png"
+          --img data-slides="4"
+          --alt sketch of a tablet interacting with an hologram via the content.holusion.com service
+          %}
+          {% picture grid "img/sections/slide_gamme.png"
+          --img data-slides="5"
+          --alt sketch of some of holusion's products
+          %}
+          {% picture grid "img/sections/cafe_design.jpg"
+          --img class="image-shadow"
+          --img data-slides="6"
+          --alt picture of a design session at holusion
+          %}
+        </div> 
       </div>
-    </section>
+    </div>
+    <div class="slide content">
+      <div>
+        <h2>Create a new dimension</h2>
+        <p>
+          The trend is to all things digital.
+        </p>
+        <p>
+          Pictures, 3D models, reconstructions, simulations... making digital content is at the heart of what we do.
+        </p>
+        <p>
+          We are using modern modeling and digitization tools to study, communicate and report.
+        </p>
+        <p>
+          Those data are precious. They deserve to be widely shared and properly highlighted. 
+        </p>
+        <p>
+          <strong>Holograms are an opportunity to create innovative and attractive physical supports for these contents.</strong>
+        </p>
+      </div>
+      <div>
+          <h2>Showcase your buildings and BIM files</h2>
+          <p>
+            <strong>Ultra high quality and bright models</strong>
+          </p>
+          <p>
+            With the general availability of BIM models, it has never been so easy to present your models as holograms.
+          </p>
+          <p>
+            The hologram is an attractive pick to present your models or projects in an imaginative way
+          </p>
+          <p>
+            In your showrooms or at a tradeshow, we have innovative solutions for each of those cases
+          </p>
+          <p>
+            We use a performant graphic engine to create photorealistic pictures reproducing the choice of materials and architectural ambition.
+          </p>
+
+      </div>
+      <div>
+        <h2>Enhance your heritage</h2>
+        <p>
+          <strong>A fun and innovative way to do science and culture</strong>
+        </p>
+        <p>
+          Using an hologram attracts new audiences and modernizes museums and cultural places.
+        </p>
+        <p>
+          Holusion offers solutions that enhance your collections while creating new experiences for visitors.
+        </p>
+        <p>
+          Reconstitutions, presentation of spare parts, mediation : use the hologram's strengths to enrich your visitor's journey 
+          and highlight the research and conservation work of your teams.
+        </p>
+      </div>
+      <div>
+        <h2>Seduce your clients</h2> 
+        <p>
+          <strong>Showcase your products and solutions.</strong>
+        </p>
+        <p>
+          Use an hologram to broadcast a message in 3D, show yourself in tele-presence or preview a new product.
+        </p>
+        <p>
+          In shops or at tradeshows, holograms are a good fit to strengthen your presentation and make an impression over your audience.
+        </p>
+      </div>
+      <div>
+        <h2>One solution for an infinity of contents</h2>
+        {% picture grid "img/sections/slide_tablette.png"
+        --img class="img-fluid mb-5"
+        --alt tablet with the Holusion Companion application
+        %}
+        <p>
+          <strong><a href="https://content.holusion.com">Holusion Companion</a> is a dedicated application to transform your project</strong>
+        </p>
+        <p>
+          Bring unprecedented depth to your project by giving control to your users.
+        </p>
+        <ul>
+          <li>Take control over the hologram from a mobile application</li>
+          <li>Create new interactiove scenarios without any code from your browser</li>
+          <li>Manage up to hours of contents on as many products as you like</li>
+          <li>With 4G or 5G connectivity, enjoy always up-to-date contents on your devices</li>
+        </ul>
+        <div class="d-flex justify-content-center">
+          <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Holusion Companion Application</button></a>
+        </div>
+      </div>
+      <div>
+        <h2>A range suited to all your needs</h2>
+        <p><strong>Made in France and designed by Holusion</strong></p>
+        <p>
+          From mobile and clever showcases to scenic devices up to a few meters. We offer holographic solutions for sale or rental.
+        </p>
+        <p>
+          Our unique know-how in the manufacture of holograms is at your service to best adjust to your constraints.
+        </p>
+        <p>
+          Designed, made and put together in France, our products are of guaranteed quality for european standards.
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="/fr/products/"><button class="btn btn-info image-shadow my-3">Discover our products range</button></a>
+        </div>
+      </div>
+      <div>
+        <h2>Chaque projet est unique</h2>
+        <p><strong></strong></p>
+        <p></p>
+        <div class="d-flex justify-content-center">
+          <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">Check out our achievements</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white section-left mb-6 text-dark" >
+    <h2>Discover our pricings</h2>
+  </section>
+       
+  {% include pricing_en.html %}
+
+  <section id="section-contact" class="section section-center " itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
+    <meta itemprop="name" content="holusion" />
+    <div class="row no-gutters">
+      <div class="col-md-6 col-sm-12">
+        <h3 style="padding-bottom: 10px">Come meet us :</h3>
+        {% include components/maps_api.html %}
+      </div>
+      <div class="col-md-6 col-sm-12 ">
+        <h3>Contact us :</h3>
+        <div class="p-1">
+          <ul class="list-group">
+              <li class="list-group-item">
+                <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
+                <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi resolution" sizes="216px"
+                    srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
+              </li>
+              <li class="list-group-item">
+                <a href="tel:+33972424451" class="text-dark">
+                  <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
+                  <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
+                  <div>
+                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-location_on-24px.svg @inline %}</span>
+                    <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
+                  </div>
+                  <div>
+                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-business-24px.svg @inline %}</span>
+                    <span itemprop="postalCode">59200</span>
+                    <span itemprop="addressLocality">Tourcoing</span>,
+                    <span itemprop="addressCountry">France</span>
+                  </div>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
+                <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
 </main>
 
 
-<section id="section-contact" class="row no-gutters" itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
-  <meta itemprop="name" content="holusion" />
-  <div class="col-md-6 col-sm-12">
-    <h3 style="padding-bottom: 10px">Come meet us :</h3>
-    {% include components/maps_api.html %}
-  </div>
-  <div class="col-md-6 col-sm-12 ">
-    <h3>Contact us :</h3>
-    <div class="p-1">
-      <ul class="list-group">
-          <li class="list-group-item">
-            <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
-            <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
-                srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w">
-          </li>
-          <li class="list-group-item">
-            <a href="tel:+33972424451" class="text-dark">
-              <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_phone-24px.svg %}</span>
-              <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
-              <div>
-                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-location_on-24px.svg %}</span>
-                <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
-              </div>
-              <div>
-                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-business-24px.svg  %}</span>
-                <span itemprop="postalCode">59200</span>
-                <span itemprop="addressLocality">Tourcoing</span>,
-                <span itemprop="addressCountry">France</span>
-              </div>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_mail-24px.svg  %}</span>
-            <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
-          </li>
-        </ul>
-    </div>
-  </div>
-</section>

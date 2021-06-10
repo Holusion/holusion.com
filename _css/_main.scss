@@ -19,14 +19,16 @@
 @import "product";
 @import "pricing";
 
+@import "grid";
+
 body{
-  padding-top: 51px;
+  padding-top: 50px;
   min-height:100%;
   width:100%;
+  background-color: $light;
 }
 #content{
   min-height:60vh;
-
 }
 
 
@@ -126,6 +128,7 @@ text-align: center;
   max-height: 60vmin;
 }
 
+
 .flip-box {
   perspective: 1500px; /* Remove this if you don't want the 3D effect */
   display: flex;
@@ -152,7 +155,4 @@ text-align: center;
   box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
   transform: scale(1.15) rotateY(-15deg);
   margin-bottom: 40px;
-}
-.body-right h2 {
-  font-weight: bold;
 }
