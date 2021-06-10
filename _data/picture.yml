@@ -5,25 +5,29 @@ presets:
     widths: [400, 800, 1200]
     fallback_width: 800
     fallback_format: original
-    noscript: false
-    link_source: false
     quality: 85
     format_quality:
-      webp: 70
-      avif: 30
-      jp2: 30
-    strip_metadata: true
+      webp:
+        3000: 50
+        1920: 60
+        1080: 80
+      jpeg: 75
     image_options:
-      avif:
-        compression: av1
-        speed: 8
-    data_sizes: true
-    keep: attention
-    dimension_attributes: false
+      png:
+        compression: 9
   grid:
-    widths: [480, 960, 1280]
+    widths: [960, 1080, 1536]
     fallback_width: 960
     formats: [webp, original]
+    format_quality:
+      webp:
+        1536: 60
+        960: 80
+      jpeg: 75
+    strip_metadata: true
+    image_options:
+      png:
+        compression: 9
     sizes:
       lg: 50vw
     size: 100vw
@@ -31,6 +35,7 @@ presets:
     formats: [webp, original]
     widths: [480, 960, 1280, 1920, 3072, 3840]
     fallback_width: 960
+    dimension_attributes: true
     size: 100vw
   card:
     formats: [webp, original]
@@ -45,6 +50,7 @@ presets:
     formats: [webp, original]
     widths: [400, 800, 1200]
     fallback_width: 400
+    dimension_attributes: true
     sizes:
       xl: 1140px
       lg: 960px
