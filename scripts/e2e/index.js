@@ -10,60 +10,22 @@ const faker = require("faker");
 const puppeteer = require('puppeteer');
 const devices = puppeteer.devices;
 //Tools to serve the site locally
-const serveStatic = require("serve-static");
-const finalhandler = require('finalhandler');
+
 //XML parser for sitemap.xml test & analysis
 const parseString = require('xml-parser');
-const expect = require("chai").expect;
 
 const MIN_PRODUCTS_NUMBER = 4;
 const MAX_PRODUCTS_NUMBER = 10;
 
-const local_site_files = path.resolve(__dirname,'../_site');
-const local_assets_files = path.resolve(__dirname, "../_assets");
-const target = process.env["TARGET"] || "local";
-const is_extended = process.env["RUN_EXTENDED_TESTS"];
 const options = {
   headless:process.env["HEADLESS"] == "false"? false : true,
   executablePath: process.env["PUPPETEER_EXEC_PATH"], // set by github action
   args:["--no-sandbox"]
 };
 
-/**
- * Utility function to speed up tests
- * Block selected resources by category
- * Categories are : images, medias, analytics, captcha
- * can also have an additional filter that return true on requests to be intercepted
- */
-async function block(page, {types=["images", "medias", "analytics", "captcha"], filter}={}){
-  await page.setRequestInterception(true);
 
-  page.on('request', interceptedRequest => {
-    let url = interceptedRequest.url();
-    //console.log(interceptedRequest.url);
-    if(
-      (types.indexOf("images") != -1 &&(
-         url.endsWith('.png')
-      || url.endsWith('.jpg')
-    )) ||(types.indexOf("medias") != -1 &&(
-         url.endsWith('.mp4')
-      || url.endsWith('.ogv')
-      || url.endsWith('.webm')
-      || url.indexOf("youtube.com") != -1
-      || url.indexOf("www.ultimedia.com") != -1
-    )) || (types.indexOf("analytics") != -1 &&(
-      url.indexOf("google-analytics.com") != -1
-    ))|| (types.indexOf("captcha") != -1 &&(
-      url.indexOf("gstatic.com") != -1
-    )) || (typeof filter === "function" && filter(url))
-    ){
-      interceptedRequest.respond("");
-      //console.log("Aborted : ",interceptedRequest.url)
-    }else{
-      interceptedRequest.continue();
-    }
-  });
-}
+global.expect = require("chai").expect;
+
 
 //Take an array of {src, "prop"} objects and group them by "prop" value
 // Example usage : Make an array of image widths.
@@ -100,7 +62,6 @@ async function forceSameRatio(cells){
   images.forEach((img)=>{
     expect(img.ok, `${img.src} is not OK (probably: does not exists)`).to.be.true;
   });
-  //console.log(images);
 
   const ratios = prettySet(images.map(img=> {
     let ratio = img.width/img.height;
@@ -110,69 +71,6 @@ async function forceSameRatio(cells){
   // allow a length of 1.
   expect(ratios, `Have non-unique ratio : \n${ratios.join("\n")}`).to.have.property("length", 1);
   return images; 
-}
-
-async function getThumbnailLinks(cells){
-  return await Promise.all(cells.map(async (cell)=>{
-    let a = await cell.$("A");
-    let handle = await a.getProperty("href");
-    let link = await handle.jsonValue();
-    await handle.dispose();
-    return link;
-  }));
-}
-//Default : run only on small and large "dekstop"
-const target_devices = [
-  {
-    'name': 'small Desktop Chrome 84',
-    'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
-    'viewport': {
-      'width': 800,
-      'height': 600,
-      'deviceScaleFactor': 1,
-      'isMobile': false,
-      'hasTouch': false,
-      'isLandscape': true
-    }
-  }
-]
-if (is_extended){
-  target_devices.push({
-    'name': 'large Desktop Chrome 84',
-    'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
-    'viewport': {
-      'width': 1920,
-      'height': 1080,
-      'deviceScaleFactor': 1,
-      'isMobile': false,
-      'hasTouch': false,
-      'isLandscape': true
-    }
-  });
-  target_devices.push({
-    'name': '4k Desktop Chrome 84',
-    'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
-    'viewport': {
-      'width': 3840,
-      'height': 2160,
-      'deviceScaleFactor': 2,
-      'isMobile': false,
-      'hasTouch': false,
-      'isLandscape': true
-    }
-  });
-  const mobile_devices = ([ //Device list : https://github.com/GoogleChrome/puppeteer/blob/master/DeviceDescriptors.js
-    'iPad',
-    'iPhone 4',
-    'iPhone X landscape'
-  ]).map( d =>{
-    let dev =  devices[d];
-    if (!dev) throw new Error("no device named : "+d);
-    return dev;
-  });
-  for (let d of mobile_devices){
-    target_devices.push(d);
-  }
 }
 
 
@@ -200,7 +98,6 @@ describe("pre-tests", function(){
 // to run tests on multiple devices
 describe(`${target}.`,function(){
   // Retry all tests in this suite up to 3 times
-  this.retries(3);
 
   let browser;
   let server = null;
@@ -217,32 +114,6 @@ describe(`${target}.`,function(){
   // Otherwise tests would crash when run concurrently on the same host
   let href = (target == "local")? "http://localhost" : target;
 
-  before(async function(){
-    expect(target).to.be.ok;
-    if (target == "local"){
-      let serve = serveStatic(local_site_files, {
-        'index': ['index.html', 'index.htm'],
-        'extensions': ["html"]
-      });
-      server = http.createServer(function onRequest (req, res) {
-        serve(req, res, finalhandler(req, res))
-      });
-      await util.promisify(server.listen.bind(server))(0);
-      href += ":"+ server.address().port;
-      console.log("listening on : ",href);
-    }
-    browser = await puppeteer.launch(options);
-  });
-  after(async () => {
-    let jobs = []
-    if (browser){
-      jobs.push(browser.close());
-    }
-    if (server){
-      jobs.push(util.promisify(server.close.bind(server))());
-    }
-    return await Promise.all(jobs);
-  });
 
   it("initialize browser",()=>{
     expect(browser).to.be.not.null;
@@ -436,7 +307,6 @@ describe(`${target}.`,function(){
                   return Promise.resolve();
                 }
                 let link = links[i];
-                console.log(link);
                 page = await newPage();
                 await block(page);
                 return await page.goto(`${link}`);
@@ -516,7 +386,6 @@ describe(`${target}.`,function(){
                   this.skip();
                   return Promise.resolve();
                 }
-                console.log(link);
                 page = await newPage();
                 await block(page,{types: ["medias", "analytics", "captcha"]});
                 return await page.goto(`${link}`);
@@ -629,6 +498,7 @@ describe(`${target}.`,function(){
           let page;
           let ln;
           let exist_checks = [];
+          let requests = [];
           before(async ()=>{
             //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
             ln = path.join(href,loc);
@@ -638,16 +508,11 @@ describe(`${target}.`,function(){
               let url = interceptedRequest.url();
               if(url.startsWith(href) && /\.(?:png|jpe?g|webp)$/i.test(url)){
                 const localPath = url.slice(href.length+1).split("/").map(s=>decodeURIComponent(s)).join("/");
-                exist_checks.push((async ()=>{
-                  try{
-                    await fs.promises.access(path.resolve(local_site_files, localPath));
-                  }catch(e){
-                    return localPath;
-                  }
-                })());
+                exist_checks.push(path.resolve(local_site_files, localPath));
               }
+              interceptedRequest.continue();
             });
-            await page.goto(`${ln}`, {timeout:9000, waitUntil: "domcontentloaded"});
+            await page.goto(`${ln}`, {timeout:15000, waitUntil: "domcontentloaded"});
           });
           after(async()=>{
             return await page.close();
@@ -679,7 +544,14 @@ describe(`${target}.`,function(){
           });
 
           it("'check missing images", async ()=>{
-            const missing_files = (await Promise.all(exist_checks)).filter(f=> f);
+            const missing_files = (await Promise.all(exist_checks.map(async filepath=> {
+              try{
+                await fs.promises.access(filepath);
+              }catch(e){
+                return filepath;
+              }
+              return null;
+            }))).filter(f=> f);
             if(0 < missing_files.length) await fs.promises.appendFile(path.resolve(__dirname, "..", "checkout.txt"), missing_files.join("\n")+"\n");
             expect(missing_files).to.have.property("length", 0, `Missing files : \n`
             + JSON.stringify(missing_files, null, 2)
