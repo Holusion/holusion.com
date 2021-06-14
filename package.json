@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "dist/bootstrap.css",
   "scripts": {
-    "test": "npm run test:integration && npm run test:e2e",
+    "test": "npm run test:integration && npm run test:e2e -- --parallel",
     "test:integration": "mocha ./scripts/integration.test.js",
     "test:e2e": "mocha --config ./scripts/e2e/mocharc.js",
     "prepack": "mkdir -p dist/ && cp _site/css/bootstrap.* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/ && sed 's/..\\/node_modules\\//~/' _css/_variables.scss > dist/_variables.scss",
