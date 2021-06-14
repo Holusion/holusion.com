@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "dist/theme.css",
   "scripts": {
-    "test": "npm run test:integration && npm run test:e2e",
+    "test": "npm run test:integration && npm run test:e2e -- --parallel",
     "test:integration": "mocha ./scripts/integration.test.js",
     "test:e2e": "mocha --config ./scripts/e2e/mocharc.js",
     "prepack": "./build.sh --pack",
