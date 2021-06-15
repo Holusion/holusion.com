@@ -7,7 +7,7 @@
         <img data-deprecated="carousel-static-image" class="d-block w-100" src="{{contents[0].image}}" alt="{{contents[0].title}}" {%if contents[0].image2x %} srcset="{{contents[0].image2x}} 2x, {{contents[0].image}}"{%endif%}>     
       {% else %}
         {% picture  "{{contents[0].image}}"
-          --img class="d-block w-100
+          --img class="d-block w-100"
           alt="{{contents[0].title}}"
         %}
       {% endif %}
