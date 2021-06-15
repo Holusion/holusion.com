@@ -108,42 +108,46 @@
         @include media-breakpoint-down(lg){
           margin-top: -30vh;
         }
-        img{
-          opacity:0;
-          transition: opacity 0.8s;
-          width: 100%;
-          height:100%;
-          object-fit: contain;
-        }
-      }
-      .slides{
-        position: absolute;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-        img{
+        > .slides{
           position: absolute;
           top:0;
           left:0;
           bottom:0;
           right:0;
-          opacity: 0;
+          //elements that contains actual slide content
+          & > img, & > video, & > picture>img, & > div {
+            position: absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            opacity: 0;
+            margin: auto;
+            transition: opacity 0.8s;
+            object-fit: contain;
+            
+            &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
+              opacity: 1;
+            }
+            &.rounded { 
+              border-radius: 50px 0px 0px 50px;
+              @include media-breakpoint-down(lg){
+                border-radius: 0px;
+              }
+            }
+          }
+          &:last-child{
+            //Those same elements when last childs
+            & > img:last-child,
+            & > video:last-child,
+            & > picture:last-child img,
+            & > div:last-child {
+              height: calc(50% + 7rem);
+              object-fit: cover;
+              object-position: left center;
+            }
+          }
           
-          &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
-            opacity: 1;
-          }
-        }
-        
-        &:last-child > *:last-child img, &:last-child > img:last-child{
-          height: calc(50% + 7rem);
-          margin: auto;
-          object-fit: cover;
-          object-position: left center;
-          border-radius: 50px 0px 0px 50px;
-          @include media-breakpoint-down(lg){
-            border-radius: 0px;
-          }
         }
       }
     }
