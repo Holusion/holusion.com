@@ -16,7 +16,11 @@ command -v npm >/dev/null 2>&1 || {
 
 command -v vips >/dev/null 2>&1 || {
   echo >&2 "Impossible de trouver la commande \"vips\""
-  echo >&2 "Installer libvips avec \"sudo apt install libvips-tools\""
+  if  [[ "$OSTYPE" == "darwin"* ]] ;then
+    echo >&2 "Installer libvips avec \"brew install vips\""
+  else #everythin else is linux
+    echo >&2 "Installer libvips avec \"sudo apt install libvips-tools\""
+  fi
   exit 1
 }
 

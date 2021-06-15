@@ -64,19 +64,18 @@ scripts:
   </section>
 
   <section class="section section-left text-left">
-    <div data-slide="1" class="fixed-background">
+    <div class="fixed-background">
       <div class="sticky-content">
         <div class="slides">
           {% picture grid "img/sections/background-slides.png"
           --img data-slides="1-4"
-          --img class="fixed"
           --alt illustration d'un iris 75
           %}
         </div>
         <div class="slides">
           {% picture grid "img/sections/slide_hologramme_batiment.png"
           --img data-slides="0,1"
-          style = "transition: none;"
+          style="transition: none;"
           --alt illustration d'un batiment
           %}
           {% picture grid "img/sections/slide_hologramme_musee.png"
@@ -114,7 +113,7 @@ scripts:
           --alt illustration représentant une gamme d'hologrammes
           %}
           {% picture grid "img/sections/cafe_design.jpg"
-          --img class="image-shadow"
+          --img class="image-shadow rounded cover"
           --img data-slides="6"
           --alt photo de croquis
           %}
@@ -224,8 +223,113 @@ scripts:
   <section class="section section-white section-left mb-6 text-dark" >
     <h2>Découvrez nos offres</h2>
   </section>
-       
-  {% include pricing.html %}
+  
+
+  <section id="pricing" class="section section-right">
+    <div class="fixed-background">
+      <div class="sticky-content">
+        <div class="slides">
+          {% picture grid "img/sections/background-slides.png"
+            --img data-slides="1-3"
+            --img style="transform: scaleX(-1);"
+            --alt dessin d'un iris75
+          %}
+        </div>
+        <div class="slides">
+          {% picture grid "img/sections/slide_gamme.png"
+          --img data-slides="0"
+          --alt illustration d'un iris 75
+          %}
+          <div data-slides="1" class="embed-responsive embed-responsive-1by1">
+            <video poster="{% picture direct_portrait img/pricing/model_1.png %}" muted autoplay loop>
+                <source src="/static/video/pricing/model_1.mp4" type="video/mp4">
+                {% picture grid img/pricing/model_1.png
+                  --img class="img-fluid"
+                  --img loading="lazy"
+                  --alt  animation de l'offre Explore
+                %}
+            </video>
+          </div>
+          <div data-slides="2"class="embed-responsive embed-responsive-1by1">
+            <video poster="{% picture direct_portrait img/pricing/model_2.png %}" muted autoplay loop>
+                <source src="/static/video/pricing/model_2.mp4" type="video/mp4">
+                {% picture grid img/pricing/model_2.png
+                  --img class="img-fluid"
+                  --img loading="lazy"
+                  --alt  animation de l'offre Improve
+                %}
+            </video>
+          </div>
+          <div data-slides="3"class="embed-responsive embed-responsive-1by1">
+            <video poster="{% picture direct_portrait img/pricing/model_3.png %}" muted autoplay loop>
+                <source src="/static/video/pricing/model_3.mp4" type="video/mp4">
+                {% picture grid img/pricing/model_3.png
+                  --img class="img-fluid"
+                  --img loading="lazy"
+                  --alt  animation de l'offre Upgrade
+                %}
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide content">
+      <div>
+        <h2>Maquettes numériques</h2>
+        <p>
+          La conversion de votre maquette en hologrammes depuis les fichiers BIM est <a href="/fr/posts/2019-07-01-SHAKE#video">notre spécialité</a>.
+        </p>
+        <p>
+          Choisissez votre offre pour les projets de moins de 10 000m² de sdp.
+        </p>
+      </div>
+      <div>
+        <h2>Offre Explore</h2>
+        <p>Une découverte améliorée</p>
+        <p>
+          L'essentiel en exploration
+        </p>
+        <p>
+          Intégration des formats .ifc / .fbx / .obj / .3ds...
+        </p>
+        <h3 class="text-right text-secondary">950 €</h3>
+        <p class="text-right">par maquette</p>
+      </div>
+      <div>
+        <h2>Offre Improve</h2>
+        <p>
+          Une découverte améliorée
+        </p>
+        <p>
+          Inclus :
+        </p>
+        <ul>
+          <li>Toute l'offre "Explore"</li>
+          <li>Transitions dynamiques</li>
+          <li>Rendus réalistes</li>
+        </ul>
+        <h3 class="text-right text-secondary">1700 €</h3>
+        <p class="text-right">par maquette</p>
+      </div>
+      <div>
+        <h2>Offre Upgrade</h2>
+        <p>Le niveau supérieur de simulation 3D</p>
+        <p>
+          Inclus :
+        </p>
+        <ul>
+          <li>Toute l'offre "Improve"</li>
+          <li>Scénarisation avancée</li>
+          <li>Motion design</li>
+          <li>Direction artistique dédiée</li>
+          <li>Vue en écorché des appartements</li>
+          <li>Rendu Ultra-HD</li>
+        </ul>
+        <h3 class="text-right text-secondary">3750 €</h3>
+        <p class="text-right">par maquette</p>
+      </div>
+    </div>
+  </section>
 
   <section id="section-contact" class="section section-center " itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
     <meta itemprop="name" content="holusion" />

@@ -74,6 +74,8 @@
     & > img, &>picture>img {
       display: block;
       width: 100%;
+      max-width: 100%;
+      height: auto;
       z-index: 1;
       margin-bottom: -($margin * 2 / 3);
       &.cover{
@@ -129,25 +131,17 @@
             &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
               opacity: 1;
             }
-            &.rounded { 
-              border-radius: 50px 0px 0px 50px;
-              @include media-breakpoint-down(lg){
-                border-radius: 0px;
+            &.rounded {
+              border-radius: 0px !important;
+              @include media-breakpoint-up(lg){
+                border-radius: 50px 0px 0px 50px !important;
               }
             }
           }
-          &:last-child{
-            //Those same elements when last childs
-            & > img:last-child,
-            & > video:last-child,
-            & > picture:last-child img,
-            & > div:last-child {
-              height: calc(50% + 7rem);
-              object-fit: cover;
-              object-position: left center;
-            }
-          }
-          
+          .cover {
+            object-fit: cover;
+            object-position: left center;
+          }        
         }
       }
     }
