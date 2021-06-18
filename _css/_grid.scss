@@ -185,21 +185,31 @@
       }
     }
   }
+
   .section-center{
-    > h2{
-      grid-area: title / content / span 1 / content;
-      
+    grid-template-areas: "start content content end";
+    grid-template-rows: auto;
+    color: $dark;
+    .section-white-left-image{
+      grid-area: 2 / start-start / span 1 / middle;
     }
-    > div{
-      grid-area: 2 / col-start / span 1 / col-end;
+    .section-white-right-content{
+      grid-area: 2 / middle / span 1 / col-end;
     }
-    > img{
-      grid-area: 2 / col-start / span 1 / col-end;
+    .content > h2{
+      line-height: $margin; 
     }
-    &:not(.section-white) > h2{
-      grid-area: 1 / col-start / span 1 / col-end;
-    }
+
   }
+  .white-start{
+    grid-area: start;
+    background-color: white;
+  }
+  .white-end{
+    grid-area: end;
+    background-color: white;
+  }
+
   .section-left{
     text-align: right;
     grid-template-areas: 
