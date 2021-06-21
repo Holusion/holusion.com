@@ -121,3 +121,35 @@
     }
   }
 }
+
+.section-pricing{
+  h2{
+    font-family: "Open Sans";
+  }
+  .pricing-card{
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-down(md){
+      flex-direction: row;
+    }
+    @include media-breakpoint-down(sm){
+      flex-direction: column;
+    }
+    .card-body{
+      padding: 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .price{
+      margin-top: auto;
+    }
+  }
+  .pricing-icon{
+    width: 150px;
+    /*position: relative;
+    left: -100px;*/
+  }
+}
