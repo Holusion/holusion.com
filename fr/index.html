@@ -8,7 +8,7 @@ scripts:
   - /static/js/observer.js
 ---
 
-<main class="home-page-main main-grid pb-5">
+<main class="home-page-main main-grid">
   <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
@@ -60,7 +60,7 @@ scripts:
   </section>
 
   <section class="section section-white">
-    <h2 class="">Une expérience complète</h2>
+    <h2>Une expérience complète</h2>
   </section>
 
   <section class="section section-left text-left">
@@ -211,17 +211,16 @@ scripts:
       </div>
   </section>
 
-  <section class="section section-pricing section-center bg-light" >
-    <div class="content" style="border-left : 2px solid black">
+  <section class="section section-pricing section-center bg-light" > 
+    <div class="content">
       <h2>Découvrez nos offres</h2>
-      <div class="d-flex" style="position: relative;
-      left: -100px;">
-        {% picture grid img/sections/icone-produit.png
+      <div class="pricing-header d-flex">
+        {% picture grid img/sections/icone_produit.png
           --img class="pricing-icon p-3"
           data-noisetest="1"
           --alt icone produit
         %}        
-        <div>
+        <div class="my-auto p-3">
           <p>
             Nos meilleures solutions pour la présentation de vos maquettes en hologrammes.
           </p>
@@ -230,14 +229,14 @@ scripts:
           </p>        
         </div>  
       </div>
-      <div class="row mb-5">
-        <div class="col-lg-4 p-3">
+      <div class="row mb-5 no-gutters">
+        <div class="col-lg-4 px-md-3 py-3">
           <div class="card pricing-card">
-            {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
+            {% picture grid img/products/iris_22_2019.jpg
               --img class="card-img-top"
               data-noisetest="1"
-              style="object-position: 70% 0"
-              --alt Hologramme At'Rouen
+              style="object-position: 25% 0"
+              --alt photo d'un Iris 22
             %}  
             <div class="card-body">
               <h2>Iris 22"</h2>
@@ -251,13 +250,13 @@ scripts:
             </div>            
           </div>
         </div>
-        <div class="col-lg-4 p-3">
+        <div class="col-lg-4 px-md-3 py-3">
           <div class="card pricing-card">
-            {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
+            {% picture grid img/products/iris32_museum.jpg
               --img class="card-img-top"
               data-noisetest="1"
-              style="object-position: 70% 0"
-              --alt Hologramme At'Rouen
+              style="object-position: 25% 0"
+              --alt photo d'un Iris 32
             %}  
             <div class="card-body">
               <h2>Iris 32"</h2>
@@ -271,13 +270,13 @@ scripts:
             </div>            
           </div>
         </div>
-        <div class="col-lg-4 p-3">
+        <div class="col-lg-4 px-md-3 py-3">
           <div class="card pricing-card">
-            {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
+            {% picture grid img/products/iris75_chaufferie.jpg
               --img class="card-img-top"
               data-noisetest="1"
-              style="object-position: 70% 0"
-              --alt Hologramme At'Rouen
+              style="object-position: 25% 0"
+              --alt photo d'un Iris 75
             %}  
             <div class="card-body">
               <h2>Iris 75"</h2>
@@ -292,19 +291,18 @@ scripts:
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section section-pricing section-center bg-light" >
-    <div class="content" style="border-left : 2px solid black">
+      <div class="home-page-header-cta d-flex justify-content-center">
+        <a class="d-block" href="/fr/products/"> <button  class="btn btn-info">Decouvrez notre gamme complète</button></a>
+      </div>
+
       <h2>Notre offre de maquettes numériques</h2>
-      <div class="d-flex" style="position: relative;
-      left: -100px;">
-        {% picture grid img/sections/icone-maquette.png
+      <div class="pricing-header d-flex">
+        {% picture grid img/sections/icone_maquette.png
           --img class="pricing-icon p-3"
           data-noisetest="1"
-          --alt icone produit
+          --alt icone maquette 
         %}        
-        <div>
+        <div class="my-auto p-3">
           <p>
             La conversion de votre maquette en hologrammes depuis les fichiers BIM est <a href="/fr/posts/2019-07-01-SHAKE#video">notre spécialité</a>.
           </p>
@@ -313,10 +311,10 @@ scripts:
           </p>     
         </div>  
       </div>
-      <div class="row mb-5">
-        <div class="col-lg-4 p-3 h-100">
-          <div class="card pricing-card">
-            <div class="card-body">
+      <div class="row no-gutters mb-5">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
               <h2>Offre Explore</h2>
               <p>Une découverte améliorée</p>
               <p>
@@ -330,12 +328,11 @@ scripts:
                 <p class="text-right">par maquette</p>   
               </div>                           
             </div>
-
           </div>
         </div>
-        <div class="col-lg-4 p-3 h-100">
-          <div class="card pricing-card">
-            <div class="card-body">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
               <h2>Offre Improve</h2>
               <p>
                 Une découverte améliorée
@@ -350,14 +347,14 @@ scripts:
               </ul>
               <div class="price">
                 <h3 class="text-right text-secondary">1700 €</h3>
-                <p class="text-right">par maquette</p>                 
+                <p class="text-right">par maquette</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 p-3 h-100">
-          <div class="card pricing-card">
-            <div class="card-body">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
               <h2>Offre Upgrade</h2>
               <p>Le niveau supérieur de simulation 3D</p>
               <p>
@@ -379,162 +376,96 @@ scripts:
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="home-page-header-cta d-flex justify-content-center">
+        <button class="d-block btn btn-info" style="cursor:pointer" onclick="displayContactForm()">
+          Demandez un devis
+        </button> 
+      </div>
+      
 
-  <section id="" class="section section-right">
-    <div class="fixed-background">
-      <div class="sticky-content">
-        <div class="slides">
-          {% picture grid "img/sections/background-slides.png"
-            --img data-slides="1-3"
-            --img style="transform: scaleX(-1);"
-            --alt dessin d'un iris75
-          %}
-        </div>
-        <div class="slides">
-          {% picture grid "img/sections/slide_gamme.png"
-          --img data-slides="0"
-          --alt illustration d'un iris 75
-          %}
-          <div data-slides="1" class="embed-responsive embed-responsive-1by1">
-            <video poster="{% picture direct_portrait img/pricing/model_1.png %}" muted autoplay loop>
-                <source src="/static/video/pricing/model_1.mp4" type="video/mp4">
-                {% picture grid img/pricing/model_1.png
-                  --img class="img-fluid"
-                  --img loading="lazy"
-                  --alt  animation de l'offre Explore
-                %}
-            </video>
-          </div>
-          <div data-slides="2"class="embed-responsive embed-responsive-1by1">
-            <video poster="{% picture direct_portrait img/pricing/model_2.png %}" muted autoplay loop>
-                <source src="/static/video/pricing/model_2.mp4" type="video/mp4">
-                {% picture grid img/pricing/model_2.png
-                  --img class="img-fluid"
-                  --img loading="lazy"
-                  --alt  animation de l'offre Improve
-                %}
-            </video>
-          </div>
-          <div data-slides="3"class="embed-responsive embed-responsive-1by1">
-            <video poster="{% picture direct_portrait img/pricing/model_3.png %}" muted autoplay loop>
-                <source src="/static/video/pricing/model_3.mp4" type="video/mp4">
-                {% picture grid img/pricing/model_3.png
-                  --img class="img-fluid"
-                  --img loading="lazy"
-                  --alt  animation de l'offre Upgrade
-                %}
-            </video>
+      <h2>Notre offre de services de gestion</h2>
+      <div class="pricing-header d-flex">
+        {% picture grid img/sections/icone_gestion.png
+          --img class="pricing-icon p-3"
+          data-noisetest="1"
+          --alt icone gestion
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            Contrôlez votre hologramme en autonomie et en toute sérénité.
+          </p>
+          <p>
+            Avec nos solutions professionelles, profitez d'une administration en ligne en Cloud, d'une gestion à distance et d'une application tablette pour rendre <a href="/fr/interaction">votre hologramme interactif</a> 
+          </p>     
+        </div>  
+      </div>
+      <div class="row no-gutters mb-5">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h2>Individuel</h2>
+              <p>Maquettes individuelles</p>
+              <p>
+                L'essentiel en exploration
+              </p>
+              <p>
+                Administration hors ligne en autonomie
+              </p> 
+              <div class="price">
+                <h3 class="text-right text-secondary">Gratuit</h3>
+                <p class="text-right"></p>   
+              </div>                           
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="slide content">
-      <div>
-        <h2>Maquettes numériques</h2>
-        <p>
-          La conversion de votre maquette en hologrammes depuis les fichiers BIM est <a href="/fr/posts/2019-07-01-SHAKE#video">notre spécialité</a>.
-        </p>
-        <p>
-          Choisissez votre offre pour les projets de moins de 10 000m² de sdp.
-        </p>
-      </div>
-      <div>
-        <h2>Offre Explore</h2>
-        <p>Une découverte améliorée</p>
-        <p>
-          L'essentiel en exploration
-        </p>
-        <p>
-          Intégration des formats .ifc / .fbx / .obj / .3ds...
-        </p>
-        <h3 class="text-right text-secondary">950 €</h3>
-        <p class="text-right">par maquette</p>
-      </div>
-      <div>
-        <h2>Offre Improve</h2>
-        <p>
-          Une découverte améliorée
-        </p>
-        <p>
-          Inclus :
-        </p>
-        <ul>
-          <li>Toute l'offre "Explore"</li>
-          <li>Transitions dynamiques</li>
-          <li>Rendus réalistes</li>
-        </ul>
-        <h3 class="text-right text-secondary">1700 €</h3>
-        <p class="text-right">par maquette</p>
-      </div>
-      <div>
-        <h2>Offre Upgrade</h2>
-        <p>Le niveau supérieur de simulation 3D</p>
-        <p>
-          Inclus :
-        </p>
-        <ul>
-          <li>Toute l'offre "Improve"</li>
-          <li>Scénarisation avancée</li>
-          <li>Motion design</li>
-          <li>Direction artistique dédiée</li>
-          <li>Vue en écorché des appartements</li>
-          <li>Rendu Ultra-HD</li>
-        </ul>
-        <h3 class="text-right text-secondary">3750 €</h3>
-        <p class="text-right">par maquette</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="section-contact" class="section section-center " itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
-    <meta itemprop="name" content="holusion" />
-    <div class="content row no-gutters">
-      <div class="col-md-6 col-sm-12">
-        <h3 style="padding-bottom: 10px">Venez nous rencontrer :</h3>
-        {% include components/maps_api.html %}
-      </div>
-      <div class="col-md-6 col-sm-12 ">
-        <h3>Contactez-nous :</h3>
-        <div class="p-1">
-          <ul class="list-group">
-              <li class="list-group-item">
-                <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
-                <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
-                    srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
-              </li>
-              <li class="list-group-item">
-                <a href="tel:+33972424451" class="text-dark">
-                  <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
-                  <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
-                  <div>
-                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-location_on-24px.svg @inline %}</span>
-                    <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
-                  </div>
-                  <div>
-                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-business-24px.svg @inline %}</span>
-                    <span itemprop="postalCode">59200</span>
-                    <span itemprop="addressLocality">Tourcoing</span>,
-                    <span itemprop="addressCountry">France</span>
-                  </div>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
-                <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
-              </li>
-            </ul>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h2>Professionnel</h2>
+              <p>
+                Besoins récurrents
+              </p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Administration en ligne sur interface dédiée</li>
+                <li>10Go de stockage cloud inclus</li>
+                <li>1 à 4 borne en gestion locale</li>
+                <li>Gestion par iPad</li>
+                <li>iPad inclus</li>
+              </ul>
+              <div class="price">
+                <h3 class="text-right text-secondary">125€ HT/mois</h3>
+                <p class="text-right">engagement 12 mois</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h2>Entreprise</h2>
+              <p>Déploiements</p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Administration en ligne sur interface dédiée</li>
+                <li>100 Go de stockage cloud</li>
+                <li>Jusqu'à 100 bornes en gestion centralisée</li>
+                <li>Application interactive en temps réel offerte</li>
+              </ul>
+              <div class="price">
+                <h3 class="text-right text-secondary">210€ HT/mois</h3>
+                <p class="text-right">engagement 12 mois</p>                   
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
   </section>
-
 </main>
 
 

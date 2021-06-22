@@ -122,34 +122,73 @@
   }
 }
 
+//new pricing section
+
 .section-pricing{
-  h2{
-    font-family: "Open Sans";
+
+  .content{
+    border-left : 2px solid black;
+    margin-left: 2.5rem;
+    padding: 0 !important;
+    @include media-breakpoint-down(lg){
+      margin-left: 0;
+      border: none;
+    }
+ 
+    >h2{
+      padding: 2rem;
+      margin: 0;
+    }
   }
   .pricing-card{
     background-color: white;
     height: 100%;
     display: flex;
     flex-direction: column;
+    border: none;
+    border-radius: 0;
     @include media-breakpoint-down(md){
       flex-direction: row;
     }
     @include media-breakpoint-down(sm){
       flex-direction: column;
     }
-    .card-body{
-      padding: 2rem 4rem;
+    h2{
+      font-family: "Open Sans";
+    }   
+    img{
+      border-radius: 0;
+      object-fit: cover;
+      height: 100%;
+    }
+    .card-content{
       display: flex;
       flex-direction: column;
+      width: 100%;
+    }
+    .card-body, .card-content{
+      flex:1 0 auto;
+      padding: 2rem 4rem;
       height: 100%;
+      @include media-breakpoint-down(xs){
+        padding: 2rem 2rem;
+      }
     }
     .price{
       margin-top: auto;
     }
   }
-  .pricing-icon{
-    width: 150px;
-    /*position: relative;
-    left: -100px;*/
+  .pricing-header{
+    position: relative;
+    left: -75px;
+    @include media-breakpoint-down(lg){
+      left:0px
+    }
+    .pricing-icon{
+      width: 150px;
+      @include media-breakpoint-down(xs){
+        display: none;
+      }
+    }    
   }
 }

@@ -21,7 +21,7 @@
 
     > h2 {
       position: relative;
-      padding-left: 2rem;
+      padding-left: $padding;
       margin-top: auto;
       margin-bottom: auto;
       grid-area: title / content / span 1 / content;
@@ -196,20 +196,13 @@
     .section-white-right-content{
       grid-area: 2 / middle / span 1 / col-end;
     }
-    .content > h2{
+    > h2{
       line-height: $margin; 
     }
-
+    &.section-white::before{
+      grid-area: 1 / col-start / span 1 / end;
+    }
   }
-  .white-start{
-    grid-area: start;
-    background-color: white;
-  }
-  .white-end{
-    grid-area: end;
-    background-color: white;
-  }
-
   .section-left{
     text-align: right;
     grid-template-areas: 
