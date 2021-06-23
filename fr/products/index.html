@@ -3,38 +3,42 @@ layout: front_page
 abstract: Affichages holographiques commercialisés en vente directe ou en location
 ---
 
-<section class="title">
-  <div class="container">
-    <h1>
-      Nos solutions
-    </h1>
+<main class="main-grid main-dark">
+
+  <div class="container pb-4 text-center">
+    <h1 id="main-title-1" class="p-4">Affichage digital innovant</h1>
+    <p class="rtecenter" >
+      Depuis 2014, Holusion est un partenaire privilégié pour les entreprises cherchant à tirer le meilleur parti des <b>affichages 3D en hologrammes</b>. Nous concevons et développons des solutions d'affichage digital innovantes pour des projets ambitieux.
+    </p>
+    <p>
+      De quelques centimètres à plusieurs mètres, des solutions portables aux installations scéniques, nous proposons une large gamme de solutions techniques et de services. <b>Tous nos produits sont disponibles à la vente ou à la location</b>.
+    </p>
+    <p>
+      Tous les cas d'utilisation de l'hologramme sont possibles; comme une installation dans un musée ou une exposition, la location avec livraison clé-en-main pour un salon ou la fabrication en masse pour un déploiement commercial. Bien d'autres usages sont encore à écrire et à découvrir.
+    </p>
   </div>
-</section>
-<div class="container">
-  {% ariane %}
-</div>
-<div class="container pb-4 text-center">
-  <h1 id="main-title-1" class="p-4">Affichage digital innovant</h1>
-  <p class="rtecenter" >
-    Depuis 2014, Holusion est un partenaire privilégié pour les entreprises cherchant à tirer le meilleur parti des <b>affichages 3D en hologrammes</b>. Nous concevons et développons des solutions d'affichage digital innovantes pour des projets ambitieux.
-  </p>
-  <p>
-    De quelques centimètres à plusieurs mètres, des solutions portables aux installations scéniques, nous proposons une large gamme de solutions techniques et de services. <b>Tous nos produits sont disponibles à la vente ou à la location</b>.
-  </p>
-  <p>
-    Tous les cas d'utilisation de l'hologramme sont possibles; comme une installation dans un musée ou une exposition, la location avec livraison clé-en-main pour un salon ou la fabrication en masse pour un déploiement commercial. Bien d'autres usages sont encore à écrire et à découvrir.
-  </p>
-</div>
-<div>
-  <div class="row no-gutters">
-  {% for product in site.products_items[page.lang] %}
-    {% include components/card.html content=product classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1" %}
-  {% endfor %}
-  {% include components/card.html
-    image="/static/img/misc/conception_au_marteau.jpg"
-    classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1"
-    title="Sur-mesure"
-    abstract="Découvrez notre accompagnement personnalisé qui vous aidera à mettre en place votre projet d'innovation."
-    %}
+  <div class="section section-center">
+    <div class="content row no-gutters">
+    {% for product in site.products_items[page.lang] %}
+      <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-1 p-sm-1">
+        {{ product.title }}
+        {% picture {{product.image}} 
+        --img class="img-fluid mb-5"
+        %}
+        <ul>
+          {% for key in product %}
+            <li>{{key[0]}}</li>
+          {%endfor%}
+        </ul>
+      </div>
+      {% endfor %}
+      {% include components/card.html
+        image="/static/img/misc/conception_au_marteau.jpg"
+        classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1"
+        title="Sur-mesure"
+        abstract="Découvrez notre accompagnement personnalisé qui vous aidera à mettre en place votre projet d'innovation."
+        %}
+    </div>
   </div>
-</div>
+</main>
+
