@@ -5,7 +5,7 @@
   .section{
     display: grid;
     grid-template-columns: 1fr [col-start] minmax(auto, $col/2) [middle] minmax(auto, $col/2) [col-end] 1fr;
-    grid-template-rows: $margin auto;
+    grid-template-rows: auto;
     grid-auto-rows: auto;
     grid-template-areas: 
       ". white  title   end"
@@ -22,8 +22,8 @@
     > h2 {
       position: relative;
       padding-left: $padding;
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-top: $margin/3;
+      margin-bottom: $margin/3;
       grid-area: title / content / span 1 / content;
     }
 
@@ -108,7 +108,7 @@
         width: 100%;
         height: 100vh;
         @include media-breakpoint-down(lg){
-          margin-top: -30vh;
+          margin-top: -$margin;
         }
         > .slides{
           position: absolute;
