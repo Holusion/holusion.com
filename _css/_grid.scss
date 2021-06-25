@@ -19,6 +19,15 @@
         ".      image  .";
     }
 
+    &.left{
+      grid-template-areas: 
+        "white white title end"
+        "start content image image"; 
+    }  
+    &.center{
+      grid-template-areas: "start content content end";
+    }
+
     > h2 {
       position: relative;
       padding-left: $padding;
@@ -32,6 +41,9 @@
       display: block;
       background-color: $white;
       grid-area: white / white / span 1 / end;
+      &.left{
+        grid-area: white / white / span 1 / title;
+      }
     }
 
     .content{
@@ -65,7 +77,7 @@
       }
     }
 
-
+    
     & > img, &>picture{
       grid-area: image;
       width: 100%;
@@ -185,45 +197,4 @@
       }
     }
   }
-
-  .section-center{
-    grid-template-areas: "start content content end";
-    grid-template-rows: auto;
-    color: $dark;
-    .section-white-left-image{
-      grid-area: 2 / start-start / span 1 / middle;
-    }
-    .section-white-right-content{
-      grid-area: 2 / middle / span 1 / col-end;
-    }
-    > h2{
-      line-height: $margin; 
-    }
-    &.section-white::before{
-      grid-area: 1 / col-start / span 1 / end;
-    }
-  }
-  .section-left{
-    text-align: right;
-    grid-template-areas: 
-      "white white  title   end"
-      "start content image  image"; 
-    @include media-breakpoint-down(lg){
-      text-align: left;
-      grid-template-columns: 0px [col-start] auto [col-end] 0px;
-      grid-template-areas: 
-        "white  title  ."
-        ".     content ."
-        ".      image  .";
-    }
-    > h2 {
-      padding-right: 2rem;
-    }
-    &.section-white{
-      text-align:left;
-    }
-    &.section-white::before{
-      grid-area: white / white / span 1 / title;
-    }
-  }  
 }

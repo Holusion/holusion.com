@@ -6,7 +6,7 @@ scripts:
 ---
 
 <main class="main-grid main-dark">
-  <section class="section section-center">
+  <section class="section center">
     <h2 class="text-white mt-3" style="font-size: 3rem">Nos Produits</h2>
   </section>
   <section class="section">
@@ -30,23 +30,23 @@ scripts:
     <h2>Toutes nos solutions</h2>
   </section>
 
-  <section class="section section-left text-left">
+  <section class="section left text-left">
     <div class="fixed-background">
       <div class="sticky-content">
         <div class="slides">
-          {% picture grid "img/products/iris_22_2019.jpg"
+          {% picture grid "img/sections/slide_gamme_copie.png"
           --img data-slides="0"
           --alt photo d'un iris 22
           %}
-          {% picture grid "img/products/iris32_museum.jpg"
+          {% picture grid "img/sections/slide_gamme_copie.png"
             --img data-slides="1"
             --alt photo d'un iris 32
           %}
-          {% picture grid "img/products/iris46_archi.jpg"
+          {% picture grid "img/sections/slide_gamme_copie.png"
             --img data-slides="2"
             --alt photo d'un iris 46
           %}
-          {% picture grid "img/products/iris75_double_imaginarium_HDR.jpg"
+          {% picture grid "img/sections/slide_produit_iris75.png"
           --img data-slides="3"
           --alt photo de 2 iris 75, un vertical et un horizontal
           %}
@@ -64,15 +64,24 @@ scripts:
     <div class="slide content">
       <div>
         <h2>Iris 22</h2>
+        {% picture grid "img/products/iris_22_2019.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'un iris 22
+        %}        
         <p>Une vitrine holographique de 22 pouces.</p>
         <p>L'Iris 22 est une très bonne solution pour <b>exposer vos hologrammes dans un espace réduit</b> </p>
         <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations institutionnelles ou éducatives.</b></p>
         <h3 class="text-right text-secondary">2 000 € HT</h3>
         <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
         <p class="text-center pt-4"><a href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button> </a></p>
+
       </div>
       <div>
         <h2>Iris 32</h2>
+        {% picture grid "img/products/iris32_museum.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'un iris 32
+        %}
         <p>Une vitrine holographique de 32 pouces.</p>
         <p>L'Iris 32 est notre meilleure solution pour <b>un maximum d'impact dans un minimum de place.</b></p>
         <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations institutionnelles ou éducatives.</b></p>
@@ -82,6 +91,10 @@ scripts:
       </div>
       <div>
         <h2>Iris 46</h2>
+        {% picture grid "img/products/iris46_archi.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'un iris 46
+        %}
         <p>Une vitrine holographique de 46 pouces.</p>
         <p>L'Iris 46 est notre meilleure solution pour <b>une présentation haut-de-gamme dans un espace clos.</b></p>
         <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations de projets complexes comme des projets immobiliers.</b></p>
@@ -92,6 +105,10 @@ scripts:
       </div>
       <div>
         <h2>Iris 75</h2>
+        {% picture grid "img/products/iris75_double_imaginarium_HDR.jpg"
+        --img class="img-fluid my-4"
+        --alt photo de 2 iris 75, un vertical et un horizontal
+        %}
         <p>Un hologramme XXL pour des projets grandeur nature.</p>
         <p>L’hologramme IRIS 75 ou l’hologramme XXL est idéal pour des présentations spectaculaires.</p>
         <p>L'Iris 75" est naturellement customisable et peut être utilisé en affichage portrait ou paysage.</b></p>
@@ -101,6 +118,10 @@ scripts:
       </div>
       <div>
         <h2>Pixel</h2>
+        {% picture grid "img/products/pixel_landscape.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'un goodie pour téléphone
+        %}
         <p>Une pyramide pour téléphone et tablettes, un goodie très apprécié.</p>
         <p>Le Pixel est une petite pyramide qui diffuse un hologramme à 360°. Il se glisse dans la poche pour en faire profiter votre entourage. </p>
         <p>Découvrez notre gamme de produits goodies, disponnibles dans la boutique en ligne</p>
@@ -110,16 +131,20 @@ scripts:
       </div>
       <div>
         <h2>Sur mesure</h2>
+        {% picture grid "img/sections/cafe_design.jpg"
+        --img class="img-fluid my-4"
+        --alt photo
+        %}
         <p>Découvrez notre accompagnement personnalisé qui vous aidera à mettre en place votre projet d'innovation.</p>
         <p class="text-center p-5"><a href="{{product.url}}"> <button class="btn btn-info">Contactez-nous</button> </a></p>
       </div>
     </div>
   </section>
 
-  <section class="section section-white section-left">
+  <section class="section section-white left">
     <h2>Autres produits</h2>
   </section>
-  <div class="section section-center">
+  <div class="section center">
     <div class="content row no-gutters my-3">
     {% for product in site.products_items[page.lang] %}
       <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-3 py-sm-3 text-center p-2">
