@@ -125,23 +125,6 @@
 //new pricing section
 
 .section-pricing{
-  background-color: $light;
-  color: $dark;
-
-  .content{
-    border-left : 2px solid black;
-    margin-left: 2.5rem;
-    padding: 0 !important;
-    @include media-breakpoint-down(lg){
-      margin-left: 0;
-      border: none;
-    }
- 
-    >h2{
-      padding: 2rem;
-      margin: 0;
-    }
-  }
   .pricing-card{
     background-color: white;
     height: 100%;

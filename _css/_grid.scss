@@ -24,13 +24,10 @@
         "white white title end"
         "start content image image"; 
     }  
-    &.center{
-      grid-template-areas: "start content content end";
-    }
-
+    
     > h2 {
       position: relative;
-      padding-left: $padding;
+      padding: 0 $padding;
       margin-top: $margin/3;
       margin-bottom: $margin/3;
       grid-area: title / content / span 1 / content;
@@ -68,7 +65,6 @@
             }
           }
           @include media-breakpoint-down(lg){
-            padding: $padding;
             background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: saturate(180%) blur(18px);
             box-shadow: rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -193,6 +189,45 @@
           margin-right: calc( (-100vw + 100%) / 2 );
           display: flex;
           justify-content: flex-start;
+        }
+      }
+    }
+
+    &.section-center{
+      grid-template-areas: 
+      "white title title end"
+      "start content content end"
+    }  
+    &.center-card{
+      grid-template-areas: "start left right end";
+      background-color: white;
+      color: $dark;
+      @include media-breakpoint-down(lg){
+        grid-template-areas: 
+        ". left ."
+        ". right ."
+        ;
+      }
+      .content{
+        grid-area: right;
+        padding: $padding;
+      }
+      & > img, &>picture{
+        grid-area: left;
+        margin: 0;
+      }
+    }
+
+    &.section-light{
+      background-color: $light;
+      color: $dark;
+    
+      .content{
+        border-left : 2px solid black;
+        margin-left: 2.5rem;
+        @include media-breakpoint-down(lg){
+          margin-left: 0;
+          border: none;
         }
       }
     }
