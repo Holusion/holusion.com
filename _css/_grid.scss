@@ -209,11 +209,11 @@
         ;
       }
       .content{
-        grid-area: right;
+        grid-area: left;
         padding: $padding;
       }
       & > img, &>picture{
-        grid-area: left;
+        grid-area: right;
         margin: 0;
       }
     }
