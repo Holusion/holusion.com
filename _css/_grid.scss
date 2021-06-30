@@ -128,7 +128,7 @@
       width: 100%;
       display: block;
       z-index: 1;
-      margin-bottom: -($margin * 2);
+      margin-bottom: -$margin;
       @include media-breakpoint-down(lg){
         margin-bottom: -($margin / 2);
       }

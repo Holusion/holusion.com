@@ -35,28 +35,12 @@ scripts:
       <div class="sticky-content">
         <div class="slides">
           {% picture grid "img/sections/slide_gamme_copie.png"
-          --img data-slides="0"
+          --img data-slides="0-2"
           --alt photo d'un iris 22
           %}
-          {% picture grid "img/sections/slide_gamme_copie.png"
-            --img data-slides="1"
-            --alt photo d'un iris 32
-          %}
-          {% picture grid "img/sections/slide_gamme_copie.png"
-            --img data-slides="2"
-            --alt photo d'un iris 46
-          %}
           {% picture grid "img/sections/slide_produit_iris75.png"
-          --img data-slides="3"
+          --img data-slides="3-5"
           --alt photo de 2 iris 75, un vertical et un horizontal
-          %}
-          {% picture grid "img/products/pixel_landscape.jpg"
-          --img data-slides="4"
-          --alt photo d'un goodie pour téléphone
-          %}
-          {% picture grid "img/sections/cafe_design.jpg"
-          --img data-slides="5"
-          --alt photo
           %}
         </div> 
       </div>
@@ -152,14 +136,15 @@ scripts:
   <div class="section section-center">
     <div class="content row no-gutters my-3">
     {% for product in site.products_items[page.lang] %}
-      <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-3 py-sm-3 text-center p-2">
-        
+      <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-3 py-sm-3 text-center p-2 d-flex flex-column">
         {% picture {{product.image}} 
         --img class="img-fluid mb-2"
         %}
-        <h2 class="text-white mb-1">{{ product.title }}</h2>
+        <h2 class="text-white mb-1">{{ product.title }} </h2>
+        <h4 class="text-secondary"> {{ product.price}}€</h4>
         <p class="text-white font-weight-light">{{ product.abstract}}</p> 
-        <a href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button> </a>
+        <a class="mt-auto" href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button> </a>
+        
         <!--<ul>
           {% for key in product %}
             <li>{{key[0]}}</li>
