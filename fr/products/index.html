@@ -6,7 +6,7 @@ scripts:
 ---
 
 <main class="main-grid main-dark">
-  <section class="section center">
+  <section class="section section-center">
     <h2 class="text-white my-5" style="font-size: 3rem">Nos Produits</h2>
   </section>
   <section class="section">
@@ -63,17 +63,22 @@ scripts:
     </div>
     <div class="slide content">
       <div class="my-5" style="margin-top: 0;">
-        <h2>Iris 22</h2>
+        <div>
+          <h2>Iris 22</h2>  
+        </div>
         {% picture grid "img/products/iris_22_2019.jpg"
         --img class="img-fluid my-4"
         --alt photo d'un iris 22
-        %}        
-        <p>Une vitrine holographique de 22 pouces.</p>
-        <p>L'Iris 22 est une très bonne solution pour <b>exposer vos hologrammes dans un espace réduit</b> </p>
-        <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations institutionnelles ou éducatives.</b></p>
-        <h3 class="text-right text-secondary">2 000 € HT</h3>
-        <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
-        <p class="text-center pt-4"><a href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button> </a></p>
+        %}
+        <div>
+          <p>Une vitrine holographique de 22 pouces.</p>
+          <p>L'Iris 22 est une très bonne solution pour <b>exposer vos hologrammes dans un espace réduit</b> </p>
+          <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations institutionnelles ou éducatives.</b></p>
+          <h3 class="text-right text-secondary">2 000 € HT</h3>
+          <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
+          <p class="text-center pt-4"><a href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button> </a></p>          
+        </div>        
+
 
       </div>
       <div>
@@ -144,7 +149,7 @@ scripts:
   <section class="section section-white left">
     <h2>Autres produits</h2>
   </section>
-  <div class="section center">
+  <div class="section section-center">
     <div class="content row no-gutters my-3">
     {% for product in site.products_items[page.lang] %}
       <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-3 py-sm-3 text-center p-2">

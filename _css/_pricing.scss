@@ -163,17 +163,4 @@
       margin-top: auto;
     }
   }
-  .pricing-header{
-    position: relative;
-    left: -75px;
-    @include media-breakpoint-down(lg){
-      left:0px
-    }
-    .pricing-icon{
-      width: 150px;
-      @include media-breakpoint-down(xs){
-        display: none;
-      }
-    }    
-  }
 }
