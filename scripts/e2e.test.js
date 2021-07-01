@@ -505,12 +505,6 @@ describe(`${target}.`,function(){
           }
           return await storePage.close();
         });
-        it(`has thumbnails`,()=>{
-          expect(thumb_cells).to.have.property("length").above(1);
-        })
-        it(`thumbnails have same aspect ratio`, async ()=>{
-          return await forceSameRatio(thumb_cells)
-        });
         describe(`Verify product pages (up to ${MAX_PRODUCTS_NUMBER} products)`,function(){
           //We don't know in advance the size of our array
           for(let i=0;i<MAX_PRODUCTS_NUMBER;i++){
