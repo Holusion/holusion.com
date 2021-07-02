@@ -155,7 +155,7 @@
             margin: auto;
             transition: opacity 0.8s;
             object-fit: contain;
-            width: 100%;
+            max-width: 100%;
             
             &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
               opacity: 1;
@@ -236,26 +236,6 @@
         }
       }
     } 
-
-    &.center-card{
-      grid-template-areas: "start left right end";
-      background-color: white;
-      color: $dark;
-      @include media-breakpoint-down(lg){
-        grid-template-areas: 
-        ". left ."
-        ". right ."
-        ;
-      }
-      .content{
-        grid-area: left;
-        padding: $padding;
-      }
-      & > img, &>picture{
-        grid-area: right;
-        margin: 0;
-      }
-    }
 
     &.section-light{
       background-color: $light;
