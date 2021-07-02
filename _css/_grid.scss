@@ -138,9 +138,6 @@
         right: 0;
         width: 100%;
         height: 100vh;
-        @include media-breakpoint-down(lg){
-          margin-top: -$margin;
-        }
         > .slides{
           position: absolute;
           top:0;
@@ -158,6 +155,7 @@
             margin: auto;
             transition: opacity 0.8s;
             object-fit: contain;
+            width: 100%;
             
             &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
               opacity: 1;
