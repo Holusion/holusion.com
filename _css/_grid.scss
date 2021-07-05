@@ -5,7 +5,7 @@
   .section{
     display: grid;
     grid-template-columns: 1fr [col-start] minmax(auto, $col/2) [middle] minmax(auto, $col/2) [col-end] 1fr;
-    grid-template-rows: $margin auto;
+    grid-template-rows: auto;
     grid-auto-rows: auto;
     grid-template-areas: 
       ". white  title   end"
@@ -19,11 +19,24 @@
         ".      image  .";
     }
 
+    &.left{
+      grid-template-areas: 
+        "white white title end"
+        "start content image image"; 
+      @include media-breakpoint-down(lg){
+        grid-template-areas: 
+          "white  title  ."
+           ".      image  ."
+          ".     content ."
+         ;
+      }
+    }  
+    
     > h2 {
       position: relative;
-      padding-left: 2rem;
-      margin-top: auto;
-      margin-bottom: auto;
+      padding: 0 $padding;
+      margin-top: $margin/3;
+      margin-bottom: $margin/3;
       grid-area: title / content / span 1 / content;
     }
 
@@ -32,12 +45,30 @@
       display: block;
       background-color: $white;
       grid-area: white / white / span 1 / end;
+      &.left{
+        grid-area: white / white / span 1 / title;
+      }
+    }
+
+    .white--end{
+      grid-area: end;
+      background-color: white;
+      height: 100%;
+    }
+
+    .white--start{
+      grid-area: start;
+      background-color: white;
+      height: 100%;
     }
 
     .content{
       grid-area: content;
       padding: 0 $padding;
-      &.slide{
+      @include media-breakpoint-down(lg){
+        padding: $padding;
+      }
+      &.slide{       
         @include media-breakpoint-down(lg){
           padding: 0;
           grid-area: image;
@@ -65,7 +96,7 @@
       }
     }
 
-
+    
     & > img, &>picture{
       grid-area: image;
       width: 100%;
@@ -74,6 +105,8 @@
     & > img, &>picture>img {
       display: block;
       width: 100%;
+      max-width: 100%;
+      height: auto;
       z-index: 1;
       margin-bottom: -($margin * 2 / 3);
       &.cover{
@@ -95,7 +128,7 @@
       width: 100%;
       display: block;
       z-index: 1;
-      margin-bottom: -($margin * 2);
+      margin-bottom: -$margin*2;
       @include media-breakpoint-down(lg){
         margin-bottom: -($margin / 2);
       }
@@ -105,45 +138,41 @@
         right: 0;
         width: 100%;
         height: 100vh;
-        @include media-breakpoint-down(lg){
-          margin-top: -30vh;
-        }
-        img{
-          opacity:0;
-          transition: opacity 0.8s;
-          width: 100%;
-          height:100%;
-          object-fit: contain;
-        }
-      }
-      .slides{
-        position: absolute;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-        img{
+        > .slides{
           position: absolute;
           top:0;
           left:0;
           bottom:0;
           right:0;
-          opacity: 0;
-          
-          &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
-            opacity: 1;
+          //elements that contains actual slide content
+          & > img, & > video, & > picture>img, & > div {
+            position: absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            opacity: 0;
+            margin: auto;
+            transition: opacity 0.8s;
+            object-fit: contain;
+            width: 100%;
+            
+            &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
+              opacity: 1;
+            }
+            &.rounded {
+              border-radius: 50px 0px 0px 50px !important;
+              @include media-breakpoint-down(lg){
+                border-radius: 0px !important;
+              }
+            }
           }
-        }
-        
-        &:last-child > *:last-child img, &:last-child > img:last-child{
-          height: calc(50% + 7rem);
-          margin: auto;
-          object-fit: cover;
-          object-position: left center;
-          border-radius: 50px 0px 0px 50px;
-          @include media-breakpoint-down(lg){
-            border-radius: 0px;
-          }
+          .cover {
+            height: calc(50% + 7rem);
+            margin: auto;
+            object-fit: cover;
+            object-position: left center;
+          }        
         }
       }
     }
@@ -186,43 +215,42 @@
         }
       }
     }
-  }
-  .section-center{
-    > h2{
-      grid-area: title / content / span 1 / content;
-      
-    }
-    > div{
-      grid-area: 2 / col-start / span 1 / col-end;
-    }
-    > img{
-      grid-area: 2 / col-start / span 1 / col-end;
-    }
-    &:not(.section-white) > h2{
-      grid-area: 1 / col-start / span 1 / col-end;
-    }
-  }
-  .section-left{
-    text-align: right;
-    grid-template-areas: 
-      "white white  title   end"
-      "start content image  image"; 
-    @include media-breakpoint-down(lg){
-      text-align: left;
-      grid-template-columns: 0px [col-start] auto [col-end] 0px;
+
+    &.section-center{
       grid-template-areas: 
-        "white  title  ."
-        ".     content ."
-        ".      image  .";
+      "white title title end"
+      "start image image end"
+      "start content content end";
+      & > img, &>picture>img, &>div{
+        margin-bottom: $margin/2;
+      }
+      .section-center--header{
+        position: relative;
+        left: -75px;
+        @include media-breakpoint-down(lg){
+          left:0px
+        }
+        .section-center--icon{
+          width: 150px;
+          @include media-breakpoint-down(xs){
+            display: none;
+          }
+        }
+      }
+    } 
+
+    &.section-light{
+      background-color: $light;
+      color: $dark;
+    
+      .content{
+        border-left : 2px solid black;
+        margin-left: 2.5rem;
+        @include media-breakpoint-down(lg){
+          margin-left: 0;
+          border: none;
+        }
+      }
     }
-    > h2 {
-      padding-right: 2rem;
-    }
-    &.section-white{
-      text-align:left;
-    }
-    &.section-white::before{
-      grid-area: white / white / span 1 / title;
-    }
-  }  
+  }
 }

@@ -8,7 +8,7 @@ scripts:
   - /static/js/observer.js
 ---
 
-<main class="home-page-main main-grid pb-5">
+<main class="main-dark main-grid">
   <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
@@ -54,42 +54,41 @@ scripts:
       </p>
       <p>Présentation de maquettes, outil de médiation scientifique et culturelle, vitrine interactive pour dynamiser vos espaces. Tous ces usages sont à votre portée grâce à nos solutions exclusives et un matériel <b>Made In France.</b>
         <div class="d-flex justify-content-center">
-          <a href="/fr/usages/"><button class="btn btn-info image-shadow my-3">Découvrez nos usages clés</button></a>
+          <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Découvrez nos usages clés</button></a>
         </div>
       </div>
   </section>
 
   <section class="section section-white">
-    <h2 class="">Une expérience complète</h2>
+    <h2>Une expérience complète</h2>
   </section>
 
-  <section class="section section-left text-left">
-    <div data-slide="1" class="fixed-background">
+  <section class="section section-white left">
+    <div class="fixed-background">
       <div class="sticky-content">
         <div class="slides">
           {% picture grid "img/sections/background-slides.png"
           --img data-slides="1-4"
-          --img class="fixed"
           --alt illustration d'un iris 75
           %}
         </div>
         <div class="slides">
           {% picture grid "img/sections/slide_hologramme_batiment.png"
           --img data-slides="0,1"
-          style = "transition: none;"
-          --alt illustration d'un batiment
+          style="transition: none;"
+          --alt illustration d'un hologramme d'un' batiment
           %}
           {% picture grid "img/sections/slide_hologramme_musee.png"
             --img data-slides="2"
-            --alt illustration d'une statue
+            --alt illustration d'un hologramme d'une statue
           %}
           {% picture grid "img/sections/slide_hologramme_produit.png"
             --img data-slides="3"
-            --alt illustration d'un produit
+            --alt illustration d'un hologramme produit
           %}
           {% picture grid "img/sections/slide_hologramme_chateau.png"
           --img data-slides="4"
-          --alt illustration d'un chateau
+          --alt illustration d'un hologramme d'un chateau
           %}
         </div> 
         <div class="slides">
@@ -114,7 +113,7 @@ scripts:
           --alt illustration représentant une gamme d'hologrammes
           %}
           {% picture grid "img/sections/cafe_design.jpg"
-          --img class="image-shadow"
+          --img class="image-shadow rounded cover"
           --img data-slides="6"
           --alt photo de croquis
           %}
@@ -221,59 +220,261 @@ scripts:
     </div>
   </section>
 
-  <section class="section section-white section-left mb-6 text-dark" >
-    <h2>Découvrez nos offres</h2>
-  </section>
-       
-  {% include pricing.html %}
-
-  <section id="section-contact" class="section section-center " itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
-    <meta itemprop="name" content="holusion" />
-    <div class="row no-gutters">
-      <div class="col-md-6 col-sm-12">
-        <h3 style="padding-bottom: 10px">Venez nous rencontrer :</h3>
-        {% include components/maps_api.html %}
+  <section id="pricing" class="section section-center section-light section-pricing " > 
+    <div class="content p-0">
+      <h2 class="m-5">Découvrez nos offres</h2>
+      <div class="section-center--header d-flex">
+        {% picture grid img/sections/icone_produit.png
+          --img class="section-center--icon p-3"
+          data-noisetest="1"
+          --alt icone produit
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            Nos meilleures solutions pour la présentation de vos maquettes en hologrammes.
+          </p>
+          <p>
+            A louer le temps d'un salon, ou à acheter pour chez vous.
+          </p>        
+        </div>  
       </div>
-      <div class="col-md-6 col-sm-12 ">
-        <h3>Contactez-nous :</h3>
-        <div class="p-1">
-          <ul class="list-group">
-              <li class="list-group-item">
-                <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
-                <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi résolution" sizes="216px"
-                    srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
-              </li>
-              <li class="list-group-item">
-                <a href="tel:+33972424451" class="text-dark">
-                  <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
-                  <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
-                  <div>
-                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-location_on-24px.svg @inline %}</span>
-                    <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
-                  </div>
-                  <div>
-                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-business-24px.svg @inline %}</span>
-                    <span itemprop="postalCode">59200</span>
-                    <span itemprop="addressLocality">Tourcoing</span>,
-                    <span itemprop="addressCountry">France</span>
-                  </div>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
-                <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
-              </li>
-            </ul>
+      <div class="row mb-5 no-gutters">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="card pricing-card">
+            {% picture grid img/products/iris_22_2019.jpg
+              --img class="card-img-top"
+              data-noisetest="1"
+              style="object-position: 25% 0"
+              --alt photo d'un dispositif holographique Iris 22
+            %}  
+            <div class="card-body">
+              <h3>Iris 22"</h3>
+              <p>à partir de</p>
+              <h4 class="text-right text-secondary">2 000 €</h4>
+              <p>
+                Vous préférez la location ?
+              </p>
+              <h4 class="text-right text-secondary">500 €</h4>
+              <p class="text-right">pour 3 jours</p> 
+            </div>            
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="card pricing-card">
+            {% picture grid img/products/iris32_museum.jpg
+              --img class="card-img-top"
+              data-noisetest="1"
+              style="object-position: 25% 0"
+              --alt photo d'un dispositif holographique Iris 32
+            %}  
+            <div class="card-body">
+              <h3>Iris 32"</h3>
+              <p>à partir de</p>
+              <h4 class="text-right text-secondary">4 500 €</h4>
+              <p>
+                Vous préférez la location ?
+              </p>
+              <h4 class="text-right text-secondary">1 750 €</h4>
+              <p class="text-right">pour 3 jours</p> 
+            </div>            
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="card pricing-card">
+            {% picture grid img/products/iris75_chaufferie.jpg
+              --img class="card-img-top"
+              data-noisetest="1"
+              style="object-position: 25% 0"
+              --alt photo d'un dispositif holographique Iris 75
+            %}  
+            <div class="card-body">
+              <h3>Iris 75"</h3>
+              <p>à partir de</p>
+              <h4 class="text-right text-secondary">23 000 €</h4>
+              <p>
+                Vous préférez la location ?
+              </p>
+              <h4 class="text-right text-secondary">4 950 €</h4>
+              <p class="text-right">pour 3 jours</p> 
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="home-page-header-cta d-flex justify-content-center">
+        <a class="d-block" href="/fr/products/"> <button  class="btn btn-info">Decouvrez notre gamme complète</button></a>
+      </div>
+
+      <h2 class="m-5">Notre offre de maquettes numériques</h2>
+      <div class="section-center--header d-flex">
+        {% picture grid img/sections/icone_maquette.png
+          --img class="section-center--icon p-3"
+          data-noisetest="1"
+          --alt icone maquette 
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            La conversion de votre maquette en hologrammes depuis les fichiers BIM est <a href="/fr/posts/2019-07-01-SHAKE#video">notre spécialité</a>.
+          </p>
+          <p>
+            Choisissez votre offre pour les projets de moins de 10 000m² de sdp.
+          </p>     
+        </div>  
+      </div>
+      <div class="row no-gutters mb-5">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Offre Explore</h3>
+              <p>
+                L'essentiel en exploration
+              </p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Vue orbitale dynamique</li>
+                <li>Formats supportés : .ifc / .fbx / .obj / .3ds</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">950 €</h4>
+                <p class="text-right">par maquette</p>   
+              </div>                           
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Offre Improve</h3>
+              <p>
+                Une découverte améliorée
+              </p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Toute l'offre "Explore"</li>
+                <li>Transitions dynamiques</li>
+                <li>Rendus réalistes</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">1700 €</h4>
+                <p class="text-right">par maquette</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Offre Upgrade</h3>
+              <p>Le niveau supérieur de simulation 3D</p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Toute l'offre "Improve"</li>
+                <li>Scénarisation avancée</li>
+                <li>Motion design</li>
+                <li>Direction artistique dédiée</li>
+                <li>Vue en écorché des appartements</li>
+                <li>Rendu Ultra-HD</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">3750 €</h4>
+                <p class="text-right">par maquette</p>                   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-page-header-cta d-flex justify-content-center">
+        <button class="d-block btn btn-info" style="cursor:pointer" onclick="displayContactForm()">
+          Demandez un devis
+        </button> 
+      </div>
+
+      <h2 class="m-5">Notre offre de services de gestion</h2>
+      <div class="section-center--header d-flex">
+        {% picture grid img/sections/icone_gestion.png
+          --img class="section-center--icon p-3"
+          data-noisetest="1"
+          --alt icone gestion
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            Contrôlez votre hologramme en autonomie et en toute sérénité.
+          </p>
+          <p>
+            Avec nos solutions professionelles, profitez d'une administration en ligne en Cloud, d'une gestion à distance et d'une application tablette pour rendre <a href="/fr/interaction">votre hologramme interactif</a> 
+          </p>     
+        </div>  
+      </div>
+      <div class="row no-gutters mb-5">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Individuel</h3>
+              <p>Maquettes individuelles</p>
+              <p>
+                Administration hors ligne en autonomie
+              </p> 
+              <div class="price">
+                <h4 class="text-right text-secondary">Gratuit</h4>
+                <p class="text-right"></p>   
+              </div>                           
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Professionnel</h3>
+              <p>
+                Besoins récurrents
+              </p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Administration en ligne sur interface dédiée</li>
+                <li>10Go de stockage cloud inclus</li>
+                <li>1 à 4 borne en gestion locale</li>
+                <li>Gestion par iPad</li>
+                <li>iPad inclus</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">125€ HT/mois</h4>
+                <p class="text-right">engagement 12 mois</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Entreprise</h3>
+              <p>Déploiements</p>
+              <p>
+                Inclus :
+              </p>
+              <ul>
+                <li>Administration en ligne sur interface dédiée</li>
+                <li>100 Go de stockage cloud</li>
+                <li>Jusqu'à 100 bornes en gestion centralisée</li>
+                <li>Application interactive en temps réel offerte</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">210€ HT/mois</h4>
+                <p class="text-right">engagement 12 mois</p>                   
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
   </section>
-
+  
 </main>
 
 

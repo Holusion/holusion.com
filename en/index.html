@@ -6,7 +6,7 @@ scripts:
   - /static/js/observer.js
 ---
 
-<main class="home-page-main main-grid pb-5">
+<main class="main-dark main-grid">
   <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
@@ -32,7 +32,7 @@ scripts:
     </div>
     </div> 
     <div class="home-page-header-cta d-flex justify-content-center">
-      <a class="d-block" href="/fr/products/"> <button  class="btn btn-info">Discover our products</button></a>
+      <a class="d-block" href="/en/products/"> <button  class="btn btn-info">Discover our products</button></a>
     </div>
   </section> 
 
@@ -55,7 +55,7 @@ scripts:
       <p>
         To display models, as a scientific or cultural mediation tool, as an interactive showcase. Our products are <b>designed and made in France</b> and can be used in a wide variety of cases.
         <div class="d-flex justify-content-center">
-          <a href="/fr/usages/"><button class="btn btn-info image-shadow my-3">Discover our key use cases</button></a>
+          <a href="/en/interaction/"><button class="btn btn-info image-shadow my-3">Discover our key use cases</button></a>
         </div>
       </div>
   </section>
@@ -64,14 +64,14 @@ scripts:
     <h2 class="">An augmented display</h2>
   </section>
 
-  <section class="section section-left text-left">
-    <div data-slide="1" class="fixed-background">
+  <section class="section section-white left">
+    <div class="fixed-background">
       <div class="sticky-content">
         <div class="slides">
           {% picture grid "img/sections/background-slides.png"
           --img data-slides="1-4"
           --img class="fixed"
-          --alt sketch of an iris 75
+          --alt sketch of an holographic device iris 75
           %}
         </div>
         <div class="slides">
@@ -115,7 +115,7 @@ scripts:
           --alt sketch of some of holusion's products
           %}
           {% picture grid "img/sections/cafe_design.jpg"
-          --img class="image-shadow"
+          --img class="image-shadow cover rounded"
           --img data-slides="6"
           --alt picture of a design session at holusion
           %}
@@ -223,71 +223,283 @@ scripts:
           Designed, made and put together in France, our products are of guaranteed quality for european standards.
         </p>
         <div class="d-flex justify-content-center">
-          <a href="/fr/products/"><button class="btn btn-info image-shadow my-3">Discover our products range</button></a>
+          <a href="/en/products/"><button class="btn btn-info image-shadow my-3">Discover our products range</button></a>
         </div>
       </div>
       <div>
-        <h2>Chaque projet est unique</h2>
+        <h2>Each project is unique</h2>
         <p><strong></strong></p>
         <p></p>
         <div class="d-flex justify-content-center">
-          <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">Check out our achievements</button></a>
+          <a href="/en/posts/"><button class="btn btn-info image-shadow my-3">Check out our achievements</button></a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-white section-left mb-6 text-dark" >
-    <h2>Discover our pricings</h2>
-  </section>
-       
-  {% include pricing_en.html %}
-
-  <section id="section-contact" class="section section-center " itemscope itemtype="http://schema.org/Organization" style="padding-top:30px;">
-    <meta itemprop="name" content="holusion" />
-    <div class="row no-gutters">
-      <div class="col-md-6 col-sm-12">
-        <h3 style="padding-bottom: 10px">Come meet us :</h3>
-        {% include components/maps_api.html %}
+  <section id="pricing" class="section section-center section-light section-pricing " > 
+    <div class="content p-0">
+      <h2 class="m-5">Discover our pricings</h2>
+      <div class="section-center--header d-flex">
+        {% picture grid img/sections/icone_produit.png
+          --img class="section-center--icon p-3"
+          data-noisetest="1"
+          --alt product icon
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            Our best solutions to display your 3D models in holograms.
+          </p>
+          <p>
+            Rent it, just for the show, or buy it to bring it home.
+          </p> 
+          <p>
+            Made in France.
+          </p>       
+        </div>  
       </div>
-      <div class="col-md-6 col-sm-12 ">
-        <h3>Contact us :</h3>
-        <div class="p-1">
-          <ul class="list-group">
-              <li class="list-group-item">
-                <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
-                <img class="img-fluid" style="height:68px; margin:auto; display:block;" src="/static/img/logo_holusion_web_HD.png" alt="logo Holusion multi resolution" sizes="216px"
-                    srcset="/static/img/logo_holusion_web_216px.png 216w, /static/img/logo_holusion_web_432px.png 432w, /static/img/logo_holusion_web_SD.png 720w, /static/img/logo_holusion_web_HD.png 1920w, /static/img/logo_holusion_web_4k.png 3840w, /static/img/logo_holusion_web_8k.png 7680w">
-              </li>
-              <li class="list-group-item">
-                <a href="tel:+33972424451" class="text-dark">
-                  <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_phone-24px.svg @inline %}</span>
-                  <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' class="text-dark" style="display:block;">
-                  <div>
-                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-location_on-24px.svg @inline %}</span>
-                    <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
-                  </div>
-                  <div>
-                    <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-business-24px.svg @inline %}</span>
-                    <span itemprop="postalCode">59200</span>
-                    <span itemprop="addressLocality">Tourcoing</span>,
-                    <span itemprop="addressCountry">France</span>
-                  </div>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <span class="icon d-none d-sm-inline">{% svg _assets/icons/ui/baseline-contact_mail-24px.svg @inline %}</span>
-                <a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a>
-              </li>
-            </ul>
+      <div class="row mb-5 no-gutters">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="card pricing-card">
+            {% picture grid img/products/iris_22_2019.jpg
+              --img class="card-img-top"
+              data-noisetest="1"
+              style="object-position: 25% 0"
+              --alt picture of an holographic device Iris 22
+            %}  
+            <div class="card-body">
+              <h3>Iris 22"</h3>
+              <p>Starting:</p>
+              <h4 class="text-right text-secondary">2 000 €</h4>
+              <p>
+                prefer to rent ?
+              </p>
+              <h4 class="text-right text-secondary">500 €</h4>
+              <p class="text-right">3 days renting</p> 
+            </div>            
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="card pricing-card">
+            {% picture grid img/products/iris32_museum.jpg
+              --img class="card-img-top"
+              data-noisetest="1"
+              style="object-position: 25% 0"
+              --alt picture of an holographic device Iris 32
+            %}  
+            <div class="card-body">
+              <h3>Iris 32"</h3>
+              <p>Starting:</p>
+              <h4 class="text-right text-secondary">4 500 €</h4>
+              <p>
+                prefer to rent ?
+              </p>
+              <h4 class="text-right text-secondary">1 750 €</h4>
+              <p class="text-right">3 days renting</p> 
+            </div>            
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="card pricing-card">
+            {% picture grid img/products/iris75_chaufferie.jpg
+              --img class="card-img-top"
+              data-noisetest="1"
+              style="object-position: 25% 0"
+              --alt picture of an holographic device Iris 75
+            %}  
+            <div class="card-body">
+              <h3>Iris 75"</h3>
+              <p>Starting:</p>
+              <h4 class="text-right text-secondary">23 000 €</h4>
+              <p>
+                prefer to rent ?
+              </p>
+              <h4 class="text-right text-secondary">4 950 €</h4>
+              <p class="text-right">3 days renting</p> 
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="home-page-header-cta d-flex justify-content-center">
+        <a class="d-block" href="/en/products/"> <button  class="btn btn-info">All of our products</button></a>
+      </div>
+
+      <h2 class="m-5">Our 3D models</h2>
+      <div class="section-center--header d-flex">
+        {% picture grid img/sections/icone_maquette.png
+          --img class="section-center--icon p-3"
+          data-noisetest="1"
+          --alt icone maquette 
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            Convert your BIM 3D models into holographic animations. <a href="/en/posts/2019-07-01-SHAKE#video">It's our specialty.</a>.
+          </p>
+          <p>
+            Calculate by yourselves the cost of your content for projects under 10.000sqm
+          </p>     
+        </div>  
+      </div>
+      <div class="row no-gutters mb-5">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Explore</h3>
+              <p>
+                The bare necessity for exploration
+              </p>
+              <p>
+                Included :
+              </p>
+              <ul>
+                <li>Dynamic orbital view</li>
+                <li>Required data format: .ifc / .fbx / .obj / .3ds</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">950 €</h4>
+                <p class="text-right">per model</p>   
+              </div>                           
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Improve</h3>
+              <p>
+                An improved visualization
+              </p>
+              <p>
+                Included :
+              </p>
+              <ul>
+                <li>All of "Explore"</li>
+                <li>Dynamic transitions</li>
+                <li>Realistic renders</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">1700 €</h4>
+                <p class="text-right">per model</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Upgrade</h3>
+              <p>
+                Upgrade your 3D simulation
+              </p>
+              <p>
+                Included :
+              </p>
+              <ul>
+                <li>All of "Improve"</li>
+                <li>Advanced screenwriting</li>
+                <li>Motion design</li>
+                <li>Dedicated art management</li>
+                <li>Rooms and flats in cutaway view</li>
+                <li>Ultra-HD rendering</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">3750 €</h4>
+                <p class="text-right">per model</p>                   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-page-header-cta d-flex justify-content-center">
+        <button class="d-block btn btn-info" style="cursor:pointer" onclick="displayContactForm()">
+          Contact us
+        </button> 
+      </div>
+
+      <h2 class="m-5">Our administration tools</h2>
+      <div class="section-center--header d-flex">
+        {% picture grid img/sections/icone_gestion.png
+          --img class="section-center--icon p-3"
+          data-noisetest="1"
+          --alt icone gestion
+        %}        
+        <div class="my-auto p-3">
+          <p>
+            Control your hologram by yourself. Easy and stress free.
+          </p>
+          <p>
+            Thanks to our cloud solutions, enjoy remote control and an iPad application for <a href="/en/interaction">interactive holograms.</a> 
+          </p> 
+          <p>
+            Interactivity, reliability and easy updates.
+          </p>
+        </div>  
+      </div>
+      <div class="row no-gutters mb-5">
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Individual</h3>
+              <p>Single model</p>
+              <p>
+                Autonomous offline management of your products.
+              </p> 
+              <div class="price">
+                <h4 class="text-right text-secondary">Free</h4>
+                <p class="text-right"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Professionnal</h3>
+              <p>
+                Recuring needs
+              </p>
+              <p>
+                Included :
+              </p>
+              <ul>
+                <li>Online remote administration</li>
+                <li>10Go cloud storage</li>
+                <li>1 to 4 displays in local management</li>
+                <li>iPad control</li>
+                <li>iPad included</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">125€ w/o VAT/month</h4>
+                <p class="text-right">12 months commitment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-md-3 py-3">
+          <div class="pricing-card">
+            <div class="card-content">
+              <h3>Entreprise</h3>
+              <p>Deployments</p>
+              <p>
+                Included :
+              </p>
+              <ul>
+                <li>Online remote administration</li>
+                <li>100Go cloud storage included</li>
+                <li>Up to 100 holographics displays in remote management</li>
+                <li>Interactive application included</li>
+                <li>Ipad control</li>
+                <li>iPad included</li>
+              </ul>
+              <div class="price">
+                <h4 class="text-right text-secondary">210€ w/o VAT/month</h4>
+                <p class="text-right">12 months commitment</p>                   
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
   </section>
 
 </main>

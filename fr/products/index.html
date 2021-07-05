@@ -1,40 +1,171 @@
 ---
 layout: front_page
 abstract: Affichages holographiques commercialisés en vente directe ou en location
+scripts:
+  - /static/js/observer.js
 ---
 
-<section class="title">
-  <div class="container">
-    <h1>
-      Nos solutions
-    </h1>
-  </div>
-</section>
-<div class="container">
-  {% ariane %}
-</div>
-<div class="container pb-4 text-center">
-  <h1 id="main-title-1" class="p-4">Affichage digital innovant</h1>
-  <p class="rtecenter" >
-    Depuis 2014, Holusion est un partenaire privilégié pour les entreprises cherchant à tirer le meilleur parti des <b>affichages 3D en hologrammes</b>. Nous concevons et développons des solutions d'affichage digital innovantes pour des projets ambitieux.
-  </p>
-  <p>
-    De quelques centimètres à plusieurs mètres, des solutions portables aux installations scéniques, nous proposons une large gamme de solutions techniques et de services. <b>Tous nos produits sont disponibles à la vente ou à la location</b>.
-  </p>
-  <p>
-    Tous les cas d'utilisation de l'hologramme sont possibles; comme une installation dans un musée ou une exposition, la location avec livraison clé-en-main pour un salon ou la fabrication en masse pour un déploiement commercial. Bien d'autres usages sont encore à écrire et à découvrir.
-  </p>
-</div>
-<div>
-  <div class="row no-gutters">
-  {% for product in site.products_items[page.lang] %}
-    {% include components/card.html content=product classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1" %}
-  {% endfor %}
-  {% include components/card.html
-    image="/static/img/misc/conception_au_marteau.jpg"
-    classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1"
-    title="Sur-mesure"
-    abstract="Découvrez notre accompagnement personnalisé qui vous aidera à mettre en place votre projet d'innovation."
+<main class="main-grid main-dark">
+  <section class="section section-center">
+    <h2 class="text-white my-5" style="font-size: 3rem">Nos Produits</h2>
+  </section>
+  <section class="section">
+    {% picture grid img/sections/st_omer.jpg
+      --img class="cover"
+      data-noisetest="1"
+      style="object-position: 70% 0"
+      --alt Dispositif hologramme controlé par tablette
     %}
+    <div class="content">
+      <h2>Affichage digital innovant</h2>
+      <p>
+        De quelques centimètres à plusieurs mètres, des solutions portables aux installations scéniques, nous proposons une large gamme de solutions techniques et de services. 
+      </p>
+      <p>
+        <b>Tous nos produits sont disponibles à la vente ou à la location</b>.
+      </p>
+      <a class="d-flex justify-content-center" href="#catalog"> <button  class="btn btn-info my-4">Notre catalogue</button></a>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <h2>Toutes nos solutions</h2>
+  </section>  
+  <section class="section left text-left">
+    <div class="fixed-background">
+      <div class="sticky-content">
+        <div class="slides">
+          {% picture grid "img/sections/slide_produit_background.png"
+          --img data-slides="0-5"
+          --alt ombre au sol
+          %}
+          {% picture grid "img/sections/slide_produit_iris22.png"
+          --img data-slides="0"
+          --alt illustration d'une borne holographique iris 22 
+          %}
+          {% picture grid "img/sections/slide_produit_iris32.png"
+          --img data-slides="1"
+          --alt illustration d'une borne holographique iris 32  
+          %}
+          {% picture grid "img/sections/slide_produit_iris46.png"
+          --img data-slides="2"
+          --alt illustration d'une borne holographique iris 46
+          %}
+          {% picture grid "img/sections/slide_produit_iris75.png"
+          --img data-slides="3"
+          --alt illustration d'une borne holographique iris 75
+          %}
+          {% picture grid "img/sections/slide_produit_pixel.png"
+          --img data-slides="4-5"
+          --alt illustration d'une pyramide holographique pour téléphone
+          %}
+          {% picture grid "img/sections/slide_produit_foreground.png"
+          --img data-slides="0-5"
+          --alt illustration d'une dame et d'une plante
+          %}
+        </div> 
+      </div>
+    </div>
+    <div class="slide content">
+      <div class="my-5" style="margin-top: 0;">
+        <div>
+          <h2>Iris 22</h2>  
+        </div>
+        {% picture grid "img/products/iris_22_2019.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'une borne holographique iris 22
+        %}
+        <div>
+          <p>Une vitrine holographique de 22 pouces.</p>
+          <p>L'Iris 22 est une très bonne solution pour <b>exposer vos hologrammes dans un espace réduit</b> </p>
+          <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations institutionnelles ou éducatives.</b></p>
+          <h4 class="text-right text-secondary">2 000 € HT</h4>
+          <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
+          <p class="text-center pt-4"><a href="/fr/products/iris22"> <button class="btn btn-info">en savoir plus</button> </a></p>          
+        </div>
+      </div>
+      <div>
+        <h2>Iris 32</h2>
+        {% picture grid "img/products/iris32_museum.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'une borne holographique iris 32
+        %}
+        <p>Une vitrine holographique de 32 pouces.</p>
+        <p>L'Iris 32 est notre meilleure solution pour <b>un maximum d'impact dans un minimum de place.</b></p>
+        <p>Sa puissance lumineuse et la qualité graphique de ses rendus le rend très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions.</b></p>
+        <h4 class="text-right text-secondary">4 500 € HT</h4>
+        <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
+        <p class="text-center pt-4"><a href="/fr/products/iris32"> <button class="btn btn-info">en savoir plus</button> </a></p>
+      </div>
+      <div>
+        <h2>Iris 46</h2>
+        {% picture grid "img/products/iris46_archi.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'une borne holographique iris 46
+        %}
+        <p>Une vitrine holographique de 46 pouces.</p>
+        <p>L'Iris 46 est notre meilleure solution pour <b>une présentation haut-de-gamme dans un espace clos.</b></p>
+        <p>Très simple à installer, configurable et interactive, elle devient le support <b>idéal pour des présentations de projets complexes comme des projets immobiliers.</b></p>
+        <p>Laissez cours à votre imagination pour une application en formation ou en valorisation des patrimoines culturels et scientifiques.</p>
+        <h4 class="text-right text-secondary">6 500 € HT</h4>
+        <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
+        <p class="text-center p-5"><a href="/fr/products/iris46"> <button class="btn btn-info">en savoir plus</button> </a></p>
+      </div>
+      <div>
+        <h2>Iris 75</h2>
+        {% picture grid "img/products/iris75_side.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'une borne holographique iris 75 en vue 3/4
+        %}
+        <p>Un hologramme XXL pour des projets grandeur nature.</p>
+        <p>L’hologramme IRIS 75 ou l’hologramme XXL est idéal pour des présentations spectaculaires.</p>
+        <p>L'Iris 75" est naturellement customisable et peut être utilisé en affichage portrait ou paysage.</b></p>
+        <h4 class="text-right text-secondary">23 000 € HT</h4>
+        <p class="text-right" style="font-size: 0.7rem">Prix public conseillé. Disponible en location</p>
+        <p class="text-center p-5"><a href="/fr/products/iris75"> <button class="btn btn-info">en savoir plus</button> </a></p>
+      </div>
+      <div>
+        <h2>Pixel</h2>
+        {% picture grid "img/products/pixel_landscape.jpg"
+        --img class="img-fluid my-4"
+        --alt photo d'un goodie pour téléphone projetant un hologramme
+        %}
+        <p>Une pyramide pour téléphone et tablettes, un goodie très apprécié.</p>
+        <p>Le Pixel est une petite pyramide qui diffuse un hologramme à 360°. Il se glisse dans la poche pour en faire profiter votre entourage. </p>
+        <p>Découvrez notre gamme de produits goodies, disponnibles dans la boutique en ligne</p>
+        <h4 class="text-right text-secondary">3,33 € HT</h4>
+        <p class="text-right" style="font-size: 0.7rem">Prix public conseillé</p>
+        <p class="text-center p-5"><a href="/fr/store/pixel"> <button class="btn btn-info">Boutique en ligne</button> </a></p>
+      </div>
+      <div>
+        <h2>Sur mesure</h2>
+        <p>Découvrez notre accompagnement personnalisé qui vous aidera à mettre en place votre projet d'innovation.</p>
+        <button class="d-block btn btn-info mt-5 mx-auto" style="cursor:pointer" onclick="displayContactForm()">Contactez nous</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog" class="section section-white left">
+    <h2>Autres produits</h2>
+  </section>
+  <div class="section section-center">
+    <div class="content row no-gutters my-3">
+      {% for product in site.products_items[page.lang] %}
+        <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-3 py-sm-3 text-center p-2 d-flex flex-column">
+          <a href="{{product.url}}">
+            {% picture {{ product.image }} 
+            --img class="img-fluid mb-2"
+            %}          
+          </a>
+          <h2 class="text-white mb-1">{{ product.title }}</h2>
+          {%if product.price %}
+            <h4 class="text-secondary">{{ product.price }} €</h4>
+          {%endif%}
+          <p class="text-white font-weight-light">{{ product.abstract }}</p> 
+          <a class="mt-auto" href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button></a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
+</main>
+
