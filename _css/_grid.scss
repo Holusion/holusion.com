@@ -128,7 +128,7 @@
       width: 100%;
       display: block;
       z-index: 1;
-      margin-bottom: -$margin;
+      margin-bottom: -$margin*2;
       @include media-breakpoint-down(lg){
         margin-bottom: -($margin / 2);
       }
@@ -155,19 +155,21 @@
             margin: auto;
             transition: opacity 0.8s;
             object-fit: contain;
-            max-width: 100%;
+            width: 100%;
             
             &[data-slides='0'], &[data-slides='all'], &:not([data-slides]):first-child  {
               opacity: 1;
             }
             &.rounded {
-              border-radius: 0px !important;
-              @include media-breakpoint-up(lg){
-                border-radius: 50px 0px 0px 50px !important;
+              border-radius: 50px 0px 0px 50px !important;
+              @include media-breakpoint-down(lg){
+                border-radius: 0px !important;
               }
             }
           }
           .cover {
+            height: calc(50% + 7rem);
+            margin: auto;
             object-fit: cover;
             object-position: left center;
           }        
