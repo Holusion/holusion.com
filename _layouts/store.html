@@ -1,7 +1,6 @@
 ---
-layout: index
+layout: front_page
 ---
-
 
 {% comment %}we suppose that jquery is always already loaded{%endcomment%}     
 <script defer src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"           
@@ -10,24 +9,36 @@ layout: index
       id="snipcart"></script>
       <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
 
-<div class="container-fluid cart-icon-line">
-  <div id="open-cart" class="snipcart-summary">
-    <button class="btn btn-outline-info snipcart-checkout">
-      <span class="snipcart-total-items">0</span>
-      {% svg src/pictos/icons/icon-cart.svg width=20 style="display:inline-block;" %}
-    </button>
-  </div>
-</div>
+<main class="main-dark main-grid">
 
-<div id="content">
-{{content}}
-</div>
+  <section class="section section-center">
+    <h2 class="text-white my-5" style="font-size: 3rem">    
+      {% if page.title %}
+        {{page.title}}
+      {% endif %}
+    </h2>
+    <div class="cart-icon-line px-4 mb-4">
+      <div id="open-cart" class="snipcart-summary">
+        <button class="btn btn-outline-info snipcart-checkout">
+          <span class="snipcart-total-items">0</span>
+          {% svg src/pictos/icons/icon-cart.svg width=20 style="display:inline-block;" %}
+        </button>
+      </div>
+    </div>    
+  </section>
 
-<div class="container-fluid cart-icon-line">
-  <div id="open-cart" class="snipcart-summary" style="padding-top:20px;">
-    <button class="btn btn-outline-info snipcart-checkout">
-      <span class="snipcart-total-items">0</span>
-      {% svg src/pictos/icons/icon-cart.svg width=20 style="display:inline-block;" %}
-    </button>
-  </div>
-</div>
+  {{content}}
+
+  <section class="section section-center">
+    <div class="cart-icon-line p-4 m-0">
+      <div id="open-cart" class="snipcart-summary" style="padding-top:20px;">
+        <button class="btn btn-outline-info snipcart-checkout">
+          <span class="snipcart-total-items">0</span>
+          {% svg src/pictos/icons/icon-cart.svg width=20 style="display:inline-block;" %}
+        </button>
+      </div>
+    </div>    
+  </section>
+
+</main>
+

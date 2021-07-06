@@ -19,9 +19,9 @@ layout: front_page
               --img title="{{post.title}}"
               --alt  {{alt_text}}
             %}
-          {%- endif -%}        
+          {%- endif -%}
         </a>
-        <h2 class="text-white mb-1">{{ post.title }}</h2>
+        <h4>{{ post.title }}</h4>
         <p class="font-weight-light">{{ post.abstract }}</p> 
         <a class="mt-auto" href="{{post.url}}"> <button class="btn btn-info">{{post.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
       </div>

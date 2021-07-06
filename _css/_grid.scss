@@ -213,6 +213,12 @@
       "white title title end"
       "start image image end"
       "start content content end";
+      @include media-breakpoint-down(lg){
+        grid-template-areas:
+        ". title ."
+        ". image ."
+        ". content .";
+      }
       & > img, &>picture>img, &>div{
         margin-bottom: $margin/2;
       }

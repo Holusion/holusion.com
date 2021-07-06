@@ -5,8 +5,11 @@
   flex-direction: row-reverse;
 }
 .cart-icon-line{
-  @media screen and (min-width: $break-md) {
-    padding-right:40px;
+  grid-area: title; 
+  margin-top: 3.5rem;
+  @include media-breakpoint-down(xs){
+    grid-area: content;
+    margin-top: 0;
   }
 }
 .shop-product{
