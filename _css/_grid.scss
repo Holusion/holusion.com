@@ -1,6 +1,6 @@
 .main-grid{
   $margin: 7rem;
-  $padding: 2rem;
+  $padding: 1.5rem;
   $col: 1200px;
   .section{
     display: grid;
@@ -18,7 +18,15 @@
         ".     content ."
         ".      image  .";
     }
-
+    
+    > h2 {
+      position: relative;
+      padding: 0 $padding;
+      margin-top: $margin/3;
+      margin-bottom: $margin/3;
+      grid-area: title / content / span 1 / content;
+    }
+        
     &.left{
       grid-template-areas: 
         "white white title end"
@@ -29,44 +37,30 @@
            ".      image  ."
           ".     content ."
          ;
+        & > img, &>picture>img, &>div{
+          margin-bottom: $margin/2;
+        }         
       }
     }  
     
-    > h2 {
-      position: relative;
-      padding: 0 $padding;
-      margin-top: $margin/3;
-      margin-bottom: $margin/3;
-      grid-area: title / content / span 1 / content;
-    }
-
-    &.section-white::before{
-      content: "";
-      display: block;
-      background-color: $white;
-      grid-area: white / white / span 1 / end;
-      &.left{
-        grid-area: white / white / span 1 / title;
+    &.section-white{
+      color: $dark;
+      &::before{
+        content: "";
+        display: block;
+        background-color: white;
+        grid-area: white / white / span 2 / end;
+        &.left{
+          grid-area: white / white / span 2 / title;
+        }
       }
-    }
-
-    .white--end{
-      grid-area: end;
-      background-color: white;
-      height: 100%;
-    }
-
-    .white--start{
-      grid-area: start;
-      background-color: white;
-      height: 100%;
     }
 
     .content{
       grid-area: content;
       padding: 0 $padding;
       @include media-breakpoint-down(lg){
-        padding: $padding;
+        margin-bottom: $margin/2;
       }
       &.slide{       
         @include media-breakpoint-down(lg){
@@ -74,7 +68,6 @@
           grid-area: image;
           z-index: 2;
         }
-        
         > div{
           margin-top:75vh;
           &:first-child{
@@ -95,7 +88,6 @@
         }
       }
     }
-
     
     & > img, &>picture{
       grid-area: image;
@@ -115,13 +107,13 @@
         object-position: right;
       }
       @include media-breakpoint-down(lg){
+        margin-bottom: 0;
         &.cover{
           height: auto;
         }
-        margin-bottom: 0;
       }
-
     }
+
     & .fixed-background {
       position: relative; 
       grid-area: image;
@@ -242,7 +234,6 @@
     &.section-light{
       background-color: $light;
       color: $dark;
-    
       .content{
         border-left : 2px solid black;
         margin-left: 2.5rem;

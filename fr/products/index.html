@@ -151,17 +151,15 @@ scripts:
   <div class="section section-center">
     <div class="content row no-gutters my-3">
       {% for product in site.products_items[page.lang] %}
-        <div class="col-xl-4 col-lg-4 col-sm-6 col-12 py-3 py-sm-3 text-center p-2 d-flex flex-column">
+        <div class="dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
           <a href="{{product.url}}">
-            {% picture {{ product.image }} 
-            --img class="img-fluid mb-2"
-            %}          
+            {% picture {{ product.image }} %}          
           </a>
-          <h2 class="text-white mb-1">{{ product.title }}</h2>
+          <h2 class=" mb-1">{{ product.title }}</h2>
           {%if product.price %}
             <h4 class="text-secondary">{{ product.price }} €</h4>
           {%endif%}
-          <p class="text-white font-weight-light">{{ product.abstract }}</p> 
+          <p class="font-weight-light">{{ product.abstract }}</p> 
           <a class="mt-auto" href="{{product.url}}"> <button class="btn btn-info">en savoir plus</button></a>
         </div>
       {% endfor %}

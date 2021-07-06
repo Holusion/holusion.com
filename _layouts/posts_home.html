@@ -2,64 +2,73 @@
 layout: front_page
 ---
 
-<section class="title">
-  <div class="container">
-    <h1>
-      Nos histoires
-    </h1>
-  </div>
-</section>
-<div class="container">
-  {% ariane %}
-</div>
-{{content}}
+<main class="main-dark main-grid">
 
-<div class="container-fluid">
-  <div class="row align-items-stretch" role="list">
-    {% for post in paginator.posts %}
-    {% include components/card.html content=post classes="col-xl-3 col-lg-4 col-sm-6 col-12 py-1 p-sm-1"%}
-  {% endfor %}
+  {{content}}
+
+  <section class="section section-center">
+    <div class="content row no-gutters">
+      {% for post in paginator.posts %}
+      <div class="dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
+        <a href="{{post.url}}">
+          {%- if post.image contains "static" -%}
+          <img data-deprecated="static-card" src="{{post.image|default: "/static/img/posts/default.jpg"}}"
+              {% if content.image2x %} srcset="{{post.image2x}} 800w, {{post.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+          {%- else -%}
+            {% picture card "{{post.image}}"
+              --img title="{{post.title}}"
+              --alt  {{alt_text}}
+            %}
+          {%- endif -%}        
+        </a>
+        <h2 class="text-white mb-1">{{ post.title }}</h2>
+        <p class="font-weight-light">{{ post.abstract }}</p> 
+        <a class="mt-auto" href="{{post.url}}"> <button class="btn btn-info">{{post.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% if paginator.total_pages > 1 %}
+  <div class="container pb-4">
+    <nav class="d-flex justify-content-center" role="navigation" aria-label="Pages de posts">
+      <ul class="pagination">
+        {% if paginator.first_page != paginator.page %}
+        <li class=>
+          <a class href="{{ paginator.first_page_path | absolute_url }}">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        {% endif %}
+        {% if paginator.page_trail %}
+          {% for trail in paginator.page_trail %}
+            {% if trail.num == paginator.page %}
+            <li aria-current="true" >
+              <a class="active" href="{{ trail.path | absolute}}" title="{{trail.title}}">
+                {{trail.num}}
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            {% else %}
+            <li >
+              <a  href="{{ trail.path | absolute}}" title="{{trail.title}}">
+                {{trail.num}}
+              </a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if paginator.last_page != paginator.page%}
+        <li>
+          <a href="{{ paginator.last_page_path | absolute_url }}">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
   </div>
-</div>
-{% if paginator.total_pages > 1 %}
-<div class="container" style="padding-top:40px">
-  <nav class="d-flex justify-content-center" role="navigation" aria-label="Pages de posts">
-    <ul class="pagination">
-      {% if paginator.first_page != paginator.page %}
-      <li class="page-item">
-        <a class="page-link" href="{{ paginator.first_page_path | absolute_url }}">
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Previous</span>
-        </a>
-      </li>
-      {% endif %}
-      {% if paginator.page_trail %}
-        {% for trail in paginator.page_trail %}
-          {% if trail.num == paginator.page %}
-          <li class="page-item active" aria-current="true" >
-            <a class="page-link" href="{{ trail.path | absolute}}" title="{{trail.title}}">
-              {{trail.num}}
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          {% else %}
-          <li class="page-item">
-            <a class="page-link" href="{{ trail.path | absolute}}" title="{{trail.title}}">
-              {{trail.num}}
-            </a>
-          </li>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-      {% if paginator.last_page != paginator.page%}
-      <li class="page-item">
-        <a class="page-link" href="{{ paginator.last_page_path | absolute_url }}">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
-        </a>
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
- </div>
- {% endif %}
+  {% endif %}
+</main>
+
