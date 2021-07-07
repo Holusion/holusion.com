@@ -8,7 +8,7 @@ layout: store
   <h2>Welcome to Holusion's web store for holographic devices</h2>
   <div class="content row no-gutters mb-0">
     {% for item in store_items %}
-      <div class="dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
+      <div data-test="card" class="dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
         <a href="{{item.url}}">
           {%- if item.image contains "static" -%}
           <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
