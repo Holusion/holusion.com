@@ -9,15 +9,28 @@ pagination:
   trail:
     before: 2
     after: 2
----
+--- 
 
 <section class="section section-center">
   <h2 class="text-white my-5" style="font-size: 3rem">Nos histoires</h2>
-  <div class="content m-0">
+</section>
+
+<section class="section">
+  {% picture grid img/posts/nausicaa/meduse.jpg
+    --img class="cover"
+    data-noisetest="1"
+    style="object-position: 70% 50%;
+    max-height: 50vh"
+    --alt Photo d'un hologramme de meduse
+  %}
+  <div class="content">
     <h2 id="main-title-1" >Racontez votre histoire en hologrammes</h2>
     <p>
       Retrouvez ci-dessous quelques unes des belles histoires que nous avons écrites avec nos clients, d'horizons très différents et découvrez toutes les possiblités offertes par les dispositifs holographiques d'Holusion.
     </p>
-  </div>  
+  </div>
 </section>
 
+<section class="section section-white mb-5">
+  <h2>Toutes nos histoires</h2>
+</section>
