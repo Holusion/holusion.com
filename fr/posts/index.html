@@ -9,20 +9,19 @@ pagination:
   trail:
     before: 2
     after: 2
---- 
+---
+
 
 <section class="section section-center">
   <h2 class="text-white my-5" style="font-size: 3rem">Nos histoires</h2>
 </section>
 
 <section class="section">
-  {% picture grid img/posts/nausicaa/meduse.jpg
-    --img class="cover"
-    data-noisetest="1"
-    style="object-position: 70% 50%;
-    max-height: 50vh"
-    --alt Photo d'un hologramme de meduse
-  %}
+  <picture>
+    <source sizes="(min-width: 992px) 50vw, 100vw" srcset="/assets/img/posts/nausicaa/meduse-480-9449d3c7c.webp 480w, /assets/img/posts/nausicaa/meduse-960-9449d3c7c.webp 960w, /assets/img/posts/nausicaa/meduse-1280-9449d3c7c.webp 1280w" type="image/webp">
+    <source sizes="(min-width: 992px) 50vw, 100vw" srcset="/assets/img/posts/nausicaa/meduse-480-f56f37448.jpg 480w, /assets/img/posts/nausicaa/meduse-960-f56f37448.jpg 960w, /assets/img/posts/nausicaa/meduse-1280-f56f37448.jpg 1280w" type="image/jpeg">
+    <img class="cover" data-noisetest="1" style="object-position: 70% 50%; max-height: 50vh" src="/assets/img/posts/nausicaa/meduse-960-f56f37448.jpg" alt="Photo d'un hologramme de meduse">
+  </picture>
   <div class="content">
     <h2 id="main-title-1" >Racontez votre histoire en hologrammes</h2>
     <p>
@@ -34,3 +33,5 @@ pagination:
 <section class="section section-white mb-5">
   <h2>Toutes nos histoires</h2>
 </section>
+
+
