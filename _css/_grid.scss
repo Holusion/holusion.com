@@ -45,6 +45,9 @@
     
     &.section-white{
       color: $dark;
+      @include media-breakpoint-down(lg){
+        background-color: white;
+      }
       &::before{
         content: "";
         display: block;
