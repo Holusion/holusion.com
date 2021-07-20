@@ -7,9 +7,15 @@
     border-radius: 0;
     @include media-breakpoint-down(md){
         flex-direction: row;
+        picture{
+            flex:2;
+        }
     }
     @include media-breakpoint-down(sm){
         flex-direction: column;
+        picture{
+            flex:1;
+        }
     }
     h2{
         font-family: "Open Sans";
@@ -25,7 +31,7 @@
         width: 100%;
     }
     .card-body, .card-content{
-        flex:1 0 auto;
+        flex:1;
         height: auto;
         padding: 2rem 4rem;
         @include media-breakpoint-down(xs){
@@ -34,6 +40,7 @@
     }
     .price{
         margin-top: auto;
+        text-align: right;
     }
 }
 
