@@ -65,7 +65,7 @@ layout: front_page
     <div class="card-deck justify-content-around">
       {% for prop_group in page.properties %}
         <div class="card  product-property-group">
-          <div class="card-header text-capitalize font-weight-bold bg-primary text-light product-property-header">
+          <div class="card-header text-capitalize font-weight-bold bg-primary text-light">
             {%assign prop_group_name = prop_group[0] %}
             {{site.data.product_properties[prop_group_name][page.lang]}}
           </div>
