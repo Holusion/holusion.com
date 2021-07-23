@@ -17,9 +17,8 @@
 @import "product";
 @import "card";
 @import "dark_theme";
-@import "home_page_header";
+@import "homepage";
 @import "animations";
-
 @import "grid";
 
 body{
@@ -37,12 +36,6 @@ body{
   @include media-breakpoint-up(sm){
     text-align: justify;
   }
-}
-
-.btn {
-  vertical-align: middle;
-  padding: 0.5em 1em;
-  border-radius:50px;
 }
 
 .btn svg, svg.icon, .icon svg{ //Ensure svgs are also aligned

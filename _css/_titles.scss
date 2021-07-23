@@ -5,6 +5,7 @@ h1,h2,h3,h4,h5,h6{
   font-weight: 300; /*light*/
   line-height: 1.2em;
 }
+
 h2{
   font-family: "CgBernhardt", sans-serif;
 	font-size:2rem;
@@ -14,6 +15,7 @@ h2{
 h3, h3 a {
   margin-bottom: 1em;
 }
+
 h4{
   color: $blue;
 	font-size:20px;
@@ -31,7 +33,7 @@ h6{
 }
 
 h1{
-  font-family: "CgBernhardt";
+  font-family: "CgBernhardt", sans-serif;
   font-size:2em;
 	padding: 6px 0px 12px 0px;
 }
