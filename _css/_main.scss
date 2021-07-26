@@ -4,23 +4,23 @@
 @import "tables";
 @import "thumbnails";
 @import "navbars";
-@import "buttons";
 @import "magnify";
-@import "headers";
 @import "cookieconsent";
 @import "social";
 @import "ariane";
-@import "homepage";
+@import "light_pages";
 @import "contact_form";
-@import "snipcart";
 @import "store";
 @import "team_portraits";
 @import "medias";
 @import "product";
-@import "pricing";
 @import "card";
-
+@import "dark_theme";
+@import "homepage";
+@import "animations";
 @import "grid";
+@import "main_navbar";
+@import "pricing";
 
 body{
   padding-top: 50px;
@@ -28,141 +28,26 @@ body{
   width:100%;
   background-color: $light;
 }
+
 #content{
   min-height:60vh;
 }
-
 
 #content.container p, .rtejustify {
   @include media-breakpoint-up(sm){
     text-align: justify;
   }
 }
-.rtecenter{
-  text-align:center;
-}
-a{
-  color:$cyan;
-  &:hover{
-    color: lighten($cyan, 10);
+
+.btn svg, svg.icon, .icon svg{ //Ensure svgs are also aligned
+  vertical-align: middle;
+  path:not([fill]) { //Paths should follow currentColor unless fill is set
+    fill: currentColor;
   }
-}
-
-
-.logo-image {
-  $logo_image_padding: 10px;
-  perspective: 600px;
-  padding: $logo_image_padding; /* important to prevent mis-alignment. also change image-back position if modified */
-  .logo-image-back, .logo-image-front{
-    transition: transform 0.7s;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  .logo-image-back{
-    position: absolute;
-    top: $logo_image_padding;
-    left: $logo_image_padding;
-    bottom: $logo_image_padding;
-    right: $logo_image_padding;
-    -webkit-transform: rotateY( -180deg );
-    transform: rotateY( -180deg );
-  }
-  &:hover .logo-image-back{
-    -webkit-transform: rotateY( 0deg );
-    transform: rotateY( 0deg );
-  }
-  &:hover .logo-image-front{
-    -webkit-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-  }
-}
-
-.fade_404 {
-
-      animation: 20s ease-out 0s 1 RUlost;
-    }
-
-    @keyframes RUlost {
-
-      0% {
-        display: none;
-        opacity: 0;
-    }
-
-    20% {
-        display: block;
-        opacity: 0;
-    }
-
-    50% {
-      display: block;
-      opacity: 0.2;
-    }
-
-    100% {
-        display: block;
-        opacity: 1;
-    }
 }
 
 .caption {
-color:#777;
-font-size: 75%;
-text-align: center;
-}
-
-
-.fit-contain {
-  object-fit: contain;
-  max-height: 60vmin;
-}
-
-.fit-scale-down {
-  object-fit: scale-down;
-  max-height: 60vmin;
-}
-
-
-.flip-box {
-  perspective: 1500px; /* Remove this if you don't want the 3D effect */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.flip-box-inner, .flip-box-inner-left  {
-  background-color: transparent;
-  transition: all 0.8s;
-  transform-style: preserve-3d;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);;
-  margin-bottom: 20px;
-}
-
-.flip-box-inner:hover {
-  box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
-  transform: scale(1.15) rotateY(15deg);
-  margin-bottom: 40px;
-}
-
-.flip-box-inner-left:hover {
-  box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
-  transform: scale(1.15) rotateY(-15deg);
-  margin-bottom: 40px;
-}
-
-.main-dark{
-  color: $light;
-  background: rgb(16,48,64);
-  background: -moz-radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
-  background: -webkit-radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
-  background: radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#103040",endColorstr="#0b0b0b",GradientType=1);
-  background-attachment: fixed;
-}
-
-.image-shadow{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  color:#777;
+  font-size: 75%;
+  text-align: center;
 }

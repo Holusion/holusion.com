@@ -1,0 +1,80 @@
+
+.logo-image {
+  $logo_image_padding: 10px;
+  perspective: 600px;
+  padding: $logo_image_padding; /* important to prevent mis-alignment. also change image-back position if modified */
+  .logo-image-back, .logo-image-front{
+    transition: transform 0.7s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .logo-image-back{
+    position: absolute;
+    top: $logo_image_padding;
+    left: $logo_image_padding;
+    bottom: $logo_image_padding;
+    right: $logo_image_padding;
+    -webkit-transform: rotateY( -180deg );
+    transform: rotateY( -180deg );
+  }
+  &:hover .logo-image-back{
+    -webkit-transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+  }
+  &:hover .logo-image-front{
+    -webkit-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+  }
+}
+
+.flip-box {
+  perspective: 1500px; /* Remove this if you don't want the 3D effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .flip-box-inner, .flip-box-inner-left  {
+    background-color: transparent;
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);;
+    margin-bottom: 20px;
+  }
+
+  .flip-box-inner:hover {
+    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
+    transform: scale(1.15) rotateY(15deg);
+    margin-bottom: 40px;
+  }
+
+  .flip-box-inner-left:hover {
+    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.7);
+    transform: scale(1.15) rotateY(-15deg);
+    margin-bottom: 40px;
+  }
+}
+
+.fade_404 {
+  animation: 20s ease-out 0s 1 RUlost;
+}
+@keyframes RUlost {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  20% {
+      display: block;
+      opacity: 0;
+  }
+  50% {
+    display: block;
+    opacity: 0.2;
+  }
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}

@@ -7,13 +7,13 @@ tags: evenementiel formation focus
 ---
 
 
-<p class="rtecenter"><img alt="Museohub 2016 avec les hologrammes" src="/static/img/posts/futur-en-seine/fens16_banniere_haut.jpg" style="width: 100%; height: 100%;" /></p>
+<p class="text-center"><img alt="Museohub 2016 avec les hologrammes" src="/static/img/posts/futur-en-seine/fens16_banniere_haut.jpg" style="width: 100%; height: 100%;" /></p>
 
 <p class="rtejustify"><a href="https://www.futuresfestivals.com" target="_blank">Futur en Seine</a> a encore une fois réuni de nombreuses marques innovantes du 09 au 19 juin 2016 à Paris. De nouveaux usages en réalité augmentée ou réalité virtuelle ont fait leur apparition lors de ce rendez-vous incontournable de l'innovation. Parmis eux, des usages culturels s'appuient sur les nouvelles technologies afin de préserver le patrimoine. Il s'agit de Bagdad 3D, un projet accompagné par Holusion durant cette semaine enrichissante.</p>
 
 
 <div class="row">
-  <div class="col-md-4 col-12 rtecenter">
+  <div class="col-md-4 col-12 text-center">
     <div style="padding:30px 0px 0px 40px"><img alt="Futur en Seine" src="/static/img/posts/futur-en-seine/dsc_5539.jpg" style="width: 100%; margin: 0px; border-width: 0px; border-style: solid; height: 100%; float: left;" /></div>
   </div>
 

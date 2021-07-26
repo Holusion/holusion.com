@@ -1,0 +1,43 @@
+@import "variables";
+
+.main-dark{
+    color: $light;
+    background: rgb(16,48,64);
+    background: -moz-radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
+    background: radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#103040",endColorstr="#0b0b0b",GradientType=1);
+    background-attachment: fixed;
+
+    a{
+        color:$cyan;
+            &:hover{
+                color: lighten($cyan, 10);
+            }
+    }
+
+    h4{
+        color: $orange;
+    }
+
+    .dark-form{
+        .form-control:not(button){
+            color: $light !important;
+            background-color: $dark-grey !important;
+            height: auto;
+            padding: .5rem 1rem;
+            border: 1px solid $grey-600;
+            border-radius: 0;
+        }
+    }
+}
+
+.image-shadow{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    border-radius:50px;
+}
+
