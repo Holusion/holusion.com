@@ -1,17 +1,16 @@
 {
   "name": "@holusion/theme",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "repository": "https://github.com/Holusion/holusion.com",
   "license": "MIT",
-  "main": "dist/bootstrap.css",
+  "main": "dist/theme.css",
   "scripts": {
     "test": "npm run test:integration && npm run test:e2e",
     "test:integration": "mocha ./scripts/integration.test.js",
     "test:e2e": "mocha --slow 1500 --timeout 10000 ./scripts/e2e.test.js",
     "prepack": "mkdir -p dist/ && cp _site/css/theme.* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/ && sed 's/..\\/node_modules\\//~/' _css/_variables.scss > dist/_variables.scss",
-    "postpack": "rm -rf dist/",
-    "postinstall": "(cd functions && npm ci)"
+    "postpack": "rm -rf dist/"
   },
   "files": [
     "dist/"
