@@ -20,13 +20,15 @@
         color: $orange;
     }
 
-    .form-control:not(button), .ui-autocomplete {
-        color: $light !important;
-        background-color: $dark-grey !important;
-        height: auto;
-        padding: .5rem 1rem;
-        border: 1px solid $grey-600;
-        border-radius: 0;
+    .dark-form{
+        .form-control:not(button){
+            color: $light !important;
+            background-color: $dark-grey !important;
+            height: auto;
+            padding: .5rem 1rem;
+            border: 1px solid $grey-600;
+            border-radius: 0;
+        }
     }
 }
 

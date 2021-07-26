@@ -223,7 +223,6 @@
     padding: 20px;
     min-height: 40vh;
     &.tile-body--main{
-      font-size: 1rem;
       h3 {
         color: $light-blue;
         text-align: left;
@@ -246,7 +245,6 @@
   @include media-breakpoint-up(lg){
     .tile-body{
       &.tile-body--main{
-        font-size: 1.2rem;
         h3{
           font-size: 2rem;
           margin: 20px 0 0 0;
@@ -271,13 +269,6 @@
       }
     }
   }
-  /* provide an additional "xxl" breakpoint*/
-  @media (min-width: 1600px) {
-    .tile-body.tile-body--main{
-      font-size: 1.2rem;
-    }
-  }
-
 
   /* alternate right and left */
   &:nth-of-type(2n){
