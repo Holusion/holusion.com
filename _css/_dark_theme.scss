@@ -15,7 +15,7 @@
                 color: lighten($cyan, 10);
             }
     }
-
+    
     h4{
         color: $orange;
     }
@@ -40,4 +40,10 @@
     padding: 0.5em 1em;
     border-radius:50px;
 }
+.form-control {
+    height: auto;
+    &.border-rounded{
+        border-radius:1.5rem;
+    }
+}   
 
