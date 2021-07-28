@@ -1,6 +1,45 @@
 /* This file describes two concepts :
  * - section-main-header : full-width image with optionnal text card
  */
+
+ 
+.header{
+  background-color:$grey-100;
+  background-repeat:no-repeat;
+  background-size: 100% auto;
+}
+
+ /* h1 titles should have a preceeding separator when directly following text. They should also have enlarged top padding*/
+#content p+h1{
+  padding-top:52px;
+}
+/* to make anchors work despite of the static navbar. When using anchors, add a padding and negative margin to compensate.*/
+h1:target, h2:target{
+  padding-top: 52px;
+  margin-top: -52px;
+}
+h3:target{
+	padding-top: 70px;
+	margin-top: -70px;
+}
+#content h1>a, #content h2>a{
+  visibility: hidden;
+  transition:0.3s;
+  font-size: 0.7em;
+  margin-left:-25px;
+}
+#content h1:hover>a, #content h2:hover>a{
+  visibility:visible;
+}
+
+/* Titles on blue background that targets page sections*/
+section.title, .section-title {
+  background: url("/static/img/banners/section.jpg") center/cover no-repeat;
+	h1, a, a:hover{
+    color:$white;
+  }
+}
+
 .section-main-header{
   position: relative;
   @supports (display: flex) {

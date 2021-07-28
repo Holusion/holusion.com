@@ -6,6 +6,12 @@ h1,h2,h3,h4,h5,h6{
   line-height: 1.2em;
 }
 
+h1{
+  font-family: "CgBernhardt", sans-serif;
+  font-size:2em;
+	padding: 6px 0px 12px 0px;
+}
+
 h2{
   font-family: "CgBernhardt", sans-serif;
 	font-size:2rem;
@@ -32,49 +38,4 @@ h6{
 	font-weight: 700;
 }
 
-h1{
-  font-family: "CgBernhardt", sans-serif;
-  font-size:2em;
-	padding: 6px 0px 12px 0px;
-}
 
-/* h1 titles should have a preceeding separator when directly following text. They should also have enlarged top padding*/
-#content p+h1{
-  padding-top:52px;
-}
-/* to make anchors work despite of the static navbar. When using anchors, add a padding and negative margin to compensate.*/
-h1:target, h2:target{
-  padding-top: 52px;
-  margin-top: -52px;
-}
-h3:target{
-	padding-top: 70px;
-	margin-top: -70px;
-}
-#content h1>a, #content h2>a{
-  visibility: hidden;
-  transition:0.3s;
-  font-size: 0.7em;
-  margin-left:-25px;
-}
-#content h1:hover>a, #content h2:hover>a{
-  visibility:visible;
-}
-/* Main header on home page */
-.header-main {
-  background-image: url("/static/img/header.jpg");
-  background-size: 100% auto !important;
-}
-.header{
-  background-color:$grey-100;
-  background-repeat:no-repeat;
-  background-size: 100% auto;
-}
-
-/* Titles on blue background that targets page sections*/
-section.title, .section-title {
-  background: url("/static/img/banners/section.jpg") center/cover no-repeat;
-	h1, a, a:hover{
-    color:$white;
-  }
-}

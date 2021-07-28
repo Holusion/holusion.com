@@ -40,6 +40,19 @@
     padding: 0.5em 1em;
     border-radius:50px;
 }
+
+.btn-slide{
+    color: white;
+    background-color: $orange;
+    border:none;
+    transition: box-shadow .25s linear;
+    box-shadow: inset -20rem 0 0 0 $cyan;
+    &:hover{
+        color: white;
+        box-shadow: inset 0 0 0 0 $cyan;
+    }
+}
+
 .form-control {
     height: auto;
     &.border-rounded{
