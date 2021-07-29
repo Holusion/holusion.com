@@ -61,11 +61,16 @@ title: A propos
     </div>
   </section>
 
-  <section class="section section-white left">
+  <div class="section left">
     <h2>Notre histoire</h2>
-    <img alt="Picto Focus" class="img-fluid" src="/static/img/products/made_in_france.jpg"/>
-    <div class="content">
-      <h3>Du projet à l'entreprise</h3>
+  </div>
+
+  <section class="section left section-white">
+    
+    <img alt="Picto Focus" class="img-fluid my-auto" src="/static/img/products/made_in_france.jpg"/>
+    <div class="content py-5" style="border-left: 2px solid #103040;">
+      <span class="bg-dark rounded-circle position-relative d-inline-block" style="height: 75px; width: 75px; left:-55px; vertical-align: middle;"></span>
+      <h3 class="d-inline">Du projet à l'entreprise</h3>
       <p>
         C’est en 2012 que deux ingénieurs, Thibault Guillaumont et Sebastien Dumetz, se lancent dans l'aventure Holusion.
         Diplômés de l’<a href="http://centralelille.fr" target="_blanc">école Centrale de Lille</a> et de l’<a href ="http://www.isen.fr/" target="_blanc">ISEN</a>, ils se retrouvent d’abord autour d’un projet lors d'un <a href="https://startupweekend.org/">Start-up Weekend</a> à la <a href="https://hautsdefrance.cci.fr/cci-grand-lille/">CCI de lille</a>.
@@ -75,7 +80,20 @@ title: A propos
         Le projet entre rapidement en phase d'incubation chez <a href="http://www.tonic-incubation.com/">Tonic Incubation</a>. Holusion est officiellement créée le 6 mai 2014 et peut commencer son développement commercial.
         L'accélération à la <a href="http://www.plaine-images.fr/">Plaine Images</a> met Holusion en relation avec des acteurs de l'innovation et de la créativité digitale.
       </p>
-      <h3>Au coeur de la French Tech</h3>
+      <span class="bg-dark rounded-circle position-relative d-inline-block" style="height: 75px; width: 75px; left:-55px; vertical-align: middle;"></span>
+      <h3 class="d-inline">Au coeur de la French Tech</h3>
+      <p>
+        La région des Hauts-de-France valorise et aide au développement des nouvelles technologies.
+        Cet écosystème fructueux se concrétise avec l'obtention du label <a href="http://www.lafrenchtech.com/metropole/lille-french-tech">“Lille is French Tech”</a> en 2014.
+      </p>
+      <span class="bg-dark rounded-circle position-relative d-inline-block" style="height: 75px; width: 75px; left:-55px; vertical-align: middle;"></span>
+      <h3 class="d-inline">Au coeur de la French Tech</h3>
+      <p>
+        La région des Hauts-de-France valorise et aide au développement des nouvelles technologies.
+        Cet écosystème fructueux se concrétise avec l'obtention du label <a href="http://www.lafrenchtech.com/metropole/lille-french-tech">“Lille is French Tech”</a> en 2014.
+      </p>
+      <span class="bg-dark rounded-circle position-relative d-inline-block" style="height: 75px; width: 75px; left:-55px; vertical-align: middle;"></span>
+      <h3 class="d-inline">Au coeur de la French Tech</h3>
       <p>
         La région des Hauts-de-France valorise et aide au développement des nouvelles technologies.
         Cet écosystème fructueux se concrétise avec l'obtention du label <a href="http://www.lafrenchtech.com/metropole/lille-french-tech">“Lille is French Tech”</a> en 2014.
@@ -85,49 +103,42 @@ title: A propos
 
   <section class="section section-center">
     <h2>Nos valeurs</h2>
-    <div class="content border-left">
+    <div class="content">
       <div class="section-center--header d-flex">
-        {% picture grid img/sections/icone_french.png
-          --img class="section-center--icon p-3"
+        {% picture  grid img/sections/icone_french.png
+          --img class="section-center--icon p-3 m-auto"
           style="width:120px"
           data-noisetest="1"
           --alt icone french
         %}
-        <div>
-          <h3>Privilégier l'écosystème digital français</h3>
-          <p>Notre première ambition a toujours été d'ancrer nos solutions sur le territoire français. Avec ses produits <i>Made in France</i>, nous nous plaçons au coeur de la dynamique <i>French Tech</i>.
-          Nos fournisseurs viennent essentiellement de la région et les projecteurs d’hologrammes sont assemblés directement au siège à Tourcoing. La proximité avec notre réseau d'approvisionnement permet notamment d'être très réactif dans la gestion de nos projets.</p>
-          </div>
+        <h3 class="my-auto">Privilégier l'écosystème digital français</h3>
       </div>
-
+      <p>
+        Notre première ambition a toujours été d'ancrer nos solutions sur le territoire français. Avec ses produits <i>Made in France</i>, nous nous plaçons au coeur de la dynamique <i>French Tech</i>.
+        Nos fournisseurs viennent essentiellement de la région et les projecteurs d’hologrammes sont assemblés directement au siège à Tourcoing. La proximité avec notre réseau d'approvisionnement permet notamment d'être très réactif dans la gestion de nos projets.
+      </p>
       <div class="section-center--header d-flex">
         {% picture grid img/sections/icone_patrimoine.png
-          --img class="section-center--icon p-3"
+          --img class="section-center--icon p-3 m-auto"
           style="width:120px"
           data-noisetest="1"
           --alt icone patrimoine
         %}
-        <div>
-          <h3>Valoriser le patrimoine culturel</h3>
-          <p>En tant que partenaire <a href="http://www.museomix.org/" target="_blanc">Museomix</a>, nous faisons partie d'une communauté de passionnés de culture, de technologies, d’innovation qui partagent une envie d’un musée ouvert, connecté et participatif. Ainsi, nous aidons à mettre en place les 3 jours de "marathon créatif" qui ont lieu début novembre.</p>
-        </div>
+        <h3 class="my-auto">Valoriser le patrimoine culturel</h3>
       </div>
-
+      <p>En tant que partenaire <a href="http://www.museomix.org/" target="_blanc">Museomix</a>, nous faisons partie d'une communauté de passionnés de culture, de technologies, d’innovation qui partagent une envie d’un musée ouvert, connecté et participatif. Ainsi, nous aidons à mettre en place les 3 jours de "marathon créatif" qui ont lieu début novembre.</p>
       <div class="section-center--header d-flex">
         {% picture grid img/sections/icone_open_source.png
-          --img class="section-center--icon p-3"
+          --img class="section-center--icon p-3 m-auto"
           style="width:120px"
           data-noisetest="1"
           --alt icone open source
         %}
-        <div>
-          <h3>La philosophie open source</h3>
-          <p>Holusion s'engage pour le développement de <a href="https://www.gnu.org/philosophy/floss-and-foss.fr.html">logiciels libres ou Open Source</a>. Pour cela, nous participons à l'amélioration des logiciels que nous utilisons, nous créons de nouveaux outils et nous les rendons <a href="https://github.com/Holusion">disponibles</a> pour la communauté. Nous encourageons nos collaborateurs à contribuer à cet écosystème du logiciel libre.</p>
-          <p>Nous pensons que le libre accès des utilisateurs, particuliers comme entreprises, aux logiciels doit être conservé. Chaque projet mené respecte cette <a href="https://www.gnu.org/philosophy/free-sw.html">liberté essentielle</a> des utilisateurs.</p>
-          <p>Une plateforme regroupant nos <a href="/dev/fr/">ressources techniques</a> vous donne toutes les clés pour créer vos propres hologrammes et animations.</p>
-        </div>
+        <h3 class="my-auto">La philosophie open source</h3>
       </div>
-        
+      <p>Holusion s'engage pour le développement de <a href="https://www.gnu.org/philosophy/floss-and-foss.fr.html">logiciels libres ou Open Source</a>. Pour cela, nous participons à l'amélioration des logiciels que nous utilisons, nous créons de nouveaux outils et nous les rendons <a href="https://github.com/Holusion">disponibles</a> pour la communauté. Nous encourageons nos collaborateurs à contribuer à cet écosystème du logiciel libre.</p>
+      <p>Nous pensons que le libre accès des utilisateurs, particuliers comme entreprises, aux logiciels doit être conservé. Chaque projet mené respecte cette <a href="https://www.gnu.org/philosophy/free-sw.html">liberté essentielle</a> des utilisateurs.</p>
+      <p>Une plateforme regroupant nos <a href="/dev/fr/">ressources techniques</a> vous donne toutes les clés pour créer vos propres hologrammes et animations.</p>        
     </div>    
     </div>
   </section>
@@ -136,18 +147,27 @@ title: A propos
     <img alt="Imaginarium Plaine Images" class="img-fluid cover" style="max-height: 600px; object-position: 0 15%;" src="/static/img/products/plaineimages.jpg"/>
     <div class="content">
       <h2>Ils l'ont dit</h2>
-      <blockquote class="blockquote">
-        <p>C'est une meilleure façon de voir les choses parceque la 3D remplace la 2D</p>
-        <footer class="blockquote-footer">Tek Syndicate, VivaTech 2016</footer>
-      </blockquote>
-      <blockquote class="blockquote">
-        <p>Chacun peut créer et développer ses applications pour des usages très variés</p>
-        <footer class="blockquote-footer">Plaine Images</footer>
-      </blockquote>
-      <blockquote class="blockquote">
-        <p>Une référence dans les hologrammes et la modélisation 3D</p>
-        <footer class="blockquote-footer">La Voix du Nord</footer>
-      </blockquote>      
+      <div class="d-flex">
+        <div class="text-info pr-2" style="font-size: 4rem;">&#8223</div>
+        <blockquote class="blockquote pt-4">
+          <p>C'est une meilleure façon de voir les choses parceque la 3D remplace la 2D</p>
+          <footer class="blockquote-footer">Tek Syndicate, VivaTech 2016</footer>
+        </blockquote>        
+      </div>
+      <div class="d-flex">
+        <div class="text-info pr-2" style="font-size: 4rem;">&#8223</div>
+        <blockquote class="blockquote pt-4">
+          <p>Chacun peut créer et développer ses applications pour des usages très variés</p>
+          <footer class="blockquote-footer">Plaine Images</footer>
+        </blockquote>        
+      </div>
+      <div class="d-flex">
+        <div class="text-info pr-2" style="font-size: 4rem;">&#8223</div>
+        <blockquote class="blockquote pt-4">
+          <p>Une référence dans les hologrammes et la modélisation 3D</p>
+          <footer class="blockquote-footer">La Voix du Nord</footer>
+        </blockquote> 
+      </div>
     </div>
   </section>
   <div class="section bg-light">
