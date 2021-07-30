@@ -110,7 +110,7 @@
     <nav id="navbar-bottom" role="navigation"  class="p-2">
       <div class="container">
         <div class="row text-center">
-          <div class="col-md-4 pt-4">
+          <div id="contact-bottom" class="col-md-4 pt-4">
             <h3 class="text-white">Holusion</h3>
             <ul class="navbar-nav">
               <li><a href="{{domain}}/{{page.lang}}/about">
@@ -130,7 +130,7 @@
           <div class="col-md-4 pt-4">
             <h3 class="block-title text-white">{{site.data.strings["contact-us"][page.lang]}}</h3>
             <ul class="navbar-nav">
-              <li><a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a></li>
+              <li><a id="navbar-contact-button" onclick='displayContactForm()' class="contact-link">contact@holusion.com</a></li>
               <li><a href="tel:+33972424451">
                 <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
               </a></li>
