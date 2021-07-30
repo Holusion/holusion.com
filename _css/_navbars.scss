@@ -14,12 +14,25 @@ footer #contact-bottom{
   text-align:center;
 }
 
-#navbar-bottom .navbar-nav>li>a {
-  color: $light;
-  &:hover{
-    color:$cyan;
-  }
+#navbar-bottom .navbar-nav>li{
+  padding: 0.2rem 0;
+  >a {
+    color: $light;
+    opacity: 0.8;
+    font-weight: 300;
+    &.contact-link{
+      color: $cyan;
+      opacity: 1;
+      font-weight: 400;
+    }
+    &:hover{
+      color: white;
+      opacity: 1;
+      font-weight: 400;
+    }
+  }  
 }
+
 
 .sidebar-layout{
   $sidebar_width: 250px;

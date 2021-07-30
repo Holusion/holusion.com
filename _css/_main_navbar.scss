@@ -15,8 +15,8 @@
     padding: 0px; /* logo image is pre-padded */
     margin: 0;
     overflow: hidden;
-    height: 50px;
-    width: 50px*3.18; /* 3.18 is the image's aspect-ratio */
+    height: 55px;
+    width: 55px*3.18; /* 3.18 is the image's aspect-ratio */
     svg{
       object-fit:cover;
       height:100%;
@@ -26,23 +26,21 @@
   .navbar-nav > li {
     a{
       color: white;
-      text-transform: lowercase;
-      transition: all 0.5s ease-in-out;
+      opacity: 0.7;
       &:hover{
-        opacity: 0.7;
+        opacity: 1;
       }
-
     }
     &.active a{
-      font-weight: 700;
+      opacity: 1;
+      text-transform: uppercase;
     }    
     &.dropdown > a{
       color: $cyan;
-      font-weight: 600;
+      font-weight: 700;
     }
     .dropdown-menu > a{
       color: $dark-blue;
-      
     }
   }
 

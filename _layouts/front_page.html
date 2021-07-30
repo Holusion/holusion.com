@@ -82,7 +82,7 @@
             {% include components/nav/navbar_link.html url='posts' title=site.data.sections.posts %}
             {% include components/nav/navbar_link.html url='store' title=site.data.sections.store %}
             {% include components/nav/navbar_link.html href=dev_url title=site.data.sections.dev %}
-            {% include components/language_picker.html type="nav-item dropdown" classes="nav-link text-info" %}
+            {% include components/language_picker.html type="nav-item dropdown" classes="nav-link" %}
           </ul>
         </div>
       </div>
@@ -97,18 +97,21 @@
     {% comment %} contact-form is position:fixed and will not interfere int the layout {%endcomment%}
     {% include components/contact_form.html %}
 
+    <!--
     <section id="contact-bottom" class="bg-info text-white">
       <div class="container">
           {{site.data.strings["need-help"][page.lang]}} ?
           <a id="navbar-contact-button" class="btn btn-outline-secondary text-white font-weight-bold" style="cursor:pointer" onclick='displayContactForm()'>{{site.data.strings["contact-us"][page.lang]}}</a>
       </div>
-    </section>
+    </section>      
+    -->
 
-    <nav id="navbar-bottom" role="navigation"  class="navbar navbar-dark text-light p-2">
+
+    <nav id="navbar-bottom" role="navigation"  class="p-2">
       <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <h4 class="block-title text-white">Holusion</h4>
+        <div class="row text-center">
+          <div class="col-md-4 pt-4">
+            <h3 class="text-white">Holusion</h3>
             <ul class="navbar-nav">
               <li><a href="{{domain}}/{{page.lang}}/about">
                 {{site.data.sections.about[page.lang]}}
@@ -124,65 +127,46 @@
               </a></li>
             </ul>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <h4 class="block-title text-white">{{site.data.sections.products[page.lang]}}</h4>
+          <div class="col-md-4 pt-4">
+            <h3 class="block-title text-white">{{site.data.strings["contact-us"][page.lang]}}</h3>
             <ul class="navbar-nav">
-              {% for post in site.products_items[page.lang] limit: 4 %}
-                {% include components/nav/bottom_li.html content=post %}
-              {% endfor %}
+              <li><a itemprop="email" data-toggle="modal" data-target="#contactform-modal" class="contact-link">contact@holusion.com</a></li>
+              <li><a href="tel:+33972424451">
+                <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
+              </a></li>
+              <li>
+                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' style="display:block;">
+                  <div>
+                    <span itemprop="streetAddress">99A Boulevard Constantin Descat</span>
+                  </div>
+                  <div>
+                    <span itemprop="postalCode">59200</span>
+                    <span itemprop="addressLocality">Tourcoing</span>,
+                    <span itemprop="addressCountry">France</span>
+                  </div>
+                </a>
+              </li>
             </ul>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <h4 class="block-title text-white">{{site.data.sections.posts[page.lang]}}</h4>
-            <ul class="navbar-nav">
-              {% for post in site.categories[page.lang] limit: 4 %}
-                {% include components/nav/bottom_li.html content=post %}
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="col-12 col-sm-6 col-md-12 col-lg-3 pt-4">
-            <h4 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h4>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-12">
-                {% include lists/social_list.html %}
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-12 newsletter">
+          <div class="col-md-4 pt-4">
+            <h3 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h3>
                 {% include components/mailchimp.html %}
-              </div>
+              <div class="pt-3">{% include lists/social_list.html %}</div>
           </div>
         </div>
-      </div>
-    </nav>
-    <hr class="bg-light"/>
 
-    <section id="bottom-nav-row" class="container">
-      <div class="row">
-        <div class="col-4 col-lg-5 col-xl-6 order-1 text-left">
+        <div class="text-center pb-3 pt-5">
           <span class="d-none d-lg-inline">
             {{ site.data.strings.copyright[page.lang]}} {{ site.time | date: '%Y' }}
           </span>
           <a rel="license" itemprop="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
-            <span class="d-none d-xl-inline">CC. Attribution ShareAlike</span>
-            <span class="d-inline d-xl-none">CC.BySa</span>
-          </a>
+            <span class="d-none d-xl-inline text-info">CC. Attribution ShareAlike</span>
+            <span class="d-inline d-xl-none text-info">CC.BySa</span>
+          </a>          
         </div>
-        <div class="col-12 col-sm-6 col-lg-5 col-xl-4 order-3 order-sm-2">
-          +33 (0)9 72 42 44 51
-        </div>
-        <div class="col order-2 order-sm-3 d-flex justify-content-end">
-          <ul class="navbar-nav">
-              {% include components/language_picker.html type="dropup" %}
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-xl-12 order-4 text-center">
-          99A bvd Descat, 59200 Tourcoing - France
-        </div>
-      </div>
-      
 
-    </section>
+      </div>
+    </nav>
   </footer>
   <div class="scripts d-none">
     {%- for script in page.scripts -%}
