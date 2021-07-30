@@ -1,0 +1,21 @@
+.timeline{
+    border-left: 2px solid $dark-blue;
+    .timeline--point{
+        background-color: $dark-blue;
+        position: relative;
+        display: inline-block;
+        height: 75px; 
+        width: 75px; 
+        left:-55px; 
+        vertical-align: middle;
+        >div{
+            background-color: $dark-blue;
+            height: 45px; 
+            width: 45px; 
+            margin-top: 15px;
+            &:hover{
+                background-color: $orange;
+            }
+        }
+    }
+}
