@@ -94,12 +94,10 @@
     
     & > img, &>picture{
       grid-area: image;
-      width: 100%;
       z-index: 1;
     }
     & > img, &>picture>img {
       display: block;
-      width: 100%;
       max-width: 100%;
       height: auto;
       z-index: 1;
