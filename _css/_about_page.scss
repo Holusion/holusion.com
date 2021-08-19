@@ -26,6 +26,14 @@
 
 /*--Partners section--*/
 
+#partners{
+    .content{
+        @include media-breakpoint-down(xs){
+            width: 320px;
+        }
+    }
+}
+
 /*--Clients section--*/
 
 #clients{
