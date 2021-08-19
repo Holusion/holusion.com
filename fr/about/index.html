@@ -1,6 +1,8 @@
 ---
 layout: front_page
 title: A propos
+scripts:
+  - /static/js/slick_slider.js
 ---
 
 <main id="lentreprise" class="main-dark main-grid">
@@ -224,16 +226,16 @@ title: A propos
     <h2>Nos partenaires</h2>
   </div>
 
-  <section class="section section-center text-dark mb-0">
-    <div class="bg-white" style="grid-area: start;"></div>
-    <div class="content bg-white">
+  <section class="section section-center text-dark">
+    <div class="bg-white mb-0" style="grid-area: start;"></div>
+    <div class="content bg-white mb-0">
       
-      <ul>
+      <!--<ul>
         <li>Plaine Images</li>
         <li>BPI France</li>
         <li>Université de Lille</li>
         <li>HDFID</li>
-        <li>Industrilab</li>
+        <li>Industrilab</li> 
         <li>Lilliad Learning Center</li>
         <li>French Tech</li>
         <li>Laval Virtual Center</li>
@@ -242,102 +244,79 @@ title: A propos
         <li>Université de Gènes DAD</li>
         <li>Musée du Quai Branly</li>
         <li>ECCL</li>
-      </ul>
+      </ul>-->
 
-      <div class="row text-center pb-4">
-        <div class="col-lg-3 col-md-6">
+      <div class="autoplay">
+        <div>
           <img alt="Cap digital" class="img-fluid" src="/static/img/front/sponsors/cap-digital.jpg"/>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div>
           <img alt="Picom" class="img-fluid" src="/static/img/front/sponsors/picom.jpg"/>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div>
           <img alt="Plaine images" class="img-fluid" src="/static/img/front/sponsors/plaine-image.jpg"/>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div>
           <img alt="Tonic incubation Lille" class="img-fluid" src="/static/img/front/sponsors/tonic.jpg"/>
         </div>
-      </div>
-      <div class="row text-center pb-4">
-        <div class="col-lg-3 col-md-6">
+
+
+        <div>
           <img alt="BPI France" class="img-fluid" src="/static/img/front/sponsors/bpi.jpg"/>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div >
           <img alt="LMI" class="img-fluid" src="/static/img/front/sponsors/lmi.jpg"/>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div>
           <img class="img-fluid" src="/static/img/logo/ausu.jpg" alt="logo Adopte une Startup"/>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div>
           <img alt="Bizspark" class="img-fluid" src="/static/img/front/sponsors/bizspark.jpg"/>
         </div>
       </div>  
 
       <h2>Nos clients</h2>
-      <div class="section-center--header d-flex">
-        {% picture grid img/sections/icone_patrimoine.png
-          --img class="section-center--icon p-3 m-auto"
-          style="width:120px"
-          data-noisetest="1"
-          --alt icone patrimoine
-        %}
-        <h3 class="my-auto">Construction & Industrie</h3>
+      <div id="clients" class="row mb-5">
+        <ul class="col-md-4">
+          <h3 class="mb-4">Construction & Industrie</h3>
+          <li>Vinci Immobilier</li>
+          <li>Linkcity</li>
+          <li>Bouygues Immobilier</li>
+          <li>ADIM</li>
+          <li>Vinci Construction</li>
+          <li>Nacarat</li>
+          <li>Pierre de Seines</li>
+          <li>Saint Quentin en Yvelinnes</li>
+          <li>Egger</li>
+        </ul>
+
+        <ul class="col-md-4">
+          <h3 class="mb-4">Culture et Patrimoine</h3>
+          <li>Maison Fournaise</li>
+          <li>Nausicaa</li>
+          <li>Musée National du Sport</li>
+          <li>Chateau d'Alençon</li>
+          <li>Ville de Roubaix</li>
+          <li>Région Hauts-de-France</li>
+          <li>Pierre de Seines</li>
+          <li>Saint Quentin en Yvelinnes</li>
+          <li>Parlement Féderal Wallonie Bruxelles</li>
+        </ul>
+
+        <ul class="col-md-4">
+          <h3 class="mb-4">Marketing Digital</h3>
+          <li>NTT EUROPE</li>
+          <li>Stryker</li>
+          <li>Claro Automobiles</li>
+          <li>CTG Luxembourg</li>
+          <li>Decathlon</li>
+          <li>AG2R La Mondiale</li>
+          <li>Cardiff</li>
+          <li>Thales</li>
+          <li>BASF</li>
+        </ul>
       </div>
-    <ul>
-      <li>Vinci Immobilier</li>
-      <li>Linkcity</li>
-      <li>Bouygues Immobilier</li>
-      <li>ADIM</li>
-      <li>Vinci Construction</li>
-      <li>Nacarat</li>
-      <li>Pierre de Seines</li>
-      <li>Saint Quentin en Yvelinnes</li>
-      <li>Egger</li>
-    </ul>
-
-    <div class="section-center--header d-flex">
-      {% picture grid img/sections/icone_patrimoine.png
-        --img class="section-center--icon p-3 m-auto"
-        style="width:120px"
-        data-noisetest="1"
-        --alt icone patrimoine
-      %}
-      <h3 class="my-auto">Culture et Patrimoine</h3>
-    </div>
-
-    <ul>
-      <li>Maison Fournaise</li>
-      <li>Nausicaa</li>
-      <li>Musée National du Sport</li>
-      <li>Chateau d'Alençon</li>
-      <li>Ville de Roubaix</li>
-      <li>Région Hauts-de-France</li>
-      <li>Pierre de Seines</li>
-      <li>Saint Quentin en Yvelinnes</li>
-      <li>Parlement Féderal Wallonie Bruxelles</li>
-    </ul>
-
-    <div class="section-center--header d-flex">
-      {% picture grid img/sections/icone_patrimoine.png
-        --img class="section-center--icon p-3 m-auto"
-        style="width:120px"
-        data-noisetest="1"
-        --alt icone patrimoine
-      %}
-      <h3 class="my-auto">Marketing Digital</h3>
-    </div>
-
-    <ul>
-      <li>NTT EUROPE</li>
-      <li>Stryker</li>
-      <li>Claro Automobiles</li>*
-      <li>CTG Luxembourg</li>
-      <li>Decathlon</li>
-      <li>AG2R La Mondiale</li>
-      <li>Cardiff</li>
-      <li>Thales</li>
-      <li>BASF</li>
-    </ul>
+      
 
     </div>
 
