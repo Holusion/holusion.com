@@ -94,11 +94,11 @@
       }
     }
     
-    & > img, &>picture{
+    & > img, &>picture, &>.media{
       grid-area: image;
       z-index: 1;
     }
-    & > img, &>picture>img {
+    & > img, &>picture>img , &>.media{
       display: block;
       max-width: 100%;
       height: auto;

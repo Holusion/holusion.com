@@ -11,22 +11,32 @@ scripts:
   </div>
 
   <section class="section">
-    <div style="grid-area: image; margin-bottom: -4.7rem;">
+    <div class="media">
       {% include components/medias/youtube.html embed="BxkKS4MsrIE" %}
     </div>
     <div class="content">
-      <h2>Spécialiste de l'affichage digital innovant</h2>
-      <p>
-        Holusion est une société française, basée sur la métropole lilloise. Nous concevons, développons et commercialisons un solution d’affichage innovantes basées sur <b>l'hologramme</b>.
-        Cette illusion d'optique, communément appelée le
-        <a href="../posts/2020-05-25-hologramme" title="Pepper's Ghost" target="_blank">Pepper's Ghost</a>, s'obtient grâce au reflet d'un écran sur une surface miroitée, inclinée et transparente.
-        </p>
-        <p>Notre technologie donne le sentiment que l'objet flotte dans l'air. Les images sont colorées, animée et préservent l'aspect d'origine de l'objet.</p>
+      <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
+      <img class="img-fluid" style="margin:auto; display:block;" src="/static/img/logo_holusion_web_HD_texte_blanc.png" alt="logo Holusion multi résolution blanc" sizes="432px"
+          srcset="/static/img/logo_holusion_web_216px_texte_blanc.png 216w, /static/img/logo_holusion_web_432px_texte_blanc.png 432w, /static/img/logo_holusion_web_SD_texte_blanc.png 720w">
+      <h3 class="text-center">Spécialiste de l'affichage digital innovant</h3>
+
     </div>
   </section>
   <div class="section section-white">
     <h2>Notre expertise</h2> 
   </div>
+
+  <section class="section section-center">
+    <div class="content my-4">
+      <p>
+      Holusion est une société française, basée sur la métropole lilloise. Nous concevons, développons et commercialisons un solution d’affichage innovantes basées sur <b>l'hologramme</b>.
+      Cette illusion d'optique, communément appelée le
+      <a href="../posts/2020-05-25-hologramme" title="Pepper's Ghost" target="_blank">Pepper's Ghost</a>, s'obtient grâce au reflet d'un écran sur une surface miroitée, inclinée et transparente.
+      </p>
+      <p>Notre technologie donne le sentiment que l'objet flotte dans l'air. Les images sont colorées, animée et préservent l'aspect d'origine de l'objet.</p>      
+    </div>
+
+  </section>
 
   <section class="section left pt-4">
     {% picture grid img/sections/sketch_interactivity.png
@@ -111,10 +121,9 @@ scripts:
     <h2>Nos valeurs</h2>
     <div class="content">
       <div class="section-center--header d-flex">
-        {% picture  grid img/sections/icone_french.png
-          --img class="section-center--icon p-3 m-auto"
+        {% picture img/sections/icone_french.png
+          --img class="section-center--icon p-3"
           style="width:120px"
-          data-noisetest="1"
           --alt icone french
         %}
         <h3 class="my-auto">Privilégier l'écosystème digital français</h3>
@@ -124,20 +133,18 @@ scripts:
         Nos fournisseurs viennent essentiellement de la région et les projecteurs d’hologrammes sont assemblés directement au siège à Tourcoing. La proximité avec notre réseau d'approvisionnement permet notamment d'être très réactif dans la gestion de nos projets.
       </p>
       <div class="section-center--header d-flex">
-        {% picture grid img/sections/icone_patrimoine.png
-          --img class="section-center--icon p-3 m-auto"
+        {% picture img/sections/icone_patrimoine.png
+          --img class="section-center--icon p-3"
           style="width:120px"
-          data-noisetest="1"
           --alt icone patrimoine
         %}
         <h3 class="my-auto">Valoriser le patrimoine culturel</h3>
       </div>
       <p>En tant que partenaire <a href="http://www.museomix.org/" target="_blanc">Museomix</a>, nous faisons partie d'une communauté de passionnés de culture, de technologies, d’innovation qui partagent une envie d’un musée ouvert, connecté et participatif. Ainsi, nous aidons à mettre en place les 3 jours de "marathon créatif" qui ont lieu début novembre.</p>
       <div class="section-center--header d-flex">
-        {% picture grid img/sections/icone_open_source.png
-          --img class="section-center--icon p-3 m-auto"
+        {% picture img/sections/icone_open_source.png
+          --img class="section-center--icon p-3"
           style="width:120px"
-          data-noisetest="1"
           --alt icone open source
         %}
         <h3 class="my-auto">La philosophie open source</h3>
@@ -150,7 +157,7 @@ scripts:
   </section>
 
   <section class="section">
-    <img alt="Imaginarium Plaine Images" class="img-fluid cover" style="max-height: 600px; object-position: 0 15%;" src="/static/img/products/plaineimages.jpg"/>
+    <img alt="Imaginarium Plaine Images" class="img-fluid cover mx-auto" style="max-height: 600px; object-position: 0 15%;" src="/static/img/products/plaineimages.jpg"/>
     <div class="content">
       <h2>Ils l'ont dit</h2>
       <div class="d-flex">
@@ -208,14 +215,14 @@ scripts:
         <div class="col-lg-4 col-sm-6">
           {% include components/team_member_portrait.html
             img="melissa"
-            name="Mélissa Houyez"
+            name="Fanny Decherf"
             title="Infographiste 3D"
           %}
         </div>
         <div class="col-lg-4 col-sm-6">
           {% include components/team_member_portrait.html
             img="melissa"
-            name="Mélissa Houyez"
+            name="Sarah Menouar"
             title="Infographiste 3D"
           %}
         </div>
@@ -225,22 +232,6 @@ scripts:
   <section id="partners" class="section section-center">
       <h2>Nos partenaires</h2>
       <div class="content container">
-        <!--<div>
-          <div>Plaine Images</div>
-          <div>BPI France</div>
-          <div>Université de Lille</div>
-          <div>HDFID</div>
-          <div>Industrilab</div> 
-          <div>Lilliad Learning Center</div>
-          <div>French Tech</div>
-          <div>Laval Virtual Center</div>
-          <div>Université Polytechnique Hauts de France</div>
-          <div>Université de Liège</div>
-          <div>Université de Gènes DAD</div>
-          <div>Musée du Quai Branly</div>
-          <div>ECCL</div>
-        </div>-->
-
         <div class="partner-slider d-flex">
           <div>
             <img class="img-fluid" alt="Plaine images" src="/static/img/front/sponsors/logo_plaine_images.png"/>
@@ -283,13 +274,13 @@ scripts:
           </div>
         </div>  
       </div>
-
   </section>
 
   <section class="section section-center">
     <h2>Nos clients</h2>
     <div class="content mb-0">
       <div id="clients" class="row mb-5">
+
         <ul class="col-md-4">
           <h3 class="mb-4">Construction & Industrie</h3>
           <li>Vinci Immobilier</li>
@@ -329,10 +320,8 @@ scripts:
           <li>BASF</li>
         </ul>
       </div>
-      
 
     </div>
-
   </section>
 
 </main>
