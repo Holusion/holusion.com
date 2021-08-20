@@ -29,6 +29,13 @@
 
 #clients{
     ul {
+        color: rgba(255,255,255,0.7);
         list-style-type: none;
+        a{
+            color: $light;
+            &:hover{
+                color: $cyan;
+            }
+        }
     }
 }
