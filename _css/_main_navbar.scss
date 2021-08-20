@@ -27,13 +27,15 @@
     a{
       color: white;
       opacity: 0.8;
+      padding: .25rem 0;
+      margin: 0 .25rem;
       &:hover{
         opacity: 1;
       }
     }
     &.active a{
       opacity: 1;
-      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.7);
     }    
     &.dropdown > a{
       color: $cyan;
