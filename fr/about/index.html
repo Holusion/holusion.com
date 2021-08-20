@@ -1,8 +1,6 @@
 ---
 layout: front_page
 title: A propos
-scripts:
-  - /static/js/slick_slider.js
 ---
 
 <main id="lentreprise" class="main-dark main-grid">
@@ -78,12 +76,12 @@ scripts:
   </div>
 
   <section class="section left section-white">
-      {% picture grid img/posts/about/plaineImages.jpg
-        --img class="img-fluid"
-        data-noisetest="1"
-        --alt Plaine Images
-        --picture class="m-auto"
-      %}     
+    {% picture grid img/posts/about/plaineImages.jpg
+      --img class="img-fluid"
+      data-noisetest="1"
+      --alt Plaine Images
+      --picture class="m-auto"
+    %}     
     <div class="timeline content py-5">
       <span class="timeline--point rounded-circle">
         <div class="rounded-circle mx-auto"></div>
@@ -231,46 +229,21 @@ scripts:
 
   <section id="partners" class="section section-center">
       <h2>Nos partenaires</h2>
-      <div class="content container">
-        <div class="partner-slider d-flex">
-          <div>
-            <img class="img-fluid" alt="Plaine images" src="/static/img/front/sponsors/logo_plaine_images.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="BPI France" src="/static/img/front/sponsors/logo_bpifrance.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="Université de Lille" src="/static/img/front/sponsors/logo_Ulille.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="HDFID" src="/static/img/front/sponsors/logo_HDFID.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="Industrilab" src="/static/img/front/sponsors/logo_industrilab.png"/>
-          </div>
-          <div >
-            <img class="img-fluid" alt="Lilliad Learning Center" src="/static/img/front/sponsors/logo_lilliad.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="French Tech" src="/static/img/front/sponsors/logo_french_tech.png" />
-          </div>
-          <div>
-            <img class="img-fluid" alt="Laval Virtual Center" src="/static/img/front/sponsors/logo_laval_virtual.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="Université Polytechnique Hauts de France" src="/static/img/front/sponsors/logo_uphf.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="Université de Liège" src="/static/img/front/sponsors/logo_Uliege.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="Université de Gènes DAD" src="/static/img/front/sponsors/logo_Ugenova.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="Musée du Quai Branly" src="/static/img/front/sponsors/logo_quai_branly.png"/>
-          </div>
-          <div>
-            <img class="img-fluid" alt="ECCL" src="/static/img/front/sponsors/logo_ECCL.png"/>
+      <div class="content">
+        <div class="d-flex flex-wrap justify-content-center">
+            <img alt="Plaine images" src="/static/img/front/sponsors/logo_plaine_images.png"/>
+            <img alt="BPI France" src="/static/img/front/sponsors/logo_bpifrance.png"/>
+            <img alt="Université de Lille" src="/static/img/front/sponsors/logo_Ulille.png"/>
+            <img alt="HDFID" src="/static/img/front/sponsors/logo_HDFID.png"/>
+            <img alt="Industrilab" src="/static/img/front/sponsors/logo_industrilab.png"/>
+            <img alt="Lilliad Learning Center" src="/static/img/front/sponsors/logo_lilliad.png"/>
+            <img alt="French Tech" src="/static/img/front/sponsors/logo_french_tech.png" />
+            <img alt="Laval Virtual Center" src="/static/img/front/sponsors/logo_laval_virtual.png"/>
+            <img alt="Université Polytechnique Hauts de France" src="/static/img/front/sponsors/logo_uphf.png"/>
+            <img alt="Université de Liège" src="/static/img/front/sponsors/logo_Uliege.png"/>
+            <img alt="Université de Gènes DAD" src="/static/img/front/sponsors/logo_Ugenova.png"/>
+            <img alt="Musée du Quai Branly" src="/static/img/front/sponsors/logo_quai_branly.png"/>
+            <img alt="ECCL" src="/static/img/front/sponsors/logo_ECCL.png"/>
           </div>
         </div>  
       </div>

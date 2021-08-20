@@ -1,5 +1,3 @@
-@import "slick_slider";
-
 /*--Timeline section--*/
 
 .timeline{
@@ -15,25 +13,15 @@
         width: 75px; 
         left:-55px; 
         vertical-align: middle;
-        >div{
-            background-color: $dark-blue;
-            height: 45px; 
-            width: 45px; 
-            margin-top: 15px;
-            &:hover{
-                background-color: $orange;
-            }
-        }
     }
 }
 
 /*--Partners section--*/
 
 #partners{
-    .content{
-        @include media-breakpoint-down(xs){
-            width: 320px;
-        }
+    img{
+        max-width: 150px;
+        padding: 1rem;
     }
 }
 

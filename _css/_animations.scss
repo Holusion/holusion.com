@@ -102,13 +102,10 @@
     height: $size;
     transform-style: preserve-3d;
     transform: rotate3d(1, 1, 0, 45deg);
+    animation: turn 10s linear infinite;
     @include media-breakpoint-down(lg){
       width: $size*2;
       height: $size*2;
-    }
-    
-    &:hover{
-      animation: turn 5s linear infinite;
     }
     
     .cube-face{
