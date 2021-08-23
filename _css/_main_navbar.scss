@@ -24,7 +24,7 @@
   }
 
   .navbar-nav > li {
-    a{
+    &.nav-item > a{
       color: white;
       opacity: 0.8;
       padding: .25rem 0;
@@ -38,7 +38,6 @@
       border-bottom: 1px solid rgba(255,255,255,0.7);
     }    
     &.dropdown > a{
-      color: $cyan;
       font-weight: 700;
     }
     .dropdown-menu > a{
