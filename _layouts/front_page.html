@@ -97,39 +97,12 @@
     {% comment %} contact-form is position:fixed and will not interfere int the layout {%endcomment%}
     {% include components/contact_form.html %}
 
-    <!--
-    <section id="contact-bottom" class="bg-info text-white">
-      <div class="container">
-          {{site.data.strings["need-help"][page.lang]}} ?
-          <a id="navbar-contact-button" class="btn btn-outline-secondary text-white font-weight-bold" style="cursor:pointer" onclick='displayContactForm()'>{{site.data.strings["contact-us"][page.lang]}}</a>
-      </div>
-    </section>      
-    -->
-
-
     <nav id="navbar-bottom" role="navigation"  class="p-2">
       <div class="container">
         <div class="row text-center">
-          <div class="col-md-4 pt-4">
-            <h3 class="text-white">Holusion</h3>
-            <ul class="navbar-nav">
-              <li><a href="{{domain}}/{{page.lang}}/about">
-                {{site.data.sections.about[page.lang]}}
-              </a></li>
-              <li><a href="{{domain}}/{{page.lang}}/products">
-                {{site.data.sections.products[page.lang]}}
-              </a></li>
-              <li><a  href="/{{page.lang}}/CGV">
-                {{site.data.sections.cgv[page.lang]}}
-              </a></li>
-              <li><a href="/{{page.lang}}/about/privacy">
-                {{site.data.sections.privacy[page.lang]}}
-              </a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 pt-4">
-            <h3 class="block-title text-white">{{site.data.strings["contact-us"][page.lang]}}</h3>
-            <ul class="navbar-nav">
+          <div class="col-lg-4 pt-4">
+            <button class="btn btn-info" style="margin-top:-0.5rem"><a id="navbar-contact-button" onclick='displayContactForm()' class="contact-link"><h3 class="block-title text-white m-0">{{site.data.strings["contact-us"][page.lang]}}</h3></a></button> 
+            <ul class="navbar-nav" style="margin-top:1rem">
               <li><a id="navbar-contact-button" onclick='displayContactForm()' class="contact-link">contact@holusion.com</a></li>
               <li><a href="tel:+33972424451">
                 <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
@@ -147,8 +120,26 @@
                 </a>
               </li>
             </ul>
+          </div>          
+          <div class="col-lg-4 pt-4 order-lg-first">
+            <h3 class="text-white">Holusion</h3>
+            <ul class="navbar-nav">
+              <li><a href="{{domain}}/{{page.lang}}/about">
+                {{site.data.sections.about[page.lang]}}
+              </a></li>
+              <li><a href="{{domain}}/{{page.lang}}/products">
+                {{site.data.sections.products[page.lang]}}
+              </a></li>
+              <li><a  href="/{{page.lang}}/CGV">
+                {{site.data.sections.cgv[page.lang]}}
+              </a></li>
+              <li><a href="/{{page.lang}}/about/privacy">
+                {{site.data.sections.privacy[page.lang]}}
+              </a></li>
+            </ul>
           </div>
-          <div class="col-md-4 pt-4">
+
+          <div class="col-lg-4 pt-4">
             <h3 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h3>
                 {% include components/mailchimp.html %}
               <div class="pt-3">{% include lists/social_list.html %}</div>
