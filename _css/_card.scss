@@ -44,6 +44,10 @@
         margin-top: auto;
         text-align: right;
     }
+    a img:hover {
+        opacity: 0.5;
+        transition: 0.5s;
+    }
 }
 
 /* used with dark theme for blog post or shop articles*/
