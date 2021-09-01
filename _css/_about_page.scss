@@ -1,0 +1,41 @@
+/*--Timeline section--*/
+
+.timeline{
+    border-left: 2px solid $dark-blue;
+    @include media-breakpoint-down(lg){
+        border: none;
+    }
+    .timeline--point{
+        background-color: $dark-blue;
+        position: relative;
+        display: inline-block;
+        height: 75px; 
+        width: 75px; 
+        left:-55px; 
+        vertical-align: middle;
+    }
+}
+
+/*--Partners section--*/
+
+#partners{
+    img{
+        max-width: 150px;
+        padding: 1rem;
+    }
+}
+
+/*--Clients section--*/
+
+#clients{
+    ul {
+        color: rgba(255,255,255,0.7);
+        list-style-type: none;
+        a{
+            color: $light;
+            &:hover{
+                color: $cyan;
+            }
+        }
+    }
+}

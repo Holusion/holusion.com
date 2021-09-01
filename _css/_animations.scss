@@ -78,3 +78,90 @@
       opacity: 1;
   }
 }
+
+@keyframes turn {
+  from { transform: rotate3d(0, 0, 0, 0); }
+  to { transform: rotate3d(1, 1, 0, 360deg); }
+}
+
+.cube-contain{
+  $size: 5vw;
+  width: $size;
+  height: $size;
+  perspective: 600px;
+  margin-top: $size*1.2;
+  z-index: 1;
+  @include media-breakpoint-down(lg){
+    width: $size*2;
+    height: $size*2;
+    margin-top: $size*2*1.2;
+  }
+  .cube {
+    position: relative;
+    width: $size;
+    height: $size;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 0, 45deg);
+    animation: turn 10s linear infinite;
+    @include media-breakpoint-down(lg){
+      width: $size*2;
+      height: $size*2;
+    }
+    
+    .cube-face{
+      width: $size;
+      height: $size;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include media-breakpoint-down(lg){
+        width: $size*2;
+        height: $size*2;
+      }
+    }
+    .cube-front {
+      background: $blue;
+      transform: translateZ($size/2);
+      @include media-breakpoint-down(lg){
+        transform: translateZ($size);
+      }
+    }
+    .cube-back {
+      background: $blue;
+      transform: translateZ(-$size/2) rotateY(180deg);
+      @include media-breakpoint-down(lg){
+        transform: translateZ(-$size) rotateY(180deg);
+      }
+    }
+    .cube-left {
+      background: $light-blue;
+      transform: translateX(-$size/2) rotateY(-90deg);
+      @include media-breakpoint-down(lg){
+        transform: translateX(-$size) rotateY(-90deg);
+      }
+    }
+    .cube-right {
+      background: $dark-blue;
+      transform: translateX($size/2) rotateY(90deg);
+      @include media-breakpoint-down(lg){
+        transform: translateX($size) rotateY(90deg);
+      }
+    }
+    .cube-top {
+      background: $light-blue;
+      transform: translateY(-$size/2) rotateX(90deg);
+      @include media-breakpoint-down(lg){
+        transform: translateY(-$size) rotateX(90deg);
+      }
+    }
+    .cube-bottom {
+      background: $dark-blue;
+      transform: translateY($size/2) rotateX(-90deg);
+      @include media-breakpoint-down(lg){
+        transform: translateY($size) rotateX(-90deg);
+      }
+    }
+  }
+}
+

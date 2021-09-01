@@ -3,169 +3,298 @@ layout: front_page
 title: About us
 ---
 
-{% include components/section_title.html title="L'entreprise" %}
-<div class="img-fluid" style="width:100%;height:300px;background:url('/static/img/front/bandeau_entreprise_1.jpg') left/cover;"></div>
-<div class="container">
-  {% ariane %}
-</div>
-<section id="lentreprise">
-  <div class="container" id="content">
-    <h1 align="center" style="padding-bottom: 20px">Our expertise</h1>
+<main id="lentreprise" class="main-dark main-grid">
+  <div class="section section-center">
+    <h2 class="text-white my-5" style="font-size: 3rem">About us</h2>
+  </div>
 
-    <div class="row">
-      <div class="col-md-6" style="padding-top: 70px">
-        <h3>The innovative digital display specialist</h3>
-        <p>Holusion designs, develops and markets <a href="/en/products">innovative display solutions</a> based on the technology of <strong>transparent screen</strong> and <strong>digital holography</strong>, an illusion commonly known as <a href="https://en.wikipedia.org/wiki/Pepper%27s_ghost"target="_blank">Pepper's Ghost</a>.</p>
-        <p>We propose these tools and new medias to the companies who want to interact differently with their clients, students or collaborators. This allows them to improve the promotion of their product, their brand and their product's use</p>
+  <section class="section">
+    <div class="media">
+      {% include components/medias/youtube.html embed="BxkKS4MsrIE" %}
+    </div>
+    <div class="content">
+      <meta itemprop="logo" url="{{site.url}}/static/img/logo_holusion_web_HD.png" />
+      <img class="img-fluid" style="margin:auto; display:block;" src="/static/img/logo_holusion_web_HD_texte_blanc.png" alt="logo Holusion multi résolution blanc" sizes="432px"
+          srcset="/static/img/logo_holusion_web_216px_texte_blanc.png 216w, /static/img/logo_holusion_web_432px_texte_blanc.png 432w, /static/img/logo_holusion_web_SD_texte_blanc.png 720w">
+      <h3 class="text-center">The innovative digital display specialist</h3>
+
+    </div>
+  </section>
+  <div class="section section-white">
+    <h2>Our expertise</h2> 
+  </div>
+
+  <section class="section section-center">
+    <div class="content my-4">
+      <p>
+      Holusion est une société française, basée sur la métropole lilloise. Nous concevons, développons et commercialisons un solution d’affichage innovantes basées sur <b>l'hologramme</b>.
+      Cette illusion d'optique, communément appelée le
+      <a href="../posts/2020-05-25-hologramme" title="Pepper's Ghost" target="_blank">Pepper's Ghost</a>, s'obtient grâce au reflet d'un écran sur une surface miroitée, inclinée et transparente.
+      </p>
+      <p>Notre technologie donne le sentiment que l'objet flotte dans l'air. Les images sont colorées, animée et préservent l'aspect d'origine de l'objet.</p>      
+    </div>
+
+  </section>
+
+  <section class="section left pt-4">
+    {% picture grid img/sections/sketch_interactivity.png
+      class="img-fluid m-auto"
+      alt="Dessin à main levée du design du prism holusion"
+    %}
+    <div class="cube-contain mx-auto" style="grid-area: image;">
+      <div class="cube">
+        <div class="cube-face cube-top"></div>
+        <div class="cube-face cube-bottom"></div>
+        <div class="cube-face cube-left"></div>
+        <div class="cube-face cube-right"></div>
+        <div class="cube-face cube-front"></div>
+        <div class="cube-face cube-back"></div>
       </div>
-        <div class="col-md-6">
-          {% include components/medias/youtube.html embed="X632FtYIVoM" %}
-        </div>
+    </div>      
+    <div class="content m-auto">
+      <h3>Standard et sur-mesure</h3>
+      <p><b>Envie de tourner autour de l'hologramme ou de l'intégrer dans une scénographie ?</b> 
+      </p>
+      <p>
+        Notre expertise dans la fabrication des produits nous permet de créer <a href="/en/products">des solutions</a> standards d'une seule face ou à 360°, ou sur-mesure tel que l'hologramme à taille humaine. 
+      </p>
+      <div class="d-flex justify-content-center mb-4">
+        <a href="/en/posts"><button class="btn btn-slide image-shadow my-3">En savoir plus sur nos réalisations</button></a>
+      </div>
+
+      <h3>Des animations interactives en temps réel</h3>
+      <p>En plus de l'expertise hardware, nous développons chaque jour des applications interactives pour nos clients.</p>
+      <p>Ces animations ludiques permettent d'apprendre ou de découvrir des concepts différement, d'avoir une nouvelle approche des produits en points de vente ou encore de valoriser le patrimoine culturel.</p>
+      <h3>De l'industrie au conseil</h3>
+      <p>Holusion a une vision <b>industrielle</b> de son activité. Son ambition est de démocratiser les solutions holographiques.</p>
+      <p><b>Nous accompagnons nos clients de A à Z dans leurs projets</b> afin de d'obtenir une qualité irréprochable en phase avec leurs attentes.</p>
     </div>
+  </section>
 
-    <div class="row" style="padding-top: 30px">
-      <div class="col-md-6" style="padding-top : 20px">
-      <h3>Personalised support</h3>
-      <p>You want to create an innovating project to enhance your business but you do not yet have a precise idea ? We are here to recommend you and to guide you in the choice of <a href="/en/products">your solution</a> as well as in the creation of custom products !
-      Explore our <a href="/en/posts">Business Cases</a> to see some expreriences we already developped for our clients and partners.</p>
-      <p>All ready a hologram specialist ? Our <a href="/dev/en/">online technical resources</a> will make you go even further.</p>
+  <div class="section left">
+    <h2>Notre histoire</h2>
+  </div>
 
-      <h3>Innovative positioning</h3>
-      <p>Holusion has an <strong>industrial vision</strong> of its business : its ambition is to democratize holographic solutions. But Holusion develops more and more <strong>a strong consulting dimension</strong>. The company assists its clients and influencers to develop an adapted and successful project.</p>
+  <section class="section left section-white">
+    {% picture grid img/posts/about/plaineImages.jpg
+      --img class="img-fluid"
+      data-noisetest="1"
+      --alt Plaine Images
+      --picture class="m-auto"
+    %}     
+    <div class="timeline content py-5">
+      <span class="timeline--point rounded-circle">
+        <div class="rounded-circle mx-auto"></div>
+      </span>
+      <h3 class="d-inline">2014 : Création</h3>
+      <p>
+        C’est le 6 mai 2014 que l'aventure Holusion commence. Parmis les fondateurs, Thibault Guillaumont et Sebastien Dumetz, diplômés de l’<a href="http://centralelille.fr" target="_blanc">école Centrale de Lille</a> et de l’<a href ="http://www.isen.fr/" target="_blanc">ISEN</a> prennent la direction de l'entreprise. L'accélération à la <a href="http://www.plaine-images.fr/">Plaine Images</a> met Holusion en relation avec des acteurs de l'innovation et de la créativité digitale.
+      </p>
+      <span class="timeline--point rounded-circle">
+        <div class="rounded-circle mx-auto"></div>
+      </span>
+      <h3 class="d-inline">2016 : Au coeur de la French Tech</h3>
+      <p>
+        La région des Hauts-de-France valorise et aide au développement des nouvelles technologies.
+        Cet écosystème fructueux se concrétise avec l'obtention du label <a href="http://www.lafrenchtech.com">“Lille is French Tech”</a>.
+      </p>
+      <span class="timeline--point rounded-circle">
+        <div class="rounded-circle mx-auto"></div>
+      </span>
+      <h3 class="d-inline">2018 : BIM & Musées</h3>
+      <p>
+        L'entreprise lance successivement deux solutions de présentation holographiques. L'utilisation d'hologramme interactifs pour le monde de la culture et du patrimoine avec <a href="../posts/2019-02-15-holomouseio.html">Holomouseio</a> et la présentation de maquettes numériques XXL avec Bouygues, Nacarat et Vinci sur l'<a href="../products/iris75.html">Iris75</a>
+      </p>
+      <span class="timeline--point rounded-circle">
+        <div class="rounded-circle mx-auto"></div>
+      </span>
+      <h3 class="d-inline">2020 : Développement international</h3>
+      <p>
+        De nouveaux projets d'hologrammes continuent à se mettre en place dans des musées et entreprises en France, mais aussi à l'étranger. Nos bornes holographiques s'exportent et nous montons des partenariat internationaux comme avec l'Université de Gènes en Italie sur l'architecture ou Liège en Belgique sur les <a href="../posts/2019-12-01-RECON.html">techniques de numérisation</a>.
+      </p>
     </div>
+  </section>
 
-      <div class="col-md-6" style="padding-top: 40px">
-        {% picture  "img/products/pencil.png"
-        --img class="img-fluid"
-          style="padding-top: 30px"
+  <section class="section section-center">
+    <h2>Our values</h2>
+    <div class="content">
+      <div class="section-center--header d-flex">
+        {% picture img/sections/icone_french.png
+          --img class="section-center--icon p-3"
+          style="width:120px"
+          --alt icone french
         %}
-        </div>
+        <h3 class="my-auto">Privilégier l'écosystème digital français</h3>
+      </div>
+      <p>
+        Notre première ambition a toujours été d'ancrer nos solutions sur le territoire français. Avec ses produits <i>Made in France</i>, nous nous plaçons au coeur de la dynamique <i>French Tech</i>.
+        Nos fournisseurs viennent essentiellement de la région et les projecteurs d’hologrammes sont assemblés directement au siège à Tourcoing. La proximité avec notre réseau d'approvisionnement permet notamment d'être très réactif dans la gestion de nos projets.
+      </p>
+      <div class="section-center--header d-flex">
+        {% picture img/sections/icone_patrimoine.png
+          --img class="section-center--icon p-3"
+          style="width:120px"
+          --alt icone patrimoine
+        %}
+        <h3 class="my-auto">Valoriser le patrimoine culturel</h3>
+      </div>
+      <p>En tant que partenaire <a href="http://www.museomix.org/" target="_blanc">Museomix</a>, nous faisons partie d'une communauté de passionnés de culture, de technologies, d’innovation qui partagent une envie d’un musée ouvert, connecté et participatif. Ainsi, nous aidons à mettre en place les 3 jours de "marathon créatif" qui ont lieu début novembre.</p>
+      <div class="section-center--header d-flex">
+        {% picture img/sections/icone_open_source.png
+          --img class="section-center--icon p-3"
+          style="width:120px"
+          --alt icone open source
+        %}
+        <h3 class="my-auto">La philosophie open source</h3>
+      </div>
+      <p>Holusion is commited to the <a href="https://www.gnu.org/philosophy/floss-and-foss.fr.html">free or open-source software devlopement </a>. We participate to the constant improvement of the software we use and create new tools <a href="https://github.com/Holusion">available</a> for the community. We promote this free software mindest to our coworkers and stakeholders.</p>
+      <p>We believe that free software access for companies and individuals must be maintained. Every project respect this <a href="https://www.gnu.org/philosophy/free-sw.html">fundamental freedom</a> for users.</p>
+      <p>A platform regrouping our <a href="/dev/en/">technical ressources</a> give you all you need for holographic content creation.</p>        
+    </div>    
     </div>
+  </section>
 
-
-<h1 align="center" style="padding: 30px 0px 10px 0px">Our story</h1>
-
-<div class="row" style="padding-bottom: 30px">
-  <div class="col-lg-6 col-md-12">
-    <h3>From project to company</h3>
-    <p>2012, two engineering students, Thibault Guillaumont and Sebastien Dumetz, launched the Holusion adventure.
-      Gratuated from <a href="http://centralelille.fr" target="_blanc">école Centrale de Lille</a> and <a href ="http://www.isen.fr/" target="_blanc">ISEN</a> schools, the met around a <i>Start-up Weekend</i> at the local Chamber of Commerce and Industry.
-      After getting their first grants, their first holographic display was produced.</p>
-    <p>The project was incubated at <a href="http://www.tonic-incubation.com/">Tonic Incubation</a>. Holusion is officially founded the 6th of May 2014 and begin its business devlopement.
-      The startup relied on the <a href="http://www.plaine-images.fr/">Plaine Images</a> cluster in Lille for it acceleration.
-      This cluster host an ecosystem of companies and research in innovation and digital creativity.</p>
-    <h3>French Tech</h3>
-    <p>The Hauts-de-France region promotes and support new technologies devlopment.
-      This successful ecosystem is rewarded by the <a href="http://www.lafrenchtech.com/metropole/lille-french-tech">“Lille is French Tech”</a> label in 2014.</P>
-
+  <section class="section">
+    <img alt="Imaginarium Plaine Images" class="img-fluid cover mx-auto" style="max-height: 600px; object-position: 0 15%;" src="/static/img/products/plaineimages.jpg"/>
+    <div class="content">
+      <h2>About Holusion</h2>
+      <div class="d-flex">
+        <div class="text-info pr-2" style="font-size: 4rem;">&#8223</div>
+        <blockquote class="blockquote pt-4">
+          <p>It's a better way to look at thing, because now, it's 3D, instead of just 2D</p>
+          <footer class="blockquote-footer">Tek Syndicate, VivaTech 2016</footer>
+        </blockquote>        
+      </div>
+      <div class="d-flex">
+        <div class="text-info pr-2" style="font-size: 4rem;">&#8223</div>
+        <blockquote class="blockquote pt-4">
+          <p>Eveyone can create and develop new application for a wide range of use cases</p>
+          <footer class="blockquote-footer">Plaine Images Cluster</footer>
+        </blockquote>        
+      </div>
+      <div class="d-flex">
+        <div class="text-info pr-2" style="font-size: 4rem;">&#8223</div>
+        <blockquote class="blockquote pt-4">
+          <p>A reference for holograms and 3D content</p>
+          <footer class="blockquote-footer">La Voix du Nord</footer>
+        </blockquote> 
+      </div>
+    </div>
+  </section>
+  <div class="section section-white">
+    <h2>L'équipe</h2>
   </div>
 
-<div class="col-lg-6 col-md-12">
-  <img style="padding-top: 30px" alt="Picto Focus" class="img-fluid" src="/static/img/products/made_in_france.jpg"/>
-</div>
-</div>
-
-<h1 align="center" style="padding: 30px 0px 20px 0px">Our values</h1>
-
-<div class="row" style="padding-bottom: 30px">
-  <div class="col-lg-6 col-md-12">
-    <h3>At the heart of French Innovation</h3>
-    <p>We always wanted to anchor our activity in french territory. With ou <i>Made in France</i> label, we really belong to the <i>French Tech</i> movement.
-Our suppliers mostly come from our region and the holographic display are manufactured in our workshop in Tourcoing. The promixity between all actors allows us to have a lot of flexibility.</p>
-
-    <h3>Cultural heritage</h3>
-    <p>As a partner of the <a href="http://www.museomix.org/" target="_blanc">Museomix</a> association, we are part of a community striving for culture, technologies and innovations. We share an ambition for more open, connected and participative museums. Therefore, we support them every year to make a 3 days "creative marathon" happen at the beginning of November in a new museum.</p>
-    <h3>Open Source philosophy</h3>
-    <p>Holusion is commited to the <a href="https://www.gnu.org/philosophy/floss-and-foss.fr.html">free or open-source software devlopement </a>. We participate to the constant improvement of the software we use and create new tools <a href="https://github.com/Holusion">available</a> for the community. We promote this free software mindest to our coworkers and stakeholders</p>
-    <p>We believe that free software access for companies and individuals must be maintained. Every project respect this<a href="https://www.gnu.org/philosophy/free-sw.html"> fundamental freedom</a> for users.</p>
-    <p>A platform regrouping our <a href="/dev/en/">technical ressources</a> give you all you need for holographic content creation.</p>
-
-  </div>
-  <div class="col-lg-6 col-md-12">
-    <img alt="Imaginarium Plaine Images" class="img-fluid" src="/static/img/products/plaineimages.jpg"/>
-  </div>
-</div>
-
-<h1 align="center" style="padding: 30px 0px 10px 0px">About Holusion</h1>
-
-<div class="row" style="padding-bottom: 30px">
-<p><blockquote><i><h3>"It's a better way to look at thing, because now, it's 3D, instead of just 2D"</h3></i><p><font size="2pt">Tek Syndicate, VivaTech 2016</font></p></blockquote>
-  <p><blockquote><i><h3>"Eveyone can create and develop new application for a wide range of use cases"</h3></i><p><font size="2pt">Plaine Images Cluster</font></p></blockquote>
-  <p><blockquote><i><h3>" A reference for holograms and 3D content "</h3></i><p><font size="2pt">La Voix du Nord</font></p></blockquote>
-  <p><blockquote><i><h3>" The greatest company ever made "</h3></i><p><font size="2pt">Our grandparents</font></p></blockquote>
-</div>
-
-</div>
-</section>
-
-  <section id="section-equipe" class="section section-equipe" style="padding:30px 0px 50px 0px;background-color:#eeeeee;">
-    <div class="container">
-      <div class="row">
-        <h1 align="center" style="padding-bottom: 20px">L'équipe</h1>
-        <div class="content view-team" align="center">
+  <section class="section section-center ">
+      <div class="content view-team text-center pt-5 row no-gutters d-flex justify-content-center">
+        <div class="col-lg-4 col-sm-6">
           {% include components/team_member_portrait.html
             img="thibault"
             name="Thibault Guillaumont"
             title="Founder and CEO"
             url="https://www.linkedin.com/in/thibaultguillaumont/"
           %}
+        </div>
+        <div class="col-lg-4 col-sm-6">
           {% include components/team_member_portrait.html
             img="seb"
             name="Sebastien Dumetz"
             title="Founder and CTO"
             url="https://www.linkedin.com/in/sebastien-dumetz-67442b86/"
           %}
+        </div>
+        <div class="col-lg-4 col-sm-6">
           {% include components/team_member_portrait.html
             img="melissa"
             name="Mélissa Houyez"
             title="3D Artist"
           %}
-          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          {% include components/team_member_portrait.html
+            img="fanny"
+            name="Fanny Decherf"
+            title="Sales engineer"
+          %}
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          {% include components/team_member_portrait.html
+            img="sarah"
+            name="Sarah Menouar"
+            title="Developer"
+          %}
         </div>
       </div>
-    </section>
-
-  <section id="section-clients" align="center">
-    <h1 align="center" style="padding-bottom: 20px">Our partners</h1>
-
-<div class="container">
-  <div class="row" style="padding-bottom: 30px" align="center">
-    <div class="col-lg-3 col-md-6">
-      <img alt="Cap digital" class="img-fluid" src="/static/img/front/sponsors/cap-digital.jpg"/>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <img alt="Picom" class="img-fluid" src="/static/img/front/sponsors/picom.jpg"/>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <img alt="Plaine images" class="img-fluid" src="/static/img/front/sponsors/plaine-image.jpg"/>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <img alt="Tonic incubation Lille" class="img-fluid" src="/static/img/front/sponsors/tonic.jpg"/>
-    </div>
-  </div>
-
-
-  <div class="row" style="padding-bottom: 30px" align="center">
-    <div class="col-lg-3 col-md-6">
-      <img alt="BPI France" class="img-fluid" src="/static/img/front/sponsors/bpi.jpg"/>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <img alt="LMI" class="img-fluid" src="/static/img/front/sponsors/lmi.jpg"/>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <img class="img-fluid" src="/static/img/logo/ausu.jpg" alt="logo Adopte une Startup"/>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <img alt="Bizspark" class="img-fluid" src="/static/img/front/sponsors/bizspark.jpg"/>
-    </div>
-  </div>
-
-</div>
-<div onmouseover="document.getElementById('daftpunk').style.opacity = '1'" onmouseout="document.getElementById('daftpunk').style.opacity = '0'"><b>About us</b></div>
-<div id="daftpunk" style="opacity:0; transition:opacity 0.5s linear">
-  It might not be the right time<br/>
-I might not be the right one<br/>
-But there's something about us I want to say<br/>
-Cause there's something between us anyway<br/>
-</div>
   </section>
+
+  <section id="partners" class="section section-center">
+      <h2>Our partners</h2>
+      <div class="content">
+        <div class="d-flex flex-wrap justify-content-center">
+            <img alt="Plaine images" src="/static/img/front/sponsors/logo_plaine_images.png"/>
+            <img alt="BPI France" src="/static/img/front/sponsors/logo_bpifrance.png"/>
+            <img alt="Université de Lille" src="/static/img/front/sponsors/logo_Ulille.png"/>
+            <img alt="HDFID" src="/static/img/front/sponsors/logo_HDFID.png"/>
+            <img alt="Industrilab" src="/static/img/front/sponsors/logo_industrilab.png"/>
+            <img alt="Lilliad Learning Center" src="/static/img/front/sponsors/logo_lilliad.png"/>
+            <img alt="French Tech" src="/static/img/front/sponsors/logo_french_tech.png" />
+            <img alt="Laval Virtual Center" src="/static/img/front/sponsors/logo_laval_virtual.png"/>
+            <img alt="Université Polytechnique Hauts de France" src="/static/img/front/sponsors/logo_uphf.png"/>
+            <img alt="Université de Liège" src="/static/img/front/sponsors/logo_Uliege.png"/>
+            <img alt="Université de Gènes DAD" src="/static/img/front/sponsors/logo_Ugenova.png"/>
+            <img alt="Musée du Quai Branly" src="/static/img/front/sponsors/logo_quai_branly.png"/>
+            <img alt="ECCL" src="/static/img/front/sponsors/logo_ECCL.png"/>
+          </div>
+        </div>  
+      </div>
+  </section>
+
+  <section class="section section-center">
+    <h2>Nos clients</h2>
+    <div class="content mb-0">
+      <div id="clients" class="row mb-5">
+
+        <ul class="col-lg-4">
+          <h3 class="mb-4">Construction & Industrie</h3>
+          <li><a href="/en/posts/2017-11-13-le_31_en_hologramme">Vinci Immobilier</a></li>
+          <li>Linkcity</li>
+          <li><a href="/en/posts/2018-06-04-Viva_Technology_2018">Bouygues Immobilier</a></li>
+          <li>ADIM</li>
+          <li><a href="/en/posts/2017-11-13-le_31_en_hologramme">Vinci Construction</a></li>
+          <li><a href="/en/posts/2019-07-01-SHAKE">Nacarat</a></li>
+          <li><a href="/en/posts/2021-02-18-PierreDeSeine">Pierre de Seine</a></li>
+          <li>Saint Quentin en Yvelinnes</li>
+          <li>Egger</li>
+        </ul>
+
+        <ul class="col-lg-4">
+          <h3 class="mb-4">Culture et Patrimoine</h3>
+          <li><a href="/en/posts/2020-06-15-Article_Renoir">Maison Fournaise</a></li>
+          <li>Nausicaa</li>
+          <li><a href="/en/posts/2020-02-26-Musee-du-Sport">Musée National du Sport</a></li> 
+          <li><a href="/en/posts/2020-07-21-Article_Alencon">Chateau d'Alençon</a></li>
+          <li><a href="/en/posts/2018-11-01-CaTisseFactory">Ville de Roubaix</a></li>
+          <li><a href="/en/posts/2017-10-03-ALL">Région Hauts-de-France</a></li>
+          <li><a href="/en/posts/2021-02-18-PierreDeSeine">Pierre de Seine</a></li>
+          <li>Saint Quentin en Yvelinnes</li>
+          <li>Parlement Féderal Wallonie Bruxelles</li>
+        </ul>
+
+        <ul class="col-lg-4">
+          <h3 class="mb-4">Marketing Digital</h3>
+          <li>NTT EUROPE</li>
+          <li>Stryker</li>
+          <li><a href="/en/posts/2021-02-17-Mokka">Claro Automobiles</a></li>
+          <li><a href="/en/posts/2018-03-20-CTG-iris75"></a>CTG Luxembourg</a></li>
+          <li><a href="/en/posts/2020-11-16-Oxelo">Decathlon</a></li>
+          <li>AG2R La Mondiale</li>
+          <li>Cardiff</li>
+          <li><a href="/en/posts/2017-06-23-Salon_du_bourget_Thales">Thales</a></li>
+          <li>BASF</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>

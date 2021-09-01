@@ -1,3 +1,5 @@
+/* grid layout. Used with dark theme */
+
 .main-grid{
   $margin: 7rem;
   $padding: 15px;
@@ -92,14 +94,12 @@
       }
     }
     
-    & > img, &>picture{
+    & > img, &>picture, &>.media{
       grid-area: image;
-      width: 100%;
       z-index: 1;
     }
-    & > img, &>picture>img {
+    & > img, &>picture>img , &>.media{
       display: block;
-      width: 100%;
       max-width: 100%;
       height: auto;
       z-index: 1;

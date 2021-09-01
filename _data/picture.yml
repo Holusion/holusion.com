@@ -25,7 +25,7 @@ presets:
     fallback_width: 960
     formats: [webp, original]
     sizes:
-      lg: 50vw
+      xl: 50vw
     size: 100vw
   header:
     formats: [webp, original]
