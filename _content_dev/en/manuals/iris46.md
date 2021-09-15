@@ -1,5 +1,5 @@
 ---
-title: Manuel Iris 46
+title: Iris 46
 abstract: 
 image: /img/products/iris46_archi.jpg
 rank: 3

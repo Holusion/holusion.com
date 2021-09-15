@@ -1,7 +1,7 @@
 ---
 title: Manuel Iris 32
-abstract: Guide d'utilisation du produit "Iris 32" d'Holusion
-image: /static/img/posts/iris/iris32.jpg
+abstract: 
+image: /img/products/iris32_quartz.jpg
 rank: 2
 menu: manuals
 
