@@ -52,15 +52,13 @@
 
 /* -- button with slide over effect -- */
 
-.btn-slide{
+.btn-info{
     color: white;
-    background-color: $orange;
-    border:none;
-    transition: box-shadow .25s linear;
-    box-shadow: inset -25rem 0 0 0 $cyan;
+    background-color: $cyan;
     &:hover{
         color: white;
-        box-shadow: inset 0 0 0 0 $cyan;
+        background-color: $orange;
+        border-color: $orange;
     }
 }
 
