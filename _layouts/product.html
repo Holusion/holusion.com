@@ -105,14 +105,21 @@ layout: front_page
       </div>
     </div>
   </section>
+
+  <div class="section section-center section-light">
+    <div id="goto-products" class="content text-center py-5 mb-0">
+      <a href="/{{page.lang}}/products#catalog"class="m-auto btn btn-info text-white" >
+        <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
+          <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
+      </a>
+      <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()" >
+        {{site.data.strings["contact-us"][page.lang]}}
+      </button>
+    </div>
+  </div>
   {% endif %}
 
-  {% include lists/similar_posts.html %}
+  <!--{% include lists/similar_posts.html %}-->
 
-  <div id="goto-products" class="text-center py-5">
-    <a href="/{{page.lang}}/products"class="m-auto btn btn-info text-white" >
-      <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
-        <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
-    </a>
-  </div>
+
 </main>
