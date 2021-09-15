@@ -8,5 +8,5 @@ menu: manuals
 ---
 
 
-{% include components/medias/google_doc.html id="1e-1K5Rlqd7ghZY6j1esIcXEDQjC0d5tkfrKdm8wfBEUvC0" %}
+{% include components/medias/google_doc.html id="1K5Rlqd7ghZY6j1esIcXEDQjC0d5tkfrKdm8wfBEUvC0" %}
 
