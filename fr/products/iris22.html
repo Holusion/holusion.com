@@ -29,65 +29,63 @@ properties:
     Wifi: connexion sans fil
     Arduino : microcontrôleur analogique
 
+scripts:
+  - /static/js/observer.js
 ---
-<section class="section section-main-header header-fill">
-  {%include components/header_image.html image="img/products/iris22_presentation.jpg" alt="Présentation de l'Iris 22" %}
-  <div class="main-header-body">
-    <div class="content shadow rounded bg-white rounded p-md-4">
-      <h2>Vitrine holographique</h2>
+
+<div class="section section-white">
+  <h2>Vitrine holographique</h2>
+</div>
+
+<section class="section left text-left">
+  <div class="fixed-background">
+    <div class="sticky-content">
+      <div class="slides">
+        {% picture grid "img/sections/slide_produit_background.png"
+        --img data-slides="0-3"
+        --alt ombre au sol
+        %}
+        {% picture grid "img/sections/slide_produit_iris22.png"
+        --img data-slides="0-3"
+        --alt illustration d'une borne holographique iris 22 
+        %}
+        {% picture grid "img/sections/slide_plante.png"
+        --img data-slides="0-3" style="left: -15%; bottom: 10%;"
+        --alt illustration d'une borne holographique iris 32  
+        %}
+        {% picture grid "img/sections/slide_musee.png"
+        --img data-slides="0-3" style="left: 20%; bottom: 10%"
+        --alt illustration d'une borne holographique iris 32  
+        %}
+
+      </div> 
+    </div>
+  </div>
+  <div class="slide content">
+    <div>
       <p>L’hologramme IRIS 22 vous permet d'afficher en hologrammes vos produits ou projets en haute définition dans <b>un espace optimisé</b>. Ce projecteur, <b>fiable et autonome</b>, s’intègre ainsi naturellement dans votre univers.</p>
       <p>Cette vitrine holographique est disponible en vente ou en location.</p>
       <p>Très simple à installer, configurable et interactif, l'Iris 22 devient le <b>support idéal </b> pour des présentations institutionnelles ou <a href="/fr/posts/2018-11-01-CaTisseFactory">éducatives</a>.</p>
     </div>
-  </div>
-</section>
-
-
-
-<section class="section section-main-header  header-fill py-4">
-  {%include components/header_image.html image="img/products/Iris22_exemple.jpg" alt="L'Iris32 est très lumineux et adéquat pour des présentation d'objets 3D" %}
-  <div class="main-header-body container">
-    <div class="content shadow rounded bg-white p-4">
-      <h2 class="text-center">Prenez de l'avance</h2>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <p>
-            L'Iris 22 est une très bonne solution pour exposer vos hologrammes dans un espace réduit.
-            Sa puissance lumineuse et la qualité graphique de ses rendus le rendent très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions</b>.</p>
-            <p>
-            C'est pour cela que plusieurs clients à travers la France nous font déjà confiance pour son utilisation, comme par exemple Krysta pour présenter des <a href="https://holusion.com/fr/posts/2017-01-28-arc_france" target="_blank">verres en cristal</a> en hologramme en réalisant un mapping sur un vrai verre.</p>
-        </div>
-        <div class="col">
-          {% include components/medias/youtube.html  embed="97usClzj2_c" %}
-        </div>
-      </div>
+    <div>
+      <h2>Prenez de l'avance</h2>
+      {% include components/medias/youtube.html  embed="97usClzj2_c" %}
+      <p>
+        L'Iris 22 est une très bonne solution pour exposer vos hologrammes dans un espace réduit.
+        Sa puissance lumineuse et la qualité graphique de ses rendus le rendent très adapté pour une utilisation <b>sur salon, en vitrine de magasin ou dans des expositions</b>.
+      </p>
+      <p>
+        C'est pour cela que plusieurs clients à travers la France nous font déjà confiance pour son utilisation, comme par exemple Krysta pour présenter des <a href="https://holusion.com/fr/posts/2017-01-28-arc_france" target="_blank">verres en cristal</a> en hologramme en réalisant un mapping sur un vrai verre.
+      </p>
     </div>
+    <div>
+      <h2>Mapping d'objets</h2>
+      {% include components/medias/youtube.html  embed="-Aa8mPy0iBU" %}
+      <p>
+        Votre produit ne fera plus qu'un avec l'hologramme.
+        Placé dans le projecteur d'hologrammes, un <b>mapping vidéo</b> apparaît sur le produit pour le mettre en avant et apporter des informations complémentaires.
+        Effets spéciaux, personnalisation ou réalité augmentée, un <b>large panel d'effets</b> viennent à vous pour valoriser votre produit.
+      </p>
+    </div>    
   </div>
 </section>
-
-
-
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
-    {% include components/medias/youtube.html  embed="-Aa8mPy0iBU" %}
-  </div>
-  <div class="tile-body tile-body--main">
-    <h2>Mapping d'objets</h2>
-    <p>
-      Votre produit ne fera plus qu'un avec l'hologramme.
-      Placé dans le projecteur d'hologrammes, un <b>mapping vidéo</b> apparaît sur le produit pour le mettre en avant et apporter des informations complémentaires.
-      Effets spéciaux, personnalisation ou réalité augmentée, un <b>large panel d'effets</b> viennent à vous pour valoriser votre produit.
-    </p>
-  </div>
-</section>
-
-
-
-<div align="center" style="padding-top: 30px">
-  {% picture  img/products/mesures/Iris22.png    
-    --img class="img-fluid"
-    style="padding-top: 40px; padding-bottom: 10px;"
-    --alt  Schema des dimensions de l'iris 22 pouces
-  %}
-  <h3> <b>L'iris 22</b> </h3>
-</div>

@@ -22,14 +22,14 @@ layout: front_page
         <h1 align="center">{{page.header}}</h1>
         {% if page.price %}
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            <h3 align="center">
+            <h4 align="center">
               <span itemprop="price" content="{{page.price |replace: ",", "."| replace: " ", "" }}">
                 {{page.price}}
               </span>
               <span itemprop="priceCurrency" content="EUR">€</span> {{site.data.strings["store-no-vat"][page.lang]}}
               <link itemprop="availability" href="http://schema.org/InStock" />
 
-            </h3>
+            </h4>
             <div id="available-for-rent-notice" align="center" style="font-size: 0.7rem">
               {{site.data.strings["public-price"][page.lang]}}.
               {%unless page.location == false %}
@@ -40,26 +40,22 @@ layout: front_page
             <div itemprop="description" class="p-2 flex-grow-1 text-center">
               {{page.abstract}}
             </div>
-            <div style="min-width:200px" class="d-flex justify-content-center">
-                {% if page.ecommerce %}
-                  {% include components/shop/store-fab.html url=page.ecommerce %}
-                  <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
-                {% else %}
-                  <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()" >
-                      {{site.data.strings["contact-us"][page.lang]}}
-                  </button>
-                {% endif %}
-              </div>
+            <div style="min-width:200px" class="d-flex justify-content-center my-5">
+              {% if page.ecommerce %}
+                {% include components/shop/store-fab.html url=page.ecommerce %}
+                <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
+              {% else %}
+                <a class="btn btn-info text-white" style="cursor:pointer" href="#product-properties" >
+                  {{site.data.strings.characteristics[page.lang]}}
+                </a>
+              {% endif %}
+            </div>
           </div>
         {% else %}
           <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
         {% endif %}
     </div>
   </section>
-
-  <div class="section section-white">
-    <h2></h2>
-  </div>
 
   <div id="product-content">
     {{content}}
@@ -107,14 +103,22 @@ layout: front_page
   </section>
 
   <div class="section section-center section-light">
-    <div id="goto-products" class="content text-center py-5 mb-0">
+    <div id="goto-products" class="content text-center pb-5 mb-0">
+      <div style="min-width:200px" class="d-flex justify-content-center my-5">
+        {% if page.ecommerce %}
+          {% include components/shop/store-fab.html url=page.ecommerce %}
+          <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
+        {% else %}
+          <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()" >
+            {{site.data.strings["contact-us"][page.lang]}}
+          </button>        
+
+        {% endif %}
+      </div>
       <a href="/{{page.lang}}/products#catalog"class="m-auto btn btn-info text-white" >
         <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
           <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
       </a>
-      <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()" >
-        {{site.data.strings["contact-us"][page.lang]}}
-      </button>
     </div>
   </div>
   {% endif %}
