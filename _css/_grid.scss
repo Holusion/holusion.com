@@ -245,7 +245,7 @@
       color: $dark;
       .content{
         border-left : 2px solid black;
-        margin-left: 2.5rem;
+        margin-left: 3rem;
         @include media-breakpoint-down(lg){
           margin-left: 0;
           border: none;
