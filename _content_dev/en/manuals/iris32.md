@@ -1,5 +1,5 @@
 ---
-title: Iris 32
+title: Iris 32 user guide
 abstract: 
 image: /img/products/iris32_quartz.jpg
 rank: 2

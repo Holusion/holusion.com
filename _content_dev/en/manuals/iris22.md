@@ -1,5 +1,5 @@
 ---
-title: Iris 22
+title: Iris 22 user guide
 abstract: 
 image: /img/products/iris_22.jpg
 rank: 1
