@@ -56,7 +56,6 @@ properties:
   <div class="content">
     <div>
       <h2 class="py-lg-5">Impactant</h2>
-
       <p class="pt-4">
         L’hologramme <b>IRIS 75</b> ou <b>l’hologramme XXL</b> est idéal pour des présentations spectaculaires.
       </p>
@@ -66,7 +65,6 @@ properties:
         Il vous permet de découvrir des images Ultra HD d'une qualité incroyable. Cet hologramme <b>haut de gamme</b> vous permettra de moderniser votre discours et ainsi de monopoliser l’attention de votre public.
       </p>      
     </div>
-    
   </div>
 </section>
 
@@ -74,9 +72,9 @@ properties:
   <div class="media">
     {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
   </div>
-  <h2>Lumineux</h2>
-  <div class="content py-lg-5">
-    <p class="pt-4">
+  <h2 class="text-center" style="grid-area: white;">Lumineux</h2>
+  <div class="content m-auto pb-5">
+    <p>
       L'Iris 75" est équipé d'un écran <b>Très haute luminosité</b> de 2500cd/m². Profitez d'hologrammes exceptionnels, même en plein jour.
     </p>
     <p>
@@ -93,16 +91,16 @@ properties:
       <h3>Optez pour la configuration la mieux adaptée</h3>
       <div class="row">
         <div class="col-lg-6 h-100">
-          {% picture grid "img/posts/2019_Nacarat/iris75_estrade.jpg"
+          {% picture grid "img/products/iris75_chartres_hologrammes.jpg"
           --img class="img-fluid"
-          --alt photo de l'inauguration du projet ShaKe sur un Iris 75
+          --alt hologramme de présentation des nouveaux modèles Mokka et Mokka-e dans un iris 75
           %}
           <p class="pt-5">
             Orientation <b>horizontal</b> pour l'inauguration officielle de votre bâtiment ou une présentation institutionnelle de votre dernière innovation,
-            comme par exemple pour un projet immobilier phare de la ville de Lille, <a href="/fr/posts/2019-07-01-SHAKE">le ShAKe</a>, présentant le nouveau siège la Caisse d'Epargne Hauts-de-France.
+            comme OPEL pour la présentation de leurs nouveaux modèles Mokka et Mokka-e.
           </p>
           <div class="d-flex justify-content-center">
-            <a href="/fr/posts/2019-07-01-SHAKE"><button class="btn btn-info my-4">En savoir plus</button></a>
+            <a href="/fr/posts/2021-02-17-Mokka"><button class="btn btn-info my-4">En savoir plus</button></a>
           </div>
         </div>
         <div class="col-lg-6 h-100">
@@ -125,22 +123,28 @@ properties:
 
 <section class="section section-white">
   <h2>Précis</h2>
-  <div class="media">
-    {% include components/medias/youtube.html embed="oqddzF35d9w" %}
-  </div>
-  <div class="content">
-    <h2 class="pt-lg-5"></h2>
+  {% picture "img/posts/2019_Nacarat/shake_holo.jpg"
+  --img class="img-fluid"
+  --alt  photo de l'hologramme de l'inauguration du projet ShaKe sur un Iris 75
+  %}
+  <div class="content m-auto">
     <p>
       Sa résolution <b>UltraHD</b> permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. 
       Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
     </p>
+    <p>
+      Comme par exemple pour un projet immobilier phare de la ville de Lille, <a href="/fr/posts/2019-07-01-SHAKE">le ShAKe</a>, présentant le nouveau siège la Caisse d'Epargne Hauts-de-France.
+    </p>
+    <div class="d-flex justify-content-center">
+      <a href="/fr/posts/2019-07-01-SHAKE"><button class="btn btn-info my-4">En savoir plus</button></a>
+    </div>
   </div>
 </section>
 
 <section class="section section-center pt-lg-5">
   <div class="content pt-5 text-center">
     <h2>Le produit vous interesse ?</h2>
-    <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()">Contactez nous</button> 
+    <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()">Contactez nous</button>
   </div>
 </section>
 
