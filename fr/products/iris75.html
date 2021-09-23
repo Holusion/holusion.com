@@ -32,47 +32,31 @@ properties:
     power: 650W (écran seul)
   computing:
     cpu: selon projet
-scripts:
-  - /static/js/observer.js
 ---
 
 <div class="section section-white">
-  <h2 class="text-white">.</h2>
+  <h2>Un hologramme XXL</h2>
 </div>
 
 <section class="section left text-left">
-  <div class="fixed-background">
-    <div class="sticky-content">
-      <div class="slides">
-        {% picture grid "img/sections/slide_produit_background.png"
-        --img data-slides="0-3"
-        --alt ombre au sol
-        %}
-
-        {% picture grid "img/sections/slide_produit_iris75.png"
-        --img data-slides="0-3"
-        --alt illustration d'une borne holographique iris 32 
-        %}
-
-        {% picture grid "img/sections/slide_produit_foreground.png"
-        --img data-slides="0-3"
-        --alt illustration d'une borne holographique iris 32  
-        %}
-
-        {% picture grid "img/sections/slide_produit_iris75_size.png"
-        --img data-slides="1"
-        --alt illustration d'une borne holographique iris 32 
-        %}
-        
-      </div> 
+  {% picture grid "img/sections/sketch_iris75.png"
+  --img data-slides="0-3"
+  --alt ombre au sol
+  %}
+  <div class="cube-contain mx-auto" style="grid-area: image; margin-top: 15%;">
+    <div class="cube">
+      <div class="cube-face cube-top"></div>
+      <div class="cube-face cube-bottom"></div>
+      <div class="cube-face cube-left"></div>
+      <div class="cube-face cube-right"></div>
+      <div class="cube-face cube-front"></div>
+      <div class="cube-face cube-back"></div>
     </div>
-  </div>
-  <div class="slide content">
+  </div>    
+  <div class="content">
     <div>
-      <h2 >Impactant</h2>
-      {%include components/header_image.html image="img/products/iris75_chaufferie.jpg" 
-      alt="L'iris grand format en plein jour en extérieur montrant le plein potentiel de son écran très haute luminosité" 
-      %}
+      <h2 class="py-lg-5">Impactant</h2>
+
       <p class="pt-4">
         L’hologramme <b>IRIS 75</b> ou <b>l’hologramme XXL</b> est idéal pour des présentations spectaculaires.
       </p>
@@ -82,34 +66,81 @@ scripts:
         Il vous permet de découvrir des images Ultra HD d'une qualité incroyable. Cet hologramme <b>haut de gamme</b> vous permettra de moderniser votre discours et ainsi de monopoliser l’attention de votre public.
       </p>      
     </div>
+    
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="media">
+    {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
+  </div>
+  <h2>Lumineux</h2>
+  <div class="content py-lg-5">
+    <p class="pt-4">
+      L'Iris 75" est équipé d'un écran <b>Très haute luminosité</b> de 2500cd/m². Profitez d'hologrammes exceptionnels, même en plein jour.
+    </p>
+    <p>
+      Notre connaissance des matériaux nous permet de proposer le meilleur compromis entre contraste et transparence pour toutes les situations
+    </p>      
+  </div>
+</section>
+
+<section class="section section-center pt-md-5">
+  <div class="content pt-5">
     <div>
-      <h2>Lumineux</h2>
-      {% include components/medias/youtube.html  embed="yfrcDO1Nlwk" %}
-      <p class="pt-4">
-        L'Iris 75" est équipé d'un écran <b>Très haute luminosité</b> de 2500cd/m². Profitez d'hologrammes exceptionnels, même en plein jour.
-      </p>
-      <p>
-        Notre connaissance des matériaux nous permet de proposer le meilleur compromis entre contraste et transparence pour toutes les situations
-      </p>      
-    </div>
-    <div>
-      <h2>Modulaire</h2>
-      {% include components/medias/youtube.html embed="oqddzF35d9w" %}
-      <p class="pt-4">L'Iris 75" est naturellement customisable et peut être utilisé en affichage <b>portrait</b> ou <b>paysage</b>.</p>
-      <p>Il est proposé dans une large gamme de finitions. Du métal brut intégrable aux habillages Textiles ou rigides ; unis ou imprimés.</p>      
-    </div>
-    <div>
-      <h2>Précis</h2>
-      <p>
-        Sa résolution <b>UltraHD</b> permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. 
-        Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
-      </p>
-    </div>
-    <div>
-      <h2>Orientable</h2>
-      <p>
-        Choisissez l'orientation de votre Iris 75". <b>Horizontal</b> pour l'inauguration officielle de votre bâtiment ou une présentation institutionnelle de votre dernière innovation, <b>vertical</b> pour présenter une personne en taille réelle réalisant un discours ou pour de l'accueil sur un salon, optez pour la configuration la mieux adaptée.
-      </p>
+      <h2 class="pt-lg-5">Modulaire</h2>
+      <p>L'Iris 75 est proposé dans une large gamme de finitions. Du métal brut intégrable aux habillages Textiles ou rigides ; unis ou imprimés.</p>        
+      <h3>Optez pour la configuration la mieux adaptée</h3>
+      <div class="row">
+        <div class="col-lg-6 h-100">
+          {% picture grid "img/posts/2019_Nacarat/iris75_estrade.jpg"
+          --img class="img-fluid"
+          --alt photo de l'inauguration du projet ShaKe sur un Iris 75
+          %}
+          <p class="pt-5">
+            Orientation <b>horizontal</b> pour l'inauguration officielle de votre bâtiment ou une présentation institutionnelle de votre dernière innovation,
+            comme par exemple pour un projet immobilier phare de la ville de Lille, <a href="/fr/posts/2019-07-01-SHAKE">le ShAKe</a>, présentant le nouveau siège la Caisse d'Epargne Hauts-de-France.
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="/fr/posts/2019-07-01-SHAKE"><button class="btn btn-info my-4">En savoir plus</button></a>
+          </div>
+        </div>
+        <div class="col-lg-6 h-100">
+          {% picture "img/sections/Armel.jpg"
+          --img class="img-fluid"
+          --alt  Dispositif d'interview en hologramme taille réelle
+          %}    
+          <p class="pt-5">
+            Orientation <b>vertical</b> pour présenter une personne en taille réelle réalisant un discours ou pour de l'accueil sur un salon,
+            comme par exemple l'interview en hologrammes de Armel Le Cléac'h pour la ville de Saint Malo.
+          </p>
+          <div class="d-flex justify-content-center mt-auto">
+            <a href="/fr/posts/2018-10-24-route_du_rhum#video"><button class="btn btn-info my-4">En savoir plus</button></a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<section class="section section-white">
+  <h2>Précis</h2>
+  <div class="media">
+    {% include components/medias/youtube.html embed="oqddzF35d9w" %}
+  </div>
+  <div class="content">
+    <h2 class="pt-lg-5"></h2>
+    <p>
+      Sa résolution <b>UltraHD</b> permet d’intégrer très facilement du contenu de <b>précision</b> pour des présentations institutionnelles, techniques ou éducatives. 
+      Il est souvent utilisé dans le domaine de <b>l'immobilier</b> pour des maquettes interactives (<a href="https://fr.wikipedia.org/wiki/Building_information_modeling">BIM</a>).
+    </p>
+  </div>
+</section>
+
+<section class="section section-center pt-lg-5">
+  <div class="content pt-5 text-center">
+    <h2>Le produit vous interesse ?</h2>
+    <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()">Contactez nous</button> 
+  </div>
+</section>
+

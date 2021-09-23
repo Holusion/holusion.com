@@ -16,7 +16,8 @@
     @include media-breakpoint-down(lg){
       grid-template-columns: 0px [col-start] auto [col-end] 0px;
       grid-template-areas: 
-        "white  title  ."
+        ". white ."
+        ".  title  ."
         ".     content ."
         ".      image  .";
     }
@@ -140,7 +141,7 @@
           bottom:0;
           right:0;
           //elements that contains actual slide content
-          & > img, & > video, & > picture>img, & > div {
+          & > img, & > video, & > picture>img, & > div &>.media {
             position: absolute;
             top:0;
             left:0;
