@@ -31,63 +31,65 @@ properties:
 
 ---
 
-<section class="section section-main-header header-fill">
-  {%include components/header_image.html image="img/products/iris22_presentation.jpg" alt="Présentation de l'Iris 22" %}
-  <div class="main-header-body">
-    <div class="content shadow rounded bg-white rounded p-md-4">
-      <h2>Holographic showcase</h2>
-      <p>The Iris 22 holographic display provides <b>visibility</b> to your products and projects in high-definition <b>in an optimized room</b>. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. </p>
-      <p>This holographic showcase is available for sale or rent.</p>
-      <p>With its easy content management and interactivity, the Iris 22 becomes <b>the most appropriate tool </b> for corporate presentation or education</p>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="section section-main-header  header-fill py-4">
-  {%include components/header_image.html image="img/products/Iris22_exemple.jpg" alt="L'Iris32 est très lumineux et adéquat pour des présentation d'objets 3D" %}
-  <div class="main-header-body container">
-    <div class="content shadow rounded bg-white p-4">
-      <h2 class="text-center">Take the lead</h2>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <p>
-            The Iris 22 is our best offer for high impact with limited room.
-            Its high luminosity and graphical performances make it a powerful tool in <b>an exhibition, a point of sale or a museum</b>.</p>
-            <p>This is why our customers trust us for their key project, such as Krysta, for presenting their <a href="https://holusion.com/en/posts/2017-01-28-arc_france" target="_blank">crystal glasses</a> using holographic mapping on real glasses.</p>
-      </div>
-        <div class="col">
-          {% include components/medias/youtube.html  embed="97usClzj2_c" %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
-    {% include components/medias/youtube.html  embed="-Aa8mPy0iBU" %}
-  </div>
-  <div class="tile-body tile-body--main">
-    <h2>Objects' mapping</h2>
-    <p>
-      Your product will be as one with the hologram.
-      Positioned inside of the showcase, a <b>video mapping<b> appears on the product to inhance it and display complementary information.
-      Customization, content enrichment, holographic animation are some of the tools you can use to <b>better</b> showcase your products</p>
-  </div>
-</section>
-
-
-
-<div align="center" style="padding-top: 30px">
-  {% picture container img/products/mesures/Iris22.png
-    --img class="img-fluid"
-    style="padding-top: 40px; padding-bottom: 10px;"
-    --alt  Schéma de l'Iris
-  %}
-  <h3> <b>L'iris 22</b> </h3>
+<div class="section section-white">
+  <h2>Holographic showcase</h2>
 </div>
+
+<section class="section left text-left">
+  {% picture grid "img/sections/sketch_iris22.png"
+  --alt sketch of a lady looking at an iris 22
+  %}
+  {% picture grid "img/sections/stars.png"
+  style="width: 8%; margin-right: 0px; margin-left: 60%; margin-top: 21.5%;"
+  class="spin"
+  --alt stars sketch
+  %}
+  <div class="content m-auto py-4">
+    <p>The Iris 22 holographic display provides <b>visibility</b> to your products and projects in high-definition <b>in an optimized room</b>. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. </p>
+    <p>This holographic showcase is available for sale or rent.</p>
+    <p>With its easy content management and interactivity, the Iris 22 becomes <b>the most appropriate tool</b> for corporate presentation or education.</p>
+  </div>
+</section>
+
+
+<section class="section section-white">
+  <h2>Take the lead</h2>
+  <div class="media">
+    {% include components/medias/youtube.html  embed="97usClzj2_c" %}
+  </div>
+ 
+  <div class="content">
+    <div class="my-5">
+      <p>
+        The Iris 22 is our best offer for high impact with limited room.
+        Its high luminosity and graphical performances make it a powerful tool in <b>an exhibition, a point of sale or a museum</b>.
+      </p>
+      <p>This is why our customers trust us for their key project, such as Krysta, for presenting their <a href="/en/posts/2017-01-28-arc_france" target="_blank">crystal glasses</a> using holographic mapping on real glasses.
+      </p>
+      <div class="d-flex justify-content-center">
+        <a href="/en/posts/2017-01-28-arc_france"><button class="btn btn-info my-3">Show more</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-center">
+  <h2></h2>
+  <div class="content">
+    <h2 class="py-5">Objects' mapping</h2>
+    <div class="row">
+      <div class="col-md-6">
+        {% include components/medias/youtube.html embed="-Aa8mPy0iBU" %}
+      </div>
+      <div class="col-md-6 m-auto">
+        <p>
+          Your product will be as one with the hologram.
+          Positioned inside of the showcase, a <b>video mapping</b> appears on the product to inhance it and display complementary information.
+          Customization, content enrichment, holographic animation are some of the tools you can use to <b>better</b> showcase your products.</p>
+        <p class="text-center">
+          <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()">Contact us</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -25,62 +25,67 @@ properties:
 ---
 
 
+<div class="section section-white">
+  <h2>Holographic Showcase</h2>
+</div>
 
-<section class="section section-main-header header-fill">
-  {%include components/header_image.html image="img/products/iris32_quartz.jpg" alt="L'iris 32 en présentation d'hologrammes d'objets précieux" %}
-  <div class="main-header-body">
-    <div class="content shadow rounded bg-white rounded p-md-4">
-      <h2>Holographic Showcase</h2>
-      <p>The Iris 32 holographic display provides <b>visibility</b> to your products and projects thanks to its wide holographic showcase in high-definition. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. </p>
-      <p>This holographic showcase is available for sale or rent.</p>
-      <p>With its easy content management and interactivity, the Iris 32 becomes <b>the most appropriate tool </b> for corporate presentations or education</p>
-    </div>
+<section class="section left text-left">
+  {% picture grid "img/sections/sketch_iris32.png"
+  --alt sketch of a lady looking at an iris 32
+  %}
+  {% picture grid "img/sections/stars.png"
+  style="width: 10%; margin-right: 0px; margin-left: 60%; margin-top: 21.5%;"
+  class="spin"
+  --alt stars sketch
+  %}
+  <div class="content m-auto">
+    <p>The Iris 32 holographic display provides <b>visibility</b> to your products and projects thanks to its wide holographic showcase in high-definition. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. </p>
+    <p>This holographic showcase is available for sale or rent.</p>
+    <p>With its easy content management and interactivity, the Iris 32 becomes <b>the most appropriate tool </b> for corporate presentations or education.</p>
   </div>
 </section>
 
+<section class="section section-white">
+  <h2>Take the lead</h2>
+  <div class="media">
+    {% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}
+  </div>
+  <div class="content">
+    <p>
+      The Iris 32 is our best offer for high impact with limited room.
+      Its high luminosity and graphical performances make it a powerful tool in <b>an exhibition, a point of sale or a museum</b>.</p>
+      <p>This is why our customers trust us for their key project, such as <a href="https://www.nausicaa.co.uk/" target="_blank">Nausicaa</a>, largest aquarium in Europe, for presenting fishes from the deep sea or an enginnering school new buildings at  <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a> to present their new buildings.</p>
+</section>
 
-
-<section class="section section-main-header  header-fill py-4">
-  {%include components/header_image.html image="img/products/iris32_archeo.jpg" alt="The Iris32 is very bright and well adapted for your 3D objects presentation" %}
-  <div class="main-header-body container">
-    <div class="content shadow rounded bg-white p-4">
-      <h2 class="text-center">Take the lead</h2>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <p>
-            The Iris 32 is our best offer for high impact with limited room.
-            Its high luminosity and graphical performances make it a powerful tool in <b>an exhibition, a point of sale or a museum</b>.</p>
-            <p>This is why our customers trust us for their key project, such as <a href="https://www.nausicaa.co.uk/" target="_blank">Nausicaa</a>, largest aquarium in Europe, for presenting fishes from the deep sea or an enginnering school new buildings at  <a href="https://twitter.com/AlesMyriapolis/status/1004752792156860417" target="_blank">Mines d'Ales</a> to present their new buildings.</p>
-        </div>
-        <div class="col">
-          {% include components/medias/youtube.html  embed="9fYR-hXUyHc" %}
-        </div>
+<section class="section section-center">
+  <h2></h2>
+  <div class="content">
+    <h2 class="py-5">Objects' mapping</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        {% include components/medias/youtube.html  embed="tBymyNjl8XU" %}
+      </div>
+      <div class="col-lg-6 m-auto">
+        <p>
+          Your product will be as one with the hologram.
+          Positioned inside of the showcase, a <b>video mapping</b> appears on the product to inhance it and display complementary information, as for the Oxelo scooter presented at <a href="https://www.btwin-village.com/">B'Twin Village</a> in an Iris 32.
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="/fr/posts/2020-11-16-Oxelo"><button class="btn btn-info my-3">Show more</button></a>
+        </div>        
       </div>
     </div>
+    <div class="pt-5 text-center">
+      <p>
+        Customization, content enrichment, holographic animation are some of the tools you can use to better showcase your products.
+      </p>
+      <p>
+        <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()">Contact us</button>
+      </p>      
+    </div>
   </div>
 </section>
 
 
 
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
-    {% include components/medias/youtube.html embed="h2PtmAhlp2A" %}
-  </div>
-  <div class="tile-body tile-body--main">
-    <h2>Objects' mapping</h2>
-    <p>
-      Your product will be as one with the hologram.
-      Positioned inside of the showcase, a <b>video mapping<b> appears on the product to inhance it and display complementary information.
-      Customization, content enrichment, holographic animation are some of the tools you can use to better showcase your products</p>
-  </div>
-</section>
 
-
-<div align="center" class="p-4">
-  {% picture container img/products/mesures/Iris32.png
-    --img class="img-fluid"
-    style="padding-top: 40px; padding-bottom: 10px;"
-    --alt  Schematic representation and dimensions of holusion's iris 32
-  %}
-  <h3> <b>Iris 32</b> </h3>
-</div>

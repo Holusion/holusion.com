@@ -2,32 +2,34 @@
 layout: front_page
 ---
 
-{% if page.title %}
-  {% include components/section_title.html title=page.title %}
-{%endif %}
-<div class="container">
-  {% ariane %}
-</div>
-<main itemscope itemtype="http://schema.org/Product" id="content">
+<main class="main-grid main-dark" itemscope itemtype="http://schema.org/Product" id="content">
   <meta itemprop="brand" content="{{page.brand|default: "holusion"}}"/>
   <meta itemprop="name" content="{{page.title}}"/>
-  <section id="section-intro" class="section section-main-header header-fill">
-    {%capture header_image %}{{page.image}}{%endcapture%}
-    {%include components/header_image.html image=header_image %}
-    <div class="main-header-body body-right">
-      <div class="content shadow rounded bg-white rounded p-2 p-lg-4">
-        <img itemprop="image" style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid align-self-center" src="{{page.picto}}"/>
+
+  <section class="section section-center">
+    <h2 class="text-white my-5" style="font-size: 3rem">{{page.title}}</h2>
+  </section>
+
+  <section id="section-intro" class="section">
+    {% picture grid {{page.image}}
+      --img class="image-shadow cover"
+      data-noisetest="1"
+      --alt Hologramme At'Rouen
+    %}
+
+    <div class="content main-header-body body-right">
+        <!--<img itemprop="image" style="padding-top: 30px" alt="{{page.title}} representative pictogram" class="img-fluid align-self-center" src="{{page.picto}}"/>-->
         <h1 align="center">{{page.header}}</h1>
         {% if page.price %}
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            <h3 align="center">
+            <h4 align="center">
               <span itemprop="price" content="{{page.price |replace: ",", "."| replace: " ", "" }}">
                 {{page.price}}
               </span>
               <span itemprop="priceCurrency" content="EUR">€</span> {{site.data.strings["store-no-vat"][page.lang]}}
               <link itemprop="availability" href="http://schema.org/InStock" />
 
-            </h3>
+            </h4>
             <div id="available-for-rent-notice" align="center" style="font-size: 0.7rem">
               {{site.data.strings["public-price"][page.lang]}}.
               {%unless page.location == false %}
@@ -38,73 +40,82 @@ layout: front_page
             <div itemprop="description" class="p-2 flex-grow-1 text-center">
               {{page.abstract}}
             </div>
-            <div style="min-width:200px" class="d-flex justify-content-center">
-                {% if page.ecommerce %}
-                  {% include components/shop/store-fab.html url=page.ecommerce %}
-                  <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
-                {% else %}
-                  <button class="btn btn-primary" style="cursor:pointer" onclick="displayContactForm()" >
-                      {{site.data.strings["contact-us"][page.lang]}}
-                  </button>
-                {% endif %}
-              </div>
+            <div style="min-width:200px" class="d-flex justify-content-center my-5">
+              {% if page.ecommerce %}
+                {% include components/shop/store-fab.html url=page.ecommerce %}
+                <meta itemprop="url" content="{{page.ecommerce | absolute_url }}"/>
+              {% else %}
+                <a class="btn btn-info text-white" style="cursor:pointer" href="#product-properties" >
+                  {{site.data.strings.characteristics[page.lang]}}
+                </a>
+              {% endif %}
+            </div>
           </div>
         {% else %}
           <h3 align="center">{{site.data.strings["rent-only"][page.lang]}}</h3>
         {% endif %}
-      </div>
     </div>
   </section>
 
   <div id="product-content">
     {{content}}
   </div>
-  {% if page.properties %}
-  <div id="product-properties" class="container-fluid">
-    <h2 class="text-center">{{site.data.strings.characteristics[page.lang]}}</h2>
-    <div class="card-deck justify-content-around">
-      {% for prop_group in page.properties %}
-        <div class="card  product-property-group">
-          <div class="card-header text-capitalize font-weight-bold bg-primary text-light">
-            {%assign prop_group_name = prop_group[0] %}
-            {{site.data.product_properties[prop_group_name][page.lang]}}
-          </div>
-          <ul class="list-group list-group-flush">
-            {%for prop in prop_group[1] %}
-              {%capture prop_key %}{{prop[0]}}{%endcapture%}
-              {%capture prop_value %}{{prop[1]}}{%endcapture%}
-              {%capture prop_icon %}{{site.data.product_properties[prop_key]["icon"] |default: "src/pictos/properties/default.svg"}}{%endcapture%}
 
-              <li class="product-property list-group-item d-flex">
-                <div class="product-property-icon">
-                  {%svg {{prop_icon}} width=48 %}
-                </div>
-                <div class="product-property-body d-flex flex-column flex-grow-1">
-                  <div class="product-property-title font-weight-bold text-secondary">
-                    {{site.data.product_properties[prop_key][page.lang] |default: prop_key}}
+  {% if page.properties %}
+  <div id="product-properties" class="container-fluid section section-light section-center">
+    <div class="content mb-0">
+      <h2 class="my-5">{{site.data.strings.characteristics[page.lang]}}</h2>
+    </div>
+  </div>
+
+  <section class="section section-center bg-light">
+    <div class="content m-0 p-0">
+      <div class="row no-gutters m-0">
+        {% for prop_group in page.properties %}
+        <div class="col-lg px-md-2 py-3 py-lg-0">
+          <div class="card light-card">
+            <div class="card-content card-body p-3">
+              <h3 class="my-3">
+                {%assign prop_group_name = prop_group[0] %}
+                {{site.data.product_properties[prop_group_name][page.lang]}}
+              </h3>
+              {%for prop in prop_group[1] %}
+                <div class="text-primary">
+                  <hr>
+                  {%capture prop_key %}{{prop[0]}}{%endcapture%}
+                  {%capture prop_value %}{{prop[1]}}{%endcapture%}
+                  {%capture prop_icon %}{{site.data.product_properties[prop_key]["icon"] |default: "src/pictos/properties/default.svg"}}{%endcapture%}
+
+                  <div class="font-weight-bold">
+                    {%svg {{prop_icon}} width=48 fill=currentColor; %}
+                    <span class="text-secondary">{{site.data.product_properties[prop_key][page.lang] |default: prop_key}}</span>
+                    
                   </div>
-                  <div class="product-property-value justify-self-end text-right text-muted">
-                    {{prop_value}}
-                  </div>
+                  <div class="text-right">{{prop_value}}</div>
                 </div>
-              </li>
-            {%endfor%}
-            <li class="product-property list-group-item d-none d-lg-flex">
-              <!--provide a trailing border for esthetics-->
-            </li>
-          </ul>
+              {%endfor%}
+            </div>
+          </div>
         </div>
-      {%endfor%}
+        {%endfor%}
+      </div>
+    </div>
+  </section>
+
+  <div class="section section-center section-light">
+    <div id="goto-products" class="content text-center mb-0 mr-5"> 
+      <div style="min-width:200px" class="d-flex justify-content-center my-5">
+        <a href="/{{page.lang}}/products#catalog"class="m-auto btn btn-info text-white" >
+          <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
+            <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
+        </a>        
+      </div>
+
     </div>
   </div>
   {% endif %}
 
-  {% include lists/similar_posts.html %}
+  <!--{% include lists/similar_posts.html %}-->
 
-  <div id="goto-products" style="max-width:600px;margin:auto;padding-top:40px">
-    <a href="/{{page.lang}}/products"class="btn btn-primary btn-lg btn-block" >
-      <span class="d-none d-lg-inline">{{ site.data.strings["see-other-products"][page.lang] }}</span>
-        <span class="d-inline d-lg-none">{{ site.data.strings["see-other-products-short"][page.lang] }}</span>
-    </a>
-  </div>
+
 </main>

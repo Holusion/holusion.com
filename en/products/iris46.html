@@ -27,70 +27,73 @@ properties:
 
 ---
 
+<div class="section section-white">
+  <h2>Holographic Showcase</h2>
+</div>
 
-<section class="section section-main-header header-fill">
-  {%include components/header_image.html image="img/products/iris46_zoom.jpg" alt="L'iris 46 presenting real estate projets as holograms" %}
-  <div class="main-header-body">
-    <div class="content shadow rounded bg-white rounded p-md-4">
-      <h2>Holographic Showcase</h2>
-      <p>The Iris 46 holographic display provides <b>impact</b> to your products and projects thanks to its wide holographic showcase in high-definition. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. </p>
-      <p>This holographic showcase is available for sale or rent.</p>
-      <p>With its easy content management and interactivity, the Iris 46 becomes <b>the most appropriate tool </b> for corporate presentations or education</p>
+<section class="section left text-left">
+  {% picture grid "img/sections/sketch_iris46.png"
+  --alt sketch of a woman looking at an holographic display iris46 
+  %}  
+  <div class="cube-contain" style="grid-area: image; margin-top: 16.5%; margin-left: 50%;">
+    <div class="cube">
+      <div class="cube-face cube-top"></div>
+      <div class="cube-face cube-bottom"></div>
+      <div class="cube-face cube-left"></div>
+      <div class="cube-face cube-right"></div>
+      <div class="cube-face cube-front"></div>
+      <div class="cube-face cube-back"></div>
     </div>
+  </div>  
+  <div class="content m-auto">
+    <p class="pt-4">The Iris 46 holographic display provides <b>impact</b> to your products and projects thanks to its wide holographic showcase in high-definition. This display, <b>highly reliable and autonomous</b>, will fit naturally in your surroundings. </p>
+    <p>This holographic showcase is available for sale or rent.</p>
+    <p>With its easy content management and interactivity, the Iris 46 becomes <b>the most appropriate tool </b> for corporate presentations or education.</p>
   </div>
 </section>
 
+<section class="section section-white">
+  <h2>Take the lead</h2>
+  <div class="media">
+    {% include components/medias/youtube.html  embed="ERTuwlWW9hQ" %}
+  </div>
+  <div class="content">
+    <p>
+      The Iris 46 is our best solution for a high-end indoor holographic presentation.
+    </p>
+    <p>
+      Its high lumosity and higher graphical qualities makes it a powertool for real-estate presentation or for creating a "<i>Wahou Effect</i>" in a <b>showroom</b>.
+    </p>
+    <p>
+      French major real-estate players, such as <a href="https://www.atome-promoteur.fr/">At'ome</a>, are already using it for building models presentations!
+    </p>
+    <div class="d-flex justify-content-center">
+      <a href="/en/posts/2021-02-18-PierreDeSeine"><button class="btn btn-info my-3">Show more</button></a>
+    </div>  
+  </div>    
+</section>
 
-
-<section class="section section-main-header  header-fill py-4" style="border:0">
-  {%include components/header_image.html image="img/products/iris46_zoom.jpg" alt="L'iris 46 presenting holographic buildings" %}
-  <div class="main-header-body container">
-    <div class="content shadow rounded bg-white p-4">
-      <h2 class="text-center">Take the lead</h2>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <p>
-            The Iris 46 is our best solution for a high-end indoor holographic presentation.</p>
-            <p>Its high lumosity and higher graphical qualities makes it a powertool for real-estate presentation or for creating a "<i>Wahou Effect</i>" in a <b>showroom</b></p>
-            <p>French major real-estate players, such as <a href="https://www.atome-promoteur.fr/">At'ome</a>, are already using it for building models presentations!</p>
-        </div>
-        <div class="col">
-          {% include components/medias/youtube.html  embed="ERTuwlWW9hQ" %}
-        </div>
+<section class="section section-center pt-lg-5">
+  <h2 class="pt-lg-5">Culture and Education</h2>
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-6">
+        {% picture grid "img/products/iris46_culture.jpg"
+          --img class="img-fluid"
+          alt="Hologram of an hippopotamus skull"
+        %}
+      </div>
+      <div class="col-lg-6 m-auto">
+        <p>
+          But such a hologram is not limited to the presentation of real estate models. Let your imagination run wild for an application in education or in the enhancement of <b>cultural and scientific heritage</b>.
+        </p>
+        <p>
+          Special effects, customisation or augmented reality, a <b>wide range of effects</b> come to you to enhance your stories.
+        </p>
+        <p class="text-center">
+          <button class="btn btn-info" style="cursor:pointer" onclick="displayContactForm()">Contact us</button>
+        </p>
       </div>
     </div>
   </div>
 </section>
-
-
-
-<section id="section-gamme" class="section-tile">
-  <div class="tile-image-wrapper">
-    {% picture  "img/products/iris46_culture.jpg"
-      --img class="img-fluid"
-      style ="object-fit: contain; max-height: 60vmin;"
-      sizes="(max-width: 992px) 100vw, 50vw"
-      alt="Hologram of an hippopotamus skull"
-      %}
-  </div>
-  <div class="tile-body tile-body--main">
-    <h2>Culture and Education</h2>
-    <p>
-      But such a hologram is not limited to the presentation of real estate models. Let your imagination run wild for an application in education or in the enhancement of <b>cultural and scientific heritage</b>.
-    </p>
-    <p>
-      Special effects, customisation or augmented reality, a <b>wide range of effects</b> come to you to enhance your stories.
-    </p>
-  </div>
-</section>
-
-
-
-<div align="center" class="p-4">
-  {% picture container img/products/mesures/Iris46.png
-    --img class="img-fluid"
-    style="padding-top: 40px; padding-bottom: 10px;"
-    --alt  Schema des dimensions de l'iris 32 pouces
-  %}
-  <h3> <b>Iris 46</b> </h3>
-</div>
