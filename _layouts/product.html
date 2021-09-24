@@ -89,9 +89,22 @@ layout: front_page
                   <div class="font-weight-bold">
                     {%svg {{prop_icon}} width=48 fill=currentColor; %}
                     <span class="text-secondary">{{site.data.product_properties[prop_key][page.lang] |default: prop_key}}</span>
-                    
                   </div>
-                  <div class="text-right">{{prop_value}}</div>
+                    {% if prop_key == 'size' %}
+                      {% if page.sketch %}
+                        <div>
+                          {% picture grid "{{page.sketch}}"
+                          class="img-fluid"
+                          --alt illustration d'une borne holographique iris 46 
+                          %}  
+                        </div>
+                      {% endif %}
+                    {% else %}
+                      <div class="text-right">
+                        {{prop_value}}
+                      </div>                        
+                    {% endif %}
+
                 </div>
               {%endfor%}
             </div>
