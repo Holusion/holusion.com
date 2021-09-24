@@ -2,6 +2,7 @@
 const expect = require("chai").expect;
 const {resolve, relative} = require("path");
 const fs = require("fs").promises;
+const https = require('https');
 const findFiles = require("./utils/findFiles");
 
 const prettyPrint = require("./utils/prettyPrint");
@@ -73,31 +74,81 @@ describe("static & assets files", ()=>{
         + "\n");
     })
   });
-
-  describe("usage check", ()=>{
-    const pageFolders = ["_site"];
-    let contents;
+  describe("contents checks", ()=>{
+    let contents, contentFiles;
+    const siteDir = resolve(basePath, "_site");
     before(async ()=>{
-      const contentFiles = await findFiles(resolve(basePath, "_site"), {match:/\.(?:html|css)$/});
+      contentFiles = await findFiles(siteDir, {match:/\.(?:html|css)$/});
       contents = (await Promise.all(contentFiles.map(f=> fs.readFile(f, {encoding:"utf8"}))));
     });
-    it("images",async ()=>{
-      const images = files.filter(i=>image_re.test(i));
-      expect(images).to.have.property("length").above(100);
-      let not_found = images.filter((image)=>{
-        let rel = relative(basePath, image)
-        if(rel.indexOf("_assets") === 0){
-          rel = `/assets/${rel.slice("_assets/".length, rel.lastIndexOf("."))}`;
-        }
-        const parts = rel.split("/");
-        rel = `${parts.slice(0, -1).join("/")}/${encodeURIComponent(parts[parts.length -1])}`;
-        return !contents.some(c=> c.indexOf(rel) !== -1);
+    describe("usage check", ()=>{
+      it("images",async ()=>{
+        const images = files.filter(i=>image_re.test(i));
+        expect(images).to.have.property("length").above(100);
+        let not_found = images.filter((image)=>{
+          let rel = relative(basePath, image)
+          if(rel.indexOf("_assets") === 0){
+            rel = `/assets/${rel.slice("_assets/".length, rel.lastIndexOf("."))}`;
+          }
+          const parts = rel.split("/");
+          rel = `${parts.slice(0, -1).join("/")}/${encodeURIComponent(parts[parts.length -1])}`;
+          return !contents.some(c=> c.indexOf(rel) !== -1);
+        });
+        expect(not_found).to.have.property("length", 0, `Some images are not used anywhere :`
+        + prettyPrint(not_found.slice(0,10))
+        + ((10 < not_found.length)? `Showing 10 out of ${not_found.length}` : "")
+        + "\n");
       });
-      expect(not_found).to.have.property("length", 0, `Some images are not used anywhere :`
-      + prettyPrint(not_found.slice(0,10))
-      + ((10 < not_found.length)? `Showing 10 out of ${not_found.length}` : "")
-      + "\n");
     });
+  
+    describe("embeds check", ()=>{
+ 
+      it("gdoc", async ()=>{
+        const matches = contents.map(c=>{
+          return Array.from(c.matchAll(/div id="dgoc-placeholder" data-id="([^"]*)"/mg));
+        })
+        .map((matches, fileIndex)=> matches.map(m=> ({
+          id:m[1], 
+          file: contentFiles[fileIndex],
+          url: `https://docs.google.com/document/d/${m[1]}/export?format=pdf`
+        })))
+        .filter(m=> 0 <m.length)
+        .flat();
+        expect(matches, "gdoc embed should be used at least once or be removed").to.have.property("length").above(0);
+        for(let {id, file} of matches){
+          expect(file).to.be.ok;
+          expect(id, `Invalid gdoc ID in ${file}`).to.be.ok;
+        }
+
+        let responses = await Promise.all(matches.map(async ({url})=>{
+          return await new Promise((resolve, reject)=>{
+            https.get(url, { }, (res)=>{
+              resolve(res);
+            });
+          });
+        }));
+        for(let i = 0; i <matches.length; i++){
+          let res = responses[i];
+          let {file, url} = matches[i];
+          try{
+            //expect a 307 redirection
+            expect(res.statusCode, `Cannot GET ${url}: ${res.statusCode}`).to.be.below(400);
+            if(/accounts\.google/.test(res.headers.location)){
+              expect.fail([
+                url,
+                `in ${relative(basePath,file)}`,
+                `is requiring user authentication`,
+                `please verify it's share permissions`
+              ].join("\n\t"));
+            }
+            //Double-check statusCode in case it's changed
+            expect(res.statusCode, `Expected a 307 redirection for ${url}`).to.equal(307);
+          }finally{
+            res.destroy();
+          }
+        }
+      });
+    })
   })
   
 })
