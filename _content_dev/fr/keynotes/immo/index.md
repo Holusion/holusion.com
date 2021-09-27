@@ -8,4 +8,4 @@ rank: 2
 
 ---
 
-  {% include components/medias/canva.html src="DAEDc1crmuQ" %}
+{% include components/medias/google_slide.html src="https://docs.google.com/presentation/d/e/2PACX-1vR8s2uqmmmgp2au8GYOTilRqPug_LRNpFBmjTqAGMausjkNmwB4_6QBICIk8jk66rruH-StPssmrUrd/embed" %}

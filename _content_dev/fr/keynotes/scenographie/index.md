@@ -1,5 +1,5 @@
 ---
-title: Comment intégrer les hologrammes dans votre exposition ?
+title: Guide d'intégration
 abstract: "Guide scénographique pour l'utilisation de l'hologramme"
 lang: fr
 image: img/tiles/scenotile.jpg

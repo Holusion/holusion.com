@@ -1,6 +1,6 @@
 ---
-title: Holographic models for the real estate development
-abstract: "Presentation of innovative models"
+title: Holographic models
+abstract: "Presentation of innovative models for real estate development"
 lang: en
 image: img/tiles/Immotile.jpg
 menu: keynotes
