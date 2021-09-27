@@ -9,7 +9,7 @@ menu: keynotes
 
 
 
-  {% include components/medias/google_slide.html src="https://docs.google.com/presentation/d/e/2PACX-1vRr71GzPKzmQr1JOOHN8iIXZz9ZtDysLOVRH1g2L_fcqjCkbfqdXtcPWQJGe_VU_i9IppNIaRtbYCDu/embed" %}
+  {% include components/medias/google_slide.html src="https://docs.google.com/presentation/d/e/2PACX-1vTi5GVy7QkukFIBAAKsNv3YjizK7uUBkFkAruUgMk4okLkbWt3X2xyhoWGWZBoUHfqD4OKnUng2Yq3d/embed" %}
 
 
  

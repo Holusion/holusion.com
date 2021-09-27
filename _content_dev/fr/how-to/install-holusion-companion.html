@@ -14,14 +14,14 @@ scripts:
 
         <div class="slides">
           {% picture grid "img/sections/background-slides.png"
-          --img data-slides="0,18"
+          --img data-slides="0"
           --alt illustration d'un iris 75
           %}
         </div>
         <div class="slides">
 
           {% picture grid "img/sections/slide_hologramme_chateau.png"
-          --img data-slides="0,17"
+          --img data-slides="0"
           --alt illustration d'un hologramme d'un chateau
           %}
           {% picture grid "img/posts/2021_app/01_appstore.png"
@@ -72,7 +72,6 @@ scripts:
           --img data-slides="11"
           --alt Menu de configuration
           %}
-          %}
           {% picture grid "img/posts/2021_app/12_target.png"
           --img data-slides="12"
           --alt définit la cible
@@ -97,6 +96,11 @@ scripts:
           --img data-slides="17"
           --alt définit la cible
           %}
+          {% picture grid "img/sections/cafe_design.jpg"
+          --img class="image-shadow rounded cover"
+          --img data-slides="18"
+          --alt photo de croquis
+          %}
           
           
           
@@ -106,16 +110,16 @@ scripts:
 
 
           {% picture grid "img/sections/slide_plante.png"
-          --img data-slides="0,18"
+          --img data-slides="0"
           --alt illustration d'une plante
           %}
-          {% picture grid "img/sections/slide_interaction.png"
-          --img data-slides="0,18"
-          --alt illustration de l'interraction avec la tablette
-          %}
           {% picture grid "img/sections/slide_musee.png"
-          --img data-slides="0,18"
+          --img data-slides="0"
           --alt illustration d'un ado devant l'hologramme
+        %}
+        {% picture grid "img/sections/slide_interaction.png"
+        --img data-slides="0"
+        --alt illustration de l'interraction avec la tablette
         %}
         </div> 
       </div>
@@ -271,14 +275,14 @@ scripts:
         <p>Dans le menu de gestion des <b>Clients</b> de votre application, approuver votre iPad pour lancer la mise à jour.</p>
         <p>Dès que le téléchargement du contenu sera terminé, votre application Companion sera prête à l'emploi !</p>
       </div>
-      <div>
 
         <div>
           <h2>Votre hologramme se met à jour</h2>
         <p>Une fois votre contenu <b>téléchargé</b> et votre <b>produit cible</b> correctement défini, l'application va mettre à jour votre hologramme et vous permettra de l'utiliser de manière interactive avec l'application.</p>
         </div>
-        <div>
 
+
+        <div>
         <h2>Votre configuration est terminée</h2>
         <p>Découvrez notre accompagnement personnalisé qui vous aidera à mettre en place votre projet d'innovation.</p>
         <button class="d-block btn btn-info mt-5 mx-auto" style="cursor:pointer" onclick="displayContactForm()">Contactez nous</button>
@@ -289,4 +293,5 @@ scripts:
 
     </div>
   </section>
+
 </main>
