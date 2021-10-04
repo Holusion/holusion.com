@@ -96,8 +96,12 @@ layout: front_page
                           {% picture grid "{{page.sketch}}"
                           class="img-fluid"
                           --alt illustration d'une borne holographique iris 46 
-                          %}  
+                          %}
                         </div>
+                      {% else %}
+                        <div class="text-right">
+                          {{prop_value}}
+                        </div>                        
                       {% endif %}
                     {% else %}
                       <div class="text-right">
