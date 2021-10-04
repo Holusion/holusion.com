@@ -9,7 +9,7 @@
     border-radius: 0;
     @include media-breakpoint-down(md){
         flex-direction: row;
-        picture{
+        .card-img{
             flex:2;
         }
     }
@@ -35,7 +35,7 @@
     .card-body, .card-content{
         flex:1;
         height: auto;
-        padding: 2rem 4rem;
+        padding: 2rem 3rem;
         @include media-breakpoint-down(xs){
         padding: 2rem 2rem;
         }
