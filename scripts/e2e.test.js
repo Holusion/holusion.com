@@ -293,7 +293,7 @@ describe(`${target}.`,function(){
           expect( nav_links).to.be.ok;
           expect(nav_links).to.have.property("length").above(1);
           nav_links.forEach(a =>{
-            expect(a).to.match(new RegExp(`/(dev/)?${lang}/`));
+            expect(a).to.match(new RegExp(`(?:^https?://|/(dev/)?${lang}/)`));
           })
         });
       })
