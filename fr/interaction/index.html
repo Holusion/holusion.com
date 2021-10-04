@@ -1,15 +1,12 @@
 ---
 layout: front_page
 title: Nos exemples d'interaction
-
-scripts:
-  - /static/js/observer.js
 ---
 
 
 <main class="main-dark main-grid">
   <section class="section section-center">
-    <h2 class="text-white my-5" style="font-size: 3rem">Holusion Companion</h2>
+    <h2 class="text-white my-5" style="font-size: 3rem">Interactivité</h2>
   </section>
  
   <section class="section">
@@ -20,126 +17,91 @@ scripts:
       --alt Hologramme At'Rouen
     %}
     <div class="content">
-      <h2>Prenez le controle sur votre hologramme</h2>
+      <h2>Des solutions sur mesure</h2>
       <p>
-        Notre expérience des affichages holographiques nous permet de proposer des solutions d'interaction éprouvées, fiables et de qualité.
+        Ayez la possibilité de prendre la main sur votre hologramme, de le contrôler.
+        Que ce soit via une tablette, une manette ou un bouton, trouvez la solution qui vous est la plus adaptée afin de piloter votre animation.
       </p>
       <p>
         Aujourd'hui, grace à Holusion content manager, <strong>créez vous même votre application tablette no-code directement depuis votre navigateur</strong>.
       </p>
       <div class="d-flex justify-content-center">
-        <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Application Holusion Companion</button></a>
+        <a href="https://content.holusion.com" target="_blank"><button class="btn btn-info image-shadow my-3">Application Holusion Companion</button></a>
       </div>
     </div>
   </section>
 
   <section class=" section section-white">
-    <h2>Gérez votre contenu</h2>
+    <h2>Prenez le controle</h2>
   </section>
 
   <section class="section left">
-    <div class="fixed-background">
-      <div class="sticky-content">
-        <div class="slides">
-          {% picture grid "img/sections/sketch_content_holusion.png"
-          --img data-slides="0"
-          style="transition: none;"
-          --alt sketch de l'appli holusion content manager sur un écran pc
-          %}
-          {% picture grid "img/sections/sketch_interaction_ipad.png"
-          --img data-slides="1"
-          style="transition: none;"
-          --alt sketch de l'appli holusion companion qui controle un hologramme
-          %}
-        </div>
+    <div class="cube-contain" style="grid-area: image; margin-top: 17%; margin-left: 63%">
+      <div class="cube">
+        <div class="cube-face cube-top"></div>
+        <div class="cube-face cube-bottom"></div>
+        <div class="cube-face cube-left"></div>
+        <div class="cube-face cube-right"></div>
+        <div class="cube-face cube-front"></div>
+        <div class="cube-face cube-back"></div>
       </div>
-    </div>
-    <div class="slide content">
-      <div>
-        <h3>Holusion content manager</h3>
-        <p>Créez les pages de votre future application tablette directement depuis votre navigateur.</p>
-        <p>Uploadez du contenu à l'infini.</p>
-        <p>Managez en direct votre application</p>
-        <div class="d-flex justify-content-center">
-          <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Laissez vous gider</button></a>
-        </div>
-      </div>
-      <div>
-        <h3>Holusion Companion</h3>
-        <p>Controlez en direct votre hologramme grace à l'application Holusion Companion incluse dans votre ipad.</p>
-        <div class="d-flex justify-content-center">
-          <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Guide d'installation</button></a>
-        </div>
-      </div>
+    </div>     
+    {% picture grid "img/sections/sketch_content_holusion.png"
+    --alt sketch représentant l'interaction entre l'application holusion content manager sur un écran pc, l'application Holusion companion sur Ipad et l'hologramme affiché sur l'écran.
+    %}
+
+    <div class="content m-auto">
+      <h2>Holusion Companion</h2>
+      <p>Controlez votre hologramme grace à l'application <a href="https://apps.apple.com/fr/app/holusion-companion/id1499610113" target="_blank">Holusion Companion</a> téléchargeable gratuitement sur votre ipad.</p>
+      <p>Uploadez du contenu à l'infini, créez et modifiez en direct vos pages depuis votre navigateur grace à <a href="https://content.holusion.com" target="_blank">Holusion content manager</a>.</p>
     </div>
   </section>
-  <section class="section section-center section-light">
-    <div class="content m-0">
-      <h2 class="my-5">Tarif ?</h2>
-      <div class="row no-gutters mb-5">
-        <div class="col-lg-4 px-md-3 py-3">
-          <div class="light-card">
-            <div class="card-content">
-              <h3>Individuel</h3>
-              <p>Maquettes individuelles</p>
-              <p>
-                Administration hors ligne en autonomie
-              </p> 
-              <div class="price">
-                <h4 class="text-right text-secondary">Gratuit</h4>
-                <p class="text-right"></p>   
-              </div>                           
-            </div>
+
+  <section class="section section-center">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Guide d'installation Holusion Companion</h3>
+          <p>Installez l'application sur votre Ipad</p>
+          <div class="d-flex justify-content-center">
+            <a href="/fr/how-to/install-holusion-companion"><button class="btn btn-info image-shadow my-3">Laissez vous guider</button></a>
           </div>
         </div>
-        <div class="col-lg-4 px-md-3 py-3">
-          <div class="light-card">
-            <div class="card-content">
-              <h3>Professionnel</h3>
-              <p>
-                Votre application iPad dédiée
-              </p>
-              <p>
-                Inclus :
-              </p>
-              <ul>
-                <li>Administration en ligne sur interface dédiée</li>
-                <li>10Go de stockage inclus</li>
-                <li>Gestion par iPad</li>
-              </ul>
-              <div class="price">
-                <h4 class="text-right text-secondary">1 500€ HT</h4>
-                <p class="text-right">licence par entreprise</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 px-md-3 py-3">
-          <div class="light-card">
-            <div class="card-content">
-              <h3>Entreprise</h3>
-              <p>Besoin récurrent</p>
-              <p>
-                Inclus :
-              </p>
-              <ul>
-                <li>Administration en ligne sur interface dédiée</li>
-                <li>100 Go de stockage cloud</li>
-                <li>Jusqu'à 100 bornes en gestion centralisée</li>
-                <li>Application interactive en temps réel offerte</li>
-                <li>iPad inclus</li>
-              </ul>
-              <a href="https://content.holusion.com" class="text-center"><button class="btn btn-info mb-4">En savoir plus</button></a>  
-              <div class="price">
-                <h4 class="text-right text-secondary">125€ HT/mois</h4>
-                <p class="text-right">engagement 12 mois</p>          
-              </div>
-            </div>
+        <div class="col-md-6">
+          <h3>Guide d'utilisation Holusion content manager</h3>
+          <p>Créez du contenu depuis votre navigateur</p>
+          <div class="d-flex justify-content-center">
+            <a href="/fr/how-to/install-holusion-companion"><button class="btn btn-info image-shadow my-3">Laissez vous guider</button></a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section id="section-bouton" class="section left section-white">
+    <h2>Le bouton de révélation</h2>   
+    {% picture  "img/sections/interaction_bouton.jpg" 
+      class="img-fluid"
+      alt="Bouton d'interaction lors d'une inauguration de projet immobilier"
+    %}
+    <div class="content">
+      <p>Alliant surprise et scénographie, le bouton de révélation vous permet de dévoiler votre hologramme devant un public réuni pour l'occasion.
+      </p>
+      <p>A partir de notre <a href="/dev/fr" target="_blank"> API</a>, connectez votre hologrammes à tout ce que vous pouvez imaginer. Capteurs, boutons, claviers, Arduino, manettes, choisissez votre <b>interface préférée</b> !
+      </p>
+      <p>Révélez vos dernières nouveautés et <a href="/fr/posts/2019-07-01-SHAKE#video">inaugurez vos projets immobiliers</a>.
+      </p>          
+    </div> 
+  </section>
+
+  <section class="section section-center">
+    <h2>Des solutions sur mesure</h2>
+    <div class="content">
+      <p>Notre expérience des affichages holographiques nous permet de vous accompagner pour trouver le meilleur moyen d'interagir avec votre produit.</p>
+      <p>Parce que chaque projet est unique, contactez nous pour trouver la solution la plus adaptée pour chacun d'eux.</p>
+    </div>
+  </section>
+
 </main>
 
 
