@@ -2,7 +2,7 @@
 title: Produits techniques
 abstract: "Simulation 3D de produits techniques"
 lang: fr
-image: img/tiles/Immotile.jpg
+image: img/tiles/techniktile_fr.jpg
 menu: keynotes
 rank: 3
 
