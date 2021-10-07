@@ -26,32 +26,46 @@ rank: 1
 <p>
   <h2>Résumé</h2>
 </p>
-<div class="card-group mb-2">
-  {% include components/card.html 
-    image="img/documentation/building.jpg" 
-    alt_text="exemple de bon sujet pour réaliser un hologramme" 
-    title="Sujet" 
-    abstract="Choisir un objet ou un sujet clairement identitiable, sur fond noir" 
-  %}
-  {% include components/card.html 
-    image="img/documentation/black_background.jpg" 
-    alt_text="exemple de fond impropre à une utilisation en hologramme" 
-    title="Détourage" 
-    abstract="Il est nécessaire que le fond soit bien uniforme" 
-  %}
-  {% include components/card.html 
-    image="img/documentation/méduse.jpg" 
-    alt_text="proposition d'animation pour pepper's ghost" 
-    title="Mouvement" 
-    abstract="Le mouvement permet de capter l'attention et de renforcer l'immersion" 
-  %}
-  {% include components/card.html 
-    image="img/documentation/car.jpg" 
-    alt_text="exemple de cadrage ne convenant pas au pepper's ghost" 
-    title="Cadrage" 
-    abstract="Eviter les objets sortant du cadre, même partiellement" 
-  %}
+
+<div class="row">
+  <div class="col-lg-3 col-md-6">
+    <h3>Sujet</h3>
+    {% picture grid img/documentation/building.jpg
+    --img class="img-fluid"
+    data-noisetest="1"
+    --alt exemple de bon sujet pour réaliser un hologramme
+    %}
+    <p class="py-4">Choisir un objet ou un sujet clairement identitiable, sur fond noir</p>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <h3>Détourage</h3>
+    {% picture grid img/documentation/black_background.jpg
+    --img class="img-fluid"
+    data-noisetest="1"
+    --alt exemple de fond impropre à une utilisation en hologramme
+    %}
+    <p class="py-4">Il est nécessaire que le fond soit bien uniforme</p>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <h3>Mouvement</h3>
+    {% picture grid img/documentation/méduse.jpg
+    --img class="img-fluid"
+    data-noisetest="1"
+    --alt proposition d'animation pour pepper's ghost
+    %}
+    <p class="py-4">Le mouvement permet de capter l'attention et de renforcer l'immersion</p>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <h3>Cadrage</h3>
+    {% picture grid img/documentation/car.jpg
+    --img class="img-fluid"
+    data-noisetest="1"
+    --alt exemple de cadrage ne convenant pas au pepper's ghost
+    %}
+    <p class="py-4">Eviter les objets sortant du cadre, même partiellement</p>
+  </div>
 </div>
+
 <p><h2>Aller plus loin</h2></p>
 <p>
   Chaque produit dispose d'une résolution et d'une disposition de contenu qui lui est propre. Il est important de bien positionner les éléments à afficher pour un rendu optimal.
