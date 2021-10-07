@@ -48,24 +48,24 @@ footer #contact-bottom{
       top: 0;
       width: $sidebar_width;
       @supports (position: sticky){
-        position: sticky;
-        top:60px; //Approx height of top navbar
+        //position: sticky;
+        //top:60px; //Approx height of top navbar
       }
       .navbar-collapse{
-        position: absolute;
+        //position: absolute;
         top: 0;
         width:100%;
       }
     }
-    nav:not(.toggled) + main.content{  
+    main.content{  
       margin-left: $sidebar_width + 1;
       margin-right: 15px; //Prevents rows from overflowing
       border-left: 1px solid rgba(5,50,65,0.125);
     }
   }
   @media screen and (min-width:1700px) {
-    nav:not(.toggled) + main.content{  
-      margin-right: $sidebar_width + 1;
+    main.content{  
+      //margin-right: $sidebar_width + 1;
     }
   }
 }
@@ -82,7 +82,7 @@ footer #contact-bottom{
     background: none;
     padding: .75rem 0 .75rem .25rem;
     a{
-      color: $blue;
+      color: $white;
       padding: .5rem 0;
     }
     &.current {
@@ -95,7 +95,7 @@ footer #contact-bottom{
   .content-bar-group--sub{
     .content-bar--link {
       a{
-        color: $grey-600;
+        color: $light;
       }
       padding-left: .75rem !important; /* do not overwrite in nested lists */
       font-size: .8rem;
