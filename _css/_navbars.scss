@@ -44,17 +44,16 @@ footer #contact-bottom{
   }
   @include media-breakpoint-up(lg){
     nav{
-      position:absolute;
-      top: 0;
+      position: absolute;
+      top: 0px;
+      bottom: 0;
       width: $sidebar_width;
-      @supports (position: sticky){
-        //position: sticky;
-        //top:60px; //Approx height of top navbar
-      }
       .navbar-collapse{
-        //position: absolute;
-        top: 0;
+        position: sticky;
+        top: 60px;
         width:100%;
+        max-height: 100vh;
+        overflow-y: scroll;
       }
     }
     main.content{  
