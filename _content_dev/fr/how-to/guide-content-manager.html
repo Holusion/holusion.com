@@ -4,8 +4,6 @@ title: Guide d'utilisation de Holusion content manager
 lang: fr
 rank: 2
 abstract: Affichages holographiques commercialisés en vente directe ou en location
-scripts:
-  - /static/js/observer.js
 ---
 
 <main class="main-grid">
@@ -22,7 +20,6 @@ scripts:
         <a href="https://content.holusion.com"><button class="btn btn-info my-3">Application Holusion Companion</button></a>
       </div>
     </div>
-
   </section>
 
   <section id="navigation" class="section section-center">
@@ -40,9 +37,12 @@ scripts:
   <section id="starting" class="section section-center">
     <h2>Bien démarrer</h2>
     <div class="content">
-      <p>Tout d'abords, assurez vous que l'intreface soit dans la bonne langue. Pour celà, cliquez sur la flèche à côté de votre nom et selectionnez "FR".</p>
+      <p>Tout d'abords, assurez vous que l'intreface soit dans la bonne langue.</p>
+      <p>Pour celà, cliquez sur la flèche à côté de votre nom et selectionnez "FR".</p>
+      {% picture grid "img/documentation/companion/app_navbar.png"
+      --alt capture d'écran de la barre de navigation de holusion content manager
+      %}
       <p>L'interface se compose de 4 parties.</p>
-      <p><i>screen de la barre de menu</i></p>
       <h4>Pages</h4>
       <p>Ajoutez et éditez les pages de votre application</p>
       <h4>Paramètres</h4>
@@ -54,12 +54,18 @@ scripts:
 
       <h3>Premiers pas</h3>
       <p>
-        Avant de créer vos pages, commencez par aller dans l'onglet "médias" pour ajouter les vidéos projetées sur votre borne holographique ainsi, que les images qui seront présentes sur votre application.
+        Avant de créer vos pages, commencez par aller dans l'onglet "médias" pour ajouter les vidéos projetées sur votre borne holographique, ainsi que les images qui seront présentes sur les pages de votre application.
       </p>
-      <p><i>screen de l'onglet "medias"</i></p>
+      {% picture grid "img/documentation/companion/medias.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet medias de l'application holusion content manager
+      %}
       <h3>Créez votre première page</h3>
       <p>Chaque page correspond à une vidéo affichée sur la borne holographique. Il faudra donc autant de page que de vidéo à projeter</p>
       <p>Dans l'onglet "pages", entrez le nom de votre nouvelle page puis cliquez sur le bouton "créer".</p>
+      {% picture grid "img/documentation/companion/new_page.jpg"
+      --alt capture d'écran de la création d'une nouvelle page dans holusion content manager
+      %}
     </div>
   </section>
 
@@ -70,19 +76,36 @@ scripts:
         En cliquant sur la carte correspondante à votre page, vous avez accès à différents onglets : apperçu, édition et liens.
       </p>
       <h3>Apperçu</h3>
+      {% picture grid "img/documentation/companion/preview.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+      %}
       <p>
         La section apperçu nous permet d'avoir une vision globale de la page, avec à gauche ses informations ainsi que la vidéo qui sera projetée sur la borne holographique, et à droite son apperçu sur l'application Holusion Companion.
       </p>
-      <p><i>Screen de la page avec zoning</i></p>
       <h3>Édition</h3>
       <p>
         L'inglet "édition" nous permet de modifier ces informations.
       </p>
+      {% picture grid "img/documentation/companion/edit.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+      %}
       <p>
-        <i>Screen avec partie gauche visible et à droite du texte : Changer miniature de la page, ajouter ou modifier la vidéo, assigner une catégorie, voir plus bas pour catégorie</i>
+        On retrouve à gauche les informations de l'apperçu que l'on peut alors modifier.
+        <ul>
+          <li>
+            La miniature qui sera affichée en prévisualisation de la page
+          </li>
+          <li>La vidéo projetée sur la borne holographique préalablement ajoutée dans les médias de l'application</li>
+          <li>La catégorie dans laquelle est rangée la page. (voir <a href="#categories">Gestion des catégories</a>)</li>
+        </ul>
       </p>
       <p>
-        <i>Screen avec partie droite visible. écrire en markdown et qu'est-ce que c'est le markdown</i>
+        A droite, on peut modifier directement le contenu de la page en cliquant sur l'image pour la modifier et grâce à un éditeur de texte au format <a href="https://www.markdownguide.org/basic-syntax/">markdown</a>.
+      </p>
+      <p>
+        Pour une application plus personnelle, vous pouvez intégrer du contenu dans une image en 2160x1520px qui prendra la totalité de l'écran, et faire des liens personnalisés avec notre <a href="links">éditeur de lien</a> présenté plus bas.
       </p>
       <h3>Liens</h3>
       <p>
@@ -93,9 +116,13 @@ scripts:
 
   <section id="categories" class="section section-center">
     <h2>Gestion des catégories</h2>
+
     <div class="content">
-      <p>Les catégories servent à organiser vos pages sous forme de dossiers.</p>
-      <p><i>screen/schema d'un écran ipad avec des catégories dans l'appli companion</i></p>
+      <p>Les catégories servent à organiser vos pages sous forme de dossiers. Exemple :</p>
+      {% picture grid "img/posts/2021_app/09_welcome.png"
+      class="mb-4"
+      --alt capture d'écran de l'application Holusion Companion présentant des catégories
+      %}
       <h3>Créer des catégories</h3>
       <p>Pour créer des catégories, rendez vous dans l'onglet "paramètres".</p>
       <p>Choisissez un nom pour la catégorie puis valider. Vous pouvez ensuite ajouter la vidéo qui sera projetée lors de l'affichage de la catégorie sur l'application.</p>
