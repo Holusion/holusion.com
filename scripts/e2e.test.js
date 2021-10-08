@@ -663,7 +663,7 @@ describe(`${target}.`,function(){
           
           it(`check locale ${loc}`,async ()=>{
             let lang = await page.$eval("META[property='og:locale']",loc => loc.content);
-            expect(loc).toContain('/'+lang+'/');
+            expect(loc).to.include('/'+lang+'/');
           });
 
           it("Check for deprecated classes",async ()=>{
