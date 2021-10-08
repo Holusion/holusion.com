@@ -1,10 +1,5 @@
 @import "variables";
 
-#sidebar{
-  ul li{
-    font-size: 80%;
-  }
-}
 
 footer #contact-bottom{
   color:white;
@@ -48,12 +43,16 @@ footer #contact-bottom{
       top: 0px;
       bottom: 0;
       width: $sidebar_width;
+      padding: 1rem;
       .navbar-collapse{
         position: sticky;
         top: 60px;
         width:100%;
-        max-height: 100vh;
+        max-height: 100%;
         overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+          }
       }
     }
     main.content{  
@@ -64,7 +63,7 @@ footer #contact-bottom{
   }
   @media screen and (min-width:1700px) {
     main.content{  
-      //margin-right: $sidebar_width + 1;
+      //margin-right: $sidebar_width + 1; //center the main content
     }
   }
 }
@@ -79,7 +78,7 @@ footer #contact-bottom{
 .content-bar{
   .content-bar--link {
     background: none;
-    padding: .75rem 0 .75rem .25rem;
+    padding: .75rem 0 .5rem .25rem;
     a{
       color: $white;
       padding: .5rem 0;
@@ -95,6 +94,10 @@ footer #contact-bottom{
     .content-bar--link {
       a{
         color: $light;
+        opacity: 0.8;
+        &:hover{
+          opacity: 1;
+        }
       }
       padding-left: .75rem !important; /* do not overwrite in nested lists */
       font-size: .8rem;
