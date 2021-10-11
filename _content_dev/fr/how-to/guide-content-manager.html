@@ -36,10 +36,11 @@ abstract: Affichages holographiques commercialisés en vente directe ou en locat
 
   <section id="starting" class="section section-center">
     <h2>Bien démarrer</h2>
-    <div class="content">
+    <div class="content mb-0">
       <p>Tout d'abords, assurez vous que l'intreface soit dans la bonne langue.</p>
       <p>Pour celà, cliquez sur la flèche à côté de votre nom et selectionnez "FR".</p>
       {% picture grid "img/documentation/companion/app_navbar.png"
+      class="img-fluid"
       --alt capture d'écran de la barre de navigation de holusion content manager
       %}
       <p>L'interface se compose de 4 parties.</p>
@@ -52,45 +53,65 @@ abstract: Affichages holographiques commercialisés en vente directe ou en locat
       <h4>Médias</h4>
       <p>Ajoutez des images et vidéos à votre projet</p>
 
-      <h3>Premiers pas</h3>
+      <h2>Premiers pas</h2>
+
+    </div>
+  </section>
+  <section id="medias" class="section">
+    {% picture grid "img/documentation/companion/medias.jpg"
+    class="mb-4"
+    --alt capture d'écran de l'onglet medias de l'application holusion content manager
+    %}
+    <div class="content">
+      <h3>Ajouter des médias</h3>
       <p>
         Avant de créer vos pages, commencez par aller dans l'onglet "médias" pour ajouter les vidéos projetées sur votre borne holographique, ainsi que les images qui seront présentes sur les pages de votre application.
       </p>
-      {% picture grid "img/documentation/companion/medias.jpg"
-      class="mb-4"
-      --alt capture d'écran de l'onglet medias de l'application holusion content manager
-      %}
-      <h3>Créez votre première page</h3>
-      <p>Chaque page correspond à une vidéo affichée sur la borne holographique. Il faudra donc autant de page que de vidéo à projeter</p>
-      <p>Dans l'onglet "pages", entrez le nom de votre nouvelle page puis cliquez sur le bouton "créer".</p>
-      {% picture grid "img/documentation/companion/new_page.jpg"
-      --alt capture d'écran de la création d'une nouvelle page dans holusion content manager
-      %}
     </div>
   </section>
-
-  <section id="edit" class="section section-center">
+  <section class="section">
+    {% picture grid "img/documentation/companion/new_page.jpg"
+    --alt capture d'écran de la création d'une nouvelle page dans holusion content manager
+    %}
+    <div class="content">
+      <h3>Créer votre première page</h3>
+      <p>Chaque page correspond à une vidéo affichée sur la borne holographique. Il faudra donc autant de page que de vidéo à projeter</p>
+      <p>Dans l'onglet "pages", entrez le nom de votre nouvelle page puis cliquez sur le bouton "créer".</p>
+    </div>
+  </section>
+  
+  <section id="edit" class="section section-center mt-lg-5">
     <h2>Éditer votre page</h2>
     <div class="content">
       <p>
         En cliquant sur la carte correspondante à votre page, vous avez accès à différents onglets : apperçu, édition et liens.
       </p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid "img/documentation/companion/preview.jpg"
+    class="mb-4"
+    --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+    %}
+    <div class="content m-auto">
       <h3>Apperçu</h3>
-      {% picture grid "img/documentation/companion/preview.jpg"
-      class="mb-4"
-      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
-      %}
       <p>
         La section apperçu nous permet d'avoir une vision globale de la page, avec à gauche ses informations ainsi que la vidéo qui sera projetée sur la borne holographique, et à droite son apperçu sur l'application Holusion Companion.
       </p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid "img/documentation/companion/edit_left.jpg"
+    class="mb-4"
+    --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+    %}
+    <div class="content m-auto">
       <h3>Édition</h3>
       <p>
         L'inglet "édition" nous permet de modifier ces informations.
       </p>
-      {% picture grid "img/documentation/companion/edit.jpg"
-      class="mb-4"
-      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
-      %}
       <p>
         On retrouve à gauche les informations de l'apperçu que l'on peut alors modifier.
         <ul>
@@ -101,26 +122,39 @@ abstract: Affichages holographiques commercialisés en vente directe ou en locat
           <li>La catégorie dans laquelle est rangée la page. (voir <a href="#categories">Gestion des catégories</a>)</li>
         </ul>
       </p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid "img/documentation/companion/edit_right.jpg"
+    class="mb-4"
+    --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+    %}
+    <div class="content m-auto">
       <p>
         A droite, on peut modifier directement le contenu de la page en cliquant sur l'image pour la modifier et grâce à un éditeur de texte au format <a href="https://www.markdownguide.org/basic-syntax/">markdown</a>.
       </p>
       <p>
-        Pour une application plus personnelle, vous pouvez intégrer du contenu dans une image en 2160x1520px qui prendra la totalité de l'écran, et faire des liens personnalisés avec notre <a href="links">éditeur de lien</a> présenté plus bas.
+        Pour une application plus personnelle, vous pouvez intégrer du contenu dans une image en 2160x1520px qui prendra la totalité de l'écran, et faire des liens personnalisés avec notre <a href="#links">éditeur de lien</a> présenté plus bas.
       </p>
+    </div>
+  </section>
+
+  <div class="section section-center">
+    <div class="content">
       <h3>Liens</h3>
       <p>
         Voir plus bas : <a href="#links">Créer des liens entre les pages</a>
       </p>
     </div>
-  </section>
+  </div>
 
   <section id="categories" class="section section-center">
     <h2>Gestion des catégories</h2>
-
     <div class="content">
       <p>Les catégories servent à organiser vos pages sous forme de dossiers. Exemple :</p>
       {% picture grid "img/posts/2021_app/09_welcome.png"
-      class="mb-4"
+      class="mb-4 img-fluid"
       --alt capture d'écran de l'application Holusion Companion présentant des catégories
       %}
       <h3>Créer des catégories</h3>
