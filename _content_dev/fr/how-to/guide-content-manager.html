@@ -152,32 +152,59 @@ abstract: Affichages holographiques commercialisés en vente directe ou en locat
   <section id="categories" class="section section-center">
     <h2>Gestion des catégories</h2>
     <div class="content">
-      <p>Les catégories servent à organiser vos pages sous forme de dossiers. Exemple :</p>
+      <p>Les catégories servent à organiser vos pages sous forme de collection.</p>
       {% picture grid "img/posts/2021_app/09_welcome.png"
       class="mb-4 img-fluid"
       --alt capture d'écran de l'application Holusion Companion présentant des catégories
       %}
-      <h3>Créer des catégories</h3>
-      <p>Pour créer des catégories, rendez vous dans l'onglet "paramètres".</p>
-      <p>Choisissez un nom pour la catégorie puis valider. Vous pouvez ensuite ajouter la vidéo qui sera projetée lors de l'affichage de la catégorie sur l'application.</p>
-      <p><i>illustration exemple</i></p>
-      <h3>Ajouter une page à votre catégorie</h3>
-      <p>Pour celà, rendez vous dans l'onglet édition de la page que vous voulez ajouter, puis selectionner la catégorie dans le menu déroulant.</p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid "img/documentation/companion/settings.jpg"
+    class="mb-4 img-fluid"
+    --alt capture d'écran de l'onglet settings de l'application holusion content manager
+    %}
+    <div class="content m-auto">
+        <h3>Créer des catégories</h3>
+        <p>Pour créer des catégories, rendez vous dans l'onglet "paramètres".</p>
+        <p>Choisissez un nom pour la catégorie puis valider. Vous pouvez ensuite ajouter la vidéo qui sera projetée lors de l'affichage de la catégorie sur l'application.</p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid "img/documentation/companion/edit_category.jpg"
+    class="mb-4 img-fluid"
+    --alt capture d'écran de l'onglet settings de l'application holusion content manager
+    %}
+    <div class="content m-auto">
+        <h3>Ajouter une page à votre catégorie</h3>
+        <p>Pour celà, rendez vous dans l'onglet édition de la page que vous voulez ajouter, puis selectionner la catégorie dans le menu déroulant.</p>
     </div>
   </section>
 
   <section id="links" class="section section-center">
     <h2>Faire des liens entre les pages</h2>
     <div class="content">
-      <p>La navigation par lien est une autre manière de naviguer entre vos pages, en définissant des zones tactiles qui renverront vers d'autres pages spécifiques</p>
-      <p><i>schema explicatif</i></p>
-      <h3>Faire des liens</h3>
-      <p>Commencez par aller dans l'onglet "liens" de votre page.</p>
-      <p>Pour créer un nouveau lien, cliquez sur l'icone (+). Une zone de clic apparait alors sur l'écran à droite, ainsi qu'une barre à gauche pour la paramétrer.</p>
-      <p><i>schema de la barre de parametres du lien</i></p>
-      <p>Le premier champs correspond à la page vers laquelle le lien va envoyer. Le second aux coordonnées de la zone tactile par rapport à l'écran.</p>
-      <p>Le chemin de la zone est défini par un élément SVG "path", pour lequel vous trouverez un tutoriel dirrectement sur <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial/Paths">la doc Mozilla</a></p>
-      <p>L'icone (lien) revoie vers la page du lien paramétré, et l'icone (x) supprime le lien.</p>
+        <p>
+          La navigation par lien est une autre manière de naviguer entre vos pages, en définissant des zones tactiles qui renverront vers d'autres pages spécifiques.
+        </p>
+        <h3>Faire des liens</h3>
+        <p>Commencez par aller dans l'onglet "liens" de votre page.</p>        
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid "img/documentation/companion/links.jpg"
+    class="mb-4 img-fluid"
+    --alt capture d'écran de l'onglet lien de l'application holusion content manager
+    %}
+    <div class="content">
+
+        <p>Pour créer un nouveau lien, cliquez sur l'icone (+). Une zone de clic apparait alors sur l'écran à droite, ainsi qu'une barre à gauche pour la paramétrer.</p>
+        <p>Le premier champs correspond à la page vers laquelle le lien va envoyer. Le second aux coordonnées de la zone tactile par rapport à l'écran.</p>
+        <p>Le chemin de la zone est défini par un élément SVG "path", pour lequel vous trouverez un tutoriel dirrectement sur <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial/Paths">la doc Mozilla</a></p>
+        <p>L'icone (lien) revoie vers la page du lien paramétré, et l'icone (x) supprime le lien.</p>
     </div>
   </section>
 </main>
