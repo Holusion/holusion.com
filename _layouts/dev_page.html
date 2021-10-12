@@ -2,35 +2,21 @@
 layout: front_page
 ---
 
-{% if page.title %}
-  {% include components/section_title.html title=page.title %}
-{%endif %}
-<div id="dev-header" class="row no-gutters">
-  <div class="col-12 border-light border-bottom">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="flex-grow-1">
-        {% ariane %}
-      </div>
-      <a class="content-bar-toggle collapsed d-flex align-items-center d-lg-none" data-toggle="collapse" data-target="#sidebar"  aria-expanded="false" aria-controls="sidebar" title="{{site.data.strings["toc"][page.lang]}}">
-        <span class="sr-only">{{site.data.strings["toc"][page.lang]}}</span>
-        &nbsp;
-      </a>
-    </div>
-  </div>
-</div>
+<div id="dev-layout" class="sidebar-layout main-dark py-5">
 
-<div id="dev-layout" class="sidebar-layout">
-  <nav class="content-bar bg-faded  navbar-light navbar-expand-lg"  >
-    <div class="collapse navbar-collapse flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
+    <nav class="content-bar bg-faded navbar-dark navbar-expand-lg">
+      <div class="collapse navbar-collapse flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
         {% include utils/make_pages.html %}
         {% assign categories = "toolbox,content,keynotes" |split: "," %}
         {% devnav list=site.content_dev %}
-    </div>
+      </div>
+    </nav> 
 
-  </nav>
-  <main id="content" class="content">
-    <div class="container">
-      {{ content }}
-    </div>
+  <main id="content" class="content container-fluid">
+    {% if page.title %}
+      <h2 style="font-size: 3rem">{{page.title}}</h2>
+    {%endif %}
+
+    {{ content }}
   </main>
 </div>

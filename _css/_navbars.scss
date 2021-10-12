@@ -1,10 +1,5 @@
 @import "variables";
 
-#sidebar{
-  ul li{
-    font-size: 80%;
-  }
-}
 
 footer #contact-bottom{
   color:white;
@@ -44,28 +39,31 @@ footer #contact-bottom{
   }
   @include media-breakpoint-up(lg){
     nav{
-      position:absolute;
-      top: 0;
+      position: absolute;
+      top: 0px;
+      bottom: 0;
       width: $sidebar_width;
-      @supports (position: sticky){
-        position: sticky;
-        top:60px; //Approx height of top navbar
-      }
+      padding: 1rem;
       .navbar-collapse{
-        position: absolute;
-        top: 0;
+        position: sticky;
+        top: 60px;
         width:100%;
+        max-height: 100%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+          }
       }
     }
-    nav:not(.toggled) + main.content{  
+    main.content{  
       margin-left: $sidebar_width + 1;
       margin-right: 15px; //Prevents rows from overflowing
       border-left: 1px solid rgba(5,50,65,0.125);
     }
   }
   @media screen and (min-width:1700px) {
-    nav:not(.toggled) + main.content{  
-      margin-right: $sidebar_width + 1;
+    main.content{  
+      //margin-right: $sidebar_width + 1; //center the main content
     }
   }
 }
@@ -80,9 +78,9 @@ footer #contact-bottom{
 .content-bar{
   .content-bar--link {
     background: none;
-    padding: .75rem 0 .75rem .25rem;
+    padding: .75rem 0 .5rem .25rem;
     a{
-      color: $blue;
+      color: $white;
       padding: .5rem 0;
     }
     &.current {
@@ -95,7 +93,11 @@ footer #contact-bottom{
   .content-bar-group--sub{
     .content-bar--link {
       a{
-        color: $grey-600;
+        color: $light;
+        opacity: 0.8;
+        &:hover{
+          opacity: 1;
+        }
       }
       padding-left: .75rem !important; /* do not overwrite in nested lists */
       font-size: .8rem;
