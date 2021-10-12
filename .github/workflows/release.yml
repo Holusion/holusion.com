@@ -1,6 +1,7 @@
 name: Build website
 on:
-  release: [published]
+  release: 
+    types: [published]
 jobs:
   build:
     runs-on: ubuntu-latest
