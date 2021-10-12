@@ -30,6 +30,17 @@
             border-radius: 0;
         }
     }
+
+    pre{
+        padding: 15px;
+        border: $grey-600 solid 1px;
+        background-color: black;
+        color: $light;
+    }
+
+    .card{
+        background: none !important;
+    }
 }
 
 .image-shadow{

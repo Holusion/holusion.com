@@ -660,6 +660,12 @@ describe(`${target}.`,function(){
             ).to.equal(loc);
             return c_link;
           });
+          
+          it(`check locale ${loc}`,async ()=>{
+            let lang = await page.$eval("META[property='og:locale']",loc => loc.content);
+            expect(loc).to.include('/'+lang+'/');
+          });
+
           it("Check for deprecated classes",async ()=>{
             await Promise.all([
               ".main-header-body.full-width",
