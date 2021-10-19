@@ -4,10 +4,7 @@ title: "BIM en temps réel"
 image: img/posts/2021_prodware/bva.jpg
 abstract: Une application pour visualiser tous les fichiers 3D de bâtiments
 tags: hologramme immobilier
-scripts:
-  - /static/js/observer.js
 ---
-
 
 <main class="main-grid main-dark">
     <section class="section section-center">
@@ -39,12 +36,7 @@ scripts:
             <a class="d-flex justify-content-center" href="2020-05-25-hologramme" target="_blank"> <button class="btn btn-info mb-4">A propos des hologrammes</button></a>
         </div>
     </section>
-  <section class="section section-center">
-    <div class="content my-4">
 
-    </div>
-        
-  </section>
 
   <div class="section left">
     <h2>Un visionneuse de fichiers BIM</h2>
@@ -119,7 +111,7 @@ scripts:
 
         
         <section class="section left section-white">
-            {% picture grid img/posts/2021_prodware/slide_holo.png
+            {% picture grid img/posts/2021_prodware/slide_holo.jpg
                 class="img-fluid m-auto"
                 alt="Dessin du design de l'iris 75 holusion"
               %}
@@ -149,16 +141,13 @@ scripts:
             </section>
 
     <section class="section left text-left">
-        <div class="fixed-background">
-            <div class="sticky-content">
-                    {% picture grid "img/posts/2021_prodware/leap.jpg"
-                    class="img-fluid m-auto"
-                    --alt illustration d'une borne holographique iris 75
-                %}
-                </div>
-            </div>
-        </div>
-        <div class="slide content">
+
+            {% picture grid "img/posts/2021_prodware/leap.jpg"
+            class="img-fluid m-auto"
+            --alt illustration d'une borne holographique iris 75
+            %}
+        
+        <div class="content">
             <div>
                 <h2>Plus d'informations</h2>
                 <p>Il est possible d’avoir accès à une présentation de cette solution. Contactez nous pour prendre rendez-vous !</p>
@@ -166,7 +155,7 @@ scripts:
                 <p>Chez <b>Prodware</b> au 45 quai de la Seine, 75019 Paris.</p>  
                 <p>Chez <b>Holusion</b> au 99A boulevard Descat, 59200 Tourcoing.</p>
                 <p class="text-right">
-                    <button class="btn btn-info" onclick="displayContactForm()">Prenez Rendez-vous</button></p>
+                    <button class="btn btn-info" onclick="displayContactForm()">Prenez rendez-vous</button></p>
             </div>
         </div>
     </section>
