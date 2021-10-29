@@ -38,6 +38,7 @@ usageStr(){
   echo -e "\t-f --force : Force assets rebuild"
   echo -e "\t-w --watch : Use jekyll serve mode"
   echo -e "\t-c --compress-static : compress static assets"
+  echo -e "\t-p --pack : pack distributed files for npm module @holusion/theme"
   echo "long option only : "
   echo -e "\t--no-build : disable site build"
 }
@@ -47,6 +48,7 @@ make_force=false
 make_check=false
 make_watch=false
 make_compress=false
+make_pack=false
 integration_target=""
 while [[ $# -gt 0 ]]
 do
@@ -86,6 +88,9 @@ do
       ;;
       --no-build)
         make_build=false
+      ;;
+      -p|--pack)
+        make_pack=true
       ;;
       *)
         echo "unknown opt"
@@ -178,4 +183,11 @@ if ! test -z "$integration_target" ;then
   TARGET="$integration_target" npm test -- $@
 fi
 
-cd "$OLD_PWD" #go back to initial directory
+if ${make_pack} ;then
+  mkdir -p dist/;
+  sed 's|/static/fonts/|fonts/|g' _site/css/theme.css > dist/theme.css
+  sed 's|/static/fonts/|fonts/|g' _site/css/theme.css.map > dist/theme.css.map
+  cp -r static/fonts/ dist/fonts
+  cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/
+  sed 's|../node_modules/|~|' _css/_variables.scss > dist/_variables.scss
+fi

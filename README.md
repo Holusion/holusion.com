@@ -13,7 +13,5 @@ Developpé avec [Jekyll](https://jekyllrb.com/). Les [issues](https://github.com
 ## UTILISATION DU THEME
 
 ```
-  import "@holusion/theme"; //import modified bootstrap.css file
-  // OR for projects using scss :
-  import "@holusion/theme/dist/_variables.scss"
-  import "bootstrap/scss/bootstrap"
+  import "@holusion/theme"; //importe le thème CSS complet
+```
