@@ -2,13 +2,14 @@
 
 const fs = require('fs');
 const path = require('path');
-const { getLocationsIn } = require('./getSitemap');
-const testLocations = require("./testLocations");
+const { getLocationsIn } = require('../utils/sitemap/getSitemap');
+const testLocations = require("../utils/sitemap/testLocations");
 
 describe(`sitemap/en`,function(){
   const locations = getLocationsIn("en");
-
-  if (!is_extended) return;
+  this.beforeAll(function(){
+    if(!global.is_extended) this.skip();
+  })
   // Perform load tests for EVERY location (can be quite long...)
   testLocations(locations);
 });

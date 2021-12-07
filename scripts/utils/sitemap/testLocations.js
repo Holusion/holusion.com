@@ -17,7 +17,7 @@ module.exports = function testLocations(locations){
       let ln, jobs;
       before(async ()=>{
         //sitemap is generated for a specific target. If target = local, our current test server will not match this target.
-        ln = path.join(href, loc);
+        ln = path.join(global.href, loc);
       });
 
       describe(`default : ${target_devices[0].name}`, function(){
@@ -27,8 +27,8 @@ module.exports = function testLocations(locations){
           page = await this.newPage({block:["external", "medias"], closeAfter: false})
           page.on("request", (interceptedRequest)=>{
             let url = interceptedRequest.url();
-            if(url.startsWith(href) && /\.(?:png|jpe?g|webp)$/i.test(url)){
-              const localPath = url.slice(href.length+1).split("/").map(s=>decodeURIComponent(s)).join("/");
+            if(url.startsWith(global.href) && /\.(?:png|jpe?g|webp)$/i.test(url)){
+              const localPath = url.slice(global.href.length+1).split("/").map(s=>decodeURIComponent(s)).join("/");
               exist_checks.push((async ()=>{
                 try{
                   await fs.promises.access(path.resolve(local_site_files, localPath));

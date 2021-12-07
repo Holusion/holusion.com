@@ -2,7 +2,7 @@
 
 const { expect } = require('chai');
 
-const {getSitemap, getLocations, getLocationsIn} = require('./getSitemap');
+const {getSitemap, getLocations, getLocationsIn} = require('../utils/sitemap/getSitemap');
 
 describe(`sitemap (format)`,function(){
   const sitemap = getSitemap();

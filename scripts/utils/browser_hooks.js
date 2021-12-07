@@ -48,7 +48,7 @@ exports.mochaHooks = {
       if(device){
         await page.emulate(device);
       }
-      if(typeof blockOpts !== "undefined"){
+      if(blockOpts !== false){
         await block(page, {
           types: (Array.isArray(blockOpts)? blockOpts : ["images", "medias", "external"]),
         });
@@ -83,7 +83,7 @@ exports.mochaHooks = {
     let isBlocked  = types.some(type=>{
       switch(type){
         case "external":
-          if(url.startsWith("http") && !url.startsWith(href) && !url.startsWith("https://img.youtube.com")){
+          if(url.startsWith("http") && !url.startsWith(href) && !url.startsWith("https://img.youtube.com/")){
             //console.log("block external : ", url);
             return true;
           }

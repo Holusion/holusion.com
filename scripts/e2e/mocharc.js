@@ -8,11 +8,12 @@ let requires = [
 ]
 
 
-if (!process.env["TARGET"]){
+if (!process.env["TARGET"] || process.env["TARGET"] == "local"){
   requires.unshift("./utils/serve_hooks.js")
 }
 
 module.exports = {
+  reporter: "spec",
   slow: 1500,
   timeout: 20000,
   require: requires.map(p=> path.resolve(__dirname, "..", p)),

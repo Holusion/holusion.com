@@ -14,6 +14,8 @@ data-item-image="{{p_data.image | absolute_url }}"
 data-item-url="{{p_data.url | absolute_url}}"
 data-item-description="{{p_data.abstract}}"
 data-item-id="{{page.title| downcase |replace: ' ','_'}}FR"
+
+data-test="store-add"
 >
   {% svg src/pictos/icons/icon-add-cart.svg width=24 %}<span class="snipcart-add-item-text" >{{site.data.strings.add-to-cart[page.lang]}}</span>
 </button>

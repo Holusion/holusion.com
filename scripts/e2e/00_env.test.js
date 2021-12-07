@@ -2,8 +2,8 @@ const { expect } = require("chai");
 
 describe("env setup tests", function(){
   it("has target set up", function(){
-    expect(href).to.be.ok;
-    expect(()=>URL.parse(href)).not.to.throw;
+    expect(global.href).to.be.ok;
+    expect(()=>URL.parse(global.href)).not.to.throw;
   })
   it("run extended tests", function(){
     if(!is_extended){
