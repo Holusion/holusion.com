@@ -1,8 +1,8 @@
 ---
-title: Les règles de la création d'hologrammes
+title: How to create holograms
 image: img/posts/banner_unity.jpg
 
-abstract: Perfectionnez vos contenus holographiques avec ces principes de base
+abstract: Make your holographic content better by following this guide
 rank: 1
 ---
 
