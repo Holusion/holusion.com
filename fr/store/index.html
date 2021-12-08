@@ -2,34 +2,43 @@
 title: Boutique en ligne
 layout: store
 ---
-{% include utils/make_store_items.html %}
 
 <section class="section section-center">
   <h2>Bienvenue dans la boutique en ligne Holusion</h2>
-  <div class="content row no-gutters mb-0">
-    {% for item in store_items %}
-      <div data-test="card" class="dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
-        <a href="{{item.url}}">
-          {%- if item.image contains "static" -%}
-          <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
-              {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
-          {%- else -%}
-            {% picture card "{{item.image}}"
-              --img title="{{item.title}}"
-              --alt  {{alt_text}}
-            %}
-          {%- endif -%}        
-        </a>
-        <h2 class="text-white mb-1">{{ item.title }}</h2>
-        {%if item.price %}
-          <h4>{{ item.price }} €</h4>
-        {%endif%}
-        <p>{{ item.abstract }}</p> 
-        <a class="mt-auto" href="{{item.url}}"> <button class="btn btn-info">{{item.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
+  <div class="content mb-0">
+
+    <p>
+      Découvrez toute notre gamme de produits et accessoires commandables directement en ligne.
+    </p>
+    {% for section in site.data.store.sections %}
+      {% assign items =  site.store_items[page.lang] | where: "category", section.name %}
+      <h3 class="">
+        {{section.fr}}
+      </h3>
+      <div class="row no-gutters">
+        {% for item in items %}
+          <div data-test="store-item-card" class="store-card dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
+            <a href="{{item.url}}">
+              {%- if item.image contains "static" -%}
+              <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
+                  {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{alt_text}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+              {%- else -%}
+                {% picture card "{{item.image}}"
+                  --img title="{{item.title}}"
+                  --alt  {{alt_text}}
+                %}
+              {%- endif -%}
+            </a>
+            <h2 class="text-white mb-1">{{ item.title }}</h2>
+            {%if item.price %}
+              <h4>{{ item.price }} € <span >HT</span></h4>
+            {%endif%}
+            <p>{{ item.abstract }}</p> 
+            <a class="mt-auto" href="{{item.url}}"> <button class="btn btn-info">{{item.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
+          </div>
+        {% endfor %}
       </div>
     {% endfor %}
   </div>
 </section>
-
-
 

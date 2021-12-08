@@ -148,7 +148,7 @@ describe("static & assets files", ()=>{
           }
         }
       });
-    })
+    });
   })
   
 })

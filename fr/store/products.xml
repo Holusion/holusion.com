@@ -8,11 +8,10 @@ Atom feed for google merchant center
 Documentation available on :
 https://support.google.com/merchants/answer/7052112?visit_id=1-636396930037405938-3929619477&hl=fr&rd=1
 {% endcomment %}
-{% include utils/make_store_items.html %}
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
 	<title>Holusion.com - Online Store</title>
 	<link rel="self" href="https://holusion.com"/>
-  {% for product in store_items %}
+  {% for product in site.store_items[page.lang]  %}
   <entry>
     <g:id>{{product.id}}</g:id>
     <g:title>{{product.title }} - {{product.abstract}}</g:title>

@@ -2,12 +2,11 @@
 title: Online store
 layout: store
 ---
-{% include utils/make_store_items.html %}
 
 <section class="section section-center">
   <h2>Welcome to Holusion's web store for holographic devices</h2>
   <div class="content row no-gutters mb-0">
-    {% for item in store_items %}
+    {% for item in site.store_items[page.lang]  %}
       <div data-test="card" class="dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
         <a href="{{item.url}}">
           {%- if item.image contains "static" -%}
