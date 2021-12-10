@@ -21,15 +21,7 @@
         ".     content ."
         ".      image  .";
     }
-    
-    > h2 {
-      position: relative;
-      padding: 0 $padding;
-      margin-top: $margin/3;
-      margin-bottom: $margin/3;
-      grid-area: title / content / span 1 / content;
-    }
-        
+
     &.left{
       grid-template-areas: 
         "white white title end"
@@ -61,10 +53,11 @@
         }
       }
     }
-
+    
     .content{
       grid-area: content;
-      padding: 0 $padding;
+      /* if no title, a content-padding is required */
+      padding: ($margin * 2 / 3) $padding;
       @include media-breakpoint-down(lg){
         margin-bottom: $margin/2;
       }
@@ -94,10 +87,26 @@
         }
       }
     }
+
+    & > h2, &>.section-title {
+      position: relative;
+      padding: 0 $padding;
+      margin-top: $margin/3;
+      margin-bottom: $margin/3;
+      grid-area: title / content / span 1 / content;
+      ~ .content {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
     
     & > img, &>picture, &>.media{
-      grid-area: image;
       z-index: 1;
+      grid-area: image;
+      &.contained{
+        grid-column-start: 2;
+        margin-bottom: 0;
+      }
     }
     & > img, &>picture>img , &>.media{
       display: block;

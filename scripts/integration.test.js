@@ -135,7 +135,7 @@ describe("static & assets files", ()=>{
             expect(res.statusCode, `Cannot GET ${url}: ${res.statusCode}`).to.be.below(400);
             if(/accounts\.google/.test(res.headers.location)){
               expect.fail([
-                url,
+                url.replace("/export?format=pdf", ""),
                 `in ${relative(basePath,file)}`,
                 `is requiring user authentication`,
                 `please verify it's share permissions`

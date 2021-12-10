@@ -13,103 +13,17 @@
     margin-top: 0;
   }
 }
-.shop-product{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding:0;
-}
 
-.shop-product>div{
-  width: 100%;
-  flex-grow:1;
-  flex-shrink:0;
-  padding: 0 10px;
-}
-.shop-product > .product-head {
-  width:100%;
-  margin-top:0;
-  font-size: 30px;
-}
-
-.shop-product > div.product-descript{
-  width:100%;
-  min-width:250px;
-  flex-grow:2;
-  height:120px;
-  padding:0;
-  position:relative;
-}
-.shop-product > div.product-icons {
-  width:100%;
-  justify-content:center;
-  align-items: center;
-  display: flex;
-}
-.shop-product .product-properties{
-  padding: 10px 0;
-  width: 100%;
-}
-
-.shop-product > div.product-read-more {
-  width:100%;
-  text-align:right;
-}
-.shop-product > div.product-read-more>a, .shop-product > div.product-read-more>a:hover {
-  text-decoration:none;
-  cursor: pointer;
-}
-.shop-product > div.product-icon {
-  min-width:50px;
-  display:flex;
-  align-items:center;
-}
-.shop-product .product-highlight{
-  font-weight: bold;
-}
-.shop-product .product-highlight.highlight-orange {
-  color: $orange;
-}
-.shop-product .product-price {
-  padding:0 6px;
-  font-size:24px;
-  text-align:center;
-  height:100%;
-}
-
-.shop-product div.product-add-to-cart {
-  min-width:70px;
-  flex-grow:1;
-  text-align:center;
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  font-size:24px;
-}
-.shop-product div.product-add-to-cart>span {
-  vertical-align:middle;
-  line-height: 24px;
-}
-
-.shop-product div.product-add-to-cart>.button {
-  flex-grow:1;
-  padding: 4px 4px;
-  margin: auto;
-  max-width:200px;
-}
-.shop-product div.product-add-to-cart>.button>* {
-  vertical-align:middle;
-  line-height:24px;
-}
-
-
-#content.product-datasheet h3 {
-  color: $orange;
-  font-size: 18px;
-  font-weight: 900;
+.store-layout{
+  .product-price{
+    color: $secondary;
+    font-size: 2rem;
+    font-weight:bold;
+    &.price-vat{
+      color: $dark;
+      font-size: 1rem;
+    }
+  }
 }
 
 /* snbipcart overrides */

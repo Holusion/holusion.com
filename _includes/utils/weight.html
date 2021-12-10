@@ -1,0 +1,9 @@
+
+
+{% assign _k_value = include.value | divided_by: 1000 | truncate %}
+{%- if "0" != _k_value %}
+  {% assign _grams_value = include.value | modulo: 1000 %}
+  {{ _k_value }}kg {%- if _grams_value != 0 %}{{_grams_value | divided_by: 100 | round }}{%- endif %}
+{%- else %}
+  {{include.value}}g
+{%- endif %}

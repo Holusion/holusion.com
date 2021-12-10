@@ -13,7 +13,7 @@ data-item-name="{{p_data.title}}"
 data-item-image="{{p_data.image | absolute_url }}"
 data-item-url="{{p_data.url | absolute_url}}"
 data-item-description="{{p_data.abstract}}"
-data-item-id="{{page.title| downcase |replace: ' ','_'}}FR"
+data-item-id="{{product.url| split: '/' | last | upcase}}_FR"
 
 data-test="store-add"
 >

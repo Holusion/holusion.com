@@ -6,7 +6,7 @@
     const id = "{{include.id}}";
     let t = "https://docs.google.com/document/d/"+id+"/export?format=pdf";
     const spinner = document.createElement("DIV");
-    spinner.className = "spinner-border";
+    spinner.className = "spinner-border text-primary";
     Object.assign(spinner.style, {
       position: "absolute",
       top: "25px",
@@ -30,6 +30,7 @@
     })
     .catch(e=>{
         let error = document.createElement("DIV");
+        error.className="bg-white text-dark";
         error.innerHTML = e.message;
         Object.assign(error.style, {
           position: "absolute",
