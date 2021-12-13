@@ -9,6 +9,7 @@ const faker = require("faker");
 
 ["fr","en"].forEach((lang)=>{
   describe(`/${lang}/store/ order`,function(){
+    this.bail(true);
     let page;
     before(async function(){
       page = await this.newPage({block: false});
