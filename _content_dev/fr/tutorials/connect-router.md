@@ -24,9 +24,6 @@ Brancher le routeur. Connecter les câble ethernet et USB à votre produit.
 
 ## Configuration - Première utilisation
 
-*si vous avez acheté un routeur avec votre produit, il a été pré-configuré et vous pouvez ignorer cette étape*
-
-
 <div class="row">
   <div class="col-12 col-md-6">
     <code>Pour le modèle TL-WR802N</code>
