@@ -9,11 +9,11 @@
         <a href="{{item.url}}">
           {%- if item.image contains "static" -%}
           <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
-              {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{item.description}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+              {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{item.description | normalize_whitespace | escape}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
           {%- else -%}
             {% picture card "{{item.image}}"
               --img title="{{item.title}}"
-              --alt  {{item.description}}
+              --alt  {{item.description | normalize_whitespace | escape}}
             %}
           {%- endif -%}
         </a>
