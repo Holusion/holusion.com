@@ -11,12 +11,14 @@ const faker = require("faker");
   describe(`/${lang}/store/ order`,function(){
     this.bail(true);
     let page;
+
     before(async function(){
       page = await this.newPage({block: false});
       await page.deleteCookie(... await page.cookies(`${href}/${lang}/store/`));
       await page.goto(`${href}/${lang}/store/`);
       await page.waitForSelector(`[data-test="store-main"]`);
     });
+
     it("have an empty cart", async function(){
       let items = await page.$$eval(`[data-test="snipcart-items"]`, cartItems=>{
         return cartItems.map(c=>c.textContent);
@@ -31,7 +33,7 @@ const faker = require("faker");
         await page.$eval(".snip-layout", l=> l.style.display);
         expect.fail(".snip-layout should not match any visible DomNode");
       }catch(e){}
-    })
+    });
     it("can navigate to an item", async function(){
       await page.click(`[data-test="store-item-card"] [href="/${lang}/store/pixel"]`);
       await page.waitForSelector(`[data-test="store-item"]`);

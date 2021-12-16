@@ -34,6 +34,6 @@ exports.mochaGlobalTeardown = async function() {
 
 exports.mochaHooks = {
   async beforeAll(){
-    href = href  || await fs.readFile(FILE, {encoding: "utf8"});
+    global.href = global.href  || await fs.readFile(FILE, {encoding: "utf8"});
   }
 }

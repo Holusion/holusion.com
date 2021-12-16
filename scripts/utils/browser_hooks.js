@@ -55,6 +55,37 @@ exports.mochaHooks = {
       }
       return page;
     }
+    this.checkImages = (page)=>{
+      const exist_checks = [];
+      page.on("request", (interceptedRequest)=>{
+        try{
+          let url = new URL(interceptedRequest.url());
+          if(url.origin != global.href){
+            //console.log('Diff origin :', url.origin, global.href);
+          }else if(!/\.(?:png|jpe?g|webp)$/i.test(url.pathname)){
+            //console.log("Not an image : ", url.pathname);
+          }else{
+            const localPath = path.resolve(local_site_files, url.pathname.split("/").slice(1).map(c=>decodeURIComponent(c)).join("/"));
+            exist_checks.push((async ()=>{
+              try{
+                await fs.access(localPath);
+              }catch(e){
+                return localPath;
+              }
+              return undefined;
+            })());
+          }
+        }catch(e){
+          console.error("Intercept failed : ", e);
+        }
+        if(!interceptedRequest.isInterceptResolutionHandled()){
+          interceptedRequest.continue(
+            interceptedRequest.continueRequestOverrides(),
+          0);
+        }
+      });
+      return ()=> Promise.all(exist_checks);
+    }
   },
   async afterAll(){
     await Promise.all(this._pages.map(async (page)=>{

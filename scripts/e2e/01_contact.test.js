@@ -54,13 +54,13 @@ const faker = require("faker");
           comments: faker.random.words
         }
         Object.keys(faker_map).forEach(function (k){
-          // 5 is not a lot. If someday it misses exceptions, boost it
-          for (let i = 0; i <3; i++){
-            let item = faker_map[k]();
-            it(`accept ${k} : ${item}`,async function(){
+          it(`accept random ${k}`, async function(){
+            // not a lot. If someday it misses exceptions, boost it
+            for (let i = 0; i <3; i++){
+              let item = faker_map[k]();
               expect(await this.write(k,item), `Expect "${item}" to be a valid ${k}`).to.be.true;
-            })
-          }
+            }
+          })
         })
       })
     })
