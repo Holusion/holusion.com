@@ -15,9 +15,11 @@ https://support.google.com/merchants/answer/7052112?visit_id=1-63639693003740593
   <entry>
     <g:id>{{product.url| split: '/' | last | upcase }}_FR</g:id>
     <g:title>{{product.title }} - {{product.abstract}}</g:title>
-    <g:description>{{ product.description | markdownify}}</g:description>
+    <g:description>
+      {{ product.description |default: product.abstract | markdownify }}
+    </g:description>
     <g:link>{{product.url | absolute_url}}</g:link>
-    <g:image_link>{{product.image | absolute_url}}</g:image_link>
+    <g:image_link>{% picture direct {{product.image}} %}</g:image_link>
     <g:condition>new</g:condition>
     <g:availability>{{product.stock | default: "in stock"}}</g:availability>
     <g:price>{{product.price | times: 1.2 | round: 2 }} EUR</g:price>

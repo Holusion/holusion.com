@@ -3,12 +3,12 @@ layout: store
 ---
 
 <section data-test="store-item" itemscope itemtype="http://schema.org/Product" class="section">
-  {% assign alt_text = page.title |append: ": "| append: page.abstract| normalize_whitespace |escape %}
-  {% if page.image contains "/static" %}
-    <img  itemprop="image" alt="{{alt_text}}" class="img-fluid" src="{{page.image}}">
-  {% else %}
-    {% picture grid "{{page.image}}" --img itemprop="image" --img class="cover" --alt {{alt_text}} %}
-  {% endif %}
+  
+  {% picture grid "{{page.image}}" 
+    --img itemprop="image" 
+    --img class="cover" 
+    --alt {{page.title |append: ": "| append: page.abstract| normalize_whitespace |escape }} 
+  %}
 
   <div class="content">
     <meta itemprop="name" content="{{page.title}}"/>

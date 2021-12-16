@@ -66,7 +66,16 @@ module.exports = function testLocations(locations){
             
           }));
         });
-  
+
+        it("check for deprecation selectors", async ()=>{
+          let deprecated = await page.$$eval("[data-deprecated]", (elems)=>{
+            let attrs = [];
+            for(let el of elems){ attrs.push(el.dataset.deprecated); }
+            return attrs;
+          });
+          expect(deprecated, `${loc} has the following deprecated elements : ${deprecated.join(", ")}`).to.have.property("length", 0)
+        })
+
         it("check for forbidden arrangements", async ()=>{
           const rows_in_rows = await page.$$(".row > .row");
           expect(rows_in_rows, "no \".row\" should be directly contained in another \".row\"").to.have.property("length", 0);
