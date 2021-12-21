@@ -12,7 +12,7 @@ This tutorial will allow you to connect a **TP-LINK TL-WR802N** router to your p
 - ethernet (RJ45) cable
 - micro-USB cable
 
-Everything is included in the [nano-router](/en/store/router) package
+Everything is included in the **nano-router** package
 
 ## Installation
 
