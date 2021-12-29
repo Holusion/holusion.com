@@ -47,9 +47,12 @@
         content: "";
         display: block;
         background-color: white;
-        grid-area: white / white / span 2 / end;
-        &.left{
-          grid-area: white / white / span 2 / title;
+        @include media-breakpoint-up(xl){
+          grid-area: white / white / span 2 / end;
+          
+          &.left{
+            grid-area: white / white / span 2 / title;
+          }
         }
       }
     }
@@ -59,6 +62,7 @@
       /* if no title, a content-padding is required */
       padding: ($margin * 2 / 3) $padding;
       @include media-breakpoint-down(lg){
+        padding: $padding;
         margin-bottom: $margin/2;
       }
       &.slide{       
@@ -93,6 +97,7 @@
       padding: 0 $padding;
       margin-top: $margin/3;
       margin-bottom: $margin/3;
+      min-height: $margin/3;
       grid-area: title / content / span 1 / content;
       ~ .content {
         padding-top: 0;
@@ -103,11 +108,20 @@
     & > img, &>picture, &>.media{
       z-index: 1;
       grid-area: image;
-      &.contained{
+      &.contained, &.contained>img{
         grid-column-start: 2;
         margin-bottom: 0;
       }
     }
+    &.left{
+      & > img, &>picture, &>.media{
+        &.contained, &.contained>img{
+          grid-column-start: 3;
+          grid-column-end: 3;
+        }
+      }
+    }
+    
     & > img, &>picture>img , &>.media{
       display: block;
       max-width: 100%;
@@ -126,6 +140,7 @@
         }
       }
     }
+    
 
     & .fixed-background {
       position: relative; 

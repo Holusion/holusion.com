@@ -7,6 +7,7 @@ layout: store
   {% picture grid "{{page.image}}" 
     --img itemprop="image" 
     --img class="cover" 
+    style="object-position: 70% 0"
     --alt {{page.title |append: ": "| append: page.abstract| normalize_whitespace |escape }} 
   %}
 
