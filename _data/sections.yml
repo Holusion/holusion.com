@@ -10,12 +10,6 @@ usages:
 products:
   fr: "Produits"
   en: "Products"
-keynotes:
-  fr: "Ressources et documents"
-  en: "Ressources and documentation"
-home:
-  fr: "Accueil"
-  en: "Home"
 store:
   fr: "Store"
   en: "Store"
@@ -31,34 +25,3 @@ cgv:
 privacy :
     fr : "Politique de confidentialité"
     en : "Privacy Policy"
-s1:
-  fr: "Holusion : Ressources Techniques"
-  en: "Holusion : Developper Network"
-s2: #Nom de la section 2 de la home page (titre surligné bleu)
-  short:
-    fr: Ressources
-    en: Content
-  long:
-    fr: Ressources
-    en: Content
-content: # nom de la sous-section 1 (content)
-  short:
-    fr: Contenu
-    en: Medias
-  long:
-    fr: Création de contenu
-    en: Content Creation
-platform: # nom de la sous-section 2 (admin)
-  short:
-    fr: Plateformes
-    en: Platforms
-  long:
-    fr: Plateformes d'animation
-    en: Animation platforms
-toolbox: # nom de la sous-section 2 (admin)
-  short:
-    fr: Outils
-    en: Toolbox
-  long:
-    fr: Boite à outils
-    en: Toolbox

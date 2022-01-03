@@ -8,25 +8,24 @@ Atom feed for google merchant center
 Documentation available on :
 https://support.google.com/merchants/answer/7052112?visit_id=1-636396930037405938-3929619477&hl=fr&rd=1
 {% endcomment %}
-{% include utils/make_store_items.html %}
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
 	<title>Holusion.com - Online Store</title>
 	<link rel="self" href="https://holusion.com"/>
-  {% for product in store_items %}
+  {% for product in site.store_items[page.lang]  %}
   <entry>
-    <g:id>{{product.id}}</g:id>
+    <g:id>{{product.url| split: '/' | last | upcase }}_FR</g:id>
     <g:title>{{product.title }} - {{product.abstract}}</g:title>
-    <g:description>{{product.description}}</g:description>
+    <g:description>
+      {{ product.description |default: product.abstract | markdownify }}
+    </g:description>
     <g:link>{{product.url | absolute_url}}</g:link>
-    <g:image_link>{{product.image | absolute_url}}</g:image_link>
+    <g:image_link>{% picture direct {{product.image}} %}</g:image_link>
     <g:condition>new</g:condition>
     <g:availability>{{product.stock | default: "in stock"}}</g:availability>
-    <g:price>{{product.price}} EUR</g:price>
+    <g:price>{{product.price | times: 1.2 | round: 2 }} EUR</g:price>
 		<g:shipping_weight>{{product.weight}} g</g:shipping_weight>
 
     <g:brand>Holusion</g:brand>
-    <g:mpn>{{product.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}</g:mpn>
-
     <g:google_product_category>5566</g:google_product_category>
   </entry>
   {% endfor %}

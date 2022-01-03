@@ -1,0 +1,13 @@
+sections:
+  - name: product
+    fr: Produits
+    en: Products
+  - name: smartphone
+    fr: Goodies pour Smartphones
+    en: Smartphone Goodies
+  - name: tablet
+    fr: Goodies pour tablettes
+    en: Tablet Goodies
+  - name: accessory
+    fr: Accessoires
+    en: Accessories

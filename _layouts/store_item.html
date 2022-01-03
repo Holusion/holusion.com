@@ -2,88 +2,71 @@
 layout: store
 ---
 
-{% include utils/make_store_items.html %}
-<div data-test="store-item" class="store-layout row no-gutters">
-  <div class="col-xl-9 col-lg-12 order-1 order-xl-2">
-    <div  itemscope itemtype="http://schema.org/Product">
-      <div class="row no-gutters">
-        <div class="col-lg-4 px-lg-3 offset-lg-1 col-md-6 col-sm-6 col-12">
-          {% if page.image contains "/static" %}
-            <img  itemprop="image" alt="{{page.title}}: {{page.abstract | escape}}" class="img-fluid" src="{{page.image}}">
-          {% else %}
-            {% picture "{{page.image}}" --img itemprop="image" --img class="img-fluid" --alt  {{page.title}}: {{page.abstract | escape}} %}
-          {% endif %}
-       </div>
+<section data-test="store-item" itemscope itemtype="http://schema.org/Product" class="section">
+  
+  {% picture grid "{{page.image}}" 
+    --img itemprop="image" 
+    --img class="cover" 
+    style="object-position: 70% 0"
+    --alt {{page.title |append: ": "| append: page.abstract| normalize_whitespace |escape }} 
+  %}
 
-       <div class="col-lg-6 col-md-5 col-sm-6 col-12 shop-product" id="{{p_data.name | uri_escape }}" >
-         <h2 itemprop="name" class="product-head">{{page.title}}</h2>
-         <div class="product-icons" >
-           {% for icon in page.icons %}
-             {% svg "src/pictos/produits/{{icon}}.svg" width=50 %}
-           {% endfor %}
-         </div>
-         <div>
-           <div class="product-properties">
-             <ul>
-             {% if page.for %}
-                <li>{{site.data.strings.store-accessory-for[page.lang]}} : <span class="product-highlight">{{page.for}}</span></li>
-             {%endif%}
+  <div class="content">
+    <meta itemprop="name" content="{{page.title}}"/>
+    <h2 itemprop="description">{{page.abstract}}</h2>
+    <p>{{page.description | markdownify}}</p>
+    <div>
+      <ul>
+        {% if page.stock and page.stock !="en stock" %}
+          <link itemprop="availability" href="http://schema.org/OutOfStock" />
+          <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight highlight-orange">{{page.stock}}</span></li>
+        {% else %}
+            <link itemprop="availability" href="http://schema.org/InStock" />
+            <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight">{{site.data.strings.store-stock[page.lang]}}</span></li>
+        {% endif %}
+            <li>
+              {{site.data.strings.store-weight[page.lang]}} : 
+              <span class="product-highlight">
+                {% include utils/weight.html value=page.weight %}
+              </span>
 
-             {% if page.stock and page.stock !="en stock" %}
-               <link itemprop="availability" href="http://schema.org/OutOfStock" />
-               <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight highlight-orange">{{page.stock}}</span></li>
-             {% else %}
-                <link itemprop="availability" href="http://schema.org/InStock" />
-                <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight">{{site.data.strings.store-stock[page.lang]}}</span></li>
-             {% endif %}
-                <li>{{site.data.strings.store-weight[page.lang]}} : <span class="product-highlight">{{page.weight}}g</span></li>
-             </ul>
-           </div>
-         </div>
-         <meta itemprop="description" content="{{page.abstract}}">
-         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-           <div class="product-add-to-cart">
-             <span>
-               <span class="product-price">
-                 <span itemprop="price">{{page.price}}</span>
-                 <span itemprop="priceCurrency" content="EUR">€</span>
-               </span>
-               <span >{{ site.data.strings.store-vat[page.lang] }}</span>
-             </span>
-             <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
-             <meta itemprop="url" content="{{page.url | absolute_url}}" />
-             {% include components/shop/link.html data=page %}
-           </div>
-         </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid product-datasheet" id="content">
-        {{content}}
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div id="product-eua" class="col-md-8 offset-md-2">
-          <h3 style="text-align:center">{{site.data.strings.return-policy[page.lang]}}</h3>
-          <p> {{site.data.strings.return-policy-text[page.lang]}}</p>
-          <p><center>
-            <button class="btn btn-outline-info" style="cursor:pointer" onclick="displayContactForm()">
-              {{site.data.strings.contact-us[page.lang]}}
-            </button>
-          </center></p>
-        </div>
-      </div>
+            </li>
+        </ul>
     </div>
   </div>
-  <div class="col-xl-3 col-lg-12 order-2 order-xl-1" style="padding:9px">
-    <div class="container related-products">
-      <h3> Découvrez aussi : </h3>
-      <div class="row">
-      {% for item in store_items %}
-        {% include components/post_thumbnail.html content=item classes="col-xl-12 col-lg-3 col-md-4 col-sm-6 col-12" %}
-      {% endfor %}
-      </div>
-    </div>
-  </div>
+  <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
+  <meta itemprop="url" content="{{page.url | absolute_url}}" />
+  <meta itemprop="price" content="{{page.price | times: 1.2 | round: 2}}"/>
+  <meta itemprop="currency" content="EUR"/>
+</section>
 
-</div>
+<section class="section section-white">
+  <div class="section-title d-flex justify-content-between align-items-center">
+    <div>
+      <span class="product-price">
+        {{page.price | time: 1.2 | round: 2}}€
+        <span >{{ site.data.strings.store-no-vat[page.lang] }}</span>
+      </span>
+      <span class="product-price price-vat">
+        ({{page.price | times: 1.2 | round: 2}}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
+      </span>
+
+    </div>
+    {% include components/shop/link.html data=page %}
+  </div>
+</section>
+
+{{ content }}
+
+
+<section class="section left section-white">
+  <h2 style="text-align:center">{{site.data.strings.return-policy[page.lang]}}</h2>
+  <div class="content">
+    <p> {{site.data.strings.return-policy-text[page.lang]}}</p>
+    <p class="text-center">
+      <button class="btn btn-outline-info" style="cursor:pointer" onclick="displayContactForm()">
+        {{site.data.strings.contact-us[page.lang]}}
+      </button>
+    </p>
+  </div>
+</section>

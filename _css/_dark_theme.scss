@@ -3,10 +3,9 @@
 .main-dark{
     color: $light;
     background: rgb(16,48,64);
-    background: -moz-radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
-    background: radial-gradient(circle, rgba(16,48,64,1) 0%, rgba(11,11,11,1) 60%, rgba(11,11,11,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#103040",endColorstr="#0b0b0b",GradientType=1);
+    background: -moz-radial-gradient(circle, $dark 0, $black 60%, $black 100%);
+    background: -webkit-radial-gradient(circle, $dark 0, $black 60%, $black 100%);
+    background: radial-gradient(circle, $dark 0, $black 60%, $black 100%);
     background-attachment: fixed;
 
     a{

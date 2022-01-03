@@ -35,9 +35,10 @@ h3:target{
 }
 
 /* Titles on blue background that targets page sections*/
-section.title, .section-title {
+
+section.title {
   background: url("/static/img/banners/section.jpg") center/cover no-repeat;
-	h1, a, a:hover{
+  h1, a, a:hover{
     color:$white;
   }
 }
