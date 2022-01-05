@@ -29,6 +29,7 @@ For products categories, see : https://support.google.com/merchants/answer/63244
     <g:availability>{{product.stock | default: "in stock"}}</g:availability>
     <g:price>{{product.price | times: 1.2 | round: 2 }} EUR</g:price>
     <g:shipping_weight>{{product.weight}} g</g:shipping_weight>
+    <g:ships_from_country>FR</g:ships_from_country>
     <g:brand>Holusion</g:brand>
     {%- if product.gtin -%}
     <g:gtin>{{product.gtin}}</g:gtin>
