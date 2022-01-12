@@ -24,14 +24,16 @@ layout: store
             <link itemprop="availability" href="http://schema.org/InStock" />
             <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight">{{site.data.strings.store-stock[page.lang]}}</span></li>
         {% endif %}
-            <li>
-              {{site.data.strings.store-weight[page.lang]}} : 
-              <span class="product-highlight">
-                {% include utils/weight.html value=page.weight %}
-              </span>
-
-            </li>
-        </ul>
+        <li>
+          {{site.data.strings.store-weight[page.lang]}} : 
+          <span class="product-highlight">
+            {% include utils/weight.html value=page.weight %}
+          </span>
+        </li>
+        {% for prop in page.properties %}
+          <li>{{prop}}</li>
+        {%endfor%}
+      </ul>
     </div>
   </div>
   <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
