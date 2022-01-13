@@ -15,26 +15,23 @@ layout: store
     <meta itemprop="name" content="{{page.title}}"/>
     <h2 itemprop="description">{{page.abstract}}</h2>
     <p>{{page.description | markdownify}}</p>
+    {% if page.stock and page.stock !="en stock" %}
+      <h4>{{page.stock}}</h4>
+    {% else %}
+      <h4 class="text-info">{{site.data.strings.store-stock[page.lang]}}</h4>
+    {% endif %}
     <div>
       <ul>
-        {% if page.stock and page.stock !="en stock" %}
-          <link itemprop="availability" href="http://schema.org/OutOfStock" />
-          <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight highlight-orange">{{page.stock}}</span></li>
-        {% else %}
-            <link itemprop="availability" href="http://schema.org/InStock" />
-            <li>{{site.data.strings.store-availability[page.lang]}} : <span class="product-highlight">{{site.data.strings.store-stock[page.lang]}}</span></li>
-        {% endif %}
         <li>
-          {{site.data.strings.store-weight[page.lang]}} : 
-          <span class="product-highlight">
-            {% include utils/weight.html value=page.weight %}
-          </span>
+          {{site.data.product_properties.weight[page.lang]}} : {% include utils/weight.html value=page.properties.p-weight %}
         </li>
-        {% for prop in page.properties %}
-          <li>{{prop}}</li>
-        {%endfor%}
+        <li>
+          {{site.data.product_properties.size[page.lang]}} : {{ page.properties.size }}
+        </li>
+
       </ul>
     </div>
+    <a href="#goto-properties"><button class="btn btn-info">Voir toutes les spécifications</button></a>
   </div>
   <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
   <meta itemprop="url" content="{{page.url | absolute_url}}" />
@@ -60,6 +57,15 @@ layout: store
 
 {{ content }}
 
+<section id="goto-properties" class="section section-center">
+  <div class="content">
+    <ul>
+      {% for prop in page.properties %}
+        <li>{{prop}}</li>
+      {%endfor%}
+    </ul>
+  </div>
+</section>
 
 <section class="section left section-white">
   <h2 style="text-align:center">{{site.data.strings.return-policy[page.lang]}}</h2>

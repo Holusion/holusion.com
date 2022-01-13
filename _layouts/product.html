@@ -64,7 +64,7 @@ layout: front_page
   {% if page.properties %}
   <div id="product-properties" class="container-fluid section section-light section-center">
     <div class="content mb-0">
-      <h2 class="my-5">{{site.data.strings.characteristics[page.lang]}}</h2>
+      <h2>{{site.data.strings.characteristics[page.lang]}}</h2>
     </div>
   </div>
 
@@ -73,7 +73,7 @@ layout: front_page
       <div class="row no-gutters m-0">
         {% for prop_group in page.properties %}
         <div class="col-lg px-md-2 py-3 py-lg-0">
-          <div class="card light-card">
+          <div class="light-card">
             <div class="card-content card-body p-3">
               <h3 class="my-3">
                 {%assign prop_group_name = prop_group[0] %}
