@@ -10,6 +10,13 @@ layout: store
     style="object-position: 70% 0"
     --alt {{page.title |append: ": "| append: page.abstract| normalize_whitespace |escape }} 
   %}
+  {% if page.made-in and page.made-in == "france" %}
+    {% picture grid img/sections/made-in-france.png
+      --img class=""
+      style="width:10%; position: relative; top: 100%; left: 85%;"
+      --alt made in france 
+    %}
+  {% endif %}
 
   <div class="content">
     <meta itemprop="name" content="{{page.title}}"/>
