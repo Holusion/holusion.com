@@ -5,11 +5,26 @@ image: img/products/iris_22_2019.jpg
 abstract: Une vitrine holographique de 22 pouces
 price: 2000
 weight: 20000
-made-in: france
+made_in: france
 
 properties:
-  p-weight: 8000
-  size: 55x40x35cm
+  display:
+    brightness: 1600cd/m²
+    full_display_area: 49 (H) x 27 (V) cm
+    contrast: "3000:1"
+    resolution: "1920&times;1080"
+    diagonal: 22" (16:9)
+  characteristics:
+    product_weight: 8kg
+    power: 60W
+    size: 55(L) x 40(l) x 35(h) cm
+    connect : 4 ports USB et 1 port ethernet
+  materials:
+    pane : plaque de verre
+    structure : structure en métal
+    light : spot intérieur
+    color : peinture noire
+    finish : mate aspect sablé
 
 description: |
   L’Iris 22 est une borne holographique qui permet d’afficher des hologrammes visibles dans un espace réduit. 
@@ -49,8 +64,8 @@ description: |
   </div>
 </section>
 
-<section class="section left">
-  <div class="content">
+<section class="section section-center">
+  <div class="content pb-0">
     <h3>Le fantôme de Pepper</h3>
     <p>
       L’hologramme est créé grâce à une illusion d’optique appelée <b>Fantôme de Pepper.</b> 
@@ -65,8 +80,10 @@ description: |
 </section>
 
 <section class="section">
+  {% picture grid img/posts/2020_top5/education.jpg
+    --alt Hologramme controlé par tablette %}
+  <h2>Fonctionnement de la borne</h2>
   <div class="content">
-    <h3>Fonctionnement de la borne</h3>
     <p>
       L’Iris 22 embarque un mini PC qui permet de paramétrer votre borne et de la contrôler à distance via tablette, smartphone ou PC, notamment grâce à l’application <a href="/fr/interaction/">Holusion Companion</a>.
       Il est également possible de connecter la borne à un <a href="/fr/store/router">mini routeur WIFI</a>  grâce à un câble réseau. Vous pourrez ainsi facilement changer son contenu en ligne, à volonté et en seulement quelques secondes. 
@@ -80,9 +97,12 @@ description: |
   </div>
 </section>
 
+<section class="section section-white">
+  <h2>L'Iris 22 en vidéo</h2>
+</section>
+
 <section class="section section-center">
   <div class="content">
-    <h2>L'Iris 22 en vidéo</h2>
     <p>L’Iris 22 et sa technologie vous offrent donc des possibilités d’affichage infinies et fascinantes. Laissez libre cours à votre imagination et offrez une expérience unique à vos clients.</p>
       {% include components/medias/youtube.html embed="97usClzj2_c" %}
   </div>
@@ -95,20 +115,20 @@ description: |
       Plusieurs accessoires sont disponibles en option:
     </p>
     <div class="row no-gutters">
-      <div class="col-md-4 p-3">
-        {% picture img/accessories/flight22.jpg class="img-fluid" %}
+      <div class="col-md p-3">
+        <a href="/fr/store/flight22">{% picture img/accessories/flight22.jpg class="img-fluid" %}</a>
         <p class="pt-3">
           Une <a href="/fr/store/flight22">flight case</a>, idéale pour transporter la borne sans risquer de l'abîmer          
         </p>
       </div>
-      <div class="col-md-4 p-3">
-        {% picture img/accessories/stele22.jpg class="img-fluid" %}
+      <div class="col-md p-3">
+        <a href="/fr/store/stele22">{% picture img/accessories/stele22.jpg class="img-fluid" %}</a>
         <p class="pt-3">
           Une <a href="/fr/store/stele22">stèle</a> qui vous permettra de positionner votre Iris 22 à hauteur de l'œil          
         </p>
       </div>
-      <div class="col-md-4 p-3">
-        {% picture img/accessories/fond22.jpg class="img-fluid" %}
+      <div class="col-md p-3">
+        <a href="/fr/store/fond22">{% picture img/accessories/fond22.jpg class="img-fluid" %}</a>
         <p class="pt-3">
           Un <a href="/fr/store/fond22">fond occultant</a>  pour masquer un décor qui pourrait gêner l’affichage de votre hologramme.
         </p>

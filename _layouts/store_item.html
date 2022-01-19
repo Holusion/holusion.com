@@ -7,13 +7,12 @@ layout: store
   {% picture grid "{{page.image}}" 
     --img itemprop="image" 
     --img class="cover" 
-    style="object-position: 70% 0"
+    style="object-position: 50% 0"
     --alt {{page.title |append: ": "| append: page.abstract| normalize_whitespace |escape }} 
   %}
-  {% if page.made-in and page.made-in == "france" %}
-    {% picture grid img/sections/made-in-france.png
-      --img class=""
-      style="width:10%; position: relative; top: 100%; left: 85%;"
+  {% if page.made_in and page.made_in == "france" %}
+    {% picture img/sections/made-in-france.png
+      --img class="img-fluid logo-made-in-france"
       --alt made in france 
     %}
   {% endif %}
@@ -29,16 +28,21 @@ layout: store
     {% endif %}
     <div>
       <ul>
-        <li>
-          {{site.data.product_properties.weight[page.lang]}} : {% include utils/weight.html value=page.properties.p-weight %}
-        </li>
-        <li>
-          {{site.data.product_properties.size[page.lang]}} : {{ page.properties.size }}
-        </li>
-
+        {% if page.properties.characteristics.product_weight or page.product_weight %}
+          <li>
+            {{site.data.product_properties.weight[page.lang]}} : {{ page.properties.characteristics.product_weight | default: page.product_weight}}
+          </li>
+        {% endif %}
+        {% if page.properties.characteristics.size %}
+          <li>
+            {{site.data.product_properties.size[page.lang]}} : {{ page.properties.characteristics.size }}
+          </li>
+        {% endif %}
       </ul>
     </div>
-    <a href="#goto-properties"><button class="btn btn-info">{{site.data.strings.see-more-properties[page.lang]}}</button></a>
+    {% if page.properties %}
+      <a href="#goto-properties"><button class="btn btn-info">{{site.data.strings.see-more-properties[page.lang]}}</button></a>
+    {% endif %}
   </div>
   <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
   <meta itemprop="url" content="{{page.url | absolute_url}}" />
@@ -64,15 +68,35 @@ layout: store
 
 {{ content }}
 
-<section id="goto-properties" class="section section-center">
-  <div class="content">
-    <ul>
-      {% for prop in page.properties %}
-        <li>{{prop}}</li>
-      {%endfor%}
-    </ul>
-  </div>
-</section>
+{% if page.properties %}
+  <section id="goto-properties" class="section section-center">
+    <h2>{{site.data.strings.characteristics[page.lang]}}</h2>
+    <div class="content">
+      <div class="row no-gutters m-0">
+        {% for prop_group in page.properties %}
+        <div class="col-md px-md-2 py-3 py-md-0">
+            <div class="p-3">
+              <h3 class="my-3">
+                {%assign prop_group_name = prop_group[0] %}
+                {{site.data.product_properties[prop_group_name][page.lang] |default: prop_group_name}}
+              </h3>
+              {%for prop in prop_group[1] %}
+                {%capture prop_key %}{{prop[0]}}{%endcapture%}
+                {%capture prop_value %}{{prop[1]}}{%endcapture%}
+                <div>
+                  <hr>
+                    <div>
+                      <span class="text-secondary font-weight-bold">{{site.data.product_properties[prop_key][page.lang] |default: prop_key}}</span> : <span>{{prop_value}}</span>                    
+                    </div>
+                </div>
+              {%endfor%}
+            </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </section>
+{% endif %}
 
 <section class="section left section-white">
   <h2 style="text-align:center">{{site.data.strings.return-policy[page.lang]}}</h2>

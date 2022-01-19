@@ -11,6 +11,9 @@ computing:
 options:
   fr: options
   en: options
+materials:
+  fr: matériaux
+  en: materials
 # individual properties
 size:
   icon: src/pictos/properties/ruler-size.svg
@@ -88,3 +91,19 @@ Arduino:
   icon: src/pictos/properties/arduino.svg
   fr: arduino
   en: arduino
+# store
+product_weight:
+  fr: poids
+  en: weight
+pane:
+  fr: vitre
+structure:
+  fr: structure
+light:
+  fr: éclairage
+color:
+  fr: couleur
+finish:
+  fr: finition
+connect:
+  fr: connectiques
