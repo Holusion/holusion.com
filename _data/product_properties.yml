@@ -97,13 +97,18 @@ product_weight:
   en: weight
 pane:
   fr: vitre
+  en: glass pane
 structure:
   fr: structure
 light:
   fr: éclairage
+  en: lights
 color:
   fr: couleur
+  en: colors
 finish:
   fr: finition
+  en: finish
 connect:
   fr: connectiques
+  en: connections
