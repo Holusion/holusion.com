@@ -1,4 +1,4 @@
-//Toggle modal with : data-bs-toggle="modal" data-target="#contactform-modal" instead
+//Toggle modal with : data-bs-toggle="modal" data-bs-target="#contactform-modal" instead
 
 /* BOOTSTRAP */
 (function(){

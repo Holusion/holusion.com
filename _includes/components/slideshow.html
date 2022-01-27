@@ -45,9 +45,9 @@
       <span class="visually-hidden">Next</span>
     </a>
     <ol class="carousel-indicators">
-      <li data-target="#{{uid}}" data-slide-to="0" class="active"></li>
+      <li data-bs-target="#{{uid}}" data-slide-to="0" class="active"></li>
       {% for post in contents | offset: 1 |limit: 7 %}
-      <li data-target="#{{uid}}" data-slide-to="{{forloop.index}}"></li>
+      <li data-bs-target="#{{uid}}" data-slide-to="{{forloop.index}}"></li>
       {% endfor %}
     </ol>
     {% endif %}
