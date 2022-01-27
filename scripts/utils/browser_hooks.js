@@ -43,6 +43,12 @@ exports.mochaHooks = {
     this._pages = [];
     this.newPage = async ({device, block:blockOpts=true, closeAfter=true}={})=>{
       const page = await this.browser.newPage();
+
+      //Fix for not-clickable errors https://stackoverflow.com/a/61239346/3793838
+      page.on("load", function(){
+        page.addStyleTag({ content: ":root {scroll-behavior: auto !important;}" });
+      })
+
       if(closeAfter) this._pages.push(page);
 
       if(device){

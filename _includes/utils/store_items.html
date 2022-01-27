@@ -22,7 +22,9 @@
           <h4>{{ item.price }} € <span >HT</span></h4>
         {%endif%}
         <p>{{ item.abstract }}</p> 
-        <a class="mt-auto" href="{{item.url}}"> <button class="btn btn-info">{{item.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
+        <a class="m-auto btn btn-info text-white" href="{{item.url}}">
+          {{item.action| default:site.data.strings["read-more"][page.lang] }}
+        </a>
       </div>
     {% endfor %}
   </div>
