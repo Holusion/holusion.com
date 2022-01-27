@@ -16,7 +16,7 @@ Ce guide vous permettra de connecter un nano-routeur **TP-LINK TL-WR802N** à vo
 - câble micro-USB
 - Chargeur USB 5V
 
-L'ensemble du matériel devrait être présent dans la boite du nano-routeur.
+L'ensemble du matériel devrait être présent dans la boite du [nano-router](/fr/store/router).
 
 ## Installation
 
