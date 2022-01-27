@@ -12,7 +12,9 @@ jobs:
       uses: actions/checkout@v2
       with:
         lfs: true
-    
+    - name: run apt-update
+      # see https://github.com/actions/virtual-environments/issues/675
+      run: sudo apt-get update
     - name: Install libvips
       run: |
         sudo apt-get install -yqq libvips-tools

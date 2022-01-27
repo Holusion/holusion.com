@@ -3,14 +3,19 @@ layout: atom
 sitemap: false
 ---
 <?xml version="1.0"?>
-{% comment %}
-Atom feed for google merchant center
+{% comment -%}
+# Atom feed for google merchant center #
+
 Documentation available on :
 https://support.google.com/merchants/answer/7052112?visit_id=1-636396930037405938-3929619477&hl=fr&rd=1
-{% endcomment %}
+
+For products categories, see : https://support.google.com/merchants/answer/6324436
+
+{%- endcomment %}
+
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
-	<title>Holusion.com - Online Store</title>
-	<link rel="self" href="{{site.url}}"/>
+  <title>Holusion.com - Online Store</title>
+  <link rel="self" href="{{site.url}}"/>
   {% for product in site.store_items[page.lang]  %}
   <entry>
     <g:id>{{product.url| split: '/' | last | upcase }}_FR</g:id>
@@ -23,11 +28,15 @@ https://support.google.com/merchants/answer/7052112?visit_id=1-63639693003740593
     <g:condition>new</g:condition>
     <g:availability>{{product.stock | default: "in stock"}}</g:availability>
     <g:price>{{product.price | times: 1.2 | round: 2 }} EUR</g:price>
-		<g:shipping_weight>{{product.weight}} g</g:shipping_weight>
-
+    <g:shipping_weight>{{product.weight}} g</g:shipping_weight>
+    <g:ships_from_country>FR</g:ships_from_country>
     <g:brand>Holusion</g:brand>
+    {%- if product.gtin -%}
+    <g:gtin>{{product.gtin}}</g:gtin>
+    {%- else %}
     <g:mpn>{{product.url| split: '/' | last | upcase}}_FR</g:mpn>
-    <g:google_product_category>5566</g:google_product_category>
+    <g:google_product_category>{{ product.google_category | default: 2082 }}</g:google_product_category>
+    {%- endif %}
   </entry>
-  {% endfor %}
+  {%- endfor %}
 </feed>
