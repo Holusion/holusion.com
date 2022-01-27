@@ -227,9 +227,20 @@ describe("integration tests", function(){
 
             let errors = [], totalErrorCount = 0;
             for(let file of comparedFiles){
-              let header = yaml.load(file.frontMatter);
-              let fr_header = yaml.load(file.fr_frontMatter);
-              expect(header).to.be.a("object");
+              let header, fr_header;
+              try{
+                header=yaml.load(file.frontMatter)
+              }catch(e){
+                expect.fail(`Bad yaml header in ${file.filepath} : ${e.message}`);
+              }
+
+              try{
+                fr_header=yaml.load(file.fr_frontMatter)
+              }catch(e){
+                expect.fail(`Bad yaml header in ${file.fr_filepath} : ${e.message}`);
+              }
+
+              expect(header, `Bad header for ${file.filepath}. From ${file.frontMatter}`).to.be.a("object");
               expect(fr_header, `Bad header for ${file.fr_filePath}. From : ${file.fr_frontMatter}`).to.be.a("object");
               let fileErrors = deep_compare(header, fr_header);
               if(0 < fileErrors.length){
