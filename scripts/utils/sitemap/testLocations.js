@@ -62,6 +62,12 @@ module.exports = function testLocations(locations){
           expect(deprecated, `${loc} has the following deprecated elements : ${deprecated.join(", ")}`).to.have.property("length", 0)
         })
 
+        it("check for bad images alt", async function(){
+          let deprecated = await page.$$("PICTURE[alt]");
+
+          expect(deprecated, `${loc} has ${deprecated.length} alt text on <picture>. Alt descriptions should be on <img>`).to.have.property("length", 0)
+
+        })
         it("check for forbidden arrangements", async function(){
           const rows_in_rows = await page.$$(".row > .row");
           expect(rows_in_rows, "no \".row\" should be directly contained in another \".row\"").to.have.property("length", 0);
