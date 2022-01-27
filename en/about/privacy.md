@@ -38,4 +38,4 @@ Additionally, our [payment gateway](https://stripe.com/fr/privacy) is legally re
 
 ## Your rights
 
-You have a right ask for access, modification or deletion of any personnal data we collected. Demands must be sent to *holusion, 99A Boulevard Constantin Descat - 59200 Tourcoing FRANCE* of by mail in our <a style="cursor:pointer" onclick="displayContactForm()">contact form</a>.
+You have a right ask for access, modification or deletion of any personnal data we collected. Demands must be sent to *holusion, 99A Boulevard Constantin Descat - 59200 Tourcoing FRANCE* of by mail in our <a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">contact form</a>.

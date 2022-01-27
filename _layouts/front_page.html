@@ -98,11 +98,11 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-4 pt-4">
-            <button class="btn btn-info" onclick='displayContactForm()' style="margin-top:-0.5rem">
+            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
               <h3 class="block-title text-white m-0">{{site.data.strings["contact-us"][page.lang]}}</h3>
             </button>
             <ul class="navbar-nav" style="margin-top:1rem">
-              <li><a id="navbar-contact-button" onclick='displayContactForm()' class="contact-link">contact@holusion.com</a></li>
+              <li><a id="navbar-contact-button" data-bs-toggle="modal" data-bs-target="#contactform-modal" class="contact-link">contact@holusion.com</a></li>
               <li><a href="tel:+33972424451">
                 <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
               </a></li>

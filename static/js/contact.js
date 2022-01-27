@@ -1,20 +1,4 @@
-// Kept for backward compatibility
-//Do : data-toggle="modal" data-target="#contactform-modal" instead
-let modal;
-function displayContactForm(arg){
-  const modalContainer = document.querySelector("#contactform-modal");
-  modal = modal || new bootstrap.Modal(modalContainer, {
-    
-  })
-  //modalContainer.dataset['context'] = arg; //only known way to pass data to the modal
-  modal.show();
-}
-
-function closeForm(){
-  document.querySelector("#contactform-modal form").reset();
-  modal?.hide();
-}
-
+//Toggle modal with : data-bs-toggle="modal" data-target="#contactform-modal" instead
 
 /* BOOTSTRAP */
 (function(){
@@ -73,10 +57,6 @@ function closeForm(){
     function setupForm(){
       var contactform = document.querySelector("#contactform-modal");
       var submission = document.querySelector("#contactform-modal form");
-      //var overlay = document.querySelector("#contactform-overlay");
-      //var closer = document.querySelector("#contactform-close");
-      //overlay.onclick = closeForm;
-      //closer.onclick = closeForm;
       submission.onsubmit = onSubmitContactForm;
       contactform.classList.add("is-ready");
     }
