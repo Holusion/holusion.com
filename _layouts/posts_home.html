@@ -40,7 +40,7 @@ layout: front_page
         <li class=>
           <a class href="{{ paginator.first_page_path | absolute_url }}">
             <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
+            <span class="visually-hidden">Previous</span>
           </a>
         </li>
         {% endif %}
@@ -50,7 +50,7 @@ layout: front_page
             <li aria-current="true" >
               <a class="active" href="{{ trail.path | absolute}}" title="{{trail.title}}">
                 {{trail.num}}
-                <span class="sr-only">(current)</span>
+                <span class="visually-hidden">(current)</span>
               </a>
             </li>
             {% else %}
@@ -66,7 +66,7 @@ layout: front_page
         <li>
           <a href="{{ paginator.last_page_path | absolute_url }}">
             <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
+            <span class="visually-hidden">Next</span>
           </a>
         </li>
         {% endif %}

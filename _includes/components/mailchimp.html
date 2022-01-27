@@ -2,14 +2,12 @@
 <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
   <form action="//holusion.us11.list-manage.com/subscribe/post?u=c6785854044537463915d581e&amp;id=e66b097734" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline  mt-2" target="_blank" novalidate>
-    <label class="sr-only" for="mce-EMAIL">{{site.data.strings.newsletter[page.lang]}}</label>
+    <label class="visually-hidden" for="mce-EMAIL">{{site.data.strings.newsletter[page.lang]}}</label>
     <div class='input-group m-auto'>
       <input type="email" value="" placeholder="{{site.data.strings.emailexample[page.lang]}}" name="EMAIL" required class="required email form-control border-rounded h-auto" id="mce-EMAIL">
-      <div class="input-group-append" id="mc_submit" onclick="document.getElementById('mc-embedded-subscribe-form').submit(); return false;">
-        <button class="btn btn-info text-light" type="submit" id="button-mc-send">
-          {%svg src/pictos/icons/icon-email.svg width=24 %}
-        </button>
-      </div>
+      <button class="btn btn-info text-light" type="submit" id="button-mc-send" id="mc_submit" onclick="document.getElementById('mc-embedded-subscribe-form').submit(); return false;">
+        {%svg src/pictos/icons/icon-email.svg width=24 %}
+      </button>
     </div>
 
     <div class="form-group" style="position: absolute; left: -5000px;"><input type="text" name="b_c6785854044537463915d581e_e66b097734" tabindex="-1" value=""></div>

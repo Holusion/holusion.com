@@ -14,7 +14,7 @@
       left: "50%",
     });
     spinner.role="status";
-    spinner.innerHTML = '<span class="sr-only">Loading...</span>';
+    spinner.innerHTML = '<span class="visually-hidden">Loading...</span>';
     parent.appendChild(spinner);
     
     fetch(t).then(res=>{

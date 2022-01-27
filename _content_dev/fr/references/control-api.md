@@ -39,7 +39,7 @@ Si vous n'avez pas accès à un produit en état de marche, vous pouvez utiliser
 <div id="swagger-ui">
   <div class="d-flex justify-content-center">
     <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+      <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 </div>

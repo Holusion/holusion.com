@@ -1,17 +1,18 @@
 // Kept for backward compatibility
 //Do : data-toggle="modal" data-target="#contactform-modal" instead
+let modal;
 function displayContactForm(arg){
-  //var contactform = document.getElementById("section-contactform")
-  //contactform.classList.add("active");
-  var modalContainer = $("#contactform-modal");
+  const modalContainer = document.querySelector("#contactform-modal");
+  modal = modal || new bootstrap.Modal(modalContainer, {
+    
+  })
   //modalContainer.dataset['context'] = arg; //only known way to pass data to the modal
-  modalContainer.modal('show');
+  modal.show();
 }
 
 function closeForm(){
-  var f = $("#contactform-modal")
   document.querySelector("#contactform-modal form").reset();
-  f.modal('hide');
+  modal?.hide();
 }
 
 
