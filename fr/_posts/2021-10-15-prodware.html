@@ -1,7 +1,7 @@
 ---
 layout: front_page
 title: "BIM en temps réel"
-image: img/posts/2021_prodware/bva.jpg
+image: img/posts/2021_prodware/holo_prodware.jpg
 abstract: Une application pour visualiser tous les fichiers 3D de bâtiments
 tags: hologramme immobilier
 ---
@@ -12,7 +12,7 @@ tags: hologramme immobilier
     </section>
     <section class="section">
         <div class="media">
-            {% include components/medias/youtube.html  embed="4UcsEA-xfys" %}
+            {% include components/medias/youtube.html  embed="EReG8PfpeHc" %}
         </div>
         
         <div class="content">
@@ -59,11 +59,13 @@ tags: hologramme immobilier
             depuis le <a href="https://www.autodesk.fr/bim-360/design-collaboration/revit-cloud-worksharing/">Cloud Autodesk</a> pour avoir accès à leurs toutes dernières versions.</p>
 
         <p>La manipulation sans contact grâce à la reconnaissance gestuelle est une solution pratique dans
-            le contexte sanitaire actuel. </p>
+            le contexte sanitaire actuel.  </p>
             <p>Les premières fonctionnalités permettent de déplacer la vue, de
             zoomer et de venir activer des éléments. L’intégration du <b>Leap Motion</b>, une technologie pionnière
             d’interface homme-machine sans contact, directement dans cette solution donne accès à une
             solution de <i>hand-tracking</i> les plus populaires du marché. </p>
+
+            <p>Pour un usage plus complet, une application tablette dédiée offre un pannel d'actions possibles encore plus large et dynamique. La connexion est simple et l'interface peut être entièrement personnalisée.</p>
 
         <p>Grâce à la connexion aux serveurs dédiés aux fichiers BIM, il n’y a pas de limite dans le nombre
             de fichiers accessibles. Toutes les maquettes déjà en ligne peuvent être visualisées en
@@ -73,8 +75,8 @@ tags: hologramme immobilier
 
   <div class="section left">
     <h2>Un projet collaboratif</h2>
-  </div>
-
+</div>
+ 
   <section class="section section-center">
     <div class="content my-4">
         <p>La collaboration entre deux entreprises, Holusion et Prodware, a rendu ce projet possible.</p>
@@ -96,7 +98,7 @@ tags: hologramme immobilier
                 <li>GPU : GTX 1060</li>
             </ul></p>
 
-            {% picture grid img/posts/2021_prodware/bva.jpg
+            {% picture grid img/posts/2021_prodware/leap.jpg
                 --img class="cover"
                 data-noisetest="1"
                 style="object-position: 70% 0;width:100%"
@@ -142,20 +144,22 @@ tags: hologramme immobilier
 
     <section class="section left text-left">
 
-            {% picture grid "img/posts/2021_prodware/leap.jpg"
-            class="img-fluid m-auto"
-            --alt illustration d'une borne holographique iris 75
-            %}
+        {% include components/medias/youtube.html  embed="4UcsEA-xfys" %}
         
         <div class="content">
             <div>
                 <h2>Plus d'informations</h2>
-                <p>Il est possible d’avoir accès à une présentation de cette solution. Contactez nous pour prendre rendez-vous !</p>
+                <p>La visualisation de vos projets en hologrammes est une solution en pleine évolution. Nous travaillons encore à son amélioration et à l'intégration de nouvelles fonctions.</p>
+                <p>Il est déjà possible d’avoir accès à une présentation pour voir comment elle peut s'adapter à vos projets BIM. Contactez nous pour prendre rendez-vous et nous pourrons arranger une démo sous les plus brefs délais dans l'un de nos showrooms :</p>
 
                 <p>Chez <b>Prodware</b> au 45 quai de la Seine, 75019 Paris.</p>  
                 <p>Chez <b>Holusion</b> au 99A boulevard Descat, 59200 Tourcoing.</p>
-                <p class="text-right">
-                    <button class="btn btn-info" onclick="displayContactForm()">Prenez rendez-vous</button></p>
+                
+                <p class="text-secondary mt-4">Il est possible de réaliser un test technique sur vos propres travaux en nous mettant à disposition un projet Revit ou au format .ifc en amont de la rencontre.</p>
+
             </div>
+            
+            <p class="text-right">
+                <button class="btn btn-info mt-4" onclick="displayContactForm()">Prenez rendez-vous</button></p>
         </div>
     </section>
