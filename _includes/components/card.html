@@ -32,12 +32,12 @@
         {{content.title}}
     </a>
 
-    <div class="card-body text-left">
+    <div class="card-body text-start">
       <p class="card-text">{{content.abstract}}</p>
     </div>
 
     {% if content.url %}
-      <div class="card-footer text-right">
+      <div class="card-footer text-end">
         <a href="{{content.url}}" class="card-link text-secondary">
           {{content.action| default:site.data.strings["read-more"][page.lang] }}
         </a>

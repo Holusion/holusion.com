@@ -70,7 +70,7 @@ layout: front_page
 
   <section class="section section-center bg-light">
     <div class="content m-0 p-0">
-      <div class="row no-gutters m-0">
+      <div class="row g-0 m-0">
         {% for prop_group in page.properties %}
         <div class="col-lg px-md-2 py-3 py-lg-0">
           <div class="light-card">
@@ -86,7 +86,7 @@ layout: front_page
                   {%capture prop_value %}{{prop[1]}}{%endcapture%}
                   {%capture prop_icon %}{{site.data.product_properties[prop_key]["icon"] |default: "src/pictos/properties/default.svg"}}{%endcapture%}
 
-                  <div class="font-weight-bold">
+                  <div class="fw-bold">
                     {%svg {{prop_icon}} width=48 fill=currentColor; %}
                     <span class="text-secondary">{{site.data.product_properties[prop_key][page.lang] |default: prop_key}}</span>
                   </div>
@@ -95,16 +95,16 @@ layout: front_page
                         <div>
                           {% picture grid "{{page.sketch}}"
                           class="img-fluid"
-                          --alt illustration d'une borne holographique iris 46 
+                          --alt illustration d'une borne holographique 
                           %}
                         </div>
                       {% else %}
-                        <div class="text-right">
+                        <div class="text-end">
                           {{prop_value}}
                         </div>                        
                       {% endif %}
                     {% else %}
-                      <div class="text-right">
+                      <div class="text-end">
                         {{prop_value}}
                       </div>                        
                     {% endif %}

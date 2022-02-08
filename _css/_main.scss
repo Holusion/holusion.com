@@ -29,6 +29,10 @@ body{
   background-color: $light;
 }
 
+a{
+  text-decoration: none;
+}
+
 #content{
   min-height:60vh;
 }

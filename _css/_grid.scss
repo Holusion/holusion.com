@@ -13,7 +13,7 @@
       ". white  title   end"
       "image image content  end";
 
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(xl){
       grid-template-columns: 0px [col-start] auto [col-end] 0px;
       grid-template-areas: 
         ". white ."
@@ -26,7 +26,7 @@
       grid-template-areas: 
         "white white title end"
         "start content image image"; 
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         grid-template-areas: 
           "white  title  ."
            ".      image  ."
@@ -40,7 +40,7 @@
     
     &.section-white{
       color: $dark;
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         background-color: white;
       }
       &::before{
@@ -61,12 +61,12 @@
       grid-area: content;
       /* if no title, a content-padding is required */
       padding: ($margin * 2 / 3) $padding;
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         padding: $padding;
         margin-bottom: $margin/2;
       }
       &.slide{       
-        @include media-breakpoint-down(lg){
+        @include media-breakpoint-down(xl){
           padding: 0;
           grid-area: image;
           z-index: 2;
@@ -78,11 +78,11 @@
           }
           &:last-child{
             margin-bottom: 25vh;
-            @include media-breakpoint-down(lg){
+            @include media-breakpoint-down(xl){
               margin-bottom: 75vh;
             }
           }
-          @include media-breakpoint-down(lg){
+          @include media-breakpoint-down(xl){
             padding: $padding;
             background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: saturate(180%) blur(18px);
@@ -133,7 +133,7 @@
         object-fit:cover;
         object-position: right;
       }
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         margin-bottom: 0;
         &.cover{
           height: auto;
@@ -149,7 +149,7 @@
       display: block;
       z-index: 1;
       margin-bottom: -$margin*2;
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         margin-bottom: -($margin / 2);
       }
       & > .sticky-content {
@@ -182,7 +182,7 @@
             }
             &.rounded {
               border-radius: 50px 0px 0px 50px !important;
-              @include media-breakpoint-down(lg){
+              @include media-breakpoint-down(xl){
                 border-radius: 0px !important;
               }
             }
@@ -241,7 +241,7 @@
       "white title title end"
       "start image image end"
       "start content content end";
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         grid-template-areas:
         ". title ."
         ". image ."
@@ -253,12 +253,12 @@
       .section-center--header{
         position: relative;
         left: -75px;
-        @include media-breakpoint-down(lg){
+        @include media-breakpoint-down(xl){
           left:0px
         }
         & > img, & > picture>img{
           width: 150px;
-          @include media-breakpoint-down(xs){
+          @include media-breakpoint-down(sm){
             display: none;
           }
         }
@@ -271,7 +271,7 @@
       .content{
         border-left : 2px solid black;
         margin-left: 3rem;
-        @include media-breakpoint-down(lg){
+        @include media-breakpoint-down(xl){
           margin-left: 0;
           border: none;
         }

@@ -7,13 +7,13 @@
     flex-direction: column;
     border: none;
     border-radius: 0;
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(lg){
         flex-direction: row;
         .card-img{
             flex:2;
         }
     }
-    @include media-breakpoint-down(sm){
+    @include media-breakpoint-down(md){
         flex-direction: column;
         picture{
             flex:1;
@@ -36,7 +36,7 @@
         flex:1;
         height: auto;
         padding: 2rem 3rem;
-        @include media-breakpoint-down(xs){
+        @include media-breakpoint-down(sm){
         padding: 2rem 2rem;
         }
     }

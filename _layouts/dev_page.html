@@ -5,7 +5,7 @@ layout: front_page
 <div id="dev-layout" class="sidebar-layout main-dark py-5">
 
     <nav class="content-bar bg-faded navbar-dark navbar-expand-lg">
-      <div class="collapse navbar-collapse flex-column text-left align-items-stretch" id="sidebar" aria-expanded="false">
+      <div class="collapse navbar-collapse flex-column align-items-stretch" id="sidebar" aria-expanded="false">
         {% include utils/make_pages.html %}
         {% assign categories = "toolbox,content,keynotes" |split: "," %}
         {% devnav list=site.content_dev %}

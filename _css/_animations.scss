@@ -91,7 +91,7 @@
   perspective: 600px;
   margin-top: $size*1.2;
   z-index: 100;
-  @include media-breakpoint-down(lg){
+  @include media-breakpoint-down(xl){
     width: $size*2;
     height: $size*2;
     margin-top: $size*2*1.2;
@@ -103,7 +103,7 @@
     transform-style: preserve-3d;
     transform: rotate3d(1, 1, 0, 45deg);
     animation: turn 10s linear infinite;
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(xl){
       width: $size*2;
       height: $size*2;
     }
@@ -115,7 +115,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         width: $size*2;
         height: $size*2;
       }
@@ -123,42 +123,42 @@
     .cube-front {
       background: $blue;
       transform: translateZ($size/2);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         transform: translateZ($size);
       }
     }
     .cube-back {
       background: $blue;
       transform: translateZ(-$size/2) rotateY(180deg);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         transform: translateZ(-$size) rotateY(180deg);
       }
     }
     .cube-left {
       background: $light-blue;
       transform: translateX(-$size/2) rotateY(-90deg);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         transform: translateX(-$size) rotateY(-90deg);
       }
     }
     .cube-right {
       background: $dark-blue;
       transform: translateX($size/2) rotateY(90deg);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         transform: translateX($size) rotateY(90deg);
       }
     }
     .cube-top {
       background: $light-blue;
       transform: translateY(-$size/2) rotateX(90deg);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         transform: translateY(-$size) rotateX(90deg);
       }
     }
     .cube-bottom {
       background: $dark-blue;
       transform: translateY($size/2) rotateX(-90deg);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(xl){
         transform: translateY($size) rotateX(-90deg);
       }
     }

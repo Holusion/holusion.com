@@ -38,27 +38,27 @@ En visitant la boutique en ligne des cookies additionels suivants seront enregis
   <tbody>
     <tr>
       <td class="text-muted">cookieconsent_status</td>
-      <td class="text-right"><a href="/fr/about/">Holusion</a></td>
+      <td class="text-end"><a href="/fr/about/">Holusion</a></td>
       <td>Stocke une trace de visites précédente où les informations de politique de confidentialité ont été montrées</td>
     </tr>
     <tr>
       <td class="text-muted">lang</td>
-      <td class="text-right"><a href="/fr/about/">Holusion</a></td>
+      <td class="text-end"><a href="/fr/about/">Holusion</a></td>
       <td>Stocke le language préféré de l'utilisateur si différent de celui du navigateur</td>
     </tr>
     <tr>
       <td class="text-muted">__stripe_mid</td>
-      <td class="text-right"><a href="https://stripe.com/fr/privacy">Stripe</a></td>
+      <td class="text-end"><a href="https://stripe.com/fr/privacy">Stripe</a></td>
       <td>Utilisé par Stripe pour gérer le paiement en ligne sur la <a href="/fr/store/">boutique</a></td>
     </tr>
     <tr>
       <td class="text-muted">__stripe_sid</td>
-      <td class="text-right"><a href="https://stripe.com/fr/privacy">Stripe</a></td>
+      <td class="text-end"><a href="https://stripe.com/fr/privacy">Stripe</a></td>
       <td>Utilisé par Stripe pour gérer le paiement en ligne sur la <a href="/fr/store/">boutique</a></td>
     </tr>
     <tr>
       <td class="text-muted">snipcart_order_token</td>
-      <td class="text-right"><a href="https://cdn.snipcart.com/legal/dpa.pdf">Snipcart</a></td>
+      <td class="text-end"><a href="https://cdn.snipcart.com/legal/dpa.pdf">Snipcart</a></td>
       <td>Utilisé par Snipcart pour gérer le panier dans la <a href="/fr/store/">boutique</a></td>
     </tr>
   </tbody>

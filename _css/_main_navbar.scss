@@ -45,7 +45,7 @@
     }
   }
 
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(lg){
     a#home-logo{
       width: 40px;
     }
@@ -55,7 +55,7 @@
     }
   }
   /* collapsed navbar */
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(md){
     a#home-logo{
       width: 50px*3.18; /* 3.18 is the image's aspect-ratio */
     }
