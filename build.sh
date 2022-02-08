@@ -188,6 +188,6 @@ if ${make_pack} ;then
   sed 's|/static/fonts/|fonts/|g' _site/css/theme.css > dist/theme.css
   sed 's|/static/fonts/|fonts/|g' _site/css/theme.css.map > dist/theme.css.map
   cp -r static/fonts/ dist/fonts
-  cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/
+  cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js* dist/
   sed 's|../node_modules/|~|' _css/_variables.scss > dist/_variables.scss
 fi

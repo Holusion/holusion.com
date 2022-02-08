@@ -5,7 +5,7 @@ if (hash) {
   console.info("page hash : ", hash);
   $('A.nav-link[href="' + hash + '"]').tab('show');
 }
-$('A.nav-link[data-toggle="tab"][href^="#"]').on("click",function(e){
+$('A.nav-link[data-bs-toggle="tab"][href^="#"]').on("click",function(e){
   if(typeof history.pushState === "function"){
     history.pushState(null, null, e.target.hash);
   }else{

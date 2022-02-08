@@ -2,24 +2,24 @@
   <div class="container jumbotron bg-white text-dark shadow my-0 py-">
 
   <div id="section-pricing-content" class="main-header-body container p-0">
-    <div class="pricing-grid content shadow rounded bg-white row no-gutters">
+    <div class="pricing-grid content shadow rounded bg-white row g-0">
       <div class="pricing-grid-brand navbar-brand text-secondary text-center text-lg-left">Discover our offers</div>
       <nav role="navigation" id="pricing-grid-nav" class="pricing-grid-aside">
         <ul class="nav d-flex flex-row flex-xl-column">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#products" role="tab" aria-controls="produits">
+            <a class="nav-link active" data-bs-toggle="tab" href="#products" role="tab" aria-controls="produits">
               {% svg _assets/icons/ui/resize-24px.svg %}
               Renting/buying
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#models" role="tab" aria-controls="maquettes">
+            <a class="nav-link" data-bs-toggle="tab" href="#models" role="tab" aria-controls="maquettes">
               {% svg _assets/icons/ui/apartment-24px.svg %}
               Models
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#admin" role="tab" aria-controls="administration">
+            <a class="nav-link" data-bs-toggle="tab" href="#admin" role="tab" aria-controls="administration">
               {% svg _assets/icons/ui/transfer-24px.svg %}
               Administration
             </a>
@@ -50,7 +50,7 @@
                   {% for product in site.data.pricing.products %}
                     <td>
                       <span>Starting:</span>
-                      <h5 class="text-right text-secondary"><span class="priceTag"> {{product.price}}</span>€ <br class="d-md-none">w/o VAT</h5>
+                      <h5 class="text-end text-secondary"><span class="priceTag"> {{product.price}}</span>€ <br class="d-md-none">w/o VAT</h5>
                     </td>
                   {% endfor %}
                   </tr>
@@ -58,8 +58,8 @@
                   {% for product in site.data.pricing.products %}
                     <td>
                       <span>prefer to rent?</span>
-                      <h6 class="text-right text-secondary italic"><span class="priceTag"> {{product.renting}}</span>€ <br class="d-md-none">w/o VAT</h6>
-                      <small class="d-block w-100 text-right">3 days renting</small>
+                      <h6 class="text-end text-secondary italic"><span class="priceTag"> {{product.renting}}</span>€ <br class="d-md-none">w/o VAT</h6>
+                      <small class="d-block w-100 text-end">3 days renting</small>
                     </td>
                   {% endfor %}
                 </tr>
@@ -76,7 +76,7 @@
                 </tr>
                 <tr>
                   {% for product in site.data.pricing_en.products %}
-                    <td class="text-right"><a href="{{product.url}}">About</a></td>
+                    <td class="text-end"><a href="{{product.url}}">About</a></td>
                   {% endfor %}
                 </tr>
                 <tr>
@@ -97,7 +97,7 @@
               </tbody>
             </table>
           </div>
-          <div class="w-100 text-right px-2 quotation">
+          <div class="w-100 text-end px-2 quotation">
           <a href="/fr/products/">All of our products</a><br/>
             {% include components/contact_button.html txt="Get your quotation"%}
           </div>
@@ -123,8 +123,8 @@
                 <tr>
                   {% for model in site.data.pricing_en.models %}
                     <td>
-                      <h5 class="text-right text-secondary"><span class="priceTag">{{model.price}}</span> €</h5>
-                      <small class="d-block w-100 text-right">per model</small>
+                      <h5 class="text-end text-secondary"><span class="priceTag">{{model.price}}</span> €</h5>
+                      <small class="d-block w-100 text-end">per model</small>
                     </td>
                   {% endfor %}
                 </tr>
@@ -168,7 +168,7 @@
 
                 <tr>
                   {% for model in site.data.pricing_en.models %}
-                    <td class="text-right">{% include components/contact_button.html txt="Contact us"%}</td>
+                    <td class="text-end">{% include components/contact_button.html txt="Contact us"%}</td>
                   {% endfor %}
                 </tr>
               </tbody>
@@ -199,9 +199,9 @@
                   {% for service in site.data.pricing_en.services %}
                     <td>
                       <span>{{service.note}}</span>
-                      <h5 class="text-right text-secondary">{{service.price}}</h5>
+                      <h5 class="text-end text-secondary">{{service.price}}</h5>
                       {% if service.yearly %}
-                        <small class="d-inline-block w-100 text-right">12 months commitment </small>
+                        <small class="d-inline-block w-100 text-end">12 months commitment </small>
                         {% endif %}
                     </td>
                   {% endfor %}
@@ -219,7 +219,7 @@
                 </tr>
                 <tr>
                   {% for service in site.data.pricing_en.services %}
-                    <td class="text-right">{% include components/contact_button.html txt="contact us"%}</td>
+                    <td class="text-end">{% include components/contact_button.html txt="contact us"%}</td>
                   {% endfor %}
                 </tr>
               </tbody>

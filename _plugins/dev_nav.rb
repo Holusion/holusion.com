@@ -120,9 +120,9 @@ module Jekyll
 
           markup += %(
             <a class="dropdown-toggle" role="button"
-              data-toggle="collapse"  aria-haspopup="true"
+              data-bs-toggle="collapse"  aria-haspopup="true"
               aria-expanded="#{is_active ? "true" : "false"}"
-              data-target="#collapseList#{uid}"
+              data-bs-target="#collapseList#{uid}"
               aria-expanded="#{ is_active ? "true" : "false"}"
               aria-controls="collapseList#{uid}">
               #{title}

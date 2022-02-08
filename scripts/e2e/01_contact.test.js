@@ -38,7 +38,7 @@ const faker = require("faker");
       expect(this.form).to.be.ok;
     })
     it("can close contact form", async function(){
-      await page.click('#contactform-modal [data-dismiss="modal"]');
+      await page.click('#contactform-modal [data-bs-dismiss="modal"]');
       await page.waitForSelector("#contactform-modal:not(.show)");
     })
     //Accept various types of fake data

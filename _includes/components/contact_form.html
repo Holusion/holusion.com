@@ -7,16 +7,16 @@
 {% assign default_contact_strings = site.data.contact_form_locale %}
 
 <!-- USAGE
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactform-modal">foo</button>;
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactform-modal">foo</button>;
 -->
 <div id="contactform-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
 
     <div class="modal-dialog bg-light text-dark" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h4 id="contactModalLabel" class="modal-title w-100 font-weight-bold text-primary">Contact</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <h4 id="contactModalLabel" class="modal-title w-100 text-primary">Contact</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span class="visually-hidden" aria-hidden="true">Close</span>
           </button>
         </div>
 

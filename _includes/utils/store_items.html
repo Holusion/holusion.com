@@ -3,7 +3,7 @@
   <h3 class="">
     {{section[page.lang]}}
   </h3>
-  <div class="row no-gutters">
+  <div class="row g-0">
     {% for item in items %}
       <div data-test="store-item-card" class="store-card dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
         <a href="{{item.url}}">
@@ -22,7 +22,9 @@
           <h4>{{ item.price }} € <span >HT</span></h4>
         {%endif%}
         <p>{{ item.abstract }}</p> 
-        <a class="mt-auto" href="{{item.url}}"> <button class="btn btn-info">{{item.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
+        <a class="m-auto btn btn-info text-white" href="{{item.url}}">
+          {{item.action| default:site.data.strings["read-more"][page.lang] }}
+        </a>
       </div>
     {% endfor %}
   </div>

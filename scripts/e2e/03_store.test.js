@@ -35,16 +35,17 @@ const faker = require("faker");
       }catch(e){}
     });
     it("can navigate to an item", async function(){
-      await page.click(`[data-test="store-item-card"] [href="/${lang}/store/pixel"]`);
+      await page.click(`[data-test="store-item-card"] A[href="/${lang}/store/pixel"]`);
       await page.waitForSelector(`[data-test="store-item"]`);
     });
 
     it("can add this item to the cart", async function(){
+      await page.waitForSelector(`[data-test="store-add"]`, {timeout: 500});
       await page.click(`[data-test="store-add"]`);
     });
     it("opens the snipcart layout", async function(){
-      await page.waitForSelector(".snipcart-modal__container", {visible: true});
-      await page.waitForSelector(".snipcart-item-line");
+      await page.waitForSelector(".snipcart-modal__container", {visible: true, timeout:2000});
+      await page.waitForSelector(".snipcart-item-line", {timeout:4000});
     });
     it("cart is no longer empty", async function(){
       let items = await page.$$eval(`[data-test="snipcart-items"]`, cartItems=>{

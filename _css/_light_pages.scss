@@ -79,7 +79,7 @@ section.title {
         margin-left: 65%;
       }
   }
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(lg){
     .main-header-body, .main-header-body.body-right, .main-header-body.body-left{
       width:100%;
       /* those props are defined in other media-queries and we need to make sure they apply here */
@@ -191,7 +191,7 @@ section.title {
     }
   }
 
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(lg){
     .main-header-overlay{
       padding: 7.5px 2px;
     }
@@ -215,7 +215,7 @@ section.title {
       }
     }
   }
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(md){
     .main-header-overlay .main-header-overlay-text h1{
       font-size: 1rem;
       padding: 0 4px;

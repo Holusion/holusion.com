@@ -8,7 +8,7 @@
   grid-area: title; 
   margin-top: 3.5rem;
   z-index: 1;
-  @include media-breakpoint-down(xs){
+  @include media-breakpoint-down(sm){
     grid-area: content;
     margin-top: 0;
   }

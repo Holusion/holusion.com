@@ -72,7 +72,7 @@ layout: store
   <section id="goto-properties" class="section section-center">
     <h2>{{site.data.strings.characteristics[page.lang]}}</h2>
     <div class="content">
-      <div class="row no-gutters m-0">
+      <div class="row g-0 m-0">
         {% for prop_group in page.properties %}
         <div class="col-md px-md-2 py-3 py-md-0">
             <div class="p-3">
@@ -86,7 +86,7 @@ layout: store
                 <div>
                   <hr>
                     <div>
-                      <span class="text-secondary font-weight-bold">{{site.data.product_properties[prop_key][page.lang] |default: prop_key}}</span> : <span>{{prop_value}}</span>                    
+                      <span class="text-secondary fw-bold">{{site.data.product_properties[prop_key][page.lang] |default: prop_key}}</span> : <span>{{prop_value}}</span>                    
                     </div>
                 </div>
               {%endfor%}
@@ -103,7 +103,7 @@ layout: store
   <div class="content">
     <p> {{site.data.strings.return-policy-text[page.lang]}}</p>
     <p class="text-center">
-      <button class="btn btn-outline-info" style="cursor:pointer" onclick="displayContactForm()">
+      <button class="btn btn-outline-info" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">
         {{site.data.strings.contact-us[page.lang]}}
       </button>
     </p>

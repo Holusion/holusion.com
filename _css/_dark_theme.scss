@@ -10,9 +10,9 @@
 
     a{
         color:$cyan;
-            &:hover{
-                color: lighten($cyan, 10);
-            }
+        &:hover{
+            color: lighten($cyan, 10);
+        }
     }
     
     h4{

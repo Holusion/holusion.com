@@ -2,7 +2,7 @@
 
 .timeline{
     border-left: 2px solid $dark-blue;
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(xl){
         border: none;
     }
     .timeline--point{

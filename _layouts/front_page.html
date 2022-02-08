@@ -47,10 +47,7 @@
   <!-- CSS Loading -->
   <link href="/css/style.css{%if site.build_id%}?id={{site.build_id}}{%endif%}" rel="stylesheet">
 
-  {%- comment -%}jquery is only used as a bootstrap dependency. Please avoid binding the site to it {%- endcomment -%}
-  <script defer="" src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script defer="" src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script defer="" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script defer="" src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   {% include favicons.html url="/static/img/icons/favicons" %}
   {% include utils/make_pages.html %}
@@ -61,8 +58,8 @@
   <nav id="navbar-top" class="navbar navbar-expand-md fixed-top navbar-dark" role="navigation">
       <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="visually-hidden">Toggle navigation</span>
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-header">
@@ -71,7 +68,7 @@
           </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
-          <ul class="nav navbar-nav mr-auto" role="menu">
+          <ul class="nav navbar-nav me-auto" role="menu">
             {% comment %} Links floating to the left come here {%endcomment %}
           </ul>
           <ul class="nav navbar-nav" role="menu">
@@ -101,9 +98,11 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-4 pt-4">
-            <button class="btn btn-info" style="margin-top:-0.5rem"><a id="navbar-contact-button" onclick='displayContactForm()' class="contact-link"><h3 class="block-title text-white m-0">{{site.data.strings["contact-us"][page.lang]}}</h3></a></button> 
+            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+              <h3 class="block-title text-white m-0">{{site.data.strings["contact-us"][page.lang]}}</h3>
+            </button>
             <ul class="navbar-nav" style="margin-top:1rem">
-              <li><a id="navbar-contact-button" onclick='displayContactForm()' class="contact-link">contact@holusion.com</a></li>
+              <li><a id="navbar-contact-button" data-bs-toggle="modal" data-bs-target="#contactform-modal" class="contact-link">contact@holusion.com</a></li>
               <li><a href="tel:+33972424451">
                 <span itemprop="telephone" >+33 (0)9 72 42 44 51</span>
               </a></li>
