@@ -1,7 +1,8 @@
 ---
 title: Holusion - Holographic showcase
 image: /static/img/posts/ralph_lauren/header.jpg
-abstract: How Ralph Lauren designed its hologram on 5th Avenuetags: marketing real size event
+abstract: How Ralph Lauren designed its hologram on 5th Avenue
+tags: marketing real size event
 ---
 <center>
 
@@ -11,7 +12,7 @@ abstract: How Ralph Lauren designed its hologram on 5th Avenuetags: marketing r
 
 <div class="row">
   <div class="col-md-6">
-    <div class="embed-responsive embed-responsive-16by9">
+    <div class="ratio ratio-16x9">
     <iframe src="https://player.vimeo.com/video/138104608?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </div>

@@ -1,7 +1,8 @@
 ---
 title: Vitrine holographique
 image: /static/img/posts/ralph_lauren/header.jpg
-abstract: Comment Ralph Lauren a réalisé une installation holographique en vitrinetags: commerce taille humaine evenementiel
+abstract: Comment Ralph Lauren a réalisé une installation holographique en vitrine
+tags: commerce taille humaine evenementiel
 ---
 <center>
 <h2>Un boxeur presque réel</h2>
@@ -9,7 +10,7 @@ abstract: Comment Ralph Lauren a réalisé une installation holographique en vit
 
 <div class="row">
   <div class="col-md-6">
-    <div class="embed-responsive embed-responsive-16by9">
+    <div class="ratio ratio-16x9">
     <iframe src="https://player.vimeo.com/video/138104608?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </div>
