@@ -18,6 +18,21 @@
     ],
     "redirects": [
       {"regex": "^/dev/(?P<lang>fr|en)/(toolbox|content|search)/.+", "destination": "/:lang/dev/", "type": 301}
+    ],
+    "headers": [ 
+      {
+        "source": "**/*.@(ttf|woff|woff2)",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      }, {
+        "source": "/assets/**/*.@(jpg|png|webp)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      }
     ]
   },
   "functions": {
