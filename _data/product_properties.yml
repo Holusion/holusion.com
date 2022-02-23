@@ -112,3 +112,6 @@ finish:
 connect:
   fr: connectiques
   en: connections
+supported_formats: 
+  fr: Formats supportés
+  en: Supported formats

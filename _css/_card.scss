@@ -66,6 +66,8 @@
         font-weight: 300;
     }
     img{
+        object-fit: cover;
+        aspect-ratio: 16 / 9;
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
