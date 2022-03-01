@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 const { expect } = require("chai");
 const faker = require("faker");
 
@@ -54,6 +52,27 @@ const faker = require("faker");
       expect(items, `No snipcart item total count found`).to.have.property("length").above(0);
       for(let item of items){
         expect(item).to.equal("1");
+      }
+    });
+    it("can go to checkout", async function(){
+      await page.click("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 1000});
+    });
+    it("phone number into custom field", async function(){
+      let ref = `#snipcart-billing-form INPUT[name="phoneNumber"]`;
+      let locales = ["fr"];
+      for(let i=0; i<9; i++){
+        locales.push(faker.random.locale());
+      }
+      for(let locale of locales){
+        faker.locale = locale;
+        let number = faker.phone.phoneNumber();
+        await page.type(ref, number);
+        expect(await page.$eval(ref, e=>{
+          let valid = e.checkValidity(); 
+          e.value = '';
+          return valid;
+        }), `Phone number "${number}" from locale "${locale}" is considered invalid`).to.be.true;
       }
     });
   });
