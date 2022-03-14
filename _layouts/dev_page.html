@@ -2,9 +2,12 @@
 layout: front_page
 ---
 
-<div id="dev-layout" class="sidebar-layout main-dark py-5">
+<div id="dev-layout" class="sidebar-layout main-dark py-lg-5 pb-4">
 
     <nav class="content-bar bg-faded navbar-dark navbar-expand-lg">
+      <button class="navbar-toggler dropdown-toggle my-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span>Navigation</span>
+      </button>
       <div class="collapse navbar-collapse flex-column align-items-stretch" id="sidebar" aria-expanded="false">
         {% include utils/make_pages.html %}
         {% assign categories = "toolbox,content,keynotes" |split: "," %}
@@ -18,5 +21,5 @@ layout: front_page
     {%endif %}
 
     {{ content }}
-  </main>
+  </main> 
 </div>
