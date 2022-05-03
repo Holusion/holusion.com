@@ -115,7 +115,7 @@ describe("integration tests", function(){
     describe("embeds check", ()=>{
       it("gdoc", async ()=>{
         const matches = contentFiles.map(c=>{
-          return Array.from(c.content.matchAll(/div id="dgoc-placeholder" data-id="([^"]*)"/mg));
+          return Array.from(c.content.matchAll(/div id="iframe" data-id="([^"]*)"/mg));
         })
         .map((matches, fileIndex)=> matches.map(m=> ({
           id:m[1], 
