@@ -85,7 +85,7 @@
         res.text().then(txt=>{
           if(res.ok){
             logInfo('alert-success', txt);
-            closeForm();
+            //closeForm();
           }else{
             logInfo("alert-danger",localize("got_error")+" : "+txt);
 

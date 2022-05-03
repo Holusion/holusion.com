@@ -47,7 +47,7 @@ module.exports = (req, res)=>{
 
   //FIXME more anti-abuse rules needed
   if(5000 < req.body.comments.length || req.body.comments.length < 20){
-    return res.status(400).send(errorStrings[lang][einvcomments]);
+    return res.status(400).send(errorStrings[lang]["einvcomments"]);
   }
 
   app.firestore().collection("mail").add({
