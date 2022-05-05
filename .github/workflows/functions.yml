@@ -6,7 +6,11 @@ on:
     paths:
      - "functions/**"
      - ".github/workflows/functions.yml"
-
+env:
+  NODE_VERSION: 12
+defaults:
+  run:
+    working-directory: functions
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,23 +18,25 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: "${{ env.NODE_VERSION }}"
       - name: npm cache
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node12-${{ hashFiles('functions/package-lock.json') }}
+          key: ${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('functions/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node12-
+            ${{ runner.os }}-node${{ env.NODE_VERSION }}-
+      - name: install base dependencies
+        working-directory: ./
+        run: npm i --global firebase-tools@$(node -e 'process.stdout.write(require("./package.json").devDependencies["firebase-tools"])')
       - name: install functions dependencies
-        run: |
-          npm ci
+        run: npm ci
+      - name: run eslint
+        run: npm run lint
       - name: test functions
-        run: |
-          cd functions
-          npm run lint
-          npm test
+        run: npm test
       - name: deploy
+        working-directory: ./
         env:
           # it is revoked if it has not been used for 6 months
           # Generate a new one from command line using `firebase login:ci` and update it on Github
