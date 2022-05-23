@@ -6,34 +6,42 @@ on:
     paths:
      - "functions/**"
      - ".github/workflows/functions.yml"
-
+env:
+  NODE_VERSION: 12
+  GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/.serviceAccount.json
+defaults:
+  run:
+    working-directory: functions
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 4
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: "${{ env.NODE_VERSION }}"
       - name: npm cache
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node12-${{ hashFiles('functions/package-lock.json') }}
+          key: ${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('functions/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node12-
-      - name: install functions dependencies
-        run: |
-          npm ci
-      - name: test functions
-        run: |
-          cd functions
-          npm run lint
-          npm test
-      - name: deploy
+            ${{ runner.os }}-node${{ env.NODE_VERSION }}-
+      - name: export google credentials to a file
         env:
-          # it is revoked if it has not been used for 6 months
-          # Generate a new one from command line using `firebase login:ci` and update it on Github
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_ACCOUNT: "${{ secrets.FIREBASE_ACCOUNT_KEY }}"
+        run: echo "$FIREBASE_ACCOUNT" > $GOOGLE_APPLICATION_CREDENTIALS
+      - name: install base dependencies
+        working-directory: ./
+        run: npm i --global firebase-tools@latest
+      - name: install functions dependencies
+        run: npm ci
+      - name: run eslint
+        run: npm run lint
+      - name: test functions
+        run: npm test
+      - name: deploy
+        working-directory: ./
         run: |
-          npx firebase --token "$FIREBASE_TOKEN" deploy --only functions
+          npx firebase deploy --only functions
