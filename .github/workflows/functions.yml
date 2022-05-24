@@ -7,7 +7,7 @@ on:
      - "functions/**"
      - ".github/workflows/functions.yml"
 env:
-  NODE_VERSION: 12
+  NODE_VERSION: 16
   GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/.serviceAccount.json
 defaults:
   run:
