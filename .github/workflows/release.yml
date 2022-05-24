@@ -30,10 +30,10 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles( '.ruby-version' ) }}-gems-${{ hashFiles( '**/Gemfile.lock' ) }}
       # require strict cache hit, otherwise we get some Illegal Instruction errors
 
-    - name: Use Node.js 12.x
+    - name: Use Node.js 16.x
       uses: actions/setup-node@v2
       with:
-        node-version: 12.x
+        node-version: 16.x
         registry-url: https://registry.npmjs.org/
 
 
@@ -41,9 +41,9 @@ jobs:
       uses: actions/cache@v1
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-node12-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node16-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node12-
+          ${{ runner.os }}-node16-
 
     # Dependencies
 
