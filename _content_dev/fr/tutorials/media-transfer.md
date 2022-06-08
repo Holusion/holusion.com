@@ -5,7 +5,7 @@ abstract: Transférer une vidéo vers votre produit
 rank: 4
 ---
 
-# Envoi d'une vidéo vers votre produit holusion
+# Envoi d'une vidéo vers votre produit Holusion
 
 Ce tutoriel suppose que vous sachiez vous connecter à votre produit et le trouver sur le réseau. Il nécessite un navigateur à jour (Chrome/Safari/Firefox/Edge) et peut être réalisé depuis un ordinateur ou un smartphone.
 

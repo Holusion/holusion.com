@@ -7,7 +7,7 @@ rank: 2
 ---
 
 
-Ce guide vous permettra de connecter un nano-routeur **TP-LINK TL-WR802N** à votre produit. Ces routeurs compacts sont proposés en option et peuvent être achetés séparément. Si vous ne disposez pas d'un routeur portable, vous pouvez utiliser la méthode de [connexion directe](connect-direct-windows).
+Ce guide vous permettra de connecter un nano-routeur **TP-LINK TL-WR802N** à votre produit. Ces routeurs compacts sont proposés en option et peuvent être <a href="/fr/store/router">achetés séparément</a>. Si vous ne disposez pas d'un routeur portable, vous pouvez utiliser la méthode de [connexion directe](connect-direct-windows).
 
 ## Matériel nécessaire :
 
@@ -27,7 +27,7 @@ Brancher le routeur. Connecter les câble ethernet et USB à votre produit.
 <div class="row">
   <div class="col-12 col-md-6">
     <code>Pour le modèle TL-WR802N</code>
-    <p>Se connecter au wifi en utilisant le SSID/Password noté au dos du routeur.</p>
+    <p>Se connecter au wifi en utilisant le SSID/Password notés au dos du routeur.</p>
     <p>La connexion sera généralement marquée comme limitée.</p>
   </div>
   <div class="col-12 col-md-6">

@@ -15,7 +15,7 @@ Ce tutoriel suppose que vous connaissiez les bases du logiciel : Fondamentaux, n
 
 ## Préparation
 
-Assurez-vous d'avoir installé au minimum la version [2.83](https://www.blender.org/download/releases/2-83/) de **Blender**.
+Assurez-vous d'avoir installé au minimum la version [3.1](https://www.blender.org/download/releases/3-1/) de **Blender**.
 
 
 {% include components/medias/youtube.html embed="ugUU6ntPaG8" %}

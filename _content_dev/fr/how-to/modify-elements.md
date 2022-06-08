@@ -15,4 +15,4 @@ Va modifier l'élément concerné pour le désactiver. On peut utiliser la néga
 
     PUT /playlist {"query":{"$not":{"name":"<ELEMENT_A_MODIFIER>"}},"modifier":{"$set":{"active": false }}}
 
-Va désactiver tous les éléments ne s'appellant pas comme le nom donné.
+Va désactiver tous les éléments ne s'appelant pas comme le nom donné.

@@ -17,7 +17,7 @@ Il est possible de connecter directement votre produit holusion à votre poste d
 Télécharger et installer [OpenDHCPServer](https://sourceforge.net/projects/dhcpserver/). Utiliser [l'installeur](https://sourceforge.net/projects/dhcpserver/files/Open%20DHCP%20Server%20%28Regular%29/OpenDHCPServerInstallerV1.65.exe/download) pour windows.
 <div class="row">
   <div class="col-md-8 col-sm-6">
-    <p><b>Note</b> : OpenDHCPServeur est un logiciel libre sous license <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html">GNU-GPLv2</a>. Son utilisation est autorisée dans le cadre présenté par cet article.
+    <p><b>Note</b> : OpenDHCPServeur est un logiciel libre sous licence <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html">GNU-GPLv2</a>. Son utilisation est autorisée dans le cadre présenté par cet article.
     </p>
     <p>
     Notez le répertoire utilisé par l'installeur. Décocher l'option <code class="highlighter-rouge">lancer le programme : Install as a service</code> : Nous lancerons le serveur manuellement quand nécessaire</p>
