@@ -45,7 +45,7 @@ Tout d'abord, nous allons récupérer l'ensemble de la playlist et l'afficher av
 
 Si l'on lance le programme, il affichera la liste des médias en différenciant ceux qui sont activés de ceux qui sont désactivés.
 
-Nous allons ensuite utiliser une nouvelle route : `[PUT] /control/current/{name}`. Dans le [standard HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html), la péthode PUT correspond à une création de ressource. On envoie au serveur le nom du média qu'on souhaite afficher.
+Nous allons ensuite utiliser une nouvelle route : `[PUT] /control/current/{name}`. Dans le [standard HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html), la méthode PUT correspond à une création de ressource. On envoie au serveur le nom du média qu'on souhaite afficher.
 
 La création d'une requête PUT est souvent un peu plus compliquée qu'un GET.
 
