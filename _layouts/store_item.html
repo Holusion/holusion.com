@@ -62,7 +62,13 @@ layout: store
       </span>
 
     </div>
-    {% include components/shop/link.html data=page %}
+    {% if page.stock and page.stock !="en stock" %}
+      <button class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+        <span>{{site.data.strings["quotation"][page.lang]}}</span>
+      </button>
+    {% else %}
+      {% include components/shop/link.html data=page %}
+    {% endif %}
   </div>
 </section>
 

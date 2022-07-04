@@ -1,4 +1,7 @@
 sections:
+  - name: main
+    fr: Produits phares
+    en: Featured products
   - name: product
     fr: Produits
     en: Products
