@@ -78,4 +78,4 @@ Les données recueillies sont utilisées uniquement à des fins statistiques pou
 
 ## Vos droits
 
-Vous disposez d'un droit général d'accès, de rectification ou de suppression de l'ensemble des données collectées au cours de votre utilisation de nos services. Toute demande doit être adressée par voie postale à *holusion, 99A Boulevard Constantin Descat - 59200 Tourcoing* ou par <a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">mail</a>.
+Vous disposez d'un droit général d'accès, de rectification ou de suppression de l'ensemble des données collectées au cours de votre utilisation de nos services. Toute demande doit être adressée par voie postale à *holusion, 111 av Jean Lebas - 59100 Roubaix* ou par <a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">mail</a>.
