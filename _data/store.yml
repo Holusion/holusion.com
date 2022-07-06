@@ -2,9 +2,12 @@ sections:
   - name: main
     fr: Produits phares
     en: Featured products
+  - name: helice
+    fr: Hélices holographiques
+    en: Holographic fan    
   - name: product
-    fr: Produits
-    en: Products
+    fr: Autres produits
+    en: Other products
   - name: smartphone
     fr: Goodies pour Smartphones
     en: Smartphone Goodies
