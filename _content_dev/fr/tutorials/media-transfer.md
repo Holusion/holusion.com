@@ -9,7 +9,7 @@ rank: 4
 
 Ce tutoriel suppose que vous sachiez vous connecter à votre produit et le trouver sur le réseau. Il nécessite un navigateur à jour (Chrome/Safari/Firefox/Edge) et peut être réalisé depuis un ordinateur ou un smartphone.
 
-Les instructions sont adaptées aux propriétaires d'un [Iris22](/fr/products/iris22) ou d'un [Iris32](/fr/products/iris32). Si vous possédez un produit différent, rapprochez-vous de votre contact pour connaitre les différences à appliquer
+Les instructions sont adaptées aux propriétaires d'un [Iris22](/fr/store/iris22) ou d'un [Iris32](/fr/store/iris32). Si vous possédez un produit différent, rapprochez-vous de votre contact pour connaitre les différences à appliquer
 
 Assurez-vous d'avoir une vidéo adaptée chargée sur votre terminal. Vous pouvez utiliser le résultat du tutoriel [précédent](first-steps) ou cette [vidéo d'exemple](/static/files/logo_blender.mp4).
 

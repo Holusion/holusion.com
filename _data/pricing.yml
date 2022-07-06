@@ -41,7 +41,7 @@ products:
       - 49 x 29cm
     img: "img/pricing/iris22.png"
     video: "iris22.mp4"
-    url: "/fr/products/iris22"
+    url: "/fr/store/iris22"
   - name: Iris 32"
     price: "4 500"
     renting: "1 750"
@@ -51,7 +51,7 @@ products:
       - 70 x 39cm
     img: "img/pricing/iris32.png"
     video: "iris32.mp4"
-    url: "/fr/products/iris32"
+    url: "/fr/store/iris32"
   - name: Iris 75"
     price: "23 000"
     renting: "4 950"
@@ -61,7 +61,7 @@ products:
       - 165 x 92 cm
     img: "img/pricing/iris75.png"
     video: "iris75.mp4"
-    url: "/fr/products/iris75"
+    url: "/fr/store/iris75"
 services:
   - name: Individuel
     note: Maquettes individuelles
