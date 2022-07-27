@@ -19,7 +19,7 @@
         </a>
         <h2 class="text-white mb-1">{{ item.title }}</h2>
         {%if item.price %}
-          <h4>{{ item.price }} € <span >HT</span></h4>
+          <span class="fw-bold fs-5 text-secondary">{{ item.price }} € HT</span>
         {%endif%}
         <p>{{ item.abstract }}</p> 
         <a class="m-auto btn btn-info text-white" href="{{item.url}}">
