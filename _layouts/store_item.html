@@ -66,11 +66,10 @@ layout: store
   <div class="section-title d-flex justify-content-between align-items-center">
     <div>
       <span class="product-price">
-        {{page.price | time: 1.2 | round: 2}}€
-        <span >{{ site.data.strings.store-no-vat[page.lang] }}</span>
+        {{page.price}}€<span >{{ site.data.strings.store-no-vat[page.lang] }}</span>
       </span>
-      <span class="product-price price-vat">
-        ({{page.price | times: 1.2 | round: 2}}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
+      <span class="product-price price-vat" >
+        {{page.price | remove: " "| times: 1.2 | round: 2 }}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
       </span>
 
     </div>
