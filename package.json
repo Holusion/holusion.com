@@ -1,6 +1,6 @@
 {
   "name": "@holusion/theme",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": false,
   "repository": "https://github.com/Holusion/holusion.com",
   "license": "MIT",
@@ -16,18 +16,17 @@
     "dist/"
   ],
   "devDependencies": {
-    "bootstrap": "^5.1.3",
-    "chai": "^4.2.0",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0",
+    "chai": "^4.3.6",
     "cookieconsent": "^3.0.6",
     "faker": "^4.1.0",
     "finalhandler": "^1.1.1",
-    "firebase-tools": "^8.11.2",
-    "jquery": "^3.5.1",
+    "firebase-tools": "^11.8.0",
     "js-yaml": "^4.1.0",
-    "mocha": "^9.0.0",
-    "popper.js": "^1.14.7",
-    "puppeteer": "^13.1.2",
-    "serve-static": "^1.13.2",
+    "mocha": "^10.0.0",
+    "puppeteer": "^17.0.0",
+    "serve-static": "^1.15.0",
     "xml-parser": "^1.2.1"
   }
 }
