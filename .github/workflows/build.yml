@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - "v*.*.*"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -71,6 +73,8 @@ jobs:
       run: |
         ./build.sh
     - name: test
+      # don't test on tags
+      if: "!startsWith(github.ref, 'refs/tags/v')"
       run: |
         echo "PATH : $PATH"
         ./build.sh --no-build -t
@@ -96,3 +100,9 @@ jobs:
         firebaseServiceAccount: "${{ secrets.FIREBASE_ACCOUNT_KEY }}"
         projectId: holusion-com
         channelId: live
+    - name: deploy to npmjs.org
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

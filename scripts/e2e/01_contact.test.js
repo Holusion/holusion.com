@@ -13,11 +13,7 @@ const faker = require("faker");
       await page.goto(`${global.href}/${lang}/`);
       await page.waitForSelector("#contactform-modal.is-ready");
       //Remove animations to speed up tests
-      try{
-        await page.$eval("#contactform-modal.fade", e=>{ e.classList.remove("fade")});
-      }catch(e){
-        console.warn("Eval failed with error : ", e);
-      }
+      await page.$eval("#contactform-modal.fade", e=>{ e.classList.remove("fade")});
     });
     //We don't reload the page, tests may leak
     beforeEach(async function(){
