@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         lfs: true
     - name: run apt-update
@@ -31,19 +31,19 @@ jobs:
 
     # Caches
     - name: bundler cache
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-${{ hashFiles( '.ruby-version' ) }}-gems-${{ hashFiles( '**/Gemfile.lock' ) }}
       # require strict cache hit, otherwise we get some Illegal Instruction errors
 
     - name: install nodejs      
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: 16.x
 
     - name: npm cache
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node16-${{ hashFiles('**/package-lock.json') }}
@@ -105,4 +105,4 @@ jobs:
       run: |
         npm publish --access public
       env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
