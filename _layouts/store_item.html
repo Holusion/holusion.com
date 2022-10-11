@@ -44,10 +44,15 @@ layout: store
       <a href="#goto-properties"><button class="btn btn-info">{{site.data.strings.see-more-properties[page.lang]}}</button></a>
     {% endif %}
   </div>
-  <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
-  <meta itemprop="url" content="{{page.url | absolute_url}}" />
-  <meta itemprop="price" content="{{page.price | times: 1.2 | round: 2}}"/>
-  <meta itemprop="currency" content="EUR"/>
+  <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
+    <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
+    <meta itemprop="url" content="{{page.url | absolute_url}}" />
+    <meta itemprop="price" content="{{page.price | times: 1.2 | round: 2}}"/>
+    <meta itemprop="currency" content="EUR"/>
+  </div>
+  <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
+    <meta itemprop="name" content="holusion" />
+  </div>
 </section>
 
 <section class="section section-white">
