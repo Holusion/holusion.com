@@ -21,11 +21,11 @@
     ],
     "headers": [ 
       {
-        "source": "**/*.@(ttf|woff|woff2)",
-        "headers": [ {
-          "key": "Cache-Control",
-          "value": "max-age=31536000"
-        }]
+        "source": "/static/fonts/*.@(ttf|woff|woff2)",
+        "headers": [ 
+          { "key": "Cache-Control", "value": "max-age=31536000" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
       }, {
         "source": "/assets/**/*.@(jpg|png|webp)",
         "headers": [{
