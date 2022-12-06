@@ -3,7 +3,9 @@ layout: front_page
 ---
 
 <main class="main-grid main-dark" itemscope itemtype="http://schema.org/Product" id="content">
-  <meta itemprop="brand" content="{{page.brand|default: "holusion"}}"/>
+  <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
+    <meta itemprop="name" content="holusion" />
+  </div>
   <meta itemprop="name" content="{{page.title}}"/>
 
   <section class="section section-center">
@@ -12,9 +14,10 @@ layout: front_page
 
   <section id="section-intro" class="section">
     {% picture grid {{page.image}}
+      --img itemprop="image" 
       --img class="image-shadow cover"
       data-noisetest="1"
-      --alt Hologramme At'Rouen
+      --img alt="{{page.title}}" 
     %}
 
     <div class="content main-header-body body-right">
