@@ -1,7 +1,7 @@
 ---
 title: Manuel Stèle Iris32
 abstract: 
-image: /img/store/iris32_quartz.jpg
+image: /img/products/iris32_quartz.jpg
 rank: 5
 menu: manuals
 

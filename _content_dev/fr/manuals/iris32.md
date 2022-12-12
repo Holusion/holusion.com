@@ -1,7 +1,7 @@
 ---
 title: Manuel Iris 32
 abstract: 
-image: /img/store/iris32_quartz.jpg
+image: /img/products/iris32_quartz.jpg
 rank: 2
 menu: manuals
 

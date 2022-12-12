@@ -1,7 +1,7 @@
 ---
 title: Manuel Opal
 abstract: 
-image: /img/store/opal_neige_sur_link.jpg
+image: /img/products/opal_neige_sur_link.jpg
 rank: 5
 menu: manuals
 

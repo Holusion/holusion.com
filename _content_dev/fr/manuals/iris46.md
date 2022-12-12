@@ -1,7 +1,7 @@
 ---
 title: Manuel Iris 46
 abstract: 
-image: /img/store/iris46_archi.jpg
+image: /img/products/iris46_archi.jpg
 rank: 3
 menu: manuals
 

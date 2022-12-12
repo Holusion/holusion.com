@@ -1,6 +1,6 @@
 ---
 title: First Steps
-image: img/store/iris22_blanc.jpg
+image: img/products/iris22_blanc.jpg
 abstract: Creating your first hologram
 rank: 1
 ---

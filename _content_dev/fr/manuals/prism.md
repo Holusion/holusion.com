@@ -1,7 +1,7 @@
 ---
 title: Manuel Prism
 abstract: 
-image: /img/store/Prism_v2_voiture.jpg
+image: /img/products/Prism_v2_voiture.jpg
 rank: 4
 menu: manuals
 
