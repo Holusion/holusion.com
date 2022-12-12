@@ -1,7 +1,7 @@
 ---
 title: Iris 32 user guide
 abstract: 
-image: /img/products/iris32_quartz.jpg
+image: /img/store/iris32_quartz.jpg
 rank: 2
 menu: manuals
 

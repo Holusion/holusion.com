@@ -1,7 +1,7 @@
 ---
 title: Iris 46 user guide
 abstract: 
-image: /img/products/iris46_archi.jpg
+image: /img/store/iris46_archi.jpg
 rank: 3
 menu: manuals
 

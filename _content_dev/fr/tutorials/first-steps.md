@@ -1,6 +1,6 @@
 ---
 title: Premiers pas
-image: img/products/iris22_blanc.jpg
+image: img/store/iris22_blanc.jpg
 abstract: Création de votre premier hologramme
 rank: 1
 ---

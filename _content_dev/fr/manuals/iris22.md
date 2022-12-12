@@ -1,7 +1,7 @@
 ---
 title: Manuel Iris 22
 abstract: 
-image: /img/products/iris_22.jpg
+image: /img/store/iris_22.jpg
 rank: 1
 menu: manuals
 

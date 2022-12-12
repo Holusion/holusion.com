@@ -163,7 +163,7 @@ describe("integration tests", function(){
 
   describe("front matter checks", function(){
 
-    ["store", "products"].forEach((folder=>{
+    ["store"].forEach((folder=>{
       describe(`/en/${folder}/`, function(){
         let en_files, fr_files;
         before(async function(){

@@ -1,6 +1,6 @@
 {% for section in site.data.store.sections %}
   {% assign items =  site.store_items[page.lang] | where: "category", section.name %}
-  <h3 class="">
+  <h3 id="store-{{section.name}}" class="">
     {{section[page.lang]}}
   </h3>
   <div class="row g-0">
