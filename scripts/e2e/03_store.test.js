@@ -38,7 +38,7 @@ const faker = require("faker");
     });
 
     it("can add this item to the cart", async function(){
-      await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
+      await page.waitForSelector(`#snipcart`, {timeout: 10000}), //Created when snipcart has really loaded
       await page.evaluate(()=>Snipcart.ready);
       await page.click(`[data-test="store-add"]`);
     });
