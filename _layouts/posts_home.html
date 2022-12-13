@@ -25,9 +25,12 @@ layout: front_page
             %}
           {%- endif -%}
         </a>
-        <h4>{{ post.title }}</h4>
-        <p>{{ post.abstract }}</p> 
-        <a class="mt-auto" href="{{post.url}}"> <button class="btn btn-info">{{post.action| default:site.data.strings["read-more"][page.lang] }}</button></a>
+        <div>
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.abstract }}</p> 
+          <a class="mt-auto" href="{{post.url}}"> <button class="btn btn-info">{{post.action| default:site.data.strings["read-more"][page.lang] }}</button></a>          
+        </div>
+
       </div>
       {% endfor %}
     </div>
