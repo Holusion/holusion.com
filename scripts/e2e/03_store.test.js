@@ -1,7 +1,8 @@
 'use strict';
-
+const fs = require("fs/promises");
 const { expect } = require("chai");
 const faker = require("faker");
+const path = require("path");
 
 
 
@@ -11,7 +12,22 @@ const faker = require("faker");
     let page;
 
     before(async function(){
-      page = await this.newPage({block: false});
+      page = await this.newPage({block: true});
+      let strings = await fs.readFile(path.join(__dirname, "fixtures/snipcart_fr.json"), {encoding:"utf8"});
+      page.on("request", function(interceptedRequest){
+        let url = interceptedRequest.url();
+        if(url.indexOf("cdn.snipcart.com/themes/v3.3.0/l10n/fr.json") !== -1){
+          interceptedRequest.respond({
+            status: 200,
+            contentType: "application/json",
+            headers:{
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: strings,
+          }, 1);
+        }
+        interceptedRequest.continue();
+      })
       await page.deleteCookie(... await page.cookies(`${href}/${lang}/store/`));
       await page.goto(`${href}/${lang}/store/`);
       await page.waitForSelector(`[data-test="store-main"]`);
@@ -38,7 +54,7 @@ const faker = require("faker");
     });
 
     it("can add this item to the cart", async function(){
-      await page.waitForSelector(`#snipcart`, {timeout: 10000}), //Created when snipcart has really loaded
+      await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
       await page.evaluate(()=>Snipcart.ready);
       await page.click(`[data-test="store-add"]`);
     });
