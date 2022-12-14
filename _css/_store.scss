@@ -40,4 +40,9 @@
   left: 100%;
   margin-left: -8rem;
   margin-top: -2.5rem;
+  @include media-breakpoint-down(xl){
+    height: 5rem !important;
+    margin-left: -6rem;
+    margin-top: -6rem;
+  }
 }

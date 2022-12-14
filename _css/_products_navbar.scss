@@ -13,12 +13,14 @@
 
     ul{
         display: flex;
+        flex-wrap: wrap;
         margin: 0;
+        padding: 0;
     }
     li{
         padding: 0.5rem;
         list-style: none;
-
+        font-weight: bold;
         a{
             color: $light;
         }

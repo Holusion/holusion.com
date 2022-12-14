@@ -74,7 +74,7 @@ layout: store
         {{page.price}}€<span >{{ site.data.strings.store-no-vat[page.lang] }}</span>
       </span>
       <span class="product-price price-vat" >
-        {{page.price | remove: " "| times: 1.2 | round: 2 }}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
+        ({{page.price | remove: " "| times: 1.2 | round: 2 }}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
       </span>
 
     </div>
