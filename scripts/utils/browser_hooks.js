@@ -143,7 +143,7 @@ exports.mochaHooks = {
     if(isBlocked){
       interceptedRequest.abort("failed", 0);
     }else{
-      interceptedRequest.continue();
+      interceptedRequest.continue({}, 0);
     }
   });
 }
