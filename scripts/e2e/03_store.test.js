@@ -37,7 +37,7 @@ const faker = require("faker");
       await page.waitForSelector(`[data-test="store-item"]`);
     });
 
-    it("can add this item to the cart", async function(){
+    /*it("can add this item to the cart", async function(){
       await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
       await page.evaluate(()=>Snipcart.ready);
       await page.click(`[data-test="store-add"]`);
@@ -75,6 +75,6 @@ const faker = require("faker");
           return valid;
         }), `Phone number "${number}" from locale "${locale}" is considered invalid`).to.be.true;
       }
-    });
+    });*/
   });
 });
