@@ -1,18 +1,12 @@
 posts:
-  fr: "Blog"
-  en: "Blog"
+  fr: "Histoires"
+  en: "Use Cases"
 about:
   fr: "Entreprise"
   en: "About us"
-usages:
-  fr: "Usages"
-  en: "Use Cases"
-products:
-  fr: "Produits"
-  en: "Products"
 store:
-  fr: "Store"
-  en: "Store"
+  fr: "Catalogue"
+  en: "Products"
 dev:
   fr: "Documentation"
   en: "Documentation"

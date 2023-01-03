@@ -79,7 +79,7 @@ layout: store
 
     </div>
     {% if page.stock and page.stock !="en stock" %}
-      <button class="btn btn-primary shadow disabled" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+      <button class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
         {% if page.stock and page.stock !="en stock" %}
           <span>{{page.stock}}</span>
         {% else %}
