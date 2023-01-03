@@ -141,7 +141,7 @@ exports.mochaHooks = {
       return false;
     });
     if(isBlocked){
-      interceptedRequest.respond("");
+      interceptedRequest.abort("failed", 0);
     }else{
       interceptedRequest.continue();
     }
