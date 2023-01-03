@@ -1,0 +1,28 @@
+
+.products-navbar{
+    position: sticky;
+    color: $dark;
+    top: 55px;
+    max-width: 1200px;
+    margin: auto ;
+
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        padding: 1.5rem 0.5rem;
+        list-style: none;
+        font-weight: bold;
+        a{
+            padding: 1rem 0.5rem;
+            color: $dark;
+        }
+    }
+}

@@ -34,7 +34,7 @@ tags: evenementiel formation focus
   <div class="col-md-6 col-12">
     <h2>Les hologrammes au service de la culture</h2>
 
-    <p class="rtejustify">Sceau et écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="/fr/products/focus">Focus</a> a permis au visiteur de visualiser les images innovantes à 360°.</p>
+    <p class="rtejustify">Sceau et écriture cunéiforme ont fait leur apparition en hologramme. Le <a href="/fr/store/focus">Focus</a> a permis au visiteur de visualiser les images innovantes à 360°.</p>
 
     <p class="rtejustify">Ce dernier a surtout pu donné du sens et faire le lien entre le contenu et la technologie de l'hologramme. En prenant tout son sens, l'hologramme a permis à chacun de s'immerger dans l'univers de Bagdad. Le partenariat entre Bagdad 3D et Holusion a donc contribué à donner vie à un contenu passionnant.</p>
 

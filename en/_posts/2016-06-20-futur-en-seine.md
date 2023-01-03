@@ -34,7 +34,7 @@ tags: evenementiel formation focus
   <div class="col-md-6 col-12">
     <h2>Holograms serving the culture</h2>
 
-    <p class="rtejustify">Seal and wedge-shaped writing have appeared in hologram. The <a href="/en/products/focus">Focus</a> allowed the visitors to see the novative pictures in 360°.</p>
+    <p class="rtejustify">Seal and wedge-shaped writing have appeared in hologram. The <a href="/en/store/focus">Focus</a> allowed the visitors to see the novative pictures in 360°.</p>
 
     <p class="rtejustify">This device linked together the actual content and the hologram technology. The hologram took all its sense by allowing everyone to immerse in the Bagdad universe. The Bagdad 3D partnership with Holusion contribued to a very interesting content.</p>
 

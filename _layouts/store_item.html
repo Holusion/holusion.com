@@ -17,16 +17,19 @@ layout: store
     %}
   {% endif %}
 
-  <div class="content">
+  <div class="content py-4">
     <meta itemprop="name" content="{{page.title}}"/>
     <h2 itemprop="description">{{page.abstract}}</h2>
     <p>{{page.description | markdownify}}</p>
     {% if page.stock and page.stock !="en stock" %}
-      <h4>{{page.stock}}</h4>
+      <h4 class="d-inline">{{page.stock}}</h4>
     {% else %}
-      <h4 class="text-info">{{site.data.strings.store-stock[page.lang]}}</h4>
+      <h4 class="d-inline text-info">{{site.data.strings.store-stock[page.lang]}}</h4>
     {% endif %}
-    <div>
+    {% if page.rent %}
+      <span style="font-size: 0.7rem" class="mx-2">{{site.data.strings.rent-available[page.lang]}}</span>
+    {% endif %}
+    <div class="my-4">
       <ul>
         {% if page.properties.characteristics.product_weight or page.product_weight %}
           <li>
@@ -38,11 +41,20 @@ layout: store
             {{site.data.product_properties.size[page.lang]}} : {{ page.properties.characteristics.size }}
           </li>
         {% endif %}
+        {% if page.properties %}
+          <li><a href="#goto-properties">{{site.data.strings.see-more-properties[page.lang]}}</a></li>
+        {% endif %}
       </ul>
     </div>
-    {% if page.properties %}
-      <a href="#goto-properties"><button class="btn btn-info">{{site.data.strings.see-more-properties[page.lang]}}</button></a>
+    {% if page.quotation %}
+      <div class="text-center">
+        <button class="btn btn-info shadow" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+          <span>{{site.data.strings["quotation"][page.lang]}}</span>
+        </button>      
+      </div>
+
     {% endif %}
+    
   </div>
   <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
     <meta itemprop="sku" content="{{page.title| downcase |replace: ' ','_'}}{{page.lang |upcase}}" />
@@ -59,15 +71,24 @@ layout: store
   <div class="section-title d-flex justify-content-between align-items-center">
     <div>
       <span class="product-price">
-        {{page.price | time: 1.2 | round: 2}}€
-        <span >{{ site.data.strings.store-no-vat[page.lang] }}</span>
+        {{page.price}}€<span >{{ site.data.strings.store-no-vat[page.lang] }}</span>
       </span>
-      <span class="product-price price-vat">
-        ({{page.price | times: 1.2 | round: 2}}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
+      <span class="product-price price-vat" >
+        ({{page.price | remove: " "| times: 1.2 | round: 2 }}€<span >{{ site.data.strings.store-vat[page.lang] }}</span>)
       </span>
 
     </div>
-    {% include components/shop/link.html data=page %}
+    {% if page.stock and page.stock !="en stock" %}
+      <button class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+        {% if page.stock and page.stock !="en stock" %}
+          <span>{{page.stock}}</span>
+        {% else %}
+          <span>{{site.data.strings.store-stock[page.lang]}}</span>
+        {% endif %}
+      </button>
+    {% else %}
+      {% include components/shop/link.html data=page %}
+    {% endif %}
   </div>
 </section>
 

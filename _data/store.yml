@@ -1,13 +1,19 @@
 sections:
-  - name: product
-    fr: Produits
-    en: Products
+  - name: main
+    fr: Produits phares
+    en: Featured products
+  - name: helice
+    fr: Hélices holographiques
+    en: Holographic fan
   - name: smartphone
     fr: Goodies pour Smartphones
     en: Smartphone Goodies
   - name: tablet
     fr: Goodies pour tablettes
     en: Tablet Goodies
+  - name: product
+    fr: Autres produits
+    en: Other products    
   - name: accessory
     fr: Accessoires
     en: Accessories

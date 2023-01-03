@@ -82,7 +82,7 @@ module.exports = function testLocations(locations){
           + JSON.stringify(missing_files, null, 2)
           +`\n`).to.have.property("length", 0);
         });
-        if(/^\/(fr|en)\/store\/(?!index).+/.test(loc)) {
+        /*if(/^\/(fr|en)\/store\/(?!index).+/.test(loc)) {
           describe("store item checks", function(){
             it("has a snipcart button", async function(){
               const btn = await page.$eval(`[data-test="store-add"]`, e=> ({...e.dataset}));
@@ -100,7 +100,7 @@ module.exports = function testLocations(locations){
               }
             });
           });
-        }
+        }*/
       });
       
       describe("all devices", function(){

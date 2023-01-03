@@ -37,7 +37,7 @@
         height: auto;
         padding: 2rem 3rem;
         @include media-breakpoint-down(sm){
-        padding: 2rem 2rem;
+            padding: 2rem 2rem;
         }
     }
     .price{
@@ -71,6 +71,42 @@
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
+    }
+    .btn{
+        color: $light;
+        &:hover{
+            color: $light;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        flex-direction: row;
+        h2{
+            font-size: 1.5rem;
+        }
+        >a{
+            flex:1;
+        }
+        >div{
+            flex:1;
+            text-align: left;
+            padding-left: 15px;
+        }
+        img{
+            aspect-ratio: 1 / 1;
+        }
+        .btn{
+            background: none;
+            border: none;
+            text-decoration: underline;
+            &::after{
+                content: "\1F816";
+            }
+            &:hover{
+                background: none;
+                border: none;
+                color: $light-blue;
+            }
+        }
     }
 }
 

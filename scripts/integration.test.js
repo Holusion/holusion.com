@@ -163,12 +163,12 @@ describe("integration tests", function(){
 
   describe("front matter checks", function(){
 
-    ["store", "products"].forEach((folder=>{
+    ["store"].forEach((folder=>{
       describe(`/en/${folder}/`, function(){
         let en_files, fr_files;
         before(async function(){
-          en_files = await findFrontMatters(resolve(basePath, `en/${folder}`), {match:/(?!index)\.(?:html|md)$/});
-          fr_files = await findFrontMatters(resolve(basePath, `fr/${folder}`), {match:/(?!index)\.(?:html|md)$/});
+          en_files = await findFrontMatters(resolve(basePath, `en/${folder}`), {match:/(?<!index)\.(?:html|md)$/});
+          fr_files = await findFrontMatters(resolve(basePath, `fr/${folder}`), {match:/(?<!index)\.(?:html|md)$/});
         });
         it("filter matches files", function(){
           expect(en_files).to.have.property("length").above(2);
@@ -204,7 +204,7 @@ describe("integration tests", function(){
                 let keychain = propchain?`${propchain}.${key}`: key;
                 if(!fr.hasOwnProperty(key) ){ 
                   //Keys that are allowed a less strict check
-                  if( ["layout", "lang", "rank",, "published" ].indexOf(key) == -1) continue;
+                  if( ["layout", "lang", "rank", "published" ].indexOf(key) == -1) continue;
                   errors.push(`property ${
                     keychain
                   } should also be provided in french (or deleted)`);
