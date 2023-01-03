@@ -1,13 +1,13 @@
 
 .products-navbar{
     position: sticky;
-    color: $light;
+    color: $dark;
     padding: 1rem;
     top: 55px;
     max-width: 1200px;
     margin: auto ;
 
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
 
@@ -22,7 +22,7 @@
         list-style: none;
         font-weight: bold;
         a{
-            color: $light;
+            color: $dark;
         }
     }
 }
