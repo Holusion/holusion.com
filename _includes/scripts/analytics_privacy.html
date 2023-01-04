@@ -40,6 +40,10 @@
   }
 
   //Always create cookieconsent to give revoke option
+  var ccStyle = document.createElement("link");
+  ccStyle.rel = "stylesheet";
+  ccStyle.href = "/css/cookieconsent.css";
+  document.head.appendChild(ccStyle);
   var cc = document.createElement("SCRIPT");
   cc.src = '/node_modules/cookieconsent/build/cookieconsent.min.js';
   cc.async = true;
