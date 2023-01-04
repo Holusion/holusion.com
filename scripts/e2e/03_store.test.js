@@ -4,6 +4,7 @@ const { expect } = require("chai");
 const faker = require("faker");
 const path = require("path");
 
+const timers = require("timers/promises");
 
 
 ["fr","en"].forEach((lang)=>{
@@ -41,9 +42,6 @@ const path = require("path");
           interceptedRequest.continue({}, 0);
         }
       });
-      page.on('request', request => {
-        console.log("Intercept :",request.url(), request.interceptResolutionState());
-      });
       await page.deleteCookie(... await page.cookies(`${href}/${lang}/store/`));
       await page.goto(`${href}/${lang}/store/`);
       await page.waitForSelector(`[data-test="store-main"]`);
@@ -70,7 +68,6 @@ const path = require("path");
     });
 
     it("can add this item to the cart", async function(){
-      this.timeout(120000)
       await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
       await page.evaluate(()=>Promise.any([Snipcart.ready, new Promise((ok,fail)=>setTimeout(fail,2000))]));
       await page.click(`[data-test="store-add"]`);
@@ -89,8 +86,10 @@ const path = require("path");
       }
     });
     it("can go to checkout", async function(){
+      await page.waitForSelector("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      await timers.setTimeout(200);
       await page.click("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
-      await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 1000});
+      await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 100000});
     });
     it("phone number into custom field", async function(){
       let ref = `#snipcart-billing-form INPUT[name="phoneNumber"]`;

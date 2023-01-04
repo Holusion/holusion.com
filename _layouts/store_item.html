@@ -79,12 +79,8 @@ layout: store
 
     </div>
     {% if page.stock and page.stock !="en stock" %}
-      <button class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
-        {% if page.stock and page.stock !="en stock" %}
+      <button class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#contactform-modal" data-test="store-estimate" style="margin-top:-0.5rem">
           <span>{{page.stock}}</span>
-        {% else %}
-          <span>{{site.data.strings.store-stock[page.lang]}}</span>
-        {% endif %}
       </button>
     {% else %}
       {% include components/shop/link.html data=page %}

@@ -169,7 +169,7 @@ if ${make_check} ;then
     --only-4xx \
     --disable-external \
     --internal-domains "holusion.com,test.holusion.com" \
-    --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/" \
+    --file-ignore "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/,/\/0_snipcart-templates.html$/" \
     --url-ignore "/^\/?$/" \
     --log-level :debug \
     $@
