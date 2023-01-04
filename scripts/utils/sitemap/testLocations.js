@@ -82,25 +82,27 @@ module.exports = function testLocations(locations){
           + JSON.stringify(missing_files, null, 2)
           +`\n`).to.have.property("length", 0);
         });
-        /*if(/^\/(fr|en)\/store\/(?!index).+/.test(loc)) {
+        if(/^\/(fr|en)\/store\/(?!index).+/.test(loc)) {
           describe("store item checks", function(){
             it("has a snipcart button", async function(){
-              const btn = await page.$eval(`[data-test="store-add"]`, e=> ({...e.dataset}));
+              const btn = await page.$eval(`[data-test="store-add"],[data-test="store-estimate"]`, e=> ({...e.dataset}));
               expect(btn).to.be.ok;
-              expect(btn).to.have.property("itemPrice");
-              expect(Number.isSafeInteger(parseInt(btn.itemPrice))).to.be.true;
-              expect(btn).to.have.property("itemWeight");
-              expect(Number.isSafeInteger(parseInt(btn.itemWeight))).to.be.true;
-              expect(btn).to.have.property("itemImage");
-              try{
-                const imageUrl = new URL(btn.itemImage, global.href);
-                await fs.access(path.resolve(global.local_site_files, imageUrl.pathname.slice(1)), constants.R_OK)
-              }catch(e){
-                expect.fail(`Can't access product image file : ${btn.itemImage} : ${e}`);
+              if(btn.test == "store-add"){
+                expect(btn).to.have.property("itemPrice");
+                expect(Number.isSafeInteger(parseInt(btn.itemPrice))).to.be.true;
+                expect(btn).to.have.property("itemWeight");
+                expect(Number.isSafeInteger(parseInt(btn.itemWeight))).to.be.true;
+                expect(btn).to.have.property("itemImage");
+                try{
+                  const imageUrl = new URL(btn.itemImage, global.href);
+                  await fs.access(path.resolve(global.local_site_files, imageUrl.pathname.slice(1)), constants.R_OK)
+                }catch(e){
+                  expect.fail(`Can't access product image file : ${btn.itemImage} : ${e}`);
+                }
               }
             });
           });
-        }*/
+        }
       });
       
       describe("all devices", function(){

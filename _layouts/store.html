@@ -2,8 +2,41 @@
 layout: front_page
 ---
   
-<script defer src="/static/vendor/snipcart/snipcart-v3.3.0.js"></script>
-<link href="/static/vendor/snipcart/snipcart-v3.3.0.css" rel="stylesheet" type="text/css" />
+<script>
+
+  (()=>{
+    'use strict';
+    var a=!1;
+    document.readyState==="complete"?window.addEventListener("load", r): r();
+    function r(){
+      if(a)return;a=!0;
+      let version="v3.3.0";
+      let t=document.getElementsByTagName("head")[0];
+      let e=document.querySelector("#snipcart");
+      let i=document.querySelector(`script[src$="snipcart-${version}.js"]`);
+      let n=document.querySelector(`link[href$="snipcart-${version}.css"]`);
+      e||(
+        e=document.createElement("div"),
+        e.id="snipcart",
+        e.setAttribute("hidden","true"),
+        e.dataset.apiKey="{{ site.snipcart_api_key }}",
+        e.dataset.templatesUrl='/{{page.lang|default: "en" }}/store/0_snipcart-templates.html',
+        document.body.appendChild(e)
+      );
+      i||(
+        i=document.createElement("script"),
+        i.src=`/static/vendor/snipcart/snipcart-${version}.js`,
+        i.async=!0,
+        t.appendChild(i)
+      );
+      n||(
+        n=document.createElement("link"),
+        n.rel="stylesheet",
+        n.type="text/css",
+        n.href=`/static/vendor/snipcart/snipcart-${version}.css`,t.prepend(n));
+    }
+  })();
+</script>
 
 <main data-test="store-main" class="main-dark main-grid store-layout">
 
@@ -36,17 +69,5 @@ layout: front_page
       </div>
     </div>    
   </section>
-  <div hidden id="snipcart" data-api-key="{{ site.snipcart_api_key }}">
-    <address-fields section="top">
-      <fieldset class="snipcart-form__set">
-          <div class="snipcart-form__field">
-              <snipcart-label class="snipcart__font--tiny" for="phoneNumber">
-                  Phone Number
-              </snipcart-label>
-              <snipcart-input required pattern="^(?:\+\d{1,4})?(?:[-.\s]?\(\+?\d{1,5}\))?(?:[-.\s]?\d{1,4}){2,4}[-.\s]?.*" name="phoneNumber"></snipcart-input>
-          </div>
-      </fieldset>
-    </address-fields>
-  </div>
 </main>
 

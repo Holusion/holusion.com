@@ -4,6 +4,7 @@ const { expect } = require("chai");
 const faker = require("faker");
 const path = require("path");
 
+const timers = require("timers/promises");
 
 
 ["fr","en"].forEach((lang)=>{
@@ -14,9 +15,11 @@ const path = require("path");
     before(async function(){
       page = await this.newPage({block: true});
       let strings = await fs.readFile(path.join(__dirname, "fixtures/snipcart_fr.json"), {encoding:"utf8"});
+      let session = await fs.readFile(path.join(__dirname, "fixtures/snipcart_session.json"), {encoding:"utf8"});
       page.on("request", function(interceptedRequest){
+        if (interceptedRequest.isInterceptResolutionHandled()) return;
         let url = interceptedRequest.url();
-        if(url.indexOf("cdn.snipcart.com/themes/v3.3.0/l10n/fr.json") !== -1){
+        if(/cdn\.snipcart\.com\/themes\/v3\.3\.0\/l10n\/(?:fr|en).json/.test(url)){
           interceptedRequest.respond({
             status: 200,
             contentType: "application/json",
@@ -25,9 +28,20 @@ const path = require("path");
             },
             body: strings,
           }, 1);
+        }else if(/app\.snipcart\.com\/api\/sessions/.test(url)){
+          interceptedRequest.respond({
+            status: 200,
+            contentType: "application/json",
+            headers:{
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Headers": "*"
+            },
+            body: session,
+          }, 1);
+        }else{
+          interceptedRequest.continue({}, 0);
         }
-        interceptedRequest.continue();
-      })
+      });
       await page.deleteCookie(... await page.cookies(`${href}/${lang}/store/`));
       await page.goto(`${href}/${lang}/store/`);
       await page.waitForSelector(`[data-test="store-main"]`);
@@ -53,9 +67,9 @@ const path = require("path");
       await page.waitForSelector(`[data-test="store-item"]`);
     });
 
-    /*it("can add this item to the cart", async function(){
+    it("can add this item to the cart", async function(){
       await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
-      await page.evaluate(()=>Snipcart.ready);
+      await page.evaluate(()=>Promise.any([Snipcart.ready, new Promise((ok,fail)=>setTimeout(fail,2000))]));
       await page.click(`[data-test="store-add"]`);
     });
     it("opens the snipcart layout", async function(){
@@ -72,8 +86,10 @@ const path = require("path");
       }
     });
     it("can go to checkout", async function(){
+      await page.waitForSelector("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      await timers.setTimeout(200);
       await page.click("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
-      await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 1000});
+      await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 100000});
     });
     it("phone number into custom field", async function(){
       let ref = `#snipcart-billing-form INPUT[name="phoneNumber"]`;
@@ -91,6 +107,6 @@ const path = require("path");
           return valid;
         }), `Phone number "${number}" from locale "${locale}" is considered invalid`).to.be.true;
       }
-    });*/
+    });
   });
 });

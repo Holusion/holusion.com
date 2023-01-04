@@ -26,7 +26,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
   }
 
   site.pages.each do |page|
-    match = /\/(?<lang>fr|en)\/(?<type>products|store)\/(?!index)[^\/]+$/.match(page.url)
+    match = /\/(?<lang>fr|en)\/(?<type>products|store)\/(?!index|\d+_)[^\/]+$/.match(page.url)
     next if ! match #skip if page does not match
     # then assign defaults to categories
     # we don't do it in _config.yml because it's buggy

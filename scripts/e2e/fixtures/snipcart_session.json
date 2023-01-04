@@ -1,0 +1,1693 @@
+{
+  "mode": "Test",
+  "cart": {
+    "items": [],
+    "location": "http://localhost:4000/",
+    "ipAddress": "130.180.212.121",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0",
+    "lang": "fr",
+    "email": "",
+    "status": "InProgress",
+    "shipToBillingAddress": true,
+    "billingAddress": {
+      "fullName": "",
+      "firstName": null,
+      "name": "",
+      "company": null,
+      "address1": "",
+      "address2": "",
+      "fullAddress": "",
+      "city": "",
+      "country": "",
+      "postalCode": "",
+      "province": null,
+      "phone": null,
+      "vatNumber": null,
+      "hasMinimalRequiredInfo": false,
+      "validationErrors": {
+        "city": "required",
+        "postalCode": "required"
+      }
+    },
+    "recoveryCampaignStatus": {
+      "actionsNeeded": false,
+      "unsubscribed": false,
+      "preProcessed": false,
+      "campaignId": null,
+      "futureCampaignsSteps": [],
+      "stepsExecuted": []
+    },
+    "completionDate": null,
+    "invoiceNumber": "",
+    "shippingInformation": {
+      "method": null,
+      "carrierName": null,
+      "serviceName": null
+    },
+    "hasItemsShippable": false,
+    "paymentMethod": null,
+    "paymentDetails": {
+      "iconUrl": null,
+      "display": null,
+      "instructions": null
+    },
+    "summary": {
+      "subtotal": 0.0,
+      "taxableTotal": 0.0,
+      "total": 0.0,
+      "payableNow": 0.0,
+      "paymentMethod": null,
+      "taxes": [],
+      "discountInducedTaxesVariation": 0.0,
+      "shipping": null
+    },
+    "customFields": [],
+    "refunds": [],
+    "notifications": [],
+    "taxes": [
+      {
+        "taxId": null,
+        "name": "TVA",
+        "rate": 0.2,
+        "amount": 0.0,
+        "unroundedAmount": 0.0,
+        "numberForInvoice": "",
+        "includedInPrice": true,
+        "appliesOnShipping": false,
+        "discountInducedAmountVariation": 0.0
+      }
+    ],
+    "defaultTaxes": [
+      {
+        "taxId": "07f214d3-2f23-415e-9581-c0262e92e96a",
+        "name": "TVA",
+        "rate": 0.2,
+        "amount": 0.0,
+        "unroundedAmount": 0.0,
+        "numberForInvoice": "",
+        "includedInPrice": true,
+        "appliesOnShipping": false,
+        "discountInducedAmountVariation": 0.0
+      }
+    ],
+    "currency": "eur",
+    "totalWeight": 0.0,
+    "baseTotal": 0.0,
+    "total": 0.0,
+    "discountsTotal": 0.0,
+    "itemsTotalWithoutTaxes": 0.0,
+    "taxesTotal": 0.0,
+    "taxProvider": null,
+    "paymentGatewayUsed": "None",
+    "gatewayResponseData": "",
+    "paymentGatewayTransactionId": "",
+    "paymentSessionId": "",
+    "paymentGatewayInvoiceId": "",
+    "parentCartId": "",
+    "guest": false,
+    "shippingCharged": false,
+    "easyPostShippingRates": [],
+    "isRecurringInvoice": false,
+    "mode": "Test",
+    "discounts": [],
+    "itemsTotal": 0.0,
+    "totalPriceWithoutDiscountsAndTaxes": 0.0,
+    "token": "06c42ba6-63f3-41e3-b2ff-67b38ca304e8",
+    "version": "2021-04-06",
+    "exported": false,
+    "accountId": 0,
+    "id": "06c42ba6-63f3-41e3-b2ff-67b38ca304e8",
+    "partitionKey": "555",
+    "sortKey": "Cart#06c42ba6-63f3-41e3-b2ff-67b38ca304e8",
+    "creationDate": 1671011964,
+    "modificationDate": 1671011964,
+    "_etag": "\"6200358f-0000-0200-0000-6399a1240000\"",
+    "ttl": 2592000
+  },
+  "cultureSettings": null,
+  "domain": null,
+  "businessName": "Holusion SAS",
+  "logoUrl": "https://uploads.snipcart.com/uploads/ede8b85f/logo_square.png",
+  "websiteUrl": "http://test.holusion.com",
+  "settings": {
+    "apiKey": "ZmMyNTVlYzYtMGJmMS00NDE4LThjYTktOTE0YmFlYjZmZmZkNjM2MTQzNjEyNzYwNDkzMDM2",
+    "countries": [
+      {
+        "name": "France",
+        "code": "FR",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Canada",
+        "code": "CA",
+        "currencyCode": "CAD",
+        "featured": true,
+        "states": [
+          {
+            "name": "Alberta",
+            "code": "AB",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Colombie-Britannique",
+            "code": "BC",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Manitoba",
+            "code": "MB",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Nouveau-Brunswick",
+            "code": "NB",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Terre-Neuve",
+            "code": "NL",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Territoires du Nord-Ouest",
+            "code": "NT",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Nouvelle-Écosse",
+            "code": "NS",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Nunavut",
+            "code": "NU",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Ontario",
+            "code": "ON",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Île-du-Prince-Édouard",
+            "code": "PE",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Québec",
+            "code": "QC",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Saskatchewan",
+            "code": "SK",
+            "countryCode": "CA"
+          },
+          {
+            "name": "Yukon",
+            "code": "YT",
+            "countryCode": "CA"
+          }
+        ]
+      },
+      {
+        "name": "États-Unis",
+        "code": "US",
+        "currencyCode": "USD",
+        "featured": true,
+        "states": [
+          {
+            "name": "Alabama",
+            "code": "AL",
+            "countryCode": "US"
+          },
+          {
+            "name": "Alaska",
+            "code": "AK",
+            "countryCode": "US"
+          },
+          {
+            "name": "Samoa américaines",
+            "code": "AS",
+            "countryCode": "US"
+          },
+          {
+            "name": "Arizona",
+            "code": "AZ",
+            "countryCode": "US"
+          },
+          {
+            "name": "Arkansas",
+            "code": "AR",
+            "countryCode": "US"
+          },
+          {
+            "name": "Californie",
+            "code": "CA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Colorado",
+            "code": "CO",
+            "countryCode": "US"
+          },
+          {
+            "name": "Connecticut",
+            "code": "CT",
+            "countryCode": "US"
+          },
+          {
+            "name": "Delaware",
+            "code": "DE",
+            "countryCode": "US"
+          },
+          {
+            "name": "district de Columbia",
+            "code": "DC",
+            "countryCode": "US"
+          },
+          {
+            "name": "États fédérés de Micronésie",
+            "code": "FM",
+            "countryCode": "US"
+          },
+          {
+            "name": "Floride",
+            "code": "FL",
+            "countryCode": "US"
+          },
+          {
+            "name": "Géorgie",
+            "code": "GA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Guam",
+            "code": "GU",
+            "countryCode": "US"
+          },
+          {
+            "name": "Hawaï",
+            "code": "HI",
+            "countryCode": "US"
+          },
+          {
+            "name": "Idaho",
+            "code": "ID",
+            "countryCode": "US"
+          },
+          {
+            "name": "Illinois",
+            "code": "IL",
+            "countryCode": "US"
+          },
+          {
+            "name": "Indiana",
+            "code": "IN",
+            "countryCode": "US"
+          },
+          {
+            "name": "Iowa",
+            "code": "IA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Kansas",
+            "code": "KS",
+            "countryCode": "US"
+          },
+          {
+            "name": "Kentucky",
+            "code": "KY",
+            "countryCode": "US"
+          },
+          {
+            "name": "Louisiane",
+            "code": "LA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Maine",
+            "code": "ME",
+            "countryCode": "US"
+          },
+          {
+            "name": "Îles Marshall",
+            "code": "MH",
+            "countryCode": "US"
+          },
+          {
+            "name": "Maryland",
+            "code": "MD",
+            "countryCode": "US"
+          },
+          {
+            "name": "Massachusetts",
+            "code": "MA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Michigan",
+            "code": "MI",
+            "countryCode": "US"
+          },
+          {
+            "name": "Minnesota",
+            "code": "MN",
+            "countryCode": "US"
+          },
+          {
+            "name": "Mississippi",
+            "code": "MS",
+            "countryCode": "US"
+          },
+          {
+            "name": "Missouri",
+            "code": "MO",
+            "countryCode": "US"
+          },
+          {
+            "name": "Montana",
+            "code": "MT",
+            "countryCode": "US"
+          },
+          {
+            "name": "Nebraska",
+            "code": "NE",
+            "countryCode": "US"
+          },
+          {
+            "name": "Nevada",
+            "code": "NV",
+            "countryCode": "US"
+          },
+          {
+            "name": "New Hampshire",
+            "code": "NH",
+            "countryCode": "US"
+          },
+          {
+            "name": "New Jersey",
+            "code": "NJ",
+            "countryCode": "US"
+          },
+          {
+            "name": "Nouveau-Mexique",
+            "code": "NM",
+            "countryCode": "US"
+          },
+          {
+            "name": "New York",
+            "code": "NY",
+            "countryCode": "US"
+          },
+          {
+            "name": "Caroline du Nord",
+            "code": "NC",
+            "countryCode": "US"
+          },
+          {
+            "name": "Dakota du Nord",
+            "code": "ND",
+            "countryCode": "US"
+          },
+          {
+            "name": "Îles Mariannes du Nord",
+            "code": "MP",
+            "countryCode": "US"
+          },
+          {
+            "name": "Ohio",
+            "code": "OH",
+            "countryCode": "US"
+          },
+          {
+            "name": "Oklahoma",
+            "code": "OK",
+            "countryCode": "US"
+          },
+          {
+            "name": "Oregon",
+            "code": "OR",
+            "countryCode": "US"
+          },
+          {
+            "name": "Palau",
+            "code": "PW",
+            "countryCode": "US"
+          },
+          {
+            "name": "Pennsylvanie",
+            "code": "PA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Porto Rico",
+            "code": "PR",
+            "countryCode": "US"
+          },
+          {
+            "name": "Rhode Island",
+            "code": "RI",
+            "countryCode": "US"
+          },
+          {
+            "name": "Caroline du Sud",
+            "code": "SC",
+            "countryCode": "US"
+          },
+          {
+            "name": "Dakota du Sud",
+            "code": "SD",
+            "countryCode": "US"
+          },
+          {
+            "name": "Tennessee",
+            "code": "TN",
+            "countryCode": "US"
+          },
+          {
+            "name": "Texas",
+            "code": "TX",
+            "countryCode": "US"
+          },
+          {
+            "name": "Utah",
+            "code": "UT",
+            "countryCode": "US"
+          },
+          {
+            "name": "Vermont",
+            "code": "VT",
+            "countryCode": "US"
+          },
+          {
+            "name": "Îles Vierges",
+            "code": "VI",
+            "countryCode": "US"
+          },
+          {
+            "name": "Virginia",
+            "code": "VA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Washington",
+            "code": "WA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Virginie-Occidentale",
+            "code": "WV",
+            "countryCode": "US"
+          },
+          {
+            "name": "Wisconsin",
+            "code": "WI",
+            "countryCode": "US"
+          },
+          {
+            "name": "Wyoming",
+            "code": "WY",
+            "countryCode": "US"
+          },
+          {
+            "name": "Armed Forces Americas",
+            "code": "AA",
+            "countryCode": "US"
+          },
+          {
+            "name": "Armed Forces Europe",
+            "code": "AE",
+            "countryCode": "US"
+          },
+          {
+            "name": "Armed Forces Pacific",
+            "code": "AP",
+            "countryCode": "US"
+          }
+        ]
+      },
+      {
+        "name": "Albanie",
+        "code": "AL",
+        "currencyCode": "ALL",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Allemagne",
+        "code": "DE",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Andorre",
+        "code": "AD",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Anguilla",
+        "code": "AI",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Antigua et Barbuda",
+        "code": "AG",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Aruba",
+        "code": "AW",
+        "currencyCode": "AWG",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Autriche",
+        "code": "AT",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Bahamas",
+        "code": "BS",
+        "currencyCode": "BSD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Barbade",
+        "code": "BB",
+        "currencyCode": "BBD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Belgique",
+        "code": "BE",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Belize",
+        "code": "BZ",
+        "currencyCode": "BZD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Bermudes",
+        "code": "BM",
+        "currencyCode": "BMD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Biélorussie",
+        "code": "BY",
+        "currencyCode": "BYR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Bonaire, Saint-Eustache et Saba",
+        "code": "BQ",
+        "currencyCode": "USD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Bosnie-Herzégovine",
+        "code": "BA",
+        "currencyCode": "BAM",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Bulgarie",
+        "code": "BG",
+        "currencyCode": "BGN",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Costa Rica",
+        "code": "CR",
+        "currencyCode": "CRC",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Croatie",
+        "code": "HR",
+        "currencyCode": "HRK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Cuba",
+        "code": "CU",
+        "currencyCode": "CUP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Curaçao",
+        "code": "CW",
+        "currencyCode": "ANG",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Danemark",
+        "code": "DK",
+        "currencyCode": "DKK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Dominique",
+        "code": "DM",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Espagne",
+        "code": "ES",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": [
+          {
+            "name": "Álava",
+            "code": "VI",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Albacete",
+            "code": "AB",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Alicante",
+            "code": "A",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Almeria",
+            "code": "AL",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Asturias",
+            "code": "O",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Ávila",
+            "code": "AV",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Badajoz",
+            "code": "BA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Baleares",
+            "code": "PM",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Barcelona",
+            "code": "B",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Burgos",
+            "code": "BU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Cáceres",
+            "code": "CC",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Cádiz",
+            "code": "CA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Cantabria",
+            "code": "S",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Castellón",
+            "code": "CS",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Ceuta",
+            "code": "CE",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Ciudad Real",
+            "code": "CR",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Córdoba",
+            "code": "CO",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Cuenca",
+            "code": "CU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Gerona",
+            "code": "GI",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Granada",
+            "code": "GR",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Guadalajara",
+            "code": "GU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Guipúzcoa",
+            "code": "SS",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Huelva",
+            "code": "H",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Huesca",
+            "code": "HU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Jaén",
+            "code": "J",
+            "countryCode": "ES"
+          },
+          {
+            "name": "La Coruña",
+            "code": "C",
+            "countryCode": "ES"
+          },
+          {
+            "name": "La Rioja",
+            "code": "LO",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Las Palmas",
+            "code": "GC",
+            "countryCode": "ES"
+          },
+          {
+            "name": "León",
+            "code": "LE",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Lérida",
+            "code": "L",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Lugo",
+            "code": "LU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Madrid",
+            "code": "M",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Málaga",
+            "code": "MA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Melilla",
+            "code": "ML",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Murcia",
+            "code": "MU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Navarra",
+            "code": "NA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Orense",
+            "code": "OU",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Palencia",
+            "code": "P",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Pontevedra",
+            "code": "PO",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Salamanca",
+            "code": "SA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Segovia",
+            "code": "SG",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Sevilla",
+            "code": "SE",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Soria",
+            "code": "SO",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Tarragona",
+            "code": "T",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Tenerife",
+            "code": "TF",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Teruel",
+            "code": "TE",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Toledo",
+            "code": "TO",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Valencia",
+            "code": "V",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Valladolid",
+            "code": "VA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Vizcaya",
+            "code": "BI",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Zamora",
+            "code": "ZA",
+            "countryCode": "ES"
+          },
+          {
+            "name": "Zaragoza",
+            "code": "Z",
+            "countryCode": "ES"
+          }
+        ]
+      },
+      {
+        "name": "Estonie",
+        "code": "EE",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Finlande",
+        "code": "FI",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Gibraltar",
+        "code": "GI",
+        "currencyCode": "GIP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Grèce",
+        "code": "GR",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Grenade",
+        "code": "GD",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Groenland",
+        "code": "GL",
+        "currencyCode": "DKK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Guadeloupe",
+        "code": "GP",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Guatemala",
+        "code": "GT",
+        "currencyCode": "GTQ",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Guernesey",
+        "code": "GG",
+        "currencyCode": "GBP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Haïti",
+        "code": "HT",
+        "currencyCode": "HTG",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Honduras",
+        "code": "HN",
+        "currencyCode": "HNL",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Hongrie",
+        "code": "HU",
+        "currencyCode": "HUF",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Île de Man",
+        "code": "IM",
+        "currencyCode": "GBP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Îles Åland",
+        "code": "AX",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Îles Caïmans",
+        "code": "KY",
+        "currencyCode": "KYD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Îles Féroé",
+        "code": "FO",
+        "currencyCode": "DKK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Îles Turques-et-Caïques",
+        "code": "TC",
+        "currencyCode": "USD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Îles Vierges",
+        "code": "VG",
+        "currencyCode": "USD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Îles Vierges des États-Unis",
+        "code": "VI",
+        "currencyCode": "USD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Irlande",
+        "code": "IE",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Islande",
+        "code": "IS",
+        "currencyCode": "ISK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Italie",
+        "code": "IT",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Jamaïque",
+        "code": "JM",
+        "currencyCode": "JMD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Jersey",
+        "code": "JE",
+        "currencyCode": "GBP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Kosovo",
+        "code": "XK",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Lettonie",
+        "code": "LV",
+        "currencyCode": "LVL",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Liechtenstein",
+        "code": "LI",
+        "currencyCode": "CHF",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Lituanie",
+        "code": "LT",
+        "currencyCode": "LTL",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Luxembourg",
+        "code": "LU",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Macédoine",
+        "code": "MK",
+        "currencyCode": "MKD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Malte",
+        "code": "MT",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Martinique",
+        "code": "MQ",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Mexique",
+        "code": "MX",
+        "currencyCode": "MXN",
+        "featured": false,
+        "states": [
+          {
+            "name": "Aguascalientes",
+            "code": "AGU",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Baja California",
+            "code": "BCN",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Basse-Californie du Sud",
+            "code": "BCS",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Campeche",
+            "code": "CAM",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Chiapas",
+            "code": "CHP",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Chihuahua",
+            "code": "CHH",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Ciudad de México",
+            "code": "CDMX",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Coahuila",
+            "code": "COA",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Colima",
+            "code": "COL",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Durango",
+            "code": "DUR",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Guanajuato",
+            "code": "GUA",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Guerrero",
+            "code": "GRO",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Hidalgo",
+            "code": "HID",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Jalisco",
+            "code": "JAL",
+            "countryCode": "MX"
+          },
+          {
+            "name": "ville de Mexico",
+            "code": "MEX",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Michoacán",
+            "code": "MIC",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Morelos",
+            "code": "MOR",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Nayarit",
+            "code": "NAY",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Nouveau León",
+            "code": "NLE",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Oaxaca",
+            "code": "OAX",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Puebla",
+            "code": "PUE",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Querétaro",
+            "code": "QUE",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Quintana Roo",
+            "code": "ROO",
+            "countryCode": "MX"
+          },
+          {
+            "name": "San Luis Potosí",
+            "code": "SLP",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Sinaloa",
+            "code": "SIN",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Sonora",
+            "code": "SON",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Tabasco",
+            "code": "TAB",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Tamaulipas",
+            "code": "TAM",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Tlaxcala",
+            "code": "TLA",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Veracruz",
+            "code": "VER",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Yucatán",
+            "code": "YUC",
+            "countryCode": "MX"
+          },
+          {
+            "name": "Zacatecas",
+            "code": "ZAC",
+            "countryCode": "MX"
+          }
+        ]
+      },
+      {
+        "name": "Moldavie",
+        "code": "MD",
+        "currencyCode": "MDL",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Monaco",
+        "code": "MC",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Monténégro",
+        "code": "ME",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Montserrat",
+        "code": "MS",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Nicaragua",
+        "code": "NI",
+        "currencyCode": "NIO",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Norvège",
+        "code": "NO",
+        "currencyCode": "NOK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Panama",
+        "code": "PA",
+        "currencyCode": "PAB",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Pays-Bas",
+        "code": "NL",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Pologne",
+        "code": "PL",
+        "currencyCode": "PLN",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Porto Rico",
+        "code": "PR",
+        "currencyCode": "USD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Portugal",
+        "code": "PT",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "République Dominicaine",
+        "code": "DO",
+        "currencyCode": "DOP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Roumanie",
+        "code": "RO",
+        "currencyCode": "RON",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Royaume-Uni",
+        "code": "GB",
+        "currencyCode": "GBP",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Russie",
+        "code": "RU",
+        "currencyCode": "RUB",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Barthélémy",
+        "code": "BL",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Christophe-et-Niévès",
+        "code": "KN",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Sainte-Lucie",
+        "code": "LC",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Marin",
+        "code": "SM",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Martin",
+        "code": "MF",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Martin",
+        "code": "SX",
+        "currencyCode": "ANG",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Pierre et Miquelon",
+        "code": "PM",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Saint-Vincent-et-les Grenadines",
+        "code": "VC",
+        "currencyCode": "XCD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Salvador",
+        "code": "SV",
+        "currencyCode": "USD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Serbie",
+        "code": "RS",
+        "currencyCode": "RSD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Slovaquie",
+        "code": "SK",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Slovénie",
+        "code": "SI",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Suède",
+        "code": "SE",
+        "currencyCode": "SEK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Suisse",
+        "code": "CH",
+        "currencyCode": "CHF",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Svalbard et Île Jan Mayen",
+        "code": "SJ",
+        "currencyCode": "NOK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Tchéquie",
+        "code": "CZ",
+        "currencyCode": "CZK",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Trinidad et Tobago",
+        "code": "TT",
+        "currencyCode": "TTD",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Turquie",
+        "code": "TR",
+        "currencyCode": "TRY",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Ukraine",
+        "code": "UA",
+        "currencyCode": "UAH",
+        "featured": false,
+        "states": []
+      },
+      {
+        "name": "Vatican",
+        "code": "VA",
+        "currencyCode": "EUR",
+        "featured": false,
+        "states": []
+      }
+    ],
+    "onlyAllowGuests": true,
+    "allowExportAsPdf": false,
+    "allowShareByEmail": false,
+    "allowDeferredPayment": false,
+    "onlyAllowDeferredPayment": false,
+    "eCommerceAnalyticsEnabled": false,
+    "expressCheckoutEnabled": false,
+    "customGatewayEnabled": false,
+    "paymentGateway": "Stripe",
+    "hasPaymentServiceEnabled": true,
+    "hasScaComplianceEnabled": true,
+    "hasActiveDiscountsTriggerableByCode": true,
+    "shippingEnabled": true,
+    "shippingEnabledDefault": true,
+    "gateway": {
+      "publicApiKey": "pk_live_LlyPDbHmurXLUo8a7ilTI86p",
+      "gateway": "None",
+      "squareLocationId": null
+    },
+    "mode": "Test",
+    "currency": "eur",
+    "cultureSettings": {
+      "currencySymbol": "€",
+      "numberFormat": "%s%v",
+      "negativeNumberFormat": "- %s%v",
+      "thousandSeparator": "",
+      "decimalSeparator": ".",
+      "precision": 2
+    },
+    "squareClientId": null,
+    "squareOAuthConnectClientId": null,
+    "squareLocationId": null,
+    "domain": "test.holusion.com",
+    "currencies": [
+      {
+        "currency": "eur",
+        "precision": 2,
+        "decimalSeparator": ".",
+        "thousandSeparator": "",
+        "negativeNumberFormat": "- %s%v",
+        "numberFormat": "%s%v",
+        "currencySymbol": "€",
+        "id": "d659cabc-baec-43c3-ba51-5c2b8dada581"
+      }
+    ],
+    "i18n": {
+      "currency": "eur",
+      "precision": 2,
+      "decimalSeparator": ".",
+      "thousandSeparator": "",
+      "negativeNumberFormat": "- %s%v",
+      "numberFormat": "%s%v",
+      "currencySymbol": "€",
+      "id": "d659cabc-baec-43c3-ba51-5c2b8dada581"
+    }
+  },
+  "features": [],
+  "featureFlags": [
+    {
+      "name": "CurrencyValidation",
+      "isEnabled": false
+    },
+    {
+      "name": "OrderRefundEmailTemplate",
+      "isEnabled": false
+    },
+    {
+      "name": "ECommAnalytics",
+      "isEnabled": false
+    },
+    {
+      "name": "CustomerDashboard",
+      "isEnabled": false
+    },
+    {
+      "name": "AddressAutocomplete",
+      "isEnabled": true
+    },
+    {
+      "name": "Subscription",
+      "isEnabled": false
+    },
+    {
+      "name": "UseLegacyShippingCarriers",
+      "isEnabled": true
+    },
+    {
+      "name": "UseEasyPost",
+      "isEnabled": false
+    },
+    {
+      "name": "UseOrderFulfillment",
+      "isEnabled": false
+    },
+    {
+      "name": "UseEasyPostShippingContainers",
+      "isEnabled": false
+    }
+  ],
+  "customerNotifications": []
+}
