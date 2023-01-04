@@ -17,7 +17,8 @@
       }
     ],
     "redirects": [
-      {"regex": "^/dev/(?P<lang>fr|en)/(toolbox|content|search)/.+", "destination": "/:lang/dev/", "type": 301}
+      {"regex": "^/dev/(?P<lang>fr|en)/(toolbox|content|search)/.+", "destination": "/:lang/dev/", "type": 301},
+      {"regex": "^/(?P<lang>fr|en)/products/(?P<name>[^/]+)$", "destination": "/:lang/store/:name", "type": 301}
     ],
     "headers": [ 
       {
@@ -28,6 +29,12 @@
         ]
       }, {
         "source": "/assets/**/*.@(jpg|png|webp)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      },{
+        "source": "/static/img/icons/**/*.@(jpg|png|webp)",
         "headers": [{
           "key": "Cache-Control",
           "value": "max-age=31536000"
