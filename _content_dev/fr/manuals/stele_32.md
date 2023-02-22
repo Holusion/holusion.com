@@ -1,5 +1,5 @@
 ---
-title: Manuel Stèle Iris32
+title: Assemblage stèle Iris 32
 abstract: 
 image: /img/products/iris32_quartz.jpg
 rank: 5
