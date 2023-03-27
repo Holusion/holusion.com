@@ -56,6 +56,8 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: $light;
     h2{
         color: $light;
     }
@@ -72,6 +74,10 @@
         height: auto;
         margin-bottom: 1rem;
     }
+    &.card-square img{
+        aspect-ratio: 1;
+    }
+
     .btn{
         color: $light;
         &:hover{
