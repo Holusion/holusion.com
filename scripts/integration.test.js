@@ -148,7 +148,7 @@ describe("integration tests", function(){
                 url.replace("/export?format=pdf", ""),
                 `in ${relative(basePath,file)}`,
                 `is requiring user authentication`,
-                `please verify it's share permissions`
+                `please verify its sharing permissions`
               ].join("\n\t"));
             }
             //Double-check statusCode in case it's changed
