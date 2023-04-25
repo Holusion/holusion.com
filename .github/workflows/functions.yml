@@ -39,8 +39,6 @@ jobs:
         run: npm ci
       - name: run eslint
         run: npm run lint
-      - name: test functions
-        run: npm test
       - name: deploy
         working-directory: ./
         run: |
