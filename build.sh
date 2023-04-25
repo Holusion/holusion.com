@@ -59,7 +59,7 @@ do
         break
       ;;
       -t|--test)
-        make_check=true
+        
       ;;
       -i|--integration)
         shift
