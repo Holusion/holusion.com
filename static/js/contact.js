@@ -27,78 +27,109 @@
     }
     
     // Utility function to create and display logs for form actions
-    function logInfo(level,txt){
-      console.log(txt);
-      var logger = document.querySelector("#logger");
+    function logInfo(level,txtOrChild,{ timeout=-1, canClose=true}={}){
+      let logger = document.querySelector("#logger");
     
-      var msg = document.createElement("DIV");
+      let msg = document.createElement("DIV");
       msg.role= "alert";
-      msg.className = "alert alert-dismissible";
-      msg.classList.add(level);
+      msg.className = "alert d-flex justify-content-between";
+      msg.classList.add("alert-"+level);
+
+      msg.appendChild((typeof txtOrChild === "string")?document.createTextNode(txtOrChild): txtOrChild);
     
-      var btn = document.createElement("BUTTON");
-      btn.type = "button";
-      btn.className = "close";
-      btn.dataset.dismiss = "alert";
-      btn.ariaLabel = "Close";
-      btn.innerHTML = '<span aria-hidden="true">&times;</span>';
-      var closer = function (){
-        logger.removeChild(msg);
+      if(canClose){
+        let btn = document.createElement("BUTTON");
+        btn.type = "button";
+        btn.className = "btn-close";
+        btn.dataset.bsDismiss = "alert";
+        btn.ariaLabel = "Close";
+        msg.appendChild(btn);
+        msg.classList.add("alert-dismissible");
+
       }
-      btn.onclick = closer;
-      msg.appendChild(btn);
-      msg.appendChild(document.createTextNode(txt));
+
       logger.appendChild(msg);
+      
+      let closed = false;
+      function closer (){
+        if(!closed) logger.removeChild(msg);
+        closed = true;
+      }
+      if(0 < timeout) setTimeout(closer, timeout);
+
       return closer;
     }
     
     
     
     function setupForm(){
-      var contactform = document.querySelector("#contactform-modal");
-      var submission = document.querySelector("#contactform-modal form");
+      let contactform = document.querySelector("#contactform-modal");
+      let submission = document.querySelector("#contactform-modal form");
       submission.onsubmit = onSubmitContactForm;
       contactform.classList.add("is-ready");
     }
     
     function onSubmitContactForm(e){
       e.preventDefault();
-      var submission = document.querySelector("#contactform-modal form");
-      var FD  = new FormData(submission);
-      FD.append("source", window.location.pathname);
-      var spinnerClose = logInfo("alert-info",localize("sending"));
+      let submission = document.querySelector("#contactform-modal form");
+      let formData  = new FormData(submission);
+      formData.append("source", window.location.pathname);
+
+      let s = document.createElement("span");
+      s.className = "d-flex flex-grow-1 align-items-center justify-content-center";
+      s.innerHTML = `<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div> <span class="px-4">${localize("sending")}</span>`
+      let spinnerClose = logInfo("info", s, {canClose: false});
     
-      var body = {};
-      for (let pair of FD) {
+      let body = {};
+      for (let pair of formData) {
         body[pair[0]] = pair[1];
       }
-    
-      fetch(`/api/v1/sendmail`, {
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "text/plain",
-        },
-        method: 'POST',
-        body: JSON.stringify(body),
-      }).then((res)=>{
-        spinnerClose();
-        res.text().then(txt=>{
-          if(res.ok){
-            logInfo('alert-success', txt);
-            //closeForm();
-          }else{
-            logInfo("alert-danger",localize("got_error")+" : "+txt);
 
-          }
-        })
-        .catch((e)=>{
-          console.error("Failed to parse server error : ", e);
-          logInfo("alert-danger",localize("got_error")+" : "+res.statusText);
+      //bypass sendmail when on localhost to allow easier tests
+      let request;
+      if(window.location.hostname === "localhost"){
+        request = new Promise(resolve=>{
+          setTimeout(resolve.bind(null, ({
+            ok: body["fname"] !== "oscar",
+            headers:{get:()=>"text/html; encoding=utf-8"},
+            text: ()=>Promise.resolve("Merci de nous avoir contacté, votre demande sera traitée au plus vite"),
+          })), 1200);
         });
+      }else {
+        request = fetch(`/api/v1/sendmail`, {
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "text/plain",
+          },
+          method: 'POST',
+          body: JSON.stringify(body),
+        })
+      }
+      
+      request.then(async (res)=>{
+        spinnerClose();
+        try{
+          let txt = await res.text()
+          if(res.ok){
+            submission.reset();
+            logInfo('success', txt, {timeout: 5000});
+            setTimeout(()=>{
+              document.querySelector(`#contactform-modal [data-bs-dismiss="modal"]`)?.click();
+            }, 5000);
+  
+          }else{
+            if(res.headers.get("Content-Type").indexOf("text/html") !=-1) throw new Error(`server returned an HTML response`);
+            logInfo("danger",localize("got_error")+" : "+txt);
+          }
+
+        }catch (e){
+          console.error("Failed to parse server error : ", e);
+          logInfo("danger",`${localize("got_error")} [${res.status}]: ${res.statusText}`);
+        };
       })
       .catch((e)=>{
         console.warn("fetch :", e);
-        logInfo("alert-warning",localize("network_error"));
+        logInfo("warning",localize("network_error"));
       })
     }
 
