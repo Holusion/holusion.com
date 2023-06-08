@@ -30,7 +30,7 @@ router.post("/api/v1/sendmail",
 );
 
 //Error handling must be last
-router.use((err, req, res, next)=> {
+router.use((err, req, res)=> {
   error(err);
   let message;
   if(isProduction){
