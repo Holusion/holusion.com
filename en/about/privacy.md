@@ -1,41 +1,67 @@
 ---
-title: Privacy policy
+title: Privacy Policy
 layout: page
 ---
-Holusion is commited to personnal data protection, and attempting to conform to european law ([GDPR](http://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32016R0679&from=EN)).
 
-This is a translation of the original [privacy page](/fr/about/privacy). Please always refer to the original for validation.
+Holusion is committed to protecting personal data in compliance with European legislation ([GDPR](http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN)).
 
-This pages aims to inform you of your rights and our obligations concerning your data.
+This page aims to inform you of your rights and our obligations regarding your data.
 
-While we try our best to handle your data as legally required, feel free to point us to any shortcommings in our policies, or ask for further clarification in the contact form below.
+<h2>Collected Information</h2>
 
-## Collected data
+<h3>Queries and Navigation</h3>
+<p>Holusion collects data from queries made to the website [holusion.com](https://holusion.com). These data are stored by our service provider [Google](https://cloud.google.com/terms/google-entity) according to the terms of use of the [Google Cloud](https://cloud.google.com/terms/) platform.</p>
 
-### Navigation
+<p>These data may include the following personal information:</p>
+<ul>
+  <li>The user agent string of the browser used</li>
+  <li>The preferred language of the requesting browser</li>
+  <li>The user's IP address</li>
+</ul>
 
-Holusion is colleciton anonymous visit statistics on [holusion.com](https://holusion.com) and any sub-domains. We are using third party [cookies](https://cookiesandyou.com/) to do so.
+<p>As well as non-personal data, such as:</p>
+<ul>
+  <li>The name and type of the requested resource</li>
+  <li>The date of the query</li>
+  <li>The latency</li>
+</ul>
 
-Statistics might be :
-- Number of sessions
-- Session duration
-- Pages popularity measurement
-- Browser brand and version
-- Errors
+<p>These data are subject to internal statistical processing and are not used individually. They may be stored for a maximum of 30 days.</p>
 
-This data is kept securely for a maximum duration of 26 month.
+<h3>Cookies</h3>
 
-### Web purchases
+<p>Holusion records [cookies](https://en.wikipedia.org/wiki/HTTP_cookie) in a minimal way to ensure the functioning of the site.</p>
 
-When you purchase something from us on the web, We will ask for some personnal data, required for this sale to happen in good conditions : name, address, phone number, mail...
+<table class="table table-striped table-responsive-sm">
+  <thead>
+    <th scope="col">Name</th>
+    <th scope="col">Provider</th>
+    <th scope="col">Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-muted">lang</td>
+      <td class="text-end"><a href="/en/about/">Holusion</a></td>
+      <td>Stores the user's preferred language if different from the browser's language</td>
+    </tr>
+    <tr>
+      <td class="text-muted">__stripe_mid</td>
+      <td class="text-end"><a href="https://stripe.com/en/privacy">Stripe</a></td>
+      <td>Used by Stripe to manage online payment on the <a href="/en/store/">store</a></td>
+    </tr>
+    <tr>
+      <td class="text-muted">__stripe_sid</td>
+      <td class="text-end"><a href="https://stripe.com/en/privacy">Stripe</a></td>
+      <td>Used by Stripe to manage online payment on the <a href="/en/store/">store</a></td>
+    </tr>
+    <tr>
+      <td class="text-muted">snipcart_order_token</td>
+      <td class="text-end"><a href="https://cdn.snipcart.com/legal/dpa.pdf">Snipcart</a></td>
+      <td>Used by Snipcart to manage the shopping cart on the <a href="/en/store/">store</a></td>
+    </tr>
+  </tbody>
+</table>
 
-This data is stored securely and will not be used in further processing.
+<h3>Online Purchases</h3>
 
-Anonymous purchase data might be processed to build statistics about our sales performances.
-
-Additionally, our [payment gateway](https://stripe.com/fr/privacy) is legally required to store some data for fraud prevention mechanisms.
-
-
-## Your rights
-
-You have a right ask for access, modification or deletion of any personnal data we collected. Demands must be sent to *holusion, 111 av Jean Lebas - 59100 Roubaix FRANCE* of by mail in our <a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">contact form</a>.
+<p>In the case of a purchase, we only collect the information necessary for the proper conduct of the sale. Only contact personal information (name, first name, address, phone) is stored by our provider [Snipcart](https://snipcart.com) to ensure traceability and after

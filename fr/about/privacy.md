@@ -10,7 +10,7 @@ Cette page a pour but de vous informer de vos droits et de nos obligations conce
 ## Informations recueillies
 
 ### Requêtes et Navigation
-Holusion collecte des données de fréquentation du site [holusion.com](https://holusion.com) et de ses sous domaines. Celles-ci sont stockées par notre fournisseur [Google](https://cloud.google.com/terms/google-entity) selon les conditions d'utilisation de la plateforme [google cloud](https://cloud.google.com/terms/).
+Holusion collecte des données de requêtes adddressées au site [holusion.com](https://holusion.com). Celles-ci sont stockées par notre fournisseur de service [Google](https://cloud.google.com/terms/google-entity) selon les conditions d'utilisation de la plateforme [google cloud](https://cloud.google.com/terms/).
 
 Ces données peuvent contenir les données personnelles suivantes:
 - la chaîne [user-agent](https://fr.wikipedia.org/wiki/User_agent) du navigateur utilisé
@@ -22,13 +22,13 @@ Ainsi que des données non personelles, telles que :
 - la date de la requête
 - la latence
 
-Ces données font l'objet d'un traitement statistique interne et ne sont pas utilisées individuellement. Elles peuvent être stockées pour un maximum de 26 mois.
+Ces données font l'objet d'un traitement statistique interne et ne sont pas utilisées individuellement. Elles peuvent être stockées pour un maximum de 30 jours.
 
 ### Cookies
 
-Holusion des [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) de façon minimale pour assurer le fonctionnement du site.
+Des [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) peuvent être stockées en cas de besoin pour assurer le fonctionnement du site.
 
-En visitant la boutique en ligne des cookies additionels suivants seront enregistrés :
+
 <table class="table table-striped table-responsive-sm">
   <thead>
     <th scope="col">Nom</th>
@@ -36,11 +36,6 @@ En visitant la boutique en ligne des cookies additionels suivants seront enregis
     <th scope="col">Description</th>
   </thead>
   <tbody>
-    <tr>
-      <td class="text-muted">cookieconsent_status</td>
-      <td class="text-end"><a href="/fr/about/">Holusion</a></td>
-      <td>Stocke une trace de visites précédente où les informations de politique de confidentialité ont été montrées</td>
-    </tr>
     <tr>
       <td class="text-muted">lang</td>
       <td class="text-end"><a href="/fr/about/">Holusion</a></td>

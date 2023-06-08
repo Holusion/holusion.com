@@ -35,15 +35,8 @@ jobs:
     - name: install nodejs      
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
-
-    - name: npm cache
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node16-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node16-
+        node-version: 18.x
+        cache: npm
 
     # Dependencies
     - name: get npm dependencies

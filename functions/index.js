@@ -1,18 +1,14 @@
-const functions = require('firebase-functions');
+const {onRequest} = require('firebase-functions/v2/https');
 const admin = require("firebase-admin");
 
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
 
 const app = admin.initializeApp();
 app.firestore().settings({timestampsInSnapshots: true});
 
 const handlers = require("./handlers");
 
-exports.api_calls = functions.https.onRequest(handlers);
+// https functions must use us-central-1 region
+exports.http_calls = onRequest({
+  maxInstances: 1,
+  cpu: 1,
+}, handlers);

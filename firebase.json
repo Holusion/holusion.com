@@ -9,11 +9,13 @@
     "rewrites": [
       {
         "source": "/",
-        "function": "api_calls"
+        "function": "http_calls",
+        "pinTag": true
       },
       {
         "source": "/api/v1/**",
-        "function": "api_calls"
+        "function": "http_calls",
+        "pinTag": true
       }
     ],
     "redirects": [
@@ -51,5 +53,13 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "firestore": {
+      "port": "8080"
+    },
+    "functions": {
+      "port": "5001"
+    }
   }
 }

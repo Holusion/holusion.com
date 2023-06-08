@@ -2,13 +2,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const rateLimit = require("express-rate-limit");
-const { error } = require("firebase-functions/lib/logger");
+const { error } = require("firebase-functions/logger");
 
 const router = express();
 
 const isProduction = !process.env["FIRESTORE_EMULATOR_HOST"];
+
 //Firebase is always proxying for us
-router.enable('trust proxy')
+router.enable('trust proxy');
+
 // redirect using language hints
 router.get("/", (req, res)=>{
   let lang = req.acceptsLanguages("fr", "en") || "en";
@@ -28,7 +30,7 @@ router.post("/api/v1/sendmail",
 );
 
 //Error handling must be last
-router.use((err, req, res, next)=> {
+router.use((err, req, res)=> {
   error(err);
   let message;
   if(isProduction){

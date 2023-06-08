@@ -19,10 +19,9 @@ const errorStrings = {en:{
   "einvcomments": 'Les commentaires doivent faire au moins 20 caractères et moins de 3000',
 }}
 
-
-module.exports = (req, res)=>{
-  const { warn } = require("firebase-functions/lib/logger");
-  const admin = require("firebase-admin");
+async function handleContact(req, res){
+  const { warn } = await import("firebase-functions/logger");
+  const {default:admin} = await import("firebase-admin");
   const app = admin.app();
 
   res.type("text/plain; charset=utf-8");
@@ -49,22 +48,24 @@ module.exports = (req, res)=>{
   if(5000 < req.body.comments.length || req.body.comments.length < 20){
     return res.status(400).send(errorStrings[lang]["einvcomments"]);
   }
-
-  app.firestore().collection("mail").add({
-    to: ["contact@holusion.com"],
-    from: "contact@holusion.com",
-    replyTo: req.body['email'],
-    template: {
-      name: "contact",
-      data: req.body,
-    },
-  })
-  .then(()=>{
+  try{
+    await app.firestore().collection("mail").add({
+      to: ["contact@holusion.com"],
+      from: "contact@holusion.com",
+      replyTo: req.body['email'],
+      template: {
+        name: "contact",
+        data: req.body,
+      },
+    });
     res.status(200).send(errorStrings[lang]["success"]);
-  })
-  .catch((e)=>{
+  }catch(e){
     warn(e);
     res.status(500).send(e.message);
-  });
+  }
   return undefined;
 }
+
+module.exports = function contactWrapper (req, res, next) { 
+  Promise.resolve(handleContact(req, res)).catch(next);
+};
