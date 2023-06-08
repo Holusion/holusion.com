@@ -9,11 +9,13 @@
     "rewrites": [
       {
         "source": "/",
-        "function": "http_calls"
+        "function": "http_calls",
+        "pinTag": true
       },
       {
         "source": "/api/v1/**",
-        "function": "http_calls"
+        "function": "http_calls",
+        "pinTag": true
       }
     ],
     "redirects": [
