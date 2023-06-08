@@ -54,7 +54,7 @@
                 maxlength="80" size="30"
                 placeholder="mail@example.com"
                 required
-                pattern="^[\-a-zA-Z0-9._%+]+@[\-a-z0-9.]+\.[a-z]{2,63}$"
+                pattern="^[\-\p{Letter}0-9._%+]+@[\-\p{Letter}0-9.]+\.\p{Letter}{2,63}$"
                 autocomplete="email">
             </div>
             <div class="form-group">
