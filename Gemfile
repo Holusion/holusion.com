@@ -15,5 +15,5 @@ group :jekyll_plugins do
 end
 
 group :test, optional: true do
-  gem 'html-proofer'
+  gem 'html-proofer', "~>4.4.3"
 end

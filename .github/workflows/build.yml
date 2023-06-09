@@ -6,6 +6,8 @@ on:
       - master
     tags:
       - "v*.*.*"
+env:
+  NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 jobs:
   build:
     runs-on: ubuntu-22.04
