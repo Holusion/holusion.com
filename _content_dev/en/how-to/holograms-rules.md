@@ -43,13 +43,13 @@ rank: 1
     image="img/documentation/méduse.jpg" 
     alt_text="animation proposal for a pepper's ghost" 
     title="Movement" 
-    abstract="A good animatiopn will greatly improve your visual" 
+    abstract="A good animation will greatly improve your visual" 
   %}
   {% include components/card.html 
     image="img/documentation/car.jpg" 
     alt_text="example of a bad cropping" 
     title="Cropping" 
-    abstract="YOur subject must appear fully and not be partially cropped" 
+    abstract="Your subject must appear fully and not be partially cropped" 
   %}
 </div>
 
