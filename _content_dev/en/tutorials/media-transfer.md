@@ -50,7 +50,7 @@ Log in to your product and view its administration interface.
 
 At this point, the video should appear in your hologram projector. If there are several videos there, you can click on the thumbnail to launch your new media.
 
-## Aller plus loin
+## Going further
 
 You now know how to transfer media to your product using its administration interface. This interface also allows you to organize your media and configure your product.
 
