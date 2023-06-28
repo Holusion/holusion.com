@@ -30,7 +30,7 @@ rank: 1
   {% include components/card.html 
     image="img/documentation/building.jpg" 
     alt_text="example of a good holographic subject" 
-    title="Sujet" 
+    title="Subject" 
     abstract="Choose a clearly identifiable subject on a black background" 
   %}
   {% include components/card.html 
