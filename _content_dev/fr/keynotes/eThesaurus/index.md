@@ -2,7 +2,7 @@
 title: "eThesaurus"
 abstract: "Outil Open Source de gestion de collections 3D"
 lang: fr
-image: img/tiles/Museotile.jpg
+image: img/tiles/ecorpustile.jpg
 menu: keynotes
 rank: 2
 
