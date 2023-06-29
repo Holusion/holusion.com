@@ -1,5 +1,5 @@
 ---
-title: "eCorpus"
+title: "eThesaurus"
 abstract: "Outil Open Source de gestion de collections 3D"
 lang: fr
 image: img/tiles/Museotile.jpg

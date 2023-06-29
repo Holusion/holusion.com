@@ -2,7 +2,7 @@
 title: Musées et Culture
 abstract: "Présentation en muséographie"
 lang: fr
-image: img/tiles/ecorpustile.jpg
+image: img/tiles/Museotile.jpg
 menu: keynotes
 rank: 2
 
