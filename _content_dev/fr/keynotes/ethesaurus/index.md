@@ -1,7 +1,7 @@
 ---
 title: "eThesaurus"
-abstract: "An Open Source tool for managing 3D object databases"
-lang: en
+abstract: "Outil Open Source de gestion de collections 3D"
+lang: fr
 image: img/tiles/ecorpustile.jpg
 menu: keynotes
 rank: 2
