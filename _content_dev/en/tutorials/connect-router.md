@@ -73,10 +73,8 @@ replace `irisxx-XX` with your product name and serial number (ie. an Iris 32" nu
 ### Other OS
 
 You can fetch the direct-access IP of your product using one of the following methods :
-
-In the router's administration interface (http://tplinkwifi.net or http://192.168.0.1). Go to **DHCP > DHCP Clients List** and find your product.
 - 
-Si on a besoin de son IP, 2 solutions :
+In the router's administration interface (http://tplinkwifi.net or http://192.168.0.1). Go to <b>DHCP > DHCP Clients List</b> and find your product.
 <center>
     <img class="img-fluid" src="/static/img/documentation/how-to/tp-link_2.jpg" alt="a router's admin UI"/>
 </center>

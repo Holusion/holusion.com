@@ -65,7 +65,7 @@ Si on a besoin de son IP, 2 solutions :
 Dans l'interface du routeur (http://tplinkwifi.net ou http://192.168.0.1), s'authentifier avec `admin/admin`, sur **DHCP > DHCP Clients List**, récupérer l'IP du produit.
 
 <center>
-    <img class="img-fluid" src="/static/img/documentation/how-to/tp-link_2.jpg" alt="intereface d'administration du routeur"/>
+    <img class="img-fluid" src="/static/img/documentation/how-to/tp-link_2.jpg" alt="interface d'administration du routeur"/>
 </center>
 
 Ou utiliser un scanner réseau comme `nmap`, ou un scanner mdns comme avahi.

@@ -1,8 +1,8 @@
 ---
-title: Inverser une caméra sur Unity 3D
+title: Invert a camera in Unity 3D
 image: img/posts/banner_unity.jpg
 
-abstract: Appliquer un effet miroir sur Unity 3D
+abstract: Apply a mirror effect on camera in Unity 3D
 rank: 4
 ---
 

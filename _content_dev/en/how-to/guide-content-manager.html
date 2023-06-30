@@ -6,4 +6,158 @@ rank: 2
 abstract: Holusion Content Manager guide
 ---
 
-<div>This page does not exist in english.</div>
+<main class="main-grid">
+
+    <section class="section">
+      {% picture grid "img/documentation/companion/sketch_content_holusion.png"
+      --alt illustration représentant l'interractivité entre l'application holusion content manager, holusion companion et un hologramme
+      %}
+      <div class="content m-auto">
+        <p>
+          Holusion content manager is a service that allows you to create and edit content in your Holusion Companion iPad application.
+        </p>
+        <p>
+          Add new pages, create links between them, sort them by categories, follow our guide to master our interface in depth.
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="https://content.holusion.com"><button class="btn btn-info my-3">Holusion Companion Application</button></a>
+        </div>
+      </div>
+    </section>
+  
+    <section id="navigation" class="section section-center">
+      <h2>Summary</h2>
+      <div class="content">
+        <ul>
+          <li><a href="#starting">Getting started</a></li>
+          <li><a href="#edit">Creating and editing your page</a></li>
+          <li><a href="#links">Creating link between pages</a></li>
+        </ul>
+      </div>
+    </section>
+  
+    <section id="starting" class="section section-center">
+      <h2>Getting started</h2>
+      <div class="content mb-0">
+        <p>First of all, make sure that the interface is in the right language.</p>
+        <p>To do this, click on the arrow next to your name and select "EN".</p>
+        {% picture grid "img/documentation/companion/app_navbar.png"
+        class="img-fluid"
+        --alt capture d'écran de la barre de navigation de holusion content manager
+        %}
+        <p>The interface is composed of 4 parts :</p>
+        <h4>Pages</h4>
+        <p>Add and edit pages in your application.</p>
+        <h4>Parameters</h4>
+        <p>Find general application information, add users to the project and connect your iPad.
+        </p>
+        <h4>Media</h4>
+        <p>Add images and videos to your project.</p>
+        <h4>Theme</h4>
+        <p>Customize the overall look of your application.</p>
+  
+        <h2>First steps</h2>
+  
+      </div>
+    </section>
+    <section id="medias" class="section">
+      {% picture grid "img/documentation/companion/medias.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet medias de l'application holusion content manager
+      %}
+      <div class="content">
+        <h3>Add media</h3>
+        <p>
+          Before creating your pages, start by going to the "media" tab to add the videos projected on your holographic terminal, as well as the images
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      {% picture grid "img/documentation/companion/new_page.jpg"
+      --alt capture d'écran de la création d'une nouvelle page dans holusion content manager
+      %}
+      <div class="content">
+        <h3>Create your first page</h3>
+        <p>Each page corresponds to a video displayed on the holographic terminal. You will need as many pages as the number of videos to be projected.</p>
+        <p>In the "pages" tab, enter the name of your new page then click on the "create" button.</p>
+      </div>
+    </section>
+    
+    <section id="edit" class="section section-center mt-lg-5">
+      <h2>Edit your page</h2>
+      <div class="content">
+        <p>
+          By clicking on the card corresponding to your page, you have access to different tabs: overview, editing and links.
+        </p>
+      </div>
+    </section>
+  
+    <section class="section left">
+      {% picture grid "img/documentation/companion/preview.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+      %}
+      <div class="content m-auto">
+        <h3>Overview</h3>
+        <p>
+          The preview section allows you to have a global vision of the page, with on the left its information as well as the video that will be projected on the holographic terminal, and on the right its preview on the Holusion Companion application.
+        </p>
+      </div>
+    </section>
+  
+    <section class="section left">
+      {% picture grid "img/documentation/companion/edit_left.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+      %}
+      <div class="content m-auto">
+        <h3>Edition</h3>
+        <p>
+          The "edition" tab allows you to modify the information on the page.
+        </p>
+        <p>
+          We find on the left the preview of the information that we can then modify.
+          <ul>
+            <li>
+              The thumbnail that will be displayed as a preview of the page
+            </li>
+            <li>The video projected on the holographic terminal previously added in the application's media</li>
+            <li>The category in which the page is classified..</li>
+          </ul>
+        </p>
+      </div>
+    </section>
+  
+    <section class="section left">
+      {% picture grid "img/documentation/companion/edit_right.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet prévisualisation de page de l'application holusion content manager
+      %}
+      <div class="content m-auto">
+        <p>
+          On the right, you can directly modify the content of the page by clicking on the image to modify it and also with a text editor using the
+         <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> format.
+        </p>
+        <p>
+          For a more personal application, you can integrate content in a 2160x1520px image that will take the whole screen, and make custom links with our <a href="#links">link editor</a> presented below.
+        </p>
+      </div>
+    </section>
+  
+    <div id="links" class="section left">
+      {% picture grid "img/documentation/companion/links.jpg"
+      class="mb-4"
+      --alt capture d'écran de l'onglet liens de l'application holusion content manager
+      %}
+      <div class="content m-auto">
+        <h3>Links</h3>
+        <p>
+          Navigate between your pages with the link builder.
+        </p>
+        <p>
+          ou can add customizable buttons, image links, or create a custom shape by entering <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path data.</a>.
+        </p>
+      </div>
+    </div>
+  
+  </main>
