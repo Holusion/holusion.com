@@ -124,13 +124,14 @@ fi
 
 
 #[ -d "$DIR/build" ] || mkdir -p "$DIR/build"
-install_optimizers "$DIR/build"
 
 #check gem dependencies and install if necessary
 bundle check >/dev/null || bundle install
 
 
 if $make_compress ;then
+
+  install_optimizers "$DIR/build"
   #echo "Compress static assets"
   time compress_folder "$DIR/static"
 fi
