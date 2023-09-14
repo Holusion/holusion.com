@@ -3,7 +3,7 @@
 /* This file describes two concepts :
  * - section-main-header : full-width image with optionnal text card
  */
-
+ @use "sass:math";
  
 .header{
   background-color:$grey-100;
@@ -177,7 +177,7 @@ section.title {
         content: "";
         z-index: -2;
         display: block;
-        padding-top: 100% * 1080 / 3840;
+        padding-top: math.div(100% * 1080, 3840);
       }
       .main-header-spacer, .main-header-body{
         position: absolute;
