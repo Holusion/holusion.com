@@ -1,12 +1,12 @@
 /* grid layout. Used with dark theme */
-
+@use "sass:math";
 .main-grid{
   $margin: 7rem;
   $padding: 15px;
   $col: 1200px;
   .section{
     display: grid;
-    grid-template-columns: 1fr [col-start] minmax(auto, $col/2) [middle] minmax(auto, $col/2) [col-end] 1fr;
+    grid-template-columns: 1fr [col-start] minmax(auto, math.div($col,2)) [middle] minmax(auto, math.div($col,2)) [col-end] 1fr;
     grid-template-rows: auto;
     grid-auto-rows: auto;
     grid-template-areas: 
@@ -33,7 +33,7 @@
           ".     content ."
          ;
         & > img, &>picture>img, &>div{
-          margin-bottom: $margin/2;
+          margin-bottom: calc($margin/2);
         }         
       }
     }  
@@ -48,10 +48,10 @@
         display: block;
         background-color: white;
         @include media-breakpoint-up(xl){
-          grid-area: white / white / span 2 / end;
+          grid-area: unquote("white / white / span 2 / end");
           
           &.left{
-            grid-area: white / white / span 2 / title;
+            grid-area: unquote("white / white / span 2 / title");
           }
         }
       }
@@ -60,10 +60,10 @@
     .content{
       grid-area: content;
       /* if no title, a content-padding is required */
-      padding: ($margin * 2 / 3) $padding;
+      padding: calc($margin * 2 / 3) $padding;
       @include media-breakpoint-down(xl){
         padding: $padding;
-        margin-bottom: $margin/2;
+        margin-bottom: calc($margin/2);
       }
       &.slide{       
         @include media-breakpoint-down(xl){
@@ -95,10 +95,10 @@
     & > h2, &>.section-title {
       position: relative;
       padding: 0 $padding;
-      margin-top: $margin/3;
-      margin-bottom: $margin/3;
-      min-height: $margin/3;
-      grid-area: title / content / span 1 / content;
+      margin-top: calc($margin/3);
+      margin-bottom: calc($margin/3);
+      min-height: calc($margin/3);
+      grid-area: unquote("title / content / span 1 / content");
       ~ .content {
         padding-top: 0;
         padding-bottom: 0;
@@ -127,7 +127,7 @@
       max-width: 100%;
       height: auto;
       z-index: 1;
-      margin-bottom: -($margin * 2 / 3);
+      margin-bottom: calc( $margin * -2 / 3);
       &.cover{
         height: calc( 100% + 7rem * 2 / 3);
         object-fit:cover;
@@ -148,9 +148,9 @@
       width: 100%;
       display: block;
       z-index: 1;
-      margin-bottom: -$margin*2;
+      margin-bottom: calc($margin * -2);
       @include media-breakpoint-down(xl){
-        margin-bottom: -($margin / 2);
+        margin-bottom: calc( $margin / -2);
       }
       & > .sticky-content {
         position: sticky;
@@ -248,7 +248,7 @@
         ". content .";
       }
       & > img, &>picture>img, &>div{
-        margin-bottom: $margin/2;
+        margin-bottom: calc($margin/2);
       }
       .section-center--header{
         position: relative;
