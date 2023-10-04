@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby File.read(".ruby-version").strip
 
 group :core do
   gem 'jekyll', "~>4.3.2"
