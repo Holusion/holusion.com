@@ -59,6 +59,10 @@ inputs:
   icon: src/pictos/properties/inputs.svg
   fr: formats supportés
   en: supported inputs
+tactile:
+  icon: src/pictos/properties/touch.svg
+  fr: tactile
+  en: touch
 setup:
   icon: src/pictos/properties/time.svg
   fr: temps d'installation
