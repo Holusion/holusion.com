@@ -1,11 +1,12 @@
 ---
 layout: front_page
-title: Interactivity
+title: Our interaction examples
 ---
+
 
 <main class="main-dark main-grid">
   <section class="section section-center">
-    <h2 class="text-white my-5" style="font-size: 3rem">Interaction with holograms, how does it work?</h2>
+    <h2 class="text-white my-5" style="font-size: 3rem">Interactivity</h2>
   </section>
  
   <section class="section">
@@ -13,18 +14,16 @@ title: Interactivity
       --img class="cover"
       data-noisetest="1"
       style="object-position: 70% 0"
-      --alt  Hologram at Rouen
+      --alt Hologram At Rouen
     %}
     <div class="content">
       <h2>Tailor-made solutions</h2>
       <p>
-        It has never been easier nor more dynamic. Holusion brings you different options for you to attract your audience’s attention even more. 
-        By interacting with holograms you improve their conceptual understanding  and promote their interactive engagement. 
-        Take over your hologram using a tablet, a gamepad, a keyboard or custom buttons.
-        Find the best way to tell your story.
+        You can take control of your hologram, control it and choose what you want to display.
+        A tablet, a controller or a button, find the solution that suits you best to control your animation.
       </p>
       <p>
-        Thanks to our content management solution, <strong>create an interactive application from your browser without any code.</strong>
+        Our content management interfaces will allow you to modify your applications <b>without code</b> directly from your browser.
       </p>
       <div class="d-flex justify-content-center">
         <a href="https://content.holusion.com" target="_blank"><button class="btn btn-info image-shadow my-3">Holusion Companion</button></a>
@@ -33,8 +32,63 @@ title: Interactivity
   </section>
 
   <section class=" section section-white">
-    <h2>Get started</h2>
+    <h2>Take control</h2>
   </section>
+
+
+
+  <section class="section left">
+    {% picture grid img/sections/table_perrusson.webp
+      --img class="img-fluid"
+      data-noisetest="1"
+      --alt A wall-mounted screen synchronized with a tactile table showing an interactive topographic map
+      --picture class="m-auto"
+    %}
+    <div class="timeline content py-5">
+
+      <span class="timeline--point rounded-circle">
+        <img src="/static/img/usages/minicontent.webp">
+      </span>
+      <h3 class="d-inline"><a href="#companion">Holusion Content Management</a></h3>
+      <p class="mb-0">
+        Out content management interface <a href="https://content.holusion.com" target="_blank">content.holusion.com</a> allows you to create and modify your applications without code.
+      </p>
+      <p class="text-end mb-0"><a href="#companion">see more...</a></p>
+
+
+      <span class="timeline--point rounded-circle">
+        <img src="/static/img/usages/minicorpus.webp">
+      </span>
+      <h3 class="d-inline"><a href="#ecorpus">eCorpus</a></h3>
+      <p class="mb-0">
+        Developed for several years with the universities of <a href="https://irhis.univ-lille.fr/">Lille</a> and <a href="https://www.uliege.be/cms/c_8699436/fr/uliege">Liège</a>;
+        <b>eCorpus</b> is the state-of-the-art solution for viewing 3D models on the web.
+      </p>
+      <p class="text-end mb-0"><a href="#ecorpus">see more...</a></p>
+
+
+      <span class="timeline--point rounded-circle">
+        <img src="/static/img/usages/minitable.webp">
+      </span>
+      <h3 class="d-inline"><a href="#tactile">Tactile</a></h3>
+      <p class="mb-0">
+        Used alone or in addition to a hologram, our screens and tactile tables allow users to explore the content offered autonomously.
+      </p>
+      <p class="text-end mb-0"><a href="#tactile">see more...</a></p>
+
+
+      <span class="timeline--point rounded-circle">
+        <img src="/static/img/usages/miniboard.webp">
+      </span>
+      <h3 class="d-inline"><a href="#design">Fabrications sur mesure</a></h3>
+      <p class="mb-0">
+        Custom fits, displays and lighting are all scenographic assets that are essential to a successful experience.
+      </p>
+      <p class="text-end mb-0"><a href="#design">see more...</a></p>
+
+    </div>
+  </section>
+
   <section class="section left">
     <div class="cube-contain" style="grid-area: image; margin-top: 17%; margin-left: 63%">
       <div class="cube">
@@ -47,68 +101,135 @@ title: Interactivity
       </div>
     </div>     
     {% picture grid "img/sections/sketch_content_holusion.png"
-    --alt sketch showing how the content management system interacts with the Companion App on a tablet and the content on your hologram
+    --alt sketch showing the interaction between the holusion content manager application on a pc screen, the Holusion companion application on Ipad and the hologram displayed on the screen.
     %}
 
     <div class="content m-auto">
-      <h2>Holusion Companion</h2>
-      <p>
-        Manage your hologram with real-time interactions.
-        Get the <a href="https://apps.apple.com/fr/app/holusion-companion/id1499610113" target="_blank">Holusion Companion</a> app for free on your iPad.
-      </p>
-      <p>
-        Upload and edit content from your browser on <a href="https://content.holusion.com">Holusion Content Manager</a>.
-      </p>
+      <h2 id="companion">Holusion Companion</h2>
+      <p>Control your hologram with the <a href="https://apps.apple.com/fr/app/holusion-companion/id1499610113" target="_blank">Holusion Companion</a> app ; freely available on your Ipad</p>
+      <p>Connect your Ipad to your hologram and control it remotely. Choose the content you want to display, the animations you want to play and the interactivity you want to offer.</p>
+      <p>Create endless content. Edit your pages live in your browser with <a href="https://content.holusion.com" target="_blank">Holusion content manager</a>.</p>
+      <hp class="mb-0 fw-bold">Holusion Companion Install Guide</p>
+      <div class="text-center">
+        <a href="/dev/fr/how-to/install-holusion-companion"><button class="btn btn-info image-shadow my-3">Setup the app on your IPad</button></a>
+      </div>
+      
+      <p class="mb-0 fw-bold">Holusion content manager User Manual</p>
+      <div class="text-center">
+        <a href="/dev/fr/how-to/guide-content-manager"><button class="btn btn-info image-shadow my-3">Create content from your browser</button></a>
+      </div>
     </div>
+  </section>
+
+  <section class="section">
+    {% picture grid "img/sections/focus_stbertin_matthieu.webp"
+    --alt photogrammetry of the pied de croix from st Bertin Abbaye
+    %}
+
+    <div class="content text-center">
+      <h2 id="ecorpus">eCorpus</h2>
+      <p>
+        Benefit from a custom integration of the most comprehensive 3D viewer on the market.
+      </p>
+      <p>Developed by Holusion as part of the <a href="https://ethesaurus.holusion.com">eThesaurus</a> research consortium, eCorpus is integrated into our products in multiple ways.</p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <h2>Enter the augmented models era</h2>
   </section>
 
   <section class="section section-center">
     <div class="content">
       <div class="row">
-        <div class="col-md-6">
-          <h3>Holusion Companion installation guide</h3>
-          <p>Get the app for your iPad.</p>
-          <div class="d-flex justify-content-center">
-            <a href="/dev/en/how-to/install-holusion-companion"><button class="btn btn-info image-shadow my-3">More information</button></a>
+        <div class="col-lg-6 col-12">
+          <img class="img-fluid" src="/static/img/usages/ethesaurus.webp">
+        </div>
+        <div class="col-lg-6 col-12">
+          <h3 class="text-center pt-lg-4">With a tactile screen</h3>
+          <p>Improve your hologram with a remote tactile screen, allowing users to explore autonomously the 3D scenes</p>
+          <p>Your hologram directly uses the mediation scenarios configured on eCorpus to offer a deeply immersive experience.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-12">
+          <h3 class="text-center pt-lg-4">On a tactile table</h3>
+          <p>Integrate eCorpus on a tactile table, with or without an additional remote screen for a complete and intuitive viewing experience</p>
+          <p>Get big with 46" to 65" touch tables.</p>
+          <div class="d-flex justify-content-end">
+            <a href="https://ethesaurus.holusion.com/fr/doc/"><button class="btn btn-info image-shadow my-3">Discover eCorpus</button></a>
           </div>
         </div>
-        <div class="col-md-6">
-          <h3>Holusion Content Manager user manual</h3>
-          <p>Create content and stories from your browser.</p>
-          <div class="d-flex justify-content-center">
-            <a href="/dev/en/how-to/guide-content-manager"><button class="btn btn-info image-shadow my-3">More information</button></a>
-          </div>
+        <div class="col-lg-6 col-12">
+          <img class="img-fluid" src="/static/img/usages/table_tactile.webp">
         </div>
       </div>
     </div>
   </section>
-  <section id="section-bouton" class="section left section-white">
-    <h2>The revelation button</h2>   
-    {% picture  "img/sections/interaction_bouton.jpg" 
-      class="img-fluid"
-      alt="Interaction button in a real estate project inauguration"
-    %}
-    <div class="content">
-      <p>Combining surprise and scenography, the revelation button allows you to reveal your hologram to an audience gathered for the occasion.
-      </p>
-      <p>Thanks to our <a href="/dev/fr" target="_blank"> API</a>, connect your hologram to <b>any device you like</b> ! Buttons, Arduino, sensors, keyboard, choose the device you like the most !
-      </p>
-      <p>Reveal your latest news and <a href="/fr/posts/2019-07-01-SHAKE#video">inaugurate your real estate projects</a>.
-      </p>          
-    </div> 
-  </section>
 
   <section class="section section-center">
-    <h2>Solutions for every need</h2>
     <div class="content">
+      <h2 id="tactile" class="text-center">Interactive applications</h2>
       <p>
-        Our experience on holographic technology allows us to provide a wide variety of solutions to your specific needs.
-        Let us find with you the best interactions one can create with your holographic solutions or multimedia deployments.
+        Using our expertise for more than 10 years in the creation of interactive applications, we offer turnkey solutions for your projects.
       </p>
       <p>
-        Since each project is unique, our team can evaluate your requirements and propose 
-        solutions that will provide the best end-user experience.
+        Whether it is for a virtual tour application, a product presentation application or a game application, we accompany you from the writing of the specifications to the integration on site.
+      </p>
+      <p>
+        Our content management solutions will allow you to keep your application up to date and easily update it.
       </p>
     </div>
   </section>
+
+  <section id="section-bouton" class="section left section-white">
+    <h2 id="design">Switches and interfaces</h2>   
+    {% picture  "img/sections/interaction_bouton.jpg" 
+      class="img-fluid"
+      alt="Activation switch for the inauguration of a construction site"
+    %}
+    <div class="content">
+      <p>Our switches and interfaces allow you to control your hologram in a simple and intuitive way.</p>
+      <p>
+        Combining surprise and scenography, the reveal button allows you to reveal your hologram in front of an audience gathered for the occasion.
+      </p>
+      <p>
+        From our <a href="/dev/fr" target="_blank">API</a>, connect your holograms to anything you can imagine. Sensors, buttons, keyboards, Arduino, controllers, choose your <b>favorite interface</b>!
+      </p>
+      <p>
+        Reveal your latest news and inaugurate your <a href="/fr/posts/2019-07-01-SHAKE#video">real estate projects</a>.
+      </p>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-center">
+    <h2>Conception et fabrication</h2>
+    <div class="content">
+      <p>
+        Our experience in displays allows us to accompany you in finding the best way to interact with your product.
+      </p>
+      <p>
+        Our network of local manufacturers allows us to manufacture custom accessories on demand.
+        We manufacture custom wood, metal or plastic covers, as well as custom electronic circuits to create ambient lighting, lighted logos or visual indicators.
+      </p>
+      <p>
+        We also offer custom-made furniture, from the design to the installation on site.
+      </p>
+    </div>
+  </section>
+
+  {% picture "img/sections/header.webp"  class="img-fluid" alt="closeup of a tactile table designed and made by Holusion" %}
+
 </main>
+
+
+
+
+
+
+
+
+
+
+

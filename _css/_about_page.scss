@@ -1,20 +1,35 @@
 /*--Timeline section--*/
 
 .timeline{
-    border-left: 2px solid $dark-blue;
+    
+    border-left: 2px solid $cyan;
     @include media-breakpoint-down(xl){
         border: none;
     }
     .timeline--point{
-        background-color: $dark-blue;
+        background-color: $cyan;
         position: relative;
         display: inline-block;
         height: 75px; 
         width: 75px; 
         left:-55px; 
         vertical-align: middle;
+        overflow: hidden;
     }
 }
+
+section, .section{
+    &.section-white{
+        .timeline{
+            border-color: $dark-blue;
+    
+        }
+        .timeline--point{
+            background-color: $dark-blue;
+        }
+    }
+}
+
 
 /*--Partners section--*/
 
