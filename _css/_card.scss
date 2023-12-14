@@ -7,6 +7,15 @@
     flex-direction: column;
     border: none;
     border-radius: 0;
+    h3{
+        color: $dark;
+    }
+    p{
+        color: $dark;
+    }
+    ul{
+        color: $dark;
+    }
     @include media-breakpoint-down(lg){
         flex-direction: row;
         .card-img{

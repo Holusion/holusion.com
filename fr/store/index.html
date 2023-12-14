@@ -1,11 +1,33 @@
 ---
-title: Notre catalogue
+<!-- title: Notre catalogue -->
 layout: store
 scripts:
   - /static/js/observer.js
 ---
+<div id="catalog" class="products-navbar">
+  <script>
+    function changeColorLink(linkOnClick){
+      const link = document.querySelectorAll('a');
+      link.forEach(a => {
+        a.classList.remove('clicked');
+    });
 
-<section class="section">
+      linkOnClick.classList.add('clicked');
+    }
+  </script>
+
+  <div>
+    <ul>
+      <li><a href="#store-main" onclick="changeColorLink(this)">Bornes holographiques et table tactile</a></li>
+      <li><a href="#store-helice" onclick="changeColorLink(this)">Services</a></li>
+      <!-- <li><a href="#store-smartphone">Autres produits</a></li> -->
+      <li><a href="#store-product" onclick="changeColorLink(this)">Autres produits</a></li>
+      <li><a href="#store-accessory" onclick="changeColorLink(this)">Accessoires</a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="section pb-5">
   {% picture grid img/sections/st_omer.jpg
     --img class="cover"
     data-noisetest="1"
@@ -24,11 +46,11 @@ scripts:
   </div>
 </section>
 
-<section class="section section-white">
+<!-- <section class="section section-white">
   <h2>Parcourez notre selection</h2>
-</section>
+</section> -->
 
-<section class="section left">
+<!-- <section class="section left">
   <div class="fixed-background">
     <div class="sticky-content">
       <div class="slides">
@@ -140,23 +162,13 @@ scripts:
       <button class="d-block btn btn-info mt-5 mx-auto" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">Contactez nous</button>
     </div>
   </div>
-</section>
+</section> -->
 
-<section class="section left section-white pb-4">
+<!-- <section class="section left section-white pb-4">
   <h2>Store</h2>
-</section>
+</section> -->
 
-<div id="catalog" class="products-navbar">
-  <div>
-    <ul>
-      <li><a href="#store-main">Vitrine</a></li>
-      <li><a href="#store-helice">Hélices</a></li>
-      <li><a href="#store-smartphone">Goodies</a></li>
-      <li><a href="#store-accessory">Accessoires</a></li>
-      <li><a href="#store-product">Autre</a></li>
-    </ul>
-  </div>
-</div>
+
 
 <section class="section section-center pt-5">
   <div class="content mb-0 ps-0 p-sm-1">

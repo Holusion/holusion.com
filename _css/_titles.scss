@@ -20,11 +20,22 @@ h2{
 
 h3, h3 a {
   margin-bottom: 1em;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-color: $orange2;
+  text-decoration-thickness: 3px;
+  .main-dark & {
+    color: $white;
+  }
+  .section-white &{
+    color: $dark;
+  }
+  font-weight: 600;
 }
 
 h4{
   color: $blue;
-	font-size:20px;
+	font-size:22px;
   font-weight: bold;
 }
 
