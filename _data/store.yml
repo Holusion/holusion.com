@@ -5,7 +5,6 @@ sections:
     textSectionStore:
       fr: Nos meilleures solutions pour la présentation de vos maquettes en hologrammes, à louer, ou à acheter.
       en: Our best solutions for presenting your hologram models, to rent or buy.
-  # - name: helice
   - name: services
     fr: Services
     en: Services
@@ -19,13 +18,6 @@ sections:
       en: > 
         We specialize in converting BIM files into holograms.
         Choose your offer for projects under 10,000 m² floor area.
-
-  # - name: smartphone
-  #   fr: Goodies pour Smartphones
-  #   en: Smartphone Goodies
-  # - name: tablet
-  #   fr: Goodies pour tablettes
-  #   en: Tablet Goodies
 
   - name: product
     fr: Autres produits

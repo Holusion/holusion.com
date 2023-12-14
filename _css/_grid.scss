@@ -22,10 +22,6 @@
         ".      image  .";
     }
 
-    // &.padding3rem{
-    //   padding-bottom: 3rem;
-    // }
-
     &.left{
       grid-template-areas: 
         "white white title end"
@@ -50,7 +46,7 @@
       &::before{
         content: "";
         display: block;
-        background-color: rgb(131, 99, 99);
+        background-color: rgb(255, 255, 255);
         @include media-breakpoint-up(xl){
           grid-area: unquote("white / white / span 2 / end");
           
