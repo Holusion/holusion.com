@@ -1,9 +1,8 @@
 ---
-<!-- title: Notre catalogue -->
+title: Notre catalogue
 layout: store
-scripts:
-  - /static/js/observer.js
 ---
+
 <div id="catalog" class="products-navbar">
   <script>
     function changeColorLink(linkOnClick){
@@ -32,7 +31,18 @@ scripts:
     style="object-position: 70% 0"
     --alt Dispositif hologramme controlé par tablette
   %}
-  <div class="content mb-0">
+  <div class="content mb-0 position-relative">
+    <div class="position-absolute top-0 end-0 py-4">
+      <div class="cart-icon-line">
+        <div id="open-cart" class="snipcart-summary">
+          <button class="btn btn-outline-info snipcart-checkout">
+            <span data-test="snipcart-items" class="snipcart-items-count">0</span>
+            {% svg src/pictos/icons/icon-cart.svg width=20 style="display:inline-block;" %}
+          </button>
+        </div>
+      </div>
+    </div>
+    
     <h2>Découvrez toute notre gamme de produits et accessoires</h2>
     <p>
       De quelques centimètres à plusieurs mètres, des solutions portables aux installations scéniques, nous proposons une large gamme de solutions techniques et de services.

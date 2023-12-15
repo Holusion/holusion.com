@@ -41,12 +41,12 @@
     &.section-white{
       color: $dark;
       @include media-breakpoint-down(xl){
-        background-color: white;
+        background-color: $white;
       }
       &::before{
         content: "";
         display: block;
-        background-color: rgb(255, 255, 255);
+        background-color: $white;
         @include media-breakpoint-up(xl){
           grid-area: unquote("white / white / span 2 / end");
           
