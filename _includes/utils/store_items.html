@@ -14,155 +14,10 @@
   </div>
     <div class="col"></div>
   </div>
-
   
 
   <div class="row g-0">
     {% for item in items %}
-
-      {%- if section.name contains "services" -%}
-        <div class="row g-0 mb-5">
-          <div class="col-lg-4 px-md-3 py-3">
-            <div class="light-card">
-              <div class="card-content">
-                <h3>Offre Explore</h3>
-                <p>
-                  L'essentiel en exploration
-                </p>
-                <p>
-                  Inclus :
-                </p>
-                <ul>
-                  <li>Vue orbitale dynamique</li>
-                  <li>Formats supportés : .ifc / .fbx / .obj / .3ds</li>
-                </ul>
-                <div class="price">
-                  <h4 class="text-secondary">950 €</h4>
-                  <p>par maquette</p>   
-                </div>                           
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 px-md-3 py-3">
-            <div class="light-card">
-              <div class="card-content">
-                <h3>Offre Improve</h3>
-                <p>
-                  Une découverte améliorée
-                </p>
-                <p>
-                  Inclus :
-                </p>
-                <ul>
-                  <li>Toute l'offre "Explore"</li>
-                  <li>Transitions dynamiques</li>
-                  <li>Rendus réalistes</li>
-                </ul>
-                <div class="price">
-                  <h4 class="text-secondary">1700 €</h4>
-                  <p>par maquette</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 px-md-3 py-3">
-            <div class="light-card">
-              <div class="card-content">
-                <h3>Offre Upgrade</h3>
-                <p>Le niveau supérieur de simulation 3D</p>
-                <p>
-                  Inclus :
-                </p>
-                <ul>
-                  <li>Toute l'offre "Improve"</li>
-                  <li>Scénarisation avancée</li>
-                  <li>Motion design</li>
-                  <li>Direction artistique dédiée</li>
-                  <li>Vue en écorché des appartements</li>
-                  <li>Rendu Ultra-HD</li>
-                </ul>
-                <div class="price">
-                  <h4 class="text-secondary">3750 €</h4>
-                  <p>par maquette</p>                   
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="row row-cols-2">
-          <div class="col">  
-            <h4>Notre offre de services de gestion</h4>
-            <p>Contrôlez votre hologramme en autonomie et en toute sérénité. Avec nos solutions professionelles, profitez d'une administration en ligne en Cloud, d'une gestion à distance et d'une application tablette pour <a href="/fr/interaction">rendre votre hologramme interactif</a> 
-            </p>
-        </div>
-          <div class="col"></div>
-
-          </div>
-          <div class="row g-0 mb-5">
-            <div class="col-lg-4 px-md-3 py-3">
-              <div class="light-card">
-                <div class="card-content">
-                  <h3>Individuel</h3>
-                  <p>Maquettes individuelles</p>
-                  <p>
-                    Administration hors ligne en autonomie
-                  </p> 
-                  <div class="price">
-                    <h4 class="text-secondary">Gratuit</h4>
-                  </div>                           
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 px-md-3 py-3">
-              <div class="light-card">
-                <div class="card-content">
-                  <h3>Professionnel</h3>
-                  <p>
-                    Votre application iPad dédiée
-                  </p>
-                  <p>
-                    Inclus :
-                  </p>
-                  <ul>
-                    <li>Administration en ligne sur interface dédiée</li>
-                    <li>10Go de stockage inclus</li>
-                    <li>Gestion par iPad</li>
-                  </ul>
-                  <div class="price">
-                    <h4 class="text-secondary">1 500€ HT</h4>
-                    <p>licence par entreprise</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 px-md-3 py-3">
-              <div class="light-card">
-                <div class="card-content">
-                  <h3>Entreprise</h3>
-                  <p>Besoin récurrent</p>
-                  <p>
-                    Inclus :
-                  </p>
-                  <ul>
-                    <li>Administration en ligne sur interface dédiée</li>
-                    <li>100 Go de stockage cloud</li>
-                    <li>Jusqu'à 100 bornes en gestion centralisée</li>
-                    <li>Application interactive en temps réel offerte</li>
-                    <li>iPad inclus</li>
-                  </ul>
-                  <a href="https://content.holusion.com" class="text-center"><button class="btn btn-info mb-4">En savoir plus</button></a>  
-                  <div class="price">
-                    <h4 class="text-secondary">125€ HT/mois</h4>
-                    <p>engagement 12 mois</p>          
-                  </div>
-                </div>
-              </div>
-            </div>
-      {%- else -%}
-
         <div data-test="store-item-card" class="store-card dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
           <a href="{{item.url}}">
             {%- if item.image contains "static" -%}
@@ -186,7 +41,6 @@
             </a>
           </div>
         </div>
-      {%- endif -%}
     {% endfor %}
   </div>
 

@@ -5,20 +5,6 @@ sections:
     textSectionStore:
       fr: Nos meilleures solutions pour la présentation de vos maquettes en hologrammes, à louer, ou à acheter.
       en: Our best solutions for presenting your hologram models, to rent or buy.
-  - name: services
-    fr: Services
-    en: Services
-    subtitle:
-      fr: Notre offre de maquettes numériques
-      en: Our digital mock-up offer
-    textSectionStore:
-      fr: >
-        La conversion de votre maquette en hologrammes depuis les fichiers BIM est notre spécialité.
-        Choisissez votre offre pour les projets de moins de 10 000 m² de surface de plancher.
-      en: > 
-        We specialize in converting BIM files into holograms.
-        Choose your offer for projects under 10,000 m² floor area.
-
   - name: product
     fr: Autres produits
     en: Other products    
