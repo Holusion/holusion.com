@@ -3,13 +3,16 @@
     position: sticky;
     color: $dark;
     top: 58px;
-    // max-width: 1200px;
-    margin: auto ;
-    background: #072739;
-    backdrop-filter: saturate(180%) blur(20px);
+    background: #072739E2;
+    @supports (backdrop-filter: saturate(180%) blur(20px)) 
+          or  (-webkit-backdrop-filter: saturate(180%) blur(20px)) {
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      background: #072739E2;
+    }
+
     box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
     z-index: 2;
-
     ul{
         display: flex;
         flex-wrap: wrap;
