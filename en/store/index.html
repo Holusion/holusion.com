@@ -5,14 +5,50 @@ scripts:
   /static/js/observer.js
 ---
 
-<section class="section">
+<div id="catalog" class="products-navbar">
+
+  <script>
+    function changeColorLink(linkOnClick){
+      const link = document.querySelectorAll('a');
+      link.forEach(a => {
+        a.classList.remove('clicked');
+    });
+
+      linkOnClick.classList.add('clicked');
+    }
+  </script>
+
+
+  <div class="navbar-nav container">
+    <ul>
+      <li><a href="#store-main" onclick="changeColorLink(this)">Holographic kiosks and touch table</a></li>
+      <li><a href="#store-product" onclick="changeColorLink(this)">Other products</a></li>
+      <li><a href="#store-accessory" onclick="changeColorLink(this)">Accessories</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<section class="section pb-5">
   {% picture grid img/sections/st_omer.jpg
     --img class="cover"
     data-noisetest="1"
     style="object-position: 70% 0"
     --alt Dispositif hologramme controlé par tablette
   %}
-  <div class="content mb-0">
+  
+  <div class="content mb-0 position-relative">
+    <div class="position-absolute top-0 end-0 py-4">
+      <div class="cart-icon-line">
+        <div id="open-cart" class="snipcart-summary">
+          <button class="btn btn-outline-info snipcart-checkout">
+            <span data-test="snipcart-items" class="snipcart-items-count">0</span>
+            {% svg src/pictos/icons/icon-cart.svg width=20 style="display:inline-block;" %}
+          </button>
+        </div>
+      </div>
+    </div>
+    
     <h2>Discover our full range of products and accessories</h2>
     <p>
       Holusion designs and develops innovative display solutions. 
@@ -26,7 +62,7 @@ scripts:
   </div>
 </section>
 
-<section class="section section-white">
+<!-- <section class="section section-white">
   <h2>All our solutions</h2>
 </section>  
 <section class="section left">
@@ -145,19 +181,9 @@ scripts:
 
 <section class="section left section-white pb-4">
   <h2>Store</h2>
-</section>
+</section> -->
 
-<div id="catalog" class="products-navbar">
-  <div>
-    <ul>
-      <li><a href="#store-main">Showcase</a></li>
-      <li><a href="#store-helice">Holographic fan</a></li>
-      <li><a href="#store-smartphone">Goodies</a></li>
-      <li><a href="#store-accessory">Accessories</a></li>
-      <li><a href="#store-product">Other</a></li>
-    </ul>
-  </div>
-</div>
+
 
 <section class="section section-center pt-5">
   <div class="content mb-0 ps-0 p-sm-1">

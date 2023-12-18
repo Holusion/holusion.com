@@ -17,7 +17,7 @@ const faker = require("faker");
     });
     //We don't reload the page, tests may leak
     beforeEach(async function(){
-      await page.click("#navbar-contact-button");
+      await page.click(`[data-test="navbar-contact-button"]`);
       this.form = await page.waitForSelector("#contactform-modal.show");
       this.write = (async function (name, txt){
         let selector = `#contactform-modal [name="${name}"]`

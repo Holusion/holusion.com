@@ -13,3 +13,7 @@
 *.JPEG filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.PNG filter=lfs diff=lfs merge=lfs -text
+
+
+#try to always use LF line endings
+* text=auto eol=lf
