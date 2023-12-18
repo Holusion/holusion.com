@@ -39,8 +39,14 @@ exports.mochaHooks = {
     if (!wsEndpoint) {
       throw new Error('Puppeteer\'s wsEndpoint not found');
     }
-    this.browser = await puppeteer.connect({browserWSEndpoint:wsEndpoint});
     this._pages = [];
+    try{
+      this.browser = await puppeteer.connect({browserWSEndpoint:wsEndpoint});
+    }catch(e){
+      console.error(e);
+      throw new Error(`Failed to connect to puppeteer on ${wsEndpoint}: ${e.message}`);
+    }
+
     this.newPage = async ({device, block:blockOpts=true, closeAfter=true}={})=>{
       const page = await this.browser.newPage();
 
