@@ -46,8 +46,11 @@
       width:100%;
     }
     .btn{
+      font-size: 1.2rem;
+      padding: 0.9rem 1.7rem;
       @media screen and (min-width: $break-lg){
-        font-size: 1.2em;
+        font-size: 1.4rem;
+        padding: 0.9rem 2.6rem;
       }
     }
   }
