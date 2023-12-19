@@ -57,10 +57,19 @@
       }
     }
     
+
+    
     .content{
       grid-area: content;
       /* if no title, a content-padding is required */
       padding: calc($margin * 2 / 3) $padding;
+      &.content-center{
+        padding: $padding;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
       @include media-breakpoint-down(xl){
         padding: $padding;
         margin-bottom: calc($margin/2);
@@ -122,24 +131,33 @@
       }
     }
     
+    &:has(+ .section-white:not(.section-center)), &:has(+ .section-title){
+      & > img, &>picture>img , &>.media{
+        margin-bottom: calc( $margin * -2 / 3);
+        &.cover{
+          height: calc( 100% + 7rem * 2 / 3);
+        }
+      }
+    }
+    
     & > img, &>picture>img , &>.media{
       display: block;
       max-width: 100%;
       height: auto;
       z-index: 1;
-      margin-bottom: calc( $margin * -2 / 3);
       &.cover{
-        height: calc( 100% + 7rem * 2 / 3);
+        height: 100%;
         object-fit:cover;
         object-position: right;
       }
       @include media-breakpoint-down(xl){
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
         &.cover{
-          height: auto;
+          height: auto !important;
         }
       }
     }
+
     
 
     & .fixed-background {

@@ -4,16 +4,15 @@ title: Holusion
 abstract: "Conception, fabrication, vente et location d'affichages innovants"
 lang: fr
 image: img/sections/prism.jpg
-scripts:
-  - /static/js/observer.js
 ---
 
 <main class="main-dark main-grid">
   <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
-        <source srcset="/static/img/front/header/header_4k.webp 3840w, /static/img/front/header/header_retina.webp 3072w, /static/img/front/header/header_hd.webp 1920w, /static/img/front/header/header_sd.webp 1080w" type="image/webp"/>
-        <img class="img-fluid" src="/static/img/front/header/header_hd.svg" sizes="100w" alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme"/>
+        <source srcset="/static/img/front/header/home-3840.webp 3840w, /static/img/front/header/home-1920.webp 1920w" media="(min-width: 992px)" type="image/webp"/>
+        <source srcset="/static/img/front/header/home-1640.webp 1640w, /static/img/front/header/home-1170.webp 1170w" type="image/webp"/>
+        <img class="img-fluid" src="/static/img/front/header/home-1920.webp" sizes="100w" alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme"/>
       </picture>
     </div>
     <div class="home-page-header-body">
@@ -22,14 +21,12 @@ scripts:
           <h1>
           Créateur d'expériences digitales innovantes
           </h1>
+          <p class="mx-auto"> 
+            <b>Spécialiste</b> de l'affichage digital, <b>Holusion</b> propose une large gamme de produits
+             en <b>vente</b> ou en <b>location</b>, et dont les tailles varient de l'hologramme de poche à celui de 2 mètres de large.
+          </p>
         </div>
       </div>
-    </div>
-    <div class="home-page-header-body--content container">
-      <p class="mx-auto"> 
-        <b>Spécialiste</b> de l'affichage digital, <b>Holusion</b> propose une large gamme de produits
-         en <b>vente</b> ou en <b>location</b>, et dont les tailles varient de l'hologramme de poche à celui de 2 mètres de large.
-      </p>
     </div>
     </div> 
     <div class="home-page-header-cta d-flex justify-content-center">
@@ -38,7 +35,6 @@ scripts:
   </section> 
 
   <section class="section">
-    <h2>Suscitez l'intérêt</h2>
     {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
       --img class="image-shadow cover"
       data-noisetest="1"
@@ -46,177 +42,57 @@ scripts:
       --alt Hologramme At'Rouen
     %}
     <div class="content">
+      <h2>Suscitez l'intérêt</h2>
       <p>
-        <b>Impressionnez vos clients avec des images holographiques d'une haute qualité.</b> En pointe sur le développement des définitions <b>UltraHD</b> et des nouvelles technologies d'affichage, Holusion vous permettra de toujours avoir une longueur d'avance.
+        Spécialiste de l'affichage digital, Holusion propose une large gamme de produits <b>en vente ou en location</b>, et dont les tailles varient de l'hologramme de poche à celui de 2 mètres de large.
       </p>
       <p>
-        Des solutions complètes existent pour de nombreux domaines et permettent d'enrichir la sensation d'immersion pour des expériences toujours plus marquantes.
-      </p>
-      <p>Présentation de maquettes, outil de médiation scientifique et culturelle, vitrine interactive pour dynamiser vos espaces. Tous ces usages sont à votre portée grâce à nos solutions exclusives et notre matériel <b>Made In France.</b>
-        <div class="d-flex justify-content-center">
-          <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Découvrez nos usages clés</button></a>
-        </div>
+        L'hologramme vous donne l'opportunité de créer un support physique innovant et attrayant pour vos contenus. En pointe sur le développement des définitions UltraHD et des nouvelles technologies d'affichage, Holusion vous permettra de toujours avoir une longueur d'avance.</p>
+      <p>Nous créons des hologrammes et des animations interactives pour diverses applications : <b>présentations commerciales, valorisation du patrimoine scientifique ou culturel et immersion dans des contenus numériques.</b></p>
+      <p>Avec <b><a href="/fr/interaction/">Holusion Companion</a></b>, notre application iPad dédiée, nous facilitons la gestion des hologrammes ainsi que l’interaction avec le public. Notre gamme de produits, entièrement conçue et fabriquée en France, s'adapte à une multitude de besoins, tout en soutenant l'innovation locale. </p>
+  
       </div>
   </section>
 
-  <section class="section section-white">
-    <h2>Une expérience complète</h2>
-  </section>
 
-  <section class="section left">
-    <div class="fixed-background">
-      <div class="sticky-content">
-        <div class="slides">
-          {% picture grid "img/sections/background-slides.png"
-          --img data-slides="1-4"
-          --alt illustration d'un iris 75
-          %}
-        </div>
-        <div class="slides">
-          {% picture grid "img/sections/slide_hologramme_batiment.png"
-          --img data-slides="0,1"
-          style="transition: none;"
-          --alt illustration d'un hologramme d'un' batiment
-          %}
-          {% picture grid "img/sections/slide_hologramme_musee.png"
-            --img data-slides="2"
-            --alt illustration d'un hologramme d'une statue
-          %}
-          {% picture grid "img/sections/slide_hologramme_produit.png"
-            --img data-slides="3"
-            --alt illustration d'un hologramme produit
-          %}
-          {% picture grid "img/sections/slide_hologramme_chateau.png"
-          --img data-slides="4"
-          --alt illustration d'un hologramme d'un chateau
-          %}
-        </div> 
-        <div class="slides">
-          {% picture grid "img/sections/slide_plante.png"
-          --img data-slides="1-4"
-          --alt illustration d'une plante
-          %}
-          {% picture grid "img/sections/slide_musee.png"
-            --img data-slides="2-4"
-            --alt illustration d'un ado devant l'hologramme
-          %}
-          {% picture grid "img/sections/slide_gens.png"
-            --img data-slides="3-4"
-            --alt illustration de personnages devant l'hologramme
-          %}
-          {% picture grid "img/sections/slide_interaction.png"
-          --img data-slides="4"
-          --alt illustration de l'interraction avec la tablette
-          %}
-          {% picture grid "img/sections/slide_gamme.png"
-          --img data-slides="5"
-          --alt illustration représentant une gamme d'hologrammes
-          %}
-          {% picture grid "img/sections/cafe_design.jpg"
-          --img class="image-shadow rounded cover"
-          --img data-slides="6"
-          --alt photo de croquis
-          %}
-        </div> 
-      </div>
-    </div>
-    <div class="slide content">
-      <div>
-        <h2>Créez une nouvelle dimension</h2>
-        <p>
-          Aujourd'hui, la tendance est au numérique.
-          Images, modèles 3D, reconstitutions, simulations...  La production de contenus digitaux est au coeur de nos métiers.
-        </p>
-        <p>Nous nous appuyons sur des solutions de modélisation ou de numérisation pour étudier, communiquer et informer.
-        </p>
-        <p>Ces données sont précieuses ! Elles méritent d'être largement partagées et mises en avant. Vous cherchez un outil pour leur donner une nouvelle dimension ?</p>
-        <p>
-          <strong>L'hologramme vous donne l'opportunité de créer un support physique innovant et attrayant pour ces contenus.</strong>
-        </p>
-      </div>
-      <div>
-          <h2>Présentez vos batiments et fichiers BIM</h2>
-          <p>
-            <strong>Des maquettes ultra haute qualité et lumineuses</strong>
-          </p>
-          <p>
-            Avec la démocratisation du BIM et des maquettes 3D, il n'a jamais été aussi simple de présenter vos maquettes en hologrammes.
-          </p>
-          <p>L'hologramme est une alternative attrayante et dynamique pour imaginer la manière de présenter vos maquettes de projets. </p>
-          <p>Dans vos showrooms, sur salon ou directement en bulle de vente, nous avons des solutions innovantes pour chacun de ces usages</p>
-          <p>
-            Nous utilisons un moteur graphique performant et open source pour la création d'images photo-réalistes restituant au mieux les choix de matériaux et l'ambition architecturale.
-          </p>
+  <div class="d-flex justify-content-center">
+    <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Découvrez nos réalisations</button></a>
+  </div>
 
-      </div>
-      <div>
-        <h2>Valorisez un patrimoine</h2>
-        <p>
-          <strong>Une approche ludique et innovante des sciences et de la culture</strong>
-        </p>
-        <p>
-          L’utilisation de l’hologramme permet d’attirer de nouveaux publics et de moderniser l’image des musées.
-        </p>
-        <p>
-          Holusion vous propose des solutions valorisant vos collections tout en créant des expériences inédites pour les visiteurs.
-        </p>
-        <p>
-          Reconstitutions, présentations de pièces de réserve, médiation : tirez parti des forces de l'hologramme pour enrichir le 
-          parcours de vos visiteurs et mettre en lumière le travail de recherche et de conservation de vos équipes.
-        </p>
-      </div>
-      <div>
-        <h2>Séduisez vos clients</h2> 
-        <p>
-          <strong>Mettez en avant vos produits et vos solutions.</strong>
-        </p>
-        <p>
-          Utilisez l'hologramme pour diffuser un message en 3D, vous afficher en téléprésence ou présenter un nouveau produit en avant-première !
-        </p>
-        <p>
-          En magasin ou sur salon, l'hologramme saura appuyer votre présentation et marquer votre auditoire.
-        </p>
-      </div>
-      <div>
-        <h2>Une solution holographique, des contenus à l'infini</h2>
-        {% picture grid "img/sections/slide_tablette.png"
-        --img class="img-fluid mb-5"
-        --alt tablette avec l'application Holusion Companion
+
+  <section class="container pt-5">
+    <div class="row">
+      <div class="col-12 col-xl-6 order-xl-2">
+        {% picture grid img/posts/2023_perrusson/autre-photo-homepage.webp
+          --img class="image-shadow img-fluid"
+          data-noisetest="1"
+          --alt tablette et ecran Perrusson
         %}
-        <p><strong>Une application dédiée <a href="https://content.holusion.com">Holusion Companion</a> transforme votre projet</strong></p>
-        <p>Donnez une profondeur inédite à votre projet en donnant le contrôle à vos utilisateurs.</p>
+      </div> 
+      <div class="col-12 col-xl-6 order-xl-1 align-self-center">
+        <h2>Les services Holusion</h2>
+        <p>
+          Donnez une profondeur inédite à votre projet en donnant le contrôle à vos utilisateurs.
+        </p>
         <ul>
           <li>Prenez la main sur l'hologramme à partir d'une application mobile</li>
-          <li>Créez des applications <strong>no-code</strong> directement depuis votre navigateur</li>
+          <li>Créez des applications no-code directement depuis votre navigateur</li>
           <li>Gérez jusqu'à plusieurs heures de contenus sur autant de produits que vous le souhaitez</li>
           <li>Avec une connexion 4G, collectez les avis de vos visiteurs et restez tout le temps à jour !</li>
         </ul>
-        <div class="d-flex justify-content-center">
-          <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Application Holusion Companion</button></a>
-        </div>
-      </div>
-      <div>
-        <h2>Une gamme adaptée à tous vos besoins</h2>
-        <p><strong>Fabrication française et modèles orginaux</strong></p>
         <p>
-           De nos bornes mobiles et astucieuses jusqu'à nos dispositifs scéniques de plusieurs mètres, découvrez nos solutions holographiques à la vente ou à la location.
+          En plus de gérer les hologrammes grâce aux applications nous pouvons aussi vous aider à numériser et mettre en 3D les objets que vous souhaitez mettre en valeur par l’hologramme.
         </p>
-        <p>Notre savoir-faire unique dans la fabrication d'hologrammes est à votre service pour que nos produits s'adaptent au mieux à vos contraintes.</p>
-        <p>Nos produits sont conçus, fabriqués et assemblés en France, vous soutenez donc une filière innovante locale en choissant notre marque.</p>
-        <div class="d-flex justify-content-center">
-          <a href="/fr/store/"><button class="btn btn-info image-shadow my-3">Découvrez notre gamme de produits</button></a>
-        </div>
-      </div>
-      <div>
-        <h2>Chaque projet est unique</h2>
-        <p><strong></strong></p>
-        <p></p>
-        <div class="d-flex justify-content-center">
-          <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">En savoir plus sur nos réalisations</button></a>
-        </div>
-      </div>
+
+      </div> 
     </div>
   </section>
+
+  <div class="d-flex justify-content-center pb-5">
+    <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Découvrez nos services</button></a>
+  </div>
+
+
 
   <section id="pricing" class="section section-center section-light section-pricing pb-0" > 
     <div class="content p-0 mb-0">

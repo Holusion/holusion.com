@@ -1,12 +1,12 @@
 posts:
-  fr: "Histoires"
-  en: "Use Cases"
+  fr: "Nos réalisations"
+  en: "Our achievements"
 about:
-  fr: "Entreprise"
-  en: "About us"
+  fr: "Qui sommes-nous ?"
+  en: "Who are we ?"
 store:
-  fr: "Catalogue"
-  en: "Products"
+  fr: "Nos produits"
+  en: "Our products"
 dev:
   fr: "Documentation"
   en: "Documentation"

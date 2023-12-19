@@ -54,7 +54,7 @@
 /* -- rounded form -- */
 
 .btn {
-    padding: 0.5em 1em;
+    padding: 0.7rem 1.8rem;
     border-radius:50px;
 }
 
@@ -69,11 +69,22 @@
 
 .btn-info{
     color: white;
+    font-size: 1.1rem;
     background-color: $cyan;
     &:hover{
         color: white;
         background-color: $orange;
         border-color: $orange;
+    }
+}
+.btn-contact{
+    color: white;
+    font-size: 1.75rem;
+    padding: 0.4rem 2rem;
+    background-color: $orange;
+    &:hover{
+        background-color: $cyan;
+        border-color: $cyan;
     }
 }
 
@@ -85,6 +96,5 @@
 }
 
 .blockquote-footer{
-    margin-top: 0;
-    
+    margin-top: 0;  
 }
