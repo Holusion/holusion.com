@@ -10,8 +10,9 @@ scripts:
   <section class="home-page-header">
     <div class="home-page-header-image" >
       <picture id="main-header-picture">
-        <source srcset="/static/img/front/header/header_4k.webp 3840w, /static/img/front/header/header_retina.webp 3072w, /static/img/front/header/header_hd.webp 1920w, /static/img/front/header/header_sd.webp 1080w" type="image/webp"/>
-        <img class="img-fluid" src="/static/img/front/header/header_hd.svg" sizes="100w" alt="l'iris 22 d'Holusion en configuration horizontale présentant un hologramme"/>
+        <source srcset="/static/img/front/header/home-3840.webp 3840w, /static/img/front/header/home-1920.webp 1920w" media="(min-width: 992px)" type="image/webp"/>
+        <source srcset="/static/img/front/header/home-1640.webp 1640w, /static/img/front/header/home-1170.webp 1170w" type="image/webp"/>
+        <img class="img-fluid" src="/static/img/front/header/home-1920.webp" sizes="100w" alt="Holusion's iris 22 in horizontal configuration presenting a hologram"/>
       </picture>
     </div>
     <div class="home-page-header-body">
@@ -35,207 +36,67 @@ scripts:
       <a class="d-block" href="/en/store/"> <button  class="btn btn-info">Discover our products</button></a>
     </div>
   </section> 
-
-  <section class="section">
+  
+ <section class="section">
+  {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
+    --img class="image-shadow cover"
+    data-noisetest="1"
+    style="object-position: 70% 0"
+    --alt Hologramme At'Rouen
+  %}
+  <div class="content">
     <h2>Impress your audience</h2>
-    {% picture grid img/posts/2021_PierreDeSeine/Rouen.jpg
-      --img class="image-shadow cover"
-      data-noisetest="1"
-      style="object-position: 70% 0"
-      --alt Hologram At Rouen (France)
-    %}
-    <div class="content">
-            
+
+    <p>
+      Make a lasting impression with images of exceptional quality. Early adopters of UltraHD screens or other new display technologies, we can share our knowledge and experience to provide you with the best reliable experience.
+    </p>
+    <p>
+      Our packaged solutions will provide unsurpassed immersion and customer engagement for your business cases. 
+    </p>
+    <p>
+      To display models, as a scientific or cultural mediation tool, as an interactive showcase. Our products are <b>designed and made in France</b> and can be used in a wide variety of cases.
+    </p>
+  </div>
+</section>
+
+<div class="d-flex justify-content-center">
+  <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Discover interactive use cases</button></a>
+</div>
+
+
+<section class="container pt-5">
+  <div class="row">
+    <div class="col-12 col-xl-6 order-xl-2">
+      {% picture grid img/posts/2023_perrusson/autre-photo-homepage.webp
+        --img class="image-shadow img-fluid"
+        data-noisetest="1"
+        --alt tactile table and large screen showcased in the Villa Perrusson, a museum in France
+      %}
+    </div> 
+    <div class="col-12 col-xl-6 order-xl-1 align-self-center">
+      <h2>Holusion's Services</h2>
       <p>
-        Make a lasting impression with images of exceptional quality. Early adopters of UltraHD screens or other new display technologies, we can share our knowledge and experience to provide you with the best reliable experience.
+        Give your project an unprecedented depth by giving control to your users.
       </p>
+      <ul>
+        <li>Take over the hologram from a mobile application</li>
+        <li>Create no-code applications directly from your browser</li>
+        <li>Manage up to several hours of content on as many products as you want</li>
+        <li>Using a 4G connection, collect the opinions of your visitors and stay up to date all the time!</li>
+      </ul>
       <p>
-        Our packaged solutions will provide unsurpassed immersion and customer engagement for your business cases. 
+        In addition to managing holograms through applications we can also help you digitize and 3D objects you want to highlight by the hologram.
       </p>
-      <p>
-        To display models, as a scientific or cultural mediation tool, as an interactive showcase. Our products are <b>designed and made in France</b> and can be used in a wide variety of cases.
-        <div class="d-flex justify-content-center">
-          <a href="/en/interaction/"><button class="btn btn-info image-shadow my-3">Discover our key use cases</button></a>
-        </div>
-      </div>
-  </section>
+    </div> 
+  </div>
+</section>
 
-  <section class="section section-white">
-    <h2 class="">An augmented display</h2>
-  </section>
 
-  <section class="section left">
-    <div class="fixed-background">
-      <div class="sticky-content">
-        <div class="slides">
-          {% picture grid "img/sections/background-slides.png"
-          --img data-slides="1-4"
-          --img class="fixed"
-          --alt sketch of an holographic device iris 75
-          %}
-        </div>
-        <div class="slides">
-          {% picture grid "img/sections/slide_hologramme_batiment.png"
-          --img data-slides="0,1"
-          style = "transition: none;"
-          --alt sketch of a building used as hologram
-          %}
-          {% picture grid "img/sections/slide_hologramme_musee.png"
-            --img data-slides="2"
-            --alt sketch of a statue used as an hologram
-          %}
-          {% picture grid "img/sections/slide_hologramme_produit.png"
-            --img data-slides="3"
-            --alt sketch of a marketing ad used as an hologram
-          %}
-          {% picture grid "img/sections/slide_hologramme_chateau.png"
-          --img data-slides="4"
-          --alt Sketch of an historical stronghold used as an hologram
-          %}
-        </div> 
-        <div class="slides">
-          {% picture grid "img/sections/slide_plante.png"
-          --img data-slides="1-4"
-          --alt sketch of a plant
-          %}
-          {% picture grid "img/sections/slide_musee.png"
-            --img data-slides="2-4"
-            --alt sketch of a young person looking at an holographic display
-          %}
-          {% picture grid "img/sections/slide_gens.png"
-            --img data-slides="3-4"
-            --alt sketch of an audience looking at an holographic display
-          %}
-          {% picture grid "img/sections/slide_interaction.png"
-          --img data-slides="4"
-          --alt sketch of a tablet interacting with an hologram via the content.holusion.com service
-          %}
-          {% picture grid "img/sections/slide_gamme.png"
-          --img data-slides="5"
-          --alt sketch of some of holusion's products
-          %}
-          {% picture grid "img/sections/cafe_design.jpg"
-          --img class="image-shadow cover rounded"
-          --img data-slides="6"
-          --alt picture of a design session at holusion
-          %}
-        </div> 
-      </div>
-    </div>
-    <div class="slide content">
-      <div>
-        <h2>Create a new dimension</h2>
-        <p>
-          The trend is to all things digital.
-        </p>
-        <p>
-          Pictures, 3D models, reconstructions, simulations... making digital content is at the heart of what we do.
-        </p>
-        <p>
-          We are using modern modeling and digitization tools to study, communicate and report.
-        </p>
-        <p>
-          Those data are precious. They deserve to be widely shared and properly highlighted. 
-        </p>
-        <p>
-          <strong>Holograms are an opportunity to create innovative and attractive physical supports for these contents.</strong>
-        </p>
-      </div>
-      <div>
-          <h2>Showcase your buildings and BIM files</h2>
-          <p>
-            <strong>Ultra high quality and bright models</strong>
-          </p>
-          <p>
-            With the general availability of BIM models, it has never been so easy to present your models as holograms.
-          </p>
-          <p>
-            The hologram is an attractive pick to present your models or projects in an imaginative way
-          </p>
-          <p>
-            In your showrooms or at a tradeshow, we have innovative solutions for each of those cases
-          </p>
-          <p>
-            We use a performant graphic engine to create photorealistic pictures reproducing the choice of materials and architectural ambition.
-          </p>
+  <div class="d-flex justify-content-center pb-5">
+    <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Discover our services</button></a>
+  </div>
 
-      </div>
-      <div>
-        <h2>Enhance your heritage</h2>
-        <p>
-          <strong>A fun and innovative way to do science and culture</strong>
-        </p>
-        <p>
-          Using an hologram attracts new audiences and modernizes museums and cultural places.
-        </p>
-        <p>
-          Holusion offers solutions that enhance your collections while creating new experiences for visitors.
-        </p>
-        <p>
-          Reconstitutions, presentation of spare parts, mediation : use the hologram's strengths to enrich your visitor's journey 
-          and highlight the research and conservation work of your teams.
-        </p>
-      </div>
-      <div>
-        <h2>Seduce your clients</h2> 
-        <p>
-          <strong>Showcase your products and solutions.</strong>
-        </p>
-        <p>
-          Use an hologram to broadcast a message in 3D, show yourself in tele-presence or preview a new product.
-        </p>
-        <p>
-          In shops or at tradeshows, holograms are a good fit to strengthen your presentation and make an impression over your audience.
-        </p>
-      </div>
-      <div>
-        <h2>One solution for an infinity of contents</h2>
-        {% picture grid "img/sections/slide_tablette.png"
-        --img class="img-fluid mb-5"
-        --alt tablet with the Holusion Companion application
-        %}
-        <p>
-          <strong><a href="https://content.holusion.com">Holusion Companion</a> is a dedicated application to transform your project</strong>
-        </p>
-        <p>
-          Bring unprecedented depth to your project by giving control to your users.
-        </p>
-        <ul>
-          <li>Take control over the hologram from a mobile application</li>
-          <li>Create new interactiove scenarios without any code from your browser</li>
-          <li>Manage up to hours of contents on as many products as you like</li>
-          <li>With 4G or 5G connectivity, enjoy always up-to-date contents on your devices</li>
-        </ul>
-        <div class="d-flex justify-content-center">
-          <a href="https://content.holusion.com"><button class="btn btn-info image-shadow my-3">Holusion Companion Application</button></a>
-        </div>
-      </div>
-      <div>
-        <h2>A range suited to all your needs</h2>
-        <p><strong>Made in France and designed by Holusion</strong></p>
-        <p>
-          From mobile and clever showcases to scenic devices up to a few meters. We offer holographic solutions for sale or rental.
-        </p>
-        <p>
-          Our unique know-how in the manufacture of holograms is at your service to best adjust to your constraints.
-        </p>
-        <p>
-          Designed, made and put together in France, our products are of guaranteed quality for european standards.
-        </p>
-        <div class="d-flex justify-content-center">
-          <a href="/en/store/"><button class="btn btn-info image-shadow my-3">Discover our products range</button></a>
-        </div>
-      </div>
-      <div>
-        <h2>Each project is unique</h2>
-        <p><strong></strong></p>
-        <p></p>
-        <div class="d-flex justify-content-center">
-          <a href="/en/posts/"><button class="btn btn-info image-shadow my-3">Check out our achievements</button></a>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <section id="pricing" class="section section-center section-light section-pricing " > 
     <div class="content p-0 mb-0">

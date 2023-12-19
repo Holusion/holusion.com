@@ -9,7 +9,7 @@
     width: 100%;
     .home-page-header-body--title{
       h1{
-        color: $dark-blue; 
+        color: $primary; 
         @media screen and (max-width: $break-md){
           font-size: 2em;
           color: $cyan;
@@ -27,9 +27,11 @@
     }
     @media screen and (min-width: $break-md){
       position: absolute;
-      top: 25%;
-      color: $primary;
-    } 
+      top: 15%;
+      p{
+        color: $dark;
+      }
+    }
   }
   .home-page-header-body--content{
       p{
@@ -46,8 +48,11 @@
       width:100%;
     }
     .btn{
+      font-size: 1.2rem;
+      padding: 0.9rem 1.7rem;
       @media screen and (min-width: $break-lg){
-        font-size: 1.2em;
+        font-size: 1.4rem;
+        padding: 0.9rem 2.6rem;
       }
     }
   }
