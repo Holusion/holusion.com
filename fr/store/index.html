@@ -25,12 +25,36 @@ layout: store
 </div>
 
 <section class="section pb-5">
-  {% picture grid img/sections/st_omer.jpg
-    --img class="cover"
-    data-noisetest="1"
-    style="object-position: 70% 0"
-    --alt Dispositif hologramme controlé par tablette
-  %}
+  {% assign items =  site.store_items[page.lang] | where_exp: "item", "item.size_sketch" %}
+  <div class="media tab-content position-relative" id="product-select-tab">
+    
+    {% picture grid "img/sections/slide_produit_background.png"
+      --img itemprop="image" 
+      --img class="img-fluid cover"
+    %}
+
+    {% for product in items %}
+      {%- if forloop.first -%}
+        {%- assign classes = " show active" -%}
+      {%- else -%}
+        {%- assign classes = "" -%}
+      {%- endif -%}
+      {% picture grid "{{product.size_sketch}}"
+        --img itemprop="image" 
+        --img class="position-absolute top-0 start-0 tab-pane fade{{classes}}"
+        --img id="{{product.name | replace: '.'', '_'}}-tab-pane"
+        --img role="tabpanel" 
+        --img aria-labelledby="{{product.name}}-tab" 
+        --img alt="{{product.title}}" 
+      %}
+    {% endfor %}
+
+    {% picture grid "img/sections/slide_produit_foreground.png"
+      --img itemprop="image" 
+      --img class="img-fluid cover position-absolute top-0 start-0"
+    %}
+  </div>
+
   <div class="content mb-0 position-relative">
     <div class="position-absolute top-0 end-0 py-4">
       <div class="cart-icon-line">
@@ -44,13 +68,26 @@ layout: store
     </div>
     
     <h2>Découvrez toute notre gamme de produits et accessoires</h2>
-    <p>
-      De quelques centimètres à plusieurs mètres, des solutions portables aux installations scéniques, nous proposons une large gamme de solutions techniques et de services.
-    </p>
-    <p>
-      <b>La plupart de nos produits sont disponibles à la location.</b> 
-    </p>
-    <a class="d-flex justify-content-center" href="#catalog"><button class="btn btn-info my-4">Notre catalogue</button></a>
+
+    <div class="nav d-flex flex-column products-select-nav" id="main-products-tab" role="tablist">
+      {% for product in items %}
+        {% assign name = product.name | replace: '.'', '_' %}
+        <div class="nav-item" role="presentation">
+          <div class="nav-link d-flex flex-row{% if forloop.first %} active{% endif %}" id="{{name}}-tab" data-bs-toggle="tab" data-bs-target="#{{name}}-tab-pane" type="button" role="tab" aria-controls="{{name}}-tab-pane" aria-selected="false">
+            {% picture card "{{product.image}}"
+              --img class="img-fluid"
+              --picture class="flex-grow-0 flex-shrink-0 w-25"
+            %}
+            <div class="px-2">
+              <h4 class="text-primary">{{product.title}}</h4>
+              <p class="text-white">
+                {{product.abstract}}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
