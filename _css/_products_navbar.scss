@@ -44,3 +44,11 @@
         }
     }
 }
+
+
+.products-select-nav{
+    .nav-link.active{
+        border: 1px solid $primary;
+        border-radius: 6px;
+    }
+}
