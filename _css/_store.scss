@@ -6,7 +6,6 @@
 }
 .cart-icon-line{
   grid-area: title; 
-  margin-top: 3.5rem;
   z-index: 1;
   @include media-breakpoint-down(sm){
     grid-area: content;

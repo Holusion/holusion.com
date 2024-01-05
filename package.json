@@ -24,7 +24,7 @@
     "firebase-tools": "^12.3.1",
     "js-yaml": "^4.1.0",
     "mocha": "^10.2.0",
-    "puppeteer": "^17.0.0",
+    "puppeteer": "^21.6.1",
     "serve-static": "^1.15.0",
     "xml-parser": "^1.2.1"
   }

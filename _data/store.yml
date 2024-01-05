@@ -1,16 +1,10 @@
 sections:
   - name: main
-    fr: Produits phares
-    en: Featured products
-  - name: helice
-    fr: Hélices holographiques
-    en: Holographic fan
-  - name: smartphone
-    fr: Goodies pour Smartphones
-    en: Smartphone Goodies
-  - name: tablet
-    fr: Goodies pour tablettes
-    en: Tablet Goodies
+    fr: Bornes holographiques et table tactile
+    en: Holographic kiosks and touch table
+    textSectionStore:
+      fr: Nos meilleures solutions pour la présentation de vos maquettes en hologrammes, à louer, ou à acheter.
+      en: Our best solutions for presenting your hologram models, to rent or buy.
   - name: product
     fr: Autres produits
     en: Other products    

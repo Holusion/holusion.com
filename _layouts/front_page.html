@@ -97,18 +97,18 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-4 pt-4">
-            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
-              <h3 class="block-title text-white m-0">{{site.data.strings["contact-us"][page.lang]}}</h3>
+            <button class="btn btn-info" data-test="navbar-contact-button" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+              <h3 class="block-title text-white m-0 text-decoration-none">{{site.data.strings["contact-us"][page.lang]}}</h3>
             </button>
             <ul class="navbar-nav" style="margin-top:1rem">
-              <li><a id="navbar-contact-button" data-bs-toggle="modal" data-bs-target="#contactform-modal" class="contact-link">contact@holusion.com</a></li>
+              <li><a href="mailto:contact@holusion.com" class="contact-link">contact@holusion.com</a></li>
               <li><a href="tel:+33970667796">
                 <span itemprop="telephone" >+33 (0)9 70 66 77 96</span>
               </a></li>
               <li>
                 <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' style="display:block;">
                   <div>
-                    <span itemprop="streetAddress">111 av Jean Lebas</span>
+                    <span itemprop="streetAddress">111, avenue Jean Lebas</span>
                   </div>
                   <div>
                     <span itemprop="postalCode">59100</span>

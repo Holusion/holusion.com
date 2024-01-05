@@ -3,31 +3,45 @@
   <h3 id="store-{{section.name}}">
     {{section[page.lang]}}
   </h3>
+  <div class="row row-cols-2">
+    <div class="col">  
+      {% if section.subtitle[page.lang] %}
+      <h4>{{section.subtitle[page.lang]}}</h4>
+      {% endif %}
+      {% if section.textSectionStore[page.lang] %}
+      <p>{{section.textSectionStore[page.lang]}}</p>
+      {% endif %}
+  </div>
+    <div class="col"></div>
+  </div>
+  
+
   <div class="row g-0">
     {% for item in items %}
-      <div data-test="store-item-card" class="store-card dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
-        <a href="{{item.url}}">
-          {%- if item.image contains "static" -%}
-          <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
-              {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{item.description | normalize_whitespace | escape}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
-          {%- else -%}
-            {% picture card "{{item.image}}"
-              --img title="{{item.title}}"
-              --alt  {{item.description | normalize_whitespace | escape}}
-            %}
-          {%- endif -%}
-        </a>
-        <div>
-          <h2 class="text-white mb-1">{{ item.title }}</h2>
-          {%if item.price %}
-            <span class="fw-bold fs-5 text-secondary">{{ item.price }} € HT</span>
-          {%endif%}
-          <p>{{ item.abstract }}</p> 
-          <a class="m-auto btn btn-info" href="{{item.url}}">
-            {{item.action| default:site.data.strings["read-more"][page.lang] }}
+        <div data-test="store-item-card" class="store-card dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
+          <a href="{{item.url}}">
+            {%- if item.image contains "static" -%}
+            <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
+                {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{item.description | normalize_whitespace | escape}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
+            {%- else -%}
+              {% picture card "{{item.image}}"
+                --img title="{{item.title}}"
+                --alt  {{item.description | normalize_whitespace | escape}}
+              %}
+            {%- endif -%}
           </a>
+          <div>
+            <h2 class="text-white mb-1">{{ item.title }}</h2>
+            {%if item.price %}
+              <span class="fw-bold fs-5 text-secondary">{{ item.price }} € HT</span>
+            {%endif%}
+            <p>{{ item.abstract }}</p> 
+            <a class="m-auto btn btn-info" href="{{item.url}}">
+              {{item.action| default:site.data.strings["read-more"][page.lang] }}
+            </a>
+          </div>
         </div>
-      </div>
     {% endfor %}
   </div>
+
 {% endfor %}
