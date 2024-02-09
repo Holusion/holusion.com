@@ -132,11 +132,12 @@ describe("integration tests", function(){
 
         let responses = await Promise.all(matches.map(async ({url})=>{
           return await new Promise((resolve, reject)=>{
-            https.get(url, { }, (res)=>{
+            https.get(url, { timeout:1000 }, (res)=>{
               resolve(res);
             });
           });
         }));
+
         for(let i = 0; i <matches.length; i++){
           let res = responses[i];
           let {file, url} = matches[i];
