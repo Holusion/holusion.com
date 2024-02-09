@@ -89,9 +89,9 @@ module.exports = function testLocations(locations){
               expect(btn).to.be.ok;
               if(btn.test == "store-add"){
                 expect(btn).to.have.property("itemPrice");
-                expect(Number.isSafeInteger(parseInt(btn.itemPrice))).to.be.true;
+                expect(Number.isSafeInteger(parseInt(btn.itemPrice)),`expected item.price to be a number, got "${btn.itemPrice}"`).to.be.true;
                 expect(btn).to.have.property("itemWeight");
-                expect(Number.isSafeInteger(parseInt(btn.itemWeight))).to.be.true;
+                expect(Number.isSafeInteger(parseInt(btn.itemWeight)), `expected item.weight to be a number, got "${btn.itemWeight}"`).to.be.true;
                 expect(btn).to.have.property("itemImage");
                 try{
                   const imageUrl = new URL(btn.itemImage, global.href);
