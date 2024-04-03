@@ -2,7 +2,7 @@
 title: Manuel Opal
 abstract: 
 image: /img/products/opal_neige_sur_link.jpg
-rank: 5
+rank: 7
 menu: manuals
 
 ---
