@@ -1,7 +1,7 @@
 ---
 title: "eCorpus"
 abstract: "Open Source tools to manage digitized heritage collections"
-lang: fr
+lang: en
 image: img/tiles/ecorpustile.jpg
 menu: keynotes
 rank: 2
