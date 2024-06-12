@@ -1,0 +1,49 @@
+---
+layout: front_page
+title: eCorpus - Visite de Lascaux en 3D 
+image: img/posts/2024_lascaux/lascaux.jpg
+abstract: Une visite en ligne de la plus célèbre grotte peinte de France
+tags: Explanations Holograms cultural mediation
+---
+
+<main class="main-dark main-grid">
+
+  <section class="section section-center">
+    <h2 class="text-white my-5" style="font-size: 3rem">Un chef d'oeuvre de l'art pariétal</h2>
+      {% include components/medias/ecorpus.html  server="https://man.ecorpus.holusion.com" scene="Lascaux" %}
+  </section>
+    
+  <section class="section section-center">
+    <div  class="content py-0 my-auto text-justify"> 
+      <h2>Visitez la grotte de Lascaux</h2>
+    </div>
+    
+  </section>
+  <section class="section section-center" id="slider" style="height:1000vh">
+
+
+  </section>
+</main>
+
+
+
+<script>
+  // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("Lascaux").parentNode;
+console.log(header);
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
