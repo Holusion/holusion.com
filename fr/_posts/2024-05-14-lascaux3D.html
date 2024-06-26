@@ -6,44 +6,141 @@ abstract: Une visite en ligne de la plus célèbre grotte peinte de France
 tags: Explanations Holograms cultural mediation
 ---
 
-<main class="main-dark main-grid">
+<script async src="https://man.ecorpus.holusion.com/dist/js/voyager-explorer.js"></script>
 
-  <section class="section section-center">
-    <h2 class="text-white my-5" style="font-size: 3rem">Un chef d'oeuvre de l'art pariétal</h2>
-      {% include components/medias/ecorpus.html  server="https://man.ecorpus.holusion.com" scene="Lascaux" %}
-  </section>
-    
-  <section class="section section-center">
-    <div  class="content py-0 my-auto text-justify"> 
-      <h2>Visitez la grotte de Lascaux</h2>
+<style>
+  .content [data-step] {
+    min-height:55vh;
+    padding-bottom: 10vh;
+  }
+
+  @keyframes spin { 100% { transform:rotate(360deg); } }
+  .spinner {
+    width: 50%;
+    height: 50%;
+    animation:spin 5s linear infinite;
+  }
+</style>
+
+<main class="main-dark main-grid">
+  <section class="section">
+    <div class="media">
+      <div class="d-flex sticky-top flex-column justify-content-center" style="height: calc(100vh - 3rem)">
+        <div class="">
+          <voyager-explorer id="Lascaux" resourceRoot="https://man.ecorpus.holusion.com/dist/" root='https://man.ecorpus.holusion.com/scenes/Lascaux_API/' document='scene.svx.json'></voyager-explorer>
+        </div>
+      </div>
+    </div>
+
+    <div class="content position-relative">
+      <div id="loader" class="position-absolute pt-4" style="inset: 0;background-color:rgba(0, 0, 0, 0.1); backdrop-filter: blur(1px);">
+        <div class="sticky-top d-flex justify-content-center" style="width:100%;height:100%">
+          <svg class="spinner" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+            <style>
+              .c1{
+                fill:none;
+                fill-opacity:1;
+                stroke:#00517d;
+                stroke-width:6;
+                stroke-miterlimit:4;
+                stroke-linecap:round;
+                stroke-dasharray:56.5;
+                stroke-dashoffset:0;
+                stroke-opacity:1;
+              }
+              .c2{
+                fill:none;
+                fill-opacity:1;
+                stroke:#ffffff;
+                stroke-width:6;
+                stroke-opacity:1;
+              }
+            </style>
+          
+            <g >
+              <circle class="c1" cx="50" cy="50" r="36" />
+              <circle class="c2" cx="50" cy="50" r="44" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div data-step="0">
+        <h2>Visitez la grotte de Lascaux</h2>
+        <p>
+          Réalisée par le <a href="https://musee-archeologienationale.fr/">Musée d'Archéologie Nationale</a> pour le Ministère de la Culture, cette visite guidée de la <a href="https://www.lascaux-dordogne.com/partager/nos-incontournables/lascaux/">Grotte de Lascaux</a> permet de valoriser la numérisation exceptionnellement détaillée dont elle a bénéficié.
+        </p>
+        <figure>
+          <img class="img-fluid" src="/static/img/posts/2024_lascaux/plan.jpg" alt="Lascaux">
+          <figcaption>Plan de la grotte de Lascaux
+            <a href="https://archeologie.culture.gouv.fr/lascaux/fr/mediatheque/plan-de-la-grotte-de-lascaux">© Ministère de la Culture/Centre National de la Préhistoire</a> CC-BY-SA</figcaption>
+        </figure>
+      </div>
+      <div data-step="1">
+        <h2>Salle des Taureaux</h2>
+        <p>
+          Les motifs pariétaux de la salle des Taureaux sont les plus imposants de l'art paléolithique. Cet ensemble regroupe 130 figures dont 36 représentations animales, une cinquantaine de signes géométriques, le reste étant des traces d’activité.
+        </p>
+        <figure>
+          <img class="img-fluid" src="/static/img/posts/2024_lascaux/Taureaux.jpg" alt="Lascaux">
+          <figcaption>Plan de la grotte de Lascaux
+            <a href="https://archeologie.culture.gouv.fr/lascaux/fr/mediatheque/plan-de-la-grotte-de-lascaux">© Ministère de la Culture/Centre National de la Préhistoire</a> CC-BY-SA</figcaption>
+        </figure>
+        <p>
+          Trois thèmes animaliers composent ce vaste dispositif : le cheval, avec 17 individus, l’aurochs, onze vaches et taureaux et le cerf, six représentants. Ces thèmes se retrouveront de manière récurrente dans les différents espaces souterrains de ce sanctuaire. L’ours est exceptionnellement présent.
+        </p>
+        <p>
+          Pour en faciliter la lecture, cette composition est scindée en deux volets, celui de la paroi de gauche, appelé panneau de la Licorne, et celui de la paroi de droite, panneau de l’Ours noir.
+        </p>
+    </div>
+    <div data-step="2">
+      <h2>La Licorne</h2>
+      <p>
+        Dès l’entrée dans la Rotonde, le regard est attiré par un animal aux formes étranges, la Licorne. En position première, elle semble pousser vers le fond de la galerie tous les animaux de cette paroi.
+      </p>
+      <img class="img-fluid" src="/static/img/posts/2024_lascaux/Licorne.jpg">
+      <p>
+        Cette figure possède des lignes ondoyantes qui laisseraient à penser que l’on est en présence d’un félin. Une tête carrée, un garrot très saillant, un ventre dilaté, des pattes robustes, inciterait à abonder dans ce sens. Toutefois, deux cornes rectilignes prolongent d’un tiers l’emprise de cette figure, segments anatomiques qui invitent à ranger cet animal dans la catégorie des animaux fantastiques. De multiples interprétations ont été proposées, mais aucune n’est actuellement satisfaisante.
+      </p>
+
+      <h2>Frise des Chevaux noirs</h2>
+      <p>
+        À l’avant de la Licorne, une frise de huit chevaux noirs se déploie sur une longueur de 9 m en direction du fond de la cavité. Ces chevaux, complets, partiels, voire limités à un seul segment anatomique, semblent se déplacer sur une même ligne de sol, matérialisée à la fois par le changement de teinte du support et par le retour de paroi créé par la banquette. La technique de réalisation est identique pour l'ensemble de la frise : soufflé et pochoir.
+      </p>
+      <img class="img-fluid" src="/static/img/posts/2024_lascaux/Chevaux.jpg">
+      <p>
+        Le premier cheval devait être complet. Suite à une dégradation du support, une large écaille s’est détachée de la paroi emportant une partie de la peinture. Sur cette plaque de desquamation, déposée actuellement au pied du panneau, on retrouve les contours de la tête et de l’encolure. Autre cheval complet, le quatrième cheval, au centre de la frise, est représenté en extension, seuls les membres postérieurs reposant sur la ligne de sol imaginaire. Son encolure, massive, contraste avec sa tête, réduite. L’aspect pommelé de la robe est dû à la conservation différentielle des pigments, meilleure dans les concavités que sur les aspérités de la roche. Plusieurs chevaux sont incomplets, limités à l'avant-train (deuxième cheval), à la tête, l'encolure et l'amorce du dos (troisième cheval), discrète silhouette incluant la tête, l'encolure et l'amorce du dos (cinquième cheval). Les septième et huitième chevaux sont seulement esquissés.
+      </p>
     </div>
     
-  </section>
-  <section class="section section-center" id="slider" style="height:1000vh">
-
-
   </section>
 </main>
 
 
-
 <script>
-  // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the header
-var header = document.getElementById("Lascaux").parentNode;
-console.log(header);
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+  document.addEventListener('DOMContentLoaded', function() {
+    let count = 0;
+    const voyagerElement = document.querySelector("#Lascaux");
+    voyagerElement.addEventListener("model-load", (e)=>{
+      if(e.detail == "High") count++;
+      if(count != 2) return;
+      (()=>{
+        let loader = document.querySelector("#loader");
+        loader?.parentNode.removeChild(loader);
+      })()
+      const steps = document.querySelectorAll('[data-step]');
+      console.log("Steps : ", steps);
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const step = entry.target.dataset.step;
+            console.log(step);
+            voyagerElement.setTourStep(0, step, true);
+          }
+        });
+      }, {
+        threshold: window.matchMedia("(max-width: 1200px)").matches ? 0.1 : 0.5
+      });
+      steps.forEach(step => observer.observe(step));
+    });
+  });
 </script>
