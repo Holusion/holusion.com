@@ -152,7 +152,7 @@ if ${make_build} ;then
   fi
 
   # final command
-  bundle exec jekyll $exec_cmd --config $s_conf $@
+  bundle exec jekyll $exec_cmd --force-polling --config $s_conf $@ 
 
 fi
 
