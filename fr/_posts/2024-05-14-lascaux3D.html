@@ -1,5 +1,5 @@
 ---
-layout: front_page
+layout: GSA
 title: eCorpus - Visite de Lascaux en 3D 
 image: img/posts/2024_lascaux/lascaux.jpg
 abstract: Une visite en ligne de la plus célèbre grotte peinte de France
@@ -9,9 +9,24 @@ tags: Explanations Holograms cultural mediation
 <script async src="https://man.ecorpus.holusion.com/dist/js/voyager-explorer.js"></script>
 
 <style>
+  body {
+    background: #a9642f
+  }
+  
   .content [data-step] {
     min-height:55vh;
     padding-bottom: 10vh;
+    font-family: "Marianne", "Arial", sans-serif, Arial, Helvetica, sans-serif;
+    
+  }
+  .content h2 {
+    color : #a9642f;
+    font-family: "Marianne", "Times New Roman", serif;
+    font-weight: bold;
+  }
+
+  .main-dark {
+    background : #1a1715;
   }
 
   @keyframes spin { 100% { transform:rotate(360deg); } }
@@ -65,7 +80,9 @@ tags: Explanations Holograms cultural mediation
         </div>
       </div>
       <div data-step="0" class='text-center'>
-        <h2>Grotte de Lascaux</h2>
+        <a href="https://archeologie.culture.gouv.fr/lascaux/fr"><h3>Collection Grand sites archéologiques</h3></a>
+        <h2 style="margin-top: 100px;margin-bottom:50px;font-size: 300%;">La grotte de Lascaux</h2>
+
         <p>
          <strong >
          12 Septembre 1940 

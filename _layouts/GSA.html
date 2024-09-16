@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="{{page.lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Holusion">
+  <link rel="publisher" href="https://plus.google.com/118076369091699793802"/>
+
+  <title>{% if page.title %}{{page.title}} : {% endif %}{%if page.abstract %}{{page.abstract }} - {% endif %}{{site.data.strings.site-title[page.lang]}}</title>
+
+  {%- if page.description -%}
+    <meta name="description" content="{{ page.description | strip_html | truncatewords:155|escape }}" />
+    <meta property="og:description" content="{{page.description | strip_html | truncatewords:297|escape}}"/>
+  {%- elsif page.abstract -%}
+    <meta name="description" content="{{ page.abstract|truncatewords:155|escape }}" />
+    <meta property="og:description" content="{{page.abstract | strip_html | truncatewords:297 |escape}}"/>
+  {%- else -%}
+    <meta name="description" content="{{site.data.strings.site-description[page.lang]}}" />
+  {%- endif -%}
+
+  {%- if page.image -%}
+    {%- if page.image contains "static/" -%}
+      <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
+      <meta property="og:image" content="{{site.url}}{{page.image}}"/>
+    {%- else -%}
+      <meta name="twitter:image"  content="{% picture meta "{{page.image}}" %}">
+      <meta name="og:image"  content="{% picture meta "{{page.image}}" %}">
+    {%- endif -%}
+  {%- endif -%}
+  {%- if page.layout == "post" -%}
+    <meta property="og:type" content="article"/>
+  {%- else -%}
+    <meta property="og:type" content="website"/>
+  {%- endif -%}
+  {%- if page.lang -%}
+    <meta property="og:locale" content="{{page.lang}}"/>
+  {%- endif -%}
+
+  <link rel="canonical" href="{{page.url | absolute_url }}">
+  {%- if page.alt_url -%}
+  <link rel="alternate" hreflang="{{page.alt_lang}}" href="{{page.alt_url | absolute_url }}">
+  <link rel="alternate" hreflang="{{page.lang}}" href="{{page.url |absolute_url }}">
+  {%- endif -%}
+
+  <!-- CSS Loading -->
+  <link href="/css/style.css{%if site.build_id%}?id={{site.build_id}}{%endif%}" rel="stylesheet">
+
+  <script defer="" src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  {% include favicons.html url="/static/img/icons/favicons" %}
+  {% include utils/make_pages.html %}
+</head>
+<body>
+
+  <!-- Jumbotron Header -->
+  <nav class="navbar navbar-expand-md fixed-top navbar-dark" role="navigation">
+    <div class="container" style="background: #a9642f">
+        <!-- Brand and toggle get grouped for better mobile display -->
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="visually-hidden">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav me-auto" role="menu">
+          {% comment %} Links floating to the left come here {%endcomment %}
+        </ul>
+        <ul class="nav navbar-nav" role="menu">
+          {% include components/language_picker.html type="nav-item dropdown" classes="nav-link" %}
+        </ul>
+      </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+  <!-- Page Content -->
+    {{ content }}
+
+  <!-- Footer -->
+  <footer class="text-white bg-dark">
+    {% comment %} contact-form is position:fixed and will not interfere int the layout {%endcomment%}
+    {% include components/contact_form.html %}
+
+    <nav id="navbar-bottom" role="navigation"  class="p-2">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-4 pt-4">
+            <button class="btn btn-contact" data-test="navbar-contact-button" data-bs-toggle="modal" data-bs-target="#contactform-modal" style="margin-top:-0.5rem">
+              {{site.data.strings["contact-us"][page.lang]}}
+            </button>
+            <ul class="navbar-nav" style="margin-top:1rem">
+              <li><a href="mailto:contact@holusion.com" class="contact-link">contact@holusion.com</a></li>
+              <li><a href="tel:+33970667796">
+                <span itemprop="telephone" >+33 (0)9 70 66 77 96</span>
+              </a></li>
+              <li>
+                <a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" target="_blank" href='https://www.google.com/maps/place/Holusion/@50.7007444,3.1578966,19z/data=!4m8!1m2!3m1!2sHolusion!3m4!1s0x0:0x60b453b312cc0a2b!8m2!3d50.7011311!4d3.1584262' style="display:block;">
+                  <div>
+                    <span itemprop="streetAddress">111, avenue Jean Lebas</span>
+                  </div>
+                  <div>
+                    <span itemprop="postalCode">59100</span>
+                    <span itemprop="addressLocality">Roubaix</span>,
+                    <span itemprop="addressCountry">France</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>          
+          <div class="col-lg-4 pt-4 order-lg-first">
+            <h3 class="text-white">Holusion</h3>
+            <ul class="navbar-nav">
+              <li><a href="{{domain}}/{{page.lang}}/about">
+                {{site.data.sections.about[page.lang]}}
+              </a></li>
+              <li><a href="{{domain}}/{{page.lang}}/store">
+                {{site.data.sections.products[page.lang]}}
+              </a></li>
+              <li><a  href="/{{page.lang}}/CGV">
+                {{site.data.sections.cgv[page.lang]}}
+              </a></li>
+              <li><a href="/{{page.lang}}/about/privacy">
+                {{site.data.sections.privacy[page.lang]}}
+              </a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 pt-4">
+            <h3 class="block-title text-white">{{ site.data.strings.social-links[page.lang] }}</h3>
+                {% include components/mailchimp.html %}
+              <div class="pt-3">{% include lists/social_list.html %}</div>
+          </div>
+        </div>
+
+        <div class="text-center pb-3 pt-5">
+          <span class="d-none d-lg-inline">
+            {{ site.data.strings.copyright[page.lang]}} {{ site.time | date: '%Y' }}
+          </span>
+          <a rel="license" itemprop="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+            <span class="d-none d-xl-inline text-info">CC. Attribution ShareAlike</span>
+            <span class="d-inline d-xl-none text-info">CC.BySa</span>
+          </a>          
+        </div>
+
+      </div>
+    </nav>
+  </footer>
+  <div class="scripts d-none">
+    {%- for script in page.scripts -%}
+      <script src="{{script}}" async ></script>
+    {%- endfor -%}
+  </div>
+</body>
+</html>
