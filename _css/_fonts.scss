@@ -21,3 +21,14 @@
   font-family: "CgBernhardt";
   src: local('CgBernhardtMd'), url("/static/fonts/CgBernhardtMd_corrected.woff") format('woff');
 }
+
+@font-face {
+  font-family: "Marianne";
+  src: local('Marianne'), url("/static/fonts/Marianne-Medium.woff") format('woff');
+}
+
+@font-face {
+  font-family: "Marianne";
+  src: local('Marianne'), url("/static/fonts/Marianne-Bold.woff") format('woff');
+  font-weight: bold;
+}
