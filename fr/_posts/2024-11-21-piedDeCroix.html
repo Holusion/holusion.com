@@ -1,7 +1,7 @@
 ---
 layout: front_page
 title: eCorpus - Pied de Croix de Saint Bertin
-image: img/posts/2024_piedDeCroix/Pied_de_croix.jpg
+image: /static/img/posts/2024_piedDeCroix/Pied_de_croix.jpg
 abstract: Analyse du Pied de Croix de Saint Bertin
 tags: Explanations Holograms cultural mediation
 ---
@@ -157,7 +157,7 @@ tags: Explanations Holograms cultural mediation
         let loader = document.querySelector("#loader");
         loader?.parentNode.removeChild(loader);
       })()
-      const steps = document.querySelectorAll('[data-ste p]');
+      const steps = document.querySelectorAll('[data-step]');
       console.log("Steps : ", steps);
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
