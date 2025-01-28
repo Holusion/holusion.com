@@ -1,5 +1,5 @@
 ---
-title: Manuel hélices holographiques
+title: Manuel Hélices holographiques
 abstract: 
 image: /img/products/60H.jpg
 rank: 6
