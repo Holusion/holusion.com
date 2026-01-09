@@ -7,4 +7,4 @@ menu: manuals
 
 ---
 
-{% include components/medias/google_doc.html id="15JprsjV2pe1tyvJhMThLvGmxJ260NL6xz6drmT-mstA" %}
+{% include components/medias/google_doc.html id="15JprsjV2pe1tyvJhMThLvGmxJ260NL6xz6drmT-mstA" iframe="2PACX-1vRhK53wfWynDHkrkPvwHiVo9wMPe90h7USD1jlsJCATKEGpTUjUdE5oy1zaDabGZfW8yYQHOYkgQYaE" %}

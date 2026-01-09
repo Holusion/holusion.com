@@ -8,4 +8,4 @@ menu: manuals
 ---
 
 
-{% include components/medias/google_doc.html id="1Tc90kL-4vjAEi6-ahu8jBq6y50pgMChFLqpJLj3aPmw" %}
+{% include components/medias/google_doc.html id="1Tc90kL-4vjAEi6-ahu8jBq6y50pgMChFLqpJLj3aPmw" iframe="2PACX-1vToUYyxu6qmtJiLIwe80VjNFnQbyfs1ez9Rh6ZYL6plBVVF4UdsmRVt4QZDkBQMwkLh9uAVRs29ZUEv"%}
