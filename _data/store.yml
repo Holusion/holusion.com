@@ -3,8 +3,14 @@ sections:
     fr: Bornes holographiques et table tactile
     en: Holographic kiosks and touch table
     textSectionStore:
-      fr: Nos meilleures solutions pour la présentation de vos maquettes en hologrammes, à louer, ou à acheter.
-      en: Our best solutions for presenting your hologram models, to rent or buy.
+      fr: Nos meilleures solutions pour la présentation de vos maquettes en hologrammes, fabriqué en France.
+      en: Our best solutions for presenting your hologram models, made in France.
+  - name: fans
+    fr: Hélices holographiques 
+    en: Holographic fans
+    textSectionStore:
+      fr: Hélices holographiques, individuelles ou synchronisée en mur d'écrans.
+      en: Holographic fans, single or screen wall
   - name: product
     fr: Autres produits
     en: Other products    
