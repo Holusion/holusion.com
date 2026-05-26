@@ -16,3 +16,6 @@ scripts/phpunit
 #ignore npm pack artifacts
 dist/
 holusion-theme*.tgz
+
+#ignore OpenClaw instruction
+openclaw 
