@@ -1,6 +1,24 @@
-<div style="width:100%; overflow:hidden;" class="media">
-  <div class="ecorpus_container">
-    <voyager-explorer id="{{include.scene}}"resourceRoot="{{include.server}}/dist/"  root='{{include.server}}/scenes/{{include.scene}}/' document='scene.svx.json'></voyager-explorer>
-    <script src="{{include.server}}/dist/js/voyager-explorer.js"></script>
+{%comment %}
+iframe for e-corpus items
+Usage :
+include voyager.html embed=item-id
+{%endcomment%}
+
+{% assign lang = {{page.lang}} | upcase %}
+{% assign itemSrc = {{include.scene}} | prepend: "/ui/scenes/"  | prepend: {{include.server}} | append: "/view?lang=" | append: lang %}
+{% assign root = {{include.scene}} | prepend: "/scenes/"  | prepend: {{include.server}}}
+{% assign server = {{include.server}} %}
+{% assign itemClass = {{include.class}} | prepend: " media ratio"%}
+
+
+<div class="{{itemClass}}">
+    <div class="ecorpus_container">
+      <iframe 
+        src="{{itemSrc}}"
+        allowfullscreen 
+        frameborder="0" 
+        allow="fullscreen; xr; xr-spatial-tracking; accelerometer; gyroscope"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-downloads allow-forms"
+        loading="lazy"></iframe>
     </div>
 </div>
