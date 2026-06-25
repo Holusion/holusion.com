@@ -19,7 +19,7 @@
   <div class="row g-0">
     {% for item in items %}
         <a href="{{item.url}}" data-test="store-item-card" class="store-card dark-card col-xl-4 col-lg-4 col-sm-6 col-12 py-3 px-sm-2">
-          <div>
+          <div class="card-header">
             {%- if item.image contains "static" -%}
             <img data-deprecated="static-card" src="{{item.image|default: "/static/img/posts/default.jpg"}}"
                 {% if content.image2x %} srcset="{{item.image2x}} 800w, {{item.image}} 400w" {% endif %} alt="{{item.description | normalize_whitespace | escape}}" sizes="(min-width: 1200px) 25vw, (min-width: 992px) 33vw, (min-width:768px) 50vw, 100vw">
@@ -30,15 +30,15 @@
               %}
             {%- endif -%}
           </div>
-          <div>
+          <div class="card-body">
             <h2 class="text-white mb-1">{{ item.title }}</h2>
             {%if item.price %}
-              <span class="fw-bold fs-5 text-secondary">{{ item.price }} € HT</span>
+              <span class="fw-bold fs-5 link-secondary">{{ item.price }} € HT</span>
             {%endif%}
             <p>{{ item.abstract }}</p> 
-            <span class="text-end link-secondary">
+            <div class="text-end link-secondary">
               {{item.action| default:site.data.strings["read-more"][page.lang] }}
-            </span>
+            </div>
           </div>
         </a>
     {% endfor %}
