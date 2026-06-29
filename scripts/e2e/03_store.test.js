@@ -63,7 +63,7 @@ const timers = require("timers/promises");
       }catch(e){}
     });
     it("can navigate to an item", async function(){
-      await page.click(`[data-test="store-item-card"] A[href="/${lang}/store/pixel"]`);
+      await page.click(`A[data-test="store-item-card"][href="/${lang}/store/pixel"]`);
       await page.waitForSelector(`[data-test="store-item"]`);
     });
 
