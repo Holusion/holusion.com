@@ -16,16 +16,16 @@
     "dist/"
   ],
   "devDependencies": {
+    "@faker-js/faker": "^10.5.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "chai": "^4.3.7",
-    "faker": "^5.5.3",
-    "finalhandler": "^1.2.0",
-    "firebase-tools": "^12.3.1",
-    "js-yaml": "^4.1.0",
-    "mocha": "^10.2.0",
-    "puppeteer": "^21.6.1",
-    "serve-static": "^1.15.0",
+    "chai": "^6.2.2",
+    "finalhandler": "^2.1.1",
+    "firebase-tools": "^15.22.3",
+    "js-yaml": "^5.2.0",
+    "mocha": "^11.7.6",
+    "puppeteer": "^25.2.1",
+    "serve-static": "^2.2.1",
     "xml-parser": "^1.2.1"
   }
 }

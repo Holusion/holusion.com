@@ -1,7 +1,7 @@
 'use strict';
 const fs = require("fs/promises");
 const { expect } = require("chai");
-const faker = require("faker");
+const { allFakers } = require("@faker-js/faker");
 const path = require("path");
 
 const timers = require("timers/promises");
@@ -93,13 +93,13 @@ const timers = require("timers/promises");
     });
     it("phone number into custom field", async function(){
       let ref = `#snipcart-billing-form INPUT[name="phoneNumber"]`;
+      let localeKeys = Object.keys(allFakers);
       let locales = ["fr"];
       for(let i=0; i<9; i++){
-        locales.push(faker.random.locale());
+        locales.push(localeKeys[Math.floor(Math.random()*localeKeys.length)]);
       }
       for(let locale of locales){
-        faker.locale = locale;
-        let number = faker.phone.phoneNumber();
+        let number = allFakers[locale].phone.number();
         await page.type(ref, number);
         expect(await page.$eval(ref, e=>{
           let valid = e.checkValidity(); 

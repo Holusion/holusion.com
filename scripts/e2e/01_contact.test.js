@@ -1,6 +1,6 @@
 'use strict';
 
-const faker = require("faker");
+const { allFakers } = require("@faker-js/faker");
 
 
 ["fr","en"].forEach((lang)=>{
@@ -41,13 +41,13 @@ const faker = require("faker");
     const faker_locales = ["en", "fr", "zh_CN"];
     faker_locales.forEach(function(faker_locale){
       describe(`${faker_locale} locale`, function(){
-        faker.locale = faker_locale;
+        const faker = allFakers[faker_locale];
         const faker_map = {
-          fname: faker.name.firstName,
-          lname: faker.name.lastName,
-          email: faker.internet.email,
-          phone: faker.phone.phoneNumber,
-          comments: faker.random.words
+          fname: ()=> faker.person.firstName(),
+          lname: ()=> faker.person.lastName(),
+          email: ()=> faker.internet.email(),
+          phone: ()=> faker.phone.number(),
+          comments: ()=> faker.lorem.words()
         }
         Object.keys(faker_map).forEach(function (k){
           it(`accept random ${k}`, async function(){
