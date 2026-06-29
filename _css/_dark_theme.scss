@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "variables";
 
 .main-dark{
@@ -11,7 +12,7 @@
     a{
         color:$cyan;
         &:hover{
-            color: lighten($cyan, 10);
+            color: color.adjust($cyan, $lightness: 10%);
         }
     }
     

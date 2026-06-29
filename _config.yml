@@ -20,6 +20,9 @@ incremental: true
 sass:
   style: compressed
   sourcemap: always
+  # Silence Dart Sass deprecation warnings coming from dependencies (bootstrap),
+  # e.g. color-functions (red/green/blue), @import, global-builtin, if-function.
+  quiet_deps: true
   load_paths:
     - _css
     - node_modules
