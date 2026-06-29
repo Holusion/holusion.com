@@ -164,10 +164,10 @@ if ${make_check} ;then
   bundle exec htmlproofer _site \
     --checks "Links,Images" \
     --only-4xx \
-    --enforce-https false \
-    --allow-missing-href true \
-    --ignore-missing-alt true \
-    --disable-external true \
+    --no-enforce-https \
+    --allow-missing-href \
+    --ignore-missing-alt \
+    --disable-external \
     --ignore-files "/node_modules/,/static\/fonts\/.*.html/,/google[0-9a-f]*\.html/,/^_site\/index.html$/,/\/0_snipcart-templates.html$/" \
     --ignore-urls "/^\/?$/" \
     --log-level :debug \
