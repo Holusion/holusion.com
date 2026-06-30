@@ -2,7 +2,7 @@
 global.expect = require("chai").expect;
 
 const puppeteer = require('puppeteer');
-const devices = puppeteer.devices;
+const devices = puppeteer.KnownDevices;
 
 global.is_extended = (process.env["RUN_EXTENDED_TESTS"]?true:false);
 
