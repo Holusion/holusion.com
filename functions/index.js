@@ -2,8 +2,7 @@ const {onRequest} = require('firebase-functions/v2/https');
 const admin = require("firebase-admin");
 
 
-const app = admin.initializeApp();
-app.firestore().settings({timestampsInSnapshots: true});
+admin.initializeApp();
 
 const handlers = require("./handlers");
 

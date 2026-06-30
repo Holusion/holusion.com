@@ -8,8 +8,11 @@ const router = express();
 
 const isProduction = !process.env["FIRESTORE_EMULATOR_HOST"];
 
-//Firebase is always proxying for us
-router.enable('trust proxy');
+// Firebase Hosting proxies requests to the function through a single hop, so
+// trust exactly one proxy. express-rate-limit v7+ rejects the permissive
+// `trust proxy: true` (a spoofable X-Forwarded-For would bypass the limiter);
+// a finite hop count keeps per-IP keying correct and the validation happy.
+router.set('trust proxy', 1);
 
 // redirect using language hints
 router.get("/", (req, res)=>{
@@ -22,7 +25,7 @@ router.get("/", (req, res)=>{
 router.post("/api/v1/sendmail",
   rateLimit({
     windowMs: 10*60*1000,
-    max: 2,
+    limit: 2,
   }),
   bodyParser.json(),
   bodyParser.urlencoded({ extended: true }),
