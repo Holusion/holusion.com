@@ -68,8 +68,15 @@ const timers = require("timers/promises");
     });
 
     it("can add this item to the cart", async function(){
-      await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
-      await page.evaluate(()=>Promise.any([Snipcart.ready, new Promise((ok,fail)=>setTimeout(fail,2000))]));
+      // Snipcart's script is fetched from an external CDN and can be slow to
+      // initialise (it creates #snipcart and the Snipcart global once loaded),
+      // especially when the e2e suite runs in parallel. Wait for the global to
+      // actually be ready instead of racing a fixed 2s timeout.
+      await page.waitForFunction(
+        () => typeof window.Snipcart !== "undefined" && window.Snipcart.ready,
+        {timeout: 15000},
+      );
+      await page.evaluate(() => window.Snipcart.ready);
       await page.click(`[data-test="store-add"]`);
     });
     it("opens the snipcart layout", async function(){
