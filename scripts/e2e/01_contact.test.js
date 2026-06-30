@@ -17,8 +17,19 @@ const { allFakers } = require("@faker-js/faker");
     });
     //We don't reload the page, tests may leak
     beforeEach(async function(){
-      await page.click(`[data-test="navbar-contact-button"]`);
-      this.form = await page.waitForSelector("#contactform-modal.show");
+      // Under parallel load the first click can land before Bootstrap has
+      // wired the modal trigger, leaving the modal closed and timing out the
+      // hook. Retry the click until the modal actually opens.
+      await page.waitForSelector(`[data-test="navbar-contact-button"]`);
+      this.form = null;
+      for(let attempt = 0; attempt < 3 && !this.form; attempt++){
+        // Use a direct DOM click rather than page.click(): under parallel load
+        // page.click() can block for its full clickability timeout (>20s) and
+        // get killed by the mocha hook timeout before we can retry.
+        await page.$eval(`[data-test="navbar-contact-button"]`, el=> el.click());
+        this.form = await page.waitForSelector("#contactform-modal.show", {timeout: 5000}).catch(()=>null);
+      }
+      if(!this.form) throw new Error("contact form modal did not open");
       this.write = (async function (name, txt){
         let selector = `#contactform-modal [name="${name}"]`
         //Looks like input is not necessarily cleared otherwise

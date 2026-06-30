@@ -4,6 +4,12 @@ const { expect } = require("chai");
 const { allFakers } = require("@faker-js/faker");
 const path = require("path");
 
+// Some @faker-js/faker locales lack phone_number.format data and throw when
+// asked for a phone number; keep only the locales that can actually produce one.
+const phoneLocales = Object.keys(allFakers).filter((loc)=>{
+  try{ allFakers[loc].phone.number(); return true; }catch(e){ return false; }
+});
+
 const timers = require("timers/promises");
 
 
@@ -93,17 +99,20 @@ const timers = require("timers/promises");
       }
     });
     it("can go to checkout", async function(){
-      await page.waitForSelector("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      let checkoutButton = "FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary";
+      await page.waitForSelector(checkoutButton, {visible: true});
       await timers.setTimeout(200);
-      await page.click("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      // Snipcart re-renders the cart footer, so a Puppeteer click can race a
+      // detached / not-yet-clickable node. A direct DOM click on a freshly
+      // queried node is robust against that re-render race.
+      await page.$eval(checkoutButton, el=> el.click());
       await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 100000});
     });
     it("phone number into custom field", async function(){
       let ref = `#snipcart-billing-form INPUT[name="phoneNumber"]`;
-      let localeKeys = Object.keys(allFakers);
       let locales = ["fr"];
       for(let i=0; i<9; i++){
-        locales.push(localeKeys[Math.floor(Math.random()*localeKeys.length)]);
+        locales.push(phoneLocales[Math.floor(Math.random()*phoneLocales.length)]);
       }
       for(let locale of locales){
         let number = allFakers[locale].phone.number();
