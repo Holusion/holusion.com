@@ -5,14 +5,14 @@ about:
   fr: "Qui sommes-nous ?"
   en: "Who are we ?"
 store:
-  fr: "Nos produits"
-  en: "Our products"
+  fr: "Produits"
+  en: "Products"
 dev:
   fr: "Documentation"
   en: "Documentation"
-interactivity:
-  fr: "Interactivité"
-  en: "Interactivity"
+services:
+  fr: "Services"
+  en: "Services"
 cgv:
   fr: "Conditions générales de vente"
   en: "Terms and conditions"

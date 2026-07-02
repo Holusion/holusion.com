@@ -1,5 +1,12 @@
 /* grid layout. Used with dark theme */
 @use "sass:math";
+
+@mixin grid-media {
+  & > img, &>picture, &>.media, &>figure {
+    @content;
+  }
+}
+
 .main-grid{
   $margin: 7rem;
   $padding: 15px;
@@ -22,21 +29,6 @@
         ".      image  .";
     }
 
-    &.left{
-      grid-template-areas: 
-        "white white title end"
-        "start content image image"; 
-      @include media-breakpoint-down(xl){
-        grid-template-areas: 
-          "white  title  ."
-           ".      image  ."
-          ".     content ."
-         ;
-        & > img, &>picture>img, &>div{
-          margin-bottom: calc($margin/2);
-        }         
-      }
-    }  
     
     &.section-white{
       color: $dark;
@@ -54,6 +46,25 @@
             grid-area: unquote("white / white / span 2 / title");
           }
         }
+      }
+    }
+    &.left{
+      grid-template-areas: 
+        "white white title end"
+        "start content image image"; 
+      @include media-breakpoint-down(xl){
+        grid-template-areas: 
+          "white  title  ."
+           ".      image  ."
+          ".     content ."
+         ;
+        & > img, &>picture>img, &>div{
+          margin-bottom: calc($margin/2);
+        }         
+      }
+      + .section-white:not(.left) > h2{
+        grid-area: unquote("white / white / span 1 / content");
+        padding-left: calc($margin * 2 / 3);
       }
     }
     
@@ -114,7 +125,7 @@
       }
     }
     
-    & > img, &>picture, &>.media{
+    @include grid-media() {
       z-index: 1;
       grid-area: image;
       &.contained, &.contained>img{
@@ -123,7 +134,7 @@
       }
     }
     &.left{
-      & > img, &>picture, &>.media{
+      @include grid-media() {
         &.contained, &.contained>img{
           grid-column-start: 3;
           grid-column-end: 3;
@@ -132,7 +143,7 @@
     }
     
     &:has(+ .section-white:not(.section-center)), &:has(+ .section-title){
-      & > img, &>picture>img , &>.media{
+      @include grid-media() {
         margin-bottom: calc( $margin * -2 / 3);
         &.cover{
           height: calc( 100% + 7rem * 2 / 3);
@@ -140,7 +151,7 @@
       }
     }
     
-    & > img, &>picture>img , &>.media{
+    @include grid-media() {
       display: block;
       max-width: 100%;
       height: auto;

@@ -11,9 +11,10 @@ sections:
     textSectionStore:
       fr: Hélices holographiques, individuelles ou synchronisée en mur d'écrans.
       en: Holographic fans, single or screen wall
-  - name: product
-    fr: Autres produits
-    en: Other products    
+  
   - name: accessory
     fr: Accessoires
     en: Accessories
+  - name: product
+    fr: Autres produits
+    en: Other products
