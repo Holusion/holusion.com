@@ -1,8 +1,9 @@
 'use strict';
 const expect = require("chai").expect;
-const {resolve, relative} = require("path");
+const {resolve, relative, sep} = require("path");
 const fs = require("fs").promises;
 const https = require('https');
+const {execFile} = require("child_process");
 
 const yaml = require('js-yaml');
 
@@ -11,6 +12,35 @@ const {findFiles, findFrontMatters} = require("./utils/findFiles");
 const prettyPrint = require("./utils/prettyPrint");
 
 const basePath = resolve(__dirname, "..")
+
+// true when the file lives under the _assets source folder (processed at build time)
+const isAsset = f => relative(basePath, f).split(sep)[0] === "_assets";
+
+// read an image's pixel dimensions using libvips (already required to build the site)
+function imageDimensions(file){
+  return new Promise((resolve, reject)=>{
+    execFile("vipsheader", [file], (err, stdout)=>{
+      if(err) return reject(err);
+      const m = /(\d+)x(\d+)/.exec(stdout);
+      if(!m) return reject(new Error(`Could not read dimensions of ${file} from: ${stdout}`));
+      resolve({width: parseInt(m[1], 10), height: parseInt(m[2], 10)});
+    });
+  });
+}
+
+// map with bounded concurrency to avoid spawning one process per image at once
+async function mapLimit(items, limit, fn){
+  const results = new Array(items.length);
+  let cursor = 0;
+  async function worker(){
+    while(cursor < items.length){
+      const idx = cursor++;
+      results[idx] = await fn(items[idx], idx);
+    }
+  }
+  await Promise.all(Array.from({length: Math.min(limit, items.length)}, worker));
+  return results;
+}
 
 describe("integration tests", function(){
   const image_re = /\.(?:png|jpe?g|webp)$/i;
@@ -40,17 +70,32 @@ describe("integration tests", function(){
           + prettyPrint(bad_files));
       });
     
+      // Served images (outside _assets) ship as-is, so we cap their file size.
       it("large images", async ()=>{
         const max_size = 1 *1024* 1024; //Max allowed size in octets
         const bad_images = staticFiles.filter((f, idx)=>{
           if(!image_re.test(f)) return false;
+          if(isAsset(f)) return false; // _assets images are checked by resolution below
           return max_size < sizes[idx];
         });
         expect(bad_images.length).to.be.below(10, `Found ${bad_images.length} images above size limit.`
-        + `\nList bad images with : \n\t\`find ${folders.join(" ")} -size +${Math.round(max_size/1024)}k \\( -iname "*.png" -o -iname "*.jpg" \\)\``
+        + `\nList bad images with : \n\t\`find static -size +${Math.round(max_size/1024)}k \\( -iname "*.png" -o -iname "*.jpg" -o -iname "*.webp" \\)\``
         + "\n");
-        expect(bad_images.length).to.equal(0, `Expected no image to be above ${Math.round(max_size/1024)} kb. Bad images :`
+        expect(bad_images.length).to.equal(0, `Expected no image outside _assets to be above ${Math.round(max_size/1024)} kb. Bad images :`
           + prettyPrint(bad_images))
+      });
+
+      // Source images (in _assets) are resized at build time, so file size is
+      // irrelevant; instead we make sure their resolution stays sane.
+      it("high resolution source images", async function(){
+        this.timeout(120000);
+        const max_width = 3840, max_height = 2160; // no source image should exceed 4K UHD
+        const asset_images = staticFiles.filter(f=> image_re.test(f) && isAsset(f));
+        const dims = await mapLimit(asset_images, 32, imageDimensions);
+        const bad_images = asset_images.filter((f, idx)=> max_width < dims[idx].width || max_height < dims[idx].height);
+        expect(bad_images).to.have.property("length", 0, `Expected no _assets image above ${max_width}x${max_height}px.`
+          + `\nResize them within that box, e.g.: \n\t\`vipsthumbnail "<file>" --size ${max_width}x${max_height} -o "<file>"\``
+          + prettyPrint(bad_images.map((f, i)=> `${relative(basePath, f)} (${dims[asset_images.indexOf(f)].width}x${dims[asset_images.indexOf(f)].height})`)))
       });
     });
   
