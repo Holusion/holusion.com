@@ -1,6 +1,7 @@
 ---
 title: Notre catalogue
 layout: store
+image: img/sections/sitem26.webp
 ---
 
 <div id="catalog" class="products-navbar">
@@ -19,18 +20,18 @@ layout: store
     <ul>
       <li><a href="#store-main" onclick="changeColorLink(this)">Bornes holographiques et table tactile</a></li>
       <li><a href="#store-fans" onclick="changeColorLink(this)">Hélices holographiques</a></li>
-      <li><a href="#store-product" onclick="changeColorLink(this)">Autres produits</a></li>
       <li><a href="#store-accessory" onclick="changeColorLink(this)">Accessoires</a></li>
+      <li><a href="#store-product" onclick="changeColorLink(this)">Autres produits</a></li>
     </ul>
   </div>
 </div>
 
 <section class="section pb-5">
-  {% picture grid img/sections/st_omer.jpg
+  {% picture grid {{ page.image }}
     --img class="cover"
     data-noisetest="1"
     style="object-position: 70% 0"
-    --alt Dispositif hologramme controlé par tablette
+    --alt A gauche, un écran tactile 27" montrant la réplique des globes de coronelli de l'hospice comtesse de Lille. à droite, un dispositif hologramme controlé par un écran tactile permettant la visualisation de scènes 3D eCorpus
   %}
   <div class="content mb-0 position-relative">
     <div class="position-absolute top-0 end-0 py-4">

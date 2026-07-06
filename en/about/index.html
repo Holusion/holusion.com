@@ -78,12 +78,14 @@ title: About us
   </div>
 
   <section class="section left section-white">
-    {% picture grid img/posts/about/plaineImages.jpg
-      --img class="img-fluid"
-      data-noisetest="1"
-      --alt Plaine Images
-      --picture class="m-auto"
-    %}     
+    <figure>
+      {% picture grid img/sections/resco.webp
+        --img class="img-fluid"
+        data-noisetest="1"
+        --alt Mural on the wall of Holusion's offices in Roubaix
+      %}
+      <figcaption style="text-align: center;">Mural created by <a href="https://www.instagram.com/oceane.marescotti/">Océane Marescotti (RESCO)</a> in Holusion's premises</figcaption>
+    </figure>
     <div class="timeline content py-5">
       <span class="timeline--point rounded-circle">
         <div class="rounded-circle mx-auto"></div>
@@ -109,7 +111,7 @@ title: About us
       <span class="timeline--point rounded-circle">
         <div class="rounded-circle mx-auto"></div>
       </span>
-      <h3 class="d-inline">2020: International development</h3>
+      <h3 class="d-inline">2020: Going international</h3>
       <p>
         New holographic projects keep on arriving in France with new museums and companies, but we also start to provide holographic display and content abroad. Our products are exported to neighbouring countries as we build new international partnership such as Genoa University for architecture or Liege University for cultural heritage <a href="../posts/2019-12-01-RECON.html">digitization</a>.
       </p>
@@ -181,37 +183,6 @@ title: About us
         </blockquote> 
       </div>
     </div>
-  </section>
-  <div class="section section-white">
-    <h2>The team</h2>
-  </div>
-
-  <section class="section section-center ">
-      <div class="content view-team text-center pt-5 row g-0 d-flex justify-content-center">
-        <div class="col-4">
-          {% include components/team_member_portrait.html
-            img="thibault"
-            name="Thibault Guillaumont"
-            title="Founder and CEO"
-            url="https://www.linkedin.com/in/thibaultguillaumont/"
-          %}
-        </div>
-        <div class="col-4">
-          {% include components/team_member_portrait.html
-            img="seb"
-            name="Sebastien Dumetz"
-            title="Founder and CTO"
-            url="https://www.linkedin.com/in/sebastien-dumetz-67442b86/"
-          %}
-        </div>
-        <div class="col-4">
-          {% include components/team_member_portrait.html
-            img="melissa"
-            name="Mélissa Houyez"
-            title="3D Artist"
-          %}
-        </div>
-      </div>
   </section>
 
   <section class="section section-center">

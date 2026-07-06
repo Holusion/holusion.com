@@ -1,3 +1,4 @@
+@use "sass:color";
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -40,7 +41,7 @@ $body-color:                $dark;
 
 // NAVBAR styles
 $navbar-light-active-color: $cyan;
-$navbar-light-hover-color:  darken($cyan, 10);
+$navbar-light-hover-color:  color.adjust($cyan, $lightness: -10%);
 $navbar-light-color: $dark;
 $navbar-padding-y: 0.1rem;
 $navbar-nav-link-padding-x: 0.25rem;

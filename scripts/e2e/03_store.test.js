@@ -1,8 +1,14 @@
 'use strict';
 const fs = require("fs/promises");
 const { expect } = require("chai");
-const faker = require("faker");
+const { allFakers } = require("@faker-js/faker");
 const path = require("path");
+
+// Some @faker-js/faker locales lack phone_number.format data and throw when
+// asked for a phone number; keep only the locales that can actually produce one.
+const phoneLocales = Object.keys(allFakers).filter((loc)=>{
+  try{ allFakers[loc].phone.number(); return true; }catch(e){ return false; }
+});
 
 const timers = require("timers/promises");
 
@@ -63,13 +69,20 @@ const timers = require("timers/promises");
       }catch(e){}
     });
     it("can navigate to an item", async function(){
-      await page.click(`[data-test="store-item-card"] A[href="/${lang}/store/pixel"]`);
+      await page.click(`A[data-test="store-item-card"][href="/${lang}/store/pixel"]`);
       await page.waitForSelector(`[data-test="store-item"]`);
     });
 
     it("can add this item to the cart", async function(){
-      await page.waitForSelector(`#snipcart`, {timeout: 2000}), //Created when snipcart has really loaded
-      await page.evaluate(()=>Promise.any([Snipcart.ready, new Promise((ok,fail)=>setTimeout(fail,2000))]));
+      // Snipcart's script is fetched from an external CDN and can be slow to
+      // initialise (it creates #snipcart and the Snipcart global once loaded),
+      // especially when the e2e suite runs in parallel. Wait for the global to
+      // actually be ready instead of racing a fixed 2s timeout.
+      await page.waitForFunction(
+        () => typeof window.Snipcart !== "undefined" && window.Snipcart.ready,
+        {timeout: 15000},
+      );
+      await page.evaluate(() => window.Snipcart.ready);
       await page.click(`[data-test="store-add"]`);
     });
     it("opens the snipcart layout", async function(){
@@ -86,20 +99,23 @@ const timers = require("timers/promises");
       }
     });
     it("can go to checkout", async function(){
-      await page.waitForSelector("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      let checkoutButton = "FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary";
+      await page.waitForSelector(checkoutButton, {visible: true});
       await timers.setTimeout(200);
-      await page.click("FOOTER.snipcart-cart__footer-buttons > .snipcart-button-primary");
+      // Snipcart re-renders the cart footer, so a Puppeteer click can race a
+      // detached / not-yet-clickable node. A direct DOM click on a freshly
+      // queried node is robust against that re-render race.
+      await page.$eval(checkoutButton, el=> el.click());
       await page.waitForSelector("#snipcart-checkout-step-billing", {timeout: 100000});
     });
     it("phone number into custom field", async function(){
       let ref = `#snipcart-billing-form INPUT[name="phoneNumber"]`;
       let locales = ["fr"];
       for(let i=0; i<9; i++){
-        locales.push(faker.random.locale());
+        locales.push(phoneLocales[Math.floor(Math.random()*phoneLocales.length)]);
       }
       for(let locale of locales){
-        faker.locale = locale;
-        let number = faker.phone.phoneNumber();
+        let number = allFakers[locale].phone.number();
         await page.type(ref, number);
         expect(await page.$eval(ref, e=>{
           let valid = e.checkValidity(); 

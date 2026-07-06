@@ -33,15 +33,14 @@
 }
 
 .logo-made-in-france{
-  height: 7rem !important;
+  height: 128px;
+  width: 128px;
   position: relative;
   top: 100%;
   left: 100%;
-  margin-left: -8rem;
-  margin-top: -2.5rem;
+  margin-left: -144px;
+  margin-top: -50px;
   @include media-breakpoint-down(xl){
-    height: 5rem !important;
-    margin-left: -6rem;
-    margin-top: -6rem;
+    margin-top: -128px;
   }
 }

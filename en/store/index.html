@@ -1,6 +1,7 @@
 ---
 title: Products
 layout: store
+image: img/sections/sitem26.webp
 scripts:
   /static/js/observer.js
 ---
@@ -22,19 +23,20 @@ scripts:
   <div class="navbar-nav container">
     <ul>
       <li><a href="#store-main" onclick="changeColorLink(this)">Holographic kiosks and touch table</a></li>
-      <li><a href="#store-product" onclick="changeColorLink(this)">Other products</a></li>
+      <li><a href="#store-fans" onclick="changeColorLink(this)">Holographic fans</a></li>
       <li><a href="#store-accessory" onclick="changeColorLink(this)">Accessories</a></li>
+      <li><a href="#store-product" onclick="changeColorLink(this)">Other products</a></li>
     </ul>
   </div>
 </div>
 
 
 <section class="section pb-5">
-  {% picture grid img/sections/st_omer.jpg
+  {% picture grid {{ page.image }}
     --img class="cover"
     data-noisetest="1"
     style="object-position: 70% 0"
-    --alt Dispositif hologramme controlé par tablette
+    --alt On the left, a 27" touch screen showing the replica of the Coronelli globes from the Hospice Comtesse in Lille. On the right, a hologram device controlled by a touch screen for viewing eCorpus 3D scenes
   %}
   
   <div class="content mb-0 position-relative">

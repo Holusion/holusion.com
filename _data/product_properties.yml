@@ -55,6 +55,10 @@ cpu:
   icon: src/pictos/properties/compute.svg
   fr: processeur
   en: processor
+ram:
+  icon: src/pictos/properties/compute.svg
+  fr: mémoire
+  en: memory
 inputs:
   icon: src/pictos/properties/inputs.svg
   fr: formats supportés

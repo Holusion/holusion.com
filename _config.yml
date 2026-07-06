@@ -20,6 +20,15 @@ incremental: true
 sass:
   style: compressed
   sourcemap: always
+  # Silence Dart Sass deprecation warnings coming from dependencies (bootstrap),
+  # e.g. color-functions (red/green/blue), global-builtin, if-function.
+  quiet_deps: true
+  # Bootstrap 5.3 still uses `@import` internally and only exposes its
+  # variables/mixins through @import global scope, so our stylesheets that
+  # consume bootstrap must keep using @import too. A real @use/@forward
+  # migration needs Bootstrap 6. Until then, silence the @import deprecation.
+  silence_deprecations:
+    - import
   load_paths:
     - _css
     - node_modules
