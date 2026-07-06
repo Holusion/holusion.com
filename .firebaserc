@@ -1,5 +1,13 @@
 {
   "projects": {
     "default": "holusion-com"
+  },
+  "targets": {},
+  "etags": {
+    "holusion-com": {
+      "extensionInstances": {
+        "firestore-send-email": "b4054d4eb67c6a27079805c63dc01a190afa61a1681bc144846dbc54735eaaba"
+      }
+    }
   }
 }

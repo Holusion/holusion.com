@@ -19,28 +19,48 @@
       }
     ],
     "redirects": [
-      {"regex": "^/dev/(?P<lang>fr|en)/(toolbox|content|search)/.+", "destination": "/dev/:lang/", "type": 301},
-      {"regex": "^/(?P<lang>fr|en)/products(?:/(?P<name>[^/]+))?/?$", "destination": "/:lang/store/:name", "type": 301}
+      {
+        "regex": "^/dev/(?P<lang>fr|en)/(toolbox|content|search)/.+",
+        "destination": "/dev/:lang/",
+        "type": 301
+      },
+      {
+        "regex": "^/(?P<lang>fr|en)/products(?:/(?P<name>[^/]+))?/?$",
+        "destination": "/:lang/store/:name",
+        "type": 301
+      }
     ],
-    "headers": [ 
+    "headers": [
       {
         "source": "/static/fonts/*.@(ttf|woff|woff2)",
-        "headers": [ 
-          { "key": "Cache-Control", "value": "max-age=31536000" },
-          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          },
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
         ]
-      }, {
+      },
+      {
         "source": "/assets/**/*.@(jpg|png|webp)",
-        "headers": [{
-          "key": "Cache-Control",
-          "value": "max-age=31536000"
-        }]
-      },{
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
         "source": "/static/img/icons/**/*.@(jpg|png|webp)",
-        "headers": [{
-          "key": "Cache-Control",
-          "value": "max-age=31536000"
-        }]
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
       }
     ]
   },
@@ -61,5 +81,8 @@
     "functions": {
       "port": "5001"
     }
+  },
+  "extensions": {
+    "firestore-send-email": "firebase/firestore-send-email@0.2.9"
   }
 }
