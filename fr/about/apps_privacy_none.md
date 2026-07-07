@@ -1,7 +1,11 @@
 ---
 title: Politique de confidentialité des applications
-layout: page
+layout: front_page
 ---
+
+{% include components/section_title.html title=page.title %}
+
+<main class="container text-white" id="content" markdown="1">
 
 Holusion s'engage pour la protection des données personnelles, en conformité avec la législation européenne ([RGPD](http://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32016R0679&from=EN)).
 
@@ -18,3 +22,5 @@ Aucune information recueillie ne pourra être transmise à des tiers dans le but
 ## Vos droits
 
 Vous disposez d'un droit général d'accès, de rectification ou de suppression de l'ensemble des données collectées au cours de votre utilisation de nos services. Toute demande doit être adressée par voie postale à *holusion, 111 av Jean Lebas - 59100 Roubaix* ou par <a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#contactform-modal">mail</a>.
+
+</main>
