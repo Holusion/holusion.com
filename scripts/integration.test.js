@@ -213,6 +213,65 @@ describe("integration tests", function(){
           }
         }
       });
+
+      // eCorpus embeds ({% include components/medias/ecorpus.html %}) render an
+      // <iframe> (or, for the placeholder variant, a <div data-src>) pointing at
+      //   {server}/ui/scenes/{scene}/view?lang=XX
+      // That page — like the underlying scene data — sits behind eCorpus' `canRead`
+      // check, which answers 404 to an anonymous GET whenever the scene is private
+      // OR does not exist (the two are deliberately indistinguishable to visitors),
+      // and 200 when the scene is public. A scene that only exists privately works
+      // for a logged-in editor but is broken for the site's unauthenticated public,
+      // so we fetch every embed's own URL, without credentials, and require success.
+      it("ecorpus", async function(){
+        // external servers, several of them third-party, are slower than the mocha default
+        this.timeout(30000);
+        const re = /(?:src|data-src)="((?:https?:)?\/\/[^"]+?\/ui\/scenes\/[^"]+?\/view(?:\?[^"]*)?)"/mg;
+        const matches = contentFiles.map(c=>{
+          return Array.from(c.content.matchAll(re));
+        })
+        .map((matches, fileIndex)=> matches.map(m=>{
+          // new URL() percent-encodes spaces / accented characters that Liquid leaves
+          // verbatim in scene ids; we drop the ?lang query (it only sets a display
+          // language, not access) which also collapses the EN/FR copies of a scene.
+          const u = new URL(m[1], "https://ecorpus.holusion.com");
+          return {url: `${u.origin}${u.pathname}`, file: contentFiles[fileIndex].filepath};
+        }))
+        .flat();
+        expect(matches, "ecorpus embed should be used at least once or be removed").to.have.property("length").above(0);
+
+        // one request per distinct scene, remembering every page that embeds it
+        const byUrl = new Map();
+        for(const {url, file} of matches){
+          if(!byUrl.has(url)) byUrl.set(url, new Set());
+          byUrl.get(url).add(relative(basePath, file));
+        }
+        const targets = Array.from(byUrl.keys());
+
+        const responses = await Promise.all(targets.map(url=>{
+          return new Promise((resolve, reject)=>{
+            const req = https.get(url, { timeout:8000 }, (res)=>{
+              resolve(res.statusCode);
+              res.destroy(); //we only need the status line, not the body
+            });
+            req.on("timeout", ()=> req.destroy(new Error(`Timeout requesting ${url}`)));
+            req.on("error", reject);
+          });
+        }));
+
+        for(let i = 0; i <targets.length; i++){
+          const url = targets[i];
+          const statusCode = responses[i];
+          const files = Array.from(byUrl.get(url)).join(", ");
+          expect(statusCode, [
+            `Cannot GET ${url} (status ${statusCode})`,
+            `embedded in ${files}`,
+            `the scene is either private or does not exist for anonymous visitors`,
+            `(eCorpus answers 404 for both). Publish/share it, or fix the`,
+            `server / scene id in the {% include components/medias/ecorpus.html %} tag.`,
+          ].join("\n\t")).to.be.below(400);
+        }
+      });
     });
   })
 
