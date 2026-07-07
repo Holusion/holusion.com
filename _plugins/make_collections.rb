@@ -21,20 +21,12 @@ def product_filter(a)
 end
 Jekyll::Hooks.register :site, :post_read do |site|
   c = {
-    "products"  => { "fr" =>[], "en" => []},
     "store"     => { "fr" =>[], "en" => []},
   }
 
   site.pages.each do |page|
-    match = /\/(?<lang>fr|en)\/(?<type>products|store)\/(?!index|\d+_)[^\/]+$/.match(page.url)
+    match = /\/(?<lang>fr|en)\/(?<type>store)\/(?!index|\d+_)[^\/]+$/.match(page.url)
     next if ! match #skip if page does not match
-    # then assign defaults to categories
-    # we don't do it in _config.yml because it's buggy
-    case match["type"]
-      when "products"
-        page.data["layout"] = "product" unless page.data.key? "layout"
-    end
-    print("")
     #add it to collections
     c["#{match["type"]}"][match["lang"]].push( page )
   end

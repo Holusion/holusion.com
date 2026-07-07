@@ -141,14 +141,23 @@ describe("integration tests", function(){
       it("images",async ()=>{
         const images = staticFiles.filter(i=>image_re.test(i));
         expect(images, "Expected many images").to.have.property("length").above(100);
+        const escapeRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         let not_found = images.filter((image)=>{
           let rel = relative(basePath, image)
-          if(rel.indexOf("_assets") === 0){
+          const isAssetImg = rel.indexOf("_assets") === 0;
+          if(isAssetImg){
             rel = `/assets/${rel.slice("_assets/".length, rel.lastIndexOf("."))}`;
           }
           const parts = rel.split("/");
           rel = `${parts.slice(0, -1).join("/")}/${encodeURIComponent(parts[parts.length -1])}`;
-          return !contentFiles.some(c=> c.content.indexOf(rel) !== -1);
+          // _assets images are rewritten by jekyll_picture_tag to /assets/<path>[-<variant>].<ext>,
+          // so we strip the extension above and match the base. It MUST be followed by a real
+          // delimiter ("." for the plain output, "-" for a resized variant) — a bare substring
+          // test would let a dead image ride on a longer-named sibling whose URL merely starts
+          // with the same string (e.g. "kit_pixel" masked by "kit_pixels", "PeppersGhost" by
+          // "PeppersGhost_schema"). static/ images keep their extension, so an exact match is enough.
+          const needle = isAssetImg ? new RegExp(escapeRe(rel) + "[-.]") : rel;
+          return !contentFiles.some(c=> isAssetImg ? needle.test(c.content) : c.content.indexOf(needle) !== -1);
         });
         expect(not_found).to.have.property("length", 0, `Some images are not used anywhere :`
         + prettyPrint(not_found.slice(0,10))

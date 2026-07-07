@@ -8,11 +8,9 @@ exclude:
   - "*.sh"
   - "*.log"
   - "README.md"
-  - "bower.json"
   - "package.json"
   - functions
 include:
-  - ".htaccess"
   - "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
   - "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"
 highlighter: rouge
