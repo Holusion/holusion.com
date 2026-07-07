@@ -1,21 +1,43 @@
 {%comment %}
 iframe for e-corpus items
 Usage :
-  include components/medias/ecorpus.html server="https://..." scene="item-id"
+  include components/medias/ecorpus.html url="https://.../ui/scenes/item-id/view"
+
+  `url` is the canonical scene viewer URL (the one you copy from the browser when
+  looking at the scene). The iframe embeds it as-is.
+
+  Unless the URL (or `params`) already sets a `lang=` value, the current page
+  language is appended automatically (e.g. `?lang=FR`).
 
 Optional :
+  params="..."
+    Extra query string appended to the scene URL. Merged correctly whether or
+    not `url` already carries a query string.
   placeholder="img/path/to/poster.webp"
     When provided, a poster image with a "play" button is shown first (like the
     youtube embed) and the heavy iframe viewer is only loaded once the user
     clicks it, so no superfluous data is fetched for uninterested visitors.
   alt="..."  accessible label / poster alt text (used with placeholder)
+  class="..."  extra classes added to the ratio wrapper
 {%endcomment%}
 
-{% assign lang = {{page.lang}} | upcase %}
-{% assign itemSrc = {{include.scene}} | prepend: "/ui/scenes/"  | prepend: {{include.server}} | append: "/view?lang=" | append: lang %}
-{% assign root = {{include.scene}} | prepend: "/scenes/"  | prepend: {{include.server}}}
-{% assign server = {{include.server}} %}
-{% assign itemClass = {{include.class}} | prepend: " media ratio"%}
+{% assign itemSrc = include.url %}
+{% if include.params %}
+  {% if itemSrc contains "?" %}
+    {% assign itemSrc = itemSrc | append: "&" | append: include.params %}
+  {% else %}
+    {% assign itemSrc = itemSrc | append: "?" | append: include.params %}
+  {% endif %}
+{% endif %}
+{% unless itemSrc contains "lang=" %}
+  {% assign lang = page.lang | upcase %}
+  {% if itemSrc contains "?" %}
+    {% assign itemSrc = itemSrc | append: "&lang=" | append: lang %}
+  {% else %}
+    {% assign itemSrc = itemSrc | append: "?lang=" | append: lang %}
+  {% endif %}
+{% endunless %}
+{% assign itemClass = include.class | prepend: " media ratio" %}
 
 
 <div class="{{itemClass}}">
