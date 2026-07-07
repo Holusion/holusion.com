@@ -1,7 +1,14 @@
 {%comment %}
 iframe for e-corpus items
 Usage :
-include voyager.html embed=item-id
+  include components/medias/ecorpus.html server="https://..." scene="item-id"
+
+Optional :
+  placeholder="img/path/to/poster.webp"
+    When provided, a poster image with a "play" button is shown first (like the
+    youtube embed) and the heavy iframe viewer is only loaded once the user
+    clicks it, so no superfluous data is fetched for uninterested visitors.
+  alt="..."  accessible label / poster alt text (used with placeholder)
 {%endcomment%}
 
 {% assign lang = {{page.lang}} | upcase %}
@@ -12,13 +19,42 @@ include voyager.html embed=item-id
 
 
 <div class="{{itemClass}}">
+  {% if include.placeholder %}
+    <div class="ecorpus_container media-placeholder" data-src="{{itemSrc}}" role="button" tabindex="0" aria-label="{{include.alt | default: 'Load the interactive 3D viewer'}}">
+      <div class="play-button"></div>
+      {% picture grid {{include.placeholder}}
+        --img class="ecorpus_placeholder"
+        --alt {{include.alt | default: "Interactive 3D scene preview"}}
+      %}
+      <script>
+        (function(){ //anonymous function to avoid poluting the global space
+          var container = document.currentScript.parentNode;
+          function load(){
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("src", container.getAttribute("data-src"));
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("allow", "fullscreen; xr; xr-spatial-tracking; accelerometer; gyroscope");
+            iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups allow-downloads allow-forms");
+            container.innerHTML = "";
+            container.appendChild(iframe);
+          }
+          container.addEventListener("click", load);
+          container.addEventListener("keydown", function(e){
+            if(e.key === "Enter" || e.key === " "){ e.preventDefault(); load(); }
+          });
+        })();
+      </script>
+    </div>
+  {% else %}
     <div class="ecorpus_container">
-      <iframe 
+      <iframe
         src="{{itemSrc}}"
-        allowfullscreen 
-        frameborder="0" 
+        allowfullscreen
+        frameborder="0"
         allow="fullscreen; xr; xr-spatial-tracking; accelerometer; gyroscope"
         sandbox="allow-scripts allow-same-origin allow-popups allow-downloads allow-forms"
         loading="lazy"></iframe>
     </div>
+  {% endif %}
 </div>

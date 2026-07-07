@@ -1,7 +1,11 @@
 ---
 title: Privacy Policy
-layout: page
+layout: front_page
 ---
+
+{% include components/section_title.html title=page.title %}
+
+<main class="container text-white" id="content" markdown="1">
 
 Holusion is committed to protecting personal data in compliance with European legislation ([GDPR](http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN)).
 
@@ -65,3 +69,6 @@ This page aims to inform you of your rights and our obligations regarding your d
 <h3>Online Purchases</h3>
 
 <p>In the case of a purchase, we only collect the information necessary for the proper conduct of the sale. Only contact personal information (name, first name, address, phone) is stored by our provider [Snipcart](https://snipcart.com) to ensure traceability and after
+</p>
+
+</main>

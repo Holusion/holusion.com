@@ -1,229 +1,38 @@
 ---
-layout: front_page
+layout: page
 title: Nos Services
 ---
 
 
-<main class="main-dark main-grid">
   
-  {% picture header img/services/voyager.webp class="img-fluid" --alt Capture d'écran de la salle du fond de la Grotte Chauvet sur Voyager-Explorer %}
  
-  <section class="section section-white" style="margin-top: -4.6666666667rem;">
-    <h2>Services</h2>
+  <section class="section section-center">
+    <h1>Services</h1>
   </section>
+  
+<section class="section section-center pt-5">
+  <div class="content mb-0 ps-0 p-sm-1">
+    {% include utils/page_cards.html %}
+  </div>
+</section>
+<section class="section section-center">
+  <div class="content">
+    <h2>Une offre complète</h2>
+    <p>
+      Holusion a développé une gamme de service complète visant à vous accompagner sur toute la chaine de production de votre expérience audiovisuelle.
+    </p>
+    <p>
+      Nous créons des expériences de bout-en-bout pour <a href="/fr/services/bim">l'immobilier</a>, <a href="/fr/services/heritage.html">la culture</a> ou <a href="/fr/services/process.html">l'industrie</a>.
+    </p>
+    <p>
+      Concepteurs et intégrateurs de nos produits, nous pouvons aussi réaliser des solutions sur mesure pour s'adapter aux contraintes de chaque projet.
+    </p>
+  </div>
+</section>
 
-  <section class="section left">
-    {% picture grid img/sections/table_perrusson.webp
-      --img class="img-fluid"
-      data-noisetest="1"
-      --alt Ecran mural synchronisé avec une table tactile montrant une carte topographique interactive
-    %}
-    <div class="timeline content py-5">
-
-      <span class="timeline--point rounded-circle">
-        <img src="/static/img/usages/minicorpus.webp">
-      </span>
-      <h3 class="d-inline"><a href="#collections">Valorisation du patrimoine</a></h3>
-      <p class="mb-0">
-        Numérisation de collections, outils de conservation et de valorisation du patrimoine architectural et culturel.
-        En partenariat avec <a href="https://fr-scv.univ-lille.fr/recherche-3/pole-numerisation-3d">L'université de Lille</a>.
-      </p>
-      <p class="text-end mb-0"><a href="#collections">voir plus...</a></p>
-
-      <span class="timeline--point rounded-circle">
-        <img src="/static/img/usages/miniquartz.jpg">
-      </span>
-      <h3 class="d-inline"><a href="#bim">Présentation immobilière</a></h3>
-      <p class="mb-0">
-        Présentation de projets immobiliers. Intégration de plans <b>BIM</b>, vues drone ou satellite.
-        Notre interface de gestion de contenu <a href="https://content.holusion.com" target="_blank">content.holusion.com</a> vous permet de créer vos applications interactives.
-      </p>
-      <p class="text-end mb-0"><a href="#bim">voir plus...</a></p>
-
-      <span class="timeline--point rounded-circle">
-        <img src="/static/img/usages/miniboard.webp">
-      </span>
-      <h3 class="d-inline"><a href="#process">Valorisation des procédés</a></h3>
-      <p class="mb-0">
-        Décomposition et explication de processus industriels ou scientifiques complexes sur des supports multimédia interactifs: <a href="/fr/store/iris46.html">Hologrammes</a>, <a href="/fr/store/table49.html">Tables tactiles</a> ou systèmes <a href="/fr/store/touch.html">multi-écrans</a>.
-      </p>
-      <p class="text-end mb-0"><a href="#process">voir plus...</a></p>
-
-      <span class="timeline--point rounded-circle">
-        <img src="/static/img/usages/minitable.webp">
-      </span>
-      <h3 class="d-inline"><a href="#scenography">Scénographie</a></h3>
-      <p class="mb-0">
-        Habillages, présentoirs et mises en lumière sont autant d'atouts scénographiques indisociables d'une expérience réussie.
-      </p>
-      <p class="text-end mb-0"><a href="#scenography">voir plus...</a></p>
-
-    </div>
-  </section>
-
-
-
-  <section class=" section section-white">
-    <h2 id="collections">Valorisation du patrimoine</h2>
-  </section>
-
-  <section class="section">
-    {% picture grid "img/sections/sitem26.webp"
-      --img class="img-fluid"
-      --alt Vitrine holographique et écrans tactiles présentant des collections patrimoniales numérisées
-    %}
-
-    <div class="content">
-      <h3>Numérisez et valorisez vos collections</h3>
-      <p>
-        Numérisation de collections, outils de conservation et de médiation : nous accompagnons musées, institutions et services patrimoniaux dans la mise en valeur du patrimoine architectural et culturel.
-      </p>
-    </div>
-  </section>
-
-  <section class="section left">
-    {% picture grid img/photogrammetry/lighting.webp --alt éclairage d'un élément de collection pour une captation en photogrammétrie%}
-    <div class="content">
-      <h3>Photogrammétrie et scanner laser</h3>
-      <p>Capture en photogrammétrie d'éléments de collection en inventaire ou directement en situation</p>
-      <p>
-        Nous produisons et optimisons des modèles fidèles de vos œuvres. Un travail mené en partenariat avec le <a href="https://fr-scv.univ-lille.fr/recherche-3/pole-numerisation-3d">pôle Numérisation 3D de l'université de Lille</a>.
-      </p>
-    </div>
-  </section>
-  <section class="section">
-    <a class="media" target="_blank" href="https://ecorpus-research.huma-num.fr/ui/scenes/Arc%20de%20triomphe/view">
-      {% picture grid img/photogrammetry/arc_de_triomphe_screenshot_ecorpus.webp class="img-fluid" --alt Photogrammétrie de l'Arc de Triomphe de l'étoile, réalisée par le Centre des Monuments Nationaux et restituée sur eCorpus avec la participation du consortium Huma-Num %}
-    </a>
-    <div class="content">
-      <h3>Restitution en ligne</h3>
-      <p>
-        Vos modèles prennent vie sur <a href="https://ecorpus.eu">eCorpus</a>, le visualisateur 3D le plus complet du marché, développé par Holusion dans le cadre d'un consortium de recherche avec les universités de Lille et de Liège.
-      </p>
-      <div class="d-flex justify-content-center">
-        <a href="https://ecorpus.eu"><button class="btn btn-info image-shadow my-3">Découvrez eCorpus</button></a>
-      </div>
-    </div>
-  </section>
-  <section class="section left">
-    {% picture grid img/services/tablette_chalons.jpg class="img-fluid" --alt Un tablette tactile faisant office de cartel numérique pour la présentation d'une statue colonne à Chalons en Champagne %}
-
-    <div class="content">
-      <h3 class="text-center pt-lg-4">Sur un écran tactile</h3>
-      <p>Présentez vos collections sur un écran tactile permettant à vos visiteurs de manipuler les objets et de découvrir des éléments de médiation intégrés: Visites guidées, annotations, médias enrichis...</p>
-      <p>Ou augmentez votre hologramme d'un <a href="/fr/store/touch.html">écran tactile déporté</a>.</p>
-      <p>Votre hologramme exploite directement les scénarii de médiation configurés sur eCorpus pour proposer une expérience immersive d'une grande profondeur.</p>
-      <p>Découvrez la collection <a href="https://archeologie.ecorpus.eu/ui/scenes/">Grands Sites Archéologiques</a> du ministère de la Culture ou les <a href="https://musee-archeologienationale.ecorpus.eu/ui/">collections</a> du Musée d'Archéologie Nationale</p>
-    </div>
-  </section>
-
-  <section class="section">
-    {% picture grid "img/products/tt_plaine_image.jpg"
-      --img class="img-fluid"
-      --alt écran tactiles présentant une collection numérisée
-    %}
-    <div class="content">
-      <h3 class="text-center pt-lg-4">Sur une table tactile</h3>
-      <p>Intégrez eCorpus sur une table tactile pour offrir une expérience de visualisation complète et intuitive.</p>
-      <p>Voyez les choses en grand avec des tables tactiles de 32" à 55".</p>
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <h2>Présentation immobilière</h2>
-  </section>
-
-  <section class="section left">
-    {% picture grid "img/posts/2020_bim/iris32_immobilier_terrasse.jpg"
-      --img class="img-fluid"
-      --alt Hologramme d'une maquette 3D de projet immobilier présenté dans une vitrine
-    %}
-
-    <div class="content">
-      <h3 id="bim">Donnez vie à vos projets immobiliers</h3>
-      <p>Présentez vos programmes sous leur meilleur jour : intégration de plans <b>BIM</b>, de vues drone ou satellite et de maquettes 3D interactives qui séduisent vos futurs acquéreurs.</p>
-      <p>Notre interface de gestion de contenu <a href="https://content.holusion.com" target="_blank">content.holusion.com</a> vous permet de créer, modifier et faire vivre vos applications <b>sans code</b>, directement depuis votre navigateur.</p>
-      <div class="text-center">
-        <a href="/dev/fr/how-to/guide-content-manager"><button class="btn btn-info image-shadow my-3">Créez du contenu depuis votre navigateur</button></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-
-    <div class="content">
-      <h3>Valorisez vos données BIM</h3>
-      <p>
-        Présentation des réseaux et zones techniques. Mise en évidence des espaces et zones d'occupation.
-      </p>
-      <img class="m-auto img-fluid" src="/static/img/bim/ardoines.webp">
-    </div>
-  </section>
-
-  {% picture header img/sections/monaco_pano_multires.webp class="img-fluid" --alt Vue aérienne virtuelle de Monaco réalisée avec Blender %}
-
-  <section class="section section-white">
-    <h2>Valorisation des procédés</h2>
-  </section>
-
-  <section class="section">
-    {% picture grid "img/sections/iris75_vivatech.jpg"
-      --img class="img-fluid"
-      --alt Public rassemblé autour d'un hologramme multi-écrans lors d'un salon
-    %}
-
-    <div class="content">
-      <h3 id="process">Expliquez vos procédés industriels ou scientifiques</h3>
-      <p>Décomposez et rendez accessibles des processus complexes sur des supports multimédia interactifs qui captent l'attention et facilitent la compréhension.</p>
-      <p>Selon votre message et votre public, nous combinons les supports les plus adaptés : <a href="/fr/store/iris46.html">hologrammes</a> pour révéler un objet sous tous les angles, <a href="/fr/store/table49.html">tables tactiles</a> pour explorer chaque étape en autonomie, ou systèmes <a href="/fr/store/touch.html">multi-écrans</a> pour synchroniser plusieurs approches complémentaires.</p>
-    </div>
-  </section>
-  <section class="section left">
-
-    <div class="content">
-      <ul>
-        <li>Décrivez des étapes de transformation</li>
-        <li>Illustrez des concepts abstraits</li>
-        <li>Montrez des relations</li>
-      </ul>
-    </div>
-  </section>
-  <section class="section section-white">
-    <h2>Scénographie</h2>
-  </section>
-
-  <section class="section left">
-    {% picture grid "img/services/calais.jpg"
-      --img class="img-fluid"
-      --alt Bouton d'interaction lumineux installé lors de l'inauguration d'un projet
-    %}
-
-    <div class="content">
-      <h3 id="scenography">Une mise en scène sur mesure</h3>
-      <p>Habillages, présentoirs et mises en lumière sont autant d'atouts scénographiques indissociables d'une expérience réussie.</p>
-      <p>
-        Notre réseau de fabricants locaux nous permet de concevoir et de fabriquer à la demande des accessoires adaptés : habillages en bois, métal ou plastique, ainsi que des circuits électroniques personnalisés pour réaliser des éclairages d'ambiance, logos lumineux ou indicateurs visuels.
-      </p>
-      <p>Parce que chaque projet est unique, contactez-nous pour trouver la solution la plus adaptée à chacun d'eux.</p>
-      <div class="d-flex justify-content-center">
-        <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Nos solutions interactives</button></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-light section-center">
-    <div class="content">
-      <h2 style="text-align:center">Découvrez nos réalisations et nos cas clients</h2>
-      <div class="d-flex justify-content-evenly">
-        <a href="/fr/posts/"><button class="btn btn-info image-shadow my-3">Réalisations</button></a>
-        <a href="/fr/interaction/"><button class="btn btn-info image-shadow my-3">Installations interactives</button></a>
-      </div>
-    </div>
-  </section>
 
   {% picture "img/sections/header.webp"  class="img-fluid" alt="Vue de détail d'une table tactile conçue et fabriquée par Holusion" %}
 
-</main>
 
 
 

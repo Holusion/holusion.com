@@ -62,9 +62,11 @@
           margin-bottom: calc($margin/2);
         }         
       }
-      + .section-white:not(.left) > h2{
+      + .section-white:not(.left) {
+        > h2, > h1 {
         grid-area: unquote("white / white / span 1 / content");
         padding-left: calc($margin * 2 / 3);
+      }
       }
     }
     
@@ -112,7 +114,7 @@
       }
     }
 
-    & > h2, &>.section-title {
+    & > h2, & > h1, & > .section-title {
       position: relative;
       padding: 0 $padding;
       margin-top: calc($margin/3);
@@ -123,6 +125,11 @@
         padding-top: 0;
         padding-bottom: 0;
       }
+    }
+    /* h1-specific style */
+    & > h1 {
+      font-size: 3rem;
+      color: white;
     }
     
     @include grid-media() {
