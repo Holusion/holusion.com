@@ -14,7 +14,7 @@ description: Numérisation de collections, outils de conservation et de médiati
   <section class="section">
     {% picture grid "img/sections/sitem26.webp"
       --img class="img-fluid"
-      --alt Vitrine holographique et écrans tactiles présentant des collections patrimoniales numérisées
+      --alt Vitrine holographique et écrans tactiles présentant des collections patrimoniales numérisées au Salon international des Musées en 2026
     %}
 
     <div class="content">
@@ -25,61 +25,121 @@ description: Numérisation de collections, outils de conservation et de médiati
     </div>
   </section>
 
+  
+  <section class="section left">
+    {% picture grid img/sections/table_perrusson.webp
+      --img class="img-fluid"
+      data-noisetest="1"
+      --alt Ecran mural synchronisé avec une table tactile montrant une carte topographique interactive
+    %}
+    <div class="timeline content py-5">
+      <span class="timeline--point rounded-circle">
+        <div class="rounded-circle mx-auto"></div>
+      </span>
+      <h3 class="d-inline"><a href="#numerisation">Numérisation</a></h3>
+      <p>Photogrammétrie, Lasergrammétrie</p>
+      <span class="timeline--point rounded-circle">
+        <div class="rounded-circle mx-auto"></div>
+      </span>
+      <h3 class="d-inline"><a href="#mediation">Médiation</a></h3>
+      <p></p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <h2 id="numerisation">Numérisation</h2>
+  </section>
+
   <section class="section left">
     {% picture grid img/photogrammetry/lighting.webp --alt éclairage d'un élément de collection pour une captation en photogrammétrie%}
     <div class="content">
-      <h3>Photogrammétrie et scanner laser</h3>
-      <p>Capture en photogrammétrie d'éléments de collection en inventaire ou directement en situation</p>
+      <h3>Photogrammétrie</h3>
+      <p>Capture en <a href="https://fr.wikipedia.org/wiki/Photogramm%C3%A9trie">photogrammétrie</a> d'éléments de collection en inventaire ou directement en situation</p>
       <p>
         Nous produisons et optimisons des modèles fidèles de vos œuvres. Un travail mené en partenariat avec le <a href="https://fr-scv.univ-lille.fr/recherche-3/pole-numerisation-3d">pôle Numérisation 3D de l'université de Lille</a>.
       </p>
+      <p>
+        Plus que la performance du capteur, c'est l'éclairage et le choix de l'objectif qui feront la qualité du résultat final.
+      </p>
     </div>
   </section>
+
   <section class="section">
-    <a class="media" target="_blank" href="https://ecorpus-research.huma-num.fr/ui/scenes/Arc%20de%20triomphe/view">
-      {% picture grid img/photogrammetry/arc_de_triomphe_screenshot_ecorpus.webp class="img-fluid" --alt Photogrammétrie de l'Arc de Triomphe de l'étoile, réalisée par le Centre des Monuments Nationaux et restituée sur eCorpus avec la participation du consortium Huma-Num %}
-    </a>
+    {% picture grid img/photogrammetry/macro.webp 
+      --alt Prise de photo d'un objet de petite taille en vue d'une exploitation en photogrammétrie
+    %}
+    <div class="content">
+      <h3>Pour toutes les tailles</h3>
+      <p>
+        Cette technique est adaptée pour les modèles de <a href="https://ecorpus.fr-scv.fr/ui/scenes/INRAP_boucle_%C3%A9maill%C3%A9e/view">quelques centimètres</a> (photo macro) à plusieurs <a href="https://ecorpus.fr-scv.fr/ui/scenes/Collegiale_seclin/view">dizaines de mètres</a> (photo drone).
+      </p>
+      <p>La photogrammétrie donne des textures de grande qualité avec d'excellents résultats sur les surfaces mattes.</p>
+      <p>Des protocoles en lumière polarisée permettent de numériser aussi des objets brillants.</p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid img/photogrammetry/artec_leo.webp --alt Utilisation d'un Artec Leo, scanner portable à lumière structuré, pour la numérisation d'un fond lapidaire %}
+    <div class="content">
+      <h3>Scanner à lumière structurée</h3>
+      <p>Capture plus rapide et moins dépendante de l'éclairage, mais certains détails peuvent être perdus lors de l'acquisition</p>
+      <p>Si l'acquisition est bien plus rapide et la géométrie de grande qualité (±0.3mm), le rendu des textures est généralement inférieur à celui d'une photogrammétrie.</p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <h2 id="mediation">Médiation</h2>
+  </section>
+
+  <section class="section">
+    {% include components/medias/youtube.html embed='uG8nHAazPf8' %}
     <div class="content">
       <h3>Restitution en ligne</h3>
       <p>
-        Vos modèles prennent vie sur <a href="https://ecorpus.eu">eCorpus</a>, le visualisateur 3D le plus complet du marché, développé par Holusion dans le cadre d'un consortium de recherche avec les universités de Lille et de Liège.
+        Vos modèles prennent vie sur <a href="https://ecorpus.eu">eCorpus</a>, un visualisateur 3D complet, développé par Holusion dans le cadre d'un consortium de recherche avec les universités de Lille et de Liège.
       </p>
       <div class="d-flex justify-content-center">
         <a href="https://ecorpus.eu"><button class="btn btn-info image-shadow my-3">Découvrez eCorpus</button></a>
       </div>
     </div>
   </section>
+
   <section class="section left">
+    {% include components/medias/ecorpus.html server='https://ecorpus.fr-scv.fr' scene='INRAP_boucle_émaillée' placeholder='img/photogrammetry/boucle_emaillée.webp' %}
+    <div class="content">
+      <h3>Outils d'analyse</h3>
+      <p>Réalisez des mesures, <a href="https://fr.wikipedia.org/wiki/Orthophotographie">orthophotographies</a> ou vues en coupe des modèles pour mieux les caracteriser</p>
+      <p>Annotez et commentez les modèles grâce aux outils intégrés <a href="https://ecorpus.eu/fr/doc/tutorials/annotation.html">d'édition de scène</a>.</p>
+    </div>
+  </section>
+
+
+  <section class="section">
     {% picture grid img/services/tablette_chalons.jpg class="img-fluid" --alt Un tablette tactile faisant office de cartel numérique pour la présentation d'une statue colonne à Chalons en Champagne %}
 
     <div class="content">
-      <h3 class="text-center pt-lg-4">Sur un écran tactile</h3>
+      <h3>Sur place</h3>
       <p>Présentez vos collections sur un écran tactile permettant à vos visiteurs de manipuler les objets et de découvrir des éléments de médiation intégrés: Visites guidées, annotations, médias enrichis...</p>
       <p>Ou augmentez votre hologramme d'un <a href="/fr/store/touch.html">écran tactile déporté</a>.</p>
       <p>Votre hologramme exploite directement les scénarii de médiation configurés sur eCorpus pour proposer une expérience immersive d'une grande profondeur.</p>
       <p>Découvrez la collection <a href="https://archeologie.ecorpus.eu/ui/scenes/">Grands Sites Archéologiques</a> du ministère de la Culture ou les <a href="https://musee-archeologienationale.ecorpus.eu/ui/">collections</a> du Musée d'Archéologie Nationale</p>
+      <p>Voyez les choses en grand avec des tables tactiles jusqu'à 55".</p>
+    </div>
+  </section>
+
+  <section class="section left">
+    {% picture grid img/photogrammetry/pied_croix.webp --alt vue de détail de la base du pied de croix de l'abbaye de St Bertin à St Omer %}
+    <div class="content">
+      <h3>Intégration avancée</h3>
+      <p>Utilisez eCorpus pour créer du contenu et proposez une application de médiation entièrement personnalisée.</p>
+      <p>Découvrez les mises en avant du <a href="https://ecorpus.fr-scv.fr/scenes/appli_pied_de_croix_dome/index.html">Pied de Croix de l'Abbaye de Saint Bertin</a> ou du <a href="https://archeologie.culture.gouv.fr/fr/media_externe?src=aHR0cHM6Ly9hcmNoZW9sb2dpZS5lY29ycHVzLmV1L3NjZW5lcy9HYWxldC1ldGlvbGxlcy9pbmRleC5odG1s&token=1347049d79e6c1f1ea211986ee929a375ffa7126">Galet gravé d'Etiolles</a>.</p>
     </div>
   </section>
 
   <section class="section">
-
-    {% picture grid img/sections/table_perrusson.webp
-      --img class="img-fluid"
-      data-noisetest="1"
-      --alt Ecran mural synchronisé avec une table tactile montrant une carte topographique interactive
-    %}
-    <div class="content">
-      <h3 class="text-center pt-lg-4">Sur une table tactile</h3>
-      <p>Intégrez eCorpus sur une table tactile pour offrir une expérience de visualisation complète et intuitive.</p>
-      <p>Voyez les choses en grand avec des tables tactiles de 32" à 55".</p>
-    </div>
-  </section>
-
-
-  <section class="section left">
     {% picture grid "img/services/calais.jpg"
       --img class="img-fluid"
-      --alt Installation sur-mesure intégrée devant la vitrine du plan relief de Calais en 1900
+      --alt Installation d'hologramme fantôme de pepper sur-mesure intégrée devant la vitrine du plan relief de Calais en 1900
     %}
 
     <div class="content">
