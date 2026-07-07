@@ -8,7 +8,6 @@ exclude:
   - "*.sh"
   - "*.log"
   - "README.md"
-  - "bower.json"
   - "package.json"
   - functions
 include:
