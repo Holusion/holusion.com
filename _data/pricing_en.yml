@@ -66,8 +66,8 @@ services:
     yearly: false
     properties:
       - Autonomous offline management of your products
-  - name: Professionnal
-    note: Recuring needs
+  - name: Professional
+    note: Recurring needs
     price: <span class="priceTag">125</span>€ w/o VAT/month
     yearly: true
     properties:

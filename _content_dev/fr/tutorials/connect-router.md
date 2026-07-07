@@ -58,7 +58,7 @@ Dans l'onglet **Operation Mode**, sélectionner **Access Point**, puis **Save**.
 
 Une fois branché, le produit est directement accessible.
 
-Sur osX, il est disponible via son "hostname" sur safari à l'adresse : `http://holobox-xx.local`. Remplacer **holobox-xx par le nom du produit.
+Sur osX, il est disponible via son "hostname" sur safari à l'adresse : `http://holobox-xx.local`. Remplacer **holobox-xx** par le nom du produit.
 
 Si on a besoin de son IP, 2 solutions :
 

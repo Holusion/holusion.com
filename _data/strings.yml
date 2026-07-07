@@ -8,7 +8,7 @@ lang: #mot à utiliser pour le choix de langue
   fr: Langue
   en: Language
 home: #designation de la "home page"
-  fr: Acceuil
+  fr: Accueil
   en: Home
 copyright: #copyright notice (coin bas-droite)
   fr: Holusion © 2015 -
@@ -30,7 +30,7 @@ emailexample: #placeholder email
   en: type your email
 newsletter: #titre du formulaire de newsletter
   fr: inscrivez-vous à la newsletter
-  en: subscribe to the newletter
+  en: subscribe to the newsletter
 need-help:
   fr: Envie d'en savoir plus
   en: Need help

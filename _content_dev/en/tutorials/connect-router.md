@@ -49,7 +49,7 @@ Plug in the router. Connect the ethernet and USB cables to your product
     </p>
   </div>
   <div class="col-12 col-md-6">
-    <img class="img-fluid" src="/static/img/documentation/how-to/tp-link_1.jpg" alt="a oruter's administration interface">
+    <img class="img-fluid" src="/static/img/documentation/how-to/tp-link_1.jpg" alt="a router's administration interface">
   </div>
 </div>
 

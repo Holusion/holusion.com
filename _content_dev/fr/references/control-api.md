@@ -13,7 +13,7 @@ rank: 1
   Par défaut, cette API est utilisable via l'interface web permettant de <a href="/dev/fr/tutorials/media-transfer">transférer des médias</a>, mais il est possible de l'utiliser directement à partir d'applications tierces.
   </p>
   <p>
-  On peut grâce à elle réaliser des systèmes complexes de gestion de contenu. Parmis les interactions possibles avec nos produits, vous pouvez notamment retrouver :
+  On peut grâce à elle réaliser des systèmes complexes de gestion de contenu. Parmi les interactions possibles avec nos produits, vous pouvez notamment retrouver :
   </p>
   <ul>
   <li>Ajout / suppression de médias</li>
@@ -92,7 +92,7 @@ Si vous n'avez pas accès à un produit en état de marche, vous pouvez utiliser
   }, function(err){
     console.warn("Failed to init swagger : ", err);
     document.querySelector("#swagger-ui").innerHTML = `<div class="jumbotron">
-      <h1>Impossible d'initializer swagger</h1>
+      <h1>Impossible d'initialiser swagger</h1>
       <p class="lead">${err.toString()}</p>
     </div>`
   })
