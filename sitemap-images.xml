@@ -1,0 +1,25 @@
+---
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{%- comment -%}
+  Google image sitemap. jekyll-sitemap only emits page <loc> entries, so
+  images are never advertised for Google Images. This companion sitemap
+  lists every page's primary image (front-matter `image`) as an absolute
+  URL, mirroring the og:image logic in _layouts/front_page.html. It is
+  referenced from robots.txt alongside the standard sitemap.xml.
+{%- endcomment -%}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+{%- assign documents = site.pages | concat: site.posts | concat: site.content_dev -%}
+{%- for doc in documents -%}
+  {%- if doc.image and doc.sitemap != false and doc.url -%}
+  <url>
+    <loc>{{ doc.url | absolute_url }}</loc>
+    <image:image>
+      <image:loc>{% if doc.image contains "static/" %}{{ site.url }}{{ doc.image }}{% else %}{{ site.url }}{% picture meta "{{doc.image}}" %}{% endif %}</image:loc>
+    </image:image>
+  </url>
+  {%- endif -%}
+{%- endfor -%}
+</urlset>

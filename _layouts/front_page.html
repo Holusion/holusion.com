@@ -25,8 +25,8 @@
       <meta name="twitter:image"  content="{{site.url}}{{page.image}}">
       <meta property="og:image" content="{{site.url}}{{page.image}}"/>
     {%- else -%}
-      <meta name="twitter:image"  content="{% picture meta "{{page.image}}" %}">
-      <meta name="og:image"  content="{% picture meta "{{page.image}}" %}">
+      <meta name="twitter:image"  content="{{site.url}}{% picture meta "{{page.image}}" %}">
+      <meta property="og:image"  content="{{site.url}}{% picture meta "{{page.image}}" %}"/>
     {%- endif -%}
   {%- endif -%}
   {%- if page.layout == "post" -%}

@@ -9,6 +9,13 @@ layout: front_page
 
 <main class="container text-white" id="content" itemscope itemtype="http://schema.org/Article">
   <meta itemprop="abstract" content="{{page.abstract}}"/>
+  {%- if page.image -%}
+    {%- if page.image contains "static/" -%}
+      <meta itemprop="image" content="{{site.url}}{{page.image}}"/>
+    {%- else -%}
+      <meta itemprop="image" content="{{site.url}}{% picture meta "{{page.image}}" %}"/>
+    {%- endif -%}
+  {%- endif -%}
   <div itemprop="articleBody" id="post-content">
   {{content}}
   </div>

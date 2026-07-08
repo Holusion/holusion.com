@@ -16,31 +16,44 @@ presets:
     <<: *base
     widths: [400, 800, 1200]
     fallback_width: 800
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
   grid:
     <<: *base
     widths: [960, 1280]
     fallback_width: 960
     formats: [webp, original]
+    dimension_attributes: true
     sizes:
       xl: 50vw
     size: 100vw
+    attributes:
+      img: 'loading="lazy" decoding="async"'
   header:
+    # Header is the above-the-fold hero (usually the LCP element): keep it
+    # eager and hint high priority rather than lazy-loading it.
     <<: *base
     formats: [webp, original]
     widths: [480, 960, 1280, 1920, 3072, 3840]
     fallback_width: 960
     dimension_attributes: true
     size: 100vw
+    attributes:
+      img: 'decoding="async" fetchpriority="high"'
   card:
     <<: *base
     formats: [webp, original]
     widths: [400, 800]
     fallback_width: 400
+    dimension_attributes: true
     sizes:
       xl: 25vw
       lg: 33vw
       md: 50vw
     size: 100vw
+    attributes:
+      img: 'loading="lazy" decoding="async"'
   container:
     <<: *base
     formats: [webp, original]
@@ -52,11 +65,16 @@ presets:
       lg: 960px
       md: 720px
     size: 100vw
+    attributes:
+      img: 'loading="lazy" decoding="async"'
   portrait:
     formats: [original]
     widths: [256, 512]
     fallback_width: 256
     size: 256px
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
   direct_portrait:
     markup: direct_url
     fallback_width: 256

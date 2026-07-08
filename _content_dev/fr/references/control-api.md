@@ -6,7 +6,7 @@ rank: 1
 ---
 
 <div class="row">
-  <div class="col-lg-6 col-md-12"><img class="img-fluid" src="/static/img/posts/media-player/header2.png"></div>
+  <div class="col-lg-6 col-md-12"><img alt="Interface de l'API de contrôle du media player Holusion" class="img-fluid" src="/static/img/posts/media-player/header2.png"></div>
   <div class="col-lg-6 col-md-12">
   <p>Holusion fournit une API publique sur chacun de ses produits. Elle permet de contrôler l'activation, la désactivation, l'ajout ou la suppression ainsi que la lecture des médias.
   </p><p>
