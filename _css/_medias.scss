@@ -64,6 +64,20 @@
   padding: 0;
   overflow: hidden;
 
+  /* A clipping wrapper becomes the scroll container for a sticky child, which
+     stops it sticking (it scrolls away with the page). Media that wraps a
+     sticky element (e.g. the Lascaux 3D embed) must not clip it. */
+  &:has(> .sticky-top){
+    overflow: visible;
+    /* Bootstrap pins .sticky-top at top:0, which tucks it under the fixed
+       navbar (#navbar-top, ~58px tall). Offset it to rest just below the
+       navbar and size it to the remaining viewport height. */
+    > .sticky-top{
+      top: 4rem;
+      height: calc(100vh - 4rem);
+    }
+  }
+
   iframe, object, video, img{
     display:block;
     max-width:100%;
