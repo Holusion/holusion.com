@@ -9,7 +9,7 @@ tags: evenementiel formation focus
 
 <p class="text-center"><img alt="Museohub 2016 avec les hologrammes" src="/static/img/posts/futur-en-seine/fens16_banniere_haut.jpg" style="width: 100%; height: 100%;" /></p>
 
-<p class="rtejustify"><a href="https://www.futuresfestivals.com" target="_blank">Futur en Seine</a> a encore une fois réuni de nombreuses marques innovantes du 09 au 19 juin 2016 à Paris. De nouveaux usages en réalité augmentée ou réalité virtuelle ont fait leur apparition lors de ce rendez-vous incontournable de l'innovation. Parmis eux, des usages culturels s'appuient sur les nouvelles technologies afin de préserver le patrimoine. Il s'agit de Bagdad 3D, un projet accompagné par Holusion durant cette semaine enrichissante.</p>
+<p class="rtejustify"><a href="https://www.futuresfestivals.com" target="_blank">Futur en Seine</a> a encore une fois réuni de nombreuses marques innovantes du 09 au 19 juin 2016 à Paris. De nouveaux usages en réalité augmentée ou réalité virtuelle ont fait leur apparition lors de ce rendez-vous incontournable de l'innovation. Parmi eux, des usages culturels s'appuient sur les nouvelles technologies afin de préserver le patrimoine. Il s'agit de Bagdad 3D, un projet accompagné par Holusion durant cette semaine enrichissante.</p>
 
 
 <div class="row">
@@ -22,7 +22,7 @@ tags: evenementiel formation focus
 
     <p class="rtejustify">Le projet Bagdad 3D part de l'envie de conserver une trace indestructible du patrimoine irakien. Sa numérisation a pour objectif de conserver les détails et les formes pour toujours afin de <strong>protéger</strong> des oeuvres pouvant être détruites.</p>
 
-    <p class="rtejustify">L'utilisation des nouvelles technologies (hologrammes, réalité virtuelle, scan ou photogramétrie) permet aussi de faire connaître et <strong>partager</strong> la culture irakienne aux occidentaux. Le projet sera notamment diffusé sur la chaîne Arte pour un maximum de visibilité.</p>
+    <p class="rtejustify">L'utilisation des nouvelles technologies (hologrammes, réalité virtuelle, scan ou photogrammétrie) permet aussi de faire connaître et <strong>partager</strong> la culture irakienne aux occidentaux. Le projet sera notamment diffusé sur la chaîne Arte pour un maximum de visibilité.</p>
 
     <p class="rtejustify">Pour que le projet puisse <strong>continuer</strong> et perdurer dans le temps une formation à la numérisation sera donnée. Depuis avril dernier, prodiges du numérique, archéologues et autres militants de la culture se regroupent sur le territoire irakien pour immortaliser en 3D et donner à vivre au monde entier les vestiges de ce que l'on nomme, civilisation.</p>
 

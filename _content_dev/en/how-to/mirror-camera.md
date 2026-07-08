@@ -20,7 +20,7 @@ The `Post Processing v2` package from Unity's `Package Manager` is required. You
 
 For the shader to be applied you need to add a `Post Process Layer` to your main camera and tick the `Camera Flop` effect.
 
-You need to also add the shader in `Edit > Project settings > Gaphics > Always included Shaders`.
+You need to also add the shader in `Edit > Project settings > Graphics > Always included Shaders`.
 
 ### PreCull Hook
 

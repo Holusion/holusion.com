@@ -14,14 +14,14 @@ Cette page a pour but de vous informer de vos droits et de nos obligations conce
 ## Informations recueillies
 
 ### Requêtes et Navigation
-Holusion collecte des données de requêtes adddressées au site [holusion.com](https://holusion.com). Celles-ci sont stockées par notre fournisseur de service [Google](https://cloud.google.com/terms/google-entity) selon les conditions d'utilisation de la plateforme [google cloud](https://cloud.google.com/terms/).
+Holusion collecte des données de requêtes adressées au site [holusion.com](https://holusion.com). Celles-ci sont stockées par notre fournisseur de service [Google](https://cloud.google.com/terms/google-entity) selon les conditions d'utilisation de la plateforme [google cloud](https://cloud.google.com/terms/).
 
 Ces données peuvent contenir les données personnelles suivantes:
 - la chaîne [user-agent](https://fr.wikipedia.org/wiki/User_agent) du navigateur utilisé
 - la langue préférée du navigateur effectuant la requête
 - l'[adresse IP](https://fr.wikipedia.org/wiki/Adresse_IP) de l'utilisateur
 
-Ainsi que des données non personelles, telles que : 
+Ainsi que des données non personnelles, telles que : 
 - le nom et le type de la ressource demandée
 - la date de la requête
 - la latence

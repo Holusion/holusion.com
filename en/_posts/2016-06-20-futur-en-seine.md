@@ -20,11 +20,11 @@ tags: evenementiel formation focus
   <div class="col-md-8 col-12">
     <h2 class="rtejustify">A rescue mission</h2>
 
-    <p class="rtejustify">The Bagdad 3D project began with the will to maintain an unbreakable part of the Iraqy heritage. The digitalization comes in order to <strong>protect</strong> art works that could be destroyed.</p>
+    <p class="rtejustify">The Bagdad 3D project began with the will to maintain an unbreakable part of the Iraqi heritage. The digitalization comes in order to <strong>protect</strong> art works that could be destroyed.</p>
 
     <p class="rtejustify">The use of new technologies (holograms, virtual reality, scanning or photogrammetry allows to introduce and <strong>share</strong> the Iraqi culture to western people. The project will also be displayed on the Arte channel, in order to be known.</p>
 
-    <p class="rtejustify">To make the project still <strong>continue</strong> over time, a digitalization course will be provided. Since this april, digital experts, archeologists and culture activists are meeting on the iraqui territory to catpure in 3D and to give the world a vision of what remains of the beginning of civilization.</p>
+    <p class="rtejustify">To make the project still <strong>continue</strong> over time, a digitalization course will be provided. Since this april, digital experts, archeologists and culture activists are meeting on the Iraqi territory to capture in 3D and to give the world a vision of what remains of the beginning of civilization.</p>
 
     <p class="rtejustify">&nbsp;</p>
   </div>
@@ -36,7 +36,7 @@ tags: evenementiel formation focus
 
     <p class="rtejustify">Seal and wedge-shaped writing have appeared in hologram. The <a href="/en/store/focus">Focus</a> allowed the visitors to see the novative pictures in 360°.</p>
 
-    <p class="rtejustify">This device linked together the actual content and the hologram technology. The hologram took all its sense by allowing everyone to immerse in the Bagdad universe. The Bagdad 3D partnership with Holusion contribued to a very interesting content.</p>
+    <p class="rtejustify">This device linked together the actual content and the hologram technology. The hologram took all its sense by allowing everyone to immerse in the Bagdad universe. The Bagdad 3D partnership with Holusion contributed to a very interesting content.</p>
 
     <p class="rtejustify">&nbsp;</p>
 

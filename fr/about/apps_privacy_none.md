@@ -13,7 +13,7 @@ Cette page a pour but de vous informer de vos droits et de nos obligations conce
 
 ## Informations recueillies
 
-Holusion ne collecte ni ne stocke aucune information personelle depuis cette application.
+Holusion ne collecte ni ne stocke aucune information personnelle depuis cette application.
 
 Des données anonymes d'usage peuvent nous être transmises par les plateformes de distribution. Elles sont utilisées uniquement à des fins statistiques pour améliorer nos produits et services. Des précautions sont prises pour assurer leur conservation dans un environnement sécurisé.
 

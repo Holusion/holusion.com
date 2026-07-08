@@ -23,7 +23,7 @@ tags: marketing real size event
     </a> (video right <a href="https://www.youtube.com/watch?v=c3n8j2uWA8o">here</a>) in Central Park in 2014, Ralph Lauren uses holograms again with <a href="http://cinimodstudio.com/portfolio/ralph-lauren-holographic-window-display/">Cinimod Studio</a>. This time, it is using holograms to display a boxing show right in its flagship store on New York's 5th Avenue.
     </p>
     <p>
-    The setup produces an incredible perspective, with multiple focus points, smart use of props and a powerful marketing message. It relies on a bold artisitic choice and a quite smart association of technologies.</p>
+    The setup produces an incredible perspective, with multiple focus points, smart use of props and a powerful marketing message. It relies on a bold artistic choice and a quite smart association of technologies.</p>
     <p>As a matter of fact, this technologies are not so out of reach as one may think, so, let's break it down in details.</p>
     <p>And who knows ? Perhaps it's even possible you may want to have the very same at home !</p>
   </div>
@@ -39,11 +39,11 @@ Let's get started. On this first drawing, the display is represented from a top 
 The foreground is a screen with the "Polo Sport" logo. It will be the main display for the moving boxers.
 </p>
 <p>
-Real props and accessories, such as the cords, ground decorations and lights, sport bag... the goal is to anchor the hologram in a realistic environment. All of this will contribute to make the hologram as belivable as possible
+Real props and accessories, such as the cords, ground decorations and lights, sport bag... the goal is to anchor the hologram in a realistic environment. All of this will contribute to make the hologram as believable as possible
 </p>
 <p>
-Finaly, inside the corners, on the right and on the left, two screens, for informations and characters outside the ring</p>
-<p>The most important point to understand this installation, is the couple of glass panels. They behave simultanously as mirror and as glass in order to blend images from the central screen and from the corners</p>
+Finally, inside the corners, on the right and on the left, two screens, for informations and characters outside the ring</p>
+<p>The most important point to understand this installation, is the couple of glass panels. They behave simultaneously as mirror and as glass in order to blend images from the central screen and from the corners</p>
 
 <img class="img-fluid" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren_en.jpg" title="installation drawings" alt="Schematic representation of the holographic installation in the front window of Ralph Lauren on the 5th Avenue in New York">
 </div>
@@ -60,13 +60,13 @@ The boxers and the "Polo Sport" logo are displayed by a video-projector as seen 
   <div class="col-md-6">
     <h4>If you take the glass pannels away</h4>
     <p>
-    Behind the glass pannels is the main video-projection screen. The image is created trough retro-projection by a quite powerful device to boost the hologram luminosity and quality
+    Behind the glass pannels is the main video-projection screen. The image is created through retro-projection by a quite powerful device to boost the hologram luminosity and quality
     </p>
     <p>
-    Video-projection is not perfect and you can observe somes artefacts and "hot spots" on bright color areas.
+    Video-projection is not perfect and you can observe some artefacts and "hot spots" on bright color areas.
     </p>
     <p>
-    Every images on this plane, seemingly floating on the middle of the scene, moving boxers and foreground informations are all being displayed on this screen. Beyond the suggestion of movement created by the video clip director, we can observe that all the motion is limited in a single plane where elments move only from right to left.
+    Every images on this plane, seemingly floating on the middle of the scene, moving boxers and foreground informations are all being displayed on this screen. Beyond the suggestion of movement created by the video clip director, we can observe that all the motion is limited in a single plane where elements move only from right to left.
     </p>
   </div>
 </div>
@@ -104,9 +104,9 @@ All of this elements are reflected by the glass pannels,
 <h2 style="center">Depth and projection</h2>
 
 <p>
-This installation is a particulary smart use of the Pepper's Ghost. It's using its qualities and adding other elements to strenghten its limited capabilities.
+This installation is a particulary smart use of the Pepper's Ghost. It's using its qualities and adding other elements to strengthen its limited capabilities.
 The innovation here is to use a combination of holograms and video-projection to created life sized images. Indeed the most important limitation of Pepper's Ghost is the space it needs to display anything close to a full scale character. This explains why it was only used in spacious environments such as theatre scenes. </p>
 <p>
-The hologram make a smart use of background elements to give a nice feeling of depths. The well executed realisation is a main point of the hologram sucess. The movie itself, directed by Ralph Lauren with care, give all its meaning and depth of the marketing message and brand identity.</p>
+The hologram make a smart use of background elements to give a nice feeling of depths. The well executed realisation is a main point of the hologram success. The movie itself, directed by Ralph Lauren with care, give all its meaning and depth of the marketing message and brand identity.</p>
 
 

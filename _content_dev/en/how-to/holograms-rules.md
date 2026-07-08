@@ -17,7 +17,7 @@ rank: 1
       <li>Things to do and to avoid when compositing your video</li>
       <li>Proper cropping and clipping of a video</li>
     </ul>
-    <p>Those are the necessarey basics to create profesionnal-looking holograms</p>
+    <p>Those are the necessary basics to create professional-looking holograms</p>
   </div>
   <div class="col-lg-6 col-12">
     {% include components/medias/youtube.html  embed="l-0kverv6OA" %}

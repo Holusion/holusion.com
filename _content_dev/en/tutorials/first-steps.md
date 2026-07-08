@@ -9,12 +9,12 @@ rank: 1
 
 Doing this tutorial you will learn to make a video ready to be uploaded as an hologram on one of our products, using the free software [Blender](https://www.blender.org).
 
-This tutorial might require a bit of knowledge on blender's interface and foundamentals. You can use blender's [official tutorial](https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6) to learn more about those subjects.
+This tutorial might require a bit of knowledge on blender's interface and fundamentals. You can use blender's [official tutorial](https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6) to learn more about those subjects.
 
 
 ## Setting up
 
-Be sur to have at least blender [2.83](https://www.blender.org/download/releases/2-83/) installed and ready.
+Be sure to have at least blender [2.83](https://www.blender.org/download/releases/2-83/) installed and ready.
 
 ## The tutorial
 

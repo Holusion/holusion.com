@@ -34,11 +34,11 @@ tags: commerce taille humaine evenementiel
 
 <p>Sur ce premier schéma, nous avons représenté la vitrine, vue de haut pour comprendre tous ses élements. La scène se compose d'un premier plan avec le logo Polo Sport. Il servira à afficher les sportifs en mouvement.
 </p>
-<p>Des accessoires bien rééls comme les cordes du ring, le sol et ses lumières, le sac de sport. Le but est d'ancrer l'hologramme dans un cadre réel, tangible, qui va donner tout le relief et la crédibilité de l'installation.
+<p>Des accessoires bien réels comme les cordes du ring, le sol et ses lumières, le sac de sport. Le but est d'ancrer l'hologramme dans un cadre réel, tangible, qui va donner tout le relief et la crédibilité de l'installation.
 </p>
 <p>
-Enfin, des écrans au fond des alcoves,  gauche et à droit, pour les infobulles en arrière plan et les personnages en bordure du ring</p>
-<p>Le point le plus importance de cette installation, ce sont les deux miroirs centraux. Ceux-ci sont semi-tranparents et permettent donc de superposer les élements des alcoves à droite et à gauche, à l'image centrale diffusée par l'écran.</p>
+Enfin, des écrans au fond des alcoves,  gauche et à droite, pour les infobulles en arrière plan et les personnages en bordure du ring</p>
+<p>Le point le plus importance de cette installation, ce sont les deux miroirs centraux. Ceux-ci sont semi-transparents et permettent donc de superposer les élements des alcoves à droite et à gauche, à l'image centrale diffusée par l'écran.</p>
 
 <img class="img-fluid" style="width:800px" src="/static/img/posts/ralph_lauren/schema_ralphlauren.jpg" title="schema de l'installation" alt="représentation schématique de l'installation holographique en vitrine par Ralph Lauren sur la 5e Avenue à New York">
 </div>
@@ -101,5 +101,5 @@ Tous ces éléments sont reflétés dans les deux panneaux réfléchissants cent
 <h2 style="center">Projection et profondeur</h2>
 
 <p>Cette installation est une très bonne utilisation des techniques du Pepper's Ghost, qui utilise bien les atouts de cette technologie, en conjonction avec d'autres éléments, pour pallier à ses limites.
-L'innovation ici, consiste à utiliser des hologrammes et une rétro-projection, plus classique, pour créer les images à taille humaine. En effet, les images à taille humaine sont très souvent une contrainte technique important pour le Pepper's Ghost. Il faut souvent énormémement d'espace et de recul pour les générer. Ce qui explique pourquoi cette technologie restait plutôt cantonné au monde de la scène.</p>
+L'innovation ici, consiste à utiliser des hologrammes et une rétro-projection, plus classique, pour créer les images à taille humaine. En effet, les images à taille humaine sont très souvent une contrainte technique important pour le Pepper's Ghost. Il faut souvent énormément d'espace et de recul pour les générer. Ce qui explique pourquoi cette technologie restait plutôt cantonné au monde de la scène.</p>
 <p>L'hologramme tire parti des éléments de décors, pour donner une forte impression de profondeur. Le talent de la réalisation de la vidéo est un point central du succès de cette installation. Réalisé par Ralph Lauren eux-même avec beaucoup de soins, le message devient plus authentique et pertinent</p>
