@@ -7,6 +7,15 @@
   }
 }
 
+/* the element that carries the pixels: either a direct <img> child or the one
+   wrapped in a <picture>/<figure>. Constraining only the wrapper is not enough:
+   jekyll-picture-tag emits width/height attributes on the <img>. */
+@mixin grid-media-image {
+  & > img, &>picture>img, &>figure>img {
+    @content;
+  }
+}
+
 .main-grid{
   $margin: 7rem;
   $padding: 15px;
@@ -170,6 +179,23 @@
       }
       @include media-breakpoint-down(xl){
         margin-bottom: 0 !important;
+        &.cover{
+          height: auto !important;
+        }
+      }
+    }
+
+    //grid images fit their column on their own, without needing .img-fluid
+    @include grid-media-image() {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      &.cover{
+        height: 100%;
+        object-fit:cover;
+        object-position: right;
+      }
+      @include media-breakpoint-down(xl){
         &.cover{
           height: auto !important;
         }
